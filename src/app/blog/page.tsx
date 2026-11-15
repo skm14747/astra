@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   title: 'Vedic Astrology Blog — Jyotish Guides & Tutorials | Astra',
   description: 'Learn Vedic astrology with in-depth guides on Kundli reading, Dasha interpretation, Dosha analysis, Nakshatra wisdom, and practical Jyotish techniques.',
   keywords: ['vedic astrology blog', 'jyotish guide', 'astrology tutorial', 'learn vedic astrology', 'kundli reading guide'],
-  alternates: { canonical: '/blog' },
+  alternates: {
+    canonical: '/blog',
+    languages: { 'en': '/blog', 'hi': '/hi/blog', 'x-default': '/blog' },
+  },
   openGraph: {
     title: 'Vedic Astrology Blog — Jyotish Guides & Tutorials',
     description: 'Learn Vedic astrology with in-depth guides on Kundli reading, Dasha interpretation, Dosha analysis, and practical Jyotish techniques.',

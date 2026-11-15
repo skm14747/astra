@@ -5,7 +5,10 @@ import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 export const metadata: Metadata = {
   title: 'About Astra Destiny — Our Vedic Astrology Tools',
   description: 'Learn about Astra Destiny — our mission, the team behind the tools, our approach to Vedic astrology calculation, and how we built 200+ free Jyotish calculators.',
-  alternates: { canonical: '/about' },
+  alternates: {
+    canonical: '/about',
+    languages: { 'en': '/about', 'hi': '/hi/about', 'x-default': '/about' },
+  },
   openGraph: {
     title: 'About Astra Destiny — Our Vedic Astrology Tools',
     description: 'Learn about Astra Destiny — our mission, approach, and the team behind 200+ free Vedic astrology calculators.',

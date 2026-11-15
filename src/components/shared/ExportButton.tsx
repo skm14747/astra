@@ -1,6 +1,7 @@
 'use client';
 import { useRef, useCallback } from 'react';
 import { toPng } from 'html-to-image';
+import { useT } from '@/lib/i18n';
 
 interface Props {
   targetRef: React.RefObject<HTMLElement | null>;
@@ -8,6 +9,7 @@ interface Props {
 }
 
 export default function ExportButton({ targetRef, filename = 'chart' }: Props) {
+  const t = useT();
   const handleDownload = useCallback(async () => {
     if (!targetRef.current) return;
     try {
@@ -34,12 +36,12 @@ export default function ExportButton({ targetRef, filename = 'chart' }: Props) {
   }, [targetRef]);
 
   return (
-    <div className="flex gap-1">
-      <button onClick={handleDownload} className="text-[10px] px-2 py-1 rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-zinc-200 transition" title="Download PNG">
-        PNG
+    <div className="flex gap-2 mt-3">
+      <button onClick={handleDownload} className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-violet-600 hover:bg-violet-500 text-white text-sm font-medium transition shadow-md" title={t('export.downloadPng')}>
+        📥 {t('export.downloadPng')}
       </button>
-      <button onClick={handleCopy} className="text-[10px] px-2 py-1 rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-zinc-200 transition" title="Copy to clipboard">
-        Copy
+      <button onClick={handleCopy} className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white text-sm font-medium transition" title={t('export.copyClipboard')}>
+        📋 {t('export.copyClipboard')}
       </button>
     </div>
   );

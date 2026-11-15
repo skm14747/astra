@@ -89,7 +89,14 @@ export function buildMatrixMetadata(slug: string): Metadata {
     title: seo.title,
     description: seo.description,
     keywords: seo.keywords,
-    alternates: { canonical: seo.canonical },
+    alternates: {
+      canonical: seo.canonical,
+      languages: {
+        'en': seo.canonical,
+        'hi': `/hi${seo.canonical}`,
+        'x-default': seo.canonical,
+      },
+    },
     openGraph: {
       title: seo.title,
       description: seo.description,

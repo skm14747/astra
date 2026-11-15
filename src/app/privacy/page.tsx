@@ -4,7 +4,10 @@ import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'Astra Destiny privacy policy — how we handle your data, what information is collected, and your rights. All astrology calculations run locally in your browser.',
-  alternates: { canonical: '/privacy' },
+  alternates: {
+    canonical: '/privacy',
+    languages: { 'en': '/privacy', 'hi': '/hi/privacy', 'x-default': '/privacy' },
+  },
 };
 
 export default function PrivacyPage() {

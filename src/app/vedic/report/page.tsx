@@ -150,7 +150,7 @@ export default function ReportPage() {
   if (!chart) {
     return (
       <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-        <EmptyState icon="📋" title="Detailed Report" description="Create a birth profile to generate your comprehensive Vedic astrology report — 22 chapters covering personality, career, marriage, health, Dasha timeline, and remedies." />
+        <EmptyState icon="📋" title={t('report.title')} description={t('report.emptyDesc')} />
         <SeoIntro headingKey="seo.report.heading" textKey="seo.report.text" />
         {VEDIC_SEO.report?.relatedTools && <RelatedTools tools={VEDIC_SEO.report.relatedTools} />}
       </div>
@@ -160,8 +160,8 @@ export default function ReportPage() {
   if (!report) {
     return (
       <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8 text-center">
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">Detailed Report</h1>
-        <p className="text-zinc-400 mb-8 max-w-xl mx-auto">Generate your comprehensive 22-chapter Vedic astrology report with planet-by-planet analysis, life-area predictions, Dasha narratives, and personalized remedies.</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">{t('report.title')}</h1>
+        <p className="text-zinc-400 mb-8 max-w-xl mx-auto">{t('report.subtitle')}</p>
         <button
           onClick={generate}
           disabled={generating}
@@ -170,9 +170,9 @@ export default function ReportPage() {
           {generating ? (
             <span className="flex items-center gap-2">
               <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-              Generating Report…
+              {t('export.generatingReport')}
             </span>
-          ) : '✦ Generate Full Report'}
+          ) : t('export.generateReport')}
         </button>
         <SeoIntro headingKey="seo.report.heading" textKey="seo.report.text" />
       </div>
@@ -190,7 +190,7 @@ export default function ReportPage() {
       <aside className="hidden xl:block w-56 shrink-0" data-print-hide>
         <nav className="sticky top-24 space-y-0.5 max-h-[calc(100vh-8rem)] overflow-y-auto" aria-label="Report sections">
           <button onClick={handleDownload} className="w-full mb-3 px-3 py-2.5 rounded-xl bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold transition flex items-center justify-center gap-2">
-            📄 Download PDF
+            📄 {t('export.downloadPdf')}
           </button>
           {TOC.map(({ id, label }) => (
             <a
@@ -210,7 +210,7 @@ export default function ReportPage() {
         <div className="text-center pb-8" data-print-cover data-print-pb>
           {/* Print-only decorative border */}
           <div className="hidden mx-auto w-24 h-0.5 bg-violet-600 mb-6" data-print-show />
-          <p className="text-violet-400 text-sm tracking-widest uppercase mb-2">Personalized Vedic Astrology Report</p>
+          <p className="text-violet-400 text-sm tracking-widest uppercase mb-2">{t('report.coverLabel')}</p>
           <h1 className="font-display text-4xl sm:text-5xl font-bold text-white mb-3">{r.profileName}&apos;s Report</h1>
           <div className="hidden mx-auto w-16 h-px bg-zinc-400 my-4" data-print-show />
           <p className="text-zinc-400">{fmtDate(bd.date)} · {fmtTime(bd.date)}</p>
@@ -223,7 +223,7 @@ export default function ReportPage() {
           <div className="hidden mx-auto w-24 h-0.5 bg-violet-600 mt-6" data-print-show />
           {/* Mobile PDF button — prominent CTA */}
           <button onClick={handleDownload} className="mt-6 xl:hidden px-8 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold text-base transition shadow-lg" data-print-hide>
-            📄 Download PDF
+            📄 {t('export.downloadPdf')}
           </button>
         </div>
 
@@ -683,9 +683,9 @@ export default function ReportPage() {
         onClick={handleDownload}
         className="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold shadow-xl shadow-violet-900/30 transition-all flex items-center gap-2"
         data-print-hide
-        aria-label="Download PDF"
+        aria-label={t('export.downloadPdf')}
       >
-        📄 Download PDF
+        📄 {t('export.downloadPdf')}
       </button>
     </div>
   );

@@ -153,3 +153,88 @@ export function getAllMuhurtas(
 
   return muhurtas.sort((a, b) => a.start.getTime() - b.start.getTime());
 }
+
+/* ── Choghadiya (चौघड़िया) ── */
+
+export type ChoghadiyaType = 'Udveg' | 'Char' | 'Labh' | 'Amrit' | 'Kaal' | 'Shubh' | 'Rog';
+
+export interface ChoghadiyaPeriod {
+  type: ChoghadiyaType;
+  ruler: string;
+  start: Date;
+  end: Date;
+  isAuspicious: boolean;
+}
+
+const CHOGHADIYA_CYCLE: ChoghadiyaType[] = ['Udveg', 'Char', 'Labh', 'Amrit', 'Kaal', 'Shubh', 'Rog'];
+
+const CHOGHADIYA_RULERS: Record<ChoghadiyaType, string> = {
+  Udveg: 'Sun',
+  Char: 'Venus',
+  Labh: 'Mercury',
+  Amrit: 'Moon',
+  Kaal: 'Saturn',
+  Shubh: 'Jupiter',
+  Rog: 'Mars',
+};
+
+const CHOGHADIYA_AUSPICIOUS: Record<ChoghadiyaType, boolean> = {
+  Amrit: true,
+  Shubh: true,
+  Labh: true,
+  Char: true,
+  Udveg: false,
+  Kaal: false,
+  Rog: false,
+};
+
+const DAY_START_INDEX = [0, 6, 5, 4, 3, 2, 1] as const;
+const NIGHT_START_INDEX = [4, 3, 2, 1, 0, 6, 5] as const;
+
+/**
+ * Calculate Choghadiya periods for day (sunrise→sunset) and night (sunset→nextSunrise).
+ * @param sunrise  - Sunrise of the day
+ * @param sunset   - Sunset of the day
+ * @param nextSunrise - Sunrise of the following day
+ * @param vara     - Day of week: 0=Sunday, 1=Monday, ... 6=Saturday
+ */
+export function calculateChoghadiya(
+  sunrise: Date,
+  sunset: Date,
+  nextSunrise: Date,
+  vara: number,
+): { day: ChoghadiyaPeriod[]; night: ChoghadiyaPeriod[] } {
+  const dayMs = sunset.getTime() - sunrise.getTime();
+  const nightMs = nextSunrise.getTime() - sunset.getTime();
+  const dayPortionMs = dayMs / 8;
+  const nightPortionMs = nightMs / 8;
+
+  const dayStartIdx = DAY_START_INDEX[vara];
+  const nightStartIdx = NIGHT_START_INDEX[vara];
+
+  const day: ChoghadiyaPeriod[] = [];
+  for (let i = 0; i < 8; i++) {
+    const type = CHOGHADIYA_CYCLE[(dayStartIdx + i) % 7];
+    day.push({
+      type,
+      ruler: CHOGHADIYA_RULERS[type],
+      start: new Date(sunrise.getTime() + i * dayPortionMs),
+      end: new Date(sunrise.getTime() + (i + 1) * dayPortionMs),
+      isAuspicious: CHOGHADIYA_AUSPICIOUS[type],
+    });
+  }
+
+  const night: ChoghadiyaPeriod[] = [];
+  for (let i = 0; i < 8; i++) {
+    const type = CHOGHADIYA_CYCLE[(nightStartIdx + i) % 7];
+    night.push({
+      type,
+      ruler: CHOGHADIYA_RULERS[type],
+      start: new Date(sunset.getTime() + i * nightPortionMs),
+      end: new Date(sunset.getTime() + (i + 1) * nightPortionMs),
+      isAuspicious: CHOGHADIYA_AUSPICIOUS[type],
+    });
+  }
+
+  return { day, night };
+}

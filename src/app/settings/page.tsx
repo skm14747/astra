@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import { useSettings, type FontSize, type ThemeMode, type Language } from '@/lib/settings/context';
 import { useProfile } from '@/lib/profile/context';
 import { useT } from '@/lib/i18n';
@@ -12,6 +13,19 @@ export default function SettingsPage() {
   const [editModal, setEditModal] = useState<string | null>(null);
   const editingProfile = editModal ? profiles.find(p => p.id === editModal) ?? null : null;
   const t = useT();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleLanguageChange = (lang: Language) => {
+    setLanguage(lang);
+    // Navigate to the locale-prefixed URL so crawlers see the correct version
+    const cleanPath = pathname.replace(/^\/hi/, '') || '/';
+    if (lang === 'hi') {
+      router.push(`/hi${cleanPath}`);
+    } else {
+      router.push(cleanPath);
+    }
+  };
 
   const pill = (active: boolean) =>
     `px-5 py-2.5 rounded-full text-sm font-medium transition ${
@@ -91,7 +105,7 @@ export default function SettingsPage() {
         <p className="text-sm text-zinc-400 -mt-2">{t('settings.langDesc')}</p>
         <div className="flex gap-3">
           {([['en', 'English'], ['hi', 'हिन्दी']] as [Language, string][]).map(([lang, label]) => (
-            <button key={lang} onClick={() => setLanguage(lang)} className={pill(language === lang)}>
+            <button key={lang} onClick={() => handleLanguageChange(lang)} className={pill(language === lang)}>
               {label}
             </button>
           ))}

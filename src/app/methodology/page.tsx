@@ -5,7 +5,10 @@ import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 export const metadata: Metadata = {
   title: 'Astrology Calculation Methods & Accuracy',
   description: 'How Astra Destiny calculates Vedic astrology charts — our ephemeris sources, ayanamsa choice, house systems, Yoga/Dosha detection rules, and why results may differ between calculators.',
-  alternates: { canonical: '/methodology' },
+  alternates: {
+    canonical: '/methodology',
+    languages: { 'en': '/methodology', 'hi': '/hi/methodology', 'x-default': '/methodology' },
+  },
   openGraph: {
     title: 'Astrology Calculation Methods & Accuracy | Astra Destiny',
     description: 'Technical details on how Astra Destiny computes Vedic birth charts, planetary positions, and astrological analyses.',

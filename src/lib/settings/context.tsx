@@ -24,12 +24,38 @@ interface SettingsContextValue {
 
 const SettingsContext = createContext<SettingsContextValue | null>(null);
 
+/**
+ * Reads the locale cookie set by middleware for /hi/* routes.
+ * Falls back to 'en' if no cookie is found.
+ */
+function getLocaleFromCookie(): Language {
+  if (typeof document === 'undefined') return 'en';
+  const match = document.cookie.match(/(?:^|;\s*)astra-locale=(\w+)/);
+  return (match?.[1] === 'hi' ? 'hi' : 'en');
+}
+
 export function SettingsProvider({ children }: { children: ReactNode }) {
   const [ayanamsaSystem, setAyanamsaSystem] = useLocalStorage<AyanamsaSystem>('astra-ayanamsa', 'lahiri');
   const [chartStyle, setChartStyle] = useLocalStorage<ChartStyle | 'both'>('astra-chart-style', 'both');
   const [fontSize, setFontSize] = useLocalStorage<FontSize>('astra-font-size', 'default');
   const [theme, setTheme] = useLocalStorage<ThemeMode>('astra-theme', 'dark');
-  const [language, setLanguage] = useLocalStorage<Language>('astra-language', 'en');
+  const [language, setLanguageRaw] = useLocalStorage<Language>('astra-language', 'en');
+
+  // On first mount, sync with the locale cookie (set by middleware for /hi/* URLs)
+  useEffect(() => {
+    const cookieLocale = getLocaleFromCookie();
+    if (cookieLocale !== language) {
+      setLanguageRaw(cookieLocale);
+    }
+    // Only run on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const setLanguage = (l: Language) => {
+    setLanguageRaw(l);
+    // Also update the cookie so middleware stays in sync
+    document.cookie = `astra-locale=${l}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
+  };
 
   useEffect(() => {
     document.documentElement.style.fontSize = `${FONT_SCALE[fontSize]}%`;

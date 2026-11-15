@@ -368,5 +368,67 @@
     "priority": "P1",
     "status": "exists",
     "notes": "Conversion powerhouse. 294-algorithm report is unmatched depth. PDF download is a strong CTA and unique value prop."
+  },
+  {
+    "id": "rashifal-horoscope",
+    "head": "rashifal",
+    "keywords": [
+      "rashifal", "aaj ka rashifal", "daily horoscope",
+      "horoscope today", "weekly horoscope", "monthly rashifal",
+      "rashifal today", "dainik rashifal", "weekly rashifal",
+      "mesh rashifal", "vrishchik rashifal", "singh rashifal"
+    ],
+    "volume_range": "521K for rashifal IN; daily horoscope 550K global; cluster total est. 570K+",
+    "dominant_type": "content",
+    "target_url": "/rashifal",
+    "priority": "P0",
+    "status": "gap",
+    "notes": "BIGGEST UNTAPPED KEYWORD. AstroSage gets 73K visits/mo from 'rashifal' alone (position #3). Astra Destiny has zero rashifal pages. Generate per-rashi daily predictions from existing Dasha + transit engine. Daily-refresh content drives massive recurring traffic and crawl frequency."
+  },
+  {
+    "id": "hora-today",
+    "head": "hora today",
+    "keywords": [
+      "hora today", "planetary hours", "today hora",
+      "shubh hora", "auspicious hour today", "hora calculator",
+      "planetary hora chart"
+    ],
+    "volume_range": "40.5K for 'hora today' IN; cluster total est. 60K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/hora",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "DrikPanchang ranks #1 for 'hora today' (40.5K volume, $1.14 CPC — highest CPC in astrology timing space). Astra already has getCurrentHora() in muhurta.ts. Easy standalone page creation. High monetization CPC."
+  },
+  {
+    "id": "lucky-number-color",
+    "head": "lucky number by date of birth",
+    "keywords": [
+      "lucky number by date of birth", "lucky color by rashi",
+      "lucky number by rashi", "shubh ank", "rashi ratna chart",
+      "aaj ka lucky number", "lucky number astrology"
+    ],
+    "volume_range": "est. 10K–30K per keyword; cluster total est. 50K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/lucky-number",
+    "priority": "P2",
+    "status": "gap",
+    "notes": "High-intent, easy calculator derivable from existing rashi/nakshatra/planet data. Competitive gap — no major Vedic tool site has a dedicated page. Pairs well with remedies page for gemstone cross-links."
+  },
+  {
+    "id": "vivah-muhurat",
+    "head": "vivah muhurat 2026",
+    "keywords": [
+      "vivah muhurat 2026", "wedding dates 2026",
+      "shadi muhurat 2026", "marriage muhurat november",
+      "griha pravesh muhurat 2026", "shaadi season 2026",
+      "shubh vivah muhurat"
+    ],
+    "volume_range": "est. 35K+ seasonal (peaks Nov–Feb, Apr–Jun)",
+    "dominant_type": "content + tool",
+    "target_url": "/vedic/muhurta",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Massive seasonal spike during Indian wedding season (Nov–Feb, Apr–Jun). DrikPanchang captures this with dated muhurat pages. Create a blog post listing all vivah muhurats for 2026-2027 with links to the muhurta finder tool."
   }
 ]

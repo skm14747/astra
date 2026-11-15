@@ -154,6 +154,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
       { question: 'How do planetary transits affect my Dasha?', answer: 'Transits (Gochar) and Dashas work together. A favorable Dasha with difficult transits may see delays, while a challenging Dasha with strong transits can mitigate problems. Ashtakavarga Bindu scores indicate the strength of each transit.' },
     ],
     relatedTools: [
+      { href: '/vedic/sade-sati', label: 'Sade Sati Calculator' },
       { href: '/vedic/ashtakavarga', label: 'Ashtakavarga' },
       { href: '/vedic/dashas', label: 'Dasha Timeline' },
       { href: '/vedic/remedies', label: 'Vedic Remedies' },
@@ -239,6 +240,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
       { question: 'How is a marriage Muhurta selected?', answer: 'A marriage Muhurta requires favorable Tithi (avoiding Rikta Tithis), auspicious Nakshatra (like Rohini, Mrigashira, Uttara Phalguni), strong Lagna, absence of Rahu Kalam and Gulika, and no combustion of Venus or Jupiter. Personal Tarabala and Chandrabala are also checked.' },
     ],
     relatedTools: [
+      { href: '/vedic/choghadiya', label: "Today's Choghadiya" },
       { href: '/vedic/panchang', label: 'Daily Panchang' },
       { href: '/vedic/transits', label: 'Planetary Transits' },
       { href: '/vedic/nakshatra', label: 'Nakshatra Analysis' },
@@ -589,7 +591,7 @@ export function buildVedicMetadata(slug: string): Metadata {
       canonical: seo.canonical,
       languages: {
         'en': seo.canonical,
-        'hi': seo.canonical,
+        'hi': `/hi${seo.canonical}`,
         'x-default': seo.canonical,
       },
     },

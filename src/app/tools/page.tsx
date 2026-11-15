@@ -5,7 +5,10 @@ import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 export const metadata: Metadata = {
   title: 'Free Vedic Astrology Calculators & Tools',
   description: 'Browse all Astra Destiny astrology calculators — Kundli generator, Dasha calculator, Kundli Milan, Panchang, Nakshatra finder, Dosha checks, and 20+ more free Jyotish tools.',
-  alternates: { canonical: '/tools' },
+  alternates: {
+    canonical: '/tools',
+    languages: { 'en': '/tools', 'hi': '/hi/tools', 'x-default': '/tools' },
+  },
   openGraph: {
     title: 'Free Vedic Astrology Calculators & Tools | Astra Destiny',
     description: 'Browse 200+ free Vedic astrology calculators — Kundli, Dasha, Kundli Milan, Panchang, Nakshatra, and more.',
@@ -36,6 +39,7 @@ const TOOL_CATEGORIES: { title: string; tools: ToolItem[] }[] = [
       { href: '/vedic/dashas', name: 'Mahadasha Calculator', description: 'Vimshottari, Yogini & Ashtottari Dasha timelines with all sub-periods.', icon: '⏳' },
       { href: '/vedic/predictions', name: 'Varshaphal (Annual)', description: 'Solar Return chart with Muntha, Year Lord, and Tajaka Yogas.', icon: '🔮' },
       { href: '/vedic/transits', name: 'Sade Sati & Transits', description: 'Saturn transit detection, Kantaka Shani, Dhaiya, and transit strength.', icon: '♄' },
+      { href: '/vedic/sade-sati', name: 'Sade Sati Calculator', description: 'Check if Saturn\'s 7.5-year Sade Sati is running, detect phase, Dhaiya & remedies.', icon: '🪐' },
     ],
   },
   {
@@ -58,6 +62,7 @@ const TOOL_CATEGORIES: { title: string; tools: ToolItem[] }[] = [
     tools: [
       { href: '/vedic/panchang', name: "Today's Panchang", description: 'Daily Hindu almanac — Tithi, Nakshatra, Yoga, Karana, Rahu Kalam.', icon: '📅' },
       { href: '/vedic/muhurta', name: 'Muhurta Finder', description: 'Find auspicious times for marriage, griha pravesh, travel, and 20+ activities.', icon: '🕐' },
+      { href: '/vedic/choghadiya', name: "Today's Choghadiya", description: 'Day & night Choghadiya timings — Shubh, Labh, Amrit, Char periods for your location.', icon: '⏱' },
     ],
   },
   {

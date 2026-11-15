@@ -4,7 +4,10 @@ import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 export const metadata: Metadata = {
   title: 'Terms of Service',
   description: 'Terms of Service for Astra Destiny — usage terms for our free Vedic astrology calculator platform.',
-  alternates: { canonical: '/terms' },
+  alternates: {
+    canonical: '/terms',
+    languages: { 'en': '/terms', 'hi': '/hi/terms', 'x-default': '/terms' },
+  },
 };
 
 export default function TermsPage() {

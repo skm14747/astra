@@ -9,10 +9,12 @@ const POPULAR_TOOLS = [
   { href: '/vedic/mangal-dosha', label: 'Mangal Dosha Check' },
   { href: '/vedic/kaal-sarp-dosha', label: 'Kaal Sarp Dosha' },
   { href: '/vedic/navamsa', label: 'Navamsa (D9) Chart' },
-  { href: '/vedic/transits', label: 'Sade Sati Calculator' },
+  { href: '/vedic/sade-sati', label: 'Sade Sati Calculator' },
+  { href: '/vedic/choghadiya', label: "Today's Choghadiya" },
   { href: '/vedic/yogas', label: 'Yoga & Dosha Analysis' },
   { href: '/vedic/muhurta', label: 'Muhurta Finder' },
   { href: '/vedic/divisional', label: 'Divisional Charts' },
+  { href: '/vedic/transits', label: 'Planetary Transits' },
 ];
 
 const RESOURCES = [

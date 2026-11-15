@@ -20,7 +20,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${post.title} | Astra Blog`,
     description: post.description,
     keywords: post.keywords,
-    alternates: { canonical: `/blog/${post.slug}` },
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+      languages: { 'en': `/blog/${post.slug}`, 'hi': `/hi/blog/${post.slug}`, 'x-default': `/blog/${post.slug}` },
+    },
     openGraph: {
       title: post.title,
       description: post.description,

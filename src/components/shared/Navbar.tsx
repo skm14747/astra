@@ -1,7 +1,7 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useProfile } from '@/lib/profile/context';
 import { useSettings, type FontSize } from '@/lib/settings/context';
 import { useT } from '@/lib/i18n';
@@ -27,6 +27,7 @@ const NAV_GROUPS: { labelKey: TranslationKey; items: { href: string; labelKey: T
     items: [
       { href: '/vedic/dashas', labelKey: 'nav.dashas' },
       { href: '/vedic/transits', labelKey: 'nav.transits' },
+      { href: '/vedic/sade-sati', labelKey: 'nav.sadeSati' },
       { href: '/vedic/predictions', labelKey: 'nav.annualPredictions' },
       { href: '/vedic/nakshatra', labelKey: 'nav.nakshatra' },
       { href: '/vedic/kp', labelKey: 'nav.kp' },
@@ -46,6 +47,7 @@ const NAV_GROUPS: { labelKey: TranslationKey; items: { href: string; labelKey: T
     items: [
       { href: '/vedic/panchang', labelKey: 'nav.panchang' },
       { href: '/vedic/muhurta', labelKey: 'nav.muhurta' },
+      { href: '/vedic/choghadiya', labelKey: 'nav.choghadiya' },
       { href: '/vedic/ashtakavarga', labelKey: 'nav.ashtakavarga' },
     ],
   },
@@ -72,9 +74,17 @@ const FONT_LABELS: Record<FontSize, string> = { small: 'S', default: 'M', large:
 export default function Navbar() {
   const pathname = usePathname();
   const { profiles, activeProfile, setActiveProfile } = useProfile();
+  const router = useRouter();
   const { fontSize, setFontSize, theme, setTheme, language, setLanguage } = useSettings();
   const t = useT();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const toggleLanguage = () => {
+    const newLang = language === 'en' ? 'hi' : 'en';
+    setLanguage(newLang);
+    const cleanPath = pathname.replace(/^\/hi/, '') || '/';
+    router.push(newLang === 'hi' ? `/hi${cleanPath}` : cleanPath);
+  };
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [profileDropdown, setProfileDropdown] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -243,7 +253,7 @@ export default function Navbar() {
               <span className="w-px h-4 bg-white/[0.08] mx-0.5" />
               {/* Language toggle */}
               <button
-                onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
+                onClick={toggleLanguage}
                 className="w-7 h-7 flex items-center justify-center rounded-full text-[10px] font-bold text-zinc-400 hover:text-white hover:bg-white/[0.08] transition"
                 title={language === 'en' ? 'हिन्दी में बदलें' : 'Switch to English'}
                 aria-label={language === 'en' ? 'Switch to Hindi' : 'Switch to English'}
@@ -312,7 +322,7 @@ export default function Navbar() {
                   </div>
                 </div>
                 <button
-                  onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
+                  onClick={toggleLanguage}
                   className="w-8 h-8 rounded-lg bg-white/[0.04] flex items-center justify-center text-[10px] font-bold text-zinc-300 transition"
                   aria-label={language === 'en' ? 'Switch to Hindi' : 'Switch to English'}
                 >

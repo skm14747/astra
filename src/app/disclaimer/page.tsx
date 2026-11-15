@@ -4,7 +4,10 @@ import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 export const metadata: Metadata = {
   title: 'Astrology Disclaimer',
   description: 'Important disclaimer about Astra Destiny\'s Vedic astrology calculations — for educational and entertainment purposes only, not professional advice.',
-  alternates: { canonical: '/disclaimer' },
+  alternates: {
+    canonical: '/disclaimer',
+    languages: { 'en': '/disclaimer', 'hi': '/hi/disclaimer', 'x-default': '/disclaimer' },
+  },
 };
 
 export default function DisclaimerPage() {

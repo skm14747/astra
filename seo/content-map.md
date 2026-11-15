@@ -219,3 +219,103 @@ India drives 80%+ of Vedic astrology search volume. Key Hindi queries:
 - [AhrefsTop: DrikPanchang](https://ahrefstop.com/websites/drikpanchang.com) — panchang competitor data
 
 **Note:** Volumes are approximations from web search fallback. For precise data, run through DataForSEO or Ahrefs with API keys. Set `$DATAFORSEO_LOGIN` / `$DATAFORSEO_PASSWORD` or `$AHREFS_API_KEY` to unlock exact SERP data and keyword clustering.
+
+---
+
+## Expanded Research — November 2026 Update
+
+### New Keyword Clusters Discovered
+
+#### Rashifal / Daily Horoscope (P0 — 570K+ cluster)
+- **rashifal** — 521K monthly searches IN (AstroSage gets 73K visits from this keyword at position #3)
+- **aaj ka rashifal** — daily trending term on Google Trends India
+- **daily horoscope** — 550K global, **horoscope today** — 1.83M global
+- **Action:** Create `/rashifal` route with per-rashi daily predictions generated from the Dasha + transit engine
+- **Why critical:** Astra Destiny has ZERO rashifal pages. This is the single biggest untapped keyword.
+
+#### Hora Today (P1 — 60K+ cluster)
+- **hora today** — 40.5K monthly searches IN, **$1.14 CPC** (highest CPC in astrology timing)
+- DrikPanchang ranks #1 for this keyword
+- **Action:** Create `/vedic/hora` standalone page. `getCurrentHora()` already exists in muhurta.ts.
+
+#### Lucky Number / Color (P2 — 50K+ cluster)
+- **lucky number by date of birth** — estimated 10K–30K IN
+- **lucky color by rashi**, **shubh ank**, **rashi ratna chart**
+- **Action:** Create `/vedic/lucky-number` — simple calculator from existing rashi/nakshatra data
+
+#### Vivah Muhurat (P1 — 35K+ seasonal)
+- **vivah muhurat 2026**, **wedding dates 2026**, **shadi muhurat 2026**
+- Massive spike during Nov–Feb and Apr–Jun wedding seasons
+- **Action:** Create blog post listing all 2026-2027 vivah muhurats, link to muhurta tool
+
+### Updated Competitor Data (October 2026)
+
+| Competitor | Semrush Oct 2026 | Ahrefs Oct 2026 | Key Change |
+|---|---|---|---|
+| **DrikPanchang** | 9.83M organic | 3.3M | Now #1 by Semrush. 92% MoM growth in Oct. |
+| **AstroSage** | 6.69M organic | 3.7M | rashifal surged (+41.9K traffic from this term) |
+| **ProKerala** | 11.23M (Semrush) | 4M | Multi-vertical. "today tithi" = 60K visits |
+| **AstroYogi** | 1.6M | — | Stable, brand-driven |
+| **GaneshaSpeaks** | 1.6M | — | Growing slightly (+80.6K) |
+| **mPanchang** | 243K | — | Declining (-55K), niche muhurta |
+
+### Critical Insight: Career > Marriage in India
+
+Two independent first-party datasets confirm:
+
+1. **KundliAI** (3,000+ kundli generations): Career content is the #1 performing content by a wide margin. "Job kab milegi kundli se" is their single highest-performing piece.
+
+2. **Ishvaram** (351,591 AI-Jyotish conversations, 306,171 kundalis):
+   - Career & work: **39.2%** of first questions
+   - Marriage & relationships: **24.1%**
+   - Doshas & remedies: **21.7%**
+   - Muhurat / timing: **3.9%**
+   - Health: **2.8%**
+   - Money & finance: **2.2%**
+
+**Implication:** Career astrology pages need the MOST content depth, Hindi translations, and blog support. Marriage matching (while high volume) is secondary in actual user intent.
+
+### Bilingual Content Advantage
+
+KundliAI data confirms: Hindi and Hinglish content consistently outperforms English-only content in both impressions and CTR for the India market. Key actions:
+- Add Devanagari script in key page titles (already done for kundli)
+- Create Hindi blog posts for career prediction
+- Ensure all rashifal content is bilingual
+
+### Monetization Keywords (High CPC)
+
+| Keyword | CPC | Volume | Opportunity |
+|---|---|---|---|
+| hora today | $1.14 | 40.5K IN | Create /vedic/hora |
+| astrologer near me | $0.87 | 49.5K | Directory/marketplace (future) |
+| free 5 minutes astrology | $2.20+ | 22.2K | Consultation lead funnel |
+| neelam stone / pukhraj stone | $1.50+ | 10K+ | Gemstone affiliate in remedies |
+| astrocartography | $0.48 | 165K global | Relocation astrology tool (future) |
+| kundli pdf download | $0.72 | 5K+ | PDF export in /vedic/report |
+
+### Updated Blog Content Pipeline
+
+| Priority | Slug | Target Keyword | Est. Volume | Rationale |
+|---|---|---|---|---|
+| P0 | `career-prediction-kundli` | job kab milegi kundli se | 10K+ IN | #1 converting intent, bilingual |
+| P0 | `rashifal-guide` | rashifal kaise dekhe | 5K+ IN | Supports /rashifal page |
+| P0 | `choghadiya-guide` | choghadiya meaning | 5K+ | Supports /vedic/choghadiya |
+| P0 | `vivah-muhurat-2026` | vivah muhurat 2026 | 35K+ seasonal | Wedding season spike NOW |
+| P1 | `sade-sati-remedies` | sade sati remedies | 5K+ | Supports /vedic/sade-sati |
+| P1 | `kundli-matching-guide` | kundli matching for marriage | 5K+ | Marriage intent support |
+| P1 | `hora-guide` | hora meaning, planetary hours | 3K+ | Supports /vedic/hora page |
+| P1 | `vedic-vs-western` | vedic astrology vs western | 3K+ | Brand differentiation |
+| P1 | `gemstone-by-rashi` | rashi ratna, gemstone by rashi | 10K+ IN | Monetization via affiliate |
+| P2 | `kp-astrology-basics` | what is kp astrology | 2K+ | Authority builder |
+| P2 | `nadi-astrology-guide` | what is nadi astrology | 2K+ | Niche authority |
+
+### Additional Data Sources (Nov 2026 Update)
+
+- [Ishvaram: India's Astrology Questions — 351K AI-Jyotish Conversations](https://ishvaram.com/research/india-asks-ai-astrologer-2026/) — first-party conversation intent data
+- [Semrush: DrikPanchang Oct 2026 (9.83M organic)](https://www.semrush.com/website/drikpanchang.com/overview/)
+- [Semrush: AstroSage Oct 2026 (6.69M organic)](https://www.semrush.com/website/astrosage.com/overview/)
+- [Ahrefs: AstroSage top keywords India](https://ahrefstop.com/websites/astrosage.com) — rashifal 521K, kundali milan 83K
+- [Ahrefs: DrikPanchang top keywords India](https://ahrefstop.com/websites/drikpanchang.com) — panchang 70K, choghadiya today 37K, din ka choghadiya 35K
+- [IndiBlogHub: Vedic Astrology Topical Map](https://indibloghub.com/topical-map/spirituality/vedic-astrology) — authority checklist
+- [TechList: DrikPanchang 13 Tools Exposed](https://techlist.ai/drikpanchang.com) — competitor tool analysis
+- [Google Trends: "aaj ka rashifal" trending India](https://trendoday.com/google-trends/in/%E0%A4%86%E0%A4%9C-%E0%A4%95-%E0%A4%B0%E0%A4%B6%E0%A4%AB%E0%A4%B2)
