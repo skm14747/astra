@@ -45,7 +45,10 @@ import {
   getMahadashaNarrative,
   generateCareerReading, generateMarriageReading, generateWealthReading,
   generateHealthReading, generateSpiritualReading,
-  ordinalHi, houseAreaHi,
+  ordinalHi, houseAreaHi, planetNameHi, SIGN_NAME_HI, PLANET_NAME_HI,
+  ordinalNe, houseAreaNe, planetNameNe, SIGN_NAME_NE, PLANET_NAME_NE,
+  ordinalPt, houseAreaPt, planetNamePt, SIGN_NAME_PT, PLANET_NAME_PT,
+  ordinalEs, houseAreaEs, planetNameEs, SIGN_NAME_ES, PLANET_NAME_ES,
 } from './interpretations';
 import type {
   NakshatraProfile, MahadashaNarrative,
@@ -249,21 +252,38 @@ export function generateFullReport(chart: KundliChart, lang: Lang = 'en'): FullR
     let area: string;
 
     if (lang === 'hi') {
-      const PLANET_HI: Record<string, string> = {
-        Sun: 'सूर्य', Moon: 'चंद्रमा', Mars: 'मंगल', Mercury: 'बुध',
-        Jupiter: 'गुरु', Venus: 'शुक्र', Saturn: 'शनि', Rahu: 'राहु', Ketu: 'केतु',
-      };
-      const ph = (name: string) => PLANET_HI[name] || name;
+      const ph = planetNameHi;
       planetsText = h.planets.length > 0
-        ? `${h.planets.map(pp => ph(pp)).join(', ')} इस भाव में विराजमान हैं, अपनी ऊर्जाएँ सीधे इन जीवन क्षेत्रों में लाते हैं।`
-        : 'कोई ग्रह इस भाव में नहीं — परिणाम मुख्यतः स्वामी की स्थिति और प्राप्त दृष्टियों पर निर्भर।';
-      lordText = `आपके ${ordinalHi(i + 1)} भाव का स्वामी ${ph(h.lord)} है, जो ${ordinalHi(lordHouse)} भाव में स्थित है। यह ${houseAreaHi(i + 1)} को ${houseAreaHi(lordHouse)} से जोड़ता है।`;
+        ? `इस भाव में ${h.planets.map(pp => ph(pp)).join(', ')} की स्थिति इन जीवन-प्रसंगों को विशेष रूप से सक्रिय, गतिशील और प्रभावशाली बनाती है।`
+        : `यह भाव ग्रह-मुक्त है — इसका शुभाशुभ फल मुख्यतः भावेश ${ph(h.lord)} की स्थिति, युति एवं इस पर पड़ने वाली दृष्टियों द्वारा निर्धारित होगा।`;
+      lordText = `${ordinalHi(i + 1)} भाव के अधिपति ${ph(h.lord)} हैं, जो जन्म पत्रिका के ${ordinalHi(lordHouse)} भाव में विराजमान हैं। फलस्वरूप ${houseAreaHi(i + 1)} का सीधा प्रभाव आपके ${houseAreaHi(lordHouse)} पर दिखाई देगा।`;
       area = houseAreaHi(i + 1);
+    } else if (lang === 'ne') {
+      const ph = planetNameNe;
+      planetsText = h.planets.length > 0
+        ? `यस भावमा ${h.planets.map(pp => ph(pp)).join(', ')} को उपस्थिति यी जीवन-प्रसंगहरूलाई विशेष रूपले सक्रिय र प्रभावशाली बनाउँछ।`
+        : `यो भाव ग्रह-रहित छ — यसको सम्पूर्ण फल मुख्यतः भावेश ${ph(h.lord)} को अवस्थिति, युति तथा दृष्टि सम्बन्धबाट निर्देशित हुनेछ।`;
+      lordText = `${ordinalNe(i + 1)} भावका अधिपति ${ph(h.lord)} हुन्, जो कुण्डलीको ${ordinalNe(lordHouse)} भावमा स्थित हुनुहुन्छ। यसले गर्दा ${houseAreaNe(i + 1)} को प्रत्यक्ष प्रभाव तपाईंको ${houseAreaNe(lordHouse)} मा पर्नेछ।`;
+      area = houseAreaNe(i + 1);
+    } else if (lang === 'pt') {
+      const ph = planetNamePt;
+      planetsText = h.planets.length > 0
+        ? `A presença de ${h.planets.map(pp => ph(pp)).join(', ')} neste setor infunde dinamismo, foco e aprendizados intensos aos assuntos desta casa.`
+        : `Esta casa não abriga planetas diretamente — suas promessas fluem por meio da condição cósmica de seu regente, ${ph(h.lord)}, e dos aspectos recebidos por ela.`;
+      lordText = `O regente desta ${ordinalPt(i + 1)} casa é ${ph(h.lord)}, estabelecido na ${ordinalPt(lordHouse)} casa natal. Esse entrelaçamento cósmico faz com que as experiências de ${houseAreaPt(i + 1)} se manifestem primordialmente por meio de ${houseAreaPt(lordHouse)}.`;
+      area = houseAreaPt(i + 1);
+    } else if (lang === 'es') {
+      const ph = planetNameEs;
+      planetsText = h.planets.length > 0
+        ? `La presencia de ${h.planets.map(pp => ph(pp)).join(', ')} en este sector focaliza tus vivencias cotidianas y despierta un movimiento notable en estos asuntos de vida.`
+        : `Esta casa se encuentra libre de planetas — sus frutos dependen esencialmente de la dignidad cósmica de su regente, ${ph(h.lord)}, y de las miradas planetarias (drishti) que confluyen en ella.`;
+      lordText = `El regente de esta ${ordinalEs(i + 1)} casa es ${ph(h.lord)}, posicionado en la ${ordinalEs(lordHouse)} casa natal. Esta conexión entrelaza de forma natural las vivencias de ${houseAreaEs(i + 1)} con el desarrollo de ${houseAreaEs(lordHouse)}.`;
+      area = houseAreaEs(i + 1);
     } else {
       planetsText = h.planets.length > 0
-        ? `${h.planets.join(', ')} ${h.planets.length > 1 ? 'occupy' : 'occupies'} this house, bringing their energies directly into these life areas.`
-        : 'No planets occupy this house — results depend primarily on the lord\'s placement and aspects received.';
-      lordText = `The lord of your ${ordinal(i + 1)} house is ${h.lord}, placed in the ${ordinal(lordHouse)} house. This connects ${houseArea(i + 1)} with ${houseArea(lordHouse)}.`;
+        ? `${h.planets.join(', ')} ${h.planets.length > 1 ? 'occupy' : 'occupies'} this house, bringing vital energy and focus directly into these life dimensions.`
+        : `No planets occupy this house directly — its outcomes unfold primarily through the placement, dignity, and aspects received by its lord, ${h.lord}.`;
+      lordText = `The lord of your ${ordinal(i + 1)} house is ${h.lord}, seated in the ${ordinal(lordHouse)} house. This cosmic link channels the affairs of ${houseArea(i + 1)} directly into ${houseArea(lordHouse)}.`;
       area = houseArea(i + 1);
     }
 
@@ -283,33 +303,46 @@ export function generateFullReport(chart: KundliChart, lang: Lang = 'en'): FullR
   const ascLord = RASHI_LORDS[chart.ascendant.rashi];
   const ascLordHouse = chart.planets[ascLord as Planet]?.house ?? 1;
   const ascText = getPlanetInSignText('Sun', ascSign, lang);
-  const SIGN_HI: Record<string, string> = {
-    Aries: 'मेष', Taurus: 'वृषभ', Gemini: 'मिथुन', Cancer: 'कर्क',
-    Leo: 'सिंह', Virgo: 'कन्या', Libra: 'तुला', Scorpio: 'वृश्चिक',
-    Sagittarius: 'धनु', Capricorn: 'मकर', Aquarius: 'कुंभ', Pisces: 'मीन',
+
+  const buildAscText = (): string => {
+    if (lang === 'hi')
+      return `आपकी जन्म कुंडली का लग्न ${SIGN_NAME_HI[ascSign] || ascSign} है, जिससे आपका लग्न स्वरूप ${SIGN_NAME_HI[ascSign] || ascSign} बनता है। लग्नेश ${planetNameHi(ascLord)} आपकी जन्म पत्रिका के ${ordinalHi(ascLordHouse)} भाव में विराजमान हैं — यह स्थिति आपकी स्वाभाविक जीवन-ऊर्जा, व्यक्तित्व और आत्मबल को विशेष रूप से ${houseAreaHi(ascLordHouse)} से जोड़ती है। ${ascText.nature}`;
+    if (lang === 'ne')
+      return `तपाईंको जन्म कुण्डलीको लग्न ${SIGN_NAME_NE[ascSign] || ascSign} हो, जसले तपाईंलाई ${SIGN_NAME_NE[ascSign] || ascSign} लग्नको जातक बनाउँछ। लग्नेश ${planetNameNe(ascLord)} कुण्डलीको ${ordinalNe(ascLordHouse)} भावमा विराजमान हुनुहुन्छ — यसले तपाईंको सम्पूर्ण जीवन-ऊर्जा, व्यक्तित्व र आत्मबललाई विशेष गरी ${houseAreaNe(ascLordHouse)} सँग जोड्दछ। ${ascText.nature}`;
+    if (lang === 'pt')
+      return `Seu Ascendente (Lagna) está no signo sideral de ${SIGN_NAME_PT[ascSign] || ascSign}, delineando a sua presença física e a sua forma de se projetar no mundo. O regente do Ascendente, ${planetNamePt(ascLord)}, ocupa a sua ${ordinalPt(ascLordHouse)} casa natal, ancorando a sua força vital e o seu impulso de autorrealização nos assuntos de ${houseAreaPt(ascLordHouse)}. ${ascText.nature}`;
+    if (lang === 'es')
+      return `Tu Ascendente (Lagna) se ubica en el signo sideral de ${SIGN_NAME_ES[ascSign] || ascSign}, configurando tu impronta personal y el modo en que te presentas ante la vida. El planeta regente del Ascendente, ${planetNameEs(ascLord)}, se encuentra en tu ${ordinalEs(ascLordHouse)} casa, orientando tu energía vital y tu propósito personal hacia los temas de ${houseAreaEs(ascLordHouse)}. ${ascText.nature}`;
+    return `Your Ascendant (Lagna) rises in sidereal ${ascSign}, shaping your core persona and path of worldly engagement. The Ascendant lord, ${ascLord}, is seated in your ${ordinal(ascLordHouse)} house, anchoring your essential life force and self-expression in ${houseArea(ascLordHouse)}. ${ascText.nature}`;
   };
-  const PLANET_HI_MAP: Record<string, string> = {
-    Sun: 'सूर्य', Moon: 'चंद्रमा', Mars: 'मंगल', Mercury: 'बुध',
-    Jupiter: 'गुरु', Venus: 'शुक्र', Saturn: 'शनि', Rahu: 'राहु', Ketu: 'केतु',
-  };
+
   const ascendantReading = {
     sign: ascSign,
     lord: ascLord,
     lordHouse: ascLordHouse,
-    text: lang === 'hi'
-      ? `आपका लग्न (Ascendant) ${SIGN_HI[ascSign] || ascSign} है, जो आपको ${SIGN_HI[ascSign] || ascSign} लग्न का जातक बनाता है। आपके लग्न का स्वामी ${PLANET_HI_MAP[ascLord] || ascLord}, आपके ${ordinalHi(ascLordHouse)} भाव में स्थित है, जो आपकी जीवन शक्ति को ${houseAreaHi(ascLordHouse)} की ओर निर्देशित करता है। ${ascText.nature}`
-      : `Your Ascendant (Lagna) is ${ascSign}, making you a ${ascSign} rising native. The lord of your Ascendant, ${ascLord}, is placed in your ${ordinal(ascLordHouse)} house, directing your life force toward ${houseArea(ascLordHouse)}. ${ascText.nature}`,
+    text: buildAscText(),
   };
 
   // Moon sign reading
   const moonPos = chart.planets.Moon;
   const moonSignText = getPlanetInSignText('Moon', moonPos.rashiName, lang);
+
+  const buildMoonText = (): string => {
+    if (lang === 'hi')
+      return `जन्म के समय चंद्रमा ${SIGN_NAME_HI[moonPos.rashiName] || moonPos.rashiName} राशि में संचरण कर रहे थे, अतः आपकी जन्म राशि ${SIGN_NAME_HI[moonPos.rashiName] || moonPos.rashiName} है। आपका जन्म ${moonPos.nakshatraName} नक्षत्र के ${moonPos.pada}वें चरण में हुआ है। ${moonSignText.nature} इस नक्षत्र और चंद्र स्थिति के प्रभाव से आपकी मानसिक सोच, भावनात्मक संवेदनशीलता और अंतःकरण में इसके विशिष्ट गुण स्वाभाविक रूप से परिलक्षित होंगे।`;
+    if (lang === 'ne')
+      return `जन्मको समयमा चन्द्रमा ${SIGN_NAME_NE[moonPos.rashiName] || moonPos.rashiName} राशिमा रहेकाले तपाईंको जन्म राशि ${SIGN_NAME_NE[moonPos.rashiName] || moonPos.rashiName} हो। तपाईंको जन्म ${moonPos.nakshatraName} नक्षत्रको ${moonPos.pada}औं चरणमा भएको छ। ${moonSignText.nature} यस नक्षत्र र चन्द्र प्रभावले गर्दा तपाईंको मन, भावना र निर्णय क्षमतामा यसका विशिष्ट लक्षणहरू झल्कनेछन्।`;
+    if (lang === 'pt')
+      return `No momento de seu nascimento, a Lua (Chandra) transitava por ${SIGN_NAME_PT[moonPos.rashiName] || moonPos.rashiName}, definindo este como o seu signo lunar de nascimento (Rashi). Você nasceu sob a regência do Nakshatra ${moonPos.nakshatraName} (no ${moonPos.pada}º pada). ${moonSignText.nature} Essa posição confere à sua psique uma sensibilidade intuitiva marcante e molda a maneira como você busca segurança e acolhimento emocional.`;
+    if (lang === 'es')
+      return `En el instante de tu nacimiento, la Luna (Chandra) transitaba por ${SIGN_NAME_ES[moonPos.rashiName] || moonPos.rashiName}, convirtiéndolo en tu signo lunar (Rashi). Has nacido bajo el influjo del Nakshatra ${moonPos.nakshatraName} (en el pada ${moonPos.pada}). ${moonSignText.nature} Esta constelación nutre tu vida anímica con cualidades intuitivas singulares y modela el modo en que buscas equilibrio y serenidad interior.`;
+    return `At the moment of your birth, the Moon (Chandra) traversed ${moonPos.rashiName}, making this your natal Rashi (Moon sign). You were born under ${moonPos.nakshatraName} Nakshatra (Pada ${moonPos.pada}). ${moonSignText.nature} This lunar placement deeply influences your emotional rhythm, instinctual responses, and inner sanctuary.`;
+  };
+
   const moonSignReading = {
     sign: moonPos.rashiName,
     nakshatra: moonPos.nakshatraName,
-    text: lang === 'hi'
-      ? `आपका चंद्रमा ${SIGN_HI[moonPos.rashiName] || moonPos.rashiName} में है, जो इसे आपकी राशि (चंद्र राशि) बनाता है। ${moonSignText.nature} ${moonPos.nakshatraName} नक्षत्र (पद ${moonPos.pada}) में जन्म लेकर, आपका भावनात्मक स्वभाव इसके विशिष्ट गुणों को धारण करता है।`
-      : `Your Moon (Chandra) is in ${moonPos.rashiName}, making this your Rashi (Moon sign). ${moonSignText.nature} Born under ${moonPos.nakshatraName} nakshatra (pada ${moonPos.pada}), your emotional temperament carries its specific qualities.`,
+    text: buildMoonText(),
   };
 
   const nakshatraProfile = getNakshatraProfile(moonPos.nakshatra, lang);

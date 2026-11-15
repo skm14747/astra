@@ -82,7 +82,7 @@ export default function Navbar() {
   const toggleLanguage = () => {
     const newLang = language === 'en' ? 'hi' : 'en';
     setLanguage(newLang);
-    const cleanPath = pathname.replace(/^\/hi/, '') || '/';
+    const cleanPath = pathname.replace(/^\/(hi|ne|pt|es)/, '') || '/';
     router.push(newLang === 'hi' ? `/hi${cleanPath}` : cleanPath);
   };
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);

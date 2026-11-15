@@ -1,5 +1,6 @@
 'use client';
-import { createContext, useContext, useMemo, useEffect, type ReactNode } from 'react';
+import { createContext, useContext, useMemo, useEffect, useState, useCallback, type ReactNode } from 'react';
+import { usePathname } from 'next/navigation';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import type { AyanamsaSystem, ChartStyle } from '@/lib/vedic/types';
 
@@ -25,42 +26,53 @@ interface SettingsContextValue {
 const SettingsContext = createContext<SettingsContextValue | null>(null);
 
 /**
- * Reads the locale cookie set by middleware for /hi/* routes.
- * Falls back to 'en' if no cookie is found.
+ * Extracts language prefix from pathname.
+ * Works symmetrically in SSR and client hydration to prevent mismatches.
  */
-function getLocaleFromCookie(): Language {
-  if (typeof document === 'undefined') return 'en';
-  const match = document.cookie.match(/(?:^|;\s*)astra-locale=(\w+)/);
-  const val = match?.[1];
-  if (val === 'hi') return 'hi';
-  if (val === 'ne') return 'ne';
-  if (val === 'pt') return 'pt';
-  if (val === 'es') return 'es';
-  return 'en';
+function getLocaleFromPathname(pathname: string | null): Language | null {
+  if (!pathname) return null;
+  if (pathname.startsWith('/hi/') || pathname === '/hi') return 'hi';
+  if (pathname.startsWith('/ne/') || pathname === '/ne') return 'ne';
+  if (pathname.startsWith('/pt/') || pathname === '/pt') return 'pt';
+  if (pathname.startsWith('/es/') || pathname === '/es') return 'es';
+  return null;
 }
 
 export function SettingsProvider({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const routeLocale = getLocaleFromPathname(pathname);
+
   const [ayanamsaSystem, setAyanamsaSystem] = useLocalStorage<AyanamsaSystem>('astra-ayanamsa', 'lahiri');
   const [chartStyle, setChartStyle] = useLocalStorage<ChartStyle | 'both'>('astra-chart-style', 'both');
   const [fontSize, setFontSize] = useLocalStorage<FontSize>('astra-font-size', 'default');
   const [theme, setTheme] = useLocalStorage<ThemeMode>('astra-theme', 'dark');
-  const [language, setLanguageRaw] = useLocalStorage<Language>('astra-language', 'en');
 
-  // On first mount, sync with the locale cookie (set by middleware for /hi/* URLs)
+  // Authoritative language: Route prefix has highest priority for crawler & SSR determinism
+  const [language, setLanguageState] = useState<Language>(routeLocale || 'en');
+
+  // Keep language in sync with route changes
   useEffect(() => {
-    const cookieLocale = getLocaleFromCookie();
-    if (cookieLocale !== language) {
-      setLanguageRaw(cookieLocale);
+    if (routeLocale && routeLocale !== language) {
+      setLanguageState(routeLocale);
+      try {
+        localStorage.setItem('astra-language', JSON.stringify(routeLocale));
+        document.cookie = `astra-locale=${routeLocale}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
+      } catch { /* ignore */ }
+    } else if (!routeLocale) {
+      // Non-prefixed route is English default
+      if (language !== 'en') {
+        setLanguageState('en');
+      }
     }
-    // Only run on mount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [routeLocale, language]);
 
-  const setLanguage = (l: Language) => {
-    setLanguageRaw(l);
-    // Also update the cookie so middleware stays in sync
-    document.cookie = `astra-locale=${l}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
-  };
+  const setLanguage = useCallback((l: Language) => {
+    setLanguageState(l);
+    try {
+      localStorage.setItem('astra-language', JSON.stringify(l));
+      document.cookie = `astra-locale=${l}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
+    } catch { /* ignore */ }
+  }, []);
 
   useEffect(() => {
     document.documentElement.style.fontSize = `${FONT_SCALE[fontSize]}%`;

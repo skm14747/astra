@@ -22,7 +22,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     keywords: post.keywords,
     alternates: {
       canonical: `/blog/${post.slug}`,
-      languages: { 'en': `/blog/${post.slug}`, 'hi': `/hi/blog/${post.slug}`, 'x-default': `/blog/${post.slug}` },
+      languages: {
+        'en': `/blog/${post.slug}`,
+        'hi': `/hi/blog/${post.slug}`,
+        'ne': `/ne/blog/${post.slug}`,
+        'pt': `/pt/blog/${post.slug}`,
+        'es': `/es/blog/${post.slug}`,
+        'x-default': `/blog/${post.slug}`,
+      },
     },
     openGraph: {
       title: post.title,

@@ -575,8 +575,8 @@ body {
     background: white !important;
     color: #1e1b2e !important;
     font-size: 9.5pt !important;
-    line-height: 1.55 !important;
-    font-family: 'Georgia', 'Palatino Linotype', serif !important;
+    line-height: 1.6 !important;
+    font-family: 'Noto Sans Devanagari', 'Noto Sans', 'Georgia', 'Palatino Linotype', system-ui, sans-serif !important;
     text-align: left !important;
   }
 
@@ -602,13 +602,13 @@ body {
 
   /* ── Cards ── */
   .glass-card {
-    background: white !important;
-    border: 1px solid #e8e6f0 !important;
-    border-left: 2px solid #7c3aed !important;
+    background: #fafafa !important;
+    border: 1px solid #e2e0ec !important;
+    border-left: 3px solid #7c3aed !important;
     box-shadow: none !important;
-    border-radius: 2px !important;
-    padding: 8pt 12pt !important;
-    margin-bottom: 5pt !important;
+    border-radius: 4px !important;
+    padding: 10pt 14pt !important;
+    margin-bottom: 6pt !important;
   }
 
   /* ── Cover Page ── */
@@ -646,19 +646,20 @@ body {
     font-size: 13pt !important;
     font-weight: 700 !important;
     color: #1e1b2e !important;
-    font-family: system-ui, -apple-system, sans-serif !important;
+    font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, -apple-system, sans-serif !important;
     letter-spacing: 0.01em !important;
     border-bottom: 1.5pt solid #7c3aed !important;
-    padding-bottom: 3pt !important;
-    margin-top: 12pt !important;
-    margin-bottom: 6pt !important;
+    padding-bottom: 4pt !important;
+    margin-top: 14pt !important;
+    margin-bottom: 8pt !important;
     page-break-after: avoid;
   }
   section h3 {
     font-size: 10pt !important;
     font-weight: 600 !important;
     color: #2d2855 !important;
-    font-family: system-ui, -apple-system, sans-serif !important;
+    font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, -apple-system, sans-serif !important;
+    margin-bottom: 3pt !important;
   }
 
   /* ── Typography ── */
@@ -776,13 +777,59 @@ body {
 
   /* ── Footer ── */
   [data-print-footer] {
-    border-top: 1pt solid #7c3aed !important;
-    padding-top: 10pt !important;
-    margin-top: 14pt !important;
+    border-top: 1.5pt solid #7c3aed !important;
+    padding-top: 12pt !important;
+    margin-top: 16pt !important;
     text-align: center !important;
   }
   [data-print-footer] p {
     color: #7c3aed !important;
     font-size: 7.5pt !important;
   }
+
+  /* ── Cover Page Enhancements ── */
+  [data-print-cover] h1 {
+    font-size: 28pt !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em !important;
+    color: #1e1b2e !important;
+  }
+  [data-print-cover] .text-violet-400 {
+    font-size: 10pt !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    color: #7c3aed !important;
+    margin-bottom: 10pt !important;
+  }
+
+  /* ── Part Divider Styling ── */
+  [data-print-part-divider] h2 {
+    font-size: 18pt !important;
+    color: #7c3aed !important;
+    border-bottom: 2pt solid #7c3aed !important;
+    padding-bottom: 8pt !important;
+  }
+
+  /* ── Table of Contents ── */
+  [data-print-page-break] ol li {
+    padding: 2pt 0 !important;
+    border-bottom: 0.5pt dotted #d1d1d8 !important;
+  }
+
+  /* ── Dashboard Summary ── */
+  [data-print-page-break] .glass-card {
+    border-left-width: 3px !important;
+  }
+
+  /* ── Better link handling ── */
+  a[href]::after { content: none !important; }
+
+  /* ── Download Button Hidden in Print ── */
+  [data-print-download-btn] { display: none !important; }
+
+  /* ── Prevent orphan text ── */
+  p { orphans: 3; widows: 3; }
+
+  /* ── Better page-break handling for cards ── */
+  .glass-card { break-inside: avoid; page-break-inside: avoid; }
 }

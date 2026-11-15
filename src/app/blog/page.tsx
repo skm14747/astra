@@ -10,7 +10,14 @@ export const metadata: Metadata = {
   keywords: ['vedic astrology blog', 'jyotish guide', 'astrology tutorial', 'learn vedic astrology', 'kundli reading guide'],
   alternates: {
     canonical: '/blog',
-    languages: { 'en': '/blog', 'hi': '/hi/blog', 'x-default': '/blog' },
+    languages: {
+      'en': '/blog',
+      'hi': '/hi/blog',
+      'ne': '/ne/blog',
+      'pt': '/pt/blog',
+      'es': '/es/blog',
+      'x-default': '/blog',
+    },
   },
   openGraph: {
     title: 'Vedic Astrology Blog — Jyotish Guides & Tutorials',
