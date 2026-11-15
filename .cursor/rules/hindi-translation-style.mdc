@@ -1,0 +1,54 @@
+---
+description: Hindi translation style guide — colloquial, natural Hindi for all i18n strings. Applies when editing Hindi translations or adding new i18n keys.
+globs: src/lib/i18n/hi.ts
+alwaysApply: false
+---
+
+# Hindi Translation Style — Colloquial, Not Textbook
+
+## Core Principle
+
+Write Hindi the way real people talk — like a friend explaining ज्योतिष over chai, not a Sanskrit textbook. Our audience is everyday Hindi speakers in India, including elderly users who prefer Hindi but are comfortable with common English words.
+
+## Tone
+
+- **Warm and direct** — "अपनी कुंडली देखें" not "कृपया अपनी जन्म कुंडली अवलोकित करें"
+- **Hinglish is fine** — Use English words when Hindi speakers naturally would: check, score, position, timeline, health, free, profile, download
+- **Short labels** — UI text should be punchy: "चालू" not "सक्रिय", "बदलें" not "संपादित करें"
+- **No shudh Hindi** — Avoid overly Sanskritized words that nobody uses in conversation
+
+## Word Choices
+
+| ❌ Avoid (textbook) | ✅ Use (colloquial) |
+|---------------------|---------------------|
+| सक्रिय / निष्क्रिय | चालू / बंद |
+| प्रबल / दुर्बल | मज़बूत / कमज़ोर |
+| अनुकूल / चुनौतीपूर्ण | अच्छा / कठिन |
+| शेष | बाकी |
+| अवलोकन करें | देखें |
+| संपादित करें | बदलें |
+| निरस्तीकरण | भंग |
+| ब्रह्मांडीय रूपरेखा | किस्मत का नक्शा |
+| वार्षिक भविष्यवाणी | साल का फल |
+| स्वास्थ्य एवं आयु | सेहत और उम्र |
+| सुलभता | सुविधा |
+
+## SEO & Long Text
+
+- SEO intros should read like someone *explaining* — "कुंडली असल में आपके जन्म के वक़्त आसमान का नक्शा है"
+- Use "यानी" and "मतलब" to clarify jargon naturally
+- Keep sentences short. Mix Hindi and English naturally.
+- FAQ answers should sound like a pandit ji answering warmly, not a Wikipedia article
+
+## Jyotish Terms — Keep As-Is
+
+Sanskrit astrology terms stay unchanged — they're the same in Hindi:
+कुंडली, दशा, महादशा, अंतर्दशा, नक्षत्र, राशि, भाव, लग्न, गोचर, योग, दोष, अयनांश, तिथि, षड्बल, अष्टकवर्ग
+
+## New Key Checklist
+
+When adding a new i18n key to `hi.ts`:
+1. Read it aloud — does it sound like something you'd say to your दादी/नानी?
+2. If it sounds like Google Translate or a government document, rewrite it
+3. Check if there's a common Hinglish alternative (e.g., "डाउनलोड" > "अधोभारण")
+4. Keep it under ~40 chars for button/label text
