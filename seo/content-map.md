@@ -319,3 +319,146 @@ KundliAI data confirms: Hindi and Hinglish content consistently outperforms Engl
 - [IndiBlogHub: Vedic Astrology Topical Map](https://indibloghub.com/topical-map/spirituality/vedic-astrology) — authority checklist
 - [TechList: DrikPanchang 13 Tools Exposed](https://techlist.ai/drikpanchang.com) — competitor tool analysis
 - [Google Trends: "aaj ka rashifal" trending India](https://trendoday.com/google-trends/in/%E0%A4%86%E0%A4%9C-%E0%A4%95-%E0%A4%B0%E0%A4%B6%E0%A4%AB%E0%A4%B2)
+
+---
+
+## International Market Keyword Research — November 2026
+
+### Global Astrology Search Market Overview
+
+| Metric | 2025 | 2026 | Change |
+|---|---|---|---|
+| Monthly horoscope searches | 430M | 550M+ | +28% |
+| "AI horoscope" queries | 8M | 35M | +340% |
+| "Free fortune reading" searches | 12M | 19M | +58% |
+| Daily horoscope mobile share | 71% | 78% | +7pp |
+| Global astrology market size | — | $40B ($12.5B India) | — |
+| Astrology app market | $4.75B | $5.69B | +20% |
+
+**Source:** InstantFortune 2026 Global Horoscope & Zodiac Search Trends Report, TBRC, Redseer, Sensor Tower
+
+### Market Engagement by Country (Pew Research 2025)
+
+| Country | % Adults | Population | Astrology System | Language | Tier |
+|---|---|---|---|---|---|
+| South Africa | 47% | 60M | Western + some Vedic | English | 1 |
+| India | 45% | 1.4B | Vedic (Jyotish) | English + Hindi | 1 |
+| Nepal | N/A (est. high) | 30M | Vedic | English + Nepali | 1 |
+| Thailand | 29% | 70M | Thai + Chinese | Thai + English | 2 |
+| Bangladesh | N/A (est. high) | 170M | Vedic | English + Bangla | 2 |
+| Sri Lanka | 20% | 22M | Vedic + Sinhala | English + Sinhala | 2 |
+| Kenya | 23% | 55M | Western zodiac | English | 3 |
+| Philippines | 22% | 115M | Western zodiac | English | 3 |
+| Nigeria | 20% | 220M | Western zodiac | English | 3 |
+| South Korea | 20% | 52M | Saju (Four Pillars) | Korean | 4 |
+| Japan | 19% | 125M | Chinese + Western | Japanese | 4 |
+| Singapore | 19% | 6M | Chinese + Western | English + Chinese | 4 |
+| Brazil | growing fast | 215M | Western zodiac | Portuguese | 5 |
+| Mexico | growing fast | 130M | Western zodiac | Spanish | 5 |
+
+### International Keyword Clusters
+
+#### 🔴 P0 — Global English (New Pages Needed)
+
+| Cluster | Head Keyword | Volume | Target Markets | Action |
+|---|---|---|---|---|
+| Daily Horoscope | daily horoscope | 550K (3M+ cluster) | SA, Kenya, Nigeria, PH, SG | Create /horoscope/today |
+| Per-Sign Horoscope | [sign] horoscope today | 368K-450K per sign (4.4M total) | Global | Create /horoscope/[sign] (12 routes) |
+| AI Horoscope | AI horoscope | 35M (+340% YoY) | Global | Create /ai-horoscope landing page |
+| Birth Chart (intl) | birth chart / natal chart | 673K + 246K = 919K | US, SA, PH, SG, UK | Optimize /vedic/kundli with Western terms |
+
+#### 🟠 P1 — Market Expansion
+
+| Cluster | Head Keyword | Volume | Target Markets | Action |
+|---|---|---|---|---|
+| Zodiac Compatibility | zodiac compatibility | 200K+ cluster | SA, PH, NG, KE | Create /compatibility/zodiac |
+| Love Horoscope | love horoscope | 123K+ cluster | PH, NG, SA, BR, MX | Create /horoscope/love |
+| Weekly/Monthly | weekly horoscope | 380K+ cluster | US, UK, SA, PH, NG | Create /horoscope/weekly, /horoscope/monthly |
+| Rising Sign | rising sign / ascendant | 250K+ cluster | US, UK, SA, SG, PH | Create /tools/rising-sign |
+| Nepali Jyotish | nepali rashifal / patro | 50K+ NP | Nepal | Create /np/ locale |
+| Africa Horoscope | horoscope today SA/KE/NG | 80K+ combined | SA, Kenya, Nigeria | Geo-target English horoscope pages |
+| Fortune Reading | fortune teller / reading | 20M+ global | SA peak (16K/mo ZA) | Serve from /ai-horoscope |
+
+#### 🟡 P2 — Future Markets
+
+| Cluster | Head Keyword | Volume | Target Markets | Action |
+|---|---|---|---|---|
+| Bangla Rashifal | bangla rashifal | 30K+ BD | Bangladesh | Future /bn/ locale |
+| Sinhala Horoscope | sri lanka jyotish | 20K+ LK | Sri Lanka | English content already serves |
+| Korean Saju | 사주 (saju) | 100K+ KR | South Korea | Needs new engine + Korean locale |
+| Japanese Fortune | 今日の運勢 | 150K+ JP | Japan | Needs Japanese locale |
+| Chinese Zodiac | chinese zodiac | 700K+ global | SG, MY, VN, CN diaspora | Multi-system expansion |
+
+### Most Searched Zodiac Signs Globally (2026)
+
+| Rank | Sign | Search Index | Peak Country | Monthly Volume (est.) |
+|---|---|---|---|---|
+| 1 | Scorpio ♏ | 100 | USA, UK | 450K+ |
+| 2 | Aries ♈ | 94 | Brazil, India | 420K+ |
+| 3 | Taurus ♉ | 91 | France, USA | 410K+ |
+| 4 | Sagittarius ♐ | 88 | Brazil, Portugal | 390K+ |
+| 5 | Leo ♌ | 85 | USA, Australia | 380K+ |
+| 6 | Pisces ♓ | 82 | India, Indonesia | 370K+ |
+| 7 | Gemini ♊ | 79 | UK, Canada | 350K+ |
+| 8 | Libra ♎ | 76 | India, USA | 340K+ |
+| 9 | Cancer ♋ | 74 | Philippines, USA | 330K+ |
+| 10 | Virgo ♍ | 71 | India, UK | 320K+ |
+| 11 | Capricorn ♑ | 68 | USA, Germany | 300K+ |
+| 12 | Aquarius ♒ | 62 | Brazil, USA | 280K+ |
+
+**Source:** InstantFortune 2026 Global Horoscope & Zodiac Search Trends Report
+
+### Seasonal Search Patterns
+
+| Period | Volume vs Normal | Driver |
+|---|---|---|
+| January | 3x normal | New Year predictions, "2027 horoscope" queries |
+| Feb-Mar | 2x normal | Pisces season, Valentine's compatibility searches |
+| Aug | 0.7x (lowest) | Summer travel in West; India/SE Asia steady |
+| Oct-Nov | 2.5x normal | Scorpio season (#1 sign), Diwali/festival season |
+
+### Country-Specific Query Patterns
+
+| Country | Primary Query | Language | Key Insight |
+|---|---|---|---|
+| 🇮🇳 India | "horoscope today", "kundali" | English + Hindi | 45% adults. Career intent 39% of first questions. |
+| 🇿🇦 South Africa | "horoscope", "fortune teller" | English | 47% adults. 16K/mo "fortune teller" ZA. Zero Vedic competition. |
+| 🇳🇵 Nepal | "nepali rashifal", "nepali patro" | Romanized Nepali | Romanized 57x more than Devanagari. Same Vedic tradition. |
+| 🇵🇭 Philippines | "horoscope for today" | English | 115M pop, English-speaking. Cancer sign peak country. |
+| 🇰🇪 Kenya | "horoscope", "zodiac signs" | English | 23% adults. Low competition in English. |
+| 🇳🇬 Nigeria | "daily horoscope", "love horoscope" | English | 220M pop. Daily + love horoscope focus. |
+| 🇧🇷 Brazil | "horóscopo do dia", "signo" | Portuguese | Fastest growing (+62% YoY). Portuguese needed. |
+| 🇰🇷 South Korea | "오늘의 운세", "사주" | Korean | Saju system differs from Vedic. Korean needed. |
+| 🇯🇵 Japan | "今日の運勢", "星座占い" | Japanese | 10-15M monthly searches. Japanese needed. |
+| 🇸🇬 Singapore | "horoscope", "feng shui" | English + Chinese | High-income, multi-system. Good for testing. |
+
+### International Content Expansion Roadmap
+
+| Phase | Timeline | Target Markets | New Pages | Est. New Monthly Keywords |
+|---|---|---|---|---|
+| Phase 1 | Now | India + Global English | /rashifal (12 sign pages), /horoscope/today, /ai-horoscope, /vedic/hora | 5M+ |
+| Phase 2 | Q1 2027 | SA, Kenya, Nigeria, Philippines | /horoscope/[sign] (12 routes), /horoscope/love, /compatibility/zodiac | 6M+ |
+| Phase 3 | Q2 2027 | Nepal, Bangladesh, Sri Lanka | /np/ locale, Bangla rashifal, Sinhala content | 200K+ |
+| Phase 4 | H2 2027 | Singapore, Japan, South Korea | Chinese zodiac tools, Korean Saju, Japanese locale | 500K+ |
+
+### Key Strategic Insight: The "Vedic-to-Western Bridge"
+
+Astra Destiny's core Vedic calculation engine can serve Western zodiac audiences with a presentation layer change:
+- **Kundli → Birth Chart** (same calculation, different terminology)
+- **Kundli Milan → Zodiac Compatibility** (same 36 gunas, present as zodiac sign pairs)
+- **Rashi Predictions → Daily Horoscope** (same transit logic, present as zodiac sign content)
+- **Lagna Calculator → Rising Sign Calculator** (identical calculation)
+- **Hora → Planetary Hours** (same concept, Western name)
+
+This means Astra can serve 80%+ of international English keywords with **zero new calculation engines** — only a Western-facing presentation layer on existing tools.
+
+### Additional Data Sources (International Research)
+
+- [InstantFortune: 2026 Global Horoscope & Zodiac Search Trends Report](https://getfortuneai.com/en/insights/2026-zodiac-search-trends) — country breakdown, seasonal patterns, AI trends
+- [The Star Kenya: Which Countries Consult Fortune Tellers Most?](https://www.the-star.co.ke/news/infographics/2026-11-10-which-countries-consult-fortune-tellers-or-horoscope-most) — Pew Research 2025 engagement data
+- [PartyTrends ZA: Fortune Tellers in South Africa](https://www.partytrends.co.za/articles/decoding-the-rising-fascination-with-fortune-tellers-in-south-africa) — 16K/mo ZA volume
+- [New Indian Express: Astrology Platforms Draw Big Money](https://www.newindianexpress.com/business/2026/Sep/29/divine-intervention-astrology-platforms-draw-big-money) — $12.5B India, 80M MAU
+- [BluntChart: Astrology App Statistics 2026](https://bluntchart.com/astrology-data/astrology-app-statistics) — $5.69B app market
+- [AstroLogyic: Astrology Search Trends](https://www.astrologyic.com/learn/astrology-search-statistics) — global volume data
+- [SEO Expert Nepal: Keyword Research for Nepali Websites](https://seoexpertinnepal.com/blog/keyword-research-for-nepali-websites) — romanized vs Devanagari 57:1 ratio
+- [Keywords Everywhere: Top 866 Astrology Keywords Nov 2026](https://keywordseverywhere.com/ctl/top/astrology-keywords) — 542M combined searches

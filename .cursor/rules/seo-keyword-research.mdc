@@ -1,0 +1,53 @@
+---
+description: Keyword research methodology and data files for Astra Destiny. Use when doing keyword research, analyzing search volumes, or planning content.
+globs: seo/**
+alwaysApply: false
+---
+
+# Keyword Research Standards — Astra Destiny
+
+## Data Files
+
+- `seo/keyword-clusters.json` — 28 keyword clusters with volume ranges, priorities, target URLs
+- `seo/content-map.md` — Full content strategy, competitor analysis, gap analysis, blog pipeline
+- `seo/context.md` — Product context, market tiers, competitor data, user intent distribution
+
+## Research Methodology
+
+1. **Multi-source volume estimation**: Cross-reference Semrush, Ahrefs, Keywords Everywhere, Seopital, GrindSuccess. No single source is authoritative.
+2. **India-specific volumes**: Always check India (IN) volumes, not just global. Use Ahrefs/Semrush country filter or India keyword volume checkers.
+3. **Hindi keyword discovery**: Search for Devanagari variants (कुंडली, राशिफल, चौघड़िया) — these often have independent search volumes.
+4. **Competitor reverse engineering**: Check top keywords for AstroSage, DrikPanchang, ProKerala via Semrush/Ahrefs. Their top keywords reveal our gaps.
+
+## Priority Framework
+
+- **P0**: >100K cluster volume OR highest converting intent (career). Must-win keywords.
+- **P1**: 10K-100K cluster volume. High value, actionable.
+- **P2**: <10K but strategically important (authority builders, niche differentiators).
+
+## Market-Specific Keyword Rules
+
+| Market | Keyword Style | Example |
+|--------|--------------|---------|
+| India (Vedic) | Sanskrit terms + Hindi variants | kundali, janam kundli, कुंडली |
+| India (Hindi intent) | Hinglish question format | job kab milegi, shaadi kab hogi |
+| South Africa / Africa | Western astrology English | birth chart, zodiac compatibility, daily horoscope |
+| Nepal / Bangladesh | Vedic terms in English | kundali matching, panchang, nakshatra |
+| Global English | Explanatory terms | vedic astrology calculator, birth chart reading free |
+
+## When Adding New Clusters
+
+Add to `seo/keyword-clusters.json` with this structure:
+```json
+{
+  "id": "slug-name",
+  "head": "primary keyword",
+  "keywords": ["keyword 1 volume", "keyword 2", ...],
+  "volume_range": "est. XK-YK per keyword; cluster total est. ZK+",
+  "dominant_type": "tool|content|mixed",
+  "target_url": "/vedic/slug",
+  "priority": "P0|P1|P2",
+  "status": "exists|gap|planned",
+  "notes": "Why this matters, competitor context, action needed"
+}
+```

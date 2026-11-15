@@ -430,5 +430,239 @@
     "priority": "P1",
     "status": "gap",
     "notes": "Massive seasonal spike during Indian wedding season (Nov–Feb, Apr–Jun). DrikPanchang captures this with dated muhurat pages. Create a blog post listing all vivah muhurats for 2026-2027 with links to the muhurta finder tool."
+  },
+
+  {
+    "id": "daily-horoscope-global",
+    "head": "daily horoscope",
+    "keywords": [
+      "daily horoscope", "horoscope today", "today horoscope",
+      "daily horoscope today", "free daily horoscope", "accurate daily horoscope",
+      "my horoscope today", "horoscope for today", "zodiac signs daily horoscope today"
+    ],
+    "volume_range": "550K for daily horoscope; horoscope today 1.83M; cluster total est. 3M+ global",
+    "dominant_type": "content",
+    "target_url": "/horoscope/today",
+    "priority": "P0",
+    "status": "gap",
+    "notes": "BIGGEST GLOBAL GAP. 550M+ monthly horoscope searches globally (+28% YoY). English content serves South Africa (47% engagement), Kenya (23%), Nigeria (20%), Philippines (22%), Singapore (19%) simultaneously. Generate from existing Vedic transit engine, present as Western zodiac sign content. Mobile-first (78% mobile share)."
+  },
+  {
+    "id": "zodiac-sign-horoscope",
+    "head": "[sign] horoscope today",
+    "keywords": [
+      "aries horoscope today", "taurus horoscope today", "gemini horoscope today",
+      "cancer horoscope today", "leo horoscope today", "virgo horoscope today",
+      "libra horoscope today", "scorpio horoscope today", "sagittarius horoscope today",
+      "capricorn horoscope today", "aquarius horoscope today", "pisces horoscope today"
+    ],
+    "volume_range": "368K–450K per sign; 12 signs x 368K = 4.4M+ global",
+    "dominant_type": "content",
+    "target_url": "/horoscope/[sign]",
+    "priority": "P0",
+    "status": "gap",
+    "notes": "12 per-sign pages. Scorpio is #1 searched sign globally (index 100), followed by Aries (94), Taurus (91). Peak countries: Cancer = Philippines; Pisces = India, Indonesia; Leo = USA, Australia. Each sign page = 300K-450K monthly searches. Seasonal spikes during each sign's season."
+  },
+  {
+    "id": "ai-horoscope",
+    "head": "AI horoscope",
+    "keywords": [
+      "AI horoscope", "ChatGPT astrology", "AI fortune teller",
+      "AI birth chart reading", "personalized horoscope AI",
+      "free fortune reading", "AI astrology"
+    ],
+    "volume_range": "35M for AI horoscope (+340% YoY); free fortune reading 19M; cluster total est. 55M+ global",
+    "dominant_type": "tool",
+    "target_url": "/ai-horoscope",
+    "priority": "P0",
+    "status": "gap",
+    "notes": "FASTEST GROWING SEGMENT IN ASTROLOGY. 340% YoY growth. AI fortune content has 38% lower bounce rate and 2.4x longer session time. Astra Destiny's 294-algorithm engine is perfectly positioned. Users want personalized, conversational astrological guidance, not generic sign-based content."
+  },
+  {
+    "id": "birth-chart-global",
+    "head": "birth chart",
+    "keywords": [
+      "birth chart", "natal chart", "free birth chart", "my birth chart",
+      "birth chart compatibility", "birth chart reading", "birth chart astrology",
+      "free birth chart analysis", "natal chart reading", "natal chart compatibility",
+      "free astrology chart", "astrology chart"
+    ],
+    "volume_range": "673K for birth chart; natal chart 246K; cluster total est. 1.2M+ global",
+    "dominant_type": "tool",
+    "target_url": "/vedic/kundli",
+    "priority": "P0",
+    "status": "exists-needs-optimization",
+    "notes": "International bridge keyword. /vedic/kundli serves this but title/H1 should also include 'Birth Chart' and 'Natal Chart' for global English markets (SA, Philippines, Singapore, Kenya, Nigeria). Kundli IS a birth chart — add Western terminology as secondary title keywords."
+  },
+  {
+    "id": "zodiac-compatibility",
+    "head": "zodiac compatibility",
+    "keywords": [
+      "zodiac compatibility", "zodiac signs compatibility", "zodiac compatibility chart",
+      "star sign compatibility", "horoscope compatibility", "birth chart compatibility",
+      "love compatibility zodiac", "astrology compatibility"
+    ],
+    "volume_range": "60.5K for zodiac compatibility; cluster total est. 200K+ global",
+    "dominant_type": "tool",
+    "target_url": "/compatibility/zodiac",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Global English audience. High engagement in Philippines (love queries), Nigeria, South Africa. Repackage Kundli Milan results using Western zodiac-sign terminology. Different URL from /vedic/compatibility to serve different search intent."
+  },
+  {
+    "id": "love-horoscope",
+    "head": "love horoscope",
+    "keywords": [
+      "love horoscope", "horoscope today love", "love compatibility astrology",
+      "love prediction by date of birth", "love horoscope today"
+    ],
+    "volume_range": "74K for love horoscope; 49.5K horoscope today love; cluster total est. 123K+ global",
+    "dominant_type": "content",
+    "target_url": "/horoscope/love",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Strong in Philippines, Nigeria, South Africa, Brazil, Mexico. Valentine's season 2x spike. Generate from Vedic 7th house + Venus analysis, present in Western zodiac terms."
+  },
+  {
+    "id": "weekly-monthly-horoscope",
+    "head": "weekly horoscope",
+    "keywords": [
+      "weekly horoscope", "monthly horoscope", "weekly horoscope today",
+      "free weekly horoscope", "yearly horoscope 2027"
+    ],
+    "volume_range": "246K for weekly; 40.5K monthly; cluster total est. 380K+ global",
+    "dominant_type": "content",
+    "target_url": "/horoscope/weekly",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Serves US, UK, SA, Philippines, Nigeria. Seasonal spike in January ('2027 horoscope' queries = 3x normal volume). Weekly and monthly cadences build recurring traffic."
+  },
+  {
+    "id": "rising-sign-calculator",
+    "head": "rising sign",
+    "keywords": [
+      "rising sign", "ascendant", "rising sign calculator",
+      "what is my rising sign", "sun moon rising", "sun moon and rising sign"
+    ],
+    "volume_range": "74K for rising sign; 135K for ascendant; cluster total est. 250K+ global",
+    "dominant_type": "tool",
+    "target_url": "/tools/rising-sign",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Global English tool. Ascendant/Lagna IS the Vedic equivalent — repackage existing Lagna calculator with Western terminology. Serves US, UK, SA, Singapore, Philippines."
+  },
+  {
+    "id": "nepali-jyotish",
+    "head": "nepali rashifal",
+    "keywords": [
+      "nepali rashifal", "nepali jyotish", "nepali patro",
+      "jyotish shastra nepal", "kundali nepali", "rashifal today nepali",
+      "nepali horoscope"
+    ],
+    "volume_range": "nepali patro 90.5K NP; nepali rashifal est. 20K+ NP; cluster total est. 50K+ Nepal",
+    "dominant_type": "content + tool",
+    "target_url": "/np/rashifal",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Nepal shares India's Vedic tradition — same tools work. Key insight: romanized Nepali terms searched 57x more than Devanagari in Nepal. Create /np/ locale with romanized Nepali content. Same engine, different presentation."
+  },
+  {
+    "id": "horoscope-africa",
+    "head": "horoscope South Africa",
+    "keywords": [
+      "horoscope today south africa", "daily horoscope SA",
+      "zodiac signs south africa", "star signs today",
+      "horoscope for today kenya", "daily horoscope nigeria",
+      "fortune teller south africa"
+    ],
+    "volume_range": "fortune teller 16K/mo ZA; est. 80K+ combined SA+KE+NG",
+    "dominant_type": "content",
+    "target_url": "/horoscope/today",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "South Africa = HIGHEST astrology engagement globally (47%). English market with zero Vedic competition. Fortune teller 16K/mo ZA with Jan peak at 35K. Daily English horoscope page geo-targeted for SA/Kenya/Nigeria captures underserved demand."
+  },
+  {
+    "id": "bangla-rashifal",
+    "head": "bangla rashifal",
+    "keywords": [
+      "bangla rashifal", "bangla horoscope", "kundali bangla",
+      "ajker rashifal bangla", "rashifal today bangla"
+    ],
+    "volume_range": "est. 30K+ BD",
+    "dominant_type": "content",
+    "target_url": "/bn/rashifal",
+    "priority": "P2",
+    "status": "gap",
+    "notes": "Bangladesh (170M pop) shares Vedic tradition. English Vedic content works as a bridge now. Future Bangla locale would unlock significant volume. Growing internet penetration."
+  },
+  {
+    "id": "sinhala-horoscope",
+    "head": "sri lanka jyotish",
+    "keywords": [
+      "sri lanka jyotish", "free horoscope sri lanka", "sinhala horoscope",
+      "kundali sri lanka", "horoscope matching sri lanka"
+    ],
+    "volume_range": "est. 20K+ LK",
+    "dominant_type": "tool",
+    "target_url": "/vedic/kundli",
+    "priority": "P2",
+    "status": "exists-needs-optimization",
+    "notes": "Sri Lanka (20% engagement) shares Vedic tradition. Existing English Vedic content already serves this market. Add 'Sri Lanka' mentions in relevant blog posts. Same tools, no new engine needed."
+  },
+  {
+    "id": "korean-saju",
+    "head": "사주 (saju / four pillars)",
+    "keywords": [
+      "오늘의 운세", "사주", "타로점", "궁합", "신년운세"
+    ],
+    "volume_range": "est. 100K+ KR",
+    "dominant_type": "tool",
+    "target_url": "/kr/saju",
+    "priority": "P2",
+    "status": "gap",
+    "notes": "South Korea (20% engagement, 52M pop). Saju (Four Pillars) is a DIFFERENT system from Vedic — requires new calculation engine. Korean locale needed. High-value but high-effort. Future market."
+  },
+  {
+    "id": "japanese-fortune",
+    "head": "今日の運勢 (today's fortune)",
+    "keywords": [
+      "今日の運勢", "星座占い", "運勢", "相性占い"
+    ],
+    "volume_range": "est. 150K+ JP",
+    "dominant_type": "content",
+    "target_url": "/jp/horoscope",
+    "priority": "P2",
+    "status": "gap",
+    "notes": "Japan (19% engagement, 125M pop). Blends Western zodiac, Chinese zodiac, and local traditions. Japanese locale required. Estimated 10-15M monthly astrology searches. Massive but requires full localization."
+  },
+  {
+    "id": "chinese-zodiac",
+    "head": "chinese zodiac",
+    "keywords": [
+      "chinese zodiac", "chinese zodiac signs", "chinese zodiac years",
+      "chinese zodiac compatibility", "chinese new year zodiac",
+      "feng shui", "BaZi calculator"
+    ],
+    "volume_range": "368K for chinese zodiac; 165K each for signs & years; cluster total est. 700K+ global",
+    "dominant_type": "tool + content",
+    "target_url": "/chinese-zodiac",
+    "priority": "P2",
+    "status": "gap",
+    "notes": "Serves Singapore (19% engagement), Malaysia, Vietnam, global Chinese diaspora. Chinese New Year seasonal spike. Different system from Vedic but complementary. 12-animal cycle + 5 elements. Future multi-system expansion."
+  },
+  {
+    "id": "fortune-teller-online",
+    "head": "fortune teller / fortune reading",
+    "keywords": [
+      "fortune teller", "online fortune telling", "free fortune reading",
+      "fortune teller near me", "AI fortune teller"
+    ],
+    "volume_range": "16K/mo ZA for fortune teller; free fortune reading 19M global; cluster total est. 20M+ global",
+    "dominant_type": "content + tool",
+    "target_url": "/ai-horoscope",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Fortune teller peaks in South Africa (ZA) with 16K/mo and Jan spike to 35K. Globally 'free fortune reading' at 19M (+58% YoY). Bridge term between traditional astrology and AI-powered readings. Serve from /ai-horoscope page."
   }
 ]

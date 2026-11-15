@@ -566,83 +566,110 @@ body {
   /* ── Page Setup ── */
   @page {
     size: A4;
-    margin: 18mm 16mm 20mm 16mm;
+    margin: 15mm 13mm 17mm 13mm;
   }
-  @page :first { margin-top: 0; }
 
   /* ── Base Reset ── */
   *, *::before, *::after { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
   body {
     background: white !important;
     color: #1e1b2e !important;
-    font-size: 10pt !important;
-    line-height: 1.6 !important;
+    font-size: 9.5pt !important;
+    line-height: 1.55 !important;
     font-family: 'Georgia', 'Palatino Linotype', serif !important;
+    text-align: left !important;
   }
 
-  /* ── Hide Chrome ── */
+  /* ── Hide Screen Chrome ── */
   header, footer, nav[aria-label="Breadcrumb"], #bottom-tabs, .cosmic-bg-container,
   aside, [data-print-hide] { display: none !important; }
-  /* ── Show print-only elements ── */
+
+  /* ── Show Print-Only Elements ── */
   [data-print-show] { display: block !important; }
   main { padding: 0 !important; }
 
+  /* ── Kill divide-y borders between sections ── */
+  .divide-y > * + * { border-top-color: transparent !important; }
+
+  /* ── Section Toggle Buttons → Clean Headings ── */
+  section > button {
+    display: block !important;
+    pointer-events: none !important;
+    cursor: default !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
   /* ── Cards ── */
   .glass-card {
-    background: #fafafd !important;
-    border: 1px solid #e2e0ed !important;
-    border-left: 3px solid #6d28d9 !important;
+    background: white !important;
+    border: 1px solid #e8e6f0 !important;
+    border-left: 2px solid #7c3aed !important;
     box-shadow: none !important;
-    border-radius: 4px !important;
-    padding: 10pt 14pt !important;
-    margin-bottom: 8pt !important;
+    border-radius: 2px !important;
+    padding: 8pt 12pt !important;
+    margin-bottom: 5pt !important;
   }
 
   /* ── Cover Page ── */
   [data-print-cover] {
     page-break-after: always;
-    text-align: center;
-    padding-top: 28vh !important;
+    padding-top: 22vh !important;
   }
-  [data-print-cover] p:first-child {
-    color: #6d28d9 !important;
-    font-size: 9pt !important;
-    letter-spacing: 4pt !important;
-    text-transform: uppercase !important;
-    border-bottom: 1px solid #6d28d9;
-    display: inline-block;
-    padding-bottom: 8pt;
-    margin-bottom: 16pt;
+
+  /* ── Page Break After (ToC, Dashboard) ── */
+  [data-print-page-break] {
+    page-break-after: always;
+    padding-top: 6vh !important;
   }
-  [data-print-cover] h1 {
-    font-size: 28pt !important;
+  [data-print-part-divider] {
+    page-break-before: always;
+  }
+
+  /* ── Inline Chart Sizing ── */
+  [data-print-chart] {
+    max-width: 300px !important;
+    margin: 0 auto 10pt !important;
+  }
+  [data-print-chart] .glass-card {
+    border: none !important;
+    border-left: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+  }
+  [data-print-chart] svg {
     color: #1e1b2e !important;
-    font-weight: 700 !important;
-    margin-bottom: 12pt !important;
   }
 
   /* ── Section Headers ── */
   section h2 {
-    font-size: 14pt !important;
+    font-size: 13pt !important;
     font-weight: 700 !important;
     color: #1e1b2e !important;
-    border-bottom: 2px solid #6d28d9 !important;
-    padding-bottom: 4pt !important;
-    margin-top: 14pt !important;
-    margin-bottom: 8pt !important;
+    font-family: system-ui, -apple-system, sans-serif !important;
+    letter-spacing: 0.01em !important;
+    border-bottom: 1.5pt solid #7c3aed !important;
+    padding-bottom: 3pt !important;
+    margin-top: 12pt !important;
+    margin-bottom: 6pt !important;
     page-break-after: avoid;
   }
   section h3 {
-    font-size: 11pt !important;
+    font-size: 10pt !important;
     font-weight: 600 !important;
     color: #2d2855 !important;
+    font-family: system-ui, -apple-system, sans-serif !important;
   }
 
   /* ── Typography ── */
+  p, .text-sm { font-size: 9pt !important; line-height: 1.5 !important; }
+  .text-xs { font-size: 7.5pt !important; }
+  .text-lg { font-size: 11pt !important; }
+  .text-xl { font-size: 12pt !important; }
   .text-white, .text-zinc-100, .text-zinc-200 { color: #1e1b2e !important; }
   .text-zinc-300 { color: #333 !important; }
-  .text-zinc-400, .text-zinc-500 { color: #666 !important; }
-  .text-zinc-600, .text-zinc-700 { color: #999 !important; }
+  .text-zinc-400, .text-zinc-500 { color: #555 !important; }
+  .text-zinc-600, .text-zinc-700 { color: #888 !important; }
   a { color: #4c1d95 !important; text-decoration: none !important; }
 
   /* ── Accent Colors (solid for print) ── */
@@ -656,7 +683,7 @@ body {
   .text-sky-300 { color: #0284c7 !important; }
   .text-blue-300 { color: #2563eb !important; }
 
-  /* ── Badge Backgrounds (attribute selectors for Turbopack compat) ── */
+  /* ── Badge Backgrounds ── */
   [class*="bg-violet-500"] { background: #ede9fe !important; }
   [class*="bg-emerald-500"] { background: #d1fae5 !important; }
   [class*="bg-red-500"] { background: #fee2e2 !important; }
@@ -669,42 +696,93 @@ body {
   [class*="bg-sky-500"] { background: #e0f2fe !important; }
 
   /* ── Tables ── */
-  table { border-collapse: collapse; width: 100%; font-size: 9pt !important; }
-  thead tr { border-bottom: 2px solid #6d28d9 !important; }
-  th { color: #6d28d9 !important; font-weight: 600 !important; padding: 4pt 6pt !important; text-align: left; }
-  td { padding: 3pt 6pt !important; border-bottom: 0.5pt solid #e5e5ea !important; }
+  table { border-collapse: collapse; width: 100%; font-size: 8pt !important; }
+  thead tr { border-bottom: 1.5pt solid #7c3aed !important; }
+  th { color: #7c3aed !important; font-weight: 600 !important; padding: 3pt 5pt !important; text-align: left !important; font-size: 7.5pt !important; }
+  td { padding: 2.5pt 5pt !important; border-bottom: 0.5pt solid #e5e5ea !important; font-size: 8pt !important; }
   tbody tr:nth-child(even) { background: #f8f8fc !important; }
-
-  /* ── Bar Charts / Progress Bars ── */
-  [class*="bg-white/[0"] { background: #e9e7f0 !important; }
-  div[class*="bg-emerald-500"] { background: #059669 !important; }
-  div[class*="bg-orange-500"] { background: #c2410c !important; }
-  div[class*="bg-violet-500"] { background: #6d28d9 !important; }
 
   /* ── DataRow Borders ── */
   [class*="border-white/"] { border-color: #e5e5ea !important; }
 
   /* ── Ring highlights (active dasha) ── */
-  [class*="ring-violet-500"] { outline: 2px solid #6d28d9 !important; outline-offset: 2px; }
+  [class*="ring-violet-500"] { outline: 2px solid #7c3aed !important; outline-offset: 1px; }
 
   /* ── Rounded badges ── */
   .rounded-full { border-radius: 999px !important; }
 
+  /* ── 2-Column Grid (Planet-by-Planet, House-by-House) ── */
+  [data-print-2col] {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 5pt !important;
+  }
+  [data-print-2col] > .glass-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 0 !important;
+    padding: 5pt 8pt !important;
+  }
+  [data-print-2col] > .glass-card h3 {
+    font-size: 8.5pt !important;
+    margin-bottom: 2pt !important;
+  }
+  [data-print-2col] > .glass-card p {
+    font-size: 7.5pt !important;
+    line-height: 1.35 !important;
+  }
+  [data-print-2col] > .glass-card .text-xs {
+    font-size: 7pt !important;
+  }
+
+  /* ── Shadbala: compact horizontal bars ── */
+  #shadbala .glass-card {
+    padding: 4pt 10pt !important;
+    margin-bottom: 3pt !important;
+  }
+
+  /* ── Dasha: tighter cards ── */
+  #dasha .glass-card {
+    padding: 6pt 10pt !important;
+    margin-bottom: 4pt !important;
+  }
+
+  /* ── Remedies: compact ── */
+  #remedies .glass-card {
+    padding: 5pt 10pt !important;
+    margin-bottom: 3pt !important;
+  }
+
+  /* ── Yogas & Doshas: compact ── */
+  #yogas .glass-card, #doshas .glass-card {
+    padding: 5pt 10pt !important;
+    margin-bottom: 3pt !important;
+  }
+
+  /* ── Grids: collapse gaps ── */
+  .grid { gap: 4pt !important; }
+
+  /* ── Space-y: tighter spacing ── */
+  .space-y-4 > * + * { margin-top: 4pt !important; }
+  .space-y-3 > * + * { margin-top: 3pt !important; }
+  .space-y-2 > * + * { margin-top: 2pt !important; }
+
   /* ── Page breaks ── */
   [data-print-avoid-break] { break-inside: avoid; page-break-inside: avoid; }
-  [data-print-pb] { padding-bottom: 4rem; }
-  [data-print-pt] { padding-top: 4rem; }
+  [data-print-pb] { padding-bottom: 2rem; }
+  [data-print-pt] { padding-top: 1rem; }
   section { page-break-inside: auto; }
   section > .glass-card { page-break-inside: avoid; }
 
-  /* ── Footer watermark ── */
-  article > div:last-child {
-    border-top: 1px solid #6d28d9 !important;
-    padding-top: 12pt !important;
-    margin-top: 20pt !important;
+  /* ── Footer ── */
+  [data-print-footer] {
+    border-top: 1pt solid #7c3aed !important;
+    padding-top: 10pt !important;
+    margin-top: 14pt !important;
+    text-align: center !important;
   }
-  article > div:last-child p {
-    color: #6d28d9 !important;
-    font-style: italic !important;
+  [data-print-footer] p {
+    color: #7c3aed !important;
+    font-size: 7.5pt !important;
   }
 }

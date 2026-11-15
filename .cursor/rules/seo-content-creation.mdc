@@ -1,0 +1,59 @@
+---
+description: SEO content standards for Astra Destiny — keyword targeting, metadata, i18n, and page creation conventions.
+globs: src/app/vedic/**/seo.ts, src/app/vedic/**/page.tsx, src/app/vedic/**/layout.tsx, src/app/layout.tsx, src/app/sitemap.ts, seo/**
+alwaysApply: false
+---
+
+# Astra Destiny SEO Content Standards
+
+## Page Title Conventions
+
+- Max 60 chars including " | Astra Destiny" suffix (auto-appended by Next.js template)
+- Lead with the highest-volume keyword variant
+- Include Hindi/Devanagari in parentheses for India-dominant keywords: `"Free Online Kundali (कुंडली)"`
+- Include "Free" for tool pages — it's the #1 CTR driver in India
+- Use "Today" for daily-refresh pages (panchang, choghadiya, hora, rashifal)
+
+## Meta Description
+
+- 150-160 chars, include primary keyword + CTA ("Check free now", "Calculate instantly")
+- Mention "294 algorithms" or "294 Jyotish tools" as the unique depth signal
+- For daily pages, dynamically include today's date/tithi where possible
+
+## VEDIC_SEO Record (src/app/vedic/seo.ts)
+
+Every Vedic tool page MUST have an entry in `VEDIC_SEO` with:
+- `title`, `description`, `canonical`, `keywords[]`
+- `seoIntro` with `heading` and `text` (rendered by SeoIntro component)
+- `faqs[]` — 3-4 FAQs (rendered as FAQJsonLd schema)
+- `relatedTools[]` — 3-5 cross-links to related tool pages
+
+## i18n Requirements
+
+- Every new page needs translation keys in BOTH `src/lib/i18n/en.ts` AND `src/lib/i18n/hi.ts`
+- Page title/subtitle keys: `'{section}.title'`, `'{section}.subtitle'`
+- Empty state keys: `'empty.{section}'`
+- SEO intro keys: `'seo.{section}.heading'`, `'seo.{section}.text'`
+- Nav keys: `'nav.{section}'`
+
+## New Page Checklist
+
+When creating a new `/vedic/{slug}` page:
+1. Add VEDIC_SEO entry in `seo.ts`
+2. Create `layout.tsx` with `buildVedicMetadata(slug)`, BreadcrumbJsonLd, FAQJsonLd
+3. Create `page.tsx` as `'use client'` component with SeoIntro + RelatedTools
+4. Add route to `VEDIC_ROUTES` in `src/app/sitemap.ts`
+5. Add to `src/app/tools/page.tsx` tool directory
+6. Add nav entry in `Navbar.tsx` under appropriate group
+7. Add footer link in `SiteFooter.tsx`
+8. Add i18n keys in `en.ts` and `hi.ts`
+9. Add cross-links in related pages' `relatedTools`
+
+## Target Markets for Keyword Selection
+
+When researching keywords, check volumes for these markets in priority order:
+1. **India (IN)** — primary market, 80%+ of traffic
+2. **Global (US+)** — secondary, English-speaking diaspora
+3. **Nepal, Bangladesh, Sri Lanka** — Vedic astrology overlap
+4. **South Africa** — 47% astrology engagement, English content works
+5. **Southeast Asia** — Thailand (29%), Philippines (22%), Singapore (19%)
