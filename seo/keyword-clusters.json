@@ -1,92 +1,372 @@
 [
   {
-    "head": "free kundli online",
-    "keywords": ["free kundli online", "kundli by date of birth and time", "janam kundali free", "vedic birth chart calculator", "free vedic astrology calculator", "kundli maker online", "birth chart vedic astrology", "online kundli generator", "lagna chart calculator", "sidereal birth chart free"],
-    "estimated_volume": "high",
+    "id": "kundli-birth-chart",
+    "head": "free online kundali",
+    "keywords": [
+      "online kundali", "free online kundali", "kundali online", "kundli online",
+      "janam kundali", "janam kundli", "free kundali", "free kundli",
+      "vedic astrology chart", "vedic birth chart", "vedic astrology calculator free",
+      "birth chart astrology", "kundali by date of birth", "astrosage kundli",
+      "kundli in hindi", "kundali in hindi", "free birth chart analysis",
+      "my birth chart", "free astrology chart", "free birth chart"
+    ],
+    "volume_range": "27K–135K per keyword; cluster total est. 800K+",
     "dominant_type": "tool",
     "target_url": "/vedic/kundli",
-    "existing_page": "/vedic/kundli",
-    "action": "keep — add educational content below tool"
+    "priority": "P0",
+    "status": "exists",
+    "notes": "Highest-volume cluster. AstroSage ranks #1 for kundali (450K) and kundli (246K). SERP dominated by interactive tools. Title must include 'Free Online Kundali' and 'Janam Kundli'. Hindi variant essential."
   },
   {
-    "head": "kundli matching online free",
-    "keywords": ["kundli matching online free", "kundli milan", "gun milan", "ashtakoota matching", "36 guna milan calculator", "horoscope matching for marriage", "mangal dosha matching", "kundli matching by name and date of birth", "nadi dosha calculator", "marriage compatibility vedic astrology"],
-    "estimated_volume": "high",
+    "id": "kundli-matching",
+    "head": "kundali matching",
+    "keywords": [
+      "kundali matching", "kundli matching", "horoscope matching",
+      "kundli matching for marriage", "online kundli matching for marriage",
+      "free online kundli matching", "kundli match making for marriage",
+      "gun milan", "ashtakoota matching", "marriage compatibility astrology",
+      "birth chart compatibility", "natal chart compatibility"
+    ],
+    "volume_range": "74K–368K per keyword; cluster total est. 600K+",
     "dominant_type": "tool",
     "target_url": "/vedic/compatibility",
-    "existing_page": "/vedic/compatibility",
-    "action": "keep — add koota breakdown table and FAQ schema"
+    "priority": "P0",
+    "status": "exists",
+    "notes": "Second-highest cluster. AstroSage #1 for kundali matching (301K IN). Tool SERP — needs input for both partners. '36 gunas' and 'Ashtakoota' are trust signals. Consider adding /vedic/gun-milan as alias."
   },
   {
-    "head": "vimshottari dasha calculator",
-    "keywords": ["vimshottari dasha calculator", "mahadasha calculator", "dasha calculator free online", "antardasha calculator", "current mahadasha", "mahadasha dates by date of birth", "yogini dasha calculator", "ashtottari dasha calculator", "dasha period calculator"],
-    "estimated_volume": "medium",
-    "dominant_type": "tool",
-    "target_url": "/vedic/dashas",
-    "existing_page": "/vedic/dashas",
-    "action": "keep — update title to include 'Mahadasha Calculator'"
-  },
-  {
+    "id": "panchang-today",
     "head": "panchang today",
-    "keywords": ["panchang today", "aaj ka panchang", "today tithi", "today nakshatra", "rahu kaal today", "shubh muhurat today", "choghadiya today", "hindu calendar 2026"],
-    "estimated_volume": "very high",
-    "dominant_type": "informational",
-    "target_url": "/vedic/panchang/[date]",
-    "existing_page": "/vedic/panchang",
-    "action": "create — programmatic daily pages with date in URL"
-  },
-  {
-    "head": "yoga dosha calculator vedic astrology",
-    "keywords": ["yoga calculator vedic astrology", "mangal dosha calculator", "kaal sarp dosha calculator", "raja yoga calculator", "gaja kesari yoga calculator", "dosha check by date of birth", "neecha bhanga raja yoga calculator", "manglik dosha check free", "pitra dosha calculator"],
-    "estimated_volume": "medium",
+    "keywords": [
+      "panchang", "panchang today", "today panchang", "todays panchang",
+      "today tithi", "tithi today", "hindu calendar", "hindu panchang",
+      "daily panchang", "panchang today in hindi"
+    ],
+    "volume_range": "22K–301K per keyword; cluster total est. 500K+",
     "dominant_type": "tool",
-    "target_url": "/vedic/yogas",
-    "existing_page": "/vedic/yogas",
-    "action": "keep + create standalone /vedic/mangal-dosha and /vedic/kaal-sarp-dosha pages"
+    "target_url": "/vedic/panchang",
+    "priority": "P0",
+    "status": "exists",
+    "notes": "DrikPanchang dominates (3.3M visits). Daily-refresh content. Must show Tithi, Nakshatra, Yoga, Karana, Vara for current day. Server-rendered dates essential for indexing. 'today tithi' (301K) is a massive keyword — ensure tithi is prominent."
   },
   {
-    "head": "shadbala calculator",
-    "keywords": ["shadbala calculator", "ashtakavarga calculator", "planetary strength calculator vedic", "sarvashtakavarga calculator", "bhinna ashtakavarga", "vimsopaka bala calculator", "bhava bala calculator"],
-    "estimated_volume": "low",
-    "dominant_type": "tool",
-    "target_url": "/vedic/shadbala",
-    "existing_page": "/vedic/shadbala",
-    "action": "keep — low competition, add educational content"
-  },
-  {
-    "head": "nakshatra calculator",
-    "keywords": ["nakshatra calculator", "nakshatra finder by date of birth", "birth star calculator", "janma nakshatra calculator", "my nakshatra", "nakshatra pada calculator", "27 nakshatras and their characteristics"],
-    "estimated_volume": "medium",
-    "dominant_type": "tool",
-    "target_url": "/vedic/nakshatra",
-    "existing_page": "/vedic/nakshatra",
-    "action": "keep + create /blog/27-nakshatras reference guide"
-  },
-  {
-    "head": "muhurta calculator",
-    "keywords": ["muhurta calculator", "auspicious time calculator", "rahu kaal calculator", "abhijit muhurta today", "shubh muhurat for marriage 2026", "choghadiya today", "gulika kaal calculator"],
-    "estimated_volume": "low-medium",
+    "id": "choghadiya-muhurta",
+    "head": "choghadiya today",
+    "keywords": [
+      "choghadiya", "choghadiya today", "today choghadiya",
+      "shubh muhurat today", "auspicious time today", "muhurat today",
+      "rahu kaal today", "rahu kalam today", "abhijit muhurta",
+      "din ka choghadiya", "shubh choghadiya"
+    ],
+    "volume_range": "33K–368K per keyword; cluster total est. 500K+",
     "dominant_type": "tool",
     "target_url": "/vedic/muhurta",
-    "existing_page": "/vedic/muhurta",
-    "action": "keep + create seasonal marriage muhurta pages"
+    "priority": "P0",
+    "status": "exists",
+    "notes": "DrikPanchang ranks #1 for choghadiya (368K). mPanchang also strong. Requires location-aware sunrise/sunset. Daily page with Rahu Kaal, Yamaganda, Gulika, all 8 choghadiya windows. Massive recurring traffic."
   },
   {
-    "head": "navamsa chart calculator",
-    "keywords": ["navamsa chart calculator", "D9 chart calculator", "divisional chart calculator", "vargottama check"],
-    "estimated_volume": "medium",
-    "dominant_type": "tool",
-    "target_url": "/vedic/divisional",
-    "existing_page": "/vedic/divisional",
-    "action": "keep — add 'Navamsa' to title tag, consider standalone /vedic/navamsa"
-  },
-  {
-    "head": "sade sati calculator",
-    "keywords": ["sade sati calculator", "sade sati by date of birth", "shani sade sati", "kantaka shani", "saturn transit effects", "dhaiya calculator"],
-    "estimated_volume": "medium",
+    "id": "sade-sati",
+    "head": "sade sati",
+    "keywords": [
+      "sade sati", "sade sati calculator", "shani sade sati",
+      "is sade sati running for me", "sade sati for moon sign",
+      "saturn transit", "saturn return", "kantaka shani",
+      "ashtama shani", "shani dhaiya"
+    ],
+    "volume_range": "est. 20K–50K per keyword; cluster total est. 100K+",
     "dominant_type": "tool",
     "target_url": "/vedic/transits",
-    "existing_page": "/vedic/transits",
-    "action": "keep — create /blog/sade-sati-guide for informational queries"
+    "priority": "P1",
+    "status": "exists",
+    "notes": "Saturn return (49.5K global). Strong fear-driven search intent. Calculator must show current phase, timeline, and remedies. Consider standalone /vedic/sade-sati page for better keyword targeting."
+  },
+  {
+    "id": "mangal-dosha",
+    "head": "mangal dosha",
+    "keywords": [
+      "mangal dosha", "manglik dosha", "manglik check",
+      "mangal dosha calculator", "am I manglik", "manglik matching",
+      "mangal dosha cancellation", "mangal dosha remedies",
+      "mars in 7th house marriage"
+    ],
+    "volume_range": "880–5K per keyword; cluster total est. 15K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/mangal-dosha",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "ProKerala gets 60% of manglik check traffic. High marriage-intent searchers. Cancellation rules are the trust differentiator — show all 12 cancellation rules. Blog post already supports."
+  },
+  {
+    "id": "kaal-sarp-dosha",
+    "head": "kaal sarp dosha",
+    "keywords": [
+      "kaal sarp dosha", "kaal sarp yog", "kal sarp dosh",
+      "kaal sarp dosha calculator", "kaal sarp dosha types",
+      "kaal sarp dosha remedies", "12 types of kaal sarp dosha"
+    ],
+    "volume_range": "est. 5K–15K per keyword; cluster total est. 25K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/kaal-sarp-dosha",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "Lower competition than mangal dosha. 12 types are a content advantage — show which type by Rahu-Ketu house axis. Blog post already supports."
+  },
+  {
+    "id": "navamsa-d9",
+    "head": "navamsa chart calculator",
+    "keywords": [
+      "navamsa chart", "navamsa chart calculator", "d9 chart",
+      "d9 chart calculator", "navamsa chart reading",
+      "navamsa chart marriage", "free navamsa chart",
+      "vedic d9 chart", "vargottama calculator"
+    ],
+    "volume_range": "est. 5K–20K per keyword; cluster total est. 40K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/navamsa",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "Multiple competitors building dedicated D9 pages. Marriage intent is strong. Show both South Indian and tabular formats. Blog post 'navamsa-d9-chart-marriage' supports."
+  },
+  {
+    "id": "vimshottari-dasha",
+    "head": "vimshottari dasha calculator",
+    "keywords": [
+      "vimshottari dasha", "vimshottari dasha calculator",
+      "mahadasha", "mahadasha calculator", "current mahadasha",
+      "antardasha calculator", "dasha prediction",
+      "planetary period astrology", "dasha balance calculator"
+    ],
+    "volume_range": "3K+ US; est. 20K+ India; cluster total est. 40K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/dashas",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "Timing is the #1 value prop of Vedic astrology. Show MD/AD/PD timeline with active period highlighted. Blog post 'vimshottari-dasha-guide' supports. Consider adding other dasha systems as subtabs."
+  },
+  {
+    "id": "career-astrology",
+    "head": "career astrology prediction",
+    "keywords": [
+      "career astrology", "job prediction astrology", "career horoscope",
+      "job kab milegi kundli se", "government job astrology",
+      "astrology for career guidance", "10th house career",
+      "career prediction by date of birth", "which job suits me astrology",
+      "career change astrology"
+    ],
+    "volume_range": "5.5K–12K per keyword; cluster total est. 50K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/career",
+    "priority": "P0",
+    "status": "exists",
+    "notes": "HIGHEST CONVERTING INTENT in India per KundliAI data. Career timing questions massively outperform daily horoscope in click-through. Must show D10 chart + 10th house analysis + current Dasha timing. Hindi content critical ('job kab milegi')."
+  },
+  {
+    "id": "vedic-astrology",
+    "head": "vedic astrology",
+    "keywords": [
+      "vedic astrology", "what is vedic astrology", "vedic astrology free",
+      "jyotish", "indian astrology", "hindu astrology",
+      "vedic astrology vs western astrology"
+    ],
+    "volume_range": "60.5K–90.5K for head; cluster total est. 150K+",
+    "dominant_type": "mixed (tools + info)",
+    "target_url": "/",
+    "priority": "P0",
+    "status": "exists",
+    "notes": "Brand-building head term. Homepage should target this. AstroSage and AstroYogi dominate. Our 294-tool depth is the differentiator. Homepage H1 and meta description must include 'Vedic Astrology'."
+  },
+  {
+    "id": "nakshatra",
+    "head": "nakshatra",
+    "keywords": [
+      "nakshatras", "nakshatra calculator", "birth star calculator",
+      "nakshatra finder", "my nakshatra", "nakshatra by date of birth",
+      "27 nakshatras", "nakshatra compatibility",
+      "nakshatra characteristics", "moon nakshatra"
+    ],
+    "volume_range": "90.5K for nakshatras; cluster total est. 120K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/nakshatra",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "High volume (90.5K global). Content page listing all 27 nakshatras with calculator. Strong internal link target from kundli page."
+  },
+  {
+    "id": "yoga-calculator",
+    "head": "yoga in astrology",
+    "keywords": [
+      "raja yoga astrology", "gajakesari yoga", "dhana yoga",
+      "pancha mahapurusha yoga", "yoga calculator vedic astrology",
+      "raja yoga in kundli", "budhaditya yoga", "lakshmi yoga",
+      "neecha bhanga raja yoga", "vedic yoga calculator"
+    ],
+    "volume_range": "est. 2K–10K per keyword; cluster total est. 30K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/yogas",
+    "priority": "P2",
+    "status": "exists",
+    "notes": "Authority cluster — 20+ yogas detected is our unique selling point. Each yoga name is a long-tail keyword. Blog-style explanations below the calculator build topical depth."
+  },
+  {
+    "id": "divisional-charts",
+    "head": "divisional charts vedic astrology",
+    "keywords": [
+      "divisional charts", "varga charts", "d10 chart career",
+      "d2 hora chart", "d7 saptamsa children", "d4 chaturthamsa property",
+      "d60 shashtiamsa", "all divisional charts calculator"
+    ],
+    "volume_range": "est. 2K–8K per keyword; cluster total est. 20K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/divisional",
+    "priority": "P2",
+    "status": "exists",
+    "notes": "Niche but high authority. 20 divisional charts is a unique depth few competitors offer. Each Dx chart name is a long-tail keyword."
+  },
+  {
+    "id": "shadbala",
+    "head": "shadbala calculator",
+    "keywords": [
+      "shadbala", "shadbala calculator", "planetary strength vedic astrology",
+      "shadbala chart", "vimsopaka bala", "bhava bala"
+    ],
+    "volume_range": "est. 1K–5K per keyword; cluster total est. 10K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/shadbala",
+    "priority": "P2",
+    "status": "exists",
+    "notes": "Expert-level niche. Few free calculators exist. Authority builder — links well to kundli and yogas pages."
+  },
+  {
+    "id": "ashtakavarga",
+    "head": "ashtakavarga calculator",
+    "keywords": [
+      "ashtakavarga", "ashtakavarga calculator", "sarvashtakavarga",
+      "bhinna ashtakavarga", "ashtakavarga chart", "ashtakavarga transit"
+    ],
+    "volume_range": "est. 1K–5K per keyword; cluster total est. 8K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/ashtakavarga",
+    "priority": "P2",
+    "status": "exists",
+    "notes": "Expert niche. Pairs well with transit page for predictive analysis. SAV tables are unique content."
+  },
+  {
+    "id": "jaimini",
+    "head": "jaimini astrology",
+    "keywords": [
+      "jaimini astrology", "chara dasha", "chara karakas",
+      "atmakaraka calculator", "karakamsha", "arudha pada",
+      "jaimini rashi drishti"
+    ],
+    "volume_range": "est. 1K–5K per keyword; cluster total est. 10K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/jaimini",
+    "priority": "P2",
+    "status": "exists",
+    "notes": "Unique differentiator — very few free Jaimini calculators exist online. Authority builder for advanced users."
+  },
+  {
+    "id": "kp-system",
+    "head": "kp astrology",
+    "keywords": [
+      "kp astrology", "krishnamurti paddhati", "kp system",
+      "kp sub lord", "kp horoscope", "kp astrology calculator"
+    ],
+    "volume_range": "est. 2K–10K per keyword; cluster total est. 15K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/kp",
+    "priority": "P2",
+    "status": "exists",
+    "notes": "Dedicated following in India. Sub-lord tables are unique content. Horary astrology (60.5K global) is related."
+  },
+  {
+    "id": "vedic-remedies",
+    "head": "astrological remedies",
+    "keywords": [
+      "astrological remedies", "vedic remedies", "gemstone remedies astrology",
+      "mantra for planets", "rudraksha for planets", "navagraha puja",
+      "astrological remedies for health", "remedies for weak planets"
+    ],
+    "volume_range": "5.9K–6.8K per keyword; cluster total est. 25K+",
+    "dominant_type": "mixed (tool + info)",
+    "target_url": "/vedic/remedies",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "Monetization potential via gemstone/puja affiliate links. Show personalized remedies based on chart analysis. Mantras (673K global for generic 'mantras') is a massive related cluster."
+  },
+  {
+    "id": "wealth-astrology",
+    "head": "wealth astrology prediction",
+    "keywords": [
+      "wealth astrology", "dhana yoga", "wealth in horoscope",
+      "money prediction astrology", "financial astrology",
+      "2nd house wealth", "indu lagna"
+    ],
+    "volume_range": "est. 3K–8K per keyword; cluster total est. 20K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/wealth",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "High intent — people searching wealth prediction are motivated. Show Hora chart + Dhana Yoga + Indu Lagna. Pairs with career page."
+  },
+  {
+    "id": "health-astrology",
+    "head": "health astrology prediction",
+    "keywords": [
+      "health astrology", "medical astrology", "disease in horoscope",
+      "longevity astrology", "maraka planets", "health prediction by date of birth"
+    ],
+    "volume_range": "5.9K (astrological remedies for health); cluster est. 15K+",
+    "dominant_type": "mixed",
+    "target_url": "/vedic/health",
+    "priority": "P2",
+    "status": "exists",
+    "notes": "Disclaimer-heavy. Must comply with astrology disclaimer on /disclaimer. Show Ayush scoring and vulnerable areas, not diagnoses."
+  },
+  {
+    "id": "predictions-varshaphal",
+    "head": "annual horoscope prediction",
+    "keywords": [
+      "varshaphal", "annual horoscope", "solar return vedic",
+      "yearly prediction astrology", "muntha astrology",
+      "prashna kundli", "horary astrology"
+    ],
+    "volume_range": "horary astrology 60.5K; cluster total est. 80K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/predictions",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "Horary astrology (60.5K) is a strong sub-keyword. Prashna Kundli is unique — few competitors offer it free. Seasonal traffic spikes around New Year."
+  },
+  {
+    "id": "nadi-astrology",
+    "head": "nadi astrology",
+    "keywords": [
+      "nadi astrology", "bhrigu nandi nadi", "nadi jyotish",
+      "bhrigu bindu calculator", "upagraha calculator",
+      "gulika calculator", "mandi calculator"
+    ],
+    "volume_range": "est. 5K–15K per keyword; cluster total est. 20K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/nadi",
+    "priority": "P2",
+    "status": "exists",
+    "notes": "Mystique factor drives searches. Bhrigu Bindu is unique. Few free Nadi calculators exist."
+  },
+  {
+    "id": "full-report",
+    "head": "free kundli report",
+    "keywords": [
+      "free kundli report", "detailed birth chart analysis",
+      "free horoscope report", "complete kundli analysis",
+      "kundli pdf download", "birth chart report free"
+    ],
+    "volume_range": "est. 5K–10K per keyword; cluster total est. 20K+",
+    "dominant_type": "tool",
+    "target_url": "/vedic/report",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "Conversion powerhouse. 294-algorithm report is unmatched depth. PDF download is a strong CTA and unique value prop."
   }
 ]
