@@ -35,7 +35,7 @@ Every Vedic tool page MUST have an entry in `VEDIC_SEO` with:
 - Empty state keys: `'empty.{section}'`
 - SEO intro keys: `'seo.{section}.heading'`, `'seo.{section}.text'`
 - Nav keys: `'nav.{section}'`
-- **Hindi style**: Follow `.cursor/rules/hindi-translation-style.mdc` — colloquial, Hinglish-friendly, NOT textbook Sanskrit Hindi. Read it aloud; if it sounds like Google Translate, rewrite it.
+- **Multilingual style**: Follow `.cursor/rules/multilingual-content-style.mdc` — review each language independently. Do NOT translate literally. Use language-native phrases, idioms, and natural paragraphs across `hi`, `ne`, and `pt`. See also `.cursor/rules/hindi-translation-style.mdc`.
 
 ## New Page Checklist
 

@@ -664,5 +664,174 @@
     "priority": "P1",
     "status": "gap",
     "notes": "Fortune teller peaks in South Africa (ZA) with 16K/mo and Jan spike to 35K. Globally 'free fortune reading' at 19M (+58% YoY). Bridge term between traditional astrology and AI-powered readings. Serve from /ai-horoscope page."
+  },
+
+  {
+    "id": "horoscopo-diario-es",
+    "head": "horóscopo de hoy",
+    "keywords": [
+      "horóscopo de hoy", "horóscopo del día", "mi horóscopo de hoy",
+      "horóscopo hoy", "horoscopo de hoy gratis", "predicciones de hoy",
+      "horóscopo diario", "horoscopo diario gratis"
+    ],
+    "volume_range": "horóscopo 135K global; est. 200K+ combined MX+AR+ES+CO",
+    "dominant_type": "content",
+    "target_url": "/es/horoscope/today",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Core daily horoscope query in Spanish. Mexico primary query is 'mi horóscopo de hoy' (InstantFortune 2026). 97% mobile traffic in Spanish markets. Competitors: horoscoponegro.com (2.7M/mo), Clarín horoscope section. Same transit logic as English daily horoscope, Spanish presentation layer."
+  },
+  {
+    "id": "signos-zodiacales-es",
+    "head": "signos zodiacales",
+    "keywords": [
+      "signos zodiacales", "signos del zodiaco", "signos del zodiaco fechas",
+      "signo zodiacal", "los 12 signos del zodiaco", "zodiaco signos",
+      "características de los signos", "elementos signos zodiacales"
+    ],
+    "volume_range": "signos zodiacales 90.5K global ($0.23 CPC); cluster total est. 150K+",
+    "dominant_type": "content",
+    "target_url": "/es/horoscope/signs",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "High-volume informational cluster. Spanish zodiac sign names differ from English: Tauro, Géminis, Cáncer, Escorpio, Sagitario, Capricornio, Acuario, Piscis. Content must use native Spanish terms. 12 per-sign pages needed."
+  },
+  {
+    "id": "horoscopo-por-signo-es",
+    "head": "horóscopo [signo] hoy",
+    "keywords": [
+      "horóscopo aries hoy", "horóscopo tauro hoy", "horóscopo géminis hoy",
+      "horóscopo cáncer hoy", "horóscopo leo hoy", "horóscopo virgo hoy",
+      "horóscopo libra hoy", "horóscopo escorpio hoy", "horóscopo sagitario hoy",
+      "horóscopo capricornio hoy", "horóscopo acuario hoy", "horóscopo piscis hoy"
+    ],
+    "volume_range": "368K per top sign (aries/escorpio/tauro) global; cluster total est. 3M+ combined",
+    "dominant_type": "content",
+    "target_url": "/es/horoscope/[signo]",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Per-sign daily horoscope in Spanish. Sagitario peaks in Brazil+Portugal+Spain (index 88). Aries peaks in Brazil+India (index 94, +34% YoY). Escorpio is #1 globally (index 100). Acuario peaks in Brazil+Mexico. Same calculation engine, Spanish sign names in URLs."
+  },
+  {
+    "id": "carta-natal-es",
+    "head": "carta natal / carta astral gratis",
+    "keywords": [
+      "carta astral gratis", "carta natal gratis", "carta astral",
+      "carta natal", "calcular carta natal", "calcular carta astral",
+      "carta astral online", "mapa astral gratis", "carta natal online gratis",
+      "mi carta natal"
+    ],
+    "volume_range": "calculadora carta natal 90.5K global (Deckaura); carta astral gratis est. 60K+ MX+ES+AR",
+    "dominant_type": "tool",
+    "target_url": "/es/vedic/kundli",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Direct equivalent of Kundli tool. 'Carta astral' preferred in Spain/Mexico; 'carta natal' preferred in Argentina (cartaastral.mx confirms). Must use both terms. Competitors: astromapia.com, cartaastral.mx, lunaika.com — all free online calculators. Vedic precision is a differentiator."
+  },
+  {
+    "id": "ascendente-es",
+    "head": "calcular ascendente / signo ascendente",
+    "keywords": [
+      "calcular ascendente", "calcular mi ascendente", "ascendente",
+      "signo ascendente", "cuál es mi ascendente", "ascendente gratis",
+      "calculadora ascendente", "cómo calcular el ascendente"
+    ],
+    "volume_range": "rising sign 74K global; est. 30K+ Spanish-language",
+    "dominant_type": "tool",
+    "target_url": "/es/vedic/kundli",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Identical to Lagna calculation. Ascendente changes every ~2 hours — exact birth time required. Strong tool intent. brujasinescoba.com ranks well. Serve from Kundli page with ascendente prominently displayed. Part of 'Big Three' (Sol, Luna, Ascendente) trend."
+  },
+  {
+    "id": "compatibilidad-signos-es",
+    "head": "compatibilidad de signos",
+    "keywords": [
+      "compatibilidad de signos", "compatibilidad zodiacal",
+      "compatibilidad astrológica", "sinastría", "signos compatibles",
+      "compatibilidad signos zodiacales", "compatibilidad de parejas",
+      "qué signo es compatible con el mío"
+    ],
+    "volume_range": "signos zodiacales compatibles 4.4K; compatibilidad zodiacal 4.4K; cluster total est. 40K+ MX+AR+ES",
+    "dominant_type": "tool",
+    "target_url": "/es/vedic/compatibility",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Argentina queries dominated by love/compatibility (El Cronista 2026). Maps to Kundli Milan / 36 gunas. 'Sinastría' is the professional Spanish term (two-chart comparison). tarotgratis.club/horoscopo/compatibilidad-de-signos/ is a competitor. Love queries peak around Valentine's Day (Feb)."
+  },
+  {
+    "id": "horoscopo-amor-es",
+    "head": "horóscopo del amor",
+    "keywords": [
+      "horóscopo del amor", "horóscopo amor hoy", "horóscopo amor solteros",
+      "horóscopo negro amor", "horóscopo del amor hoy gratis",
+      "predicciones amor", "horóscopo aries hoy amor solteros"
+    ],
+    "volume_range": "love horoscope 74K global; est. 50K+ Spanish-language combined",
+    "dominant_type": "content",
+    "target_url": "/es/horoscope/love",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Argentina data: 'horóscopo de mañana amor' and 'horóscopo aries hoy amor solteros' are top breakout queries (El Cronista 2026). Love is the dominant vertical in LatAm astrology. 'Horóscopo negro' is a popular brand/format. Valentine's Day (Feb) and Scorpio season (Oct-Nov) peaks."
+  },
+  {
+    "id": "horoscopo-semanal-mensual-es",
+    "head": "horóscopo semanal / mensual",
+    "keywords": [
+      "horóscopo semanal", "horóscopo mensual", "horóscopo semanal gratis",
+      "predicciones semanales", "horóscopo mensual 2026",
+      "horóscopo anual 2026", "predicciones 2027"
+    ],
+    "volume_range": "weekly horoscope 135K global; monthly horoscope 40.5K global; est. 80K+ Spanish combined",
+    "dominant_type": "content",
+    "target_url": "/es/horoscope/weekly",
+    "priority": "P2",
+    "status": "gap",
+    "notes": "Recurring content format. horoscoponegro.com (2.7M visits) built on weekly/monthly horoscope content. SEO Juice data: moon phase template content drives 40% of traffic for Spanish astrologers. January New Year predictions spike to 3x normal. Predicciones 2027 queries will spike Dec-Jan."
+  },
+  {
+    "id": "horoscopo-chino-es",
+    "head": "horóscopo chino",
+    "keywords": [
+      "horóscopo chino", "horóscopo chino 2026", "horóscopo chino 2026 por signo",
+      "horóscopo chino año de la serpiente", "signo chino", "zodiaco chino",
+      "horoscopo chino compatibilidad"
+    ],
+    "volume_range": "horóscopo chino 4.4K ($1.87 CPC — highest CPC in Spanish astrology); Chinese New Year breakout spikes 5000%+",
+    "dominant_type": "content",
+    "target_url": "/es/chinese-zodiac",
+    "priority": "P2",
+    "status": "gap",
+    "notes": "Argentina breakout: 'horóscopo chino 2026 por signo' was the #1 most googled astrology query in Argentina (El Cronista). Chinese New Year drives massive spikes (Feb). $1.87 CPC is the highest in Spanish astrology — high commercial intent. Clarín has a dedicated Chinese horoscope section. Future expansion opportunity."
+  },
+  {
+    "id": "tarot-gratis-es",
+    "head": "tarot gratis / lectura de tarot",
+    "keywords": [
+      "tarot gratis", "tarot del amor", "lectura de tarot gratis",
+      "tarot si o no", "tarot online gratis", "cartas del tarot",
+      "tirada de tarot gratis"
+    ],
+    "volume_range": "lectura de tarot gratis 40.5K global; tarot 74K global; losarcanos.com has 1.4M/mo visits from tarot",
+    "dominant_type": "tool + content",
+    "target_url": "/es/tools",
+    "priority": "P2",
+    "status": "gap",
+    "notes": "Adjacent category. losarcanos.com (1.4M/mo, Argentina #1) built entire business on tarot + carta astral. tarotgratis.club is pure competitor. Not our core product but a traffic bridge to astrology tools. Consider future tarot feature. 'Tarot sí o no' is a high-engagement interactive format."
+  },
+  {
+    "id": "signo-lunar-es",
+    "head": "signo lunar / signo solar",
+    "keywords": [
+      "signo lunar", "cuál es mi signo lunar", "signo solar",
+      "sol luna y ascendente", "mis tres signos", "big three astrología",
+      "calcular signo lunar"
+    ],
+    "volume_range": "moon sign 74K global; sun moon rising 27.1K global; est. 25K+ Spanish",
+    "dominant_type": "tool",
+    "target_url": "/es/vedic/kundli",
+    "priority": "P2",
+    "status": "gap",
+    "notes": "'Big Three' (Sol, Luna, Ascendente) is a trending concept in Spanish-language astrology. lunaika.com and astromapia.com both prominently display Big Three. Maps directly to Kundli output. Gen Z driver — Instagram astrology culture uses Big Three as identity markers."
   }
 ]

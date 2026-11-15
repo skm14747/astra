@@ -38,12 +38,14 @@ import { analyzeMarriage, type MarriageAnalysis } from './marriage';
 import { detectTajikaYogas, calculateSahams, type TajikaYoga, type Saham } from './tajika';
 import { getYantraRemedy, getGrahaShanti, getTempleRitual, getGemstoneTest, type GemstoneTest } from './remedies';
 
+import type { Lang } from './types';
 import {
   getPlanetInSignText, getPlanetInHouseText, getNakshatraProfile,
-  getDignityText, RETRO_TEXT, COMBUST_TEXT, ASPECT_RECEIVED, getConjunctionText,
+  getDignityText, getRetroText, getCombustText, getAspectReceived, getConjunctionText,
   getMahadashaNarrative,
   generateCareerReading, generateMarriageReading, generateWealthReading,
   generateHealthReading, generateSpiritualReading,
+  ordinalHi, houseAreaHi,
 } from './interpretations';
 import type {
   NakshatraProfile, MahadashaNarrative,
@@ -156,7 +158,7 @@ export interface FullReport {
 
 const ALL_PLANETS: Planet[] = ['Sun', 'Moon', 'Mars', 'Mercury', 'Jupiter', 'Venus', 'Saturn', 'Rahu', 'Ketu'];
 
-export function generateFullReport(chart: KundliChart): FullReport {
+export function generateFullReport(chart: KundliChart, lang: Lang = 'en'): FullReport {
   const now = new Date();
 
   // ── Part 1: Raw Data ──
@@ -210,11 +212,11 @@ export function generateFullReport(chart: KundliChart): FullReport {
     const aspectsReceived = ALL_PLANETS.filter(other => other !== planet).filter(other => {
       const otherAspects = getAspects(other, chart.planets[other].house);
       return otherAspects.includes(pos.house);
-    }).map(other => ({ planet: other, text: ASPECT_RECEIVED[other] || '' }));
+    }).map(other => ({ planet: other, text: getAspectReceived(other, lang) }));
 
     const planetConjs = conjunctions.filter(c => c.planet1 === planet || c.planet2 === planet).map(c => {
       const other = c.planet1 === planet ? c.planet2 : c.planet1;
-      return { planet: other, text: getConjunctionText(planet, other) };
+      return { planet: other, text: getConjunctionText(planet, other, lang) };
     });
 
     return {
@@ -227,11 +229,11 @@ export function generateFullReport(chart: KundliChart): FullReport {
       dignity,
       isRetrograde: pos.isRetrograde,
       isCombust: combust,
-      signText: getPlanetInSignText(planet, pos.rashiName),
-      houseText: getPlanetInHouseText(planet, pos.house),
-      dignityText: getDignityText(dignity),
-      retroText: pos.isRetrograde ? RETRO_TEXT.effect : '',
-      combustText: combust ? COMBUST_TEXT.effect : '',
+      signText: getPlanetInSignText(planet, pos.rashiName, lang),
+      houseText: getPlanetInHouseText(planet, pos.house, lang),
+      dignityText: getDignityText(dignity, lang),
+      retroText: pos.isRetrograde ? getRetroText(lang).effect : '',
+      combustText: combust ? getCombustText(lang).effect : '',
       aspectsFrom: aspects,
       aspectsReceived,
       conjunctions: planetConjs,
@@ -242,10 +244,28 @@ export function generateFullReport(chart: KundliChart): FullReport {
   const houseEntries: HouseReportEntry[] = chart.houses.map((h, i) => {
     const lordPos = chart.planets[h.lord as Planet];
     const lordHouse = lordPos?.house ?? 0;
-    const planetsText = h.planets.length > 0
-      ? `${h.planets.join(', ')} ${h.planets.length > 1 ? 'occupy' : 'occupies'} this house, bringing their energies directly into these life areas.`
-      : 'No planets occupy this house — results depend primarily on the lord\'s placement and aspects received.';
-    const lordText = `The lord of your ${ordinal(i + 1)} house is ${h.lord}, placed in the ${ordinal(lordHouse)} house. This connects ${houseArea(i + 1)} with ${houseArea(lordHouse)}.`;
+    let lordText: string;
+    let planetsText: string;
+    let area: string;
+
+    if (lang === 'hi') {
+      const PLANET_HI: Record<string, string> = {
+        Sun: 'सूर्य', Moon: 'चंद्रमा', Mars: 'मंगल', Mercury: 'बुध',
+        Jupiter: 'गुरु', Venus: 'शुक्र', Saturn: 'शनि', Rahu: 'राहु', Ketu: 'केतु',
+      };
+      const ph = (name: string) => PLANET_HI[name] || name;
+      planetsText = h.planets.length > 0
+        ? `${h.planets.map(pp => ph(pp)).join(', ')} इस भाव में विराजमान हैं, अपनी ऊर्जाएँ सीधे इन जीवन क्षेत्रों में लाते हैं।`
+        : 'कोई ग्रह इस भाव में नहीं — परिणाम मुख्यतः स्वामी की स्थिति और प्राप्त दृष्टियों पर निर्भर।';
+      lordText = `आपके ${ordinalHi(i + 1)} भाव का स्वामी ${ph(h.lord)} है, जो ${ordinalHi(lordHouse)} भाव में स्थित है। यह ${houseAreaHi(i + 1)} को ${houseAreaHi(lordHouse)} से जोड़ता है।`;
+      area = houseAreaHi(i + 1);
+    } else {
+      planetsText = h.planets.length > 0
+        ? `${h.planets.join(', ')} ${h.planets.length > 1 ? 'occupy' : 'occupies'} this house, bringing their energies directly into these life areas.`
+        : 'No planets occupy this house — results depend primarily on the lord\'s placement and aspects received.';
+      lordText = `The lord of your ${ordinal(i + 1)} house is ${h.lord}, placed in the ${ordinal(lordHouse)} house. This connects ${houseArea(i + 1)} with ${houseArea(lordHouse)}.`;
+      area = houseArea(i + 1);
+    }
 
     return {
       house: i + 1,
@@ -253,7 +273,7 @@ export function generateFullReport(chart: KundliChart): FullReport {
       lord: h.lord,
       lordHouse,
       planets: h.planets,
-      area: houseArea(i + 1),
+      area,
       interpretation: `${lordText} ${planetsText}`,
     };
   });
@@ -262,41 +282,54 @@ export function generateFullReport(chart: KundliChart): FullReport {
   const ascSign = chart.ascendant.rashiName;
   const ascLord = RASHI_LORDS[chart.ascendant.rashi];
   const ascLordHouse = chart.planets[ascLord as Planet]?.house ?? 1;
-  const ascText = getPlanetInSignText('Sun', ascSign); // use Sun-in-sign as proxy for Asc sign character
+  const ascText = getPlanetInSignText('Sun', ascSign, lang);
+  const SIGN_HI: Record<string, string> = {
+    Aries: 'मेष', Taurus: 'वृषभ', Gemini: 'मिथुन', Cancer: 'कर्क',
+    Leo: 'सिंह', Virgo: 'कन्या', Libra: 'तुला', Scorpio: 'वृश्चिक',
+    Sagittarius: 'धनु', Capricorn: 'मकर', Aquarius: 'कुंभ', Pisces: 'मीन',
+  };
+  const PLANET_HI_MAP: Record<string, string> = {
+    Sun: 'सूर्य', Moon: 'चंद्रमा', Mars: 'मंगल', Mercury: 'बुध',
+    Jupiter: 'गुरु', Venus: 'शुक्र', Saturn: 'शनि', Rahu: 'राहु', Ketu: 'केतु',
+  };
   const ascendantReading = {
     sign: ascSign,
     lord: ascLord,
     lordHouse: ascLordHouse,
-    text: `Your Ascendant (Lagna) is ${ascSign}, making you a ${ascSign} rising native. The lord of your Ascendant, ${ascLord}, is placed in your ${ordinal(ascLordHouse)} house, directing your life force toward ${houseArea(ascLordHouse)}. ${ascText.nature}`,
+    text: lang === 'hi'
+      ? `आपका लग्न (Ascendant) ${SIGN_HI[ascSign] || ascSign} है, जो आपको ${SIGN_HI[ascSign] || ascSign} लग्न का जातक बनाता है। आपके लग्न का स्वामी ${PLANET_HI_MAP[ascLord] || ascLord}, आपके ${ordinalHi(ascLordHouse)} भाव में स्थित है, जो आपकी जीवन शक्ति को ${houseAreaHi(ascLordHouse)} की ओर निर्देशित करता है। ${ascText.nature}`
+      : `Your Ascendant (Lagna) is ${ascSign}, making you a ${ascSign} rising native. The lord of your Ascendant, ${ascLord}, is placed in your ${ordinal(ascLordHouse)} house, directing your life force toward ${houseArea(ascLordHouse)}. ${ascText.nature}`,
   };
 
   // Moon sign reading
   const moonPos = chart.planets.Moon;
-  const moonSignText = getPlanetInSignText('Moon', moonPos.rashiName);
+  const moonSignText = getPlanetInSignText('Moon', moonPos.rashiName, lang);
   const moonSignReading = {
     sign: moonPos.rashiName,
     nakshatra: moonPos.nakshatraName,
-    text: `Your Moon (Chandra) is in ${moonPos.rashiName}, making this your Rashi (Moon sign). ${moonSignText.nature} Born under ${moonPos.nakshatraName} nakshatra (pada ${moonPos.pada}), your emotional temperament carries its specific qualities.`,
+    text: lang === 'hi'
+      ? `आपका चंद्रमा ${SIGN_HI[moonPos.rashiName] || moonPos.rashiName} में है, जो इसे आपकी राशि (चंद्र राशि) बनाता है। ${moonSignText.nature} ${moonPos.nakshatraName} नक्षत्र (पद ${moonPos.pada}) में जन्म लेकर, आपका भावनात्मक स्वभाव इसके विशिष्ट गुणों को धारण करता है।`
+      : `Your Moon (Chandra) is in ${moonPos.rashiName}, making this your Rashi (Moon sign). ${moonSignText.nature} Born under ${moonPos.nakshatraName} nakshatra (pada ${moonPos.pada}), your emotional temperament carries its specific qualities.`,
   };
 
-  const nakshatraProfile = getNakshatraProfile(moonPos.nakshatra);
+  const nakshatraProfile = getNakshatraProfile(moonPos.nakshatra, lang);
 
   // ── Part 3: Life Areas ──
-  const careerReading = generateCareerReading(chart);
+  const careerReading = generateCareerReading(chart, lang);
   const careerRaw = analyzeCareer(chart);
-  const marriageReading = generateMarriageReading(chart);
-  const wealthReading = generateWealthReading(chart);
+  const marriageReading = generateMarriageReading(chart, lang);
+  const wealthReading = generateWealthReading(chart, lang);
   const wealthRaw = analyzeWealth(chart);
-  const healthReading = generateHealthReading(chart);
+  const healthReading = generateHealthReading(chart, lang);
   const healthRaw = analyzeHealth(chart);
-  const spiritualReading = generateSpiritualReading(chart);
+  const spiritualReading = generateSpiritualReading(chart, lang);
 
   // ── Part 4: Timeline ──
   const moonLon = chart.planets.Moon.siderealLongitude;
   const vimDasha = calculateVimshottariDasha(moonLon, chart.birthData.date);
   const vimDashaEntries: DashaReportEntry[] = vimDasha.mahadashas.map(md => ({
     period: md,
-    narrative: getMahadashaNarrative(md.lord),
+    narrative: getMahadashaNarrative(md.lord, lang),
     isActive: md.startDate <= now && md.endDate > now,
   }));
 

@@ -452,6 +452,162 @@ Astra Destiny's core Vedic calculation engine can serve Western zodiac audiences
 
 This means Astra can serve 80%+ of international English keywords with **zero new calculation engines** — only a Western-facing presentation layer on existing tools.
 
+---
+
+## Spanish-Language Market Keyword Research (November 2026)
+
+### Market Size: 320M+ Internet Users Across 21 Countries
+
+| Country | Internet Users | Penetration | Astrology Notes |
+|---|---|---|---|
+| 🇲🇽 Mexico | 110M | 83.5% | Largest market. "mi horóscopo de hoy" primary query. 97% mobile. |
+| 🇪🇸 Spain | 47M | ~93% | "carta astral" preferred term. Celebrity astrologers (Rappel). |
+| 🇦🇷 Argentina | 46M | ~87% | Strongest astrology culture. Love + Chinese horoscope dominant. |
+| 🇨🇴 Colombia | 41.7M | 77.8% | horoscoponegro.com core audience (25%). Growing market. |
+| 🇵🇪 Peru | 28.4M | 82.0% | Steady demand. horoscoponegro.com gets 5.6% traffic from Peru. |
+| 🇨🇱 Chile | 18.8M | 94.5% | Highest penetration in LatAm. 95.7% smartphone use. |
+| 🇻🇪 Venezuela | ~22M | ~72% | horoscoponegro.com ranked #90 in Venezuela, #2 in Arts category. |
+| **Total** | **320M+** | | **21 Spanish-speaking countries** |
+
+Source: DataReportal Digital 2026 country reports (Mexico, Colombia, Peru, Chile)
+
+### Spanish Keyword Volumes
+
+| Keyword (Spanish) | Volume | CPC | Market | Astra Target |
+|---|---|---|---|---|
+| horóscopo | 135K/mo | $0.93 | Global | /es/horoscope/today |
+| signos zodiacales | 90.5K/mo | $0.23 | Global | /es/horoscope/signs |
+| calculadora carta natal | 90.5K/mo | — | Global (Deckaura) | /es/vedic/kundli |
+| horóscopo [signo] hoy | 301K–368K per sign | $0.01 | Global | /es/horoscope/[signo] |
+| carta astral gratis | est. 60K+ | — | MX+ES+AR | /es/vedic/kundli |
+| lectura de tarot gratis | 40.5K/mo | — | Global | /es/tools (future) |
+| compatibilidad zodiacal | 4.4K/mo | $0.05 | Global | /es/vedic/compatibility |
+| horóscopo chino | 4.4K/mo | $1.87 | Global | /es/chinese-zodiac (future) |
+| signos zodiacales compatibles | 4.4K/mo | $0.05 | Global | /es/vedic/compatibility |
+
+### Top Spanish Astrology Competitors
+
+| Site | Monthly Visits | Top Countries | Traffic Source | Strength |
+|---|---|---|---|---|
+| horoscoponegro.com | 2.7M | ES 42%, AR 20%, MX 12%, CO 8% | Direct 37%, Organic 33% | Weekly/monthly horoscope, strong brand |
+| losarcanos.com | 1.4M | AR 32%, ES 15%, MX 12%, CL 9% | Organic 47%, Direct 38% | Tarot + carta astral combo, 7.6 pages/visit |
+| horoscopo.com | 341K | MX 41%, ES 15%, US 10%, AR 9% | Direct 58% | Mexico-focused, +106% growth Sep 2026 |
+| Clarín /horoscopo | Part of 72M | AR 55%, ES 14%, MX 6% | — | Media brand trust, daily + Chinese horoscope |
+| El Universal /horoscopo | Part of 60M | MX dominant | — | Carta astral calculator, media brand trust |
+
+Source: Semrush Jan 2026, Similarweb Sep-Oct 2026
+
+### Argentina-Specific Insights (Strongest Astrology Culture)
+
+- **#1 query: "horóscopo chino 2026 por signo"** — Chinese New Year breakout (5000%+ spike)
+- **Love dominates**: "horóscopo de mañana amor", "horóscopo aries hoy amor solteros" are top queries
+- **Celebrity astrologers**: "rappel horoscopo" is a top related query (Spanish astrologer)
+- **Chinese + Western blend**: Users search both zodiac systems simultaneously
+- **Peak**: Chinese New Year (Feb), followed by Scorpio season (Oct-Nov)
+
+Source: El Cronista Argentina, Google Trends 2026
+
+### Terminology Variations by Country
+
+| Concept | Spain | Mexico | Argentina |
+|---|---|---|---|
+| Birth chart | carta astral | carta astral / carta natal | carta natal |
+| Zodiac sign | signo zodiacal | signo zodiacal / signo | signo del zodiaco |
+| Horoscope | horóscopo | horóscopo / mi horóscopo | horóscopo |
+| Rising sign | ascendente | ascendente | ascendente |
+| Phone | móvil | celular | celular |
+
+**SEO implication**: Use "carta natal" as primary with "carta astral" in meta descriptions and H2s for maximum coverage.
+
+### Vedic-to-Spanish Term Mapping
+
+| Vedic | Spanish | Notes |
+|---|---|---|
+| Kundli | **Carta Natal** / Carta Astral | Both terms needed for SEO |
+| Rashifal | **Horóscopo** | "horóscopo del día" for daily |
+| Rashi | **Signo Zodiacal** | |
+| Lagna | **Ascendente** | Identical concept |
+| Nakshatra | **Constelación Lunar** | Keep "Nakshatra" as exotic differentiator |
+| Dashas | **Períodos Planetarios** | "Tránsitos" for transit periods |
+| Panchang | **Calendario Lunar** | |
+| Muhurta | **Hora Propicia** | "Momento Auspicioso" also works |
+| Kundli Milan | **Compatibilidad / Sinastría** | "Sinastría" is professional term |
+| Graha | **Planeta** | |
+| Bhava | **Casa Astrológica** | |
+
+### Spanish Zodiac Sign Names
+
+| English | Spanish | Accents matter |
+|---|---|---|
+| Aries | Aries | Same |
+| Taurus | **Tauro** | |
+| Gemini | **Géminis** | Accent on é |
+| Cancer | **Cáncer** | Accent on á |
+| Leo | Leo | Same |
+| Virgo | Virgo | Same |
+| Libra | Libra | Same |
+| Scorpio | **Escorpio** | |
+| Sagittarius | **Sagitario** | |
+| Capricorn | **Capricornio** | |
+| Aquarius | **Acuario** | |
+| Pisces | **Piscis** | |
+
+### Seasonal Patterns (Spanish Markets)
+
+| Period | Volume Spike | Driver |
+|---|---|---|
+| January | 3x normal | "predicciones 2027", New Year horoscope queries |
+| February | 5000%+ breakout (AR) | Chinese New Year, Valentine's Day compatibility |
+| March-April | 2x normal | Aries season (#2 most searched, +34% YoY) |
+| October-November | 2.5x normal | Scorpio season (#1 most searched sign globally) |
+| December | 2x normal | "horóscopo anual 2027" advance queries |
+
+### Spanish Content Strategy: 12 New Keyword Clusters (56 total)
+
+| Cluster ID | Head Keyword | Est. Volume | Priority | Status |
+|---|---|---|---|---|
+| horoscopo-diario-es | horóscopo de hoy | 200K+ MX+AR+ES | P1 | Gap |
+| signos-zodiacales-es | signos zodiacales | 150K+ | P1 | Gap |
+| horoscopo-por-signo-es | horóscopo [signo] hoy | 3M+ combined | P1 | Gap |
+| carta-natal-es | carta natal / carta astral gratis | 150K+ | P1 | Gap |
+| ascendente-es | calcular ascendente | 30K+ | P1 | Gap |
+| compatibilidad-signos-es | compatibilidad de signos | 40K+ | P1 | Gap |
+| horoscopo-amor-es | horóscopo del amor | 50K+ | P1 | Gap |
+| horoscopo-semanal-mensual-es | horóscopo semanal / mensual | 80K+ | P2 | Gap |
+| horoscopo-chino-es | horóscopo chino | 4.4K ($1.87 CPC) | P2 | Gap |
+| tarot-gratis-es | tarot gratis / lectura de tarot | 40.5K+ | P2 | Gap |
+| signo-lunar-es | signo lunar / Big Three | 25K+ | P2 | Gap |
+
+**Total new addressable volume: est. 3.8M+ monthly searches**
+
+### Key Strategic Insight: Spanish is a "Copy-and-Adapt" Locale
+
+Unlike Portuguese (which needed Vedic-to-Western bridge from scratch), Spanish:
+1. **Shares 90% of Western astrology terminology** with Portuguese — "carta natal" (PT: "mapa astral"), "ascendente" (same), "compatibilidade" → "compatibilidad"
+2. **Has more established competitors** — but none with Vedic calculation accuracy
+3. **Argentina's Chinese horoscope interest** opens a future multi-system expansion path
+4. **97% mobile traffic** across LatAm — mobile-first design critical
+5. **losarcanos.com proves the model**: tarot + astrology tools = 1.4M/mo with 7.6 pages/visit engagement
+
+### Additional Data Sources (Spanish Market Research)
+
+- [Trendomap: "Horóscopo" search trends by country](https://es.trendomap.com/tendencia/horoscopo) — 31 countries trending Oct-Nov 2026
+- [SerpAnalytics: "horóscopo" keyword data](https://www.serpanalytics.com/keyword/hor%C3%B3scopo) — 135K global, $0.93 CPC
+- [SerpAnalytics: "signos zodiacales" keyword data](https://www.serpanalytics.com/keyword/signos+zodiacales) — 90.5K global, $0.23 CPC
+- [El Cronista Argentina: Google horoscope search patterns](https://www.cronista.com/informacion-gral/que-buscamos-cuando-googleamos-el-horoscopo-esto-es-lo-que-revela-google-sobre-los-argentinos-y-la-relacion-con-la-astrologia/) — Chinese horoscope breakout, love queries
+- [Similarweb: horoscoponegro.com traffic Sep 2026](https://www.similarweb.com/website/horoscoponegro.com/) — 2.7M visits, Spain/AR/MX/CO
+- [Similarweb: losarcanos.com traffic Oct 2026](https://www.similarweb.com/website/losarcanos.com/) — 1.4M visits, AR/ES/MX/CL
+- [Similarweb: horoscopo.com traffic Sep 2026](https://www.similarweb.com/website/horoscopo.com/) — 341K visits, MX-focused, +106% growth
+- [Semrush: horoscoponegro.com Jan 2026](https://www.semrush.com/website/horoscoponegro.com/overview/) — 1.57M visits, CO/AR/ES/MX/PE
+- [DataReportal: Digital 2026 Mexico](https://datareportal.com/reports/digital-2026-mexico) — 110M internet users, 83.5% penetration
+- [DataReportal: Digital 2026 Colombia](https://datareportal.com/reports/digital-2026-colombia) — 41.7M internet users, 77.8% penetration
+- [DataReportal: Digital 2026 Peru](https://datareportal.com/reports/digital-2026-peru) — 28.4M internet users, 82.0% penetration
+- [DataReportal: Digital 2026 Chile](https://datareportal.com/reports/digital-2026-chile) — 18.8M internet users, 94.5% penetration
+- [Deckaura: Tarot Industry Report 2026](https://deckaura.com/es/pages/informe-de-la-industria-de-las-cartas-del-tarot-y-oraculo-2026) — calculadora carta natal 90.5K, compatibilidad zodiacal 4.4K
+- [SEO Juice: SEO para astrólogos](https://seojuice.com/es/blog/seo-para-astrologos-y-lectores-de-tarot-como-conseguir-mas-clientes/) — Spanish astrology SEO funnel strategy
+- [QY Research: Horoscope & Astrology Apps Market 2026](https://www.qyresearch.com/reports/6311854/horoscope-and-astrology-apps) — $1.287B market, 11.3% CAGR
+- [FortunaInstant: Most Searched Zodiac Signs 2026](https://getfortuneai.com/es/insights/most-searched-zodiac-signs-2026) — Sagitario peaks in Spain
+
 ### Additional Data Sources (International Research)
 
 - [InstantFortune: 2026 Global Horoscope & Zodiac Search Trends Report](https://getfortuneai.com/en/insights/2026-zodiac-search-trends) — country breakdown, seasonal patterns, AI trends

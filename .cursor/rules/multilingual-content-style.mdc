@@ -1,0 +1,54 @@
+---
+description: Multilingual content and i18n standards — independent language review, native phrasing and paragraphs, avoiding literal translation across all supported locales (hi, ne, pt, en).
+globs: src/lib/i18n/*.ts
+alwaysApply: false
+---
+
+# Multilingual Content Standards — Native Phrasing & Independence
+
+## Core Principle: Independent Language Crafting
+
+**Never treat any language as a sentence-by-sentence translation of English.**
+Each supported language (`hi` Hindi, `ne` Nepali, `pt` Portuguese, `en` English) must be crafted independently as a first-class language, respecting its own syntax, idioms, cultural worldview, and astrological tradition.
+
+- **It does not have to be an exact translation.**
+- **Use language-native phrases, idioms, and natural paragraph structures.**
+- **Express the essence and purpose of the tool or explanation directly in the target language's natural voice.**
+
+---
+
+## Language-Specific Guidelines
+
+### 1. Hindi (`hi.ts`) — Sanatan Jyotish Tradition
+- **Tone**: Warm, dignified, respectful, and authoritative — like a learned Vedic astrologer (ज्योतिषी / पण्डित जी) speaking to a seeker.
+- **Native terms**: Use `जन्म पत्रिका`, `लग्न कुंडली`, `द्वादश भाव`, `फलकथन`, `दिनमान`, `रात्रिमान`, `षोडशवर्ग`, `दोष भंग`, `अष्टकूट गुण मिलान`, `अवस्था`, `गोचर`, `साढ़े साती`.
+- **Avoid translation calques**: Use `मज़बूत पक्ष` (not `शक्तियाँ`), `ध्यान देने योग्य बातें` (not `चुनौतियाँ`), `अनुकूल कार्यक्षेत्र` (not `करियर उपयुक्तता`).
+
+### 2. Nepali (`ne.ts`) — Traditional Patro & Jyotish Heritage
+- **Tone**: Culturally rooted in Nepal's rich astrological traditions (नेपाली पात्रो, पण्डित बाजे, चिना फलादेश).
+- **Native terms**:
+  - `जन्मकुण्डली (चिना)` instead of artificial terms.
+  - `शुभ साइत (मुहूर्त)` for auspicious electional times.
+  - `पात्रो तथा पञ्चाङ्ग` for calendar and daily astrological data.
+  - `पेशा तथा व्यवसाय विचार` for career/profession.
+  - `३६ गुण मिलान (अष्टकूट मेलापक)` for marriage matching.
+- **Natural syntax**: Use standard Nepali verb endings (`गरिन्छ`, `हुन्छ`, `हेरौँ`, `सकिन्छ`) and polite forms (`बनाउनुहोस्`, `रोज्नुहोस्`).
+
+### 3. Portuguese (`pt.ts`) — Brazilian / Lusophone Astrology Culture
+- **Tone**: Fluid, elegant, inspiring, and clear — speaking directly to the vibrant spiritual and astrological community in Brazil and Portugal.
+- **Native terms**:
+  - `Mapa Astral Védico (Kundli)` rather than just "Kundli" or "Mapa de Nascimento".
+  - `Panchangam (Calendário Cósmico Diário)`.
+  - `Astrologia Eletiva (Muhurta / Janelas Auspiciosas)`.
+  - `Sinastria Matrimonial (36 Pontos Ashtakoota)`.
+  - `Ciclos Planetários (Vimshottari Dasha)`.
+- **Natural syntax**: Construct flowing Portuguese sentences with evocative vocabulary (`jornada de alma`, `alinhamento cósmico`, `propósito de vida`, `sinastria`).
+
+---
+
+## Universal Quality Checklist for Any Locale
+
+1. **The Vacuum Test**: If the English text were deleted, does this text read like an authentic, beautifully written piece in this language?
+2. **Native Paragraph Rhythm**: Are paragraphs built with natural topic sentences and culturally intuitive transitions rather than mirroring English grammar?
+3. **No Bureaucratic Calques**: Avoid dictionary-translation oddities (e.g. bureaucratic words for cancellation, literal words for strengths/weaknesses).
+4. **Key Parity**: Always maintain 100% key parity with `src/lib/i18n/en.ts` so `npx tsc --noEmit` passes without missing keys.

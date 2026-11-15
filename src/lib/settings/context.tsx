@@ -5,7 +5,7 @@ import type { AyanamsaSystem, ChartStyle } from '@/lib/vedic/types';
 
 export type FontSize = 'small' | 'default' | 'large' | 'xl';
 export type ThemeMode = 'dark' | 'light';
-export type Language = 'en' | 'hi';
+export type Language = 'en' | 'hi' | 'ne' | 'pt' | 'es';
 
 const FONT_SCALE: Record<FontSize, number> = { small: 87.5, default: 100, large: 112.5, xl: 125 };
 
@@ -31,7 +31,12 @@ const SettingsContext = createContext<SettingsContextValue | null>(null);
 function getLocaleFromCookie(): Language {
   if (typeof document === 'undefined') return 'en';
   const match = document.cookie.match(/(?:^|;\s*)astra-locale=(\w+)/);
-  return (match?.[1] === 'hi' ? 'hi' : 'en');
+  const val = match?.[1];
+  if (val === 'hi') return 'hi';
+  if (val === 'ne') return 'ne';
+  if (val === 'pt') return 'pt';
+  if (val === 'es') return 'es';
+  return 'en';
 }
 
 export function SettingsProvider({ children }: { children: ReactNode }) {

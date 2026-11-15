@@ -8,8 +8,9 @@ import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
 import { generateFullReport, type FullReport } from '@/lib/vedic/report';
 import { RASHI_NAMES } from '@/lib/vedic/constants';
-import type { Planet, GrahaPlanet } from '@/lib/vedic/types';
+import type { Planet, GrahaPlanet, Lang } from '@/lib/vedic/types';
 import { useT, type TranslationKey } from '@/lib/i18n';
+import { useSettings } from '@/lib/settings/context';
 import { PLANET_GLYPH, RASHI_GLYPH } from '@/lib/vedic/glyphs';
 
 type TFn = (key: TranslationKey, params?: Record<string, string | number>) => string;
@@ -17,39 +18,31 @@ import SouthIndianChart from '@/components/vedic/SouthIndianChart';
 
 const GRAHAS: GrahaPlanet[] = ['Sun', 'Moon', 'Mars', 'Mercury', 'Jupiter', 'Venus', 'Saturn'];
 
-/* ── Part Groupings for ToC and Dividers ── */
-const PARTS = [
-  { num: 'I', title: 'Vedic Profile', sections: [0, 1, 2] },
-  { num: 'II', title: 'Personality & Nature', sections: [3, 4, 5, 6, 7, 8, 9, 10] },
-  { num: 'III', title: 'Life Areas', sections: [11, 12, 13, 14, 15] },
-  { num: 'IV', title: 'Timeline & Remedies', sections: [16, 17, 18, 19, 20, 21] },
+/* ── Section IDs (static, language-independent) ── */
+const SECTION_IDS = [
+  'birth-details', 'birth-chart', 'planetary-positions', 'ascendant', 'moon-sign',
+  'planet-analysis', 'house-analysis', 'shadbala', 'ashtakavarga', 'yogas', 'doshas',
+  'career', 'wealth', 'marriage', 'health', 'spiritual',
+  'dasha', 'jaimini', 'nadi', 'sade-sati', 'varshaphal', 'remedies',
 ];
 
-/* ── Table of Contents ── */
-const TOC = [
-  { id: 'birth-details', label: '1. Birth Details' },
-  { id: 'birth-chart', label: '2. Birth Chart' },
-  { id: 'planetary-positions', label: '3. Planetary Positions' },
-  { id: 'ascendant', label: '4. Your Ascendant' },
-  { id: 'moon-sign', label: '5. Moon Sign & Nakshatra' },
-  { id: 'planet-analysis', label: '6. Planet-by-Planet' },
-  { id: 'house-analysis', label: '7. House-by-House' },
-  { id: 'shadbala', label: '8. Planetary Strength' },
-  { id: 'ashtakavarga', label: '9. Ashtakavarga' },
-  { id: 'yogas', label: '10. Yogas' },
-  { id: 'doshas', label: '11. Doshas' },
-  { id: 'career', label: '12. Career' },
-  { id: 'wealth', label: '13. Wealth' },
-  { id: 'marriage', label: '14. Marriage' },
-  { id: 'health', label: '15. Health & Longevity' },
-  { id: 'spiritual', label: '16. Spiritual Path' },
-  { id: 'dasha', label: '17. Vimshottari Dasha' },
-  { id: 'jaimini', label: '18. Jaimini Analysis' },
-  { id: 'nadi', label: '19. Nadi Points' },
-  { id: 'sade-sati', label: '20. Sade Sati' },
-  { id: 'varshaphal', label: '21. This Year' },
-  { id: 'remedies', label: '22. Remedies' },
+const SECTION_TITLE_KEYS: TranslationKey[] = [
+  'rpt.s1', 'rpt.s2', 'rpt.s3', 'rpt.s4', 'rpt.s5', 'rpt.s6', 'rpt.s7',
+  'rpt.s8', 'rpt.s9', 'rpt.s10', 'rpt.s11', 'rpt.s12', 'rpt.s13', 'rpt.s14',
+  'rpt.s15', 'rpt.s16', 'rpt.s17', 'rpt.s18', 'rpt.s19', 'rpt.s20', 'rpt.s21', 'rpt.s22',
 ];
+
+/* ── Part Groupings (indices into SECTION_IDS) ── */
+const PARTS = [
+  { num: 'I', titleKey: 'print.vedicProfile' as TranslationKey, sections: [0, 1, 2] },
+  { num: 'II', titleKey: 'print.personalityNature' as TranslationKey, sections: [3, 4, 5, 6, 7, 8, 9, 10] },
+  { num: 'III', titleKey: 'print.lifeAreas' as TranslationKey, sections: [11, 12, 13, 14, 15] },
+  { num: 'IV', titleKey: 'print.timelineRemedies' as TranslationKey, sections: [16, 17, 18, 19, 20, 21] },
+];
+
+function getTOC(t: TFn) {
+  return SECTION_IDS.map((id, i) => ({ id, label: t(SECTION_TITLE_KEYS[i]) }));
+}
 
 function Section({ id, title, children, forceOpen }: { id: string; title: string; children: React.ReactNode; forceOpen?: boolean }) {
   const [open, setOpen] = useState(true);
@@ -108,8 +101,12 @@ function BarChart({ value, max, color = 'violet' }: { value: number; max: number
 export default function ReportPage() {
   const { chart } = useProfileChart();
   const t = useT();
+  const { language } = useSettings();
+  const lang = (language === 'hi' ? 'hi' : 'en') as Lang;
+  const TOC = useMemo(() => getTOC(t), [t]);
   const [report, setReport] = useState<FullReport | null>(null);
   const [generating, setGenerating] = useState(false);
+  const [reportLang, setReportLang] = useState<Lang>('en');
   const [activeSection, setActiveSection] = useState('');
   const [forceAllOpen, setForceAllOpen] = useState(false);
   const [showPrintOverlay, setShowPrintOverlay] = useState(false);
@@ -137,11 +134,23 @@ export default function ReportPage() {
     if (!chart) return;
     setGenerating(true);
     requestAnimationFrame(() => {
-      const r = generateFullReport(chart);
+      const r = generateFullReport(chart, lang);
       setReport(r);
+      setReportLang(lang);
       setGenerating(false);
     });
-  }, [chart]);
+  }, [chart, lang]);
+
+  // Re-generate report when language changes (if report already exists)
+  useEffect(() => {
+    if (report && chart && reportLang !== lang) {
+      requestAnimationFrame(() => {
+        const r = generateFullReport(chart, lang);
+        setReport(r);
+        setReportLang(lang);
+      });
+    }
+  }, [lang, chart, report, reportLang]);
 
   // Scroll-spy for ToC
   useEffect(() => {
@@ -222,7 +231,7 @@ export default function ReportPage() {
 
         {/* ── Print-Only: Cover, TOC, Dashboard ── */}
         <PrintCover report={r} fmtDate={fmtDate} fmtTime={fmtTime} t={t} />
-        <PrintTOC t={t} />
+        <PrintTOC t={t} toc={TOC} />
         <PrintDashboard report={r} t={t} />
 
         {/* Screen Cover (hidden in print) */}
@@ -250,33 +259,33 @@ export default function ReportPage() {
         <PrintPartDivider num="I" title={t('print.vedicProfile')} t={t} />
 
         {/* 1. Birth Details */}
-        <Section forceOpen={forceAllOpen} id="birth-details" title="1. Birth Details & Panchang">
+        <Section forceOpen={forceAllOpen} id="birth-details" title={t('rpt.s1')}>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Card>
-              <h3 className="text-sm font-semibold text-zinc-300 mb-3">Personal Details</h3>
-              <DataRow label="Name" value={r.profileName} />
-              <DataRow label="Date of Birth" value={fmtDate(bd.date)} />
-              <DataRow label="Time of Birth" value={fmtTime(bd.date)} />
-              <DataRow label="Coordinates" value={`${bd.observer.latitude.toFixed(4)}°N, ${bd.observer.longitude.toFixed(4)}°E`} />
-              <DataRow label="Ayanamsa" value={`${r.chart.ayanamsaSystem} (${r.chart.ayanamsa.toFixed(4)}°)`} />
+              <h3 className="text-sm font-semibold text-zinc-300 mb-3">{t('rpt.personalDetails')}</h3>
+              <DataRow label={t('rpt.name')} value={r.profileName} />
+              <DataRow label={t('rpt.dob')} value={fmtDate(bd.date)} />
+              <DataRow label={t('rpt.tob')} value={fmtTime(bd.date)} />
+              <DataRow label={t('rpt.coordinates')} value={`${bd.observer.latitude.toFixed(4)}°N, ${bd.observer.longitude.toFixed(4)}°E`} />
+              <DataRow label={t('rpt.ayanamsa')} value={`${r.chart.ayanamsaSystem} (${r.chart.ayanamsa.toFixed(4)}°)`} />
             </Card>
             <Card>
-              <h3 className="text-sm font-semibold text-zinc-300 mb-3">Birth Panchang</h3>
+              <h3 className="text-sm font-semibold text-zinc-300 mb-3">{t('rpt.birthPanchang')}</h3>
               {r.panchang ? (
                 <>
-                  <DataRow label="Tithi" value={r.panchang.tithi} />
-                  <DataRow label="Nakshatra" value={r.panchang.nakshatra} />
-                  <DataRow label="Yoga" value={r.panchang.yoga} />
-                  <DataRow label="Karana" value={r.panchang.karana} />
-                  <DataRow label="Vara" value={r.panchang.vara} />
+                  <DataRow label={t('rpt.tithi')} value={r.panchang.tithi} />
+                  <DataRow label={t('rpt.nakshatra')} value={r.panchang.nakshatra} />
+                  <DataRow label={t('rpt.yoga')} value={r.panchang.yoga} />
+                  <DataRow label={t('rpt.karana')} value={r.panchang.karana} />
+                  <DataRow label={t('rpt.vara')} value={r.panchang.vara} />
                 </>
-              ) : <p className="text-zinc-500 text-sm">Panchang data unavailable</p>}
+              ) : <p className="text-zinc-500 text-sm">{t('rpt.panchangUnavail')}</p>}
             </Card>
           </div>
         </Section>
 
         {/* 2. Birth Chart */}
-        <Section forceOpen={forceAllOpen} id="birth-chart" title="2. Birth Chart Overview">
+        <Section forceOpen={forceAllOpen} id="birth-chart" title={t('rpt.s2')}>
           {/* Inline Kundli Chart */}
           <div className="flex justify-center mb-4" data-print-chart>
             <div className="glass-card rounded-2xl p-6">
@@ -286,35 +295,35 @@ export default function ReportPage() {
           <Card>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <div className="text-center">
-                <p className="text-xs text-zinc-500 uppercase">Ascendant</p>
+                <p className="text-xs text-zinc-500 uppercase">{t('print.ascendant')}</p>
                 <p className="text-lg font-semibold text-white">{r.chart.ascendant.rashiName}</p>
                 <p className="text-xs text-zinc-400">{r.chart.ascendant.degree}° {r.chart.ascendant.nakshatraName}</p>
               </div>
               <div className="text-center">
-                <p className="text-xs text-zinc-500 uppercase">Moon Sign</p>
+                <p className="text-xs text-zinc-500 uppercase">{t('print.moonSign')}</p>
                 <p className="text-lg font-semibold text-white">{r.chart.planets.Moon.rashiName}</p>
                 <p className="text-xs text-zinc-400">{r.chart.planets.Moon.nakshatraName} P{r.chart.planets.Moon.pada}</p>
               </div>
               <div className="text-center">
-                <p className="text-xs text-zinc-500 uppercase">Sun Sign</p>
+                <p className="text-xs text-zinc-500 uppercase">{t('print.sunSign')}</p>
                 <p className="text-lg font-semibold text-white">{r.chart.planets.Sun.rashiName}</p>
               </div>
               <div className="text-center">
-                <p className="text-xs text-zinc-500 uppercase">Vargottama</p>
-                <p className="text-lg font-semibold text-white">{r.vargottamaPlanets.length > 0 ? r.vargottamaPlanets.join(', ') : 'None'}</p>
+                <p className="text-xs text-zinc-500 uppercase">{t('rpt.vargottama')}</p>
+                <p className="text-lg font-semibold text-white">{r.vargottamaPlanets.length > 0 ? r.vargottamaPlanets.join(', ') : t('rpt.none')}</p>
               </div>
             </div>
           </Card>
         </Section>
 
         {/* 3. Planetary Positions */}
-        <Section forceOpen={forceAllOpen} id="planetary-positions" title="3. Planetary Positions">
+        <Section forceOpen={forceAllOpen} id="planetary-positions" title={t('rpt.s3')}>
           <div className="overflow-x-auto">
             <table className="w-full text-sm" aria-label="Planetary positions">
               <thead>
                 <tr className="text-left text-zinc-500 text-xs uppercase border-b border-white/[0.06]">
-                  <th className="pb-2 pr-4">Planet</th><th className="pb-2 pr-4">Sign</th><th className="pb-2 pr-4">Degree</th>
-                  <th className="pb-2 pr-4">House</th><th className="pb-2 pr-4">Nakshatra</th><th className="pb-2 pr-4">Dignity</th><th className="pb-2">Status</th>
+                  <th className="pb-2 pr-4">{t('rpt.th.planet')}</th><th className="pb-2 pr-4">{t('rpt.th.sign')}</th><th className="pb-2 pr-4">{t('rpt.th.degree')}</th>
+                  <th className="pb-2 pr-4">{t('rpt.th.house')}</th><th className="pb-2 pr-4">{t('rpt.th.nakshatra')}</th><th className="pb-2 pr-4">{t('rpt.th.dignity')}</th><th className="pb-2">{t('rpt.th.status')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -341,13 +350,13 @@ export default function ReportPage() {
         <PrintPartDivider num="II" title={t('print.personalityNature')} t={t} />
 
         {/* 4. Ascendant Reading */}
-        <Section forceOpen={forceAllOpen} id="ascendant" title="4. Your Ascendant (Lagna)">
+        <Section forceOpen={forceAllOpen} id="ascendant" title={t('rpt.s4')}>
           <Card>
             <div className="flex items-center gap-3 mb-4">
               <span className="text-3xl">{getSignEmoji(r.ascendantReading.sign)}</span>
               <div>
-                <h3 className="text-lg font-semibold text-white">{r.ascendantReading.sign} Rising</h3>
-                <p className="text-xs text-zinc-400">Lord: {r.ascendantReading.lord} in house {r.ascendantReading.lordHouse}</p>
+                <h3 className="text-lg font-semibold text-white">{r.ascendantReading.sign} {t('rpt.rising')}</h3>
+                <p className="text-xs text-zinc-400">{t('rpt.lord')}: {r.ascendantReading.lord} {t('rpt.inHouse')} {r.ascendantReading.lordHouse}</p>
               </div>
             </div>
             <Prose text={r.ascendantReading.text} />
@@ -355,7 +364,7 @@ export default function ReportPage() {
         </Section>
 
         {/* 5. Moon Sign & Nakshatra */}
-        <Section forceOpen={forceAllOpen} id="moon-sign" title="5. Moon Sign & Birth Nakshatra">
+        <Section forceOpen={forceAllOpen} id="moon-sign" title={t('rpt.s5')}>
           <Card>
             <Prose text={r.moonSignReading.text} />
           </Card>
@@ -365,16 +374,16 @@ export default function ReportPage() {
               <p className="text-xs text-zinc-500 mb-3">{r.nakshatraProfile.deity} · {r.nakshatraProfile.symbol} · {r.nakshatraProfile.motivation}</p>
               <Prose text={r.nakshatraProfile.personality} />
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-                <div><p className="text-xs text-zinc-500 uppercase mb-1">Strengths</p><p className="text-sm text-zinc-300">{r.nakshatraProfile.strengths}</p></div>
-                <div><p className="text-xs text-zinc-500 uppercase mb-1">Challenges</p><p className="text-sm text-zinc-300">{r.nakshatraProfile.challenges}</p></div>
-                <div><p className="text-xs text-zinc-500 uppercase mb-1">Career Fit</p><p className="text-sm text-zinc-300">{r.nakshatraProfile.career}</p></div>
+                <div><p className="text-xs text-zinc-500 uppercase mb-1">{t('rpt.strengths')}</p><p className="text-sm text-zinc-300">{r.nakshatraProfile.strengths}</p></div>
+                <div><p className="text-xs text-zinc-500 uppercase mb-1">{t('rpt.challenges')}</p><p className="text-sm text-zinc-300">{r.nakshatraProfile.challenges}</p></div>
+                <div><p className="text-xs text-zinc-500 uppercase mb-1">{t('rpt.careerFit')}</p><p className="text-sm text-zinc-300">{r.nakshatraProfile.career}</p></div>
               </div>
             </Card>
           )}
         </Section>
 
         {/* 6. Planet-by-Planet */}
-        <Section forceOpen={forceAllOpen} id="planet-analysis" title="6. Planet-by-Planet Analysis">
+        <Section forceOpen={forceAllOpen} id="planet-analysis" title={t('rpt.s6')}>
           <div data-print-2col>
           {r.planetEntries.map(pe => (
               <Card key={pe.planet} className="mb-4" data-print-avoid-break>
@@ -382,24 +391,24 @@ export default function ReportPage() {
                 <h3 className="text-lg font-semibold text-white">{PLANET_GLYPH[pe.planet]} {pe.planet} in {pe.sign}, House {pe.house}</h3>
                 <div className="flex items-center gap-2">
                   <DignityBadge dignity={pe.dignity} />
-                  {pe.isRetrograde && <span className="text-xs text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full">Retrograde</span>}
+                  {pe.isRetrograde && <span className="text-xs text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full">{t('rpt.retrograde')}</span>}
                 </div>
               </div>
               <p className="text-xs text-zinc-500 mb-3">{pe.nakshatra} pada {pe.pada} · {pe.dignityText.label}</p>
               <Prose text={pe.signText.nature} />
               <div className="mt-3 space-y-2">
-                <div><span className="text-xs font-semibold text-emerald-400 uppercase">Strengths: </span><span className="text-sm text-zinc-300">{pe.signText.positive}</span></div>
-                <div><span className="text-xs font-semibold text-orange-400 uppercase">Challenges: </span><span className="text-sm text-zinc-300">{pe.signText.challenges}</span></div>
+                <div><span className="text-xs font-semibold text-emerald-400 uppercase">{t('rpt.strengths')}: </span><span className="text-sm text-zinc-300">{pe.signText.positive}</span></div>
+                <div><span className="text-xs font-semibold text-orange-400 uppercase">{t('rpt.challenges')}: </span><span className="text-sm text-zinc-300">{pe.signText.challenges}</span></div>
               </div>
               <div className="mt-3 pt-3 border-t border-white/[0.04]">
-                <p className="text-xs text-zinc-500 uppercase mb-1">In House {pe.house}: {pe.houseText.area}</p>
+                <p className="text-xs text-zinc-500 uppercase mb-1">{t('rpt.house')} {pe.house}: {pe.houseText.area}</p>
                 <Prose text={pe.houseText.whenStrong} />
               </div>
               {pe.conjunctions.length > 0 && (
                 <div className="mt-3 pt-3 border-t border-white/[0.04]">
-                  <p className="text-xs text-zinc-500 uppercase mb-1">Conjunctions</p>
+                  <p className="text-xs text-zinc-500 uppercase mb-1">{t('rpt.conjunctions')}</p>
                   {pe.conjunctions.map(c => (
-                    <p key={c.planet} className="text-sm text-zinc-400 mb-1">With {c.planet}: {c.text}</p>
+                    <p key={c.planet} className="text-sm text-zinc-400 mb-1">{t('rpt.with')} {c.planet}: {c.text}</p>
                   ))}
                 </div>
               )}
@@ -410,18 +419,18 @@ export default function ReportPage() {
         </Section>
 
         {/* 7. House-by-House */}
-        <Section forceOpen={forceAllOpen} id="house-analysis" title="7. House-by-House Analysis (Bhava Phala)">
+        <Section forceOpen={forceAllOpen} id="house-analysis" title={t('rpt.s7')}>
           <div data-print-2col>
           {r.houseEntries.map(he => (
               <Card key={he.house} className="mb-3" data-print-avoid-break>
               <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-zinc-100">House {he.house} — {he.sign}</h3>
-                <span className="text-xs text-zinc-500">Lord: {he.lord} in H{he.lordHouse}</span>
+                <h3 className="font-semibold text-zinc-100">{t('rpt.house')} {he.house} — {he.sign}</h3>
+                <span className="text-xs text-zinc-500">{t('rpt.lord')}: {he.lord} H{he.lordHouse}</span>
               </div>
               <p className="text-xs text-violet-400/70 mb-2">{he.area}</p>
               <Prose text={he.interpretation} />
               {he.planets.length > 0 && (
-                <p className="mt-2 text-xs text-zinc-400">Occupants: {he.planets.join(', ')}</p>
+                <p className="mt-2 text-xs text-zinc-400">{t('rpt.occupants')}: {he.planets.join(', ')}</p>
               )}
             </Card>
           ))}
@@ -429,16 +438,16 @@ export default function ReportPage() {
         </Section>
 
         {/* 8. Shadbala */}
-        <Section forceOpen={forceAllOpen} id="shadbala" title="8. Planetary Strength (Shadbala)">
+        <Section forceOpen={forceAllOpen} id="shadbala" title={t('rpt.s8')}>
           <Card>
             <table className="w-full" aria-label="Shadbala planetary strength">
               <thead>
                 <tr className="text-left text-zinc-500 text-xs uppercase border-b border-white/[0.06]">
-                  <th className="pb-2 pr-4">Planet</th>
-                  <th className="pb-2 pr-4">Strength</th>
-                  <th className="pb-2 pr-4">Required</th>
-                  <th className="pb-2 pr-4">Ratio</th>
-                  <th className="pb-2">Bar</th>
+                  <th className="pb-2 pr-4">{t('rpt.th.planet')}</th>
+                  <th className="pb-2 pr-4">{t('rpt.th.strength')}</th>
+                  <th className="pb-2 pr-4">{t('rpt.th.required')}</th>
+                  <th className="pb-2 pr-4">{t('rpt.th.ratio')}</th>
+                  <th className="pb-2">{t('rpt.th.bar')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -468,7 +477,7 @@ export default function ReportPage() {
         </Section>
 
         {/* 9. Ashtakavarga */}
-        <Section forceOpen={forceAllOpen} id="ashtakavarga" title="9. Ashtakavarga (SAV)">
+        <Section forceOpen={forceAllOpen} id="ashtakavarga" title={t('rpt.s9')}>
           <Card>
             <table className="w-full text-center" data-print-avoid-break aria-label="Ashtakavarga SAV scores">
               <thead>
@@ -492,13 +501,13 @@ export default function ReportPage() {
                 </tr>
               </tbody>
             </table>
-            <p className="text-xs text-zinc-500 mt-3">Signs with 28+ Bindus give strong results during transits. Below 25 indicates challenging transit periods.</p>
+            <p className="text-xs text-zinc-500 mt-3">{t('rpt.savHint')}</p>
           </Card>
         </Section>
 
         {/* 10. Yogas */}
-        <Section forceOpen={forceAllOpen} id="yogas" title="10. Yogas in Your Chart">
-          {r.yogas.length === 0 ? <p className="text-zinc-500 text-sm">No major Yogas detected.</p> : (
+        <Section forceOpen={forceAllOpen} id="yogas" title={t('rpt.s10')}>
+          {r.yogas.length === 0 ? <p className="text-zinc-500 text-sm">{t('rpt.noYogas')}</p> : (
             <div className="space-y-3">
               {r.yogas.map((y, i) => (
                 <Card key={i} className="!p-4">
@@ -507,7 +516,7 @@ export default function ReportPage() {
                     <span className={`text-xs px-2 py-0.5 rounded-full ${y.type === 'benefic' ? 'bg-emerald-500/20 text-emerald-300' : 'bg-red-500/20 text-red-300'}`}>{y.type} · {y.strength}</span>
                   </div>
                   <Prose text={y.description} />
-                  <p className="text-xs text-zinc-500 mt-1">Planets: {y.planets.join(', ')} · Houses: {y.houses.join(', ')}</p>
+                  <p className="text-xs text-zinc-500 mt-1">{t('rpt.planets')}: {y.planets.join(', ')} · {t('rpt.houses')}: {y.houses.join(', ')}</p>
                 </Card>
               ))}
             </div>
@@ -515,8 +524,8 @@ export default function ReportPage() {
         </Section>
 
         {/* 11. Doshas */}
-        <Section forceOpen={forceAllOpen} id="doshas" title="11. Doshas & Cautions">
-          {r.doshas.filter(d => d.isActive).length === 0 ? <p className="text-zinc-400 text-sm">No active Doshas detected in your chart — this is very favorable.</p> : (
+        <Section forceOpen={forceAllOpen} id="doshas" title={t('rpt.s11')}>
+          {r.doshas.filter(d => d.isActive).length === 0 ? <p className="text-zinc-400 text-sm">{t('rpt.noDoshas')}</p> : (
             <div className="space-y-3">
               {r.doshas.filter(d => d.isActive).map((d, i) => (
                 <Card key={i} className="!p-4">
@@ -525,7 +534,7 @@ export default function ReportPage() {
                     <span className={`text-xs px-2 py-0.5 rounded-full ${d.severity === 'severe' ? 'bg-red-500/20 text-red-300' : d.severity === 'moderate' ? 'bg-orange-500/20 text-orange-300' : 'bg-yellow-500/20 text-yellow-300'}`}>{d.severity}</span>
                   </div>
                   <Prose text={d.description} />
-                  {d.cancellation && <p className="text-xs text-emerald-400 mt-1">Cancellation: {d.cancellation}</p>}
+                  {d.cancellation && <p className="text-xs text-emerald-400 mt-1">{t('rpt.cancellation')}: {d.cancellation}</p>}
                 </Card>
               ))}
             </div>
@@ -536,12 +545,12 @@ export default function ReportPage() {
         <PrintPartDivider num="III" title={t('print.lifeAreas')} t={t} />
 
         {/* 12. Career */}
-        <Section forceOpen={forceAllOpen} id="career" title="12. Career & Professional Destiny">
+        <Section forceOpen={forceAllOpen} id="career" title={t('rpt.s12')}>
           <Card>
             <Prose text={r.career.summary} />
             <div className="mt-4"><Prose text={r.career.tenthHouseAnalysis} /></div>
             <div className="mt-4">
-              <p className="text-xs text-zinc-500 uppercase mb-2">Suitable Career Fields</p>
+              <p className="text-xs text-zinc-500 uppercase mb-2">{t('rpt.suitableFields')}</p>
               <div className="flex flex-wrap gap-2">
                 {r.career.suitableFields.map(f => (
                   <span key={f} className="px-3 py-1 rounded-full bg-violet-500/10 text-violet-300 text-xs">{f}</span>
@@ -557,7 +566,7 @@ export default function ReportPage() {
         </Section>
 
         {/* 13. Wealth */}
-        <Section forceOpen={forceAllOpen} id="wealth" title="13. Wealth, Income & Property">
+        <Section forceOpen={forceAllOpen} id="wealth" title={t('rpt.s13')}>
           <Card>
             <Prose text={r.wealth.summary} />
             <div className="mt-3 space-y-2">
@@ -567,7 +576,7 @@ export default function ReportPage() {
             </div>
             {r.wealthRaw.dhanaYogas.length > 0 && (
               <div className="mt-4 pt-4 border-t border-white/[0.04]">
-                <p className="text-xs text-zinc-500 uppercase mb-2">Dhana Yogas Detected</p>
+                <p className="text-xs text-zinc-500 uppercase mb-2">{t('rpt.dhanaYogas')}</p>
                 {r.wealthRaw.dhanaYogas.map((dy, i) => (
                   <p key={i} className="text-sm text-emerald-300">✦ {dy}</p>
                 ))}
@@ -577,7 +586,7 @@ export default function ReportPage() {
         </Section>
 
         {/* 14. Marriage */}
-        <Section forceOpen={forceAllOpen} id="marriage" title="14. Marriage & Relationships">
+        <Section forceOpen={forceAllOpen} id="marriage" title={t('rpt.s14')}>
           <Card>
             <Prose text={r.marriage.summary} />
             <div className="mt-3 space-y-2">
@@ -586,11 +595,11 @@ export default function ReportPage() {
             </div>
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/10">
-                <p className="text-xs text-emerald-400 uppercase mb-1">Strengths</p>
+                <p className="text-xs text-emerald-400 uppercase mb-1">{t('rpt.marriageStr')}</p>
                 <p className="text-sm text-zinc-300">{r.marriage.strengths}</p>
               </div>
               <div className="p-3 rounded-lg bg-orange-500/5 border border-orange-500/10">
-                <p className="text-xs text-orange-400 uppercase mb-1">Challenges</p>
+                <p className="text-xs text-orange-400 uppercase mb-1">{t('rpt.marriageChal')}</p>
                 <p className="text-sm text-zinc-300">{r.marriage.challenges}</p>
               </div>
             </div>
@@ -598,13 +607,13 @@ export default function ReportPage() {
         </Section>
 
         {/* 15. Health */}
-        <Section forceOpen={forceAllOpen} id="health" title="15. Health & Longevity">
+        <Section forceOpen={forceAllOpen} id="health" title={t('rpt.s15')}>
           <Card>
             <div className="flex items-center gap-3 mb-4">
               <span className={`px-3 py-1 rounded-full text-sm font-medium ${r.healthRaw.ayushTier === 'Deerghayu' ? 'bg-emerald-500/20 text-emerald-300' : r.healthRaw.ayushTier === 'Madhyayu' ? 'bg-yellow-500/20 text-yellow-300' : 'bg-red-500/20 text-red-300'}`}>
                 {r.healthRaw.ayushTier}
               </span>
-              <span className="text-zinc-400 text-sm">Longevity Classification</span>
+              <span className="text-zinc-400 text-sm">{t('rpt.longevityClass')}</span>
             </div>
             <Prose text={r.health.summary} />
             <div className="mt-3 space-y-2">
@@ -616,7 +625,7 @@ export default function ReportPage() {
         </Section>
 
         {/* 16. Spiritual */}
-        <Section forceOpen={forceAllOpen} id="spiritual" title="16. Spiritual Path & Life Purpose">
+        <Section forceOpen={forceAllOpen} id="spiritual" title={t('rpt.s16')}>
           <Card>
             <Prose text={r.spiritual.summary} />
             <div className="mt-3 space-y-2">
@@ -631,14 +640,14 @@ export default function ReportPage() {
         <PrintPartDivider num="IV" title={t('print.timelineRemedies')} t={t} />
 
         {/* 17. Dasha */}
-        <Section forceOpen={forceAllOpen} id="dasha" title="17. Vimshottari Dasha Timeline">
+        <Section forceOpen={forceAllOpen} id="dasha" title={t('rpt.s17')}>
           <div className="space-y-4">
             {r.vimshottariDasha.map((d, i) => (
               <Card key={i} className={`!p-4 ${d.isActive ? 'ring-1 ring-violet-500/30' : ''}`} data-print-avoid-break>
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="font-semibold text-zinc-100">
                     {PLANET_GLYPH[d.period.lord]} {d.period.lord} Mahadasha
-                    {d.isActive && <span className="ml-2 text-xs bg-violet-500/20 text-violet-300 px-2 py-0.5 rounded-full">Current</span>}
+                    {d.isActive && <span className="ml-2 text-xs bg-violet-500/20 text-violet-300 px-2 py-0.5 rounded-full">{t('rpt.current')}</span>}
                   </h3>
                   <span className="text-xs text-zinc-500 font-mono">
                     {fmtDate(d.period.startDate)} → {fmtDate(d.period.endDate)}
@@ -650,10 +659,10 @@ export default function ReportPage() {
                     <Prose text={d.narrative.generalEffects} />
                     {d.isActive && (
                       <div className="mt-3 space-y-2">
-                        <div><span className="text-xs font-semibold text-emerald-400">Career: </span><span className="text-sm text-zinc-300">{d.narrative.career}</span></div>
-                        <div><span className="text-xs font-semibold text-pink-400">Relationships: </span><span className="text-sm text-zinc-300">{d.narrative.relationships}</span></div>
-                        <div><span className="text-xs font-semibold text-cyan-400">Health: </span><span className="text-sm text-zinc-300">{d.narrative.health}</span></div>
-                        <div><span className="text-xs font-semibold text-violet-400">Spirituality: </span><span className="text-sm text-zinc-300">{d.narrative.spirituality}</span></div>
+                        <div><span className="text-xs font-semibold text-emerald-400">{t('rpt.career')}: </span><span className="text-sm text-zinc-300">{d.narrative.career}</span></div>
+                        <div><span className="text-xs font-semibold text-pink-400">{t('rpt.relationships')}: </span><span className="text-sm text-zinc-300">{d.narrative.relationships}</span></div>
+                        <div><span className="text-xs font-semibold text-cyan-400">{t('rpt.health')}: </span><span className="text-sm text-zinc-300">{d.narrative.health}</span></div>
+                        <div><span className="text-xs font-semibold text-violet-400">{t('rpt.spirituality')}: </span><span className="text-sm text-zinc-300">{d.narrative.spirituality}</span></div>
                       </div>
                     )}
                   </>
@@ -664,9 +673,9 @@ export default function ReportPage() {
         </Section>
 
         {/* 18. Jaimini */}
-        <Section forceOpen={forceAllOpen} id="jaimini" title="18. Jaimini Analysis">
+        <Section forceOpen={forceAllOpen} id="jaimini" title={t('rpt.s18')}>
           <Card>
-            <h3 className="font-semibold text-zinc-200 mb-3">Seven Chara Karakas</h3>
+            <h3 className="font-semibold text-zinc-200 mb-3">{t('rpt.charaKarakas')}</h3>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {r.jaiminiKarakas.map(ck => (
                 <div key={ck.type} className="text-center">
@@ -678,16 +687,16 @@ export default function ReportPage() {
             </div>
           </Card>
           <Card className="mt-4">
-            <DataRow label="Karakamsha" value={RASHI_NAMES[r.karakamsha.rashi]} />
-            <DataRow label="Amatyakaraka Career" value={`${r.amatyakarakaCareer.planet}: ${r.amatyakarakaCareer.career}`} />
-            <DataRow label="Brahma" value={r.brahmaMaheshwara.brahma} />
-            <DataRow label="Maheshwara" value={r.brahmaMaheshwara.maheshwara} />
-            <DataRow label="Rudra" value={r.brahmaMaheshwara.rudra} />
+            <DataRow label={t('rpt.karakamsha')} value={RASHI_NAMES[r.karakamsha.rashi]} />
+            <DataRow label={t('rpt.amatyaCareer')} value={`${r.amatyakarakaCareer.planet}: ${r.amatyakarakaCareer.career}`} />
+            <DataRow label={t('rpt.brahma')} value={r.brahmaMaheshwara.brahma} />
+            <DataRow label={t('rpt.maheshwara')} value={r.brahmaMaheshwara.maheshwara} />
+            <DataRow label={t('rpt.rudra')} value={r.brahmaMaheshwara.rudra} />
           </Card>
         </Section>
 
         {/* 19. Nadi */}
-        <Section forceOpen={forceAllOpen} id="nadi" title="19. Nadi Sensitive Points">
+        <Section forceOpen={forceAllOpen} id="nadi" title={t('rpt.s19')}>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {r.nadiPoints.map((np, i) => (
               <Card key={i}>
@@ -700,11 +709,11 @@ export default function ReportPage() {
         </Section>
 
         {/* 20. Sade Sati */}
-        <Section forceOpen={forceAllOpen} id="sade-sati" title="20. Sade Sati">
+        <Section forceOpen={forceAllOpen} id="sade-sati" title={t('rpt.s20')}>
           <Card>
             <div className="flex items-center gap-3 mb-3">
               <span className={`px-3 py-1 rounded-full text-sm font-medium ${r.sadeSati.isActive ? 'bg-red-500/20 text-red-300' : 'bg-emerald-500/20 text-emerald-300'}`}>
-                {r.sadeSati.isActive ? `Active — ${r.sadeSati.phase} phase` : 'Not Active'}
+                {r.sadeSati.isActive ? t('rpt.activePhase', { phase: r.sadeSati.phase || '' }) : t('rpt.notActiveSadeSati')}
               </span>
             </div>
             <Prose text={r.sadeSati.description} />
@@ -712,19 +721,19 @@ export default function ReportPage() {
         </Section>
 
         {/* 21. This Year */}
-        <Section forceOpen={forceAllOpen} id="varshaphal" title="21. This Year (Varshaphal)">
+        <Section forceOpen={forceAllOpen} id="varshaphal" title={t('rpt.s21')}>
           {r.varshaphal ? (
             <Card>
-              <DataRow label="Year" value={String(r.varshaphal.year)} />
-              <DataRow label="Varsha Lagna" value={RASHI_NAMES[r.varshaphal.varshaLagna]} />
-              <DataRow label="Muntha" value={`${RASHI_NAMES[r.varshaphal.muntha]} (lord: ${r.varshaphal.munthaLord})`} />
-              <DataRow label="Year Lord" value={r.varshaphal.yearLord} />
+              <DataRow label={t('rpt.year')} value={String(r.varshaphal.year)} />
+              <DataRow label={t('rpt.varshaLagna')} value={RASHI_NAMES[r.varshaphal.varshaLagna]} />
+              <DataRow label={t('rpt.muntha')} value={`${RASHI_NAMES[r.varshaphal.muntha]} (${t('rpt.lord')}: ${r.varshaphal.munthaLord})`} />
+              <DataRow label={t('rpt.yearLord')} value={r.varshaphal.yearLord} />
             </Card>
-          ) : <p className="text-zinc-500 text-sm">Varshaphal data unavailable for this year.</p>}
+          ) : <p className="text-zinc-500 text-sm">{t('rpt.varshaphalUnavail')}</p>}
         </Section>
 
         {/* 22. Remedies */}
-        <Section forceOpen={forceAllOpen} id="remedies" title="22. Personalized Remedies">
+        <Section forceOpen={forceAllOpen} id="remedies" title={t('rpt.s22')}>
           <div className="space-y-3">
             {r.remedies.map((rem, i) => (
               <Card key={i} className="!p-4" data-print-avoid-break>
@@ -742,10 +751,10 @@ export default function ReportPage() {
         {/* Footer */}
         <div className="pt-8 text-center" data-print-pt data-print-footer>
           <div className="hidden mx-auto w-16 h-px bg-violet-600 mb-4" data-print-show />
-          <p className="text-zinc-600 text-xs font-medium">✦ Astra — Vedic Astrology by GoEasyTools</p>
+          <p className="text-zinc-600 text-xs font-medium">{t('rpt.footerBrand')}</p>
           <p className="text-zinc-600 text-xs mt-1">astradestiny.com</p>
-          <p className="text-zinc-700 text-xs mt-2">294 BPHS-accurate algorithms · NASA JPL DE440 ephemeris · Lahiri Ayanamsa</p>
-          <p className="text-zinc-700 text-xs mt-1">Report generated {fmtDate(r.generatedAt)} — for educational and spiritual guidance only.</p>
+          <p className="text-zinc-700 text-xs mt-2">{t('rpt.footerAlgo')}</p>
+          <p className="text-zinc-700 text-xs mt-1">{t('rpt.footerGenerated', { date: fmtDate(r.generatedAt) })}</p>
         </div>
       </article>
 
@@ -838,13 +847,7 @@ function PrintCover({ report, fmtDate, fmtTime, t }: { report: FullReport; fmtDa
   );
 }
 
-function PrintTOC({ t }: { t: TFn }) {
-  const partTitles: Record<string, string> = {
-    I: t('print.vedicProfile'),
-    II: t('print.personalityNature'),
-    III: t('print.lifeAreas'),
-    IV: t('print.timelineRemedies'),
-  };
+function PrintTOC({ t, toc }: { t: TFn; toc: { id: string; label: string }[] }) {
   return (
     <div className="hidden" data-print-show data-print-page-break>
       <h2 style={{ fontSize: '18pt', fontWeight: 700, color: '#1e1b2e', marginBottom: '20pt', fontFamily: 'Georgia, serif', textAlign: 'center' }}>
@@ -854,11 +857,11 @@ function PrintTOC({ t }: { t: TFn }) {
         {PARTS.map(part => (
           <div key={part.num} style={{ marginBottom: '16pt' }}>
             <p style={{ fontSize: '10pt', fontWeight: 700, color: '#6d28d9', textTransform: 'uppercase', letterSpacing: '2pt', marginBottom: '6pt' }}>
-              {t('print.part')} {part.num} &mdash; {partTitles[part.num] || part.title}
+              {t('print.part')} {part.num} &mdash; {t(part.titleKey)}
             </p>
             {part.sections.map(si => (
               <p key={si} style={{ fontSize: '10pt', color: '#333', paddingLeft: '12pt', lineHeight: '2' }}>
-                {TOC[si]?.label}
+                {toc[si]?.label}
               </p>
             ))}
           </div>

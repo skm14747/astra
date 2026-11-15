@@ -3,7 +3,7 @@ import { BLOG_POSTS } from '@/content/blog';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://astradestiny.com';
 
-const LOCALES = ['en', 'hi'] as const;
+const LOCALES = ['en', 'hi', 'ne', 'pt', 'es'] as const;
 
 const VEDIC_ROUTES = [
   'kundli', 'divisional', 'yogas', 'remedies',
@@ -114,6 +114,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/hi/methodology`, lastModified: now, changeFrequency: 'monthly', priority: 0.4, alternates: alternates('/methodology') },
   ];
 
+  // Nepali versions of static pages
+  const neStaticPages: MetadataRoute.Sitemap = [
+    { url: `${BASE_URL}/ne`, lastModified: now, changeFrequency: 'weekly', priority: 0.8, alternates: alternates('/') },
+    { url: `${BASE_URL}/ne/how-it-works`, lastModified: now, changeFrequency: 'monthly', priority: 0.4, alternates: alternates('/how-it-works') },
+    { url: `${BASE_URL}/ne/tools`, lastModified: now, changeFrequency: 'weekly', priority: 0.7, alternates: alternates('/tools') },
+    { url: `${BASE_URL}/ne/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.3, alternates: alternates('/about') },
+    { url: `${BASE_URL}/ne/methodology`, lastModified: now, changeFrequency: 'monthly', priority: 0.3, alternates: alternates('/methodology') },
+  ];
+
+  // Portuguese versions of static pages
+  const ptStaticPages: MetadataRoute.Sitemap = [
+    { url: `${BASE_URL}/pt`, lastModified: now, changeFrequency: 'weekly', priority: 0.8, alternates: alternates('/') },
+    { url: `${BASE_URL}/pt/how-it-works`, lastModified: now, changeFrequency: 'monthly', priority: 0.4, alternates: alternates('/how-it-works') },
+    { url: `${BASE_URL}/pt/tools`, lastModified: now, changeFrequency: 'weekly', priority: 0.7, alternates: alternates('/tools') },
+    { url: `${BASE_URL}/pt/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.3, alternates: alternates('/about') },
+    { url: `${BASE_URL}/pt/methodology`, lastModified: now, changeFrequency: 'monthly', priority: 0.3, alternates: alternates('/methodology') },
+  ];
+
+  // Spanish versions of static pages
+  const esStaticPages: MetadataRoute.Sitemap = [
+    { url: `${BASE_URL}/es`, lastModified: now, changeFrequency: 'weekly', priority: 0.8, alternates: alternates('/') },
+    { url: `${BASE_URL}/es/how-it-works`, lastModified: now, changeFrequency: 'monthly', priority: 0.4, alternates: alternates('/how-it-works') },
+    { url: `${BASE_URL}/es/tools`, lastModified: now, changeFrequency: 'weekly', priority: 0.7, alternates: alternates('/tools') },
+    { url: `${BASE_URL}/es/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.3, alternates: alternates('/about') },
+    { url: `${BASE_URL}/es/methodology`, lastModified: now, changeFrequency: 'monthly', priority: 0.3, alternates: alternates('/methodology') },
+  ];
+
   const vedicPages: MetadataRoute.Sitemap = VEDIC_ROUTES.flatMap((route) => {
     const path = `/vedic/${route}`;
     return [
@@ -130,6 +157,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: now,
         changeFrequency: 'weekly' as const,
         priority: 0.7,
+        alternates: alternates(path),
+      },
+      {
+        url: `${BASE_URL}/ne${path}`,
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: 0.6,
+        alternates: alternates(path),
+      },
+      {
+        url: `${BASE_URL}/pt${path}`,
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: 0.6,
+        alternates: alternates(path),
+      },
+      {
+        url: `${BASE_URL}/es${path}`,
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: 0.6,
         alternates: alternates(path),
       },
     ];
@@ -153,6 +201,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.6,
         alternates: alternates(path),
       },
+      {
+        url: `${BASE_URL}/ne${path}`,
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: 0.5,
+        alternates: alternates(path),
+      },
+      {
+        url: `${BASE_URL}/pt${path}`,
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: 0.5,
+        alternates: alternates(path),
+      },
+      {
+        url: `${BASE_URL}/es${path}`,
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: 0.5,
+        alternates: alternates(path),
+      },
     ];
   });
 
@@ -166,17 +235,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     panchangDates.push(
       { url: `${BASE_URL}${path}`, lastModified: now, changeFrequency: 'daily' as const, priority: pri, alternates: alternates(path) },
       { url: `${BASE_URL}/hi${path}`, lastModified: now, changeFrequency: 'daily' as const, priority: pri - 0.1, alternates: alternates(path) },
+      { url: `${BASE_URL}/ne${path}`, lastModified: now, changeFrequency: 'daily' as const, priority: pri - 0.2, alternates: alternates(path) },
+      { url: `${BASE_URL}/pt${path}`, lastModified: now, changeFrequency: 'daily' as const, priority: pri - 0.2, alternates: alternates(path) },
+      { url: `${BASE_URL}/es${path}`, lastModified: now, changeFrequency: 'daily' as const, priority: pri - 0.2, alternates: alternates(path) },
     );
   }
 
   const blogPages: MetadataRoute.Sitemap = [
     { url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.7, alternates: alternates('/blog') },
     { url: `${BASE_URL}/hi/blog`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.6, alternates: alternates('/blog') },
+    { url: `${BASE_URL}/ne/blog`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.5, alternates: alternates('/blog') },
+    { url: `${BASE_URL}/pt/blog`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.5, alternates: alternates('/blog') },
+    { url: `${BASE_URL}/es/blog`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.5, alternates: alternates('/blog') },
     ...BLOG_POSTS.flatMap(post => {
       const path = `/blog/${post.slug}`;
       return [
         { url: `${BASE_URL}${path}`, lastModified: new Date(post.date), changeFrequency: 'monthly' as const, priority: 0.6, alternates: alternates(path) },
         { url: `${BASE_URL}/hi${path}`, lastModified: new Date(post.date), changeFrequency: 'monthly' as const, priority: 0.5, alternates: alternates(path) },
+        { url: `${BASE_URL}/ne${path}`, lastModified: new Date(post.date), changeFrequency: 'monthly' as const, priority: 0.4, alternates: alternates(path) },
+        { url: `${BASE_URL}/pt${path}`, lastModified: new Date(post.date), changeFrequency: 'monthly' as const, priority: 0.4, alternates: alternates(path) },
+        { url: `${BASE_URL}/es${path}`, lastModified: new Date(post.date), changeFrequency: 'monthly' as const, priority: 0.4, alternates: alternates(path) },
       ];
     }),
   ];
@@ -190,8 +268,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     monthlyPanchang.push(
       { url: `${BASE_URL}${path}`, lastModified: now, changeFrequency: 'monthly' as const, priority: pri, alternates: alternates(path) },
       { url: `${BASE_URL}/hi${path}`, lastModified: now, changeFrequency: 'monthly' as const, priority: pri - 0.1, alternates: alternates(path) },
+      { url: `${BASE_URL}/ne${path}`, lastModified: now, changeFrequency: 'monthly' as const, priority: pri - 0.2, alternates: alternates(path) },
+      { url: `${BASE_URL}/pt${path}`, lastModified: now, changeFrequency: 'monthly' as const, priority: pri - 0.2, alternates: alternates(path) },
+      { url: `${BASE_URL}/es${path}`, lastModified: now, changeFrequency: 'monthly' as const, priority: pri - 0.2, alternates: alternates(path) },
     );
   }
 
-  return [...staticPages, ...hiStaticPages, ...vedicPages, ...matrixPages, ...panchangDates, ...monthlyPanchang, ...blogPages];
+  return [...staticPages, ...hiStaticPages, ...neStaticPages, ...ptStaticPages, ...esStaticPages, ...vedicPages, ...matrixPages, ...panchangDates, ...monthlyPanchang, ...blogPages];
 }

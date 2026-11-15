@@ -27,7 +27,7 @@ Nigeria 20%, South Korea 20%, Sri Lanka 20%, Japan 19%, Singapore 19%.
 3. **Career > Marriage**: Career astrology is 39% of India queries vs 24% for marriage (Ishvaram 351K conversations). Prioritize career content.
 4. **Don't assume one system globally**: Vedic for India/Nepal/Sri Lanka/Bangladesh, Western zodiac for Africa/LatAm, Chinese for East/Southeast Asia.
 5. **South Africa opportunity**: 47% engagement but few Vedic astrology competitors. English content works. Target Western + Vedic hybrid content.
-6. **hreflang**: Currently en/hi/x-default. When adding new locales, ensure reciprocal hreflang pairs.
+6. **hreflang**: Currently en/hi/ne/pt/x-default. When adding new locales (es next), ensure reciprocal hreflang pairs.
 7. **Festival spikes**: Indian festivals (Navratri, Diwali, Chhath) drive traffic spikes 1-2 weeks before. Plan seasonal content.
 8. **Wedding season**: Indian wedding muhurats (Nov-Feb, Apr-Jun) drive "vivah muhurat" queries. Time content accordingly.
 
@@ -44,9 +44,23 @@ Nigeria 20%, South Korea 20%, Sri Lanka 20%, Japan 19%, Singapore 19%.
 | gun milan | 83K | /vedic/compatibility |
 | hora today | 40.5K | /vedic/hora (gap) |
 
+## Keyword Volume Reference (Spanish — LatAm + Spain)
+
+| Keyword (ES) | Volume | CPC | Target |
+|---|---|---|---|
+| horóscopo | 135K | $0.93 | /es/horoscope/today |
+| signos zodiacales | 90.5K | $0.23 | /es/horoscope/signs |
+| calculadora carta natal | 90.5K | — | /es/vedic/kundli |
+| horóscopo [signo] hoy | 301K–368K/sign | $0.01 | /es/horoscope/[signo] |
+| carta astral gratis | est. 60K+ | — | /es/vedic/kundli |
+| compatibilidad zodiacal | 4.4K | $0.05 | /es/vedic/compatibility |
+| horóscopo chino | 4.4K | $1.87 | /es/chinese-zodiac (future) |
+
 ## Content Localization Guidelines
 
 - **India/Nepal**: Use Sanskrit terms (Kundli, Nakshatra, Tithi) as primary, with English explanations
 - **South Africa/Nigeria/Kenya**: Lead with English terms (birth chart, horoscope, compatibility)
 - **Bangladesh/Sri Lanka**: Vedic terms work, English content acceptable
+- **Brazil**: Portuguese Western terms (mapa astral, horóscopo, compatibilidade). See /pt/ locale.
+- **Mexico/Argentina/Spain/LatAm**: Spanish Western terms. "Carta astral" in Spain/Mexico, "carta natal" in Argentina. Love + Chinese horoscope dominant in Argentina. 97% mobile traffic.
 - **Global English**: Always have English as the canonical version

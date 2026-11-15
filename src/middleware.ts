@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server';
 
-export const LOCALES = ['en', 'hi'] as const;
+export const LOCALES = ['en', 'hi', 'ne', 'pt', 'es'] as const;
 export const DEFAULT_LOCALE = 'en';
 const LOCALE_COOKIE = 'astra-locale';
 
@@ -36,18 +36,18 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
-  // /hi/* → rewrite to /* and set locale cookie so the page renders in Hindi
-  if (maybeLocale === 'hi') {
+  // /hi/*, /ne/*, /pt/* → rewrite to /* and set locale cookie
+  if (maybeLocale === 'hi' || maybeLocale === 'ne' || maybeLocale === 'pt' || maybeLocale === 'es') {
     const rest = segments.slice(2).join('/');
     const url = request.nextUrl.clone();
     url.pathname = rest ? `/${rest}` : '/';
     const response = NextResponse.rewrite(url);
-    response.cookies.set(LOCALE_COOKIE, 'hi', {
+    response.cookies.set(LOCALE_COOKIE, maybeLocale, {
       path: '/',
       maxAge: 60 * 60 * 24 * 365,
       sameSite: 'lax',
     });
-    response.headers.set('x-locale', 'hi');
+    response.headers.set('x-locale', maybeLocale);
     return response;
   }
 

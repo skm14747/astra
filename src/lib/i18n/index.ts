@@ -1,8 +1,11 @@
 import { useSettings } from '../settings/context';
 import { en, type TranslationKey } from './en';
 import { hi } from './hi';
+import { ne } from './ne';
+import { pt } from './pt';
+import { es } from './es';
 
-const dicts: Record<string, Record<string, string>> = { en, hi };
+const dicts: Record<string, Record<string, string>> = { en, hi, ne, pt, es };
 
 /**
  * Returns a translation function `t(key, params?)` that looks up the

@@ -1,54 +1,50 @@
 ---
-description: Hindi translation style guide — colloquial, natural Hindi for all i18n strings. Applies when editing Hindi translations or adding new i18n keys.
+description: Hindi language guide — native phrasing, natural paragraphs, authentic Jyotish terminology. Applies when editing Hindi i18n strings or writing Hindi content.
 globs: src/lib/i18n/hi.ts
 alwaysApply: false
 ---
 
-# Hindi Translation Style — Colloquial, Not Textbook
+# Hindi Language Guide — Native Phrasing & Paragraphs
 
-## Core Principle
+## Core Principle: Independent Language Crafting
 
-Write Hindi the way real people talk — like a friend explaining ज्योतिष over chai, not a Sanskrit textbook. Our audience is everyday Hindi speakers in India, including elderly users who prefer Hindi but are comfortable with common English words.
+**Do NOT translate sentence-by-sentence from English.**
+Treat Hindi as an independent, first-class language. Write directly in native Hindi with authentic phrasing, cultural resonance, and natural rhythm — the way a respected, learned Indian astrologer and guide speaks to seekers.
 
-## Tone
+## Key Rules
 
-- **Warm and direct** — "अपनी कुंडली देखें" not "कृपया अपनी जन्म कुंडली अवलोकित करें"
-- **Hinglish is fine** — Use English words when Hindi speakers naturally would: check, score, position, timeline, health, free, profile, download
-- **Short labels** — UI text should be punchy: "चालू" not "सक्रिय", "बदलें" not "संपादित करें"
-- **No shudh Hindi** — Avoid overly Sanskritized words that nobody uses in conversation
+1. **Native Paragraphs over Literal Translation**:
+   - English explains mechanically: *"A Kundli is a map of the sky at the exact moment of your birth. It shows..."*
+   - Native Hindi expresses meaning: *"जन्म कुंडली मनुष्य के संपूर्ण जीवन का वह प्रामाणिक लेखा-जोखा है, जो जन्म के समय आकाश में स्थित ग्रह-नक्षत्रों की दशा को दर्शाता है..."*
+   - Construct thoughts with Hindi syntax and flow, not English S-V-O translated literally.
 
-## Word Choices
+2. **Authentic Astrological & Cultural Vocabulary**:
+   - Use time-honored Jyotish terms: `जन्म पत्रिका`, `लग्न कुंडली`, `द्वादश भाव`, `फलकथन`, `दिनमान`, `रात्रिमान`, `षोडशवर्ग`, `दोष भंग`, `अष्टकूट गुण मिलान`, `अवस्था`, `गोचर`.
+   - Avoid bureaucratic or textbook translations (e.g. avoid `निरस्तीकरण`, use `दोष भंग`; avoid `अवलोकन करें`, use `देखें` / `विचार`).
+   - For strengths/challenges in reports, use `मज़बूत पक्ष` and `ध्यान देने योग्य बातें / सावधानियाँ` instead of literal `शक्तियाँ / चुनौतियाँ`.
 
-| ❌ Avoid (textbook) | ✅ Use (colloquial) |
-|---------------------|---------------------|
-| सक्रिय / निष्क्रिय | चालू / बंद |
-| प्रबल / दुर्बल | मज़बूत / कमज़ोर |
-| अनुकूल / चुनौतीपूर्ण | अच्छा / कठिन |
-| शेष | बाकी |
-| अवलोकन करें | देखें |
-| संपादित करें | बदलें |
-| निरस्तीकरण | भंग |
-| ब्रह्मांडीय रूपरेखा | किस्मत का नक्शा |
-| वार्षिक भविष्यवाणी | साल का फल |
-| स्वास्थ्य एवं आयु | सेहत और उम्र |
-| सुलभता | सुविधा |
+3. **Natural, Warm & Dignified Tone**:
+   - Accessible without being crass; dignified without being archaic.
+   - For UI buttons and quick actions: keep them concise, clear, and direct (`सुधारें`, `सहेजें`, `रद्द करें`, `चुनें`).
+   - For FAQ answers: provide genuine, insightful answers that directly address the devotee's/seeker's concern with clarity and reassurance.
 
-## SEO & Long Text
+4. **Terminology Reference**:
 
-- SEO intros should read like someone *explaining* — "कुंडली असल में आपके जन्म के वक़्त आसमान का नक्शा है"
-- Use "यानी" and "मतलब" to clarify jargon naturally
-- Keep sentences short. Mix Hindi and English naturally.
-- FAQ answers should sound like a pandit ji answering warmly, not a Wikipedia article
+| ❌ Awkward / Calque | ✅ Native Jyotish & Hindi Expression |
+|---------------------|---------------------------------------|
+| निरस्तीकरण | दोष भंग |
+| शक्तियाँ / चुनौतियाँ | मज़बूत पक्ष / ध्यान देने योग्य बातें |
+| करियर उपयुक्तता | अनुकूल कार्यक्षेत्र |
+| आयु वर्गीकरण | आयु विचार (शास्त्रानुसार) |
+| दिन की अवधि / रात | दिनमान / रात्रिमान |
+| ब्रह्मांडीय रूपरेखा | ग्रह-नक्षत्र विधान / जीवन चक्र |
+| वार्षिक भविष्यवाणी | ताजिक वर्षफल |
+| अनुपात / पट्टी (table) | बल अनुपात / बल स्तर |
+| प्रोफ़ाइल संपादित करें | जन्म विवरण सुधारें |
+| सक्रिय / निष्क्रिय साढ़े साती | साढ़े साती का प्रभाव / साढ़े साती से मुक्त |
 
-## Jyotish Terms — Keep As-Is
+## Checklist for Any New or Modified String
 
-Sanskrit astrology terms stay unchanged — they're the same in Hindi:
-कुंडली, दशा, महादशा, अंतर्दशा, नक्षत्र, राशि, भाव, लग्न, गोचर, योग, दोष, अयनांश, तिथि, षड्बल, अष्टकवर्ग
-
-## New Key Checklist
-
-When adding a new i18n key to `hi.ts`:
-1. Read it aloud — does it sound like something you'd say to your दादी/नानी?
-2. If it sounds like Google Translate or a government document, rewrite it
-3. Check if there's a common Hinglish alternative (e.g., "डाउनलोड" > "अधोभारण")
-4. Keep it under ~40 chars for button/label text
+1. **Independent test**: If the English string disappeared, does this Hindi sentence/paragraph stand completely on its own as natural, beautiful Hindi?
+2. **Astrological authenticity**: Does it respect traditional Jyotish principles and phrasing?
+3. **Clarity**: Is it effortless for an Indian family or elderly seeker to read and understand?
