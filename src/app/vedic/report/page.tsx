@@ -678,14 +678,14 @@ export default function ReportPage() {
         </div>
       </article>
 
-      {/* Floating Download Button — always visible while scrolling */}
+      {/* Floating Download Button — always visible on all screens */}
       <button
         onClick={handleDownload}
-        className="fixed bottom-6 right-6 z-50 xl:hidden px-5 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold shadow-xl shadow-violet-900/30 transition-all flex items-center gap-2"
+        className="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold shadow-xl shadow-violet-900/30 transition-all flex items-center gap-2"
         data-print-hide
         aria-label="Download PDF"
       >
-        📄 <span className="hidden sm:inline">Download PDF</span>
+        📄 Download PDF
       </button>
     </div>
   );
