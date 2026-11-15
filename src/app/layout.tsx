@@ -110,6 +110,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
+        {/* Google Tag Manager */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-WPZL23HX"
+          strategy="afterInteractive"
+        />
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());`}
+        </Script>
       </head>
       <body className={`${playfair.variable} ${inter.variable} ${notoDevanagari.variable} bg-astra-bg text-zinc-100 min-h-screen`}>
         <WebSiteJsonLd />
