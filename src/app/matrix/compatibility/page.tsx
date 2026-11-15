@@ -69,21 +69,21 @@ export default function MatrixCompatibilityPage() {
       {result && (
         <>
           <div className="glass-card rounded-2xl p-8 text-center matrix-glow">
-            <div className="section-title mb-2" style={{ color: '#e84393' }}>Harmony Score</div>
+            <div className="section-title mb-2" style={{ color: '#e84393' }}>{t('matrixCompat.harmonyScore')}</div>
             <div className="text-5xl font-bold font-display text-pink-400">{result.scores.harmony}</div>
             <p className="text-zinc-400 mt-2">{getArcana(result.scores.harmony).name}</p>
           </div>
 
-          <div className="section-title mb-3" style={{ color: '#e84393' }}>Dimension Scores</div>
+          <div className="section-title mb-3" style={{ color: '#e84393' }}>{t('matrixCompat.dimensionScores')}</div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {(() => {
               const dims = [
-                ['Sky (Spiritual)', result.scores.sky],
-                ['Earth (Physical)', result.scores.earth],
-                ['Relationship', result.scores.relationship],
-                ['Male Line', result.scores.male],
-                ['Female Line', result.scores.female],
-                ['Union', result.scores.union],
+                [t('matrixCompat.sky'), result.scores.sky],
+                [t('matrixCompat.earth'), result.scores.earth],
+                [t('matrixCompat.relationship'), result.scores.relationship],
+                [t('matrixCompat.maleLine'), result.scores.male],
+                [t('matrixCompat.femaleLine'), result.scores.female],
+                [t('matrixCompat.union'), result.scores.union],
               ] as [string, number][];
               const maxVal = Math.max(...dims.map(d => d[1]));
               return dims.map(([label, val]) => (

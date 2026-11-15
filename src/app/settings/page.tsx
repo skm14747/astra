@@ -19,7 +19,7 @@ export default function SettingsPage() {
   const handleLanguageChange = (lang: Language) => {
     setLanguage(lang);
     // Navigate to the locale-prefixed URL so crawlers see the correct version
-    const cleanPath = pathname.replace(/^\/(hi|ne|pt|es|ja)/, '') || '/';
+    const cleanPath = pathname.replace(/^\/(hi|ne|pt|es|ja|fr)/, '') || '/';
     if (lang === 'en') {
       router.push(cleanPath);
     } else {
@@ -103,13 +103,43 @@ export default function SettingsPage() {
 
         <h2 className="font-display text-lg font-semibold text-white mt-6">{t('settings.language')}</h2>
         <p className="text-sm text-zinc-400 -mt-2">{t('settings.langDesc')}</p>
-        <div className="flex gap-3">
-          {([['en', 'English'], ['hi', 'हिन्दी'], ['ne', 'नेपाली'], ['pt', 'Português'], ['es', 'Español'], ['ja', '日本語']] as [Language, string][]).map(([lang, label]) => (
-            <button key={lang} onClick={() => handleLanguageChange(lang)} className={pill(language === lang)}>
-              {label}
-            </button>
-          ))}
-        </div>
+        {(() => {
+          const ALL_LANGS: { code: Language; label: string; family: 'vedic' | 'latin' | 'east-asian' | 'global' }[] = [
+            { code: 'en', label: 'English', family: 'global' },
+            { code: 'hi', label: 'हिन्दी', family: 'vedic' },
+            { code: 'ne', label: 'नेपाली', family: 'vedic' },
+            { code: 'pt', label: 'Português', family: 'latin' },
+            { code: 'es', label: 'Español', family: 'latin' },
+            { code: 'ja', label: '日本語', family: 'east-asian' },
+            { code: 'fr', label: 'Français', family: 'latin' },
+          ];
+          const curFamily = ALL_LANGS.find(l => l.code === language)?.family || 'global';
+          const primary = ALL_LANGS.filter(l => l.code === language || l.family === 'global' || l.family === curFamily);
+          const more = ALL_LANGS.filter(l => l.code !== language && l.family !== 'global' && l.family !== curFamily);
+          return (
+            <div className="space-y-3">
+              <div className="flex gap-3 flex-wrap">
+                {primary.map(l => (
+                  <button key={l.code} onClick={() => handleLanguageChange(l.code)} className={pill(language === l.code)}>
+                    {l.label}
+                  </button>
+                ))}
+              </div>
+              {more.length > 0 && (
+                <div>
+                  <p className="text-xs text-zinc-600 uppercase tracking-wider mb-2">More languages</p>
+                  <div className="flex gap-3 flex-wrap">
+                    {more.map(l => (
+                      <button key={l.code} onClick={() => handleLanguageChange(l.code)} className={`${pill(language === l.code)} opacity-70 hover:opacity-100`}>
+                        {l.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })()}
       </section>
 
       {/* ── Data ── */}

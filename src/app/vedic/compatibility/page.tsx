@@ -86,7 +86,7 @@ export default function CompatibilityPage() {
             <p className="text-zinc-400 mt-2">{result.verdict}</p>
             {(result.mangalDosha.boy || result.mangalDosha.girl) && (
               <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-500/10 text-yellow-400 text-xs">
-                ⚠ Mangal Dosha: {[result.mangalDosha.boy && 'Partner 1', result.mangalDosha.girl && 'Partner 2'].filter(Boolean).join(' & ')}
+                ⚠ {t('compat.mangalDosha')}: {[result.mangalDosha.boy && t('compat.partner1'), result.mangalDosha.girl && t('compat.partner2')].filter(Boolean).join(' & ')}
               </div>
             )}
           </div>

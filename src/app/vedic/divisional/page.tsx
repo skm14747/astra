@@ -78,7 +78,7 @@ export default function DivisionalPage() {
       {currentVarga && (
         <div>
           <p className="text-sm text-zinc-400 mb-4">
-            Showing <strong className="text-zinc-200">{selectedVarga.toUpperCase()}</strong> — {currentVarga.name}
+            {t('divisional.showing')} <strong className="text-zinc-200">{selectedVarga.toUpperCase()}</strong> — {currentVarga.name}
           </p>
           <div ref={chartRef} className="glass-card rounded-2xl p-5 inline-block vedic-glow">
             <SouthIndianChart

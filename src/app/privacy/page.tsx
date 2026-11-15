@@ -6,7 +6,15 @@ export const metadata: Metadata = {
   description: 'Astra Destiny privacy policy — how we handle your data, what information is collected, and your rights. All astrology calculations run locally in your browser.',
   alternates: {
     canonical: '/privacy',
-    languages: { 'en': '/privacy', 'hi': '/hi/privacy', 'x-default': '/privacy' },
+    languages: {
+      'en': '/privacy',
+      'hi': '/hi/privacy',
+      'ne': '/ne/privacy',
+      'pt': '/pt/privacy',
+      'es': '/es/privacy',
+      'ja': '/ja/privacy',
+      'x-default': '/privacy',
+    },
   },
 };
 

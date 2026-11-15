@@ -6,7 +6,15 @@ export const metadata: Metadata = {
   description: 'Terms of Service for Astra Destiny — usage terms for our free Vedic astrology calculator platform.',
   alternates: {
     canonical: '/terms',
-    languages: { 'en': '/terms', 'hi': '/hi/terms', 'x-default': '/terms' },
+    languages: {
+      'en': '/terms',
+      'hi': '/hi/terms',
+      'ne': '/ne/terms',
+      'pt': '/pt/terms',
+      'es': '/es/terms',
+      'ja': '/ja/terms',
+      'x-default': '/terms',
+    },
   },
 };
 

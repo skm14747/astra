@@ -41,24 +41,24 @@ export default function MatrixHealthPage() {
         return (
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div className="glass-card rounded-xl p-4 text-center matrix-glow">
-              <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">Strongest Chakra</div>
+              <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">{t('matrixHealth.strongestChakra')}</div>
               <div className="text-lg font-bold text-pink-400">{chakras[maxIdx].name}</div>
-              <div className="text-xs text-zinc-500 mt-0.5">Total: {totals[maxIdx]}</div>
+              <div className="text-xs text-zinc-500 mt-0.5">{t('common.total')}: {totals[maxIdx]}</div>
             </div>
             <div className="glass-card rounded-xl p-4 text-center">
-              <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">Weakest Chakra</div>
+              <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">{t('matrixHealth.weakestChakra')}</div>
               <div className="text-lg font-bold text-zinc-300">{chakras[minIdx].name}</div>
-              <div className="text-xs text-zinc-500 mt-0.5">Total: {totals[minIdx]}</div>
+              <div className="text-xs text-zinc-500 mt-0.5">{t('common.total')}: {totals[minIdx]}</div>
             </div>
             <div className="glass-card rounded-xl p-4 text-center">
-              <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">Dominant Column</div>
+              <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">{t('matrixHealth.dominantColumn')}</div>
               <div className="text-lg font-bold text-zinc-300">
                 {(() => {
                   const pSum = chakras.reduce((a, c) => a + c.physics, 0);
                   const eSum = chakras.reduce((a, c) => a + c.energy, 0);
                   const emSum = chakras.reduce((a, c) => a + c.emotions, 0);
                   const max = Math.max(pSum, eSum, emSum);
-                  return max === pSum ? 'Physics' : max === eSum ? 'Energy' : 'Emotions';
+                  return max === pSum ? t('matrixHealth.physics') : max === eSum ? t('matrixHealth.energy') : t('matrixHealth.emotions');
                 })()}
               </div>
             </div>

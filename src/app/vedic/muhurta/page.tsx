@@ -144,7 +144,7 @@ export default function MuhurtaPage() {
             <div className="relative z-10">
               <div className="section-title mb-2">{t('muhurta.currentHora')}</div>
               <p className="text-xl text-white font-display font-bold">{data.hora.planet}</p>
-              <p className="text-xs text-zinc-500 mt-1">Hora #{data.hora.horaNumber} of 24</p>
+              <p className="text-xs text-zinc-500 mt-1">Hora #{data.hora.horaNumber} {t('common.of')} 24</p>
             </div>
           </div>
         )}

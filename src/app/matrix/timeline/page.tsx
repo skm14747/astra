@@ -53,7 +53,7 @@ export default function MatrixTimelinePage() {
                 <div className="text-4xl font-bold text-pink-400">{currentVertex.energy}</div>
                 <div>
                   <div className="text-lg text-zinc-100 font-semibold">{arcana.name}</div>
-                  <div className="text-xs text-zinc-500">Age {currentVertex.age}–{currentVertex.age + 9} · You are {currentAge}</div>
+                  <div className="text-xs text-zinc-500">{t('common.age')} {currentVertex.age}–{currentVertex.age + 9} · {t('matrixTimeline.youAre', { n: currentAge })}</div>
                 </div>
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function MatrixTimelinePage() {
               <div key={v.age} className={`glass-card rounded-xl p-4 text-center min-w-[80px] transition ${
                 isCurrent ? 'matrix-glow border-pink-500/30' : 'glow-hover'
               }`}>
-                <div className="text-[10px] text-zinc-500 mb-1">Age {v.age}</div>
+                <div className="text-[10px] text-zinc-500 mb-1">{t('common.age')} {v.age}</div>
                 <div className="text-2xl font-bold text-pink-400">{v.energy}</div>
                 <div className="text-[10px] text-zinc-600 mt-0.5">{getArcana(v.energy).name}</div>
                 {isCurrent && <span className="inline-block w-1.5 h-1.5 rounded-full bg-pink-400 mt-1.5 animate-pulse-subtle" />}
@@ -94,7 +94,7 @@ export default function MatrixTimelinePage() {
                     ? 'glass-card border-pink-500/40 matrix-glow'
                     : 'bg-white/[0.02] border border-white/[0.03] hover:bg-white/[0.04]'
                 }`}
-                title={`Age ${age.toFixed(1)}: ${getArcana(n.energy).name}`}
+                title={`${t('common.age')} ${age.toFixed(1)}: ${getArcana(n.energy).name}`}
               >
                 <span className="text-zinc-500">{age % 1 === 0 ? age : ''}</span>
                 <span className="font-bold text-zinc-200">{n.energy}</span>

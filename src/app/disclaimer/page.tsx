@@ -6,7 +6,15 @@ export const metadata: Metadata = {
   description: 'Important disclaimer about Astra Destiny\'s Vedic astrology calculations — for educational and entertainment purposes only, not professional advice.',
   alternates: {
     canonical: '/disclaimer',
-    languages: { 'en': '/disclaimer', 'hi': '/hi/disclaimer', 'x-default': '/disclaimer' },
+    languages: {
+      'en': '/disclaimer',
+      'hi': '/hi/disclaimer',
+      'ne': '/ne/disclaimer',
+      'pt': '/pt/disclaimer',
+      'es': '/es/disclaimer',
+      'ja': '/ja/disclaimer',
+      'x-default': '/disclaimer',
+    },
   },
 };
 

@@ -981,5 +981,466 @@
     "priority": "P1",
     "status": "gap",
     "notes": "Love is THE dominant vertical in Japanese fortune market — 85% of paid fortune usage is love/relationship (Yano Research 2024). 復縁占い (reunion fortune) at 14.8K/mo shows deep emotional intent. Maps to 7th house analysis + Venus placement + compatibility engine. High conversion potential."
+  },
+
+  {
+    "id": "horoscope-du-jour-fr",
+    "head": "horoscope du jour (daily horoscope)",
+    "keywords": [
+      "horoscope du jour", "horoscope du jour gratuit", "horoscope",
+      "mon horoscope du jour", "horoscope du jour et de demain",
+      "horoscope quotidien", "horoscope gratuit"
+    ],
+    "volume_range": "horoscope du jour 537K/mo FR; horoscope 812K/mo FR; cluster total est. 1.4M+ FR",
+    "dominant_type": "content",
+    "target_url": "/fr/horoscope/today",
+    "priority": "P0",
+    "status": "gap",
+    "notes": "CORE daily horoscope query in France. 'horoscope du jour' 537K/mo and 'horoscope' 812K/mo (Ahrefs Oct 2026). Competitors: evozen.fr (2.83M/mo visits), mon-horoscope-du-jour.com (2.3M/mo), horoscope.fr (578K/mo). Same transit logic as other locales, French presentation. 88% mobile traffic."
+  },
+  {
+    "id": "horoscope-par-signe-fr",
+    "head": "horoscope [signe] (per-sign horoscope)",
+    "keywords": [
+      "horoscope balance", "horoscope scorpion", "horoscope sagittaire",
+      "horoscope bélier", "horoscope taureau", "horoscope gémeaux",
+      "horoscope cancer", "horoscope lion", "horoscope vierge",
+      "horoscope capricorne", "horoscope verseau", "horoscope poissons"
+    ],
+    "volume_range": "horoscope balance 23K; horoscope scorpion 22K; est. 15-23K per sign; 12 signs = 200K+ FR",
+    "dominant_type": "content",
+    "target_url": "/fr/horoscope/[signe]",
+    "priority": "P0",
+    "status": "gap",
+    "notes": "12 per-sign daily horoscope pages in French. horoscope.fr ranks #1 for 'horoscope balance' (23K) and 'horoscope scorpion' (22K). Same calculation engine, French zodiac sign names. Balance/Scorpion/Sagittaire are the top-volume signs in France."
+  },
+  {
+    "id": "theme-astral-fr",
+    "head": "thème astral gratuit (free birth chart)",
+    "keywords": [
+      "thème astral", "thème astral gratuit", "carte du ciel",
+      "carte du ciel gratuite", "thème natal", "thème natal gratuit",
+      "calculer son thème astral", "thème astral en ligne"
+    ],
+    "volume_range": "est. 60K+ combined FR",
+    "dominant_type": "tool",
+    "target_url": "/fr/vedic/kundli",
+    "priority": "P0",
+    "status": "gap",
+    "notes": "Direct equivalent of Kundli. French term 'thème astral' (birth chart) or 'carte du ciel' (sky map). Competitors: astrotheme.fr (major, DB of celebrity charts), astrologix.fr (NASA-verified), astralytics.fr, iastrologique.com. All offer free birth chart calculation. Vedic precision is our differentiator."
+  },
+  {
+    "id": "ascendant-fr",
+    "head": "ascendant astrologique (astrological ascendant)",
+    "keywords": [
+      "ascendant astrologique", "calculer son ascendant", "ascendant",
+      "quel est mon ascendant", "ascendant gratuit", "ascendant signe",
+      "comment calculer son ascendant"
+    ],
+    "volume_range": "est. 40K+ FR",
+    "dominant_type": "tool",
+    "target_url": "/fr/vedic/kundli",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Ascendant calculation is a standalone high-intent query in French astrology. Maps directly to Lagna calculation. astrologie-flash.com and astro.qc.ca both rank for 'ascendant astrologique'. Serve from Kundli page with ascendant prominently displayed."
+  },
+  {
+    "id": "compatibilite-astrologique-fr",
+    "head": "compatibilité astrologique (astrological compatibility)",
+    "keywords": [
+      "compatibilité astrologique", "compatibilité signes", "compatibilité amoureuse",
+      "synastrie", "synastrie gratuite", "compatibilité couple astrologie",
+      "compatibilité signe ascendant"
+    ],
+    "volume_range": "est. 30K+ FR",
+    "dominant_type": "tool",
+    "target_url": "/fr/vedic/compatibility",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Synastrie (synastry) is the professional French term for two-chart comparison. yourastrallife.com, astralytics.fr, astromatch365.com all offer compatibility tools. Love/compatibility is a major driver in French astrology. Maps to Kundli Milan / Ashtakoota engine."
+  },
+  {
+    "id": "horoscope-demain-semaine-fr",
+    "head": "horoscope de demain / de la semaine",
+    "keywords": [
+      "horoscope de demain", "horoscope de la semaine",
+      "horoscope hebdomadaire", "horoscope mensuel",
+      "horoscope mensuel gratuit", "horoscope annuel 2027"
+    ],
+    "volume_range": "horoscope de demain 74K/mo; horoscope de la semaine 9.9K; cluster total est. 100K+ FR",
+    "dominant_type": "content",
+    "target_url": "/fr/horoscope/weekly",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "'Horoscope de demain' is 74K/mo in France (Semrush Sep 2026). astrologie.fr ranks #9 for this keyword. Weekly and monthly formats build recurring traffic. January New Year predictions spike 3x."
+  },
+  {
+    "id": "signe-zodiaque-fr",
+    "head": "signe du zodiaque (zodiac signs)",
+    "keywords": [
+      "signe du zodiaque", "signes du zodiaque", "signe astrologique",
+      "les 12 signes du zodiaque", "zodiaque", "quel est mon signe",
+      "signes astrologiques dates"
+    ],
+    "volume_range": "zodiaque 14.8K; signe du zodiaque 9.9K; cluster total est. 50K+ FR",
+    "dominant_type": "content",
+    "target_url": "/fr/horoscope/signs",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Informational content about the 12 zodiac signs. French sign names: Bélier, Taureau, Gémeaux, Cancer, Lion, Vierge, Balance, Scorpion, Sagittaire, Capricorne, Verseau, Poissons. Content pages linking to per-sign horoscopes and birth chart tool."
+  },
+  {
+    "id": "horoscope-amour-fr",
+    "head": "horoscope amour (love horoscope)",
+    "keywords": [
+      "horoscope amour", "horoscope amoureux", "horoscope couple",
+      "horoscope amour du jour", "compatibilité amoureuse signe",
+      "horoscope amoureux gratuit"
+    ],
+    "volume_range": "est. 40K+ FR",
+    "dominant_type": "content",
+    "target_url": "/fr/horoscope/love",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Love horoscope is a high-engagement vertical in France. mon-horoscope-du-jour.com gets significant traffic from love-related queries. Valentine's Day (Feb) drives seasonal spikes. Maps to 7th house + Venus analysis from existing engine."
+  },
+  {
+    "id": "tirage-tarot-fr",
+    "head": "tirage de tarot gratuit (free tarot reading)",
+    "keywords": [
+      "tirage de tarot gratuit", "tarot gratuit", "tirage de cartes",
+      "tarot du jour", "tirage tarot amour", "tarot oui non"
+    ],
+    "volume_range": "tirage de tarot gratuit 8.1K global; tarot gratuit est. 40K+ FR; cluster total est. 60K+",
+    "dominant_type": "tool + content",
+    "target_url": "/fr/tools",
+    "priority": "P2",
+    "status": "gap",
+    "notes": "Adjacent category. asiaflash.com (160K visits) built traffic on tarot + astrology. Not our core product but a traffic bridge. 'Tarot oui/non' is high engagement. Consider future tarot feature."
+  },
+  {
+    "id": "heures-miroirs-fr",
+    "head": "heures miroirs (mirror hours)",
+    "keywords": [
+      "heures miroirs", "20h20 signification", "11h11 signification",
+      "22h22 signification", "heure miroir", "heures doubles"
+    ],
+    "volume_range": "20h20 signification 40.5K (Semrush); cluster total est. 100K+ FR",
+    "dominant_type": "content",
+    "target_url": "/fr/mirror-hours",
+    "priority": "P2",
+    "status": "gap",
+    "notes": "Uniquely popular in France — 'heures miroirs' (mirror hours like 11:11, 22:22) drive huge traffic. astrologie.fr gets 0.91% of traffic from '20h20 signification' (40.5K/mo). France-specific spiritual content category. Future content opportunity."
+  },
+
+  {
+    "id": "rashifal-hi",
+    "head": "राशिफल / आज का राशिफल (daily Hindi horoscope)",
+    "keywords": ["राशिफल", "आज का राशिफल", "दैनिक राशिफल", "हिंदी राशिफल", "साप्ताहिक राशिफल", "मासिक राशिफल", "वार्षिक राशिफल 2027"],
+    "volume_range": "rashifal 521K/mo IN; आज का राशिफल est. 200K+; cluster total est. 800K+ IN",
+    "dominant_type": "content",
+    "target_url": "/hi/",
+    "priority": "P0",
+    "status": "gap",
+    "notes": "THE highest-volume Hindi astrology query. AstroSage ranks #3 for 'rashifal' (521K). hindi.astrosage.com gets 421K/mo total visits. Daily rashifal is most-searched astrology category in India (Zee News Aug 2026). Must serve Moon-sign based daily horoscope in Hindi."
+  },
+  {
+    "id": "kundli-hindi-hi",
+    "head": "कुंडली / जन्म कुंडली (Hindi birth chart)",
+    "keywords": ["कुंडली", "जन्म कुंडली", "कुंडली बनाएं", "फ्री कुंडली", "कुंडली सॉफ्टवेयर", "जन्मपत्री", "kundli in hindi", "kundali in hindi"],
+    "volume_range": "kundli in hindi 74K; kundali in hindi 74K; Hindi Devanagari est. 150K+; cluster total est. 230K+",
+    "dominant_type": "tool",
+    "target_url": "/hi/vedic/kundli",
+    "priority": "P0",
+    "status": "exists",
+    "notes": "Hindi-language birth chart generation. hindi.astrosage.com is the dominant player. AstroTalk has 122M+ users with Hindi-first interface. 'kundli in hindi' and 'kundali in hindi' each 74K/mo globally. Hindi interface already exists on our site."
+  },
+  {
+    "id": "kundli-milan-hi",
+    "head": "कुंडली मिलान / गुण मिलान (Hindi marriage matching)",
+    "keywords": ["कुंडली मिलान", "गुण मिलान", "कुंडली मैचिंग", "विवाह मिलान", "अष्टकूट मिलान", "36 गुण मिलान"],
+    "volume_range": "kundali milan 83K; gun milan 83K; Hindi cluster total est. 180K+",
+    "dominant_type": "tool",
+    "target_url": "/hi/vedic/compatibility",
+    "priority": "P0",
+    "status": "exists",
+    "notes": "Marriage compatibility is top-2 use case after rashifal. AstroSage ranks #1 for 'kundali milan' (83K/mo). Career > Marriage in search but marriage has higher commercial intent. Hamro Patro reports 4-5 lakh kundalis made monthly for matching."
+  },
+  {
+    "id": "panchang-choghadiya-hi",
+    "head": "आज का पंचांग / चौघड़िया (Hindi daily almanac)",
+    "keywords": ["आज का पंचांग", "पंचांग", "चौघड़िया", "दिन का चौघड़िया", "आज की तिथि", "राहु काल", "शुभ मुहूर्त"],
+    "volume_range": "panchang 70K; choghadiya today 37K; din ka choghadiya 35K; cluster total est. 200K+",
+    "dominant_type": "tool + content",
+    "target_url": "/hi/vedic/panchang",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "Drik Panchang dominates (3.3M/mo traffic, #1 for panchang). Hindi users search both English and Devanagari terms. Daily habit queries — high repeat usage."
+  },
+  {
+    "id": "rashi-calculator-hi",
+    "head": "राशि कैलकुलेटर / मेरी राशि क्या है",
+    "keywords": ["राशि कैलकुलेटर", "मेरी राशि क्या है", "नाम से राशि", "राशि जानें", "लग्न कैलकुलेटर"],
+    "volume_range": "est. 80K+ IN",
+    "dominant_type": "tool",
+    "target_url": "/hi/vedic/kundli",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "Simple rashi (Moon sign) lookup tool. Gateway to deeper kundli engagement. High mobile traffic."
+  },
+  {
+    "id": "sade-sati-hi",
+    "head": "साढ़े साती / शनि दशा (Saturn transit Hindi)",
+    "keywords": ["साढ़े साती", "शनि साढ़े साती", "शनि दशा", "शनि की साढ़े साती", "शनि ग्रह उपाय"],
+    "volume_range": "est. 40K+ IN",
+    "dominant_type": "tool + content",
+    "target_url": "/hi/vedic/sade-sati",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "Sade Sati checker in Hindi. Fear-driven high-engagement query. Links to remedies page for retention."
+  },
+  {
+    "id": "mangal-dosha-hi",
+    "head": "मंगल दोष / काल सर्प दोष (Hindi doshas)",
+    "keywords": ["मंगल दोष", "काल सर्प दोष", "दोष निवारण", "मंगलिक दोष", "मंगल दोष उपाय"],
+    "volume_range": "est. 35K+ IN",
+    "dominant_type": "tool + content",
+    "target_url": "/hi/vedic/mangal-dosha",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "Dosha checkers in Hindi. Pre-marriage essential check. High conversion to compatibility tool."
+  },
+  {
+    "id": "dasha-hi",
+    "head": "महादशा / ग्रह दशा (Hindi planetary periods)",
+    "keywords": ["महादशा", "ग्रह दशा", "विंशोत्तरी दशा", "अंतर्दशा", "दशा फल"],
+    "volume_range": "est. 25K+ IN",
+    "dominant_type": "tool",
+    "target_url": "/hi/vedic/dashas",
+    "priority": "P2",
+    "status": "exists",
+    "notes": "Advanced Vedic astrology feature. Hindi users who search this are highly engaged astrology enthusiasts."
+  },
+  {
+    "id": "muhurta-hi",
+    "head": "शुभ मुहूर्त / विवाह मुहूर्त (Hindi auspicious timing)",
+    "keywords": ["शुभ मुहूर्त", "विवाह मुहूर्त", "गृह प्रवेश मुहूर्त", "मुंडन मुहूर्त", "नामकरण मुहूर्त"],
+    "volume_range": "est. 20K+ IN",
+    "dominant_type": "tool + content",
+    "target_url": "/hi/vedic/muhurta",
+    "priority": "P2",
+    "status": "exists",
+    "notes": "Wedding season (Nov-Feb, Apr-Jun) drives spikes. Festival-aligned content opportunities. Seasonal P0 during peak wedding months."
+  },
+  {
+    "id": "jyotish-software-hi",
+    "head": "ज्योतिष सॉफ्टवेयर फ्री / कुंडली ऐप",
+    "keywords": ["ज्योतिष सॉफ्टवेयर फ्री", "कुंडली ऐप", "ज्योतिष ऐप", "फ्री कुंडली सॉफ्टवेयर", "बेस्ट ज्योतिष ऐप"],
+    "volume_range": "est. 15K+ IN",
+    "dominant_type": "tool",
+    "target_url": "/hi/vedic/kundli",
+    "priority": "P2",
+    "status": "exists",
+    "notes": "Software comparison intent. Users looking for free alternatives to paid astrology software. AstroSage 80M+ downloads dominates. Our free browser-based angle is the differentiator."
+  },
+
+  {
+    "id": "rashifal-ne",
+    "head": "आजको राशिफल / nepali rashifal",
+    "keywords": ["आजको राशिफल", "nepali rashifal", "राशिफल", "दैनिक राशिफल", "साप्ताहिक राशिफल", "मासिक राशिफल"],
+    "volume_range": "est. 30K+ NP",
+    "dominant_type": "content",
+    "target_url": "/ne/",
+    "priority": "P0",
+    "status": "gap",
+    "notes": "'आजको राशिफल' (today's horoscope) is among the highest-volume search terms in Nepal (amarnepal.com). Moon-sign based daily horoscope in Nepali. Hamro Patro is the dominant competitor."
+  },
+  {
+    "id": "patro-ne",
+    "head": "hamro patro / नेपाली पात्रो (Nepali calendar)",
+    "keywords": ["hamro patro", "nepali patro", "नेपाली पात्रो", "nepali calendar", "nepali date today", "today nepali date", "nepali date"],
+    "volume_range": "hamro patro 118K; nepali calendar 34K; nepali date today 15K; cluster total 180K+",
+    "dominant_type": "tool + content",
+    "target_url": "/ne/",
+    "priority": "P0",
+    "status": "gap",
+    "notes": "Hamro Patro is #16 website in Nepal (Ahrefs) with 710K-827K/mo traffic, 83% from Nepal. Bikram Sambat calendar + panchang + rashifal combined. Our panchang tool maps directly to this need."
+  },
+  {
+    "id": "kundali-ne",
+    "head": "जन्म कुण्डली / cheena (Nepali birth chart)",
+    "keywords": ["जन्म कुण्डली", "cheena", "चीना", "कुण्डली", "nepali kundali", "kundali nepal"],
+    "volume_range": "est. 10K+ NP",
+    "dominant_type": "tool",
+    "target_url": "/ne/vedic/kundli",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "4-5 lakh kundalis made monthly from Hamro Patro app alone. 'Cheena' is the Nepali colloquial term for birth chart analysis. Surya Siddhanta-based calculation preferred in Nepal."
+  },
+  {
+    "id": "kundali-milan-ne",
+    "head": "कुण्डली मिलाउन / गुण मिलान (Nepali matching)",
+    "keywords": ["कुण्डली मिलाउन", "गुण मिलान", "विवाह योग्यता", "अष्टकूट मिलान नेपाली"],
+    "volume_range": "est. 6K+ NP",
+    "dominant_type": "tool",
+    "target_url": "/ne/vedic/compatibility",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "Marriage matching is the #1 use case for kundali in Nepal. Young people especially use it (Hamro Patro CEO interview). Nadi, Bhakoot, Manglik checks included."
+  },
+  {
+    "id": "panchang-ne",
+    "head": "नेपाली पञ्चाङ्ग / तिथि नक्षत्र",
+    "keywords": ["नेपाली पञ्चाङ्ग", "तिथि", "नक्षत्र", "आजको तिथि", "पञ्चाङ्ग"],
+    "volume_range": "est. 5K+ NP",
+    "dominant_type": "tool + content",
+    "target_url": "/ne/vedic/panchang",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "Nepal Panchanga Nirnayak Samiti standardizes official panchang. Bikram Sambat calendar integration needed. Tithi, nakshatra, yoga, karana daily data."
+  },
+  {
+    "id": "muhurta-ne",
+    "head": "शुभ साइत / मुहूर्त (Nepali auspicious timing)",
+    "keywords": ["शुभ साइत", "मुहूर्त", "शुभ मुहूर्त", "विवाह साइत", "गृह प्रवेश साइत"],
+    "volume_range": "est. 8K+ NP",
+    "dominant_type": "tool",
+    "target_url": "/ne/vedic/muhurta",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "'Shubha sait' is the Nepali term for auspicious timing. Marriage season drives spikes. Nepal Jyotish and Hamro Patro both offer this feature."
+  },
+  {
+    "id": "nepali-date-ne",
+    "head": "nepali date today / BS-AD converter",
+    "keywords": ["nepali date today", "today nepali date", "nepali date converter", "BS to AD", "AD to BS", "nepali date"],
+    "volume_range": "nepali date today 15K; nepali date 9K; today nepali date 6.5K; cluster total 30K+",
+    "dominant_type": "tool",
+    "target_url": "/ne/",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Bikram Sambat (BS) to/from Gregorian (AD) date conversion is a daily utility for Nepalis. Combined with panchang this is a sticky daily-use feature."
+  },
+  {
+    "id": "naamakshar-ne",
+    "head": "नामाक्षर / naming by nakshatra",
+    "keywords": ["नामाक्षर", "nakshatra naming", "naam rashi", "baby name by nakshatra", "नामकरण"],
+    "volume_range": "est. 3K+ NP",
+    "dominant_type": "tool",
+    "target_url": "/ne/vedic/nakshatra",
+    "priority": "P2",
+    "status": "gap",
+    "notes": "In Nepal the first syllable of a name is determined by the birth nakshatra. This is culturally essential for naamkaran (naming) ceremonies. Small volume but high cultural relevance."
+  },
+
+  {
+    "id": "mapa-astral-pt",
+    "head": "mapa astral / mapa astral gratuito (free birth chart Brazil)",
+    "keywords": ["mapa astral", "mapa astral gratuito", "mapa astral grátis", "mapa astral completo", "mapa astral online", "mapa natal", "carta astral"],
+    "volume_range": "mapa astral 242K BR; mapa astral gratuito 61K; cluster total 303K+ BR",
+    "dominant_type": "tool",
+    "target_url": "/pt/vedic/kundli",
+    "priority": "P0",
+    "status": "exists",
+    "notes": "THE core birth chart query in Brazil. Personare #1 (86K traffic from this keyword), Astrolink #2 (65K traffic). horoscopobrasil.com advertises client-side calculation like us. 95%+ Brazil traffic."
+  },
+  {
+    "id": "horoscopo-pt",
+    "head": "horóscopo / horóscopo do dia (daily horoscope Brazil)",
+    "keywords": ["horóscopo", "horóscopo do dia", "horóscopo de hoje", "horóscopo diário", "previsões do dia", "horóscopo semanal"],
+    "volume_range": "horóscopo 500K+ BR (27M annual 2019 SEMrush); horóscopo do dia est. 50K+; cluster total 550K+",
+    "dominant_type": "content",
+    "target_url": "/pt/horoscope/today",
+    "priority": "P0",
+    "status": "gap",
+    "notes": "Daily horoscope is massive in Brazil. Astrolink and Personare both offer daily personalized horoscopes. Brazil astrology market est. $5.7B globally in apps alone (2026). 88% mobile."
+  },
+  {
+    "id": "signos-pt",
+    "head": "signos / signos datas / signos do zodíaco",
+    "keywords": ["signos", "signos do zodíaco", "signos datas", "todos os signos", "signos e datas", "12 signos", "qual meu signo"],
+    "volume_range": "signos 300K+ (18M annual 2019); signos datas 98K; cluster total 400K+ BR",
+    "dominant_type": "content",
+    "target_url": "/pt/horoscope/signs",
+    "priority": "P0",
+    "status": "gap",
+    "notes": "Zodiac sign content is second only to horóscopo in Brazil. Touro (3.2M), Câncer (3M), Peixes (2.1M) are top-searched signs (SEMrush 2019). Personare's /signos page is a major traffic driver."
+  },
+  {
+    "id": "horas-iguais-pt",
+    "head": "horas iguais / horas invertidas (mirror hours Brazil)",
+    "keywords": ["horas iguais", "11:11", "22:22", "23:23", "20:20", "horas invertidas", "horas espelho"],
+    "volume_range": "horas iguais 320K; 11:11 50K; 22:22 34K; 23:23 36K; cluster total 500K+ BR",
+    "dominant_type": "content",
+    "target_url": "/pt/mirror-hours",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "HUGE uniquely Brazilian/French category. wemystic.com.br gets significant traffic from 'horas invertidas'. Astrolink ranks #3 for 'horas iguais' (29.5K traffic). Spiritual numerology content."
+  },
+  {
+    "id": "ascendente-pt",
+    "head": "ascendente / calculadora de ascendente",
+    "keywords": ["ascendente", "meu ascendente", "calcular ascendente", "ascendente em touro", "ascendente em áries", "o que é ascendente"],
+    "volume_range": "ascendente 57K BR; cluster total 80K+ with sign-specific queries",
+    "dominant_type": "tool",
+    "target_url": "/pt/vedic/kundli",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "Ascendant calculator is a high-intent standalone query. Personare ranks #1 (43K traffic). Maps to our Lagna calculation. 'Ascendente em [signo]' generates 12 long-tail queries."
+  },
+  {
+    "id": "compatibilidade-pt",
+    "head": "compatibilidade / sinastria (compatibility Brazil)",
+    "keywords": ["compatibilidade", "sinastria", "compatibilidade amorosa", "compatibilidade astral", "compatibilidade signos"],
+    "volume_range": "est. 30K+ BR",
+    "dominant_type": "tool",
+    "target_url": "/pt/vedic/compatibility",
+    "priority": "P1",
+    "status": "exists",
+    "notes": "Love compatibility is a major vertical. Astrolink offers free sinastria tool. Maps to our Ashtakoota engine with Portuguese zodiac names."
+  },
+  {
+    "id": "signos-por-signo-pt",
+    "head": "horóscopo [signo] hoje (per-sign horoscope Brazil)",
+    "keywords": ["horóscopo de Touro", "horóscopo de Câncer", "horóscopo de Peixes", "horóscopo de Virgem", "horóscopo de Leão"],
+    "volume_range": "est. 15-20K per sign; 12 signs = 200K+ BR",
+    "dominant_type": "content",
+    "target_url": "/pt/horoscope/[signo]",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Per-sign daily horoscope pages. Touro is the most-searched sign in Brazil. All major competitors have per-sign pages."
+  },
+  {
+    "id": "tarot-pt",
+    "head": "tarot / tarot do dia / tarot grátis",
+    "keywords": ["tarot", "tarot do dia", "tarot grátis", "tarot online", "tirada de tarot"],
+    "volume_range": "tarot 114K BR; cluster total est. 150K+",
+    "dominant_type": "tool + content",
+    "target_url": "/pt/tools",
+    "priority": "P2",
+    "status": "gap",
+    "notes": "Adjacent category. Personare gets 42.8K traffic from 'tarot'. Not our core product but a traffic bridge. Future feature opportunity."
+  },
+  {
+    "id": "numerologia-pt",
+    "head": "numerologia / numerologia do nome",
+    "keywords": ["numerologia", "numerologia do nome", "numerologia pessoal", "número do destino"],
+    "volume_range": "numerologia do nome 23K BR; cluster total est. 40K+",
+    "dominant_type": "tool",
+    "target_url": "/pt/tools",
+    "priority": "P2",
+    "status": "gap",
+    "notes": "Astrolink ranks #1 for 'numerologia do nome' (15K traffic). Adjacent to birth chart tools. Maps to our Matrix of Destiny numbers."
+  },
+  {
+    "id": "lua-pt",
+    "head": "lua hoje / fase da lua / lua nova",
+    "keywords": ["lua hoje", "fase da lua", "lua nova", "lua cheia", "calendário lunar"],
+    "volume_range": "est. 40K+ BR",
+    "dominant_type": "content",
+    "target_url": "/pt/vedic/panchang",
+    "priority": "P2",
+    "status": "gap",
+    "notes": "Lunar calendar and moon phase content. Maps to our Panchang tithi/paksha data. Brazilian spirituality strongly connects to moon phases."
   }
 ]

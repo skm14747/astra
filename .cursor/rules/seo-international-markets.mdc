@@ -14,6 +14,7 @@ alwaysApply: true
 | **Tier 3** | Philippines, Nigeria, Kenya | Zodiac signs, horoscopes, love predictions | English, daily horoscope focus |
 | **Tier 4** | Singapore, Malaysia, South Korea, Japan | Chinese astrology, Saju, Four Pillars / Western zodiac (JP) | English, ja locale live, consider zh/ko future |
 | **Tier 5** | Brazil, Mexico, Argentina | Western astrology, zodiac, birth charts | English + Spanish/Portuguese future |
+| **Tier 6** | France, Belgium, Switzerland, Quebec, Francophone Africa | Western astrology, horoscope, thème astral | fr locale live, metropolitan French |
 
 ## Engagement Data (Pew Research 2025, based on 2024 survey)
 
@@ -27,11 +28,11 @@ Nigeria 20%, South Korea 20%, Sri Lanka 20%, Japan 19%, Singapore 19%.
 3. **Career > Marriage**: Career astrology is 39% of India queries vs 24% for marriage (Ishvaram 351K conversations). Prioritize career content.
 4. **Don't assume one system globally**: Vedic for India/Nepal/Sri Lanka/Bangladesh, Western zodiac for Africa/LatAm, Chinese for East/Southeast Asia.
 5. **South Africa opportunity**: 47% engagement but few Vedic astrology competitors. English content works. Target Western + Vedic hybrid content.
-6. **hreflang**: Currently en/hi/ne/pt/es/ja/x-default (7 locales). When adding new locales, ensure reciprocal hreflang pairs.
+6. **hreflang**: Currently en/hi/ne/pt/es/ja/fr/x-default (8 locales). When adding new locales, ensure reciprocal hreflang pairs.
 7. **Festival spikes**: Indian festivals (Navratri, Diwali, Chhath) drive traffic spikes 1-2 weeks before. Plan seasonal content.
 8. **Wedding season**: Indian wedding muhurats (Nov-Feb, Apr-Jun) drive "vivah muhurat" queries. Time content accordingly.
 
-## Keyword Volume Reference (India)
+## Keyword Volume Reference (India — English)
 
 | Keyword | Volume (IN) | Page |
 |---------|------------|------|
@@ -43,6 +44,51 @@ Nigeria 20%, South Korea 20%, Sri Lanka 20%, Japan 19%, Singapore 19%.
 | nakshatras | 90.5K | /vedic/nakshatra |
 | gun milan | 83K | /vedic/compatibility |
 | hora today | 40.5K | /vedic/hora (gap) |
+
+## Keyword Volume Reference (Hindi — India, Devanagari)
+
+| Keyword (HI) | Volume | Target |
+|---|---|---|
+| राशिफल / rashifal | 521K+ | /hi/ |
+| आज का राशिफल | 200K+ | /hi/horoscope/today |
+| कुंडली / जन्म कुंडली | 150K+ | /hi/vedic/kundli |
+| कुंडली मिलान / गुण मिलान | 100K+ | /hi/vedic/compatibility |
+| राशि कैलकुलेटर | 80K+ | /hi/vedic/kundli |
+| आज का पंचांग / चौघड़िया | 60K+ | /hi/vedic/panchang |
+| साढ़े साती | 25K+ | /hi/vedic/sade-sati |
+| मंगल दोष | 20K+ | /hi/vedic/mangal-dosha |
+| शुभ मुहूर्त / विवाह मुहूर्त | 20K+ | /hi/vedic/muhurta |
+| ज्योतिष सॉफ्टवेयर फ्री | 15K+ | /hi/vedic/kundli |
+
+## Keyword Volume Reference (Nepali — Nepal)
+
+| Keyword (NE) | Volume | Target |
+|---|---|---|
+| hamro patro | 118K | /ne/ |
+| nepali calendar | 34K | /ne/ |
+| आजको राशिफल | 30K+ | /ne/horoscope/today |
+| nepali date today | 15K | /ne/ |
+| जन्म कुण्डली / cheena | 10K+ | /ne/vedic/kundli |
+| शुभ साइत / muhurta | 8K+ | /ne/vedic/muhurta |
+| कुण्डली मिलाउन | 6K+ | /ne/vedic/compatibility |
+| नेपाली पञ्चाङ्ग | 5K+ | /ne/vedic/panchang |
+| नामाक्षर | 3K+ | /ne/vedic/nakshatra |
+
+## Keyword Volume Reference (Portuguese — Brazil)
+
+| Keyword (PT) | Volume | Target |
+|---|---|---|
+| horóscopo | 500K+ | /pt/ |
+| signos / signos datas | 400K+ | /pt/horoscope/signs |
+| horas iguais (mirror hours) | 320K+ | /pt/mirror-hours (gap) |
+| mapa astral | 242K | /pt/vedic/kundli |
+| tarot / tarot do dia | 114K+ | /pt/tools (gap) |
+| mapa astral gratuito | 61K | /pt/vedic/kundli |
+| ascendente | 57K | /pt/vedic/kundli |
+| horóscopo do dia | 50K+ | /pt/horoscope/today |
+| lua hoje / fase da lua | 40K+ | /pt/vedic/panchang |
+| compatibilidade / sinastria | 30K+ | /pt/vedic/compatibility |
+| numerologia do nome | 23K | /pt/tools (gap) |
 
 ## Keyword Volume Reference (Spanish — LatAm + Spain)
 
@@ -69,6 +115,19 @@ Nigeria 20%, South Korea 20%, Sri Lanka 20%, Japan 19%, Singapore 19%.
 | ホロスコープ | est. 40K+ | /ja/vedic/kundli |
 | 当たる占い師 | 49.5K | N/A (paid service) |
 
+## Keyword Volume Reference (French — France)
+
+| Keyword (FR) | Volume | Target |
+|---|---|---|
+| horoscope | 812K | /fr/ |
+| horoscope du jour | 537K | /fr/horoscope/today (gap) |
+| horoscope de demain | 74K | /fr/horoscope/tomorrow (gap) |
+| horoscope gratuit | 48K | /fr/ |
+| horoscope du jour gratuit | 35K | /fr/horoscope/today (gap) |
+| horoscope balance | 23K | /fr/horoscope/balance (gap) |
+| horoscope scorpion | 22K | /fr/horoscope/scorpion (gap) |
+| zodiaque | 14.8K | /fr/horoscope/signs (gap) |
+
 ## Content Localization Guidelines
 
 - **India/Nepal**: Use Sanskrit terms (Kundli, Nakshatra, Tithi) as primary, with English explanations
@@ -77,4 +136,5 @@ Nigeria 20%, South Korea 20%, Sri Lanka 20%, Japan 19%, Singapore 19%.
 - **Brazil**: Portuguese Western terms (mapa astral, horóscopo, compatibilidade). See /pt/ locale.
 - **Mexico/Argentina/Spain/LatAm**: Spanish Western terms. "Carta astral" in Spain/Mexico, "carta natal" in Argentina. Love + Chinese horoscope dominant in Argentina. 97% mobile traffic.
 - **Japan**: Western zodiac terms (星座占い, ホロスコープ, アセンダント). Katakana for Vedic loanwords. Daily fortune (今日の運勢) is a habit search — ranking format expected. Love queries = 85% of paid fortune usage.
+- **France/Belgium/Switzerland/Quebec**: French Western terms (horoscope du jour, thème astral, carte du ciel, compatibilité, synastrie). "Ascendant" is the original French word. 88% mobile traffic. Metropolitan French; avoid Quebec-only expressions. Heures miroirs (11:11, 22:22) uniquely popular.
 - **Global English**: Always have English as the canonical version

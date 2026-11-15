@@ -898,6 +898,17 @@ export const en = {
   'nadi.gulika': 'Gulika (Saturn\'s Sub-Planet)',
   'nadi.mandi': 'Mandi (Karmic Shadow)',
 
+  // ─── Tools Directory ───
+  'tools.title': 'Free Vedic Astrology Calculators & Tools',
+  'tools.subtitle': '294 specialized Jyotish algorithms across 29 calculators — each free, instant, and private. Choose a tool below or start with your birth chart.',
+  'tools.guide': 'Which tool should I use?',
+  'tools.guide.kundli': 'New to astrology? Start with Kundli to generate your birth chart.',
+  'tools.guide.compat': 'Marriage compatibility? Use Kundli Milan for 36-point Ashtakoota matching.',
+  'tools.guide.transits': 'What is happening now? Check Transits and Sade Sati for current planetary effects.',
+  'tools.guide.timing': 'Auspicious timing? Use Panchang, Muhurta, or Choghadiya for electional timing.',
+  'tools.about.heading': 'About These Astrology Tools',
+  'tools.about.text': 'Every calculator on Astra Destiny uses NASA JPL DE440 ephemeris for astronomical precision and follows classical Jyotish texts (BPHS, Uttara Kalamrita, Jaimini Sutras) for astrological rules. All calculations run entirely in your browser — your birth data never leaves your device.',
+
   'print.brandName': 'Astra Destiny',
   'print.vedicReport': 'Vedic Astrology Report',
   'print.generated': 'Generated',

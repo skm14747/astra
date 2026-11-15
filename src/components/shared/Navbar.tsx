@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useProfile } from '@/lib/profile/context';
-import { useSettings, type FontSize } from '@/lib/settings/context';
+import { useSettings, type FontSize, type Language } from '@/lib/settings/context';
 import { useT } from '@/lib/i18n';
 import ProfileModal from './ProfileModal';
 
@@ -16,7 +16,10 @@ const NAV_GROUPS: { labelKey: TranslationKey; items: { href: string; labelKey: T
       { href: '/vedic/kundli', labelKey: 'nav.kundli' },
       { href: '/vedic/report', labelKey: 'nav.fullReport' },
       { href: '/vedic/divisional', labelKey: 'nav.divisional' },
+      { href: '/vedic/navamsa', labelKey: 'navamsa.title' },
       { href: '/vedic/yogas', labelKey: 'nav.yogas' },
+      { href: '/vedic/mangal-dosha', labelKey: 'mangalDosha.title' },
+      { href: '/vedic/kaal-sarp-dosha', labelKey: 'kaalSarp.title' },
       { href: '/vedic/shadbala', labelKey: 'nav.shadbala' },
       { href: '/vedic/jaimini', labelKey: 'nav.jaimini' },
       { href: '/vedic/nadi', labelKey: 'nav.nadi' },
@@ -79,14 +82,36 @@ export default function Navbar() {
   const t = useT();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const toggleLanguage = () => {
-    const newLang = language === 'en' ? 'hi' : 'en';
-    setLanguage(newLang);
-    const cleanPath = pathname.replace(/^\/(hi|ne|pt|es)/, '') || '/';
-    router.push(newLang === 'hi' ? `/hi${cleanPath}` : cleanPath);
+  const ALL_LANGUAGES: { code: Language; label: string; short: string; family: 'vedic' | 'latin' | 'east-asian' | 'global' }[] = [
+    { code: 'en', label: 'English', short: 'EN', family: 'global' },
+    { code: 'hi', label: 'हिन्दी', short: 'हि', family: 'vedic' },
+    { code: 'ne', label: 'नेपाली', short: 'ने', family: 'vedic' },
+    { code: 'pt', label: 'Português', short: 'PT', family: 'latin' },
+    { code: 'es', label: 'Español', short: 'ES', family: 'latin' },
+    { code: 'ja', label: '日本語', short: 'JA', family: 'east-asian' },
+  ];
+
+  const currentFamily = ALL_LANGUAGES.find(l => l.code === language)?.family || 'global';
+  const primaryLangs = ALL_LANGUAGES.filter(l =>
+    l.code === language || l.family === 'global' || l.family === currentFamily
+  );
+  const moreLangs = ALL_LANGUAGES.filter(l =>
+    l.code !== language && l.family !== 'global' && l.family !== currentFamily
+  );
+  const handleLanguageChange = (lang: Language) => {
+    setLanguage(lang);
+    const cleanPath = pathname.replace(/^\/(hi|ne|pt|es|ja)/, '') || '/';
+    if (lang === 'en') {
+      router.push(cleanPath);
+    } else {
+      router.push(`/${lang}${cleanPath}`);
+    }
+    setLangDropdown(false);
   };
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [profileDropdown, setProfileDropdown] = useState(false);
+  const [langDropdown, setLangDropdown] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
@@ -106,6 +131,7 @@ export default function Navbar() {
   useEffect(() => {
     const handle = (e: MouseEvent) => {
       if (profileRef.current && !profileRef.current.contains(e.target as Node)) setProfileDropdown(false);
+      if (langRef.current && !langRef.current.contains(e.target as Node)) setLangDropdown(false);
     };
     document.addEventListener('mousedown', handle);
     return () => document.removeEventListener('mousedown', handle);
@@ -251,15 +277,51 @@ export default function Navbar() {
               </button>
               {/* Divider */}
               <span className="w-px h-4 bg-white/[0.08] mx-0.5" />
-              {/* Language toggle */}
-              <button
-                onClick={toggleLanguage}
-                className="w-7 h-7 flex items-center justify-center rounded-full text-[10px] font-bold text-zinc-400 hover:text-white hover:bg-white/[0.08] transition"
-                title={language === 'en' ? 'हिन्दी में बदलें' : 'Switch to English'}
-                aria-label={language === 'en' ? 'Switch to Hindi' : 'Switch to English'}
-              >
-                {language === 'en' ? 'हि' : 'EN'}
-              </button>
+              {/* Language selector */}
+              <div ref={langRef} className="relative">
+                <button
+                  onClick={() => setLangDropdown(!langDropdown)}
+                  className="w-7 h-7 flex items-center justify-center rounded-full text-[10px] font-bold text-zinc-400 hover:text-white hover:bg-white/[0.08] transition"
+                  title="Change language"
+                  aria-label="Change language"
+                >
+                  {ALL_LANGUAGES.find(l => l.code === language)?.short || 'EN'}
+                </button>
+                {langDropdown && (
+                  <div className="absolute top-full right-0 mt-2 min-w-[150px] glass-card rounded-xl p-1.5 shadow-2xl z-50">
+                    {primaryLangs.map(l => (
+                      <button
+                        key={l.code}
+                        onClick={() => handleLanguageChange(l.code)}
+                        className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors flex items-center gap-2.5 ${
+                          language === l.code
+                            ? 'bg-violet-500/10 text-white font-medium'
+                            : 'text-zinc-400 hover:text-white hover:bg-white/[0.04]'
+                        }`}
+                      >
+                        <span className="text-[10px] font-bold w-5 text-center opacity-60">{l.short}</span>
+                        {l.label}
+                      </button>
+                    ))}
+                    {moreLangs.length > 0 && (
+                      <>
+                        <div className="my-1 border-t border-white/[0.06] mx-2" />
+                        <div className="px-3 pt-1 pb-0.5 text-[10px] font-medium text-zinc-600 uppercase tracking-wider">More</div>
+                        {moreLangs.map(l => (
+                          <button
+                            key={l.code}
+                            onClick={() => handleLanguageChange(l.code)}
+                            className="w-full text-left px-3 py-1.5 rounded-lg text-sm text-zinc-500 hover:text-zinc-300 hover:bg-white/[0.04] transition-colors flex items-center gap-2.5"
+                          >
+                            <span className="text-[10px] font-bold w-5 text-center opacity-40">{l.short}</span>
+                            {l.label}
+                          </button>
+                        ))}
+                      </>
+                    )}
+                  </div>
+                )}
+              </div>
               {/* Divider */}
               <span className="w-px h-4 bg-white/[0.08] mx-0.5" />
               {/* Theme toggle */}
@@ -321,13 +383,27 @@ export default function Navbar() {
                     <button onClick={cycleFontUp} disabled={fontSize === 'xl'} className="w-8 h-8 rounded-lg bg-white/[0.04] text-sm font-bold text-zinc-300 disabled:opacity-30 transition" aria-label="Increase font">A+</button>
                   </div>
                 </div>
-                <button
-                  onClick={toggleLanguage}
-                  className="w-8 h-8 rounded-lg bg-white/[0.04] flex items-center justify-center text-[10px] font-bold text-zinc-300 transition"
-                  aria-label={language === 'en' ? 'Switch to Hindi' : 'Switch to English'}
+                <select
+                  value={language}
+                  onChange={(e) => handleLanguageChange(e.target.value as Language)}
+                  className="h-8 rounded-lg bg-white/[0.04] border-none text-[11px] font-bold text-zinc-300 px-1.5 cursor-pointer transition focus:outline-none focus:ring-1 focus:ring-violet-500/30"
+                  aria-label="Select language"
                 >
-                  {language === 'en' ? 'हि' : 'EN'}
-                </button>
+                  {primaryLangs.map(l => (
+                    <option key={l.code} value={l.code} className="bg-zinc-900 text-zinc-200">
+                      {l.short} {l.label}
+                    </option>
+                  ))}
+                  {moreLangs.length > 0 && (
+                    <optgroup label="More" className="bg-zinc-900 text-zinc-400">
+                      {moreLangs.map(l => (
+                        <option key={l.code} value={l.code} className="bg-zinc-900 text-zinc-200">
+                          {l.short} {l.label}
+                        </option>
+                      ))}
+                    </optgroup>
+                  )}
+                </select>
                 <button
                   onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                   className="w-8 h-8 rounded-lg bg-white/[0.04] flex items-center justify-center text-zinc-300 transition"

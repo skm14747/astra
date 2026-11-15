@@ -899,6 +899,17 @@ export const ja: Record<TranslationKey, string> = {
   'nadi.gulika': 'グリカ（土星のサブプラネット）',
   'nadi.mandi': 'マンディ（カルマの影）',
 
+  // ─── ツール一覧 (Tools Directory) ───
+  'tools.title': '無料ヴェーダ占星術計算機＆ツール一覧',
+  'tools.subtitle': '294の伝統ジョーティシュ・アルゴリズムに基づく29の専門ツール — すべて無料・即座・完全非公開。目的のツールを選択するか、出生図（クンドリー）作成から始めましょう。',
+  'tools.guide': 'どのツールを使うべきですか？',
+  'tools.guide.kundli': '初めての方：まずは出生図（クンドリー）を作成して惑星配置を確認しましょう。',
+  'tools.guide.compat': '結婚・パートナーの相性：36点グナ・ミラプによる総合相性診断をご利用ください。',
+  'tools.guide.transits': '現在の運気の流れ：トランジット（惑星移動）とサディサティで現在の影響を診断します。',
+  'tools.guide.timing': '吉日・吉時間の選定：日々のパンチャーンガ、ムフルタ（吉時選定）、またはチョーガディヤをご覧ください。',
+  'tools.about.heading': 'Astraの占星術ツールについて',
+  'tools.about.text': 'Astra Destinyのすべての計算機は、NASA JPLの精密なDE440天体暦とインド古典文献（BPHS等）の占星術規則に完全準拠しています。すべての計算はお使いの端末のブラウザ内で完結し、出生データが外部サーバーへ送信されることはありません。',
+
   'print.brandName': 'Astra Destiny',
   'print.vedicReport': 'ヴェーディック占星術レポート',
   'print.generated': '生成日',

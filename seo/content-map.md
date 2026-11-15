@@ -763,3 +763,308 @@ Top search queries driving traffic to a Japanese fortune site:
 - [Similarweb: cocoloni.me Sep 2026](https://www.similarweb.com/website/cocoloni.me/) — 93K/mo, 79.5% organic search
 - [AhrefsTop: cocoloni.jp competitors](https://ahrefstop.com/websites/cocoloni.jp/competitors) — honkaku-uranai.jp 1.1M, cocoloni.jp 725K
 - [マイベスト: 占いサイトのおすすめ人気ランキング Oct 2026](https://my-best.com/4797) — しいたけ占い #1, 石井ゆかり #2, LINE占い #8
+
+---
+
+## French-Language Market Keyword Research
+
+**Date:** November 16, 2026
+**Target Market:** France (67M), Belgium (4M), Switzerland (2M), Canada/Quebec (8M), Francophone Africa (Senegal, Côte d'Ivoire, Cameroon, etc.)
+**Source:** Ahrefs, Semrush, Similarweb, SerpAnalytics, web search aggregation
+**Total addressable Francophone internet users:** ~90M+
+
+### Market Overview
+
+France is a strong astrology market with established competitors but zero Vedic-accuracy tools:
+- **"horoscope"** — 812K/mo searches in France (Ahrefs Oct 2026)
+- **"horoscope du jour"** — 537K/mo in France (Ahrefs Oct 2026)
+- 88% mobile traffic across French astrology sites
+- Google is the dominant search engine (unlike Korea's Naver)
+- Western zodiac → maps directly to existing Vedic-to-Western bridge engine
+
+### Search Volume Data (Ahrefs/Semrush, Oct 2026)
+
+| Keyword (FR) | Volume | CPC | Source |
+|---|---|---|---|
+| horoscope | 812K | — | Ahrefs FR |
+| horoscope du jour | 537K | — | Ahrefs FR |
+| horoscope de demain | 74K | €0.66 | Semrush FR |
+| horoscope gratuit | 48K | — | Ahrefs FR |
+| horoscope du jour gratuit | 35K | — | Ahrefs FR |
+| 20h20 signification (mirror hours) | 40.5K | — | Semrush FR |
+| horoscope balance | 23K | — | Ahrefs FR |
+| horoscope scorpion | 22K | — | Ahrefs FR |
+| horoscope sagittaire | 18K | — | Ahrefs FR |
+| zodiaque | 14.8K | $0.39 | SerpAnalytics |
+| horoscope de la semaine | 9.9K | €0.51 | Semrush FR |
+| signe du zodiaque | 9.9K | $0.27 | SerpAnalytics |
+| tirage de tarot gratuit | 8.1K | $0.35 | SerpAnalytics |
+
+### French Competitor Landscape
+
+| Competitor | Monthly Traffic | Type | Notes |
+|---|---|---|---|
+| evozen.fr | **2.83M** | Portal, horoscope + tools | #4 in category, AS 53 |
+| mon-horoscope-du-jour.com | **2.3M** | Daily horoscope focus | 88% France, email-driven |
+| horoscope.fr | 578K | Daily horoscope | 87% France, organic search |
+| astrotheme.fr | significant | Celebrity charts + tools | Major French astrology DB |
+| astrologie.fr | 149K | Tools + weekly horoscope | 3.48 pages/visit, 7:22 avg session |
+| asiaflash.com | 160K | Tarot + astrology | 53% bounce, multi-lingual |
+| astrologix.fr | — | Birth chart + NASA verification | New, high-quality competitor |
+| iastrologique.com | — | Theme astral + horoscope | Premium model |
+| astralytics.fr | — | Birth chart + compatibility | Clean modern UI |
+
+**Key competitive insight:** Several French sites (astrologix.fr, iastrologique.com) already advertise NASA ephemeris-grade accuracy. However, none offer Vedic astrology depth (Dashas, Yogas, 22-chapter reports). Our 294-algorithm engine is a unique differentiator.
+
+### Zodiac Sign Names (French)
+
+| English | French | Notes |
+|---|---|---|
+| Aries | **Bélier** | |
+| Taurus | **Taureau** | |
+| Gemini | **Gémeaux** | |
+| Cancer | **Cancer** | Same as English |
+| Leo | **Lion** | |
+| Virgo | **Vierge** | |
+| Libra | **Balance** | Top-volume sign query (23K) |
+| Scorpio | **Scorpion** | Second-highest (22K) |
+| Sagittarius | **Sagittaire** | Third-highest (18K) |
+| Capricorn | **Capricorne** | |
+| Aquarius | **Verseau** | |
+| Pisces | **Poissons** | |
+
+### Vedic-to-French Term Mapping
+
+| Vedic Concept | French Term | Notes |
+|---|---|---|
+| Kundli (birth chart) | **Thème astral** / Carte du ciel | "Thème natal" also used |
+| Rashifal (horoscope) | **Horoscope du jour** | Core daily query |
+| Rashi (sign) | **Signe** / Signe du zodiaque | |
+| Lagna (Ascendant) | **Ascendant** | Same word — French invented the term |
+| Nakshatra | **Nakshatra** (mansion lunaire) | French gloss: "mansion lunaire" |
+| Dashas | **Cycles planétaires** | "Périodes planétaires" also works |
+| Panchang | **Calendrier lunaire** | Almanach is also understood |
+| Muhurta | **Moment propice** | "Moment auspicieux" |
+| Compatibility | **Compatibilité** / Synastrie | "Synastrie" for two-chart comparison |
+| Yogas | **Yogas** | Understood in French spiritual context |
+| Doshas | **Doshas** | Understood (Ayurveda crossover) |
+| Graha (planet) | **Planète** | |
+| Bhava (house) | **Maison** | Standard French astrology term |
+
+### Keyword Cluster Summary (10 clusters)
+
+| Cluster ID | Head Keyword | Est. Volume (FR) | Priority | Status |
+|---|---|---|---|---|
+| horoscope-du-jour-fr | horoscope du jour | 1.4M+ | P0 | Gap |
+| horoscope-par-signe-fr | horoscope [signe] | 200K+ | P0 | Gap |
+| theme-astral-fr | thème astral gratuit | 60K+ | P0 | Gap |
+| ascendant-fr | ascendant astrologique | 40K+ | P1 | Gap |
+| compatibilite-astrologique-fr | compatibilité / synastrie | 30K+ | P1 | Gap |
+| horoscope-demain-semaine-fr | horoscope de demain / semaine | 100K+ | P1 | Gap |
+| signe-zodiaque-fr | signe du zodiaque | 50K+ | P1 | Gap |
+| horoscope-amour-fr | horoscope amour | 40K+ | P1 | Gap |
+| tirage-tarot-fr | tirage de tarot gratuit | 60K+ | P2 | Gap |
+| heures-miroirs-fr | heures miroirs | 100K+ | P2 | Gap |
+
+**Total new addressable volume: est. 2.1M+ monthly searches (France only; add ~30% for Belgium/Switzerland/Canada/Africa)**
+
+### Key Strategic Insights
+
+1. **France uses familiar astrology terms:** "Ascendant" is literally the French word. "Thème astral", "carte du ciel", "maison" — all standard French astrological vocabulary. Translation is straightforward.
+2. **Heures miroirs is unique to France:** Mirror hours (11:11, 22:22) drive 100K+ searches/mo. This is a France-specific spiritual content category that no other locale targets.
+3. **Synastrie is the professional term:** French astrology enthusiasts use "synastrie" for detailed two-chart comparison, not just "compatibilité". Include both terms.
+4. **Email-driven retention:** mon-horoscope-du-jour.com's #1 traffic source is email (32.27%). French horoscope users subscribe to daily email updates — a future feature opportunity.
+5. **Francophone Africa spillover:** Senegal, Côte d'Ivoire, and Cameroon have growing internet penetration. French content serves 29 countries simultaneously.
+6. **NASA accuracy already advertised:** Competitors like astrologix.fr and iastrologique.com already mention NASA ephemeris. Our Vedic depth (294 algorithms, 22-chapter reports) is the true differentiator.
+
+### Additional Data Sources (French Market Research)
+
+- [Ahrefs: horoscope.fr competitors Oct 2026](https://ahrefstop.com/websites/horoscope.fr) — horoscope 812K/mo, horoscope du jour 537K/mo
+- [Ahrefs: mon-horoscope-du-jour.com Oct 2026](https://ahrefstop.com/websites/mon-horoscope-du-jour.com) — 241K visits, horoscope du jour rank #3
+- [Semrush: astrologie.fr Sep 2026](https://fr.semrush.com/website/astrologie.fr/overview/) — 149K visits, horoscope de demain 74K
+- [Semrush: horoscope.fr competitors Jan 2026](https://fr.semrush.com/website/horoscope.fr/competitors/) — evozen.fr 2.83M, astrologie.fr 339K
+- [Similarweb: mon-horoscope-du-jour.com Sep 2026](https://www.similarweb.com/website/mon-horoscope-du-jour.com/) — 2.3M visits, 88% France
+- [Similarweb: horoscope.fr Sep 2026](https://www.similarweb.com/website/horoscope.fr/) — 578K visits, 87% France
+- [Similarweb: evozen.fr vs horoscope.fr](https://www.similarweb.com/website/evozen.fr/vs/horoscope.fr/) — evozen.fr #4 category rank
+- [SerpAnalytics: zodiaque keyword](https://www.serpanalytics.com/keyword/zodiaque) — 14.8K global, $0.39 CPC
+- [SerpAnalytics: tirage de tarot gratuit](https://www.serpanalytics.com/keyword/tirage+de+tarot+gratuit) — 8.1K global
+- [Cabinet KLD: Étude horoscopes du jour France Oct 2026](https://www.cabinet-kld-voyance.fr/methode-horoscope/indice-de-rigueur/etude-jour.html) — 31 sites analyzed, 553 texts evaluated
+- [InstantFortune: 2026 Global Trends (FR)](https://getfortuneai.com/fr/insights/2026-zodiac-search-trends) — France listed as key market
+
+---
+
+## Hindi-Language Market Keyword Research
+
+### Market Overview
+- **Primary market:** India (1.4B population, Hindi-speaking belt ~600M)
+- **Astrology engagement:** 45% of Indians believe astrology influences their lives (Pew Research 2025)
+- **Key insight:** Career astrology is 39% of India queries vs 24% for marriage (Ishvaram 351K conversations data)
+
+### Search Volume Data (India, Oct 2026)
+
+| Keyword (Hindi/Devanagari) | Volume | Target URL |
+|---|---|---|
+| राशिफल / rashifal | 521K+ | /hi/ |
+| आज का राशिफल | 200K+ | /hi/horoscope/today |
+| कुंडली / जन्म कुंडली | 150K+ | /hi/vedic/kundli |
+| कुंडली मिलान / गुण मिलान | 100K+ | /hi/vedic/compatibility |
+| आज का पंचांग / चौघड़िया | 60K+ | /hi/vedic/panchang |
+| राशि कैलकुलेटर | 80K+ | /hi/vedic/kundli |
+| साढ़े साती | 25K+ | /hi/vedic/sade-sati |
+| मंगल दोष | 20K+ | /hi/vedic/mangal-dosha |
+| ज्योतिष सॉफ्टवेयर फ्री | 15K+ | /hi/vedic/kundli |
+
+### Hindi Competitor Landscape
+
+| Site | Traffic (Monthly) | Market Position |
+|---|---|---|
+| hindi.astrosage.com | 421K | #1 Hindi astrology site |
+| astrotalk.com/hi | 300K+ | #2, dominant mobile app (122M+ users) |
+| drikpanchang.com (Hindi) | 200K+ | #1 for panchang queries |
+| myastrology.in | 100K+ | Hindi-first birth chart |
+
+### Key Findings — Hindi Market
+1. **Bilingual search behavior**: Indian users search in both Devanagari (राशिफल) and romanized Hindi (rashifal). Both must be targeted.
+2. **Mobile-first**: 85%+ of Hindi astrology traffic is mobile (AstroTalk data)
+3. **Daily habit queries**: राशिफल is a daily search habit — users return every day for fresh predictions
+4. **Career > Marriage**: Despite marriage matching being iconic, career-related astrology queries are 39% of volume
+5. **Festival spikes**: 1-2 week spikes around Navratri, Diwali, Chhath Puja for muhurat/panchang queries
+6. **Software comparison intent**: Users search "ज्योतिष सॉफ्टवेयर फ्री" — our free browser-based tool is the differentiator vs downloadable apps
+
+### 10 Hindi Keyword Clusters Added
+rashifal-hi, kundli-hindi-hi, kundli-milan-hi, panchang-choghadiya-hi, rashi-calculator-hi, sade-sati-hi, mangal-dosha-hi, dasha-hi, muhurta-hi, jyotish-software-hi
+
+### Data Sources — Hindi
+- [HypeStat: hindi.astrosage.com](https://hypestat.com/info/hindi.astrosage.com) — 421K/mo traffic
+- [Ahrefs: AstroSage keyword data](https://ahrefs.com/website-authority-checker/?input=astrosage.com) — rashifal 521K, kundali milan 83K
+- [myastrology.in: India astrology market analysis](https://www.myastrology.in/) — competitor data
+- [Zee News: AstroTalk market report Aug 2026](https://zeenews.india.com/technology/apps/astrotalk-astrology-app-review-2026.html) — 122M+ users
+- [Ishvaram: AI astrology trends 2026](https://ishvaram.io/) — 351K conversations, career 39%, marriage 24%
+- [Kantipur: Hamro Patro kundali data](https://ekantipur.com/) — 4-5 lakh kundalis/month
+
+---
+
+## Nepali-Language Market Keyword Research
+
+### Market Overview
+- **Primary market:** Nepal (~30M population)
+- **Dominant player:** Hamro Patro — rank #16 website in all of Nepal (Ahrefs)
+- **Astrology system:** Vedic (Surya Siddhanta), Bikram Sambat calendar
+- **Key insight:** Calendar + panchang + rashifal are combined into one daily-use super-app (Hamro Patro model)
+
+### Search Volume Data (Nepal, Oct 2026)
+
+| Keyword (Nepali) | Volume | Target URL |
+|---|---|---|
+| hamro patro | 118K | /ne/ |
+| nepali calendar | 34K | /ne/ |
+| आजको राशिफल | 30K+ | /ne/horoscope/today |
+| nepali date today | 15K | /ne/ |
+| जन्म कुण्डली / cheena | 10K+ | /ne/vedic/kundli |
+| शुभ साइत / muhurta | 8K+ | /ne/vedic/muhurta |
+| कुण्डली मिलाउन | 6K+ | /ne/vedic/compatibility |
+| नेपाली पञ्चाङ्ग | 5K+ | /ne/vedic/panchang |
+| नामाक्षर (naming) | 3K+ | /ne/vedic/nakshatra |
+
+### Nepali Competitor Landscape
+
+| Site | Traffic (Monthly) | Market Position |
+|---|---|---|
+| hamropatro.com | 710-827K | #1, rank #16 in Nepal |
+| nepaljyotish.org | 8K | Niche traditional jyotish |
+| amarnepal.com | Small | Rashifal content |
+
+### Key Findings — Nepali Market
+1. **Hamro Patro dominance**: Single player controls ~80% of digital astrology/calendar in Nepal. 3.4M/mo visits (Vaneform), 83% from Nepal
+2. **Calendar is the gateway**: Bikram Sambat calendar → panchang → rashifal → kundali is the user journey
+3. **Young user base**: Hamro Patro CEO notes that young people are the primary kundali users — not just older generations
+4. **Cheena = Kundali**: The Nepali colloquial term for birth chart analysis. Must use in content.
+5. **Small but loyal market**: 30M population but 118K+ monthly searches for just "hamro patro" — extremely high penetration
+6. **BS-AD converter**: Daily utility query that drives repeat visits. Combine with panchang for sticky feature.
+7. **Naamakshar**: Culturally essential — first syllable of name determined by birth nakshatra. Unique Nepal content opportunity.
+8. **Total cluster volume ~250K+/mo** — smaller market but concentrated intent and low competition
+
+### 8 Nepali Keyword Clusters Added
+rashifal-ne, patro-ne, kundali-ne, kundali-milan-ne, panchang-ne, muhurta-ne, nepali-date-ne, naamakshar-ne
+
+### Data Sources — Nepali
+- [Ahrefs: hamropatro.com](https://ahrefs.com/website-authority-checker/?input=hamropatro.com) — DR 55, 827K organic, rank #16 NP
+- [Vaneform: Hamro Patro analysis](https://vaneform.com/hamropatro.com) — 3.4M visits, 83.78% Nepal
+- [Kantipur: 4-5 lakh kundalis/month](https://ekantipur.com/) — Hamro Patro kundali usage
+- [amarnepal.com: rashifal content](https://amarnepal.com/) — top queries analysis
+- [similarweb: nepaljyotish.org](https://similarweb.com/website/nepaljyotish.org/) — 8K/mo niche
+
+---
+
+## Portuguese-Language (Brazil) Market Keyword Research
+
+### Market Overview
+- **Primary market:** Brazil (215M population, world's 5th largest country)
+- **Total addressable search volume:** 3.5M+/mo for astrology queries
+- **Dominant players:** Personare.com.br (#1, 1.1M/mo), Astrolink.com.br (#2, 642K/mo)
+- **Key insight:** "Horas iguais" (mirror hours) is a uniquely Brazilian/Portuguese mega-category at 320K+/mo
+
+### Search Volume Data (Brazil, Oct 2026)
+
+| Keyword (Portuguese) | Volume | Target URL |
+|---|---|---|
+| horóscopo | 500K+ | /pt/ |
+| signos / signos datas | 400K+ | /pt/horoscope/signs |
+| horas iguais / mirror hours | 320K+ | /pt/mirror-hours |
+| mapa astral | 242K | /pt/vedic/kundli |
+| tarot / tarot do dia | 114K+ | /pt/tools |
+| signos datas | 98K | /pt/horoscope/signs |
+| mapa astral gratuito | 61K | /pt/vedic/kundli |
+| ascendente | 57K | /pt/vedic/kundli |
+| horóscopo do dia | 50K+ | /pt/horoscope/today |
+| lua hoje / fase da lua | 40K+ | /pt/vedic/panchang |
+| compatibilidade / sinastria | 30K+ | /pt/vedic/compatibility |
+| numerologia do nome | 23K | /pt/tools |
+
+### Brazilian Zodiac Sign Names & Volumes
+
+| Sign (PT) | Annual Search Volume (Semrush 2019) |
+|---|---|
+| Touro (Taurus) | 3.2M |
+| Câncer (Cancer) | 3.0M |
+| Peixes (Pisces) | 2.1M |
+| Virgem (Virgo) | 2.0M |
+| Leão (Leo) | 1.9M |
+| Escorpião (Scorpio) | 1.8M |
+| Áries (Aries) | 1.7M |
+| Gêmeos (Gemini) | 1.6M |
+| Sagitário (Sagittarius) | 1.5M |
+| Libra (Libra) | 1.4M |
+| Capricórnio (Capricorn) | 1.3M |
+| Aquário (Aquarius) | 1.2M |
+
+### Brazilian Competitor Landscape
+
+| Site | Traffic (Monthly) | Notes |
+|---|---|---|
+| personare.com.br | 1.1M | #1, 86K from 'mapa astral', 42.8K from 'tarot' |
+| astrolink.com.br | 642K | #2, 65K from 'mapa astral', strong on sinastria |
+| astrocentro.com.br | 409K | #3, paid consultations focus |
+| wemystic.com.br | 300K+ | Mirror hours + spiritual content |
+| horoscopobrasil.com | 100K+ | Client-side calculation (like us) |
+
+### Key Findings — Brazilian Market
+1. **Mapa astral, not carta natal**: Brazil uses "mapa astral" (242K) while Argentina uses "carta natal" — Portugal uses both
+2. **Mirror hours are massive**: "Horas iguais" (320K+/mo) is a uniquely Brazilian/Portuguese spiritual category with no English equivalent at scale
+3. **Touro is the top sign**: Taurus (Touro) is the most-searched zodiac sign in Brazil at 3.2M annual — nearly 2x Aquarius
+4. **Mobile dominant**: 88%+ of Brazilian astrology traffic is mobile (Similarweb)
+5. **Personare's moat**: They combine free tools + editorial content + paid consultations. We compete on the free tool layer.
+6. **Synastria content**: Brazilian users use "sinastria" (synastry) while Portugal prefers "compatibilidade" — target both
+7. **Adjacent categories**: Tarot (114K) and numerologia (23K) are traffic bridges. Not core product but future expansion.
+8. **Market size**: Brazil's astrology app market is part of the global $5.7B estimate. 215M population with very high mobile penetration.
+
+### 10 Portuguese Keyword Clusters Added
+mapa-astral-pt, horoscopo-pt, signos-pt, horas-iguais-pt, ascendente-pt, compatibilidade-pt, signos-por-signo-pt, tarot-pt, numerologia-pt, lua-pt
+
+### Data Sources — Portuguese
+- [Ahrefs: personare.com.br](https://ahrefs.com/website-authority-checker/?input=personare.com.br) — #1 at 1.1M/mo, DR 68
+- [Ahrefs: astrolink.com.br](https://ahrefs.com/website-authority-checker/?input=astrolink.com.br) — #2 at 642K/mo, DR 61
+- [Ahrefs: astrocentro.com.br](https://ahrefs.com/website-authority-checker/?input=astrocentro.com.br) — #3 at 409K/mo
+- [Semrush: Brazil astrology keywords 2019](https://pt.semrush.com/) — horóscopo 27M annual, signos 18M annual
+- [Similarweb: wemystic.com.br](https://www.similarweb.com/website/wemystic.com.br/) — mirror hours traffic
+- [horoscopobrasil.com: client-side calculation model](https://horoscopobrasil.com/) — similar architecture to Astra Destiny

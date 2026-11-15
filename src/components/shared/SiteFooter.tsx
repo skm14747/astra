@@ -1,36 +1,41 @@
+'use client';
+
 import Link from 'next/link';
+import { useT, type TranslationKey } from '@/lib/i18n';
 
-const POPULAR_TOOLS = [
-  { href: '/vedic/kundli', label: 'Free Kundli' },
-  { href: '/vedic/compatibility', label: 'Kundli Milan' },
-  { href: '/vedic/dashas', label: 'Mahadasha Calculator' },
-  { href: '/vedic/panchang', label: "Today's Panchang" },
-  { href: '/vedic/nakshatra', label: 'Nakshatra Finder' },
-  { href: '/vedic/mangal-dosha', label: 'Mangal Dosha Check' },
-  { href: '/vedic/kaal-sarp-dosha', label: 'Kaal Sarp Dosha' },
-  { href: '/vedic/navamsa', label: 'Navamsa (D9) Chart' },
-  { href: '/vedic/sade-sati', label: 'Sade Sati Calculator' },
-  { href: '/vedic/choghadiya', label: "Today's Choghadiya" },
-  { href: '/vedic/yogas', label: 'Yoga & Dosha Analysis' },
-  { href: '/vedic/muhurta', label: 'Muhurta Finder' },
-  { href: '/vedic/divisional', label: 'Divisional Charts' },
-  { href: '/vedic/transits', label: 'Planetary Transits' },
+const POPULAR_TOOLS: { href: string; labelKey: TranslationKey }[] = [
+  { href: '/vedic/kundli', labelKey: 'footer.freeKundli' },
+  { href: '/vedic/compatibility', labelKey: 'footer.kundliMilan' },
+  { href: '/vedic/dashas', labelKey: 'footer.dashaTimeline' },
+  { href: '/vedic/panchang', labelKey: 'footer.dailyPanchang' },
+  { href: '/vedic/nakshatra', labelKey: 'footer.nakshatraAnalysis' },
+  { href: '/vedic/mangal-dosha', labelKey: 'mangalDosha.title' },
+  { href: '/vedic/kaal-sarp-dosha', labelKey: 'kaalSarp.title' },
+  { href: '/vedic/navamsa', labelKey: 'navamsa.title' },
+  { href: '/vedic/sade-sati', labelKey: 'footer.sadeSatiCheck' },
+  { href: '/vedic/choghadiya', labelKey: 'choghadiya.title' },
+  { href: '/vedic/yogas', labelKey: 'footer.yogasDoshas' },
+  { href: '/vedic/muhurta', labelKey: 'footer.muhurtaFinder' },
+  { href: '/vedic/divisional', labelKey: 'more.divisional' },
+  { href: '/vedic/transits', labelKey: 'related.transits' },
 ];
 
-const RESOURCES = [
-  { href: '/blog', label: 'Vedic Astrology Blog' },
-  { href: '/about', label: 'About Astra Destiny' },
-  { href: '/methodology', label: 'Methodology' },
-  { href: '/how-it-works', label: 'How It Works' },
+const RESOURCES: { href: string; labelKey: TranslationKey }[] = [
+  { href: '/tools', labelKey: 'tools.title' },
+  { href: '/how-it-works', labelKey: 'footer.howItWorks' },
+  { href: '/about', labelKey: 'footer.about' },
+  { href: '/settings', labelKey: 'footer.settings' },
 ];
 
-const LEGAL = [
+const LEGAL: { href: string; label: string }[] = [
   { href: '/privacy', label: 'Privacy Policy' },
   { href: '/terms', label: 'Terms of Service' },
   { href: '/disclaimer', label: 'Disclaimer' },
 ];
 
 export default function SiteFooter() {
+  const t = useT();
+
   return (
     <footer className="relative z-10 border-t border-white/[0.04] bg-black/20 mt-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
@@ -41,17 +46,19 @@ export default function SiteFooter() {
               ASTRA DESTINY
             </Link>
             <p className="text-xs text-zinc-500 mt-2 max-w-[200px] leading-relaxed">
-              Free Vedic astrology calculators with NASA-precision ephemeris. All calculations run in your browser — no data leaves your device.
+              {t('app.footer.privacy')}
             </p>
           </div>
 
           {/* Popular Tools */}
           <div className="col-span-1">
-            <h3 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-3">Popular Tools</h3>
+            <h3 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-3">
+              {t('footer.popularTools')}
+            </h3>
             <nav aria-label="Popular tools" className="flex flex-col gap-1.5">
-              {POPULAR_TOOLS.slice(0, 6).map(t => (
-                <Link key={t.href} href={t.href} className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
-                  {t.label}
+              {POPULAR_TOOLS.slice(0, 6).map(item => (
+                <Link key={item.href} href={item.href} className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
+                  {t(item.labelKey)}
                 </Link>
               ))}
             </nav>
@@ -59,11 +66,13 @@ export default function SiteFooter() {
 
           {/* More Tools */}
           <div className="col-span-1">
-            <h3 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-3">More Tools</h3>
+            <h3 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-3">
+              {t('footer.moreTools')}
+            </h3>
             <nav aria-label="More tools" className="flex flex-col gap-1.5">
-              {POPULAR_TOOLS.slice(6).map(t => (
-                <Link key={t.href} href={t.href} className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
-                  {t.label}
+              {POPULAR_TOOLS.slice(6).map(item => (
+                <Link key={item.href} href={item.href} className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
+                  {t(item.labelKey)}
                 </Link>
               ))}
             </nav>
@@ -71,11 +80,13 @@ export default function SiteFooter() {
 
           {/* Resources */}
           <div className="col-span-1">
-            <h3 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-3">Resources</h3>
+            <h3 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-3">
+              {t('footer.about')}
+            </h3>
             <nav aria-label="Resources" className="flex flex-col gap-1.5">
-              {RESOURCES.map(r => (
-                <Link key={r.href} href={r.href} className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
-                  {r.label}
+              {RESOURCES.map(item => (
+                <Link key={item.href} href={item.href} className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
+                  {t(item.labelKey)}
                 </Link>
               ))}
             </nav>
@@ -84,7 +95,7 @@ export default function SiteFooter() {
 
         <div className="mt-10 pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-zinc-600">
-            © 2026 Astra Destiny. Free Vedic Astrology Calculators.
+            © 2026 Astra Destiny · {t('app.tagline')}
           </p>
           <nav aria-label="Legal" className="flex gap-4">
             {LEGAL.map(l => (
@@ -95,7 +106,7 @@ export default function SiteFooter() {
           </nav>
         </div>
         <p className="text-xs text-zinc-700 text-center mt-3">
-          Calculations use NASA JPL DE-series ephemeris • Lahiri Ayanamsa • BPHS rules
+          {t('app.footer.powered')}
         </p>
       </div>
     </footer>

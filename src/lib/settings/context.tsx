@@ -6,7 +6,7 @@ import type { AyanamsaSystem, ChartStyle } from '@/lib/vedic/types';
 
 export type FontSize = 'small' | 'default' | 'large' | 'xl';
 export type ThemeMode = 'dark' | 'light';
-export type Language = 'en' | 'hi' | 'ne' | 'pt' | 'es' | 'ja';
+export type Language = 'en' | 'hi' | 'ne' | 'pt' | 'es' | 'ja' | 'fr';
 
 const FONT_SCALE: Record<FontSize, number> = { small: 87.5, default: 100, large: 112.5, xl: 125 };
 
@@ -36,6 +36,7 @@ function getLocaleFromPathname(pathname: string | null): Language | null {
   if (pathname.startsWith('/pt/') || pathname === '/pt') return 'pt';
   if (pathname.startsWith('/es/') || pathname === '/es') return 'es';
   if (pathname.startsWith('/ja/') || pathname === '/ja') return 'ja';
+  if (pathname.startsWith('/fr/') || pathname === '/fr') return 'fr';
   return null;
 }
 

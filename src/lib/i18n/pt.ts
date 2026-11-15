@@ -900,6 +900,17 @@ export const pt: Record<TranslationKey, string> = {
   'nadi.gulika': 'Gulika (Filho de Saturno)',
   'nadi.mandi': 'Mandi (Sombra Cármica)',
 
+  // ─── Diretório de Ferramentas (Tools Directory) ───
+  'tools.title': 'Calculadoras e Ferramentas de Astrologia Védica',
+  'tools.subtitle': 'Mais de 294 algoritmos do Jyotish tradicional distribuídos em 29 ferramentas gratuitas, instantâneas e confidenciais. Escolha uma calculadora abaixo ou comece erguendo seu mapa natal.',
+  'tools.guide': 'Qual ferramenta devo utilizar?',
+  'tools.guide.kundli': 'Primeira vez no Jyotish? Comece pelo Mapa Astral Sideral (Kundli) para desvendar suas posições planetárias.',
+  'tools.guide.compat': 'Harmonia conjugal? Use a Sinastria de 36 Kootas para avaliar a afinidade matrimonial.',
+  'tools.guide.transits': 'Como está o céu agora? Consulte os Trânsitos e o ciclo de Sade Sati para o momento presente.',
+  'tools.guide.timing': 'Janelas auspiciosas? Acesse o Panchang diário, Muhurta ou a tabela Choghadiya.',
+  'tools.about.heading': 'Sobre as Ferramentas do Astra',
+  'tools.about.text': 'Cada calculadora do Astra Destiny integra as efemérides científicas DE440 da NASA com os tratados canônicos do Jyotish (BPHS e Jaimini). Todos os cálculos são processados localmente no seu navegador — seus dados natais nunca saem do seu aparelho.',
+
   'print.brandName': 'Astra Destiny',
   'print.vedicReport': 'Relatório de Astrologia Védica',
   'print.generated': 'Data de emissão',

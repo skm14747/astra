@@ -1,98 +1,100 @@
-import type { Metadata } from 'next';
+'use client';
+
 import Link from 'next/link';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
-
-export const metadata: Metadata = {
-  title: 'Free Vedic Astrology Calculators & Tools',
-  description: 'Browse all Astra Destiny astrology calculators — Kundli generator, Dasha calculator, Kundli Milan, Panchang, Nakshatra finder, Dosha checks, and 20+ more free Jyotish tools.',
-  alternates: {
-    canonical: '/tools',
-    languages: { 'en': '/tools', 'hi': '/hi/tools', 'x-default': '/tools' },
-  },
-  openGraph: {
-    title: 'Free Vedic Astrology Calculators & Tools | Astra Destiny',
-    description: 'Browse 200+ free Vedic astrology calculators — Kundli, Dasha, Kundli Milan, Panchang, Nakshatra, and more.',
-    url: '/tools',
-    type: 'website',
-  },
-};
+import { useT, type TranslationKey } from '@/lib/i18n';
 
 interface ToolItem {
   href: string;
-  name: string;
-  description: string;
+  nameKey: TranslationKey;
+  descKey: TranslationKey;
   icon: string;
 }
 
-const TOOL_CATEGORIES: { title: string; tools: ToolItem[] }[] = [
+interface ToolCategory {
+  titleKey: TranslationKey;
+  tools: ToolItem[];
+}
+
+const TOOL_CATEGORIES: ToolCategory[] = [
   {
-    title: 'Birth Chart & Kundli',
+    titleKey: 'nav.birthChart',
     tools: [
-      { href: '/vedic/kundli', name: 'Kundli (Birth Chart)', description: 'Full Vedic birth chart with 9 planets, 12 houses, dignities, and nakshatras.', icon: '☉' },
-      { href: '/vedic/divisional', name: 'Divisional Charts (D1–D60)', description: 'All 16 Varga charts — Navamsa, Dasamsa, Dwadasamsa, and more.', icon: '◎' },
-      { href: '/vedic/navamsa', name: 'Navamsa (D9) Chart', description: 'Dedicated D9 analysis with Vargottama detection and marriage interpretation.', icon: '◎' },
+      { href: '/vedic/kundli', nameKey: 'feat.kundli', descKey: 'feat.kundli.desc', icon: '☉' },
+      { href: '/vedic/divisional', nameKey: 'more.divisional', descKey: 'divisional.subtitle', icon: '◎' },
+      { href: '/vedic/navamsa', nameKey: 'navamsa.title', descKey: 'navamsa.subtitle', icon: '◎' },
     ],
   },
   {
-    title: 'Timing & Predictions',
+    titleKey: 'nav.predictions',
     tools: [
-      { href: '/vedic/dashas', name: 'Mahadasha Calculator', description: 'Vimshottari, Yogini & Ashtottari Dasha timelines with all sub-periods.', icon: '⏳' },
-      { href: '/vedic/predictions', name: 'Varshaphal (Annual)', description: 'Solar Return chart with Muntha, Year Lord, and Tajaka Yogas.', icon: '🔮' },
-      { href: '/vedic/transits', name: 'Sade Sati & Transits', description: 'Saturn transit detection, Kantaka Shani, Dhaiya, and transit strength.', icon: '♄' },
-      { href: '/vedic/sade-sati', name: 'Sade Sati Calculator', description: 'Check if Saturn\'s 7.5-year Sade Sati is running, detect phase, Dhaiya & remedies.', icon: '🪐' },
+      { href: '/vedic/dashas', nameKey: 'feat.dashas', descKey: 'feat.dashas.desc', icon: '⏳' },
+      { href: '/vedic/predictions', nameKey: 'predictions.title', descKey: 'predictions.subtitle', icon: '🔮' },
+      { href: '/vedic/transits', nameKey: 'feat.transits', descKey: 'feat.transits.desc', icon: '♄' },
+      { href: '/vedic/sade-sati', nameKey: 'sadeSati.title', descKey: 'sadeSati.subtitle', icon: '🪐' },
     ],
   },
   {
-    title: 'Yogas & Doshas',
+    titleKey: 'yogas.title',
     tools: [
-      { href: '/vedic/yogas', name: 'Yoga & Dosha Analysis', description: 'Detect 20+ Yogas (Raja, Gajakesari, Dhana) and 12+ Doshas.', icon: '♃' },
-      { href: '/vedic/mangal-dosha', name: 'Mangal Dosha Check', description: 'Manglik status, house placement, cancellation conditions, and remedies.', icon: '♂' },
-      { href: '/vedic/kaal-sarp-dosha', name: 'Kaal Sarp Dosha', description: '12 types of Kaal Sarp Yog, severity, and Jupiter cancellation.', icon: '🐍' },
+      { href: '/vedic/yogas', nameKey: 'feat.yogas', descKey: 'feat.yogas.desc', icon: '♃' },
+      { href: '/vedic/mangal-dosha', nameKey: 'mangalDosha.title', descKey: 'mangalDosha.subtitle', icon: '♂' },
+      { href: '/vedic/kaal-sarp-dosha', nameKey: 'kaalSarp.title', descKey: 'kaalSarp.subtitle', icon: '🐍' },
     ],
   },
   {
-    title: 'Compatibility',
+    titleKey: 'nav.matching',
     tools: [
-      { href: '/vedic/compatibility', name: 'Kundli Milan', description: '36-point Ashtakoota matching — Varna, Vashya, Tara, Yoni, Maitri, Gana, Bhakoot, Nadi.', icon: '♥' },
-      { href: '/vedic/nakshatra', name: 'Nakshatra Calculator', description: 'Find your Janma Nakshatra, Pada, deity, Gana, Nadi, and Tara Bala.', icon: '☽' },
+      { href: '/vedic/compatibility', nameKey: 'feat.compatibility', descKey: 'feat.compatibility.desc', icon: '♥' },
+      { href: '/vedic/nakshatra', nameKey: 'nakshatra.title', descKey: 'nakshatra.subtitle', icon: '☽' },
     ],
   },
   {
-    title: 'Daily Almanac',
+    titleKey: 'nav.daily',
     tools: [
-      { href: '/vedic/panchang', name: "Today's Panchang", description: 'Daily Hindu almanac — Tithi, Nakshatra, Yoga, Karana, Rahu Kalam.', icon: '📅' },
-      { href: '/vedic/muhurta', name: 'Muhurta Finder', description: 'Find auspicious times for marriage, griha pravesh, travel, and 20+ activities.', icon: '🕐' },
-      { href: '/vedic/choghadiya', name: "Today's Choghadiya", description: 'Day & night Choghadiya timings — Shubh, Labh, Amrit, Char periods for your location.', icon: '⏱' },
+      { href: '/vedic/panchang', nameKey: 'feat.panchang', descKey: 'feat.panchang.desc', icon: '📅' },
+      { href: '/vedic/muhurta', nameKey: 'muhurta.title', descKey: 'muhurta.subtitle', icon: '🕐' },
+      { href: '/vedic/choghadiya', nameKey: 'choghadiya.title', descKey: 'choghadiya.subtitle', icon: '⏱' },
     ],
   },
   {
-    title: 'Strength Analysis',
+    titleKey: 'shadbala.title',
     tools: [
-      { href: '/vedic/shadbala', name: 'Shadbala Calculator', description: 'Six-fold planetary strength — Sthana, Dig, Kala, Cheshta, Naisargika, Drig Bala.', icon: '⚖' },
-      { href: '/vedic/ashtakavarga', name: 'Ashtakavarga', description: 'BAV and SAV Bindu tables for transit strength prediction.', icon: '⬡' },
+      { href: '/vedic/shadbala', nameKey: 'shadbala.title', descKey: 'shadbala.subtitle', icon: '⚖' },
+      { href: '/vedic/ashtakavarga', nameKey: 'ashtakavarga.title', descKey: 'ashtakavarga.subtitle', icon: '⬡' },
     ],
   },
   {
-    title: 'Advanced Systems',
+    titleKey: 'more.kp',
     tools: [
-      { href: '/vedic/kp', name: 'KP System', description: 'Krishnamurti Paddhati sub-lords, significators, and ruling planets.', icon: '⊕' },
-      { href: '/vedic/jaimini', name: 'Jaimini Astrology', description: 'Chara Karakas, Karakamsha, Rashi Drishti, and Chara Dasha.', icon: '♈' },
-      { href: '/vedic/nadi', name: 'Nadi Astrology', description: 'Bhrigu Bindu, Pranapada Lagna, Gulika, Mandi, and Nadi Amsha.', icon: '🌀' },
+      { href: '/vedic/kp', nameKey: 'kp.title', descKey: 'kp.subtitle', icon: '⊕' },
+      { href: '/vedic/jaimini', nameKey: 'jaimini.title', descKey: 'jaimini.subtitle', icon: '♈' },
+      { href: '/vedic/nadi', nameKey: 'nadi.title', descKey: 'nadi.subtitle', icon: '🌀' },
     ],
   },
   {
-    title: 'Life Area Analysis',
+    titleKey: 'nav.lifeAreas',
     tools: [
-      { href: '/vedic/career', name: 'Career Astrology', description: '10th house, Dasamsa (D10), Amatyakaraka analysis.', icon: '💼' },
-      { href: '/vedic/wealth', name: 'Wealth Analysis', description: 'Dhana Yogas, Indu Lagna, 2nd/11th house assessment.', icon: '₹' },
-      { href: '/vedic/health', name: 'Health & Longevity', description: 'Ayush tiers, Maraka lords, Badhaka planets, body area mapping.', icon: '❤' },
-      { href: '/vedic/remedies', name: 'Vedic Remedies', description: 'Gemstones, mantras, Rudraksha, charity, and fasting prescriptions.', icon: '💎' },
-      { href: '/vedic/report', name: 'Full Vedic Report', description: 'Complete analysis combining all tools in one comprehensive view.', icon: '📋' },
+      { href: '/vedic/career', nameKey: 'career.title', descKey: 'career.subtitle', icon: '💼' },
+      { href: '/vedic/wealth', nameKey: 'wealth.title', descKey: 'wealth.subtitle', icon: '₹' },
+      { href: '/vedic/health', nameKey: 'health.title', descKey: 'health.subtitle', icon: '❤' },
+      { href: '/vedic/remedies', nameKey: 'remedies.title', descKey: 'remedies.subtitle', icon: '💎' },
+      { href: '/vedic/report', nameKey: 'report.title', descKey: 'report.subtitle', icon: '📋' },
+    ],
+  },
+  {
+    titleKey: 'nav.matrix',
+    tools: [
+      { href: '/matrix/chart', nameKey: 'matrixChart.title', descKey: 'matrixChart.subtitle', icon: '✦' },
+      { href: '/matrix/health', nameKey: 'matrixHealth.title', descKey: 'matrixHealth.subtitle', icon: '🧘' },
+      { href: '/matrix/timeline', nameKey: 'matrixTimeline.title', descKey: 'matrixTimeline.subtitle', icon: '📊' },
+      { href: '/matrix/compatibility', nameKey: 'matrixCompat.title', descKey: 'matrixCompat.subtitle', icon: '❤️' },
     ],
   },
 ];
 
 export default function ToolsDirectoryPage() {
+  const t = useT();
   const totalTools = TOOL_CATEGORIES.reduce((sum, cat) => sum + cat.tools.length, 0);
 
   return (
@@ -104,30 +106,36 @@ export default function ToolsDirectoryPage() {
           <span className="text-xs text-violet-400/40">☉ ☽ ♃ ♄ ♂</span>
         </div>
         <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">
-          Free Vedic Astrology Calculators & Tools
+          {t('tools.title')}
         </h1>
         <p className="text-zinc-400 mt-2 max-w-2xl">
-          {totalTools} specialized Jyotish tools — each free, instant, and private. Choose a calculator below
-          or start with the <Link href="/vedic/kundli" className="text-violet-400 hover:underline">Kundli generator</Link> to
-          create your birth chart.
+          {t('tools.subtitle')}
         </p>
       </header>
 
-      {/* Which tool should I use? */}
+      {/* Guide box */}
       <div className="glass-card rounded-2xl p-6">
-        <h2 className="font-display text-lg font-semibold text-zinc-200 mb-3">Which tool should I use?</h2>
+        <h2 className="font-display text-lg font-semibold text-zinc-200 mb-3">{t('tools.guide')}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-          <div className="text-zinc-400"><strong className="text-zinc-200">New to astrology?</strong> Start with <Link href="/vedic/kundli" className="text-violet-400 hover:underline">Kundli</Link> to generate your birth chart.</div>
-          <div className="text-zinc-400"><strong className="text-zinc-200">Marriage compatibility?</strong> Use <Link href="/vedic/compatibility" className="text-violet-400 hover:underline">Kundli Milan</Link> for Ashtakoota matching.</div>
-          <div className="text-zinc-400"><strong className="text-zinc-200">What&apos;s happening now?</strong> Check <Link href="/vedic/transits" className="text-violet-400 hover:underline">Transits</Link> for current planetary effects.</div>
-          <div className="text-zinc-400"><strong className="text-zinc-200">Auspicious timing?</strong> Use <Link href="/vedic/panchang" className="text-violet-400 hover:underline">Panchang</Link> or <Link href="/vedic/muhurta" className="text-violet-400 hover:underline">Muhurta</Link>.</div>
+          <div className="text-zinc-400">
+            <Link href="/vedic/kundli" className="text-violet-400 hover:underline">{t('tools.guide.kundli')}</Link>
+          </div>
+          <div className="text-zinc-400">
+            <Link href="/vedic/compatibility" className="text-violet-400 hover:underline">{t('tools.guide.compat')}</Link>
+          </div>
+          <div className="text-zinc-400">
+            <Link href="/vedic/transits" className="text-violet-400 hover:underline">{t('tools.guide.transits')}</Link>
+          </div>
+          <div className="text-zinc-400">
+            <Link href="/vedic/panchang" className="text-violet-400 hover:underline">{t('tools.guide.timing')}</Link>
+          </div>
         </div>
       </div>
 
       {/* Tool categories */}
       {TOOL_CATEGORIES.map(category => (
-        <section key={category.title}>
-          <h2 className="section-title mb-4">{category.title}</h2>
+        <section key={category.titleKey}>
+          <h2 className="section-title mb-4">{t(category.titleKey)}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {category.tools.map(tool => (
               <Link
@@ -139,9 +147,9 @@ export default function ToolsDirectoryPage() {
                   <span className="text-2xl mt-0.5">{tool.icon}</span>
                   <div>
                     <h3 className="font-display font-semibold text-zinc-200 group-hover:text-white transition-colors">
-                      {tool.name}
+                      {t(tool.nameKey)}
                     </h3>
-                    <p className="text-xs text-zinc-500 mt-1 leading-relaxed">{tool.description}</p>
+                    <p className="text-xs text-zinc-500 mt-1 leading-relaxed">{t(tool.descKey)}</p>
                   </div>
                 </div>
               </Link>
@@ -152,13 +160,12 @@ export default function ToolsDirectoryPage() {
 
       {/* SEO footer */}
       <section className="mt-12 border-t border-white/[0.04] pt-8">
-        <h2 className="font-display text-lg font-semibold text-zinc-300 mb-3">About These Tools</h2>
+        <h2 className="font-display text-lg font-semibold text-zinc-300 mb-3">{t('tools.about.heading')}</h2>
         <p className="text-sm text-zinc-500 leading-relaxed max-w-3xl">
-          Every calculator on Astra Destiny uses NASA JPL DE-series ephemeris for astronomical precision and
-          follows classical Jyotish texts (BPHS, Uttara Kalamrita, Saravali) for astrological rules. All
-          calculations run entirely in your browser — your birth data never leaves your device. No account,
-          login, or payment required. Read our <Link href="/methodology" className="text-violet-400 hover:underline">Methodology</Link> page
-          for technical details on how each calculation works.
+          {t('tools.about.text')}{' '}
+          <Link href="/how-it-works" className="text-violet-400 hover:underline">
+            {t('footer.howItWorks')} →
+          </Link>
         </p>
       </section>
     </div>

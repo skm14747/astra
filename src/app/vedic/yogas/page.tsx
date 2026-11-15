@@ -92,12 +92,12 @@ export default function YogasPage() {
                   <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-medium ${
                     d.isActive ? 'bg-red-500/10 text-red-400 border border-red-500/20' : 'bg-green-500/10 text-green-400 border border-green-500/20'
                   }`}>
-                    {d.isActive ? `Active · ${d.severity}` : 'Not Present'}
+                    {d.isActive ? `${t('common.active')} · ${d.severity}` : t('common.notPresent')}
                   </span>
                 </div>
                 <p className="text-sm text-zinc-400 leading-relaxed">{d.description}</p>
-                {d.type && <p className="text-xs text-zinc-500 mt-2">Type: {d.type}</p>}
-                {d.cancellation && <p className="text-xs text-green-400/80 mt-1">✦ Cancellation: {d.cancellation}</p>}
+                {d.type && <p className="text-xs text-zinc-500 mt-2">{t('common.type')}: {d.type}</p>}
+                {d.cancellation && <p className="text-xs text-green-400/80 mt-1">✦ {t('common.cancellation')}: {d.cancellation}</p>}
               </div>
             ))}
           </div>

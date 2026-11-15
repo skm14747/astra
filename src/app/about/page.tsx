@@ -7,7 +7,15 @@ export const metadata: Metadata = {
   description: 'Learn about Astra Destiny — our mission, the team behind the tools, our approach to Vedic astrology calculation, and how we built 200+ free Jyotish calculators.',
   alternates: {
     canonical: '/about',
-    languages: { 'en': '/about', 'hi': '/hi/about', 'x-default': '/about' },
+    languages: {
+      'en': '/about',
+      'hi': '/hi/about',
+      'ne': '/ne/about',
+      'pt': '/pt/about',
+      'es': '/es/about',
+      'ja': '/ja/about',
+      'x-default': '/about',
+    },
   },
   openGraph: {
     title: 'About Astra Destiny — Our Vedic Astrology Tools',

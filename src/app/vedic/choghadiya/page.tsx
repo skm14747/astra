@@ -26,21 +26,24 @@ function formatTime(d: Date): string {
   return d.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
 }
 
-function ChoghadiyaRow({ period, isNow }: { period: ChoghadiyaPeriod; isNow: boolean }) {
+function ChoghadiyaRow({ period, isNow, t }: { period: ChoghadiyaPeriod; isNow: boolean; t: ReturnType<typeof useT> }) {
   const style = TYPE_STYLES[period.type] ?? TYPE_STYLES.Kaal;
   const planetGlyph = PLANET_GLYPH[period.ruler as keyof typeof PLANET_GLYPH] ?? '';
+  const typeKey = `choghadiya.${period.type.toLowerCase()}` as Parameters<typeof t>[0];
+  const typeLabel = t(typeKey) !== typeKey ? t(typeKey) : period.type;
+
   return (
     <div className={`glass-card rounded-xl p-4 flex items-center gap-4 transition-all ${isNow ? `vedic-glow ${style.border}` : ''}`}>
       <span className="text-xl w-8 text-center">{planetGlyph}</span>
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-0.5">
-          <span className={`font-semibold ${style.text}`}>{period.type}</span>
+          <span className={`font-semibold ${style.text}`}>{typeLabel}</span>
           <span className={`px-2 py-0.5 rounded-full text-[10px] font-medium border ${style.badge}`}>
             {period.ruler}
           </span>
           {isNow && (
             <span className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-violet-500/15 text-violet-400 border border-violet-500/25">
-              NOW
+              {t('common.now')}
             </span>
           )}
         </div>
@@ -96,8 +99,8 @@ export default function ChoghadiyaPage() {
   const locationSource: string = activeProfile
     ? activeProfile.city
     : geoStatus === 'granted'
-      ? 'Your Location'
-      : `${DEFAULT_LOCATION.label} (default)`;
+      ? t('panchang.yourLocation')
+      : `${DEFAULT_LOCATION.label} ${t('panchang.default')}`;
 
   const data = useMemo(() => {
     if (!now) return null;
@@ -144,8 +147,8 @@ export default function ChoghadiyaPage() {
 
       {/* Legend */}
       <div className="flex flex-wrap gap-3">
-        <span className="flex items-center gap-1.5 text-xs text-zinc-500"><span className="w-2 h-2 rounded-full bg-green-400" /> Auspicious</span>
-        <span className="flex items-center gap-1.5 text-xs text-zinc-500"><span className="w-2 h-2 rounded-full bg-red-400" /> Inauspicious</span>
+        <span className="flex items-center gap-1.5 text-xs text-zinc-500"><span className="w-2 h-2 rounded-full bg-green-400" /> {t('common.auspicious')}</span>
+        <span className="flex items-center gap-1.5 text-xs text-zinc-500"><span className="w-2 h-2 rounded-full bg-red-400" /> {t('common.inauspicious')}</span>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -154,7 +157,7 @@ export default function ChoghadiyaPage() {
           <div className="section-title mb-4">☀ {t('choghadiya.day')}</div>
           <div className="space-y-2">
             {data.choghadiya.day.map((p, i) => (
-              <ChoghadiyaRow key={`day-${i}`} period={p} isNow={isCurrentPeriod(p)} />
+              <ChoghadiyaRow key={`day-${i}`} period={p} isNow={isCurrentPeriod(p)} t={t} />
             ))}
           </div>
         </div>
@@ -164,7 +167,7 @@ export default function ChoghadiyaPage() {
           <div className="section-title mb-4">🌙 {t('choghadiya.night')}</div>
           <div className="space-y-2">
             {data.choghadiya.night.map((p, i) => (
-              <ChoghadiyaRow key={`night-${i}`} period={p} isNow={isCurrentPeriod(p)} />
+              <ChoghadiyaRow key={`night-${i}`} period={p} isNow={isCurrentPeriod(p)} t={t} />
             ))}
           </div>
         </div>

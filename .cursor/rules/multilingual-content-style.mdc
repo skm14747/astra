@@ -1,5 +1,5 @@
 ---
-description: Multilingual content and i18n standards — independent language review, native phrasing and paragraphs, avoiding literal translation across all supported locales (hi, ne, pt, es, ja, en).
+description: Multilingual content and i18n standards — independent language review, native phrasing and paragraphs, avoiding literal translation across all supported locales (hi, ne, pt, es, ja, fr, en).
 globs: src/lib/i18n/*.ts
 alwaysApply: false
 ---
@@ -9,7 +9,7 @@ alwaysApply: false
 ## Core Principle: Independent Language Crafting
 
 **Never treat any language as a sentence-by-sentence translation of English.**
-Each supported language (`hi` Hindi, `ne` Nepali, `pt` Portuguese, `es` Spanish, `ja` Japanese, `en` English) must be crafted independently as a first-class language, respecting its own syntax, idioms, cultural worldview, and astrological tradition.
+Each supported language (`hi` Hindi, `ne` Nepali, `pt` Portuguese, `es` Spanish, `ja` Japanese, `fr` French, `en` English) must be crafted independently as a first-class language, respecting its own syntax, idioms, cultural worldview, and astrological tradition.
 
 - **It does not have to be an exact translation.**
 - **Use language-native phrases, idioms, and natural paragraph structures.**
@@ -67,6 +67,19 @@ Each supported language (`hi` Hindi, `ne` Nepali, `pt` Portuguese, `es` Spanish,
 - **SEO embedding**: Naturally embed high-volume keywords: `無料` (free), `今日の運勢` (today's fortune), `相性` (compatibility), `当たる` (accurate).
 - **Kanji/Kana balance**: Use kanji for nouns, hiragana for particles/verb endings, katakana for foreign loan words — standard Japanese web convention.
 - **Cultural note**: Japanese users expect a ranking (ランキング) format for daily zodiac content. "Today's fortune" is a daily habit, not a one-time use.
+
+### 6. French (`fr.ts`) — Astrologie Francophone / Western Tradition
+- **Tone**: Elegant, accessible, and authoritative — like a respected astrologue speaking to a curious audience. Use the "vous" form (polite) throughout.
+- **Native terms**:
+  - `Thème astral` / `Carte du ciel` for birth chart — "thème natal" also works.
+  - `Ascendant` — the word itself is French in origin.
+  - `Horoscope du jour` for daily horoscope (537K/mo in France).
+  - `Compatibilité` / `Synastrie` for compatibility — "synastrie" for two-chart comparison.
+  - `Maison` for houses, `Planète` for planets — standard French astrology vocabulary.
+  - `Signe du zodiaque` for zodiac sign.
+- **SEO embedding**: Naturally embed high-volume keywords: `gratuit` (free), `horoscope du jour` (daily horoscope), `thème astral gratuit`, `compatibilité amoureuse`.
+- **Francophone coverage**: Content serves France (67M), Belgium (4M), Switzerland (2M), Quebec (8M), and Francophone Africa (Senegal, Côte d'Ivoire, Cameroon). Use neutral metropolitan French — avoid Quebec-only expressions.
+- **Cultural note**: French astrology users are familiar with both Western and some Vedic concepts via the wellness/yoga crossover. Terms like "Yoga", "Dosha", "Karma" are understood. "Heures miroirs" (mirror hours like 11:11, 22:22) is a uniquely popular French spiritual concept.
 
 ---
 

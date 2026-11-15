@@ -74,7 +74,7 @@ export default function SadeSatiPage() {
                 ? `${phaseStyle!.bg} ${phaseStyle!.text} border ${phaseStyle!.border}`
                 : 'bg-green-500/10 text-green-400 border border-green-500/20'
             }`}>
-              {sadeSati.isActive ? `Active — ${sadeSati.phase!.charAt(0).toUpperCase() + sadeSati.phase!.slice(1)} Phase` : 'Not Active'}
+              {sadeSati.isActive ? `${t('common.active')} — ${sadeSati.phase}` : t('common.notActive')}
             </span>
           </div>
         </div>
@@ -99,28 +99,28 @@ export default function SadeSatiPage() {
 
       {/* Related Afflictions */}
       <div>
-        <div className="section-title mb-4">Related Saturn Afflictions</div>
+        <div className="section-title mb-4">{t('sadeSati.kantaka')} · {t('sadeSati.ashtama')} · {t('sadeSati.dhaiya')}</div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <div className={`glass-card rounded-xl p-4 ${kantaka ? 'border-red-500/20' : ''}`}>
             <div className="flex items-center gap-2 mb-2">
               <span className={`w-2 h-2 rounded-full ${kantaka ? 'bg-red-400' : 'bg-green-400'}`} />
               <h3 className="font-semibold text-zinc-100 text-sm">{t('sadeSati.kantaka')}</h3>
             </div>
-            <p className="text-xs text-zinc-500">{kantaka ? 'Active — Saturn in 4th/8th/10th from Moon' : 'Not active'}</p>
+            <p className="text-xs text-zinc-500">{kantaka ? t('common.active') : t('common.notActive')}</p>
           </div>
           <div className={`glass-card rounded-xl p-4 ${ashtama ? 'border-red-500/20' : ''}`}>
             <div className="flex items-center gap-2 mb-2">
               <span className={`w-2 h-2 rounded-full ${ashtama ? 'bg-red-400' : 'bg-green-400'}`} />
               <h3 className="font-semibold text-zinc-100 text-sm">{t('sadeSati.ashtama')}</h3>
             </div>
-            <p className="text-xs text-zinc-500">{ashtama ? 'Active — Saturn in 8th from Moon' : 'Not active'}</p>
+            <p className="text-xs text-zinc-500">{ashtama ? t('common.active') : t('common.notActive')}</p>
           </div>
           <div className={`glass-card rounded-xl p-4 ${dhaiya?.isActive ? 'border-orange-500/20' : ''}`}>
             <div className="flex items-center gap-2 mb-2">
               <span className={`w-2 h-2 rounded-full ${dhaiya?.isActive ? 'bg-orange-400' : 'bg-green-400'}`} />
               <h3 className="font-semibold text-zinc-100 text-sm">{t('sadeSati.dhaiya')}</h3>
             </div>
-            <p className="text-xs text-zinc-500">{dhaiya?.isActive ? `Active — ${dhaiya.type}` : 'Not active'}</p>
+            <p className="text-xs text-zinc-500">{dhaiya?.isActive ? `${t('common.active')} — ${dhaiya.type}` : t('common.notActive')}</p>
           </div>
         </div>
       </div>

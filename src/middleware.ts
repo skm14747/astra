@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server';
 
-export const LOCALES = ['en', 'hi', 'ne', 'pt', 'es', 'ja'] as const;
+export const LOCALES = ['en', 'hi', 'ne', 'pt', 'es', 'ja', 'fr'] as const;
 export const DEFAULT_LOCALE = 'en';
 const LOCALE_COOKIE = 'astra-locale';
 
@@ -37,7 +37,7 @@ export function middleware(request: NextRequest) {
   }
 
   // /hi/*, /ne/*, /pt/* → rewrite to /* and set locale cookie
-  if (maybeLocale === 'hi' || maybeLocale === 'ne' || maybeLocale === 'pt' || maybeLocale === 'es' || maybeLocale === 'ja') {
+  if (maybeLocale === 'hi' || maybeLocale === 'ne' || maybeLocale === 'pt' || maybeLocale === 'es' || maybeLocale === 'ja' || maybeLocale === 'fr') {
     const rest = segments.slice(2).join('/');
     const url = request.nextUrl.clone();
     url.pathname = rest ? `/${rest}` : '/';

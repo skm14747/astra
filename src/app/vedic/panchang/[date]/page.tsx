@@ -61,7 +61,18 @@ export async function generateMetadata({ params }: { params: Promise<{ date: str
   return {
     title,
     description,
-    alternates: { canonical: `/vedic/panchang/${slug}` },
+    alternates: {
+      canonical: `/vedic/panchang/${slug}`,
+      languages: {
+        'en': `/vedic/panchang/${slug}`,
+        'hi': `/hi/vedic/panchang/${slug}`,
+        'ne': `/ne/vedic/panchang/${slug}`,
+        'pt': `/pt/vedic/panchang/${slug}`,
+        'es': `/es/vedic/panchang/${slug}`,
+        'ja': `/ja/vedic/panchang/${slug}`,
+        'x-default': `/vedic/panchang/${slug}`,
+      },
+    },
     openGraph: {
       title,
       description,

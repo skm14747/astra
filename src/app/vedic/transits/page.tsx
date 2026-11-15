@@ -71,7 +71,7 @@ export default function TransitsPage() {
             <span className={`px-3 py-1 rounded-full text-xs font-medium ${
               data.sadeSati.isActive ? 'bg-yellow-500/10 text-yellow-400 border border-yellow-500/20' : 'bg-green-500/10 text-green-400 border border-green-500/20'
             }`}>
-              {data.sadeSati.isActive ? 'Active' : 'Not Active'}
+              {data.sadeSati.isActive ? t('common.active') : t('common.notActive')}
             </span>
           </div>
         </div>
@@ -88,16 +88,16 @@ export default function TransitsPage() {
       <div>
         <div className="section-title mb-4">{t('transits.planetEffects')}</div>
         <div className="space-y-3">
-          {data.transits.map((t, i) => (
-            <div key={i} className={`glass-card rounded-xl p-4 flex items-start gap-4 ${t.isFavorable ? 'vedic-glow' : 'border-red-500/10'}`}>
-              <span className="text-2xl mt-0.5">{PLANET_GLYPH[t.planet]}</span>
+          {data.transits.map((tr, i) => (
+            <div key={i} className={`glass-card rounded-xl p-4 flex items-start gap-4 ${tr.isFavorable ? 'vedic-glow' : 'border-red-500/10'}`}>
+              <span className="text-2xl mt-0.5">{PLANET_GLYPH[tr.planet]}</span>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="font-semibold text-zinc-100">{t.planet}</span>
-                  <span className="text-xs text-zinc-500">{t.houseFromMoon}th from Moon</span>
-                  <span className={`ml-auto w-2 h-2 rounded-full ${t.isFavorable ? 'bg-green-400' : 'bg-red-400'}`} />
+                  <span className="font-semibold text-zinc-100">{tr.planet}</span>
+                  <span className="text-xs text-zinc-500">{t('transits.fromMoon', { n: tr.houseFromMoon })}</span>
+                  <span className={`ml-auto w-2 h-2 rounded-full ${tr.isFavorable ? 'bg-green-400' : 'bg-red-400'}`} />
                 </div>
-                <p className="text-sm text-zinc-400">{t.effect}</p>
+                <p className="text-sm text-zinc-400">{tr.effect}</p>
               </div>
             </div>
           ))}

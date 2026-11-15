@@ -25,7 +25,12 @@ const MATRIX_FEATURES: { href: string; icon: string; titleKey: TranslationKey; d
 
 const MORE_TOOLS: { href: string; labelKey: TranslationKey; icon: string }[] = [
   { href: '/vedic/divisional', labelKey: 'more.divisional', icon: '◎' },
+  { href: '/vedic/navamsa', labelKey: 'navamsa.title', icon: '◎' },
   { href: '/vedic/nakshatra', labelKey: 'more.nakshatra', icon: '⭐' },
+  { href: '/vedic/mangal-dosha', labelKey: 'mangalDosha.title', icon: '♂' },
+  { href: '/vedic/kaal-sarp-dosha', labelKey: 'kaalSarp.title', icon: '🐍' },
+  { href: '/vedic/sade-sati', labelKey: 'footer.sadeSatiCheck', icon: '🪐' },
+  { href: '/vedic/choghadiya', labelKey: 'choghadiya.title', icon: '⏱' },
   { href: '/vedic/ashtakavarga', labelKey: 'more.ashtakavarga', icon: '☉' },
   { href: '/vedic/kp', labelKey: 'more.kp', icon: '◈' },
   { href: '/vedic/muhurta', labelKey: 'more.muhurta', icon: '⏰' },

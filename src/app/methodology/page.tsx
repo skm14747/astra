@@ -7,7 +7,15 @@ export const metadata: Metadata = {
   description: 'How Astra Destiny calculates Vedic astrology charts — our ephemeris sources, ayanamsa choice, house systems, Yoga/Dosha detection rules, and why results may differ between calculators.',
   alternates: {
     canonical: '/methodology',
-    languages: { 'en': '/methodology', 'hi': '/hi/methodology', 'x-default': '/methodology' },
+    languages: {
+      'en': '/methodology',
+      'hi': '/hi/methodology',
+      'ne': '/ne/methodology',
+      'pt': '/pt/methodology',
+      'es': '/es/methodology',
+      'ja': '/ja/methodology',
+      'x-default': '/methodology',
+    },
   },
   openGraph: {
     title: 'Astrology Calculation Methods & Accuracy | Astra Destiny',
