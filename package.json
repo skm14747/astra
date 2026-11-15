@@ -1,0 +1,40 @@
+{
+  "name": "astra",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grahan/core": "^1.0.1",
+    "@grahan/vedic": "^1.0.1",
+    "@ishubhamx/panchangam-js": "^3.0.0",
+    "@prisri/jyotish": "^1.1.15",
+    "cmdk": "^1.1.1",
+    "destiny-matrix-core": "^0.1.1",
+    "framer-motion": "^14.14.0",
+    "html-to-image": "^1.11.13",
+    "next": "^16.4.6",
+    "rea-agents": "^6.7.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "vpv-panchangam": "^1.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4.3.5",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.6",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^6.0.3"
+  }
+}
