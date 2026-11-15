@@ -64,6 +64,7 @@ export const metadata: Metadata = {
       'ne': '/ne/',
       'pt': '/pt/',
       'es': '/es/',
+      'ja': '/ja/',
       'x-default': '/',
     },
   },

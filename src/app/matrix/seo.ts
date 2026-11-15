@@ -97,6 +97,7 @@ export function buildMatrixMetadata(slug: string): Metadata {
         'ne': `/ne${seo.canonical}`,
         'pt': `/pt${seo.canonical}`,
         'es': `/es${seo.canonical}`,
+        'ja': `/ja${seo.canonical}`,
         'x-default': seo.canonical,
       },
     },

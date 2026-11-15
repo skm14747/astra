@@ -19,7 +19,7 @@ export default function SettingsPage() {
   const handleLanguageChange = (lang: Language) => {
     setLanguage(lang);
     // Navigate to the locale-prefixed URL so crawlers see the correct version
-    const cleanPath = pathname.replace(/^\/(hi|ne|pt|es)/, '') || '/';
+    const cleanPath = pathname.replace(/^\/(hi|ne|pt|es|ja)/, '') || '/';
     if (lang === 'en') {
       router.push(cleanPath);
     } else {
@@ -104,7 +104,7 @@ export default function SettingsPage() {
         <h2 className="font-display text-lg font-semibold text-white mt-6">{t('settings.language')}</h2>
         <p className="text-sm text-zinc-400 -mt-2">{t('settings.langDesc')}</p>
         <div className="flex gap-3">
-          {([['en', 'English'], ['hi', 'हिन्दी'], ['ne', 'नेपाली'], ['pt', 'Português'], ['es', 'Español']] as [Language, string][]).map(([lang, label]) => (
+          {([['en', 'English'], ['hi', 'हिन्दी'], ['ne', 'नेपाली'], ['pt', 'Português'], ['es', 'Español'], ['ja', '日本語']] as [Language, string][]).map(([lang, label]) => (
             <button key={lang} onClick={() => handleLanguageChange(lang)} className={pill(language === lang)}>
               {label}
             </button>

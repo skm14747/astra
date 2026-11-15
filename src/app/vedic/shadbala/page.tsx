@@ -40,20 +40,20 @@ export default function ShadbalaPage() {
 
       {/* Main Shadbala Table */}
       <div className="glass-card rounded-2xl p-6 overflow-x-auto">
-        <h2 className="font-semibold text-zinc-100 text-lg mb-4">Planetary Strength (Shashtiamsas)</h2>
+        <h2 className="font-semibold text-zinc-100 text-lg mb-4">{t('shadbala.strengthTable')}</h2>
         <table className="w-full text-sm">
           <thead>
             <tr className="text-zinc-400 border-b border-white/5">
-              <th className="text-left py-2 pr-3">Planet</th>
+              <th className="text-left py-2 pr-3">{t('rpt.th.planet')}</th>
               <th className="text-right px-2">Sthana</th>
               <th className="text-right px-2">Dig</th>
               <th className="text-right px-2">Kala</th>
               <th className="text-right px-2">Cheshta</th>
               <th className="text-right px-2">Naisarg.</th>
               <th className="text-right px-2">Drik</th>
-              <th className="text-right px-2 font-bold">Total</th>
-              <th className="text-right px-2">Req.</th>
-              <th className="text-right pl-2">Ratio</th>
+              <th className="text-right px-2 font-bold">{t('common.total')}</th>
+              <th className="text-right px-2">{t('rpt.th.required')}</th>
+              <th className="text-right pl-2">{t('rpt.th.ratio')}</th>
             </tr>
           </thead>
           <tbody>
@@ -82,7 +82,7 @@ export default function ShadbalaPage() {
       {/* Ishta / Kashta Phala */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="glass-card rounded-2xl p-6">
-          <h2 className="font-semibold text-zinc-100 text-lg mb-4">Ishta Phala (Desired Results)</h2>
+          <h2 className="font-semibold text-zinc-100 text-lg mb-4">{t('shadbala.ishta')}</h2>
           <div className="space-y-2">
             {GRAHAS.map(p => (
               <div key={p} className="flex justify-between text-sm">
@@ -93,7 +93,7 @@ export default function ShadbalaPage() {
           </div>
         </div>
         <div className="glass-card rounded-2xl p-6">
-          <h2 className="font-semibold text-zinc-100 text-lg mb-4">Kashta Phala (Undesired Results)</h2>
+          <h2 className="font-semibold text-zinc-100 text-lg mb-4">{t('shadbala.kashta')}</h2>
           <div className="space-y-2">
             {GRAHAS.map(p => (
               <div key={p} className="flex justify-between text-sm">
@@ -108,7 +108,7 @@ export default function ShadbalaPage() {
       {/* Vimsopaka + Vaiseshikamsa */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="glass-card rounded-2xl p-6">
-          <h2 className="font-semibold text-zinc-100 text-lg mb-4">Vimsopaka Bala (20-point)</h2>
+          <h2 className="font-semibold text-zinc-100 text-lg mb-4">{t('shadbala.vimsopaka')}</h2>
           <div className="space-y-2">
             {GRAHAS.map(p => (
               <div key={p} className="flex justify-between text-sm">
@@ -119,7 +119,7 @@ export default function ShadbalaPage() {
           </div>
         </div>
         <div className="glass-card rounded-2xl p-6">
-          <h2 className="font-semibold text-zinc-100 text-lg mb-4">Vaiseshikamsa</h2>
+          <h2 className="font-semibold text-zinc-100 text-lg mb-4">{t('shadbala.vaiseshikamsa')}</h2>
           <div className="space-y-2">
             {GRAHAS.map(p => (
               <div key={p} className="flex justify-between text-sm">
@@ -133,7 +133,7 @@ export default function ShadbalaPage() {
 
       {/* Bhava Bala */}
       <div className="glass-card rounded-2xl p-6">
-        <h2 className="font-semibold text-zinc-100 text-lg mb-4">Bhava Bala (House Strength)</h2>
+        <h2 className="font-semibold text-zinc-100 text-lg mb-4">{t('shadbala.bhavaBala')}</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
           {bhavaBala.houses.map(h => (
             <div key={h.house} className="bg-white/[0.03] rounded-xl p-3 text-center">

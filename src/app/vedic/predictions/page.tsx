@@ -43,20 +43,20 @@ export default function PredictionsPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="glass-card rounded-2xl p-6 text-center">
-          <div className="text-xs text-zinc-500 mb-2">Solar Return</div>
+          <div className="text-xs text-zinc-500 mb-2">{t('predictions.solarReturn')}</div>
           <div className="text-zinc-200 text-sm">{varshaphal.solarReturnDate.toLocaleDateString()}</div>
         </div>
         <div className="glass-card rounded-2xl p-6 text-center">
-          <div className="text-xs text-zinc-500 mb-2">Varsha Lagna</div>
+          <div className="text-xs text-zinc-500 mb-2">{t('predictions.varshaLagna')}</div>
           <div className="text-violet-400 text-lg">{RASHI_GLYPH[RASHI_NAMES[varshaphal.varshaLagna]]} {RASHI_NAMES[varshaphal.varshaLagna]}</div>
         </div>
         <div className="glass-card rounded-2xl p-6 text-center">
-          <div className="text-xs text-zinc-500 mb-2">Muntha</div>
+          <div className="text-xs text-zinc-500 mb-2">{t('predictions.muntha')}</div>
           <div className="text-cyan-400 text-lg">{RASHI_GLYPH[RASHI_NAMES[varshaphal.muntha]]} {RASHI_NAMES[varshaphal.muntha]}</div>
-          <div className="text-xs text-zinc-500 mt-1">Lord: {varshaphal.munthaLord}</div>
+          <div className="text-xs text-zinc-500 mt-1">{t('rpt.lord')}: {varshaphal.munthaLord}</div>
         </div>
         <div className="glass-card rounded-2xl p-6 text-center">
-          <div className="text-xs text-zinc-500 mb-2">Year Lord</div>
+          <div className="text-xs text-zinc-500 mb-2">{t('predictions.yearLord')}</div>
           <div className="text-amber-400 text-lg">{varshaphal.yearLord}</div>
         </div>
       </div>

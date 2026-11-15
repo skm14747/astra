@@ -47,7 +47,7 @@ export default function NadiPage() {
       </div>
 
       <div className="glass-card rounded-2xl p-6">
-        <h2 className="font-semibold text-zinc-100 text-lg mb-4">Moon Nadi Amsha (D150)</h2>
+        <h2 className="font-semibold text-zinc-100 text-lg mb-4">{t('nadi.amsha')}</h2>
         <div className="grid grid-cols-2 gap-4">
           <div>
             <div className="text-xs text-zinc-500">Division</div>

@@ -42,7 +42,7 @@ export default function JaiminiPage() {
 
       {/* Chara Karakas */}
       <div className="glass-card rounded-2xl p-6">
-        <h2 className="font-semibold text-zinc-100 text-lg mb-4">Seven Chara Karakas</h2>
+        <h2 className="font-semibold text-zinc-100 text-lg mb-4">{t('jaimini.sevenKarakas')}</h2>
         <div className="space-y-3">
           {jaimini.charaKarakas.map(k => (
             <div key={k.type} className="flex items-center justify-between bg-white/[0.03] rounded-xl px-4 py-3">
@@ -62,30 +62,30 @@ export default function JaiminiPage() {
       {/* Karakamsha + Career + BMR */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="glass-card rounded-2xl p-6">
-          <h2 className="font-semibold text-zinc-100 text-lg mb-3">Karakamsha</h2>
+          <h2 className="font-semibold text-zinc-100 text-lg mb-3">{t('jaimini.karakamsha')}</h2>
           <p className="text-2xl text-violet-400">
             {RASHI_GLYPH[RASHI_NAMES[jaimini.karakamsha]]} {jaimini.karakamshaName}
           </p>
-          <p className="text-xs text-zinc-500 mt-1">AK&apos;s sign in Navamsa (D9)</p>
+          <p className="text-xs text-zinc-500 mt-1">AK sign in Navamsa (D9)</p>
         </div>
         <div className="glass-card rounded-2xl p-6">
-          <h2 className="font-semibold text-zinc-100 text-lg mb-3">Career (AmK)</h2>
+          <h2 className="font-semibold text-zinc-100 text-lg mb-3">{t('jaimini.amkCareer')}</h2>
           <p className="text-zinc-200">{PLANET_GLYPH[career.planet]} {career.planet}</p>
           <p className="text-sm text-cyan-400 mt-1">{career.career}</p>
         </div>
         <div className="glass-card rounded-2xl p-6">
-          <h2 className="font-semibold text-zinc-100 text-lg mb-3">Brahma · Maheshwara · Rudra</h2>
+          <h2 className="font-semibold text-zinc-100 text-lg mb-3">{t('jaimini.bmr')}</h2>
           <div className="space-y-1 text-sm">
-            <div className="flex justify-between"><span className="text-zinc-400">Brahma</span><span className="text-zinc-200">{bmr.brahma}</span></div>
-            <div className="flex justify-between"><span className="text-zinc-400">Maheshwara</span><span className="text-zinc-200">{bmr.maheshwara}</span></div>
-            <div className="flex justify-between"><span className="text-zinc-400">Rudra</span><span className="text-zinc-200">{bmr.rudra}</span></div>
+            <div className="flex justify-between"><span className="text-zinc-400">{t('rpt.brahma')}</span><span className="text-zinc-200">{bmr.brahma}</span></div>
+            <div className="flex justify-between"><span className="text-zinc-400">{t('rpt.maheshwara')}</span><span className="text-zinc-200">{bmr.maheshwara}</span></div>
+            <div className="flex justify-between"><span className="text-zinc-400">{t('rpt.rudra')}</span><span className="text-zinc-200">{bmr.rudra}</span></div>
           </div>
         </div>
       </div>
 
       {/* Arudha Padas */}
       <div className="glass-card rounded-2xl p-6">
-        <h2 className="font-semibold text-zinc-100 text-lg mb-4">Arudha Padas (A1–A12)</h2>
+        <h2 className="font-semibold text-zinc-100 text-lg mb-4">{t('jaimini.arudhaPadas')}</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
           {jaimini.arudhaPadas.map(a => (
             <div key={a.house} className="bg-white/[0.03] rounded-xl p-3 text-center">
@@ -102,7 +102,7 @@ export default function JaiminiPage() {
 
       {/* Chara Dasha */}
       <div className="glass-card rounded-2xl p-6">
-        <h2 className="font-semibold text-zinc-100 text-lg mb-4">Chara Dasha</h2>
+        <h2 className="font-semibold text-zinc-100 text-lg mb-4">{t('jaimini.charaDasha')}</h2>
         <div className="space-y-2">
           {charaDasha.map((d, i) => {
             const isCurrent = now ? now >= d.startDate && now < d.endDate : false;

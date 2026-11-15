@@ -42,7 +42,7 @@ export default function NavamsaPage() {
   if (!chart || !d9) {
     return (
       <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-        <EmptyState icon="◎" title="Navamsa (D9) Chart" description="Create your birth chart to view your Navamsa chart and Vargottama analysis." />
+        <EmptyState icon="◎" title={t('navamsa.title')} description={t('navamsa.subtitle')} />
         <SeoIntro headingKey={'seo.divisional.heading'} textKey={'seo.divisional.text'} fallbackHeading={seo.seoIntro.heading} fallbackText={seo.seoIntro.text} />
         {seo.relatedTools && <RelatedTools tools={seo.relatedTools} />}
       </div>
@@ -56,15 +56,15 @@ export default function NavamsaPage() {
         <div className="zodiac-divider mb-3">
           <span className="text-xs text-violet-400/40">◎ D9 ✦</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Navamsa (D9) Chart</h1>
-        <p className="text-zinc-400 mt-1">Marriage, dharma & soul-level planetary strength</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('navamsa.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('navamsa.subtitle')}</p>
       </div>
 
       {/* Vargottama strip */}
       {vargottamaPlanets.length > 0 && (
         <div className="flex gap-3 flex-wrap">
           <span className="planet-badge !bg-emerald-500/12 !border-emerald-500/20 !text-emerald-400">
-            {vargottamaPlanets.length} Vargottama planet{vargottamaPlanets.length > 1 ? 's' : ''}
+            {t('navamsa.vargottamaCount', { n: vargottamaPlanets.length, s: vargottamaPlanets.length > 1 ? 's' : '' })}
           </span>
           {vargottamaPlanets.map(p => (
             <span key={p} className="planet-badge">{p}</span>
@@ -74,17 +74,17 @@ export default function NavamsaPage() {
 
       {/* Side-by-side charts */}
       <section>
-        <h2 className="section-title mb-4">D1 (Birth) vs D9 (Navamsa)</h2>
+        <h2 className="section-title mb-4">{t('navamsa.d1vsd9')}</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {d1 && (
             <div className="glass-card rounded-2xl p-4">
-              <div className="text-xs text-zinc-500 uppercase tracking-wider font-medium mb-3 text-center">D1 — Rashi Chart</div>
+              <div className="text-xs text-zinc-500 uppercase tracking-wider font-medium mb-3 text-center">{t('navamsa.d1Chart')}</div>
               <SouthIndianChart houses={d1.houses} ascendantRashi={d1.ascendantRashi} title="D1 Rashi" />
             </div>
           )}
           <div ref={chartRef} className="glass-card rounded-2xl p-4">
             <div className="flex items-center justify-between mb-3">
-              <div className="text-xs text-zinc-500 uppercase tracking-wider font-medium text-center flex-1">D9 — Navamsa Chart</div>
+              <div className="text-xs text-zinc-500 uppercase tracking-wider font-medium text-center flex-1">{t('navamsa.d9Chart')}</div>
               <ExportButton targetRef={chartRef} filename="navamsa-d9" />
             </div>
             <SouthIndianChart houses={d9.houses} ascendantRashi={d9.ascendantRashi} title="D9 Navamsa" />
@@ -94,7 +94,7 @@ export default function NavamsaPage() {
 
       {/* Planetary positions table */}
       <section>
-        <h2 className="section-title mb-4">Planet Positions — D1 vs D9</h2>
+        <h2 className="section-title mb-4">{t('navamsa.positions')}</h2>
         <div className="glass-card rounded-2xl overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -130,7 +130,7 @@ export default function NavamsaPage() {
 
       {/* D9 Lagna analysis */}
       <section>
-        <h2 className="section-title mb-4">Navamsa Lagna Interpretation</h2>
+        <h2 className="section-title mb-4">{t('navamsa.lagnaInterpret')}</h2>
         <div className="glass-card rounded-2xl p-5">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-10 h-10 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-lg">☍</div>

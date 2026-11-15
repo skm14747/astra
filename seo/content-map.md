@@ -618,3 +618,148 @@ Unlike Portuguese (which needed Vedic-to-Western bridge from scratch), Spanish:
 - [AstroLogyic: Astrology Search Trends](https://www.astrologyic.com/learn/astrology-search-statistics) — global volume data
 - [SEO Expert Nepal: Keyword Research for Nepali Websites](https://seoexpertinnepal.com/blog/keyword-research-for-nepali-websites) — romanized vs Devanagari 57:1 ratio
 - [Keywords Everywhere: Top 866 Astrology Keywords Nov 2026](https://keywordseverywhere.com/ctl/top/astrology-keywords) — 542M combined searches
+
+---
+
+## Japanese-Language Market Keyword Research
+
+**Date:** November 16, 2026
+**Target Market:** Japan (125M population, 19% astrology engagement per Pew 2025)
+**Source:** Web search aggregation (ラッコキーワード via search-engine-pirates.co.jp, VEIL GSC data, Yano Research, Similarweb, InstantFortune)
+
+### Market Overview
+
+Japan's fortune-telling (占い) market is massive:
+- **¥997 billion** (FY2023) in service revenue — Web media ¥372B, face-to-face ¥287B, telephone ¥216B (Yano Research 2024)
+- **¥4.24 trillion** in broader spiritual/wellness market
+- **90% female** users, **80% ages 30-50**, **85% love/relationship** intent
+- **125M population**, high smartphone penetration, daily fortune search habit
+
+### Search Volume Data (ラッコキーワード, Oct 2026)
+
+| Keyword | Volume (JP) | CPC | Intent |
+|---|---|---|---|
+| 占い | 673,000 | — | Head term |
+| 占い無料 | 246,000 | — | Free tool |
+| 今日の占い | 246,000 | — | Daily habit |
+| 相性占い | 135,000 | — | Love/compatibility |
+| 当たる占い師 | 49,500 | — | Paid service |
+| 復縁占い | 14,800 | — | Deep emotional |
+| 電話占い | 22,200 | — | Paid service |
+| 横浜中華街 占い | 12,100 | — | Local |
+
+### Fortune Type Popularity (Japan 2026)
+
+| Rank | Fortune Type | Usage Rate | Notes |
+|---|---|---|---|
+| 1 | 星座占い (Western zodiac) | **25.1%** | Maps to existing Vedic-to-Western engine |
+| 2 | おみくじ (Temple lottery) | 16.5% | Physical, not digital |
+| 3 | 血液型占い (Blood type) | ~16% | Japan-unique, no digital tool needed |
+| 4 | タロット占い (Tarot) | ~16% | Different system |
+| 5 | 四柱推命 (Four Pillars) | — | Similar to Korean Saju, new engine needed |
+
+**Key insight:** Western zodiac (星座占い) is #1 and maps directly to our existing calculation engine. No new astrology system required.
+
+### VEIL GSC Search Query Data (Jun 2026, real data)
+
+Top search queries driving traffic to a Japanese fortune site:
+1. 今日の運勢 — 194 clicks
+2. 今日の占い — 112 clicks
+3. 今日の占いランキング — 109 clicks
+4. 今日の占いランキング 星座 — 44 clicks
+5. 誕生日占い — 38 clicks
+6. 今日の運勢ランキング — 33 clicks
+7. 明日の運勢 当たりすぎ 星座 — 33 clicks
+8. 生年月日占い — 32 clicks
+
+**Pattern:** >50% of top queries contain "今日" (today) or "明日" (tomorrow) — fortune is a **daily habit** in Japan.
+
+### Japanese Competitor Landscape
+
+| Competitor | Monthly Traffic | Type | Notes |
+|---|---|---|---|
+| star.cocoloni.jp | 1.4M | Weekly zodiac (石井ゆかり) | 60% direct traffic, loyal audience |
+| honkaku-uranai.jp | 1.1M (Ahrefs) | Portal, multi-method | DR 55, 4.8K pages |
+| cocoloni.jp | 784K | Portal brand | DR 62, multi-占い師 |
+| uranaitv.jp | 692K | Content portal | Entertainment focus |
+| shiitakeuranai.jp | 275K | Zodiac fortune | DR 40, built on personality |
+| uraraca-web.jp | 250K | Service comparison | Editorial, DR 42 |
+| marouge.jp | 212K | Fortune content | DR 40 |
+| horoscope-mimiko.net | 88K | Zodiac horoscope | DR 35, growing +10% |
+
+**No Vedic astrology competitor exists in Japanese.** All competitors use Japanese native fortune systems or Western zodiac without Vedic-grade accuracy.
+
+### Zodiac Sign Names (Japanese)
+
+| English | Japanese | Reading | Notes |
+|---|---|---|---|
+| Aries | 牡羊座 | Ohitsujiza | |
+| Taurus | 牡牛座 | Oushiza | |
+| Gemini | 双子座 | Futagoza | |
+| Cancer | 蟹座 | Kaniza | |
+| Leo | 獅子座 | Shishiza | |
+| Virgo | 乙女座 | Otomeza | |
+| Libra | 天秤座 | Tenbinza | VEIL data: "天秤座 今日の運勢" is a top 20 query |
+| Scorpio | 蠍座 | Sasoriza | #1 searched globally |
+| Sagittarius | 射手座 | Iteza | |
+| Capricorn | 山羊座 | Yagiza | |
+| Aquarius | 水瓶座 | Mizugameza | |
+| Pisces | 魚座 | Uoza | |
+
+### Vedic-to-Japanese Term Mapping
+
+| Vedic Concept | Japanese Term | Reading | Notes |
+|---|---|---|---|
+| Kundli (birth chart) | 星座チャート / ホロスコープ | Seiza Chāto / Horosukōpu | ホロスコープ is more common for technical use |
+| Rashifal (horoscope) | 星座占い / 今日の運勢 | Seiza Uranai / Kyō no Unsei | #1 search pattern |
+| Rashi (sign) | 星座 | Seiza | "Constellation" — standard term |
+| Lagna (Ascendant) | アセンダント | Asendanto | Katakana loan word, standard in JP astrology |
+| Nakshatra | ナクシャトラ（月の星宿） | Nakushatora | Katakana + Japanese gloss |
+| Dashas | 惑星周期 | Wakusei Shūki | "Planetary cycles" |
+| Panchang | 月暦 / 暦 | Tsukigoyomi / Koyomi | "Lunar calendar" |
+| Muhurta | 吉時 | Kichiji | "Auspicious time" |
+| Compatibility | 相性占い | Aishou Uranai | 135K/mo — massive query |
+| Yogas | ヨーガ | Yōga | Katakana, understood in JP spiritual context |
+| Doshas | ドーシャ | Dōsha | Katakana |
+| Graha (planet) | 惑星 | Wakusei | "Planet" |
+| Bhava (house) | ハウス | Hausu | Loanword — standard in JP astrology |
+
+### Keyword Cluster Summary (10 clusters)
+
+| Cluster ID | Head Keyword | Est. Volume (JP) | Priority | Status |
+|---|---|---|---|---|
+| uranai-muryou-ja | 占い無料 | 900K+ | P0 | Gap |
+| kyou-no-unsei-ja | 今日の運勢 | 500K+ | P0 | Gap |
+| seiza-uranai-ja | 星座占い | 200K+ | P0 | Gap |
+| seiza-betsu-unsei-ja | [星座] 今日の運勢 | 360K+ | P1 | Gap |
+| aishou-uranai-ja | 相性占い | 200K+ | P0 | Gap |
+| tanjoubi-uranai-ja | 誕生日占い / 生年月日占い | 60K+ | P1 | Gap |
+| seizan-chaato-ja | ホロスコープ / 出生図 | 80K+ | P1 | Gap |
+| ashita-no-unsei-ja | 明日の運勢 | 150K+ | P1 | Gap |
+| shuukan-getsu-unsei-ja | 週間占い / 月間占い | 80K+ | P2 | Gap |
+| fukuen-renai-ja | 復縁占い / 恋愛占い | 80K+ | P1 | Gap |
+
+**Total new addressable volume: est. 2.6M+ monthly searches**
+
+### Key Strategic Insights
+
+1. **Daily habit pattern:** Fortune search in Japan is a daily ritual, not a one-time event. "今日" (today) and "明日" (tomorrow) queries dominate. This means massive recurring traffic from the same users.
+2. **星座占い is #1 and maps to our engine:** Western zodiac is the most popular fortune type (25.1%), and it maps directly to our Vedic-to-Western bridge — same calculation, Japanese presentation layer.
+3. **Love dominates paid conversion:** 85% of paid fortune usage is love/relationship. Free zodiac tools → love compatibility → premium features is the proven Japanese conversion funnel.
+4. **No Vedic competitor:** Zero Japanese-language sites offer Vedic astrology with NASA-grade ephemeris. We would be the only one.
+5. **Ranking format drives engagement:** "ランキング" (ranking) is a recurring modifier — Japanese users want their sign ranked 1-12. This is a unique UX consideration for /ja/ pages.
+6. **Six占術/算命学 dominate PV:** VEIL data shows 六星占術 (26% of PV) and 算命学 (4.3%) are birth-date-based tools — same input pattern as Kundli. Users already expect "enter birthday → get result" UX.
+
+### Additional Data Sources (Japanese Market Research)
+
+- [search-engine-pirates.co.jp: 占い事業のSEO対策を検索データで完全分析](https://search-engine-pirates.co.jp/column/seo-know-how/fortune-telling-seo/) — ラッコキーワード Oct 2026 data, 占い 673K/mo, 占い無料 246K/mo, 相性占い 135K/mo
+- [VEIL: 占いはどんなキーワードで検索されているのか (Jun 2026)](https://masanosuke.net/uranai-guide/uranai-search-keyword-data-2026/) — GSC real data, top 20 queries, daily habit pattern
+- [VEIL: 占い人気ランキング2026 (Jun 2026)](https://masanosuke.net/uranai-guide/uranai-ninki-ranking-2026/) — 72K PV analysis, 六星占術 #1 (26%), 星座占い #2 (9.5%)
+- [占いコンパス: 日本の占い市場規模1兆円](https://uranai-compass.com/articles/japan-fortune-market-2026) — 星座占い 25.1% usage #1, ¥997B market
+- [矢野経済研究所: 占い・スピリチュアル関連ビジネス市場調査 (2024)](https://www.yano.co.jp/press-release/show/press_id/3662) — ¥997B service market, ¥4.24T spiritual market, 90% female, 85% love
+- [HINOTORI WORKS: 占いサービス市場レポート 2026](https://hinotori-works.com/report/fortune-online-market-2026/) — Web media ¥372B, face-to-face ¥287B, telephone ¥216B
+- [InstantFortune: 2026 Global Horoscope Trends (JP)](https://getfortuneai.com/ja/insights/2026-zodiac-search-trends) — Japan entry: "今日の運勢", "星座占い"
+- [Similarweb: star.cocoloni.jp Sep 2026](https://www.similarweb.com/website/star.cocoloni.jp/) — 1.4M/mo, 94.5% Japan, 3.44 pages/visit
+- [Similarweb: cocoloni.me Sep 2026](https://www.similarweb.com/website/cocoloni.me/) — 93K/mo, 79.5% organic search
+- [AhrefsTop: cocoloni.jp competitors](https://ahrefstop.com/websites/cocoloni.jp/competitors) — honkaku-uranai.jp 1.1M, cocoloni.jp 725K
+- [マイベスト: 占いサイトのおすすめ人気ランキング Oct 2026](https://my-best.com/4797) — しいたけ占い #1, 石井ゆかり #2, LINE占い #8

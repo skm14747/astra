@@ -32,21 +32,21 @@ export default function CareerPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="glass-card rounded-2xl p-6">
-          <h2 className="font-semibold text-zinc-100 text-lg mb-4">10th House</h2>
+          <h2 className="font-semibold text-zinc-100 text-lg mb-4">{t('career.tenthHouse')}</h2>
           <div className="space-y-3 text-sm">
-            <div className="flex justify-between"><span className="text-zinc-400">10th Lord</span><span className="text-zinc-200">{career.tenthLord}</span></div>
-            <div className="flex justify-between"><span className="text-zinc-400">10th Lord House</span><span className="text-zinc-200">House {career.tenthLordHouse}</span></div>
-            <div className="flex justify-between"><span className="text-zinc-400">10th Lord Dignity</span><span className="text-zinc-200 capitalize">{career.tenthLordDignity}</span></div>
-            <div className="flex justify-between"><span className="text-zinc-400">Planets in 10th</span><span className="text-zinc-200">{career.planetsInTenth.length > 0 ? career.planetsInTenth.map(p => `${PLANET_GLYPH[p]} ${p}`).join(', ') : 'None'}</span></div>
+            <div className="flex justify-between"><span className="text-zinc-400">{t('career.tenthLord')}</span><span className="text-zinc-200">{career.tenthLord}</span></div>
+            <div className="flex justify-between"><span className="text-zinc-400">{t('career.tenthLordHouse')}</span><span className="text-zinc-200">{t('rpt.th.house')} {career.tenthLordHouse}</span></div>
+            <div className="flex justify-between"><span className="text-zinc-400">{t('career.tenthLordDignity')}</span><span className="text-zinc-200 capitalize">{career.tenthLordDignity}</span></div>
+            <div className="flex justify-between"><span className="text-zinc-400">{t('career.planetsInTenth')}</span><span className="text-zinc-200">{career.planetsInTenth.length > 0 ? career.planetsInTenth.map(p => `${PLANET_GLYPH[p]} ${p}`).join(', ') : t('rpt.none')}</span></div>
           </div>
         </div>
 
         <div className="glass-card rounded-2xl p-6">
-          <h2 className="font-semibold text-zinc-100 text-lg mb-4">Career Indicators</h2>
+          <h2 className="font-semibold text-zinc-100 text-lg mb-4">{t('career.indicators')}</h2>
           <div className="space-y-3 text-sm">
-            <div className="flex justify-between"><span className="text-zinc-400">Amatyakaraka</span><span className="text-zinc-200">{PLANET_GLYPH[career.amatyakaraka]} {career.amatyakaraka}</span></div>
-            <div className="flex justify-between"><span className="text-zinc-400">Career Domain</span><span className="text-cyan-400">{career.amatyakarakaCareer}</span></div>
-            <div className="flex justify-between"><span className="text-zinc-400">D10 Strength</span><span className="text-zinc-200">{career.d10Strength}</span></div>
+            <div className="flex justify-between"><span className="text-zinc-400">{t('career.amatyakaraka')}</span><span className="text-zinc-200">{PLANET_GLYPH[career.amatyakaraka]} {career.amatyakaraka}</span></div>
+            <div className="flex justify-between"><span className="text-zinc-400">{t('career.domain')}</span><span className="text-cyan-400">{career.amatyakarakaCareer}</span></div>
+            <div className="flex justify-between"><span className="text-zinc-400">{t('career.d10Strength')}</span><span className="text-zinc-200">{career.d10Strength}</span></div>
           </div>
         </div>
       </div>

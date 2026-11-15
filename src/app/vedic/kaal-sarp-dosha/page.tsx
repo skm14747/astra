@@ -41,7 +41,7 @@ export default function KaalSarpDoshaPage() {
   if (!chart) {
     return (
       <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-        <EmptyState icon="🐍" title="Kaal Sarp Dosha Calculator" description="Create your birth chart to check Kaal Sarp Dosha status and type." />
+        <EmptyState icon="🐍" title={t('kaalSarp.title')} description={t('kaalSarp.subtitle')} />
         <SeoIntro headingKey={'seo.yogas.heading'} textKey={'seo.yogas.text'} fallbackHeading={seo.seoIntro.heading} fallbackText={seo.seoIntro.text} />
         {seo.relatedTools && <RelatedTools tools={seo.relatedTools} />}
       </div>
@@ -55,8 +55,8 @@ export default function KaalSarpDoshaPage() {
         <div className="zodiac-divider mb-3">
           <span className="text-xs text-purple-400/40">☊ ✦ ☋</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Kaal Sarp Dosha Calculator</h1>
-        <p className="text-zinc-400 mt-1">Check Kaal Sarp Yog from your birth chart</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('kaalSarp.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('kaalSarp.subtitle')}</p>
       </div>
 
       {/* Status card */}
@@ -68,17 +68,17 @@ export default function KaalSarpDoshaPage() {
             <span className="text-4xl">{result.isActive ? '🐍' : '🟢'}</span>
             <div>
               <h2 className="text-xl font-display font-bold text-white">
-                {result.isActive ? 'Kaal Sarp Dosha Present' : 'No Kaal Sarp Dosha'}
+                {result.isActive ? t('kaalSarp.present') : t('kaalSarp.notPresent')}
               </h2>
               <p className="text-zinc-400 mt-1">{result.description}</p>
               {result.type && result.isActive && (
-                <p className="text-purple-400/80 mt-2 text-sm">🔮 Type: {result.type}</p>
+                <p className="text-purple-400/80 mt-2 text-sm">🔮 {t('kaalSarp.type')}: {result.type}</p>
               )}
               {result.severity && result.isActive && (
                 <span className={`inline-block mt-2 planet-badge ${
                   result.severity === 'severe' ? '!bg-red-500/12 !border-red-500/20 !text-red-400' : '!bg-yellow-500/12 !border-yellow-500/20 !text-yellow-400'
                 }`}>
-                  {result.severity === 'severe' ? 'Full Kaal Sarp' : 'Partial Kaal Sarp'}
+                  {result.severity === 'severe' ? t('kaalSarp.full') : t('kaalSarp.partial')}
                 </span>
               )}
               {result.cancellation && (
@@ -92,30 +92,30 @@ export default function KaalSarpDoshaPage() {
       {/* Rahu-Ketu axis */}
       {chart && (
         <section>
-          <h2 className="section-title mb-4">Rahu-Ketu Axis</h2>
+          <h2 className="section-title mb-4">{t('kaalSarp.axis')}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="glass-card rounded-2xl p-5">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-lg">☊</div>
                 <div>
-                  <div className="text-sm font-semibold text-zinc-300">Rahu (North Node)</div>
-                  <div className="text-xs text-zinc-500">House {chart.planets.Rahu.house} • {chart.planets.Rahu.rashiName}</div>
+                  <div className="text-sm font-semibold text-zinc-300">Rahu ({t('rpt.th.house')} {chart.planets.Rahu.house})</div>
+                  <div className="text-xs text-zinc-500">{chart.planets.Rahu.rashiName} · {chart.planets.Rahu.degree.toFixed(1)}°</div>
                 </div>
               </div>
-                  <div className="text-xs text-zinc-500">
-                Rahu amplifies desires and creates obsession in house {chart.planets.Rahu.house} matters.
+              <div className="text-xs text-zinc-400">
+                {t('kaalSarp.rahuDesc', { h: chart.planets.Rahu.house })}
               </div>
             </div>
             <div className="glass-card rounded-2xl p-5">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-lg">☋</div>
                 <div>
-                  <div className="text-sm font-semibold text-zinc-300">Ketu (South Node)</div>
-                  <div className="text-xs text-zinc-500">House {chart.planets.Ketu.house} • {chart.planets.Ketu.rashiName}</div>
+                  <div className="text-sm font-semibold text-zinc-300">Ketu ({t('rpt.th.house')} {chart.planets.Ketu.house})</div>
+                  <div className="text-xs text-zinc-500">{chart.planets.Ketu.rashiName} · {chart.planets.Ketu.degree.toFixed(1)}°</div>
                 </div>
               </div>
-              <div className="text-xs text-zinc-500">
-                Ketu brings detachment and spiritual growth in house {chart.planets.Ketu.house} matters.
+              <div className="text-xs text-zinc-400">
+                {t('kaalSarp.ketuDesc', { h: chart.planets.Ketu.house })}
               </div>
             </div>
           </div>
@@ -143,7 +143,7 @@ export default function KaalSarpDoshaPage() {
 
       {/* 12 Types reference */}
       <section>
-        <h2 className="section-title mb-4">All 12 Types of Kaal Sarp Dosha</h2>
+        <h2 className="section-title mb-4">{t('kaalSarp.types')}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
           {Object.entries(KAAL_SARP_TYPES_INFO).map(([house, info]) => (
             <div key={house} className={`glass-card rounded-xl px-4 py-3 ${
@@ -162,7 +162,7 @@ export default function KaalSarpDoshaPage() {
       {/* Remedies */}
       {result?.isActive && (
         <section>
-          <h2 className="section-title mb-4">Recommended Remedies</h2>
+          <h2 className="section-title mb-4">{t('kaalSarp.remedies')}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
               { icon: '🕉️', title: 'Kaal Sarp Puja', text: 'Perform Kaal Sarp Dosha Nivaran Puja at Trimbakeshwar, Ujjain, or any Nag temple on Nag Panchami or during Rahu-Kaal.' },

@@ -48,9 +48,9 @@ export default function AshtakavargaPage() {
         const minIdx = data.av.sav.indexOf(Math.min(...data.av.sav));
         return (
           <div className="flex gap-3 flex-wrap">
-            <span className="planet-badge">Total SAV: {totalSav}</span>
-            <span className="planet-badge !bg-emerald-500/12 !border-emerald-500/20 !text-emerald-400">Strongest: {RASHI_NAMES[maxIdx]} ({data.av.sav[maxIdx]})</span>
-            <span className="planet-badge !bg-red-500/12 !border-red-500/20 !text-red-400">Weakest: {RASHI_NAMES[minIdx]} ({data.av.sav[minIdx]})</span>
+            <span className="planet-badge">{t('ashtakavarga.totalSav', { n: totalSav })}</span>
+            <span className="planet-badge !bg-emerald-500/12 !border-emerald-500/20 !text-emerald-400">{t('ashtakavarga.strongest', { sign: RASHI_NAMES[maxIdx], n: data.av.sav[maxIdx] })}</span>
+            <span className="planet-badge !bg-red-500/12 !border-red-500/20 !text-red-400">{t('ashtakavarga.weakest', { sign: RASHI_NAMES[minIdx], n: data.av.sav[minIdx] })}</span>
           </div>
         );
       })()}

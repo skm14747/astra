@@ -132,7 +132,7 @@ export default function DashasPage() {
               <div className="section-title mb-3">{t('dashas.currentPeriod')}</div>
               <p className="text-xl text-zinc-100">
                 <span className="text-2xl mr-2 drop-shadow-[0_0_8px_rgba(124,92,252,0.4)]">{PLANET_GLYPH[current.maha.lord]}</span>
-                <strong>{current.maha.lord}</strong> Mahadasha
+                <strong>{current.maha.lord}</strong> {t('print.mahadasha')}
                 {current.antar && <> → <span className="mr-1">{PLANET_GLYPH[current.antar.lord]}</span><strong>{current.antar.lord}</strong></>}
                 {current.pratyantar && <> → <strong>{current.pratyantar.lord}</strong></>}
               </p>

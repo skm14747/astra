@@ -12,7 +12,7 @@ alwaysApply: true
 | **Tier 1** | India, Nepal, South Africa | Vedic (Kundli, Nakshatra, Dasha, Panchang) | Hindi + English bilingual, Devanagari in titles |
 | **Tier 2** | Thailand, Sri Lanka, Bangladesh | Vedic + local horoscope traditions | English + local language SEO |
 | **Tier 3** | Philippines, Nigeria, Kenya | Zodiac signs, horoscopes, love predictions | English, daily horoscope focus |
-| **Tier 4** | Singapore, Malaysia, South Korea, Japan | Chinese astrology, Saju, Four Pillars | English, consider zh/ko/ja future |
+| **Tier 4** | Singapore, Malaysia, South Korea, Japan | Chinese astrology, Saju, Four Pillars / Western zodiac (JP) | English, ja locale live, consider zh/ko future |
 | **Tier 5** | Brazil, Mexico, Argentina | Western astrology, zodiac, birth charts | English + Spanish/Portuguese future |
 
 ## Engagement Data (Pew Research 2025, based on 2024 survey)
@@ -27,7 +27,7 @@ Nigeria 20%, South Korea 20%, Sri Lanka 20%, Japan 19%, Singapore 19%.
 3. **Career > Marriage**: Career astrology is 39% of India queries vs 24% for marriage (Ishvaram 351K conversations). Prioritize career content.
 4. **Don't assume one system globally**: Vedic for India/Nepal/Sri Lanka/Bangladesh, Western zodiac for Africa/LatAm, Chinese for East/Southeast Asia.
 5. **South Africa opportunity**: 47% engagement but few Vedic astrology competitors. English content works. Target Western + Vedic hybrid content.
-6. **hreflang**: Currently en/hi/ne/pt/x-default. When adding new locales (es next), ensure reciprocal hreflang pairs.
+6. **hreflang**: Currently en/hi/ne/pt/es/ja/x-default (7 locales). When adding new locales, ensure reciprocal hreflang pairs.
 7. **Festival spikes**: Indian festivals (Navratri, Diwali, Chhath) drive traffic spikes 1-2 weeks before. Plan seasonal content.
 8. **Wedding season**: Indian wedding muhurats (Nov-Feb, Apr-Jun) drive "vivah muhurat" queries. Time content accordingly.
 
@@ -56,6 +56,19 @@ Nigeria 20%, South Korea 20%, Sri Lanka 20%, Japan 19%, Singapore 19%.
 | compatibilidad zodiacal | 4.4K | $0.05 | /es/vedic/compatibility |
 | horóscopo chino | 4.4K | $1.87 | /es/chinese-zodiac (future) |
 
+## Keyword Volume Reference (Japanese — Japan)
+
+| Keyword (JP) | Volume | Target |
+|---|---|---|
+| 占い | 673K | /ja/ |
+| 占い無料 | 246K | /ja/ |
+| 今日の占い | 246K | /ja/horoscope/today (gap) |
+| 相性占い | 135K | /ja/vedic/compatibility |
+| 星座占い | est. 90K+ | /ja/horoscope/signs (gap) |
+| 誕生日占い | est. 60K+ | /ja/vedic/kundli |
+| ホロスコープ | est. 40K+ | /ja/vedic/kundli |
+| 当たる占い師 | 49.5K | N/A (paid service) |
+
 ## Content Localization Guidelines
 
 - **India/Nepal**: Use Sanskrit terms (Kundli, Nakshatra, Tithi) as primary, with English explanations
@@ -63,4 +76,5 @@ Nigeria 20%, South Korea 20%, Sri Lanka 20%, Japan 19%, Singapore 19%.
 - **Bangladesh/Sri Lanka**: Vedic terms work, English content acceptable
 - **Brazil**: Portuguese Western terms (mapa astral, horóscopo, compatibilidade). See /pt/ locale.
 - **Mexico/Argentina/Spain/LatAm**: Spanish Western terms. "Carta astral" in Spain/Mexico, "carta natal" in Argentina. Love + Chinese horoscope dominant in Argentina. 97% mobile traffic.
+- **Japan**: Western zodiac terms (星座占い, ホロスコープ, アセンダント). Katakana for Vedic loanwords. Daily fortune (今日の運勢) is a habit search — ranking format expected. Love queries = 85% of paid fortune usage.
 - **Global English**: Always have English as the canonical version

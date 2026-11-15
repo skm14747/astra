@@ -101,14 +101,14 @@ export default function KundliPage() {
           <table className="w-full text-sm">
             <thead>
               <tr className="text-zinc-400 text-[11px] uppercase tracking-wider border-b border-violet-500/[0.06]">
-                <th className="text-left py-3 px-6 font-medium">Planet</th>
-                <th className="text-left py-3 px-3 font-medium">Sign</th>
-                <th className="text-left py-3 px-3 font-medium">Degree</th>
-                <th className="text-left py-3 px-3 font-medium">Nakshatra</th>
-                <th className="text-left py-3 px-3 font-medium">Pada</th>
-                <th className="text-left py-3 px-3 font-medium">House</th>
-                <th className="text-left py-3 px-3 font-medium">Dignity</th>
-                <th className="text-left py-3 px-3 font-medium">R</th>
+                <th className="text-left py-3 px-6 font-medium">{t('kundli.planet')}</th>
+                <th className="text-left py-3 px-3 font-medium">{t('kundli.sign')}</th>
+                <th className="text-left py-3 px-3 font-medium">{t('kundli.degree')}</th>
+                <th className="text-left py-3 px-3 font-medium">{t('panchang.nakshatra')}</th>
+                <th className="text-left py-3 px-3 font-medium">{t('panchang.pada')}</th>
+                <th className="text-left py-3 px-3 font-medium">{t('kundli.house')}</th>
+                <th className="text-left py-3 px-3 font-medium">{t('kundli.dignity')}</th>
+                <th className="text-left py-3 px-3 font-medium">{t('kundli.retrograde')?.slice(0, 1) || 'R'}</th>
               </tr>
             </thead>
             <tbody>

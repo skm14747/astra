@@ -16,6 +16,7 @@ export const metadata: Metadata = {
       'ne': '/ne/blog',
       'pt': '/pt/blog',
       'es': '/es/blog',
+      'ja': '/ja/blog',
       'x-default': '/blog',
     },
   },

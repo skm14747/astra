@@ -833,5 +833,153 @@
     "priority": "P2",
     "status": "gap",
     "notes": "'Big Three' (Sol, Luna, Ascendente) is a trending concept in Spanish-language astrology. lunaika.com and astromapia.com both prominently display Big Three. Maps directly to Kundli output. Gen Z driver — Instagram astrology culture uses Big Three as identity markers."
+  },
+
+  {
+    "id": "uranai-muryou-ja",
+    "head": "占い無料 (free fortune telling)",
+    "keywords": [
+      "占い", "占い無料", "占い 無料", "無料占い", "当たる占い 無料",
+      "占い 当たる", "占い 無料 当たる"
+    ],
+    "volume_range": "占い 673K/mo; 占い無料 246K/mo; cluster total est. 900K+ JP",
+    "dominant_type": "tool",
+    "target_url": "/ja/",
+    "priority": "P0",
+    "status": "gap",
+    "notes": "Head term for the entire Japanese fortune market. 55 of top 100 '占い' sub-queries are free fortune queries (search-engine-pirates.co.jp 2026). 占い is 673K/mo, 占い無料 is 246K/mo (ラッコキーワード Oct 2026). Competitors: star.cocoloni.jp (1.4M/mo), honkaku-uranai.jp (1.1M/mo), cocoloni.jp (784K/mo). No Vedic astrology competitors in Japanese."
+  },
+  {
+    "id": "kyou-no-unsei-ja",
+    "head": "今日の運勢 (today's fortune)",
+    "keywords": [
+      "今日の運勢", "今日の占い", "今日の占いランキング",
+      "今日の運勢ランキング", "今日の運勢 当たる",
+      "今日の運勢 当たる 星座", "今日の12星座占い", "今日占い"
+    ],
+    "volume_range": "今日の占い 246K/mo; cluster total est. 500K+ JP",
+    "dominant_type": "content",
+    "target_url": "/ja/horoscope/today",
+    "priority": "P0",
+    "status": "gap",
+    "notes": "DAILY HABIT QUERY — #1 search pattern in Japanese fortune market. VEIL GSC data: 今日の運勢 is the top query (194 clicks even on a small site). 'Today/tomorrow' queries account for >50% of top 20 fortune queries. Users search daily — massive recurring traffic. Generate from existing transit engine with Japanese presentation."
+  },
+  {
+    "id": "seiza-uranai-ja",
+    "head": "星座占い (zodiac fortune)",
+    "keywords": [
+      "星座占い", "星座占いランキング", "12星座占い",
+      "星座占い 今日", "星座占い 無料", "星座 運勢",
+      "明日の運勢 当たりすぎ 星座"
+    ],
+    "volume_range": "星座占い est. 90K+/mo JP; cluster total est. 200K+",
+    "dominant_type": "content",
+    "target_url": "/ja/horoscope/signs",
+    "priority": "P0",
+    "status": "gap",
+    "notes": "星座占い is THE dominant fortune type in Japan — 25.1% usage rate (#1 per uranai-compass.com 2026). VEIL data: zodiac queries dominate both single and compound keywords. Maps directly to existing Vedic-to-Western bridge engine. shiitakeuranai.jp (275K/mo) built entire brand on zodiac fortune content."
+  },
+  {
+    "id": "seiza-betsu-unsei-ja",
+    "head": "[星座] 今日の運勢 (per-sign daily fortune)",
+    "keywords": [
+      "牡羊座 今日の運勢", "牡牛座 今日の運勢", "双子座 今日の運勢",
+      "蟹座 今日の運勢", "獅子座 今日の運勢", "乙女座 今日の運勢",
+      "天秤座 今日の運勢", "蠍座 今日の運勢", "射手座 今日の運勢",
+      "山羊座 今日の運勢", "水瓶座 今日の運勢", "魚座 今日の運勢"
+    ],
+    "volume_range": "天秤座 今日の運勢 14 clicks even on small VEIL site; est. 30K+ per sign; 12 signs x 30K = 360K+ JP",
+    "dominant_type": "content",
+    "target_url": "/ja/horoscope/[seiza]",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "12 per-sign daily fortune pages in Japanese. Same calculation engine, Japanese zodiac sign names in URLs. cocoloni.me (93K/mo) ranks for 12星座ランキング format. Pattern matches existing /horoscope/[sign] gap pages."
+  },
+  {
+    "id": "aishou-uranai-ja",
+    "head": "相性占い (compatibility fortune)",
+    "keywords": [
+      "相性占い", "相性占い 無料", "相性占い 生年月日",
+      "相性占い 名前", "カップル 相性占い", "恋愛相性占い",
+      "相性 診断"
+    ],
+    "volume_range": "相性占い 135K/mo JP; cluster total est. 200K+",
+    "dominant_type": "tool",
+    "target_url": "/ja/vedic/compatibility",
+    "priority": "P0",
+    "status": "gap",
+    "notes": "Third-largest fortune query in Japan. 135K/mo for exact match (search-engine-pirates.co.jp Oct 2026). 85% of fortune service usage is love/relationship (Yano Research 2024). Maps directly to Kundli Milan / Ashtakoota engine. Massive conversion potential — love queries drive the Japanese fortune market."
+  },
+  {
+    "id": "tanjoubi-uranai-ja",
+    "head": "誕生日占い / 生年月日占い (birthday fortune)",
+    "keywords": [
+      "誕生日占い", "生年月日占い", "誕生日占い 無料",
+      "生年月日 占い 無料", "生年月日 性格",
+      "誕生日 運勢", "誕生日 相性"
+    ],
+    "volume_range": "誕生日占い 38 clicks on small VEIL site; est. 60K+/mo JP",
+    "dominant_type": "tool",
+    "target_url": "/ja/vedic/kundli",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Birth date-based fortune is a core query pattern in Japan. VEIL data: 誕生日占い (#5, 38 clicks) and 生年月日占い (#8, 32 clicks) in top 20. Maps perfectly to Kundli (birth chart) calculator — enter birth date, get chart. 'Stable demand' per VEIL analysis. Six占術 and 算命学 also birth-date-based (competitors)."
+  },
+  {
+    "id": "seizan-chaato-ja",
+    "head": "星座チャート / 出生図 (birth chart / natal chart)",
+    "keywords": [
+      "ホロスコープ", "ホロスコープ 無料", "出生図",
+      "ネイタルチャート", "ネイタルチャート 無料",
+      "ホロスコープ 作成 無料", "アセンダント 調べ方"
+    ],
+    "volume_range": "ホロスコープ est. 40K+/mo JP; cluster total est. 80K+",
+    "dominant_type": "tool",
+    "target_url": "/ja/vedic/kundli",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Western astrology practitioners in Japan use ホロスコープ (horoscope) for birth chart. This is the more technical audience — astrology enthusiasts who want detailed chart analysis. Maps directly to Kundli page with Japanese terminology. アセンダント (Ascendant) is already a standard Japanese astrology loanword."
+  },
+  {
+    "id": "ashita-no-unsei-ja",
+    "head": "明日の運勢 (tomorrow's fortune)",
+    "keywords": [
+      "明日の運勢", "明日の占い", "明日の運勢 当たりすぎ 星座",
+      "明日の運勢 星座", "明日の占い ランキング"
+    ],
+    "volume_range": "明日の運勢 est. 100K+/mo JP; cluster total est. 150K+",
+    "dominant_type": "content",
+    "target_url": "/ja/horoscope/tomorrow",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Second daily-habit query. VEIL data: 明日の運勢 at #13 (20 clicks) and 明日の運勢 当たりすぎ 星座 at #7 (33 clicks). 'Tomorrow' queries show evening search behavior — users checking fortune before bed. Same engine as today's fortune, shifted by 1 day."
+  },
+  {
+    "id": "shuukan-getsu-unsei-ja",
+    "head": "週間占い / 月間占い (weekly/monthly fortune)",
+    "keywords": [
+      "今週の運勢", "今月の運勢", "週間占い", "月間占い",
+      "来週の運勢", "今週の占い 星座", "2027年 運勢"
+    ],
+    "volume_range": "est. 80K+ combined JP",
+    "dominant_type": "content",
+    "target_url": "/ja/horoscope/weekly",
+    "priority": "P2",
+    "status": "gap",
+    "notes": "Weekly and monthly fortune content builds recurring traffic beyond daily. star.cocoloni.jp (石井ゆかり) built 1.4M/mo traffic primarily on weekly zodiac readings. New Year 2027年運勢 queries spike 3x in January. Seasonal content calendar drives engagement."
+  },
+  {
+    "id": "fukuen-renai-ja",
+    "head": "復縁占い / 恋愛占い (love/reunion fortune)",
+    "keywords": [
+      "復縁占い", "恋愛占い", "恋愛占い 無料", "片思い占い",
+      "結婚占い", "運命の人 占い", "恋占い"
+    ],
+    "volume_range": "復縁占い 14.8K/mo; 恋愛占い est. 40K+; cluster total est. 80K+",
+    "dominant_type": "content + tool",
+    "target_url": "/ja/horoscope/love",
+    "priority": "P1",
+    "status": "gap",
+    "notes": "Love is THE dominant vertical in Japanese fortune market — 85% of paid fortune usage is love/relationship (Yano Research 2024). 復縁占い (reunion fortune) at 14.8K/mo shows deep emotional intent. Maps to 7th house analysis + Venus placement + compatibility engine. High conversion potential."
   }
 ]

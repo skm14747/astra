@@ -35,7 +35,7 @@ export default function MangalDoshaPage() {
   if (!chart) {
     return (
       <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-        <EmptyState icon="♂" title="Mangal Dosha Calculator" description="Create your birth chart to check Mangal Dosha (Manglik) status." />
+        <EmptyState icon="♂" title={t('mangalDosha.title')} description={t('mangalDosha.subtitle')} />
         <SeoIntro headingKey={'seo.yogas.heading'} textKey={'seo.yogas.text'} fallbackHeading={seo.seoIntro.heading} fallbackText={seo.seoIntro.text} />
         {seo.relatedTools && <RelatedTools tools={seo.relatedTools} />}
       </div>
@@ -49,8 +49,8 @@ export default function MangalDoshaPage() {
         <div className="zodiac-divider mb-3">
           <span className="text-xs text-red-400/40">♂ ✦ ♂</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Mangal Dosha Calculator</h1>
-        <p className="text-zinc-400 mt-1">Check Manglik status from your birth chart</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('mangalDosha.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('mangalDosha.subtitle')}</p>
       </div>
 
       {/* Status card */}
@@ -62,11 +62,11 @@ export default function MangalDoshaPage() {
             <span className="text-4xl">{result.isActive ? '🔴' : result.cancellation ? '🟡' : '🟢'}</span>
             <div>
               <h2 className="text-xl font-display font-bold text-white">
-                {result.isActive ? 'Mangal Dosha Present' : result.cancellation ? 'Mangal Dosha Cancelled' : 'No Mangal Dosha'}
+                {result.isActive ? t('mangalDosha.present') : result.cancellation ? t('mangalDosha.cancelled') : t('mangalDosha.notPresent')}
               </h2>
               <p className="text-zinc-400 mt-1">{result.description}</p>
               {result.cancellation && (
-                <p className="text-yellow-400/80 mt-2 text-sm">⚡ Cancellation: {result.cancellation}</p>
+                <p className="text-yellow-400/80 mt-2 text-sm">⚡ {t('mangalDosha.cancellation')}: {result.cancellation}</p>
               )}
             </div>
           </div>
@@ -75,14 +75,14 @@ export default function MangalDoshaPage() {
 
       {/* Mars placement */}
       <section>
-        <h2 className="section-title mb-4">Mars Placement Analysis</h2>
+        <h2 className="section-title mb-4">{t('mangalDosha.placement')}</h2>
         <div className="glass-card rounded-2xl p-5">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-2xl">♂</div>
             <div>
-              <div className="text-lg font-display font-bold text-white">Mars in House {marsHouse}</div>
+              <div className="text-lg font-display font-bold text-white">{t('mangalDosha.marsInHouse', { h: marsHouse })}</div>
               <div className="text-sm text-zinc-400">
-                {MANGLIK_HOUSES.includes(marsHouse) ? 'Manglik house' : 'Non-Manglik house'}
+                {MANGLIK_HOUSES.includes(marsHouse) ? t('mangalDosha.isManglikHouse') : t('mangalDosha.isNonManglikHouse')}
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function MangalDoshaPage() {
 
       {/* House grid */}
       <section>
-        <h2 className="section-title mb-4">Manglik Houses Overview</h2>
+        <h2 className="section-title mb-4">{t('mangalDosha.housesOverview')}</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
           {MANGLIK_HOUSES.map(h => (
             <div key={h} className={`glass-card rounded-xl p-4 ${marsHouse === h ? 'ring-1 ring-red-500/40 bg-red-500/5' : ''}`}>
@@ -120,7 +120,7 @@ export default function MangalDoshaPage() {
       {/* Remedies section */}
       {result?.isActive && (
         <section>
-          <h2 className="section-title mb-4">Recommended Remedies</h2>
+          <h2 className="section-title mb-4">{t('mangalDosha.remedies')}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
               { icon: '💎', title: 'Gemstone', text: 'Wear a Red Coral (Moonga) in gold ring on the ring finger on Tuesday morning.' },

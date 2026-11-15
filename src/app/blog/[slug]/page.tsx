@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         'ne': `/ne/blog/${post.slug}`,
         'pt': `/pt/blog/${post.slug}`,
         'es': `/es/blog/${post.slug}`,
+        'ja': `/ja/blog/${post.slug}`,
         'x-default': `/blog/${post.slug}`,
       },
     },

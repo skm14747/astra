@@ -7,7 +7,7 @@ import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
 import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
-import { useT } from '@/lib/i18n';
+import { useT, type TranslationKey } from '@/lib/i18n';
 
 const typeConfig: Record<string, { icon: string; accent: string }> = {
   gemstone: { icon: '💎', accent: 'border-blue-500/20' },
@@ -53,15 +53,15 @@ export default function RemediesPage() {
         return (
           <>
             <div className="flex gap-3 flex-wrap">
-              {highCount > 0 && <span className="planet-badge !bg-red-500/12 !border-red-500/20 !text-red-400">{highCount} High priority</span>}
-              <span className="planet-badge">{remedies.length} Total remedies</span>
+              {highCount > 0 && <span className="planet-badge !bg-red-500/12 !border-red-500/20 !text-red-400">{t('remedies.highPriority', { n: highCount })}</span>}
+              <span className="planet-badge">{t('remedies.totalRemedies', { n: remedies.length })}</span>
             </div>
 
             {grouped.map(group => {
               const cfg = typeConfig[group.type] || { icon: '✦', accent: '' };
               return (
                 <div key={group.type}>
-                  <div className="section-title mb-3">{cfg.icon} {group.type}</div>
+                  <div className="section-title mb-3">{cfg.icon} {t(('remedies.' + group.type) as TranslationKey)}</div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {group.items.map((r, i) => (
                       <div key={i} className={`glass-card rounded-xl p-5 ${cfg.accent} ${r.priority === 'high' ? 'vedic-glow' : ''}`}>

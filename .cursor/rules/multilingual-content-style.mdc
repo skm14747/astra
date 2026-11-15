@@ -1,5 +1,5 @@
 ---
-description: Multilingual content and i18n standards — independent language review, native phrasing and paragraphs, avoiding literal translation across all supported locales (hi, ne, pt, en).
+description: Multilingual content and i18n standards — independent language review, native phrasing and paragraphs, avoiding literal translation across all supported locales (hi, ne, pt, es, ja, en).
 globs: src/lib/i18n/*.ts
 alwaysApply: false
 ---
@@ -9,7 +9,7 @@ alwaysApply: false
 ## Core Principle: Independent Language Crafting
 
 **Never treat any language as a sentence-by-sentence translation of English.**
-Each supported language (`hi` Hindi, `ne` Nepali, `pt` Portuguese, `en` English) must be crafted independently as a first-class language, respecting its own syntax, idioms, cultural worldview, and astrological tradition.
+Each supported language (`hi` Hindi, `ne` Nepali, `pt` Portuguese, `es` Spanish, `ja` Japanese, `en` English) must be crafted independently as a first-class language, respecting its own syntax, idioms, cultural worldview, and astrological tradition.
 
 - **It does not have to be an exact translation.**
 - **Use language-native phrases, idioms, and natural paragraph structures.**
@@ -43,6 +43,30 @@ Each supported language (`hi` Hindi, `ne` Nepali, `pt` Portuguese, `en` English)
   - `Sinastria Matrimonial (36 Pontos Ashtakoota)`.
   - `Ciclos Planetários (Vimshottari Dasha)`.
 - **Natural syntax**: Construct flowing Portuguese sentences with evocative vocabulary (`jornada de alma`, `alinhamento cósmico`, `propósito de vida`, `sinastria`).
+
+### 4. Spanish (`es.ts`) — Latin American & Iberian Astrology Culture
+- **Tone**: Warm, accessible, and mystical — speaking to the vibrant astrology communities of Mexico, Argentina, Colombia, and Spain.
+- **Native terms**:
+  - `Carta natal` / `Carta astral` (regional variation: "carta astral" in Spain/Mexico, "carta natal" in Argentina).
+  - `Ascendente` for Lagna — same as Portuguese.
+  - `Sinastría` for two-chart compatibility comparison.
+  - `Horóscopo diario` for daily horoscope content.
+  - `Compatibilidad de signos` for zodiac compatibility.
+- **Regional awareness**: Spanish varies significantly. Use neutral Latin American Spanish as default. Avoid Spain-only expressions.
+- **Natural syntax**: Use natural, flowing Spanish with evocative vocabulary (`destino cósmico`, `carta del cielo`, `energía planetaria`).
+
+### 5. Japanese (`ja.ts`) — 星座占い / Western Zodiac Tradition
+- **Tone**: Polished, trustworthy, and slightly formal — like a respected 占い師 speaking to a seeker. Use です/ます (polite) form throughout.
+- **Native terms**:
+  - `星座チャート` / `ホロスコープ` for birth chart (ホロスコープ is the standard Japanese astrology loanword).
+  - `アセンダント` (Katakana loan from English) — standard in Japanese astrology.
+  - `星座占い` for zodiac fortune (the #1 search term at 25.1% usage).
+  - `相性占い` for compatibility (135K/mo search volume).
+  - `惑星` for planets, `ハウス` for houses — standard Japanese astrology terminology.
+  - `ナクシャトラ`, `ヨーガ`, `ドーシャ` — Katakana for Vedic terms.
+- **SEO embedding**: Naturally embed high-volume keywords: `無料` (free), `今日の運勢` (today's fortune), `相性` (compatibility), `当たる` (accurate).
+- **Kanji/Kana balance**: Use kanji for nouns, hiragana for particles/verb endings, katakana for foreign loan words — standard Japanese web convention.
+- **Cultural note**: Japanese users expect a ranking (ランキング) format for daily zodiac content. "Today's fortune" is a daily habit, not a one-time use.
 
 ---
 

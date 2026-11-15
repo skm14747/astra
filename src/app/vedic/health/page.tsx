@@ -32,27 +32,27 @@ export default function HealthPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="glass-card rounded-2xl p-6 text-center">
-          <div className="text-xs text-zinc-500 mb-2">Ayush (Longevity) Tier</div>
+          <div className="text-xs text-zinc-500 mb-2">{t('health.ayushTier')}</div>
           <div className={`text-2xl font-bold ${tierColor}`}>{health.ayushTier}</div>
           <div className="text-xs text-zinc-500 mt-1">
             {health.ayushTier === 'Deerghayu' ? 'Long life (67–100+)' : health.ayushTier === 'Madhyayu' ? 'Medium life (33–66)' : 'Short life (0–32)'}
           </div>
         </div>
         <div className="glass-card rounded-2xl p-6">
-          <div className="text-xs text-zinc-500 mb-2">Maraka Lords</div>
+          <div className="text-xs text-zinc-500 mb-2">{t('health.maraka')}</div>
           <div className="text-zinc-200">{health.marakaLords.join(', ')}</div>
-          <div className="text-xs text-zinc-500 mt-1">Lords of 2nd and 7th houses</div>
+          <div className="text-xs text-zinc-500 mt-1">{t('rpt.th.house')} 2 & 7</div>
         </div>
         <div className="glass-card rounded-2xl p-6">
-          <div className="text-xs text-zinc-500 mb-2">Badhaka</div>
-          <div className="text-zinc-200">{health.badhakaLord} (House {health.badhakaHouse})</div>
-          <div className="text-xs text-zinc-500 mt-1">Obstructive planet and house</div>
+          <div className="text-xs text-zinc-500 mb-2">{t('health.badhaka')}</div>
+          <div className="text-zinc-200">{health.badhakaLord} ({t('rpt.th.house')} {health.badhakaHouse})</div>
+          <div className="text-xs text-zinc-500 mt-1">{t('rpt.lord')}</div>
         </div>
       </div>
 
       {health.vulnerableAreas.length > 0 && (
         <div className="glass-card rounded-2xl p-6">
-          <h2 className="font-semibold text-zinc-100 text-lg mb-4">Vulnerable Health Areas</h2>
+          <h2 className="font-semibold text-zinc-100 text-lg mb-4">{t('health.vulnerable')}</h2>
           <div className="space-y-2">
             {health.vulnerableAreas.map((area, i) => (
               <div key={i} className="flex items-center gap-3 bg-amber-500/5 rounded-xl px-4 py-3">
