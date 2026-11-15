@@ -1,5 +1,5 @@
 'use client';
-import Link from 'next/link';
+import LocaleLink from './LocaleLink';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
@@ -69,9 +69,9 @@ export default function Sidebar() {
         hidden md:flex ${collapsed ? 'w-12' : 'w-56'}`}
     >
       <div className="flex items-center justify-between p-3">
-        <Link href="/" className={`font-bold text-violet-400 transition-all ${collapsed ? 'text-sm' : 'text-lg px-1'}`}>
+        <LocaleLink href="/" className={`font-bold text-violet-400 transition-all ${collapsed ? 'text-sm' : 'text-lg px-1'}`}>
           {collapsed ? '✦' : '✦ Astra'}
-        </Link>
+        </LocaleLink>
         <button
           onClick={() => setCollapsed(!collapsed)}
           className="text-zinc-500 hover:text-zinc-300 p-0.5"
@@ -106,15 +106,16 @@ export default function Sidebar() {
             {!collapsed && expandedSections[sec.heading] && (
               <div className="ml-5 space-y-0.5">
                 {sec.items.map(item => {
-                  const active = pathname === item.href;
+                  const clean = pathname.replace(/^\/(hi|ne|pt|es|ja|fr)/, '') || '/';
+                  const active = clean === item.href;
                   return (
-                    <Link
+                    <LocaleLink
                       key={item.href}
                       href={item.href}
                       className={`block text-sm px-2 py-1 rounded transition ${active ? 'bg-violet-600/20 text-violet-300' : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800'}`}
                     >
                       {item.label}
-                    </Link>
+                    </LocaleLink>
                   );
                 })}
               </div>

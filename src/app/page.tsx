@@ -1,5 +1,5 @@
 'use client';
-import Link from 'next/link';
+import LocaleLink from '@/components/shared/LocaleLink';
 import { useProfile } from '@/lib/profile/context';
 import { useState } from 'react';
 import ProfileModal from '@/components/shared/ProfileModal';
@@ -49,14 +49,14 @@ const ZODIAC_STRIP = '♈ ♉ ♊ ♋ ♌ ♍ ♎ ♏ ♐ ♑ ♒ ♓';
 
 function FeatureCard({ href, icon, title, desc, color }: { href: string; icon: string; title: string; desc: string; color: string }) {
   return (
-    <Link href={href} className="group glass-card gradient-border rounded-2xl p-6 flex flex-col gap-3 relative overflow-hidden">
+    <LocaleLink href={href} className="group glass-card gradient-border rounded-2xl p-6 flex flex-col gap-3 relative overflow-hidden">
       <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
       <div className="relative z-10">
         <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-white/[0.06] to-white/[0.02] flex items-center justify-center text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">{icon}</div>
         <h3 className="text-base font-semibold text-white group-hover:text-white transition">{title}</h3>
         <p className="text-sm text-zinc-400 leading-relaxed mt-1 group-hover:text-zinc-300 transition">{desc}</p>
       </div>
-    </Link>
+    </LocaleLink>
   );
 }
 
@@ -98,10 +98,10 @@ export default function Home() {
               <button onClick={() => setModalOpen(true)} className="cosmic-btn text-base">
                 {t('home.hero.cta')}
               </button>
-              <Link href="/vedic/panchang" className="glass-card px-6 py-3.5 rounded-full text-zinc-300 text-sm font-medium hover:text-white transition group">
+              <LocaleLink href="/vedic/panchang" className="glass-card px-6 py-3.5 rounded-full text-zinc-300 text-sm font-medium hover:text-white transition group">
                 {t('home.hero.panchang')}
                 <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
-              </Link>
+              </LocaleLink>
             </div>
           ) : (
             <div className="flex flex-col items-center gap-4">
@@ -113,9 +113,9 @@ export default function Home() {
                 <span className="text-zinc-500 text-sm">· {activeProfile.city}</span>
               </div>
               <div className="flex flex-wrap justify-center gap-3">
-                <Link href="/vedic/kundli" className="cosmic-btn px-6 py-2.5 text-sm">{t('home.hero.viewKundli')}</Link>
-                <Link href="/vedic/dashas" className="glass-card px-6 py-2.5 rounded-full text-zinc-300 text-sm font-medium hover:text-white transition">{t('home.hero.dashaTimeline')}</Link>
-                <Link href="/matrix/chart" className="glass-card px-6 py-2.5 rounded-full text-zinc-300 text-sm font-medium hover:text-white transition">{t('home.hero.matrixChart')}</Link>
+                <LocaleLink href="/vedic/kundli" className="cosmic-btn px-6 py-2.5 text-sm">{t('home.hero.viewKundli')}</LocaleLink>
+                <LocaleLink href="/vedic/dashas" className="glass-card px-6 py-2.5 rounded-full text-zinc-300 text-sm font-medium hover:text-white transition">{t('home.hero.dashaTimeline')}</LocaleLink>
+                <LocaleLink href="/matrix/chart" className="glass-card px-6 py-2.5 rounded-full text-zinc-300 text-sm font-medium hover:text-white transition">{t('home.hero.matrixChart')}</LocaleLink>
               </div>
             </div>
           )}
@@ -168,14 +168,14 @@ export default function Home() {
           <h3 className="font-display text-lg font-semibold text-white mb-5 relative z-10">{t('home.moreTools')}</h3>
           <div className="flex flex-wrap gap-3 relative z-10">
             {MORE_TOOLS.map(tool => (
-              <Link
+              <LocaleLink
                 key={tool.href}
                 href={tool.href}
                 className="px-5 py-2.5 rounded-full text-sm text-zinc-400 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.04] hover:border-violet-500/30 transition-all group"
               >
                 <span className="mr-2 opacity-50 group-hover:opacity-100 transition">{tool.icon}</span>
                 {t(tool.labelKey)}
-              </Link>
+              </LocaleLink>
             ))}
           </div>
         </div>
@@ -194,7 +194,7 @@ export default function Home() {
               <h3 className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-3">{t('footer.popularTools')}</h3>
               <ul className="space-y-2">
                 {([['/vedic/kundli', 'footer.freeKundli'], ['/vedic/compatibility', 'footer.kundliMilan'], ['/vedic/panchang', 'footer.dailyPanchang'], ['/vedic/dashas', 'footer.dashaTimeline'], ['/vedic/yogas', 'footer.yogasDoshas'], ['/vedic/transits', 'footer.sadeSatiCheck']] as const).map(([href, key]) => (
-                  <li key={href}><Link href={href} className="text-xs text-zinc-500 hover:text-zinc-300 transition">{t(key)}</Link></li>
+                  <li key={href}><LocaleLink href={href} className="text-xs text-zinc-500 hover:text-zinc-300 transition">{t(key)}</LocaleLink></li>
                 ))}
               </ul>
             </div>
@@ -202,7 +202,7 @@ export default function Home() {
               <h3 className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-3">{t('footer.moreTools')}</h3>
               <ul className="space-y-2">
                 {([['/vedic/muhurta', 'footer.muhurtaFinder'], ['/vedic/nakshatra', 'footer.nakshatraAnalysis'], ['/vedic/shadbala', 'footer.shadbalaCalc'], ['/vedic/remedies', 'footer.vedicRemedies'], ['/matrix/chart', 'footer.matrixOfDestiny'], ['/vedic/report', 'footer.fullReport']] as const).map(([href, key]) => (
-                  <li key={href}><Link href={href} className="text-xs text-zinc-500 hover:text-zinc-300 transition">{t(key)}</Link></li>
+                  <li key={href}><LocaleLink href={href} className="text-xs text-zinc-500 hover:text-zinc-300 transition">{t(key)}</LocaleLink></li>
                 ))}
               </ul>
             </div>
@@ -210,7 +210,7 @@ export default function Home() {
               <h3 className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-3">{t('footer.analysis')}</h3>
               <ul className="space-y-2">
                 {([['/vedic/career', 'footer.careerAnalysis'], ['/vedic/wealth', 'footer.wealthAnalysis'], ['/vedic/health', 'footer.healthLongevity'], ['/vedic/predictions', 'footer.annualPredictions'], ['/vedic/nadi', 'footer.nadiAstrology'], ['/vedic/ashtakavarga', 'footer.ashtakavarga']] as const).map(([href, key]) => (
-                  <li key={href}><Link href={href} className="text-xs text-zinc-500 hover:text-zinc-300 transition">{t(key)}</Link></li>
+                  <li key={href}><LocaleLink href={href} className="text-xs text-zinc-500 hover:text-zinc-300 transition">{t(key)}</LocaleLink></li>
                 ))}
               </ul>
             </div>
@@ -218,7 +218,7 @@ export default function Home() {
               <h3 className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-3">{t('footer.about')}</h3>
               <ul className="space-y-2">
                 {([['/how-it-works', 'footer.howItWorks'], ['/settings', 'footer.settings']] as const).map(([href, key]) => (
-                  <li key={href}><Link href={href} className="text-xs text-zinc-500 hover:text-zinc-300 transition">{t(key)}</Link></li>
+                  <li key={href}><LocaleLink href={href} className="text-xs text-zinc-500 hover:text-zinc-300 transition">{t(key)}</LocaleLink></li>
                 ))}
               </ul>
             </div>

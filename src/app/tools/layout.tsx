@@ -12,6 +12,7 @@ export const metadata: Metadata = {
       'pt': '/pt/tools',
       'es': '/es/tools',
       'ja': '/ja/tools',
+      'fr': '/fr/tools',
       'x-default': '/tools',
     },
   },

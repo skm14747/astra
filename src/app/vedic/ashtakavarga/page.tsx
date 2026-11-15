@@ -63,7 +63,7 @@ export default function AshtakavargaPage() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-white/[0.06]">
-                <th className="text-left py-3 px-4 text-zinc-400 text-xs font-medium uppercase tracking-wider">Planet</th>
+                <th className="text-left py-3 px-4 text-zinc-400 text-xs font-medium uppercase tracking-wider">{t('kundli.planet')}</th>
                 {RASHI_NAMES.map(r => <th key={r} className="py-3 px-1.5 text-center text-[10px] text-zinc-500 font-medium">{r.slice(0, 3)}</th>)}
               </tr>
             </thead>
@@ -93,7 +93,7 @@ export default function AshtakavargaPage() {
         <div className="glass-card rounded-xl px-5 py-4 flex items-center gap-3">
           <span className="w-2 h-2 rounded-full bg-red-400 flex-shrink-0" />
           <span className="text-sm text-zinc-300">
-            <strong className="text-red-400">Weak Houses</strong> (SAV &lt; 27): {data.weakHouses.join(', ')}
+            <strong className="text-red-400">{t('ashtakavarga.weakHouses')}</strong> {t('ashtakavarga.savUnder27')}: {data.weakHouses.map(h => `${t('rpt.th.house')} ${h}`).join(', ')}
           </span>
         </div>
       )}

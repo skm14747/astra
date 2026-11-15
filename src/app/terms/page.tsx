@@ -13,6 +13,7 @@ export const metadata: Metadata = {
       'pt': '/pt/terms',
       'es': '/es/terms',
       'ja': '/ja/terms',
+      'fr': '/fr/terms',
       'x-default': '/terms',
     },
   },

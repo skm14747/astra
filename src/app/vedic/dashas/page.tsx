@@ -139,7 +139,7 @@ export default function DashasPage() {
               <div className="mt-4">
                 <div className="flex justify-between text-xs text-zinc-500 mb-1.5">
                   <span>{current.maha.startDate.getFullYear()}</span>
-                  <span>{mahaProgress.toFixed(1)}% elapsed · {yearsLeft.toFixed(1)}y remaining</span>
+                  <span>{mahaProgress.toFixed(1)}% {t('common.elapsed')} · {yearsLeft.toFixed(1)} {t('common.years')} {t('common.remaining')}</span>
                   <span>{current.maha.endDate.getFullYear()}</span>
                 </div>
                 <div className="h-2 rounded-full bg-white/[0.04] overflow-hidden">
@@ -154,7 +154,7 @@ export default function DashasPage() {
       {/* Timeline */}
       {now && (
         <div>
-          <div className="section-title mb-4">{DASHA_SYSTEM_LABELS[system]} Timeline</div>
+          <div className="section-title mb-4">{DASHA_SYSTEM_LABELS[system]} {t('dashas.title')}</div>
           <div className="glass-card rounded-2xl p-6">
             {system === 'vimshottari' && dasha ? (
               <DashaTimeline dasha={dasha} currentDate={now} />
@@ -166,7 +166,7 @@ export default function DashasPage() {
                     <div key={i} className={`flex items-center justify-between px-4 py-2.5 rounded-xl transition ${isActive ? 'bg-violet-500/10 ring-1 ring-violet-500/30' : 'bg-white/[0.02]'}`}>
                       <div className="flex items-center gap-3">
                         <span className={`text-sm font-semibold ${isActive ? 'text-violet-300' : 'text-zinc-300'}`}>{p.lord}</span>
-                        {isActive && <span className="text-[10px] bg-violet-500/20 text-violet-300 px-2 py-0.5 rounded-full font-medium">ACTIVE</span>}
+                        {isActive && <span className="text-[10px] bg-violet-500/20 text-violet-300 px-2 py-0.5 rounded-full font-medium">{t('common.active')}</span>}
                       </div>
                       <div className="text-right">
                         <span className="text-xs text-zinc-500">{p.startDate.getFullYear()} – {p.endDate.getFullYear()}</span>

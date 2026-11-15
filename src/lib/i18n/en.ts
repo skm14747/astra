@@ -30,6 +30,9 @@ export const en = {
   'common.total': 'Total',
   'common.score': 'Score',
   'common.cancellation': 'Cancellation',
+  'common.today': 'Today',
+  'common.years': 'years',
+  'common.balance': 'Balance',
 
   // ─── App ───
   'app.name': 'Astra',
@@ -226,6 +229,9 @@ export const en = {
   'panchang.ayana': 'Ayana',
   'panchang.ritu': 'Ritu',
   'panchang.pada': 'Pada',
+  'panchang.monthCalendar': 'Monthly Hindu Calendar',
+  'panchang.date': 'Date',
+  'panchang.day': 'Day',
 
   // ─── Muhurta ───
   'muhurta.title': 'Muhurta Finder',
@@ -254,6 +260,8 @@ export const en = {
   'kundli.own': 'Own Sign',
   'kundli.retrograde': 'Retrograde',
   'kundli.combust': 'Combust',
+  'kundli.speed': 'Speed',
+  'kundli.siderealLongitude': 'Sidereal Longitude',
 
   // ─── Dashas ───
   'dashas.title': 'Dasha Timeline',

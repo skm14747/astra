@@ -57,7 +57,7 @@ export default function MatrixChartPage() {
                   <div className="text-[10px] text-zinc-500 mt-0.5">{p.label}</div>
                   <div className="text-[10px] text-zinc-600 truncate">{getArcana(p.val).name}</div>
                   <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 rounded-lg bg-zinc-900 border border-white/10 text-[10px] text-zinc-300 whitespace-nowrap opacity-0 group-hover:opacity-100 transition pointer-events-none z-20">
-                    {getArcana(p.val).name} — Arcana {p.val}
+                    {getArcana(p.val).name} — {t('matrixHealth.arcana')} {p.val}
                   </div>
                 </div>
               ))}

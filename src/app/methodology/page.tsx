@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import LocaleLink from '@/components/shared/LocaleLink';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       'pt': '/pt/methodology',
       'es': '/es/methodology',
       'ja': '/ja/methodology',
+      'fr': '/fr/methodology',
       'x-default': '/methodology',
     },
   },
@@ -88,7 +89,7 @@ export default function MethodologyPage() {
         </table>
         <p>
           The default Vedic analysis uses the <strong>Equal House</strong> system, which is the standard in most
-          Indian Jyotish practice. The <Link href="/vedic/kp">KP System</Link> module switches to Placidus cusps
+          Indian Jyotish practice. The <LocaleLink href="/vedic/kp">KP System</LocaleLink> module switches to Placidus cusps
           as required by that methodology.
         </p>
 
@@ -155,9 +156,9 @@ export default function MethodologyPage() {
 
         <h2>Open Approach</h2>
         <p>
-          We believe in transparency. Our <Link href="/vedic/report">Full Report</Link> tool shows every
+          We believe in transparency. Our <LocaleLink href="/vedic/report">Full Report</LocaleLink> tool shows every
           intermediate calculation step, not just final results. If you find a discrepancy or believe a
-          calculation is incorrect, please <Link href="/about">contact us</Link> with specific details
+          calculation is incorrect, please <LocaleLink href="/about">contact us</LocaleLink> with specific details
           so we can investigate.
         </p>
       </div>

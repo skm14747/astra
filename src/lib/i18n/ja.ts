@@ -32,6 +32,9 @@ export const ja: Record<TranslationKey, string> = {
   'common.total': '合計',
   'common.score': 'スコア',
   'common.cancellation': '相殺',
+  'common.today': '今日',
+  'common.years': '年',
+  'common.balance': '残存期間',
 
   // ─── アプリ (App) ───
   'app.name': 'Astra',
@@ -228,6 +231,9 @@ export const ja: Record<TranslationKey, string> = {
   'panchang.ayana': 'アヤナ',
   'panchang.ritu': 'リトゥ',
   'panchang.pada': 'パーダ',
+  'panchang.monthCalendar': '月間パンチャーンガ暦',
+  'panchang.date': '日付',
+  'panchang.day': '曜日',
 
   // ─── 吉時（ムフルタ） ───
   'muhurta.title': '吉時ファインダー',
@@ -256,6 +262,8 @@ export const ja: Record<TranslationKey, string> = {
   'kundli.own': '自室',
   'kundli.retrograde': '逆行',
   'kundli.combust': '燃焼',
+  'kundli.speed': '日周運動速度',
+  'kundli.siderealLongitude': '恒星黄経',
 
   // ─── ダシャー ───
   'dashas.title': 'ダシャータイムライン',

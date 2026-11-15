@@ -3,6 +3,7 @@ import { useState } from 'react';
 import type { HouseData, Planet } from '@/lib/vedic/types';
 import { RASHI_NAMES } from '@/lib/vedic/constants';
 import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
+import { useT } from '@/lib/i18n';
 
 interface Props {
   houses: HouseData[];
@@ -27,6 +28,7 @@ function shortPlanetName(p: Planet): string {
 }
 
 export default function SouthIndianChart({ houses, ascendantRashi, title, onPlanetSelect }: Props) {
+  const t = useT();
   const [hoveredHouse, setHoveredHouse] = useState<number | null>(null);
 
   const rashiToHouse: Record<number, HouseData> = {};
@@ -83,7 +85,7 @@ export default function SouthIndianChart({ houses, ascendantRashi, title, onPlan
               {isHovered && house && (
                 <foreignObject x={x} y={y + CELL_SIZE - 18} width={CELL_SIZE} height={18}>
                   <div className="text-[8px] text-center text-astra-muted truncate px-1">
-                    Lord: {house.lord}
+                    {t('common.lord')}: {house.lord}
                   </div>
                 </foreignObject>
               )}
@@ -91,7 +93,7 @@ export default function SouthIndianChart({ houses, ascendantRashi, title, onPlan
           );
         })}
         <text x={GRID_SIZE / 2} y={GRID_SIZE / 2 - 4} textAnchor="middle" fontSize={11} fill="currentColor" fontWeight="bold">
-          {title || 'Chart'}
+          {title || t('tab.chart')}
         </text>
       </svg>
     </div>

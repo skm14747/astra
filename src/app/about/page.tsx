@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import LocaleLink from '@/components/shared/LocaleLink';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       'pt': '/pt/about',
       'es': '/es/about',
       'ja': '/ja/about',
+      'fr': '/fr/about',
       'x-default': '/about',
     },
   },
@@ -70,14 +71,14 @@ export default function AboutPage() {
           Astra Destiny offers 200+ Vedic astrology tools spanning the complete range of Jyotish analysis:
         </p>
         <ul>
-          <li><strong>Birth Chart Generation</strong> — <Link href="/vedic/kundli">Kundli</Link>, <Link href="/vedic/divisional">Divisional Charts</Link> (D1–D60), <Link href="/vedic/navamsa">Navamsa (D9)</Link></li>
-          <li><strong>Predictive Timing</strong> — <Link href="/vedic/dashas">Vimshottari/Yogini/Ashtottari Dashas</Link>, <Link href="/vedic/transits">Transit Tracker</Link>, <Link href="/vedic/predictions">Varshaphal</Link></li>
-          <li><strong>Compatibility</strong> — <Link href="/vedic/compatibility">Kundli Milan (36-point Ashtakoota)</Link></li>
-          <li><strong>Doshas & Yogas</strong> — <Link href="/vedic/yogas">60+ Yoga patterns</Link>, <Link href="/vedic/mangal-dosha">Mangal Dosha</Link>, <Link href="/vedic/kaal-sarp-dosha">Kaal Sarp Dosha</Link></li>
-          <li><strong>Daily Almanac</strong> — <Link href="/vedic/panchang">Panchang</Link>, <Link href="/vedic/muhurta">Muhurta Finder</Link></li>
-          <li><strong>Advanced Systems</strong> — <Link href="/vedic/kp">KP System</Link>, <Link href="/vedic/jaimini">Jaimini Astrology</Link>, <Link href="/vedic/nadi">Nadi Astrology</Link></li>
-          <li><strong>Strength Analysis</strong> — <Link href="/vedic/shadbala">Shadbala</Link>, <Link href="/vedic/ashtakavarga">Ashtakavarga</Link></li>
-          <li><strong>Life Areas</strong> — <Link href="/vedic/career">Career</Link>, <Link href="/vedic/wealth">Wealth</Link>, <Link href="/vedic/health">Health</Link>, <Link href="/vedic/remedies">Remedies</Link></li>
+          <li><strong>Birth Chart Generation</strong> — <LocaleLink href="/vedic/kundli">Kundli</LocaleLink>, <LocaleLink href="/vedic/divisional">Divisional Charts</LocaleLink> (D1–D60), <LocaleLink href="/vedic/navamsa">Navamsa (D9)</LocaleLink></li>
+          <li><strong>Predictive Timing</strong> — <LocaleLink href="/vedic/dashas">Vimshottari/Yogini/Ashtottari Dashas</LocaleLink>, <LocaleLink href="/vedic/transits">Transit Tracker</LocaleLink>, <LocaleLink href="/vedic/predictions">Varshaphal</LocaleLink></li>
+          <li><strong>Compatibility</strong> — <LocaleLink href="/vedic/compatibility">Kundli Milan (36-point Ashtakoota)</LocaleLink></li>
+          <li><strong>Doshas & Yogas</strong> — <LocaleLink href="/vedic/yogas">60+ Yoga patterns</LocaleLink>, <LocaleLink href="/vedic/mangal-dosha">Mangal Dosha</LocaleLink>, <LocaleLink href="/vedic/kaal-sarp-dosha">Kaal Sarp Dosha</LocaleLink></li>
+          <li><strong>Daily Almanac</strong> — <LocaleLink href="/vedic/panchang">Panchang</LocaleLink>, <LocaleLink href="/vedic/muhurta">Muhurta Finder</LocaleLink></li>
+          <li><strong>Advanced Systems</strong> — <LocaleLink href="/vedic/kp">KP System</LocaleLink>, <LocaleLink href="/vedic/jaimini">Jaimini Astrology</LocaleLink>, <LocaleLink href="/vedic/nadi">Nadi Astrology</LocaleLink></li>
+          <li><strong>Strength Analysis</strong> — <LocaleLink href="/vedic/shadbala">Shadbala</LocaleLink>, <LocaleLink href="/vedic/ashtakavarga">Ashtakavarga</LocaleLink></li>
+          <li><strong>Life Areas</strong> — <LocaleLink href="/vedic/career">Career</LocaleLink>, <LocaleLink href="/vedic/wealth">Wealth</LocaleLink>, <LocaleLink href="/vedic/health">Health</LocaleLink>, <LocaleLink href="/vedic/remedies">Remedies</LocaleLink></li>
         </ul>
 
         <h2>Intended Audience</h2>
@@ -99,7 +100,7 @@ export default function AboutPage() {
           <li>Birth time accuracy critically affects chart results — we cannot verify the accuracy of user-provided birth times.</li>
         </ul>
         <p>
-          Please read our <Link href="/disclaimer">Astrology Disclaimer</Link> and <Link href="/methodology">Methodology</Link> page
+          Please read our <LocaleLink href="/disclaimer">Astrology Disclaimer</LocaleLink> and <LocaleLink href="/methodology">Methodology</LocaleLink> page
           for detailed information about our calculation methods and their limitations.
         </p>
 

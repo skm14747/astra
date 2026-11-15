@@ -72,13 +72,13 @@ export default function MatrixHealthPage() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-white/[0.06]">
-                <th className="text-left py-3 px-5 text-zinc-400 text-xs font-medium uppercase tracking-wider">Chakra</th>
-                <th className="text-center py-3 px-3 text-zinc-400 text-xs font-medium uppercase tracking-wider">Physics</th>
-                <th className="text-center py-3 px-3 text-zinc-500 text-[10px]">Arcana</th>
-                <th className="text-center py-3 px-3 text-zinc-400 text-xs font-medium uppercase tracking-wider">Energy</th>
-                <th className="text-center py-3 px-3 text-zinc-500 text-[10px]">Arcana</th>
-                <th className="text-center py-3 px-3 text-zinc-400 text-xs font-medium uppercase tracking-wider">Emotions</th>
-                <th className="text-center py-3 px-3 text-zinc-500 text-[10px]">Arcana</th>
+                <th className="text-left py-3 px-5 text-zinc-400 text-xs font-medium uppercase tracking-wider">{t('matrixHealth.chakra')}</th>
+                <th className="text-center py-3 px-3 text-zinc-400 text-xs font-medium uppercase tracking-wider">{t('matrixHealth.physics')}</th>
+                <th className="text-center py-3 px-3 text-zinc-500 text-[10px]">{t('matrixHealth.arcana')}</th>
+                <th className="text-center py-3 px-3 text-zinc-400 text-xs font-medium uppercase tracking-wider">{t('matrixHealth.energy')}</th>
+                <th className="text-center py-3 px-3 text-zinc-500 text-[10px]">{t('matrixHealth.arcana')}</th>
+                <th className="text-center py-3 px-3 text-zinc-400 text-xs font-medium uppercase tracking-wider">{t('matrixHealth.emotions')}</th>
+                <th className="text-center py-3 px-3 text-zinc-500 text-[10px]">{t('matrixHealth.arcana')}</th>
               </tr>
             </thead>
             <tbody>
@@ -94,7 +94,7 @@ export default function MatrixHealthPage() {
                 </tr>
               ))}
               <tr className="border-t-2 border-white/[0.08] font-bold bg-white/[0.02]">
-                <td className="py-3 px-5 text-zinc-100">Totals</td>
+                <td className="py-3 px-5 text-zinc-100">{t('common.totals')}</td>
                 <td className="py-3 px-3 text-center text-lg text-violet-300">{chart.healthCard.totals.physics}</td>
                 <td className="py-3 px-3 text-center text-[10px] text-zinc-500">{getArcana(chart.healthCard.totals.physics).name}</td>
                 <td className="py-3 px-3 text-center text-lg text-pink-300">{chart.healthCard.totals.energy}</td>

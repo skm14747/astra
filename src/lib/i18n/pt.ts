@@ -32,6 +32,9 @@ export const pt: Record<TranslationKey, string> = {
   'common.total': 'Total',
   'common.score': 'Pontuação',
   'common.cancellation': 'Anulação (Bhanga)',
+  'common.today': 'Hoje',
+  'common.years': 'anos',
+  'common.balance': 'Saldo Remanescente',
 
   // ─── Aplicativo (App) ───
   'app.name': 'Astra',
@@ -228,6 +231,9 @@ export const pt: Record<TranslationKey, string> = {
   'panchang.ayana': 'Trajetória Solar (Ayana)',
   'panchang.ritu': 'Estação Cósmica (Ritu)',
   'panchang.pada': 'Quarto / Pedaço (Pada)',
+  'panchang.monthCalendar': 'Calendário Cósmico Mensal',
+  'panchang.date': 'Data',
+  'panchang.day': 'Dia da Semana',
 
   // ─── Muhurta ───
   'muhurta.title': 'Astrologia Eletiva (Muhurta)',
@@ -256,6 +262,8 @@ export const pt: Record<TranslationKey, string> = {
   'kundli.own': 'Domicílio (Swakshetra)',
   'kundli.retrograde': 'Retrógrado (Vakri)',
   'kundli.combust': 'Combusto ao Sol (Asta)',
+  'kundli.speed': 'Velocidade Diária',
+  'kundli.siderealLongitude': 'Longitude Sideral',
 
   // ─── Ciclos Dasha ───
   'dashas.title': 'Ciclos Planetários (Vimshottari Dasha)',

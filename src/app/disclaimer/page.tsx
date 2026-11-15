@@ -13,6 +13,7 @@ export const metadata: Metadata = {
       'pt': '/pt/disclaimer',
       'es': '/es/disclaimer',
       'ja': '/ja/disclaimer',
+      'fr': '/fr/disclaimer',
       'x-default': '/disclaimer',
     },
   },

@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import type { PlanetPosition, Planet, Dignity } from '@/lib/vedic/types';
 import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
+import { useT } from '@/lib/i18n';
 
 interface Props {
   planet: Planet | null;
@@ -12,6 +13,8 @@ interface Props {
 }
 
 export default function PlanetDetailPanel({ planet, position, dignity, isCombust: combust, onClose }: Props) {
+  const t = useT();
+
   return (
     <AnimatePresence>
       {planet && position && (
@@ -33,27 +36,27 @@ export default function PlanetDetailPanel({ planet, position, dignity, isCombust
           <div className="space-y-3 text-sm">
             <div className="grid grid-cols-2 gap-2">
               <div className="p-2 bg-zinc-800 rounded">
-                <div className="text-[10px] text-zinc-500">Sign</div>
+                <div className="text-[10px] text-zinc-500">{t('kundli.sign')}</div>
                 <div className="font-medium">{position.rashiName}</div>
               </div>
               <div className="p-2 bg-zinc-800 rounded">
-                <div className="text-[10px] text-zinc-500">Degree</div>
+                <div className="text-[10px] text-zinc-500">{t('kundli.degree')}</div>
                 <div className="font-medium font-mono">{position.degree}°{position.minutes}&apos;{position.seconds}&quot;</div>
               </div>
               <div className="p-2 bg-zinc-800 rounded">
-                <div className="text-[10px] text-zinc-500">Nakshatra</div>
+                <div className="text-[10px] text-zinc-500">{t('panchang.nakshatra')}</div>
                 <div className="font-medium">{position.nakshatraName}</div>
               </div>
               <div className="p-2 bg-zinc-800 rounded">
-                <div className="text-[10px] text-zinc-500">Pada</div>
+                <div className="text-[10px] text-zinc-500">{t('panchang.pada')}</div>
                 <div className="font-medium">{position.pada}</div>
               </div>
               <div className="p-2 bg-zinc-800 rounded">
-                <div className="text-[10px] text-zinc-500">House</div>
+                <div className="text-[10px] text-zinc-500">{t('kundli.house')}</div>
                 <div className="font-medium">{position.house}</div>
               </div>
               <div className="p-2 bg-zinc-800 rounded">
-                <div className="text-[10px] text-zinc-500">Nakshatra Lord</div>
+                <div className="text-[10px] text-zinc-500">{t('panchang.nakshatra')} {t('common.lord')}</div>
                 <div className="font-medium">{position.nakshatraLord}</div>
               </div>
             </div>
@@ -66,28 +69,31 @@ export default function PlanetDetailPanel({ planet, position, dignity, isCombust
                   dignity === 'own' ? 'bg-blue-900/30 text-blue-400 border border-blue-800' :
                   'bg-zinc-800 text-zinc-400 border border-zinc-700'
                 }`}>
-                  {dignity.charAt(0).toUpperCase() + dignity.slice(1)}
+                  {dignity === 'exalted' ? t('kundli.exalted') :
+                   dignity === 'debilitated' ? t('kundli.debilitated') :
+                   dignity === 'own' ? t('kundli.own') :
+                   dignity.charAt(0).toUpperCase() + dignity.slice(1)}
                 </span>
               )}
               {position.isRetrograde && (
                 <span className="px-2 py-1 rounded text-xs font-medium bg-yellow-900/30 text-yellow-400 border border-yellow-800">
-                  Retrograde
+                  {t('kundli.retrograde')}
                 </span>
               )}
               {combust && (
                 <span className="px-2 py-1 rounded text-xs font-medium bg-red-900/30 text-red-400 border border-red-800">
-                  Combust
+                  {t('kundli.combust')}
                 </span>
               )}
             </div>
 
             <div className="pt-2 border-t border-zinc-800">
-              <div className="text-[10px] text-zinc-500 mb-1">Speed</div>
+              <div className="text-[10px] text-zinc-500 mb-1">{t('kundli.speed')}</div>
               <div className="font-mono text-xs">{position.speed.toFixed(4)}°/day</div>
             </div>
 
             <div className="border-t border-zinc-800 pt-2">
-              <div className="text-[10px] text-zinc-500 mb-1">Sidereal Longitude</div>
+              <div className="text-[10px] text-zinc-500 mb-1">{t('kundli.siderealLongitude')}</div>
               <div className="font-mono text-xs">{position.siderealLongitude.toFixed(4)}°</div>
             </div>
           </div>

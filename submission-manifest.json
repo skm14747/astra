@@ -1,0 +1,94 @@
+{
+  "product": {
+    "name": "Astra Destiny",
+    "slug": "astra-destiny",
+    "domain": "astradestiny.com",
+    "url": "https://astradestiny.com",
+    "pricing_url": "https://astradestiny.com",
+    "contact_email": "contact@astradestiny.com",
+    "contact_page": "https://astradestiny.com/contact",
+    "privacy_url": "https://astradestiny.com/privacy",
+    "terms_url": "https://astradestiny.com/terms"
+  },
+  "copy": {
+    "tagline_40c": "294 Vedic algorithms. 100% in-browser.",
+    "tagline_60c": "Free Vedic Astrology Suite & Kundli Generator",
+    "mcp_description_100c": "Free in-browser Vedic astrology engine with 294 algorithms and NASA JPL precision.",
+    "awesome_list_bullet": "- [Astra Destiny](https://astradestiny.com) - Free in-browser Vedic astrology calculator with 294 algorithms and zero server data storage.",
+    "description_160c": "Free Vedic astrology calculator with 294 tools: Kundli, Dasha timelines, Panchang, Gun Milan, and Yoga detection with NASA JPL ephemeris accuracy.",
+    "description_500c": "Astra Destiny is a free, privacy-first Vedic astrology suite powered by 294 Jyotish calculation algorithms running entirely in the browser. It calculates full Kundli birth charts, D1–D60 divisional charts, 18 dasha systems (including Vimshottari, Kalachakra, and Narayana), Ashtakoota compatibility (Gun Milan), Panchang, Choghadiya, and automated Yoga and Dosha detection. Calculations use NASA JPL DE-series ephemeris with Lahiri Ayanamsa, with zero server-side storage of personal birth data.",
+    "key_features": [
+      "294 Jyotish calculation engines running 100% client-side in the browser",
+      "NASA JPL DE-series ephemeris with high-precision Lahiri Ayanamsa",
+      "Full Kundli birth chart, Sripati Bhava Chalit, and D1–D60 divisional charts",
+      "18 Dasha systems including Vimshottari, Ashtottari, Yogini, and Narayana",
+      "Ashtakoota 36-Guna matching with Mangal Dosha detection",
+      "Daily real-time Panchang, Tithi, Nakshatra, and Choghadiya calculations",
+      "Strict privacy: zero server data collection or birth information tracking"
+    ]
+  },
+  "taxonomy": {
+    "primary_category": "Lifestyle / Web Utilities / Free Tools",
+    "tags": [
+      "astrology",
+      "vedic-astrology",
+      "kundli",
+      "panchang",
+      "calculator",
+      "free-tools",
+      "privacy",
+      "astronomy"
+    ],
+    "competitors_replaced": [
+      "AstroSage",
+      "DrikPanchang",
+      "ProKerala",
+      "Astro-Seek",
+      "CafeAstrology"
+    ],
+    "pricing_model": "Free",
+    "starting_price_usd": 0,
+    "free_tier_details": "100% free with unlimited calculations. No paywalls, no mandatory registration."
+  },
+  "assets": {
+    "favicon_64": "https://astradestiny.com/favicon.ico",
+    "logo_square_512": "https://astradestiny.com/icon-512.png",
+    "og_image_1200x630": "https://astradestiny.com/og-image.png",
+    "screenshots_16x9": [
+      "https://astradestiny.com/og-image.png"
+    ]
+  },
+  "target_directories": [
+    {
+      "platform": "AlternativeTo",
+      "url": "https://alternativeto.net/software/create/",
+      "target_tags": ["astrology", "horoscope", "lifestyle", "web-app"],
+      "suggested_alternatives": ["AstroSage", "CafeAstrology", "Co-Star", "DrikPanchang"]
+    },
+    {
+      "platform": "SaaSHub",
+      "url": "https://www.saashub.com/submit",
+      "target_tags": ["astrology", "utilities", "free-software"]
+    },
+    {
+      "platform": "Product Hunt",
+      "url": "https://www.producthunt.com/posts/new",
+      "target_tags": ["web-apps", "free-tools", "lifestyle", "tech"]
+    },
+    {
+      "platform": "BetaList",
+      "url": "https://betalist.com/submit",
+      "target_tags": ["consumer", "web-application", "lifestyle"]
+    },
+    {
+      "platform": "Uneed.best",
+      "url": "https://www.uneed.best/submit-a-tool",
+      "target_tags": ["free", "utilities", "web-app"]
+    },
+    {
+      "platform": "Awesome Tools",
+      "url": "https://awesometools.io",
+      "target_tags": ["calculators", "reference", "free-tools"]
+    }
+  ]
+}

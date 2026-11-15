@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import LocaleLink from '@/components/shared/LocaleLink';
 import { useT } from '@/lib/i18n';
 import type { TranslationKey } from '@/lib/i18n';
 
@@ -76,12 +76,12 @@ export default function HowItWorksPage() {
           {t('hiw.cta.methodology')}
         </p>
         <div className="flex justify-center gap-4 flex-wrap">
-          <Link href="/vedic/kundli" className="cosmic-btn px-6 py-2.5 text-sm">
+          <LocaleLink href="/vedic/kundli" className="cosmic-btn px-6 py-2.5 text-sm">
             {t('hiw.cta.generateKundli')}
-          </Link>
-          <Link href="/llms-full.txt" className="glass-card px-6 py-2.5 rounded-full text-zinc-300 text-sm font-medium hover:text-white transition">
+          </LocaleLink>
+          <LocaleLink href="/llms-full.txt" className="glass-card px-6 py-2.5 rounded-full text-zinc-300 text-sm font-medium hover:text-white transition">
             {t('hiw.cta.viewInventory')}
-          </Link>
+          </LocaleLink>
         </div>
       </div>
     </div>

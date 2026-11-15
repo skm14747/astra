@@ -9,6 +9,7 @@ import {
   NAKSHATRA_SPAN,
 } from './constants';
 import type { MuhurtaTime, Observer } from './types';
+export type { MuhurtaTime };
 
 function calcPortionTime(
   sunrise: Date,

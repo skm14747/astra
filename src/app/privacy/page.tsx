@@ -13,6 +13,7 @@ export const metadata: Metadata = {
       'pt': '/pt/privacy',
       'es': '/es/privacy',
       'ja': '/ja/privacy',
+      'fr': '/fr/privacy',
       'x-default': '/privacy',
     },
   },

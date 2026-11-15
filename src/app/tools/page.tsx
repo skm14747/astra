@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import LocaleLink from '@/components/shared/LocaleLink';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import { useT, type TranslationKey } from '@/lib/i18n';
 
@@ -118,16 +118,16 @@ export default function ToolsDirectoryPage() {
         <h2 className="font-display text-lg font-semibold text-zinc-200 mb-3">{t('tools.guide')}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
           <div className="text-zinc-400">
-            <Link href="/vedic/kundli" className="text-violet-400 hover:underline">{t('tools.guide.kundli')}</Link>
+            <LocaleLink href="/vedic/kundli" className="text-violet-400 hover:underline">{t('tools.guide.kundli')}</LocaleLink>
           </div>
           <div className="text-zinc-400">
-            <Link href="/vedic/compatibility" className="text-violet-400 hover:underline">{t('tools.guide.compat')}</Link>
+            <LocaleLink href="/vedic/compatibility" className="text-violet-400 hover:underline">{t('tools.guide.compat')}</LocaleLink>
           </div>
           <div className="text-zinc-400">
-            <Link href="/vedic/transits" className="text-violet-400 hover:underline">{t('tools.guide.transits')}</Link>
+            <LocaleLink href="/vedic/transits" className="text-violet-400 hover:underline">{t('tools.guide.transits')}</LocaleLink>
           </div>
           <div className="text-zinc-400">
-            <Link href="/vedic/panchang" className="text-violet-400 hover:underline">{t('tools.guide.timing')}</Link>
+            <LocaleLink href="/vedic/panchang" className="text-violet-400 hover:underline">{t('tools.guide.timing')}</LocaleLink>
           </div>
         </div>
       </div>
@@ -138,7 +138,7 @@ export default function ToolsDirectoryPage() {
           <h2 className="section-title mb-4">{t(category.titleKey)}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {category.tools.map(tool => (
-              <Link
+              <LocaleLink
                 key={tool.href}
                 href={tool.href}
                 className="glass-card rounded-xl p-5 hover:border-violet-500/30 transition-all group"
@@ -152,7 +152,7 @@ export default function ToolsDirectoryPage() {
                     <p className="text-xs text-zinc-500 mt-1 leading-relaxed">{t(tool.descKey)}</p>
                   </div>
                 </div>
-              </Link>
+              </LocaleLink>
             ))}
           </div>
         </section>
@@ -163,9 +163,9 @@ export default function ToolsDirectoryPage() {
         <h2 className="font-display text-lg font-semibold text-zinc-300 mb-3">{t('tools.about.heading')}</h2>
         <p className="text-sm text-zinc-500 leading-relaxed max-w-3xl">
           {t('tools.about.text')}{' '}
-          <Link href="/how-it-works" className="text-violet-400 hover:underline">
+          <LocaleLink href="/how-it-works" className="text-violet-400 hover:underline">
             {t('footer.howItWorks')} →
-          </Link>
+          </LocaleLink>
         </p>
       </section>
     </div>

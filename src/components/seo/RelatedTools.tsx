@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import LocaleLink from '../shared/LocaleLink';
 import { useT } from '@/lib/i18n';
 import type { TranslationKey } from '@/lib/i18n';
 
@@ -36,13 +36,13 @@ export default function RelatedTools({
         {tools.map((tool) => {
           const key = hrefToKey(tool.href);
           return (
-            <Link
+            <LocaleLink
               key={tool.href}
               href={tool.href}
               className="px-4 py-2 rounded-full text-sm text-zinc-400 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.04] hover:border-violet-500/30 transition-all"
             >
               {key ? t(key) : tool.label}
-            </Link>
+            </LocaleLink>
           );
         })}
       </div>

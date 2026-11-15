@@ -210,43 +210,43 @@ export default function PanchangPage() {
           {/* Tithi — hero card */}
           <div className="glass-card rounded-2xl p-5 sm:col-span-2 lg:col-span-1 vedic-glow relative overflow-hidden">
             <div className="absolute top-4 right-4 text-4xl opacity-30">{moonPhase}</div>
-            <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">Tithi</div>
+            <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">{t('panchang.tithi')}</div>
             <div className="text-xl text-white font-display font-bold">{panchang.tithi.name}</div>
             <div className="flex items-center gap-2 mt-2 text-sm text-zinc-400">
               <span className="planet-badge">{panchang.tithi.paksha}</span>
-              <span>Tithi {panchang.tithi.number} of 15</span>
+              <span>{t('panchang.tithi')} {panchang.tithi.number} {t('common.of')} 15</span>
             </div>
           </div>
 
           {/* Nakshatra */}
           <div className="glass-card rounded-2xl p-5">
-            <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">Nakshatra</div>
+            <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">{t('panchang.nakshatra')}</div>
             <div className="text-lg text-white font-display font-bold">{panchang.nakshatra.name}</div>
             <div className="flex items-center gap-2 mt-2 text-sm text-zinc-400">
-              <span className="planet-badge">Pada {panchang.nakshatra.pada}</span>
-              <span>Lord: {panchang.nakshatra.lord}</span>
+              <span className="planet-badge">{t('panchang.pada')} {panchang.nakshatra.pada}</span>
+              <span>{t('common.lord')}: {panchang.nakshatra.lord}</span>
             </div>
           </div>
 
           {/* Yoga */}
           <div className="glass-card rounded-2xl p-5">
-            <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">Yoga</div>
+            <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">{t('panchang.yoga')}</div>
             <div className="text-lg text-white font-display font-bold">{panchang.yoga.name}</div>
-            <div className="text-xs text-zinc-500 mt-2">Yoga #{panchang.yoga.index + 1} of 27</div>
+            <div className="text-xs text-zinc-500 mt-2">{t('panchang.yoga')} #{panchang.yoga.index + 1} {t('common.of')} 27</div>
           </div>
 
           {/* Karana */}
           <div className="glass-card rounded-2xl p-5">
-            <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">Karana</div>
+            <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">{t('panchang.karana')}</div>
             <div className="text-lg text-white font-display font-bold">{panchang.karana.name}</div>
-            <div className="text-xs text-zinc-500 mt-2">Karana #{panchang.karana.index + 1} of 60</div>
+            <div className="text-xs text-zinc-500 mt-2">{t('panchang.karana')} #{panchang.karana.index + 1} {t('common.of')} 60</div>
           </div>
 
           {/* Vara */}
           <div className="glass-card rounded-2xl p-5">
-            <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">Vara</div>
+            <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">{t('panchang.vara')}</div>
             <div className="text-lg text-white font-display font-bold">{panchang.vara.name}</div>
-            <div className="text-xs text-zinc-500 mt-2">Weekday #{panchang.vara.index + 1}</div>
+            <div className="text-xs text-zinc-500 mt-2">{t('panchang.vara')} #{panchang.vara.index + 1}</div>
           </div>
         </div>
       </div>
@@ -258,11 +258,11 @@ export default function PanchangPage() {
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {[
-            { label: 'Paksha', value: panchang.paksha },
-            { label: 'Masa', value: `${panchang.masa.name}${panchang.masa.isAdhika ? ' (Adhika)' : ''}` },
-            { label: 'Samvatsara', value: panchang.samvat.samvatsara, sub: `Shaka ${panchang.samvat.shaka}` },
-            { label: 'Ayana', value: panchang.ayana },
-            { label: 'Ritu', value: panchang.ritu },
+            { label: t('panchang.paksha'), value: panchang.paksha },
+            { label: t('panchang.masa'), value: `${panchang.masa.name}${panchang.masa.isAdhika ? ' (Adhika)' : ''}` },
+            { label: t('panchang.samvatsara'), value: panchang.samvat.samvatsara, sub: `Shaka ${panchang.samvat.shaka}` },
+            { label: t('panchang.ayana'), value: panchang.ayana },
+            { label: t('panchang.ritu'), value: panchang.ritu },
           ].map(item => (
             <div key={item.label} className="glass-card rounded-xl p-4">
               <div className="text-[10px] text-zinc-500 uppercase tracking-wider font-medium mb-1">{item.label}</div>

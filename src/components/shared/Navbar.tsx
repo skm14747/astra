@@ -1,6 +1,6 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
+import LocaleLink from './LocaleLink';
 import { usePathname, useRouter } from 'next/navigation';
 import { useProfile } from '@/lib/profile/context';
 import { useSettings, type FontSize, type Language } from '@/lib/settings/context';
@@ -149,17 +149,19 @@ export default function Navbar() {
     dropdownTimeout.current = setTimeout(() => setOpenDropdown(null), 150);
   };
 
-  const isGroupActive = (group: typeof NAV_GROUPS[0]) => group.items.some(i => pathname === i.href);
+  // Strip locale prefix for active-state matching (pathname may be /hi/vedic/kundli)
+  const cleanPathname = pathname.replace(/^\/(hi|ne|pt|es|ja|fr)/, '') || '/';
+  const isGroupActive = (group: typeof NAV_GROUPS[0]) => group.items.some(i => cleanPathname === i.href);
 
   return (
     <>
       <header className="sticky top-0 z-50 border-b border-violet-500/[0.06] bg-[#050510]/60 backdrop-blur-2xl">
         <div className="mx-auto max-w-7xl flex items-center justify-between px-4 sm:px-6 h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
+          <LocaleLink href="/" className="flex items-center gap-2.5 group">
             <span className="text-2xl drop-shadow-[0_0_8px_rgba(124,92,252,0.5)]">✦</span>
             <span className="font-display text-xl font-bold tracking-tight gradient-text">Astra</span>
-          </Link>
+          </LocaleLink>
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1" role="navigation">
@@ -182,17 +184,17 @@ export default function Navbar() {
                   <div className="absolute top-full left-0 pt-1 min-w-[200px]">
                     <div className="glass-card rounded-xl p-2 shadow-2xl">
                       {group.items.map(item => (
-                        <Link
+                        <LocaleLink
                           key={item.href}
                           href={item.href}
                           className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
-                            pathname === item.href
+                            cleanPathname === item.href
                               ? 'bg-white/[0.06] text-white font-medium'
                               : 'text-zinc-400 hover:text-white hover:bg-white/[0.04]'
                           }`}
                         >
                           {t(item.labelKey)}
-                        </Link>
+                        </LocaleLink>
                       ))}
                     </div>
                   </div>
@@ -344,11 +346,11 @@ export default function Navbar() {
             </div>
 
             {/* Settings */}
-            <Link href="/settings" className="p-2 rounded-lg text-zinc-500 hover:text-zinc-200 hover:bg-white/[0.04] transition" title="Settings">
+            <LocaleLink href="/settings" className="p-2 rounded-lg text-zinc-500 hover:text-zinc-200 hover:bg-white/[0.04] transition" title="Settings">
               <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
                 <circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
               </svg>
-            </Link>
+            </LocaleLink>
 
             {/* Mobile hamburger */}
             <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/[0.04]">
@@ -417,15 +419,15 @@ export default function Navbar() {
                 <div key={t(group.labelKey)}>
                   <div className="section-title mb-2 px-2">{t(group.labelKey)}</div>
                   {group.items.map(item => (
-                    <Link
+                    <LocaleLink
                       key={item.href}
                       href={item.href}
                       className={`block px-3 py-2.5 rounded-lg text-sm transition ${
-                        pathname === item.href ? 'bg-white/[0.06] text-white font-medium' : 'text-zinc-400 hover:text-white'
+                        cleanPathname === item.href ? 'bg-white/[0.06] text-white font-medium' : 'text-zinc-400 hover:text-white'
                       }`}
                     >
                       {t(item.labelKey)}
-                    </Link>
+                    </LocaleLink>
                   ))}
                 </div>
               ))}

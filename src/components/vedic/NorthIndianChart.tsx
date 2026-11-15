@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import type { HouseData, Planet } from '@/lib/vedic/types';
 import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
+import { useT } from '@/lib/i18n';
 
 interface Props {
   houses: HouseData[];
@@ -19,6 +20,7 @@ const HOUSE_LABEL_POS: [number, number][] = [
 ];
 
 export default function NorthIndianChart({ houses, title, onPlanetSelect }: Props) {
+  const t = useT();
   const [hoveredHouse, setHoveredHouse] = useState<number | null>(null);
 
   return (
@@ -52,7 +54,7 @@ export default function NorthIndianChart({ houses, title, onPlanetSelect }: Prop
               </text>
               {isHovered && (
                 <text x={lx} y={ly - 12} textAnchor="middle" fontSize={7} fill="rgb(212,168,67)" opacity={0.7}>
-                  Lord: {h.lord}
+                  {t('common.lord')}: {h.lord}
                 </text>
               )}
               {h.planets.map((p, pi) => (
@@ -75,7 +77,7 @@ export default function NorthIndianChart({ houses, title, onPlanetSelect }: Prop
         })}
 
         <text x={MID} y={MID + 4} textAnchor="middle" fontSize={10} fill="currentColor" fontWeight="bold">
-          {title || 'Chart'}
+          {title || t('tab.chart')}
         </text>
       </svg>
     </div>

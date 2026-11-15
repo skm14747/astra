@@ -596,6 +596,7 @@ export function buildVedicMetadata(slug: string): Metadata {
         'pt': `/pt${seo.canonical}`,
         'es': `/es${seo.canonical}`,
         'ja': `/ja${seo.canonical}`,
+        'fr': `/fr${seo.canonical}`,
         'x-default': seo.canonical,
       },
     },

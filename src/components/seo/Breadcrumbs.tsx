@@ -1,4 +1,5 @@
-import Link from 'next/link';
+'use client';
+import LocaleLink from '../shared/LocaleLink';
 
 export default function Breadcrumbs({
   items,
@@ -9,9 +10,9 @@ export default function Breadcrumbs({
     <nav aria-label="Breadcrumb" className="mb-4 text-sm text-zinc-500">
       <ol className="flex flex-wrap items-center gap-1">
         <li>
-          <Link href="/" className="hover:text-zinc-300 transition-colors">
+          <LocaleLink href="/" className="hover:text-zinc-300 transition-colors">
             Home
-          </Link>
+          </LocaleLink>
         </li>
         {items.map((item, i) => (
           <li key={item.href} className="flex items-center gap-1">
@@ -21,9 +22,9 @@ export default function Breadcrumbs({
                 {item.label}
               </span>
             ) : (
-              <Link href={item.href} className="hover:text-zinc-300 transition-colors">
+              <LocaleLink href={item.href} className="hover:text-zinc-300 transition-colors">
                 {item.label}
-              </Link>
+              </LocaleLink>
             )}
           </li>
         ))}

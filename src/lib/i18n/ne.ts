@@ -32,6 +32,9 @@ export const ne: Record<TranslationKey, string> = {
   'common.total': 'जम्मा',
   'common.score': 'अङ्क',
   'common.cancellation': 'दोष भङ्ग',
+  'common.today': 'आज',
+  'common.years': 'वर्ष',
+  'common.balance': 'बाँकी भोग्य',
 
   // ─── एप परिचय (App) ───
   'app.name': 'एस्ट्रा',
@@ -228,6 +231,9 @@ export const ne: Record<TranslationKey, string> = {
   'panchang.ayana': 'अयन',
   'panchang.ritu': 'ऋतु',
   'panchang.pada': 'चरण (पद)',
+  'panchang.monthCalendar': 'मासिक पञ्चाङ्ग तथा पात्रो',
+  'panchang.date': 'मिति / गते',
+  'panchang.day': 'वार / दिन',
 
   // ─── मुहूर्त (Muhurta) ───
   'muhurta.title': 'शुभ साइत (मुहूर्त) विचार',
@@ -256,6 +262,8 @@ export const ne: Record<TranslationKey, string> = {
   'kundli.own': 'स्वराशि',
   'kundli.retrograde': 'वक्री',
   'kundli.combust': 'अस्त',
+  'kundli.speed': 'दैनिक गति',
+  'kundli.siderealLongitude': 'निरयण स्पष्ट भोगांश',
 
   // ─── दशा (Dashas) ───
   'dashas.title': 'विंशोत्तरी दशा चक्र',

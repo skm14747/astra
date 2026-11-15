@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import LocaleLink from '@/components/shared/LocaleLink';
 import { notFound } from 'next/navigation';
 import { BLOG_POSTS, getBlogPost } from '@/content/blog';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
@@ -29,6 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         'pt': `/pt/blog/${post.slug}`,
         'es': `/es/blog/${post.slug}`,
         'ja': `/ja/blog/${post.slug}`,
+        'fr': `/fr/blog/${post.slug}`,
         'x-default': `/blog/${post.slug}`,
       },
     },
@@ -85,9 +86,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Header */}
       <header>
         <div className="flex items-center gap-3 mb-4">
-          <Link href="/blog" className="text-sm text-violet-400 hover:text-violet-300 transition">
+          <LocaleLink href="/blog" className="text-sm text-violet-400 hover:text-violet-300 transition">
             ← Blog
-          </Link>
+          </LocaleLink>
           <span className="text-zinc-700">·</span>
           <span className="text-xs px-2 py-0.5 rounded-full bg-violet-500/10 text-violet-400 border border-violet-500/20">
             {post.category}
@@ -134,12 +135,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           All calculations mentioned in this article are available in Astra — free, instant, and private.
         </p>
         <div className="flex flex-wrap gap-2 justify-center">
-          <Link href="/vedic/kundli" className="px-4 py-2 rounded-full text-sm text-white bg-violet-600 hover:bg-violet-500 transition">
+          <LocaleLink href="/vedic/kundli" className="px-4 py-2 rounded-full text-sm text-white bg-violet-600 hover:bg-violet-500 transition">
             Generate Kundli
-          </Link>
-          <Link href="/vedic/yogas" className="px-4 py-2 rounded-full text-sm text-zinc-300 bg-white/[0.05] hover:bg-white/[0.08] transition border border-white/[0.06]">
+          </LocaleLink>
+          <LocaleLink href="/vedic/yogas" className="px-4 py-2 rounded-full text-sm text-zinc-300 bg-white/[0.05] hover:bg-white/[0.08] transition border border-white/[0.06]">
             Check Yogas & Doshas
-          </Link>
+          </LocaleLink>
         </div>
       </div>
 
@@ -149,7 +150,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <h2 className="text-sm font-semibold text-zinc-400 tracking-wide uppercase mb-4">More Articles</h2>
           <div className="grid gap-3">
             {relatedPosts.map(rp => (
-              <Link
+              <LocaleLink
                 key={rp.slug}
                 href={`/blog/${rp.slug}`}
                 className="glass-card rounded-xl p-4 hover:border-violet-500/30 transition-all flex justify-between items-center"
@@ -159,7 +160,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   <div className="text-xs text-zinc-500 mt-1">{rp.category} · {rp.readingTime}</div>
                 </div>
                 <span className="text-zinc-600 text-lg">→</span>
-              </Link>
+              </LocaleLink>
             ))}
           </div>
         </nav>

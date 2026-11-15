@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
 import type { VimshottariDasha, DashaPeriod } from '@/lib/vedic/types';
+import { useT } from '@/lib/i18n';
 
 interface Props {
   dasha: VimshottariDasha;
@@ -18,6 +19,7 @@ function formatDate(d: Date): string {
 }
 
 export default function DashaTimeline({ dasha, currentDate }: Props) {
+  const t = useT();
   const now = currentDate?.getTime() ?? Date.now();
   const [expandedIdx, setExpandedIdx] = useState<number | null>(() => {
     const idx = dasha.mahadashas.findIndex(m => now >= m.startDate.getTime() && now < m.endDate.getTime());
@@ -32,8 +34,8 @@ export default function DashaTimeline({ dasha, currentDate }: Props) {
   return (
     <div className="space-y-3">
       <div className="text-sm text-zinc-400">
-        Birth Nakshatra Lord: <span className="text-white font-medium">{PLANET_GLYPH[dasha.birthDashaLord] ?? ''} {dasha.birthDashaLord}</span>
-        {' · '}Balance: <span className="text-white font-medium">{dasha.balanceYears.toFixed(2)} years</span>
+        {t('nakshatra.birthNakshatra')} {t('common.lord')}: <span className="text-white font-medium">{PLANET_GLYPH[dasha.birthDashaLord] ?? ''} {dasha.birthDashaLord}</span>
+        {' · '}{t('common.balance')}: <span className="text-white font-medium">{dasha.balanceYears.toFixed(2)} {t('common.years')}</span>
       </div>
 
       {/* Horizontal timeline bar */}
@@ -80,7 +82,7 @@ export default function DashaTimeline({ dasha, currentDate }: Props) {
         return (
           <div className={`p-4 rounded-lg border ${isCurrent ? 'border-violet-600 bg-violet-600/5' : 'border-zinc-800 bg-zinc-900'}`}>
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-semibold text-sm">{PLANET_GLYPH[md.lord] ?? ''} {md.lord} Mahadasha ({md.durationYears.toFixed(1)} years)</h3>
+              <h3 className="font-semibold text-sm">{PLANET_GLYPH[md.lord] ?? ''} {md.lord} {t('dashas.mahadasha')} ({md.durationYears.toFixed(1)} {t('common.years')})</h3>
               <span className="text-xs text-zinc-500">{formatDate(md.startDate)} — {formatDate(md.endDate)}</span>
             </div>
             {md.subPeriods && md.subPeriods.length > 0 && (

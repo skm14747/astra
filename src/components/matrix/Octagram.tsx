@@ -56,10 +56,10 @@ export default function Octagram({ points, title, onNodeSelect }: Props) {
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 
   const straightPoints = [
-    { val: points.a, label: 'A (Left)', angle: 180, key: 'a' },
-    { val: points.b, label: 'B (Top)', angle: 270, key: 'b' },
-    { val: points.c, label: 'C (Right)', angle: 0, key: 'c' },
-    { val: points.d, label: 'D (Bottom)', angle: 90, key: 'd' },
+    { val: points.a, label: 'A', angle: 180, key: 'a' },
+    { val: points.b, label: 'B', angle: 270, key: 'b' },
+    { val: points.c, label: 'C', angle: 0, key: 'c' },
+    { val: points.d, label: 'D', angle: 90, key: 'd' },
   ];
 
   const diagonalPoints = [

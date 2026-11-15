@@ -50,10 +50,10 @@ export default function KundliPage() {
           </div>
           <p className="text-zinc-200 ml-10 text-lg">
             <span className="mr-1">{RASHI_GLYPH[RASHI_NAMES[chart.ascendant.rashi]]}</span>
-            {RASHI_NAMES[chart.ascendant.rashi]} · {chart.ascendant.degree}° · {chart.ascendant.nakshatraName} Pada {chart.ascendant.pada}
+            {RASHI_NAMES[chart.ascendant.rashi]} · {chart.ascendant.degree}° · {chart.ascendant.nakshatraName} {t('panchang.pada')} {chart.ascendant.pada}
           </p>
           <p className="text-xs text-zinc-500 ml-10 mt-1">
-            Ayanamsa ({chart.ayanamsaSystem}): {chart.ayanamsa.toFixed(4)}°
+            {t('kundli.ayanamsa')} ({chart.ayanamsaSystem}): {chart.ayanamsa.toFixed(4)}°
           </p>
         </div>
       </div>
@@ -66,9 +66,9 @@ export default function KundliPage() {
         const combustCount = planets.filter(p => p !== 'Sun' && isCombust(p, chart.planets[p].siderealLongitude, chart.planets.Sun.siderealLongitude, chart.planets[p].isRetrograde)).length;
         return (
           <div className="flex gap-3 flex-wrap">
-            {exaltedCount > 0 && <span className="planet-badge !bg-emerald-500/12 !border-emerald-500/20 !text-emerald-400">{exaltedCount} Exalted</span>}
-            {retroCount > 0 && <span className="planet-badge !bg-amber-500/12 !border-amber-500/20 !text-amber-400">{retroCount} Retrograde</span>}
-            {combustCount > 0 && <span className="planet-badge !bg-red-500/12 !border-red-500/20 !text-red-400">{combustCount} Combust</span>}
+            {exaltedCount > 0 && <span className="planet-badge !bg-emerald-500/12 !border-emerald-500/20 !text-emerald-400">{exaltedCount} {t('kundli.exalted')}</span>}
+            {retroCount > 0 && <span className="planet-badge !bg-amber-500/12 !border-amber-500/20 !text-amber-400">{retroCount} {t('kundli.retrograde')}</span>}
+            {combustCount > 0 && <span className="planet-badge !bg-red-500/12 !border-red-500/20 !text-red-400">{combustCount} {t('kundli.combust')}</span>}
           </div>
         );
       })()}
@@ -134,7 +134,7 @@ export default function KundliPage() {
                         dignity === 'debilitated' ? '!bg-red-500/12 !border-red-500/20 !text-red-400' :
                         dignity === 'own' ? '!bg-blue-500/12 !border-blue-500/20 !text-blue-400' : ''
                       }`}>
-                        {dignity}{combust ? ' 🔥' : ''}
+                        {dignity === 'exalted' ? t('kundli.exalted') : dignity === 'debilitated' ? t('kundli.debilitated') : dignity === 'own' ? t('kundli.own') : dignity}{combust ? ' 🔥' : ''}
                       </span>
                     </td>
                     <td className="py-3.5 px-3">

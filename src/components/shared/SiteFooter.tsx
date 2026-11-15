@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import LocaleLink from './LocaleLink';
 import { useT, type TranslationKey } from '@/lib/i18n';
 
 const POPULAR_TOOLS: { href: string; labelKey: TranslationKey }[] = [
@@ -42,9 +42,9 @@ export default function SiteFooter() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-2 sm:col-span-1">
-            <Link href="/" className="font-display text-xl font-bold text-violet-400 tracking-wide">
+            <LocaleLink href="/" className="font-display text-xl font-bold text-violet-400 tracking-wide">
               ASTRA DESTINY
-            </Link>
+            </LocaleLink>
             <p className="text-xs text-zinc-500 mt-2 max-w-[200px] leading-relaxed">
               {t('app.footer.privacy')}
             </p>
@@ -57,9 +57,9 @@ export default function SiteFooter() {
             </h3>
             <nav aria-label="Popular tools" className="flex flex-col gap-1.5">
               {POPULAR_TOOLS.slice(0, 6).map(item => (
-                <Link key={item.href} href={item.href} className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
+                <LocaleLink key={item.href} href={item.href} className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
                   {t(item.labelKey)}
-                </Link>
+                </LocaleLink>
               ))}
             </nav>
           </div>
@@ -71,9 +71,9 @@ export default function SiteFooter() {
             </h3>
             <nav aria-label="More tools" className="flex flex-col gap-1.5">
               {POPULAR_TOOLS.slice(6).map(item => (
-                <Link key={item.href} href={item.href} className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
+                <LocaleLink key={item.href} href={item.href} className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
                   {t(item.labelKey)}
-                </Link>
+                </LocaleLink>
               ))}
             </nav>
           </div>
@@ -85,9 +85,9 @@ export default function SiteFooter() {
             </h3>
             <nav aria-label="Resources" className="flex flex-col gap-1.5">
               {RESOURCES.map(item => (
-                <Link key={item.href} href={item.href} className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
+                <LocaleLink key={item.href} href={item.href} className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
                   {t(item.labelKey)}
-                </Link>
+                </LocaleLink>
               ))}
             </nav>
           </div>
@@ -99,9 +99,9 @@ export default function SiteFooter() {
           </p>
           <nav aria-label="Legal" className="flex gap-4">
             {LEGAL.map(l => (
-              <Link key={l.href} href={l.href} className="text-xs text-zinc-600 hover:text-zinc-400 transition-colors">
+              <LocaleLink key={l.href} href={l.href} className="text-xs text-zinc-600 hover:text-zinc-400 transition-colors">
                 {l.label}
-              </Link>
+              </LocaleLink>
             ))}
           </nav>
         </div>

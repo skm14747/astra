@@ -13,6 +13,7 @@ export const metadata: Metadata = {
       'pt': '/pt/how-it-works',
       'es': '/es/how-it-works',
       'ja': '/ja/how-it-works',
+      'fr': '/fr/how-it-works',
       'x-default': '/how-it-works',
     },
   },

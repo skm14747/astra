@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import LocaleLink from '@/components/shared/LocaleLink';
 import { BLOG_POSTS } from '@/content/blog';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import AdSlot from '@/components/ads/AdSlot';
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
       'pt': '/pt/blog',
       'es': '/es/blog',
       'ja': '/ja/blog',
+      'fr': '/fr/blog',
       'x-default': '/blog',
     },
   },
@@ -57,7 +58,7 @@ export default function BlogIndexPage() {
       {/* Post cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {BLOG_POSTS.map(post => (
-          <Link
+          <LocaleLink
             key={post.slug}
             href={`/blog/${post.slug}`}
             className="glass-card rounded-2xl p-6 hover:border-violet-500/30 transition-all group"
@@ -78,7 +79,7 @@ export default function BlogIndexPage() {
                 {new Date(post.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
               </time>
             </div>
-          </Link>
+          </LocaleLink>
         ))}
       </div>
 
