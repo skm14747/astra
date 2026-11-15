@@ -125,7 +125,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-WPZL23HX');`}
         </Script>
       </head>
-      <body className={`${playfair.variable} ${inter.variable} ${notoDevanagari.variable} bg-astra-bg text-zinc-100 min-h-screen`}>
+      <body className={`${playfair.variable} ${inter.variable} ${notoDevanagari.variable} bg-astra-bg text-zinc-200 min-h-screen`}>
         {/* GTM noscript fallback */}
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WPZL23HX" height="0" width="0" style={{display:'none',visibility:'hidden'}} />
@@ -140,7 +140,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <ProfileProvider>
           <SettingsProvider>
             <Navbar />
-            <main id="main-content" className="relative z-10 min-h-[calc(100vh-4rem)] pb-20 md:pb-8" tabIndex={-1}>
+            <main id="main-content" className="relative z-10 min-h-[calc(100vh-4rem)] pb-24 md:pb-8" tabIndex={-1}>
               {children}
             </main>
             <SiteFooter />

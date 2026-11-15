@@ -16,6 +16,8 @@ export { DIGNITY_TEXT };
 import { getMahadashaNarrative as getMahadashaNarrativeEn, MAHADASHA_TEXTS } from './dasha-text';
 export { MAHADASHA_TEXTS };
 export type { MahadashaNarrative } from './dasha-text';
+import { getLocalizedMahadashaNarrative } from './dasha-narratives';
+import { getLocalizedNakshatraProfile } from './nakshatra-profiles';
 import {
   generateCareerReading as generateCareerReadingEn,
   generateMarriageReading as generateMarriageReadingEn,
@@ -95,10 +97,50 @@ export function getPlanetInSignText(planet: Planet, sign: string, lang: Lang = '
 
 export function getPlanetInHouseText(planet: Planet, house: number, lang: Lang = 'en') {
   const en = getPlanetInHouseTextEn(planet, house);
-  if (lang === 'hi') return { ...en, area: (HOUSE_AREAS_HI[house - 1] || '') as string };
-  if (lang === 'ne') return { ...en, area: HOUSE_AREA_MAP_NE[house - 1] || en.area };
-  if (lang === 'pt') return { ...en, area: HOUSE_AREA_MAP_PT[house - 1] || en.area };
-  if (lang === 'es') return { ...en, area: HOUSE_AREA_MAP_ES[house - 1] || en.area };
+  if (lang === 'hi') {
+    const pName = planetNameHi(planet);
+    const area = (HOUSE_AREAS_HI[house - 1] || en.area) as string;
+    const ord = ordinalHi(house);
+    return {
+      keywords: `${pName} ${ord} भाव में`,
+      area,
+      whenStrong: `${ord} भाव में ${pName} की बली स्थिति जातक के ${area} को विशेष सामर्थ्य, अनुकूलता और सकारात्मक दिशा प्रदान करती है। यह स्थिति जीवन में इस क्षेत्र से संबंधित कार्यों में सफलता और आत्मविश्वास सुनिश्चित करती है।`,
+      whenWeak: `${ord} भाव में ${pName} के निर्बल अथवा पीड़ित होने पर ${area} के प्रसंग में अतिरिक्त सावधानी, धैर्य और शांति उपाय अपनाने की आवश्यकता होती है।`,
+    };
+  }
+  if (lang === 'ne') {
+    const pName = planetNameNe(planet);
+    const area = HOUSE_AREA_MAP_NE[house - 1] || en.area;
+    const ord = ordinalNe(house);
+    return {
+      keywords: `${pName} ${ord} भावमा`,
+      area,
+      whenStrong: `${ord} भावमा ${pName}को बली स्थितिले जातकको ${area}लाई विशेष सामर्थ्य, अनुकूलता र सकारात्मक दिशा प्रदान गर्दछ। यस स्थितिले जीवनमा यस क्षेत्रसँग सम्बन्धित कार्यहरूमा सफलता दिलाउँछ।`,
+      whenWeak: `${ord} भावमा ${pName} कमजोर वा पीडित हुँदा ${area}का विषयहरूमा अतिरिक्त सावधानी र धैर्य अपनाउनुपर्ने हुन्छ।`,
+    };
+  }
+  if (lang === 'pt') {
+    const pName = planetNamePt(planet);
+    const area = HOUSE_AREA_MAP_PT[house - 1] || en.area;
+    const ord = ordinalPt(house);
+    return {
+      keywords: `${pName} na ${ord} casa`,
+      area,
+      whenStrong: `A presença harmoniosa de ${pName} na ${ord} casa infunde vitalidade, clareza e autoridade natural aos assuntos de ${area}, permitindo colher frutos sólidos e inspiradores neste setor da existência.`,
+      whenWeak: `Caso ${pName} encontre-se sob aflição na ${ord} casa, os temas de ${area} demandam paciência, disciplina e atenção consciente para transcender atritos transitórios.`,
+    };
+  }
+  if (lang === 'es') {
+    const pName = planetNameEs(planet);
+    const area = HOUSE_AREA_MAP_ES[house - 1] || en.area;
+    const ord = ordinalEs(house);
+    return {
+      keywords: `${pName} en la ${ord} casa`,
+      area,
+      whenStrong: `La posición favorable de ${pName} en la ${ord} casa infunde vitalidad, lucidez y firmeza a las vivencias de ${area}, propiciando logros duraderos y madurez en este ámbito de la vida.`,
+      whenWeak: `Si ${pName} sufre aflicciones en la ${ord} casa, los asuntos de ${area} reclaman templanza, prudencia y un cuidado preventivo para superar obstáculos cármicos.`,
+    };
+  }
   return en;
 }
 
@@ -136,18 +178,30 @@ export function getAspectReceived(planet: string, lang: Lang = 'en') {
 
 export function getConjunctionText(p1: Planet, p2: Planet, lang: Lang = 'en') {
   if (lang === 'hi') return getConjunctionTextHi(p1, p2);
-  // ne, pt, es: fall back to English (conjunction texts are complex; shared Vedic terms work)
+  if (lang === 'ne') {
+    const p1Ne = planetNameNe(p1);
+    const p2Ne = planetNameNe(p2);
+    return `${p1Ne} र ${p2Ne} यस भावमा एकापसमा युति गर्दछन्, जसले दुवै ग्रहका कारकत्वलाई सम्मिश्रित गरी जीवनका यी क्षेत्रहरूमा संयुक्त प्रभाव पार्दछ।`;
+  }
+  if (lang === 'pt') {
+    const p1Pt = planetNamePt(p1);
+    const p2Pt = planetNamePt(p2);
+    return `A conjunção cósmica entre ${p1Pt} e ${p2Pt} nesta casa une as energias de ambos os astros, gerando uma força combinada e singular para os assuntos deste setor.`;
+  }
+  if (lang === 'es') {
+    const p1Es = planetNameEs(p1);
+    const p2Es = planetNameEs(p2);
+    return `La conjunción cósmica entre ${p1Es} y ${p2Es} en esta casa amalgama las naturalezas de ambos planetas, desplegando un influjo combinado y distintivo sobre estas vivencias.`;
+  }
   return getConjunctionTextEn(p1, p2);
 }
 
-export function getNakshatraProfile(index: number, _lang: Lang = 'en') {
-  // Nakshatra profiles stay English for now (Sanskrit terms are universal)
-  return getNakshatraProfileEn(index);
+export function getNakshatraProfile(index: number, lang: Lang = 'en') {
+  return getLocalizedNakshatraProfile(index, lang) ?? getNakshatraProfileEn(index);
 }
 
-export function getMahadashaNarrative(planet: string, _lang: Lang = 'en') {
-  // Dasha narratives stay English for now
-  return getMahadashaNarrativeEn(planet);
+export function getMahadashaNarrative(planet: string, lang: Lang = 'en') {
+  return getLocalizedMahadashaNarrative(planet, lang) ?? getMahadashaNarrativeEn(planet);
 }
 
 export function generateCareerReading(chart: Parameters<typeof generateCareerReadingEn>[0], lang: Lang = 'en') {

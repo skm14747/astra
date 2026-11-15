@@ -49,12 +49,12 @@ const ZODIAC_STRIP = '♈ ♉ ♊ ♋ ♌ ♍ ♎ ♏ ♐ ♑ ♒ ♓';
 
 function FeatureCard({ href, icon, title, desc, color }: { href: string; icon: string; title: string; desc: string; color: string }) {
   return (
-    <LocaleLink href={href} className="group glass-card gradient-border rounded-2xl p-6 flex flex-col gap-3 relative overflow-hidden">
+    <LocaleLink href={href} className="group glass-card gradient-border rounded-2xl p-7 flex flex-col gap-3 relative overflow-hidden">
       <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
       <div className="relative z-10">
-        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-white/[0.06] to-white/[0.02] flex items-center justify-center text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">{icon}</div>
-        <h3 className="text-base font-semibold text-white group-hover:text-white transition">{title}</h3>
-        <p className="text-sm text-zinc-400 leading-relaxed mt-1 group-hover:text-zinc-300 transition">{desc}</p>
+        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-white/[0.06] to-white/[0.02] flex items-center justify-center text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">{icon}</div>
+        <h3 className="text-lg font-semibold text-white group-hover:text-white transition">{title}</h3>
+        <p className="text-base text-zinc-400 leading-relaxed mt-1.5 group-hover:text-zinc-300 transition">{desc}</p>
       </div>
     </LocaleLink>
   );
@@ -89,7 +89,7 @@ export default function Home() {
             <span className="text-white drop-shadow-[0_0_40px_rgba(124,92,252,0.3)]">{t('home.hero.title2')}</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed mb-12">
+          <p className="text-xl sm:text-2xl text-zinc-400 max-w-2xl mx-auto leading-relaxed mb-12">
             {t('home.hero.subtitle')}
           </p>
 
@@ -132,9 +132,9 @@ export default function Home() {
           <h2 className="font-display text-3xl sm:text-4xl font-bold mt-2 text-white">
             {t('home.vedic.title')}<span className="gradient-text-static">{t('home.vedic.titleAccent')}</span>
           </h2>
-          <p className="text-zinc-400 mt-3 max-w-lg text-lg">{t('home.vedic.desc')}</p>
+          <p className="text-zinc-400 mt-3 max-w-lg text-lg leading-relaxed">{t('home.vedic.desc')}</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {VEDIC_FEATURES.map(f => <TranslatedFeatureCard key={f.href} {...f} />)}
         </div>
       </section>
@@ -154,9 +154,9 @@ export default function Home() {
           <h2 className="font-display text-3xl sm:text-4xl font-bold mt-2 text-white">
             {t('home.matrix.title')}<span className="gradient-text-static">{t('home.matrix.titleAccent')}</span>
           </h2>
-          <p className="text-zinc-400 mt-3 max-w-lg text-lg">{t('home.matrix.desc')}</p>
+          <p className="text-zinc-400 mt-3 max-w-lg text-lg leading-relaxed">{t('home.matrix.desc')}</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {MATRIX_FEATURES.map(f => <TranslatedFeatureCard key={f.href} {...f} />)}
         </div>
       </section>
@@ -171,7 +171,7 @@ export default function Home() {
               <LocaleLink
                 key={tool.href}
                 href={tool.href}
-                className="px-5 py-2.5 rounded-full text-sm text-zinc-400 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.04] hover:border-violet-500/30 transition-all group"
+                className="px-5 py-3 rounded-full text-base text-zinc-400 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] hover:border-violet-500/30 transition-all group"
               >
                 <span className="mr-2 opacity-50 group-hover:opacity-100 transition">{tool.icon}</span>
                 {t(tool.labelKey)}
@@ -191,34 +191,34 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-10">
             <div>
-              <h3 className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-3">{t('footer.popularTools')}</h3>
-              <ul className="space-y-2">
+              <h3 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider mb-3">{t('footer.popularTools')}</h3>
+              <ul className="space-y-2.5">
                 {([['/vedic/kundli', 'footer.freeKundli'], ['/vedic/compatibility', 'footer.kundliMilan'], ['/vedic/panchang', 'footer.dailyPanchang'], ['/vedic/dashas', 'footer.dashaTimeline'], ['/vedic/yogas', 'footer.yogasDoshas'], ['/vedic/transits', 'footer.sadeSatiCheck']] as const).map(([href, key]) => (
-                  <li key={href}><LocaleLink href={href} className="text-xs text-zinc-500 hover:text-zinc-300 transition">{t(key)}</LocaleLink></li>
+                  <li key={href}><LocaleLink href={href} className="text-sm text-zinc-500 hover:text-zinc-300 transition">{t(key)}</LocaleLink></li>
                 ))}
               </ul>
             </div>
             <div>
-              <h3 className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-3">{t('footer.moreTools')}</h3>
-              <ul className="space-y-2">
+              <h3 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider mb-3">{t('footer.moreTools')}</h3>
+              <ul className="space-y-2.5">
                 {([['/vedic/muhurta', 'footer.muhurtaFinder'], ['/vedic/nakshatra', 'footer.nakshatraAnalysis'], ['/vedic/shadbala', 'footer.shadbalaCalc'], ['/vedic/remedies', 'footer.vedicRemedies'], ['/matrix/chart', 'footer.matrixOfDestiny'], ['/vedic/report', 'footer.fullReport']] as const).map(([href, key]) => (
-                  <li key={href}><LocaleLink href={href} className="text-xs text-zinc-500 hover:text-zinc-300 transition">{t(key)}</LocaleLink></li>
+                  <li key={href}><LocaleLink href={href} className="text-sm text-zinc-500 hover:text-zinc-300 transition">{t(key)}</LocaleLink></li>
                 ))}
               </ul>
             </div>
             <div>
-              <h3 className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-3">{t('footer.analysis')}</h3>
-              <ul className="space-y-2">
+              <h3 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider mb-3">{t('footer.analysis')}</h3>
+              <ul className="space-y-2.5">
                 {([['/vedic/career', 'footer.careerAnalysis'], ['/vedic/wealth', 'footer.wealthAnalysis'], ['/vedic/health', 'footer.healthLongevity'], ['/vedic/predictions', 'footer.annualPredictions'], ['/vedic/nadi', 'footer.nadiAstrology'], ['/vedic/ashtakavarga', 'footer.ashtakavarga']] as const).map(([href, key]) => (
-                  <li key={href}><LocaleLink href={href} className="text-xs text-zinc-500 hover:text-zinc-300 transition">{t(key)}</LocaleLink></li>
+                  <li key={href}><LocaleLink href={href} className="text-sm text-zinc-500 hover:text-zinc-300 transition">{t(key)}</LocaleLink></li>
                 ))}
               </ul>
             </div>
             <div>
-              <h3 className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-3">{t('footer.about')}</h3>
-              <ul className="space-y-2">
+              <h3 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider mb-3">{t('footer.about')}</h3>
+              <ul className="space-y-2.5">
                 {([['/how-it-works', 'footer.howItWorks'], ['/settings', 'footer.settings']] as const).map(([href, key]) => (
-                  <li key={href}><LocaleLink href={href} className="text-xs text-zinc-500 hover:text-zinc-300 transition">{t(key)}</LocaleLink></li>
+                  <li key={href}><LocaleLink href={href} className="text-sm text-zinc-500 hover:text-zinc-300 transition">{t(key)}</LocaleLink></li>
                 ))}
               </ul>
             </div>
@@ -227,8 +227,8 @@ export default function Home() {
             <span className="text-xs text-violet-400/30">{ZODIAC_STRIP}</span>
           </div>
           <div className="text-center">
-            <p className="text-xs text-zinc-500">{t('app.footer.privacy')}</p>
-            <p className="text-[10px] text-zinc-600 mt-2">{t('app.footer.powered')}</p>
+            <p className="text-sm text-zinc-500">{t('app.footer.privacy')}</p>
+            <p className="text-xs text-zinc-600 mt-2">{t('app.footer.powered')}</p>
           </div>
         </div>
       </footer>

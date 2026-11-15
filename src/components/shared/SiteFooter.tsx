@@ -45,19 +45,19 @@ export default function SiteFooter() {
             <LocaleLink href="/" className="font-display text-xl font-bold text-violet-400 tracking-wide">
               ASTRA DESTINY
             </LocaleLink>
-            <p className="text-xs text-zinc-500 mt-2 max-w-[200px] leading-relaxed">
+            <p className="text-sm text-zinc-500 mt-2 max-w-[220px] leading-relaxed">
               {t('app.footer.privacy')}
             </p>
           </div>
 
           {/* Popular Tools */}
           <div className="col-span-1">
-            <h3 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-3">
+            <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">
               {t('footer.popularTools')}
             </h3>
-            <nav aria-label="Popular tools" className="flex flex-col gap-1.5">
+            <nav aria-label="Popular tools" className="flex flex-col gap-2">
               {POPULAR_TOOLS.slice(0, 6).map(item => (
-                <LocaleLink key={item.href} href={item.href} className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
+                <LocaleLink key={item.href} href={item.href} className="text-[0.9375rem] text-zinc-500 hover:text-zinc-300 transition-colors">
                   {t(item.labelKey)}
                 </LocaleLink>
               ))}
@@ -66,12 +66,12 @@ export default function SiteFooter() {
 
           {/* More Tools */}
           <div className="col-span-1">
-            <h3 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-3">
+            <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">
               {t('footer.moreTools')}
             </h3>
-            <nav aria-label="More tools" className="flex flex-col gap-1.5">
+            <nav aria-label="More tools" className="flex flex-col gap-2">
               {POPULAR_TOOLS.slice(6).map(item => (
-                <LocaleLink key={item.href} href={item.href} className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
+                <LocaleLink key={item.href} href={item.href} className="text-[0.9375rem] text-zinc-500 hover:text-zinc-300 transition-colors">
                   {t(item.labelKey)}
                 </LocaleLink>
               ))}
@@ -80,12 +80,12 @@ export default function SiteFooter() {
 
           {/* Resources */}
           <div className="col-span-1">
-            <h3 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-3">
+            <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">
               {t('footer.about')}
             </h3>
-            <nav aria-label="Resources" className="flex flex-col gap-1.5">
+            <nav aria-label="Resources" className="flex flex-col gap-2">
               {RESOURCES.map(item => (
-                <LocaleLink key={item.href} href={item.href} className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
+                <LocaleLink key={item.href} href={item.href} className="text-[0.9375rem] text-zinc-500 hover:text-zinc-300 transition-colors">
                   {t(item.labelKey)}
                 </LocaleLink>
               ))}
@@ -94,18 +94,18 @@ export default function SiteFooter() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-zinc-600">
+          <p className="text-sm text-zinc-600">
             © 2026 Astra Destiny · {t('app.tagline')}
           </p>
-          <nav aria-label="Legal" className="flex gap-4">
+          <nav aria-label="Legal" className="flex gap-5">
             {LEGAL.map(l => (
-              <LocaleLink key={l.href} href={l.href} className="text-xs text-zinc-600 hover:text-zinc-400 transition-colors">
+              <LocaleLink key={l.href} href={l.href} className="text-sm text-zinc-600 hover:text-zinc-400 transition-colors">
                 {l.label}
               </LocaleLink>
             ))}
           </nav>
         </div>
-        <p className="text-xs text-zinc-700 text-center mt-3">
+        <p className="text-sm text-zinc-700 text-center mt-3">
           {t('app.footer.powered')}
         </p>
       </div>

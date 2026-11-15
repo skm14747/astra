@@ -8,7 +8,7 @@ export type FontSize = 'small' | 'default' | 'large' | 'xl';
 export type ThemeMode = 'dark' | 'light';
 export type Language = 'en' | 'hi' | 'ne' | 'pt' | 'es' | 'ja' | 'fr';
 
-const FONT_SCALE: Record<FontSize, number> = { small: 87.5, default: 100, large: 112.5, xl: 125 };
+const FONT_SCALE: Record<FontSize, number> = { small: 93.75, default: 106.25, large: 118.75, xl: 131.25 };
 
 interface SettingsContextValue {
   ayanamsaSystem: AyanamsaSystem;

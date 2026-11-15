@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
       'Free Vedic astrology calculator with Kundli, Dasha timelines, Yogas, compatibility matching, and 200+ Jyotish tools.',
     start_url: '/',
     display: 'standalone',
-    background_color: '#050510',
+    background_color: '#0a0a1a',
     theme_color: '#7c5cfc',
     icons: [
       { src: '/icon-192.png', sizes: '192x192', type: 'image/png' },

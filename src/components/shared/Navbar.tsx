@@ -88,6 +88,7 @@ export default function Navbar() {
     { code: 'ne', label: 'नेपाली', short: 'ने', family: 'vedic' },
     { code: 'pt', label: 'Português', short: 'PT', family: 'latin' },
     { code: 'es', label: 'Español', short: 'ES', family: 'latin' },
+    { code: 'fr', label: 'Français', short: 'FR', family: 'latin' },
     { code: 'ja', label: '日本語', short: 'JA', family: 'east-asian' },
   ];
 
@@ -100,7 +101,7 @@ export default function Navbar() {
   );
   const handleLanguageChange = (lang: Language) => {
     setLanguage(lang);
-    const cleanPath = pathname.replace(/^\/(hi|ne|pt|es|ja)/, '') || '/';
+    const cleanPath = pathname.replace(/^\/(hi|ne|pt|es|ja|fr)/, '') || '/';
     if (lang === 'en') {
       router.push(cleanPath);
     } else {
@@ -155,7 +156,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-violet-500/[0.06] bg-[#050510]/60 backdrop-blur-2xl">
+      <header className="sticky top-0 z-50 border-b border-violet-500/[0.08] bg-[#0a0a1a]/70 backdrop-blur-2xl">
         <div className="mx-auto max-w-7xl flex items-center justify-between px-4 sm:px-6 h-16">
           {/* Logo */}
           <LocaleLink href="/" className="flex items-center gap-2.5 group">
@@ -173,7 +174,7 @@ export default function Navbar() {
                 onMouseLeave={handleGroupLeave}
               >
                 <button
-                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  className={`px-3.5 py-2.5 rounded-lg text-[0.9375rem] font-medium transition-colors ${
                     isGroupActive(group) ? 'text-white drop-shadow-[0_0_8px_rgba(124,92,252,0.3)]' : 'text-zinc-400 hover:text-zinc-200'
                   }`}
                 >
@@ -187,7 +188,7 @@ export default function Navbar() {
                         <LocaleLink
                           key={item.href}
                           href={item.href}
-                          className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
+                          className={`block px-3.5 py-2.5 rounded-lg text-[0.9375rem] transition-colors ${
                             cleanPathname === item.href
                               ? 'bg-white/[0.06] text-white font-medium'
                               : 'text-zinc-400 hover:text-white hover:bg-white/[0.04]'
@@ -422,7 +423,7 @@ export default function Navbar() {
                     <LocaleLink
                       key={item.href}
                       href={item.href}
-                      className={`block px-3 py-2.5 rounded-lg text-sm transition ${
+                      className={`block px-3.5 py-3 rounded-lg text-base transition ${
                         cleanPathname === item.href ? 'bg-white/[0.06] text-white font-medium' : 'text-zinc-400 hover:text-white'
                       }`}
                     >
