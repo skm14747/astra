@@ -4,14 +4,19 @@ import EmptyState from '@/components/shared/EmptyState';
 import { analyzeCareer } from '@/lib/vedic/career';
 import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
 import SeoIntro from '@/components/seo/SeoIntro';
+import RelatedTools from '@/components/seo/RelatedTools';
+import { VEDIC_SEO } from '../seo';
+import { useT } from '@/lib/i18n';
 
 export default function CareerPage() {
   const { chart } = useProfileChart();
 
+  const t = useT();
   if (!chart) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-      <EmptyState icon="💼" title="Career Analysis" description="Create a birth profile to analyze your career potential through Vedic astrology." />
-      <SeoIntro heading="Career Analysis in Vedic Astrology" text="Career analysis examines the 10th house (Karma Bhava), its lord, planets placed there, and the Dasamsa (D10) divisional chart. The 10th house represents public life, profession, authority, and reputation." />
+      <EmptyState icon="💼" title={t('career.title')} description={t('empty.career')} />
+      <SeoIntro headingKey="seo.career.heading" textKey="seo.career.text" />
+      {VEDIC_SEO.career.relatedTools && <RelatedTools tools={VEDIC_SEO.career.relatedTools} />}
     </div>
   );
 
@@ -21,8 +26,8 @@ export default function CareerPage() {
     <div className="mx-auto max-w-5xl px-4 sm:px-6 py-8 space-y-8">
       <div>
         <div className="zodiac-divider mb-3"><span className="text-xs text-violet-400/40">💼 Career</span></div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Career Analysis</h1>
-        <p className="text-zinc-400 mt-1">10th house, Dasamsa (D10), and Amatyakaraka career indicators</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('career.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('career.subtitle')}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

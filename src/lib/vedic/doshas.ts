@@ -237,6 +237,27 @@ export function detectNadiDosha(chart: KundliChart): DoshaResult {
   };
 }
 
+/* #125 Naisargika Dosha — Natural malefics in sensitive houses */
+export function detectNaisargikaDosha(chart: KundliChart): DoshaResult {
+  const malefics = ['Sun', 'Mars', 'Saturn', 'Rahu', 'Ketu'] as const;
+  const sensitiveHouses = [1, 4, 7, 8, 12];
+  const afflictions: string[] = [];
+  for (const m of malefics) {
+    const h = chart.planets[m].house;
+    if (sensitiveHouses.includes(h)) {
+      afflictions.push(`${m} in ${h}th house`);
+    }
+  }
+  return {
+    name: 'Naisargika Dosha',
+    isActive: afflictions.length >= 2,
+    severity: afflictions.length >= 3 ? 'severe' : afflictions.length >= 2 ? 'moderate' : 'mild',
+    description: afflictions.length > 0
+      ? `Natural malefics in sensitive houses: ${afflictions.join(', ')}`
+      : 'No significant Naisargika Dosha — malefics not concentrated in sensitive houses',
+  };
+}
+
 export function detectAllDoshas(chart: KundliChart): DoshaResult[] {
   return [
     detectKaalSarpDosha(chart),
@@ -251,5 +272,6 @@ export function detectAllDoshas(chart: KundliChart): DoshaResult[] {
     detectDaridrYoga(chart),
     detectGandmoolDosha(chart),
     detectNadiDosha(chart),
+    detectNaisargikaDosha(chart),
   ];
 }

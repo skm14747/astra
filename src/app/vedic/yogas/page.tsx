@@ -5,10 +5,14 @@ import EmptyState from '@/components/shared/EmptyState';
 import { detectAllYogas } from '@/lib/vedic/yogas';
 import { detectAllDoshas } from '@/lib/vedic/doshas';
 import SeoIntro from '@/components/seo/SeoIntro';
+import RelatedTools from '@/components/seo/RelatedTools';
+import { VEDIC_SEO } from '../seo';
+import { useT } from '@/lib/i18n';
 
 export default function YogasPage() {
   const { chart } = useProfileChart();
 
+  const t = useT();
   const { yogas, doshas } = useMemo(() => {
     if (!chart) return { yogas: [], doshas: [] };
     return { yogas: detectAllYogas(chart), doshas: detectAllDoshas(chart) };
@@ -16,8 +20,9 @@ export default function YogasPage() {
 
   if (!chart) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-      <EmptyState icon="✦" title="Yoga & Dosha Analysis" description="Create a birth profile to detect planetary yogas and doshas in your chart." />
-      <SeoIntro heading="What are Yogas and Doshas?" text="Yogas are specific planetary combinations that produce auspicious or inauspicious results in a birth chart. Raja Yoga can indicate fame and authority, while Dhana Yoga signals wealth. Doshas are afflictions — Manglik Dosha affects marriage compatibility, Kaal Sarp Dosha creates recurring obstacles, and Pitra Dosha indicates ancestral karma." />
+      <EmptyState icon="✦" title={t('yogas.title')} description={t('empty.yogas')} />
+      <SeoIntro headingKey="seo.yogas.heading" textKey="seo.yogas.text" />
+      {VEDIC_SEO.yogas.relatedTools && <RelatedTools tools={VEDIC_SEO.yogas.relatedTools} />}
     </div>
   );
 
@@ -27,14 +32,14 @@ export default function YogasPage() {
         <div className="zodiac-divider mb-3">
           <span className="text-xs text-emerald-400/40">✦ ♃ ♀ ☉</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Yogas & Doshas</h1>
-        <p className="text-zinc-400 mt-1">Planetary combinations and afflictions in your chart</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('yogas.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('yogas.subtitle')}</p>
       </div>
 
       {/* Summary strip */}
       <div className="flex gap-3 flex-wrap">
-        {yogas.length > 0 && <span className="planet-badge !bg-emerald-500/12 !border-emerald-500/20 !text-emerald-400">{yogas.length} Yogas found</span>}
-        {doshas.filter(d => d.isActive).length > 0 && <span className="planet-badge !bg-red-500/12 !border-red-500/20 !text-red-400">{doshas.filter(d => d.isActive).length} Doshas active</span>}
+        {yogas.length > 0 && <span className="planet-badge !bg-emerald-500/12 !border-emerald-500/20 !text-emerald-400">{t('yogas.found', { n: yogas.length })}</span>}
+        {doshas.filter(d => d.isActive).length > 0 && <span className="planet-badge !bg-red-500/12 !border-red-500/20 !text-red-400">{t('yogas.doshasActive', { n: doshas.filter(d => d.isActive).length })}</span>}
       </div>
 
       {yogas.length > 0 && (() => {
@@ -42,9 +47,9 @@ export default function YogasPage() {
         const medium = yogas.filter(y => y.strength === 'Medium');
         const weak = yogas.filter(y => y.strength === 'Weak' || (y.strength !== 'Strong' && y.strength !== 'Medium'));
         const groups = [
-          { label: 'Strong Yogas', items: strong },
-          { label: 'Medium Yogas', items: medium },
-          { label: 'Other Yogas', items: weak },
+          { label: t('yogas.strongYogas'), items: strong },
+          { label: t('yogas.mediumYogas'), items: medium },
+          { label: t('yogas.otherYogas'), items: weak },
         ].filter(g => g.items.length > 0);
         return (
           <div className="space-y-6">
@@ -78,7 +83,7 @@ export default function YogasPage() {
 
       {doshas.length > 0 && (
         <div>
-          <div className="section-title mb-4">Dosha Analysis</div>
+          <div className="section-title mb-4">{t('yogas.doshaAnalysis')}</div>
           <div className="space-y-3">
             {doshas.map((d, i) => (
               <div key={i} className={`glass-card rounded-xl p-5 ${d.isActive ? 'vedic-glow border-red-500/20' : ''}`}>

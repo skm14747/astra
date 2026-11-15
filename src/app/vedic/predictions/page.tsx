@@ -6,17 +6,22 @@ import { calculateVarshaphal } from '@/lib/vedic/predictions';
 import { RASHI_NAMES } from '@/lib/vedic/constants';
 import { RASHI_GLYPH } from '@/lib/vedic/glyphs';
 import SeoIntro from '@/components/seo/SeoIntro';
+import RelatedTools from '@/components/seo/RelatedTools';
+import { VEDIC_SEO } from '../seo';
+import { useT } from '@/lib/i18n';
 
 export default function PredictionsPage() {
   const { chart } = useProfileChart();
   const [year, setYear] = useState<number | null>(null);
+  const t = useT();
 
   useEffect(() => { setYear(new Date().getFullYear()); }, []);
 
   if (!chart || year === null) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-      <EmptyState icon="🔮" title="Annual Predictions" description="Create a birth profile to view Varshaphal (annual horoscope), Muntha, and year lord." />
-      <SeoIntro heading="What is Varshaphal?" text="Varshaphal (Tajaka annual chart) is a Solar Return chart cast for the exact moment the Sun returns to its natal position each year. Key components include the Muntha, the Year Lord, and Tajaka Yogas." />
+      <EmptyState icon="🔮" title={t('predictions.title')} description={t('empty.predictions')} />
+      <SeoIntro headingKey="seo.predictions.heading" textKey="seo.predictions.text" />
+      {VEDIC_SEO.predictions.relatedTools && <RelatedTools tools={VEDIC_SEO.predictions.relatedTools} />}
     </div>
   );
 
@@ -26,8 +31,8 @@ export default function PredictionsPage() {
     <div className="mx-auto max-w-5xl px-4 sm:px-6 py-8 space-y-8">
       <div>
         <div className="zodiac-divider mb-3"><span className="text-xs text-violet-400/40">🔮 Predictions</span></div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Annual Predictions</h1>
-        <p className="text-zinc-400 mt-1">Varshaphal (solar return) analysis</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('predictions.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('predictions.subtitle')}</p>
       </div>
 
       <div className="flex gap-2 items-center">

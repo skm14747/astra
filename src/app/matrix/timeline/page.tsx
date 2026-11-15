@@ -4,11 +4,13 @@ import { useProfile } from '@/lib/profile/context';
 import EmptyState from '@/components/shared/EmptyState';
 import { calculateMatrix } from '@/lib/matrix/core';
 import { getArcana } from '@/lib/matrix/arcana';
+import { useT } from '@/lib/i18n';
 
 export default function MatrixTimelinePage() {
   const { activeProfile } = useProfile();
   const [currentYear, setCurrentYear] = useState<number | null>(null);
 
+  const t = useT();
   useEffect(() => { setCurrentYear(new Date().getFullYear()); }, []);
 
   const chart = useMemo(() => {
@@ -23,7 +25,7 @@ export default function MatrixTimelinePage() {
 
   if (!chart) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-      <EmptyState icon="📊" title="Life Timeline" description="Create a birth profile to see your life energy timeline." />
+      <EmptyState icon="📊" title={t('matrixTimeline.title')} description={t('empty.matrixTimeline')} />
     </div>
   );
 
@@ -33,8 +35,8 @@ export default function MatrixTimelinePage() {
         <div className="zodiac-divider mb-3">
           <span className="text-xs text-violet-400/40">📊 ✦ ◇ ❋</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Life Timeline</h1>
-        <p className="text-zinc-400 mt-1">Age-by-age energy cycles across your 80-year life path</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('matrixTimeline.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('matrixTimeline.subtitle')}</p>
       </div>
 
       {/* Current decade hero */}
@@ -46,7 +48,7 @@ export default function MatrixTimelinePage() {
           <div className="glass-card rounded-2xl p-6 matrix-glow relative overflow-hidden">
             <div className="cosmic-orb w-24 h-24 bg-pink-600/8 -top-6 -right-6" />
             <div className="relative z-10">
-              <div className="section-title mb-2" style={{ color: '#e84393' }}>Current Decade</div>
+              <div className="section-title mb-2" style={{ color: '#e84393' }}>{t('matrixTimeline.currentDecade')}</div>
               <div className="flex items-center gap-4">
                 <div className="text-4xl font-bold text-pink-400">{currentVertex.energy}</div>
                 <div>
@@ -60,7 +62,7 @@ export default function MatrixTimelinePage() {
       })()}
 
       <div>
-        <div className="section-title mb-4">Decade Vertices (80-year cycle)</div>
+        <div className="section-title mb-4">{t('matrixTimeline.decadeVertices')}</div>
         <div className="flex gap-3 flex-wrap">
           {chart.ageCycle.vertices.map(v => {
             const isCurrent = currentAge >= v.age && currentAge < v.age + 10;
@@ -79,7 +81,7 @@ export default function MatrixTimelinePage() {
       </div>
 
       <div>
-        <div className="section-title mb-4">Year-by-Year Energy Timeline</div>
+        <div className="section-title mb-4">{t('matrixTimeline.yearByYear')}</div>
         <div className="flex flex-wrap gap-1.5">
           {chart.ageCycle.yearNodes.map((n, i) => {
             const age = n.year;

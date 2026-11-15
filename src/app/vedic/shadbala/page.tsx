@@ -5,16 +5,21 @@ import { calculateShadbala, calculateVimsopakaBala, calculateVaiseshikamsa, calc
 import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
 import type { GrahaPlanet } from '@/lib/vedic/types';
 import SeoIntro from '@/components/seo/SeoIntro';
+import RelatedTools from '@/components/seo/RelatedTools';
+import { VEDIC_SEO } from '../seo';
+import { useT } from '@/lib/i18n';
 
 const GRAHAS: GrahaPlanet[] = ['Sun', 'Moon', 'Mars', 'Mercury', 'Jupiter', 'Venus', 'Saturn'];
 
 export default function ShadbalaPage() {
   const { chart } = useProfileChart();
 
+  const t = useT();
   if (!chart) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-      <EmptyState icon="⚖" title="Shadbala — Six-fold Strength" description="Create a birth profile to calculate the six-fold planetary strength analysis." />
-      <SeoIntro heading="What is Shadbala?" text="Shadbala (six-fold strength) is the most comprehensive planetary strength assessment in Vedic astrology. It measures Sthana Bala, Dig Bala, Kala Bala, Cheshta Bala, Naisargika Bala, and Drig Bala. Planets must meet minimum thresholds to deliver their full promise." />
+      <EmptyState icon="⚖" title={t('shadbala.title')} description={t('empty.shadbala')} />
+      <SeoIntro headingKey="seo.shadbala.heading" textKey="seo.shadbala.text" />
+      {VEDIC_SEO.shadbala.relatedTools && <RelatedTools tools={VEDIC_SEO.shadbala.relatedTools} />}
     </div>
   );
 
@@ -29,8 +34,8 @@ export default function ShadbalaPage() {
         <div className="zodiac-divider mb-3">
           <span className="text-xs text-violet-400/40">⚖ Shadbala</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Shadbala</h1>
-        <p className="text-zinc-400 mt-1">Six-fold planetary strength analysis</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('shadbala.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('shadbala.subtitle')}</p>
       </div>
 
       {/* Main Shadbala Table */}

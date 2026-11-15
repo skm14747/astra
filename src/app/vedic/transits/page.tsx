@@ -9,6 +9,9 @@ import { detectSadeSati, calculateTransitScore, getTransitEffect } from '@/lib/v
 import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
 import type { Planet } from '@/lib/vedic/types';
 import SeoIntro from '@/components/seo/SeoIntro';
+import RelatedTools from '@/components/seo/RelatedTools';
+import { VEDIC_SEO } from '../seo';
+import { useT } from '@/lib/i18n';
 
 export default function TransitsPage() {
   const { chart } = useProfileChart();
@@ -16,6 +19,7 @@ export default function TransitsPage() {
   const { ayanamsaSystem } = useSettings();
   const [clientNow, setClientNow] = useState<Date | null>(null);
 
+  const t = useT();
   useEffect(() => { setClientNow(new Date()); }, []);
 
   const data = useMemo(() => {
@@ -31,8 +35,9 @@ export default function TransitsPage() {
 
   if (!data) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-      <EmptyState icon="🪐" title="Transit Analysis" description="Create a birth profile to see current transits relative to your Moon sign." />
-      <SeoIntro heading="Understanding Transits (Gochar)" text="Transits (Gochar) track current planetary positions relative to your birth chart. Saturn\'s 7.5-year Sade Sati is the most feared transit period. Jupiter transits bring expansion every 12 years. Rahu-Ketu transits activate karmic patterns." />
+      <EmptyState icon="🪐" title={t('transits.title')} description={t('empty.transits')} />
+      <SeoIntro headingKey="seo.transits.heading" textKey="seo.transits.text" />
+      {VEDIC_SEO.transits.relatedTools && <RelatedTools tools={VEDIC_SEO.transits.relatedTools} />}
     </div>
   );
 
@@ -45,21 +50,21 @@ export default function TransitsPage() {
         <div className="zodiac-divider mb-3">
           <span className="text-xs text-amber-400/40">🪐 ♄ ♃ ☊</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Transits (Gochar)</h1>
-        <p className="text-zinc-400 mt-1">Current planetary movements relative to your Moon sign</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('transits.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('transits.subtitle')}</p>
       </div>
 
       {/* Summary pills */}
       <div className="flex gap-3 flex-wrap">
-        <span className="planet-badge !bg-emerald-500/12 !border-emerald-500/20 !text-emerald-400">{data.transits.filter(t => t.isFavorable).length} Favorable</span>
-        <span className="planet-badge !bg-red-500/12 !border-red-500/20 !text-red-400">{data.transits.filter(t => !t.isFavorable).length} Challenging</span>
+        <span className="planet-badge !bg-emerald-500/12 !border-emerald-500/20 !text-emerald-400">{t('transits.favorable', { n: data.transits.filter(tr => tr.isFavorable).length })}</span>
+        <span className="planet-badge !bg-red-500/12 !border-red-500/20 !text-red-400">{t('transits.challenging', { n: data.transits.filter(tr => !tr.isFavorable).length })}</span>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className={`glass-card rounded-2xl p-5 ${data.sadeSati.isActive ? 'vedic-glow border-yellow-500/20' : ''}`}>
           <div className="flex items-center gap-2 mb-3">
             <span className="text-xl">{PLANET_GLYPH.Saturn}</span>
-            <h2 className="font-semibold text-zinc-100">Sade Sati</h2>
+            <h2 className="font-semibold text-zinc-100">{t('transits.sadeSati')}</h2>
           </div>
           <p className="text-sm text-zinc-400 leading-relaxed">{data.sadeSati.description}</p>
           <div className="mt-3">
@@ -72,7 +77,7 @@ export default function TransitsPage() {
         </div>
 
         <div className="glass-card rounded-2xl p-5">
-          <div className="section-title mb-2">Transit Score</div>
+          <div className="section-title mb-2">{t('transits.transitScore')}</div>
           <div className={`text-4xl font-bold font-display ${scoreColor}`}>{data.score}<span className="text-lg text-zinc-600"> / 95</span></div>
           <div className="w-full bg-white/[0.04] rounded-full h-2 mt-3">
             <div className={`h-2 rounded-full transition-all ${barColor}`} style={{ width: `${(data.score / 95) * 100}%` }} />
@@ -81,7 +86,7 @@ export default function TransitsPage() {
       </div>
 
       <div>
-        <div className="section-title mb-4">Planet Effects</div>
+        <div className="section-title mb-4">{t('transits.planetEffects')}</div>
         <div className="space-y-3">
           {data.transits.map((t, i) => (
             <div key={i} className={`glass-card rounded-xl p-4 flex items-start gap-4 ${t.isFavorable ? 'vedic-glow' : 'border-red-500/10'}`}>

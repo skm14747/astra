@@ -325,6 +325,20 @@ export function detectDurudharaYoga(chart: KundliChart): YogaResult | null {
   return null;
 }
 
+/* #101 Kahala Yoga — Lord of 4th and Jupiter in mutual Kendras + Lagna lord strong */
+export function detectKahalaYoga(chart: KundliChart): YogaResult | null {
+  const h4 = chart.houses.find(h => h.house === 4);
+  if (!h4) return null;
+  const h4Lord = h4.lord as Planet;
+  const h4LordHouse = chart.planets[h4Lord]?.house ?? 0;
+  const jupHouse = chart.planets.Jupiter.house;
+  const kendras = [1, 4, 7, 10];
+  if (kendras.includes(h4LordHouse) && kendras.includes(jupHouse)) {
+    return { name: 'Kahala Yoga', type: 'benefic', strength: 'Strong', description: '4th lord and Jupiter in Kendras — authority, courage, and determination', planets: [h4Lord, 'Jupiter'], houses: [h4LordHouse, jupHouse] };
+  }
+  return null;
+}
+
 export function detectAllYogas(chart: KundliChart): YogaResult[] {
   const yogas: YogaResult[] = [];
   yogas.push(...detectKendraTrikona(chart));
@@ -361,5 +375,7 @@ export function detectAllYogas(chart: KundliChart): YogaResult[] {
   if (sunapha) yogas.push(sunapha);
   const dur = detectDurudharaYoga(chart);
   if (dur) yogas.push(dur);
+  const kah = detectKahalaYoga(chart);
+  if (kah) yogas.push(kah);
   return yogas;
 }

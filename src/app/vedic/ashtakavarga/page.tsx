@@ -7,10 +7,14 @@ import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
 import { RASHI_NAMES } from '@/lib/vedic/constants';
 import type { GrahaPlanet } from '@/lib/vedic/types';
 import SeoIntro from '@/components/seo/SeoIntro';
+import RelatedTools from '@/components/seo/RelatedTools';
+import { VEDIC_SEO } from '../seo';
+import { useT } from '@/lib/i18n';
 
 export default function AshtakavargaPage() {
   const { chart } = useProfileChart();
 
+  const t = useT();
   const data = useMemo(() => {
     if (!chart) return null;
     const av = calculateAshtakavarga(chart);
@@ -19,8 +23,9 @@ export default function AshtakavargaPage() {
 
   if (!data) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-      <EmptyState icon="☉" title="Ashtakavarga" description="Create a birth profile to see BAV/SAV benefic point calculations." />
-      <SeoIntro heading="What is Ashtakavarga?" text="Ashtakavarga is a quantitative scoring system from BPHS that assigns Bindu (benefic points) to each sign. Signs with high SAV scores (28+) give strong transit results; low scores (under 25) indicate challenging transit periods. Essential for predicting transit impact." />
+      <EmptyState icon="☉" title={t('ashtakavarga.title')} description={t('empty.ashtakavarga')} />
+      <SeoIntro headingKey="seo.ashtakavarga.heading" textKey="seo.ashtakavarga.text" />
+      {VEDIC_SEO.ashtakavarga.relatedTools && <RelatedTools tools={VEDIC_SEO.ashtakavarga.relatedTools} />}
     </div>
   );
 
@@ -32,8 +37,8 @@ export default function AshtakavargaPage() {
         <div className="zodiac-divider mb-3">
           <span className="text-xs text-violet-400/40">☉ ☽ ♂ ☿ ♃ ♀ ♄</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Ashtakavarga</h1>
-        <p className="text-zinc-400 mt-1">Bindhu Ashtakavarga (BAV) and Sarva Ashtakavarga (SAV) analysis</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('ashtakavarga.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('ashtakavarga.subtitle')}</p>
       </div>
 
       {/* Summary strip */}
@@ -51,7 +56,7 @@ export default function AshtakavargaPage() {
       })()}
 
       <div>
-        <div className="section-title mb-3">BAV / SAV Matrix</div>
+        <div className="section-title mb-3">{t('ashtakavarga.bavSav')}</div>
       </div>
       <div className="glass-card rounded-2xl overflow-hidden">
         <div className="overflow-x-auto">

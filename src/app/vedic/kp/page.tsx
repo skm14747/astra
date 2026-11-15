@@ -6,10 +6,14 @@ import { calculateKPSubLord } from '@/lib/vedic/kp';
 import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
 import type { Planet, KPData } from '@/lib/vedic/types';
 import SeoIntro from '@/components/seo/SeoIntro';
+import RelatedTools from '@/components/seo/RelatedTools';
+import { VEDIC_SEO } from '../seo';
+import { useT } from '@/lib/i18n';
 
 export default function KPPage() {
   const { chart } = useProfileChart();
 
+  const t = useT();
   const kpData = useMemo(() => {
     if (!chart) return null;
     const result: Record<string, KPData> = {};
@@ -23,8 +27,9 @@ export default function KPPage() {
 
   if (!kpData) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-      <EmptyState icon="☉" title="KP System" description="Create a birth profile to see Krishnamurti Paddhati Sub-Lord analysis." />
-      <SeoIntro heading="What is the KP System?" text="The Krishnamurti Paddhati (KP System) is a modern refinement of Vedic astrology developed by Prof. K.S. Krishnamurti. It divides each Nakshatra into 9 sub-divisions, creating a finer 249-level zodiac segmentation. It\'s prized for precise event timing." />
+      <EmptyState icon="☉" title={t('kp.title')} description={t('empty.kp')} />
+      <SeoIntro headingKey="seo.kp.heading" textKey="seo.kp.text" />
+      {VEDIC_SEO.kp.relatedTools && <RelatedTools tools={VEDIC_SEO.kp.relatedTools} />}
     </div>
   );
 
@@ -34,11 +39,11 @@ export default function KPPage() {
         <div className="zodiac-divider mb-3">
           <span className="text-xs text-indigo-400/40">◈ ☉ ⭐</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">KP System</h1>
-        <p className="text-zinc-400 mt-1">Krishnamurti Paddhati Sub-Lord table</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('kp.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('kp.subtitle')}</p>
       </div>
 
-      <div className="section-title mb-3">Sub-Lord Table</div>
+      <div className="section-title mb-3">{t('kp.subLordTable')}</div>
       <div className="glass-card rounded-2xl overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">

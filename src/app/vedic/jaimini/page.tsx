@@ -6,17 +6,22 @@ import { calculateJaiminiData, getAmatyakarakaCareer, calculateCharaDasha, calcu
 import { PLANET_GLYPH, RASHI_GLYPH } from '@/lib/vedic/glyphs';
 import { RASHI_NAMES } from '@/lib/vedic/constants';
 import SeoIntro from '@/components/seo/SeoIntro';
+import RelatedTools from '@/components/seo/RelatedTools';
+import { VEDIC_SEO } from '../seo';
+import { useT } from '@/lib/i18n';
 
 export default function JaiminiPage() {
   const { chart } = useProfileChart();
   const [now, setNow] = useState<Date | null>(null);
+  const t = useT();
 
   useEffect(() => { setNow(new Date()); }, []);
 
   if (!chart) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-      <EmptyState icon="◈" title="Jaimini Astrology" description="Create a birth profile to explore Jaimini Chara Karakas, Karakamsha, Arudha Padas, and Chara Dasha." />
-      <SeoIntro heading="What is Jaimini Astrology?" text="Jaimini Sutras present a parallel system of Vedic astrology attributed to Sage Jaimini. Unlike Parashari astrology which focuses on planets, Jaimini emphasizes signs (Rashi) and their lords. The 7 Chara Karakas are planets ranked by degree." />
+      <EmptyState icon="◈" title={t('jaimini.title')} description={t('empty.jaimini')} />
+      <SeoIntro headingKey="seo.jaimini.heading" textKey="seo.jaimini.text" />
+      {VEDIC_SEO.jaimini.relatedTools && <RelatedTools tools={VEDIC_SEO.jaimini.relatedTools} />}
     </div>
   );
 
@@ -31,8 +36,8 @@ export default function JaiminiPage() {
         <div className="zodiac-divider mb-3">
           <span className="text-xs text-violet-400/40">◈ Jaimini</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Jaimini Astrology</h1>
-        <p className="text-zinc-400 mt-1">Chara Karakas, Karakamsha, Arudha Padas, and sign-based analysis</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('jaimini.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('jaimini.subtitle')}</p>
       </div>
 
       {/* Chara Karakas */}

@@ -5,6 +5,9 @@ import EmptyState from '@/components/shared/EmptyState';
 import { generateExpandedRemedies } from '@/lib/vedic/remedies';
 import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
 import SeoIntro from '@/components/seo/SeoIntro';
+import RelatedTools from '@/components/seo/RelatedTools';
+import { VEDIC_SEO } from '../seo';
+import { useT } from '@/lib/i18n';
 
 const typeConfig: Record<string, { icon: string; accent: string }> = {
   gemstone: { icon: '💎', accent: 'border-blue-500/20' },
@@ -16,6 +19,7 @@ const typeConfig: Record<string, { icon: string; accent: string }> = {
 export default function RemediesPage() {
   const { chart } = useProfileChart();
 
+  const t = useT();
   const remedies = useMemo(() => {
     if (!chart) return [];
     return generateExpandedRemedies(chart);
@@ -23,8 +27,9 @@ export default function RemediesPage() {
 
   if (!chart) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-      <EmptyState icon="💎" title="Remedies" description="Create a birth profile for personalized gemstone, mantra, and lifestyle recommendations." />
-      <SeoIntro heading="Vedic Astrological Remedies" text="Vedic astrology prescribes specific remedies (Upaya) to strengthen weak planets and mitigate afflictions. These include wearing gemstones on the correct finger and metal, chanting Beej Mantras and Stotras, wearing the appropriate Mukhi Rudraksha, performing charity on specific days, and observing fasts." />
+      <EmptyState icon="💎" title={t('remedies.title')} description={t('empty.remedies')} />
+      <SeoIntro headingKey="seo.remedies.heading" textKey="seo.remedies.text" />
+      {VEDIC_SEO.remedies.relatedTools && <RelatedTools tools={VEDIC_SEO.remedies.relatedTools} />}
     </div>
   );
 
@@ -34,8 +39,8 @@ export default function RemediesPage() {
         <div className="zodiac-divider mb-3">
           <span className="text-xs text-blue-400/40">💎 🕉 🌿 🪔</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Remedies & Recommendations</h1>
-        <p className="text-zinc-400 mt-1">Personalized suggestions based on your chart&apos;s weak points</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('remedies.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('remedies.subtitle')}</p>
       </div>
 
       {remedies.length > 0 && (() => {

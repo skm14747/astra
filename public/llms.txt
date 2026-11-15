@@ -1,0 +1,21 @@
+# Astra Destiny
+
+> Free Vedic Astrology Calculator
+> https://astradestiny.com
+
+Astra is a free, browser-based Vedic astrology calculator with 200+ Jyotish tools. All calculations use NASA JPL ephemeris and Lahiri Ayanamsa. No login required. No data leaves the browser.
+
+## Key Tools
+- Kundli (Birth Chart): /vedic/kundli
+- Kundli Milan (Compatibility): /vedic/compatibility
+- Mahadasha Calculator: /vedic/dashas
+- Today's Panchang: /vedic/panchang
+- Nakshatra Calculator: /vedic/nakshatra
+- Mangal Dosha Check: /vedic/mangal-dosha
+- Kaal Sarp Dosha: /vedic/kaal-sarp-dosha
+- Navamsa (D9) Chart: /vedic/navamsa
+- Sade Sati Calculator: /vedic/transits
+- Yoga & Dosha Analysis: /vedic/yogas
+
+## Full Documentation
+See /llms-full.txt for comprehensive tool listing and technical details.

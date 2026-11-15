@@ -11,16 +11,21 @@ import { PLANET_GLYPH, RASHI_GLYPH } from '@/lib/vedic/glyphs';
 import type { Planet } from '@/lib/vedic/types';
 import { RASHI_NAMES } from '@/lib/vedic/constants';
 import SeoIntro from '@/components/seo/SeoIntro';
+import RelatedTools from '@/components/seo/RelatedTools';
+import { VEDIC_SEO } from '../seo';
+import { useT } from '@/lib/i18n';
 
 export default function KundliPage() {
   const { chart } = useProfileChart();
   const { chartStyle } = useSettings();
+  const t = useT();
   const chartRef = useRef<HTMLDivElement>(null);
 
   if (!chart) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-      <EmptyState icon="☉" title="Kundli / Birth Chart" description="Create a birth profile to generate your Vedic birth chart with planetary positions, houses, and aspects." />
-      <SeoIntro heading="What is a Kundli?" text="A Kundli (also called Janam Kundli or Vedic birth chart) is a map of the sky at the exact moment of your birth. It shows the positions of the Sun, Moon, and planets across the 12 zodiac signs and houses. In Vedic astrology (Jyotish), the Kundli is the foundation for all predictions — from personality traits to life events, career timing, and relationship compatibility. Our calculator uses NASA JPL DE-series ephemeris for sub-arc-second precision and the Lahiri Ayanamsa for sidereal corrections." />
+      <EmptyState icon="☉" title={t('kundli.title')} description={t('empty.kundli')} />
+      <SeoIntro headingKey="seo.kundli.heading" textKey="seo.kundli.text" />
+      {VEDIC_SEO.kundli.relatedTools && <RelatedTools tools={VEDIC_SEO.kundli.relatedTools} />}
     </div>
   );
 
@@ -31,8 +36,8 @@ export default function KundliPage() {
         <div className="zodiac-divider mb-3">
           <span className="text-xs text-violet-400/40">☉ ☽ ♂ ☿ ♃ ♀ ♄</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Kundli</h1>
-        <p className="text-zinc-400 mt-1">Your Vedic birth chart and planetary positions</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('kundli.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('kundli.subtitle')}</p>
       </div>
 
       {/* Ascendant card */}
@@ -41,7 +46,7 @@ export default function KundliPage() {
         <div className="relative z-10">
           <div className="flex items-center gap-3 mb-2">
             <span className="text-2xl drop-shadow-[0_0_8px_rgba(124,92,252,0.5)]">☉</span>
-            <h2 className="font-semibold text-zinc-100 text-lg">Ascendant (Lagna)</h2>
+            <h2 className="font-semibold text-zinc-100 text-lg">{t('kundli.ascendant')}</h2>
           </div>
           <p className="text-zinc-200 ml-10 text-lg">
             <span className="mr-1">{RASHI_GLYPH[RASHI_NAMES[chart.ascendant.rashi]]}</span>
@@ -70,7 +75,7 @@ export default function KundliPage() {
 
       {/* Charts */}
       <div>
-        <div className="section-title mb-4">Birth Charts</div>
+        <div className="section-title mb-4">{t('kundli.birthCharts')}</div>
       </div>
       <div ref={chartRef} className="flex gap-6 flex-wrap items-start">
         {(chartStyle === 'south-indian' || chartStyle === 'both') && (
@@ -89,8 +94,8 @@ export default function KundliPage() {
       {/* Planet table */}
       <div className="glass-card rounded-2xl overflow-hidden">
         <div className="px-6 py-5 border-b border-violet-500/[0.06]">
-          <div className="section-title mb-1">Graha Positions</div>
-          <h2 className="font-display text-lg font-semibold text-white">Planetary Positions</h2>
+          <div className="section-title mb-1">{t('kundli.grahaPositions')}</div>
+          <h2 className="font-display text-lg font-semibold text-white">{t('kundli.planetaryPositions')}</h2>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">

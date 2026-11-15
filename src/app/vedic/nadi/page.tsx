@@ -4,14 +4,19 @@ import EmptyState from '@/components/shared/EmptyState';
 import { getAllNadiPoints, calculateNadiAmsha } from '@/lib/vedic/nadi';
 import { RASHI_GLYPH } from '@/lib/vedic/glyphs';
 import SeoIntro from '@/components/seo/SeoIntro';
+import RelatedTools from '@/components/seo/RelatedTools';
+import { VEDIC_SEO } from '../seo';
+import { useT } from '@/lib/i18n';
 
 export default function NadiPage() {
   const { chart } = useProfileChart();
 
+  const t = useT();
   if (!chart) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-      <EmptyState icon="🔱" title="Nadi Astrology" description="Create a birth profile to view Bhrigu Bindu, Pranapada, Gulika, Mandi, and Nadi Amsha analysis." />
-      <SeoIntro heading="What is Nadi Astrology?" text="Nadi Astrology encompasses specialized techniques from the Bhrigu and Dhruva Nadi traditions. The Bhrigu Bindu is the sensitive midpoint of Rahu and Moon — when transiting Jupiter or Saturn crosses this degree, major life events are triggered." />
+      <EmptyState icon="🔱" title={t('nadi.title')} description={t('empty.nadi')} />
+      <SeoIntro headingKey="seo.nadi.heading" textKey="seo.nadi.text" />
+      {VEDIC_SEO.nadi.relatedTools && <RelatedTools tools={VEDIC_SEO.nadi.relatedTools} />}
     </div>
   );
 
@@ -22,8 +27,8 @@ export default function NadiPage() {
     <div className="mx-auto max-w-5xl px-4 sm:px-6 py-8 space-y-8">
       <div>
         <div className="zodiac-divider mb-3"><span className="text-xs text-violet-400/40">🔱 Nadi</span></div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Nadi Astrology</h1>
-        <p className="text-zinc-400 mt-1">Bhrigu Bindu, Pranapada, Gulika/Mandi, and Nadi Amsha</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('nadi.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('nadi.subtitle')}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

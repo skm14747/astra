@@ -3,14 +3,19 @@ import { useProfileChart } from '@/hooks/useProfileChart';
 import EmptyState from '@/components/shared/EmptyState';
 import { analyzeHealth } from '@/lib/vedic/health';
 import SeoIntro from '@/components/seo/SeoIntro';
+import RelatedTools from '@/components/seo/RelatedTools';
+import { VEDIC_SEO } from '../seo';
+import { useT } from '@/lib/i18n';
 
 export default function HealthPage() {
   const { chart } = useProfileChart();
 
+  const t = useT();
   if (!chart) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-      <EmptyState icon="🏥" title="Health & Longevity" description="Create a birth profile to analyze health indicators, Maraka/Badhaka analysis, and Ayush estimation." />
-      <SeoIntro heading="Health & Longevity in Vedic Astrology" text="Health analysis examines the 1st house (constitution), 6th house (diseases), 8th house (longevity), and their lords. Ayush is classified into Balarishta, Alpa Ayu, Madhya Ayu, and Purna Ayu based on the 8th house." />
+      <EmptyState icon="🏥" title={t('health.title')} description={t('empty.health')} />
+      <SeoIntro headingKey="seo.health.heading" textKey="seo.health.text" />
+      {VEDIC_SEO.health.relatedTools && <RelatedTools tools={VEDIC_SEO.health.relatedTools} />}
     </div>
   );
 
@@ -21,8 +26,8 @@ export default function HealthPage() {
     <div className="mx-auto max-w-5xl px-4 sm:px-6 py-8 space-y-8">
       <div>
         <div className="zodiac-divider mb-3"><span className="text-xs text-violet-400/40">🏥 Health</span></div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Health & Longevity</h1>
-        <p className="text-zinc-400 mt-1">Maraka analysis, Badhaka, Ayush estimation, and vulnerable areas</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('health.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('health.subtitle')}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -6,6 +6,9 @@ import {
   SearchRiseSet,
   MakeTime,
   Observer as AstroObserver,
+  SearchMoonNode,
+  SearchLunarEclipse,
+  NextGlobalSolarEclipse,
 } from 'astronomy-engine';
 import type { Observer } from '../vedic/types';
 
@@ -213,4 +216,64 @@ export function tropicalToSidereal(tropicalLon: number, ayanamsa: number): numbe
 
 export function siderealToTropical(siderealLon: number, ayanamsa: number): number {
   return (siderealLon + ayanamsa) % 360;
+}
+
+/* ── #293 Refined Ingress (higher precision) ── */
+export function findRefinedIngress(planet: string, startDate: Date, ayanamsa: number, maxDays: number = 400): { date: Date; rashi: number; precisionMs: number } | null {
+  const base = findNextIngress(planet, startDate, ayanamsa, maxDays);
+  if (!base) return null;
+  // Extra Newton-style refinement: narrow ±30 sec around the base result
+  const norm = (v: number) => ((v % 360) + 360) % 360;
+  let lo = base.date.getTime() - 30_000;
+  let hi = base.date.getTime() + 30_000;
+  const targetRashi = base.rashi;
+  for (let i = 0; i < 20; i++) {
+    const mid = (lo + hi) / 2;
+    const midLon = norm(getTropicalLongitude(planet, new Date(mid)) - ayanamsa);
+    const midRashi = Math.floor(midLon / 30);
+    if (midRashi === targetRashi) hi = mid;
+    else lo = mid;
+  }
+  const refinedMs = (lo + hi) / 2;
+  return { date: new Date(refinedMs), rashi: targetRashi, precisionMs: (hi - lo) / 2 };
+}
+
+/* ── #282 True Rahu-Ketu (oscillating node) ── */
+export function getTrueRahuLongitude(date: Date): number {
+  try {
+    const nodeEvent = SearchMoonNode(date);
+    if (nodeEvent) {
+      const geo = GeoVector(Body.Moon, nodeEvent.time, true);
+      const ecl = Ecliptic(geo);
+      return ecl.elon;
+    }
+  } catch { /* fall through */ }
+  return getMeanLunarNode(date);
+}
+
+/* ── #291 Eclipse Detection ── */
+export interface EclipseInfo {
+  type: 'solar' | 'lunar';
+  date: Date;
+  kind: string;
+}
+
+export function findNextSolarEclipse(startDate: Date): EclipseInfo | null {
+  try {
+    const eclipse = NextGlobalSolarEclipse(startDate);
+    if (eclipse) {
+      return { type: 'solar', date: eclipse.peak.date, kind: eclipse.kind ?? 'partial' };
+    }
+  } catch { /* not supported in all versions */ }
+  return null;
+}
+
+export function findNextLunarEclipse(startDate: Date): EclipseInfo | null {
+  try {
+    const eclipse = SearchLunarEclipse(startDate);
+    if (eclipse) {
+      return { type: 'lunar', date: eclipse.peak.date, kind: eclipse.kind ?? 'partial' };
+    }
+  } catch { /* not supported in all versions */ }
+  return null;
 }

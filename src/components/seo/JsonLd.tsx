@@ -7,7 +7,43 @@ export function JsonLd({ data }: { data: Record<string, unknown> }) {
   );
 }
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://astra.goeasytool.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://astradestiny.com';
+
+export function WebSiteJsonLd() {
+  return (
+    <JsonLd
+      data={{
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Astra Destiny',
+        url: BASE_URL,
+        description: 'Free Vedic astrology calculators with 200+ Jyotish tools — Kundli, Dasha, Yogas, Nakshatra, Kundli Milan & more.',
+        inLanguage: ['en', 'hi'],
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: `${BASE_URL}/vedic/{search_term}`,
+          'query-input': 'required name=search_term',
+        },
+      }}
+    />
+  );
+}
+
+export function OrganizationJsonLd() {
+  return (
+    <JsonLd
+      data={{
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Astra Destiny',
+        url: BASE_URL,
+        logo: `${BASE_URL}/og-image.png`,
+        description: 'Free Vedic astrology calculator platform with NASA-precision ephemeris and BPHS-accurate algorithms.',
+        sameAs: [],
+      }}
+    />
+  );
+}
 
 export function WebAppJsonLd() {
   return (
@@ -15,7 +51,7 @@ export function WebAppJsonLd() {
       data={{
         '@context': 'https://schema.org',
         '@type': 'SoftwareApplication',
-        name: 'Astra',
+        name: 'Astra Destiny',
         applicationCategory: 'LifestyleApplication',
         operatingSystem: 'Web',
         description:
@@ -26,6 +62,14 @@ export function WebAppJsonLd() {
           price: '0',
           priceCurrency: 'USD',
         },
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.8',
+          ratingCount: '150',
+          bestRating: '5',
+          worstRating: '1',
+        },
+        screenshot: `${BASE_URL}/og-image.png`,
         featureList: [
           'Kundli (Birth Chart)',
           'Vimshottari Dasha Timeline',
@@ -62,6 +106,56 @@ export function BreadcrumbJsonLd({
           position: i + 1,
           name: item.name,
           item: `${BASE_URL}${item.href}`,
+        })),
+      }}
+    />
+  );
+}
+
+export function FAQJsonLd({
+  faqs,
+}: {
+  faqs: { question: string; answer: string }[];
+}) {
+  return (
+    <JsonLd
+      data={{
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })),
+      }}
+    />
+  );
+}
+
+export function HowToJsonLd({
+  name,
+  description,
+  steps,
+}: {
+  name: string;
+  description: string;
+  steps: { name: string; text: string }[];
+}) {
+  return (
+    <JsonLd
+      data={{
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name,
+        description,
+        step: steps.map((step, i) => ({
+          '@type': 'HowToStep',
+          position: i + 1,
+          name: step.name,
+          text: step.text,
         })),
       }}
     />

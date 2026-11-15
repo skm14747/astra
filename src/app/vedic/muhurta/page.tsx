@@ -6,6 +6,9 @@ import { getSunrise, getSunset } from '@/lib/astronomy/engine';
 import { getAllMuhurtas, getCurrentHora, isAmritSiddhiYoga, isRaviPushyaYoga, isGuruPushyaYoga } from '@/lib/vedic/muhurta';
 import { calculatePanchang } from '@/lib/vedic/panchang';
 import SeoIntro from '@/components/seo/SeoIntro';
+import RelatedTools from '@/components/seo/RelatedTools';
+import { VEDIC_SEO } from '../seo';
+import { useT } from '@/lib/i18n';
 
 const DEFAULT_LOCATION = { latitude: 28.6139, longitude: 77.209, label: 'New Delhi' };
 
@@ -14,6 +17,7 @@ function fmt(d: Date): string { return d.toLocaleTimeString('en-IN', { hour: '2-
 export default function MuhurtaPage() {
   const { activeProfile } = useProfile();
   const { ayanamsaSystem } = useSettings();
+  const t = useT();
 
   const [now, setNow] = useState<Date | null>(null);
   const [geoLocation, setGeoLocation] = useState<{ latitude: number; longitude: number } | null>(null);
@@ -66,8 +70,8 @@ export default function MuhurtaPage() {
   const locationSource: string = activeProfile
     ? activeProfile.city
     : geoStatus === 'granted'
-      ? 'Your location'
-      : `${DEFAULT_LOCATION.label} (default)`;
+      ? t('panchang.yourLocation')
+      : `${DEFAULT_LOCATION.label} ${t('panchang.default')}`;
 
   const data = useMemo(() => {
     if (!now) return null;
@@ -93,8 +97,8 @@ export default function MuhurtaPage() {
         <div className="zodiac-divider mb-4">
           <span className="text-xs text-violet-400/40">⏰ ☉ ☽</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Muhurta Finder</h1>
-        <p className="text-zinc-400 mt-2">Loading auspicious timing data…</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('muhurta.title')}</h1>
+        <p className="text-zinc-400 mt-2">{t('common.loading')}</p>
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2" aria-label="Loading muhurta slots">
           {Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className="glass-card rounded-xl h-12 animate-pulse-subtle" />
@@ -117,13 +121,13 @@ export default function MuhurtaPage() {
         </div>
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div>
-            <h1 id="muhurta-heading" className="font-display text-3xl sm:text-4xl font-bold text-white">Muhurta Finder</h1>
+            <h1 id="muhurta-heading" className="font-display text-3xl sm:text-4xl font-bold text-white">{t('muhurta.title')}</h1>
             <p className="text-zinc-400 mt-1">{dateStr}</p>
             <p className="text-xs text-zinc-500 mt-1">
               {locationSource} · {locationLabel}
               {geoStatus === 'denied' && !activeProfile && (
                 <button onClick={requestGeo} className="ml-2 text-violet-400 hover:text-violet-300 hover:underline transition">
-                  Allow location
+                  {t('panchang.allowLocation')}
                 </button>
               )}
             </p>
@@ -138,7 +142,7 @@ export default function MuhurtaPage() {
           <div className="glass-card rounded-2xl p-5 vedic-glow relative overflow-hidden">
             <div className="cosmic-orb w-20 h-20 bg-violet-600/8 -top-6 -right-6" />
             <div className="relative z-10">
-              <div className="section-title mb-2">Current Hora</div>
+              <div className="section-title mb-2">{t('muhurta.currentHora')}</div>
               <p className="text-xl text-white font-display font-bold">{data.hora.planet}</p>
               <p className="text-xs text-zinc-500 mt-1">Hora #{data.hora.horaNumber} of 24</p>
             </div>
@@ -146,7 +150,7 @@ export default function MuhurtaPage() {
         )}
         {data.specials.length > 0 && (
           <div className="glass-card rounded-2xl p-5 vedic-glow">
-            <div className="section-title mb-3">Special Yogas Active</div>
+            <div className="section-title mb-3">{t('muhurta.specialYogas')}</div>
             <div className="flex flex-wrap gap-2">
               {data.specials.map(s => (
                 <span key={s} className="px-3 py-1 rounded-full text-sm font-medium bg-green-500/10 text-green-400 border border-green-500/20">{s}</span>
@@ -159,8 +163,8 @@ export default function MuhurtaPage() {
       {/* Muhurta Timings */}
       <div>
         <div className="flex items-center gap-2 mb-4">
-          <span className="section-title">Muhurta Timings</span>
-          <span className="text-[10px] text-zinc-600">— {auspiciousCount} auspicious today</span>
+          <span className="section-title">{t('panchang.section.muhurta')}</span>
+          <span className="text-[10px] text-zinc-600">{t('panchang.section.muhurta.sub', { n: auspiciousCount })}</span>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {data.muhurtas.map((m, i) => {
@@ -177,7 +181,7 @@ export default function MuhurtaPage() {
                   <span className={`font-medium text-sm ${isNow ? 'text-white' : 'text-zinc-300'}`}>{m.name}</span>
                   {isNow && (
                     <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-violet-500/20 text-violet-300 border border-violet-500/30">
-                      NOW
+                      {t('common.now')}
                     </span>
                   )}
                 </div>
@@ -189,7 +193,8 @@ export default function MuhurtaPage() {
           })}
         </div>
       </div>
-      <SeoIntro heading="What is Muhurta?" text="Muhurta (Electional Astrology) is the science of choosing the most auspicious moment to begin an important activity. Vedic Muhurta considers the Tithi, Nakshatra, Yoga, Karana, Vara, and planetary positions to find windows of maximal cosmic support." />
+      <SeoIntro headingKey="seo.muhurta.heading" textKey="seo.muhurta.text" />
+      {VEDIC_SEO.muhurta.relatedTools && <RelatedTools tools={VEDIC_SEO.muhurta.relatedTools} />}
     </article>
   );
 }

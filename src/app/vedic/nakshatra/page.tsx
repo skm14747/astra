@@ -4,9 +4,13 @@ import { useProfileChart } from '@/hooks/useProfileChart';
 import EmptyState from '@/components/shared/EmptyState';
 import { getNakshatraDetails, isPanchak, getNakshatraCharacteristics } from '@/lib/vedic/nakshatra';
 import SeoIntro from '@/components/seo/SeoIntro';
+import RelatedTools from '@/components/seo/RelatedTools';
+import { VEDIC_SEO } from '../seo';
+import { useT } from '@/lib/i18n';
 
 export default function NakshatraPage() {
   const { chart } = useProfileChart();
+  const t = useT();
 
   const data = useMemo(() => {
     if (!chart) return null;
@@ -19,8 +23,9 @@ export default function NakshatraPage() {
 
   if (!data) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-      <EmptyState icon="⭐" title="Nakshatra Analysis" description="Create a birth profile to analyze your birth Nakshatra." />
-      <SeoIntro heading="What is a Nakshatra?" text="Nakshatras are the 27 lunar mansions of Vedic astrology, each spanning 13°20\' of the zodiac. Your birth Nakshatra reveals your emotional nature, instinctive reactions, and deep personality traits. Each has a ruling deity, planetary lord, Gana, Nadi, and animal symbol." />
+      <EmptyState icon="⭐" title={t('nakshatra.title')} description={t('empty.nakshatra')} />
+      <SeoIntro headingKey="seo.nakshatra.heading" textKey="seo.nakshatra.text" />
+      {VEDIC_SEO.nakshatra.relatedTools && <RelatedTools tools={VEDIC_SEO.nakshatra.relatedTools} />}
     </div>
   );
 
@@ -42,15 +47,15 @@ export default function NakshatraPage() {
         <div className="zodiac-divider mb-3">
           <span className="text-xs text-cyan-400/40">⭐ ☽ ✧</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Nakshatra Analysis</h1>
-        <p className="text-zinc-400 mt-1">Your birth Moon Nakshatra and its characteristics</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('nakshatra.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('nakshatra.subtitle')}</p>
       </div>
 
       {/* Hero card */}
       <div className="glass-card rounded-2xl p-6 vedic-glow relative overflow-hidden">
         <div className="cosmic-orb w-28 h-28 bg-violet-600/8 -top-8 -right-8" />
         <div className="relative z-10">
-          <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">Birth Nakshatra</div>
+          <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">{t('nakshatra.birthNakshatra')}</div>
           <div className="text-2xl text-white font-display font-bold">{data.details.name} <span className="text-lg text-zinc-500">#{data.details.index + 1}</span></div>
           <div className="flex items-center gap-3 mt-2 text-sm text-zinc-400">
             <span className="planet-badge">Pada {data.details.pada}</span>
@@ -71,7 +76,7 @@ export default function NakshatraPage() {
 
       {/* Characteristics */}
       <div>
-        <div className="section-title mb-3">Characteristics</div>
+        <div className="section-title mb-3">{t('nakshatra.characteristics')}</div>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
           {[
             { label: 'Deity', value: data.chars.deity, icon: '🙏' },
@@ -92,7 +97,7 @@ export default function NakshatraPage() {
 
       {/* Position Details */}
       <div>
-        <div className="section-title mb-3">Position Details</div>
+        <div className="section-title mb-3">{t('nakshatra.positionDetails')}</div>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
           {[
             { label: 'Degree in Nakshatra', value: `${data.details.degreeInNakshatra.toFixed(2)}°`, icon: '📐' },

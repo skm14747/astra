@@ -142,3 +142,75 @@ export function detectDhaiya(saturnTransitRashi: RashiIndex, natalMoonRashi: Ras
   if (diff === 7) return { type: '8th house Dhaiya (Ashtama)', isActive: true };
   return null;
 }
+
+/* ── #149 Jupiter Return ── */
+export function detectJupiterReturn(
+  transitJupiterRashi: RashiIndex,
+  natalJupiterRashi: RashiIndex,
+  birthYear: number,
+  currentYear: number
+): { isReturn: boolean; returnNumber: number; age: number } {
+  const age = currentYear - birthYear;
+  const returnNum = Math.round(age / 11.86);
+  return { isReturn: transitJupiterRashi === natalJupiterRashi, returnNumber: returnNum, age };
+}
+
+/* ── #150 Saturn Return ── */
+export function detectSaturnReturn(
+  transitSaturnRashi: RashiIndex,
+  natalSaturnRashi: RashiIndex,
+  birthYear: number,
+  currentYear: number
+): { isReturn: boolean; returnNumber: number; phase: string; age: number } {
+  const age = currentYear - birthYear;
+  const returnNum = Math.round(age / 29.46);
+  const phases: Record<number, string> = { 1: 'Career maturation', 2: 'Wisdom phase', 3: 'Legacy phase' };
+  return { isReturn: transitSaturnRashi === natalSaturnRashi, returnNumber: returnNum, phase: phases[returnNum] ?? '', age };
+}
+
+/* ── #152 Transit over natal Ascendant ── */
+export function getTransitFromLagna(
+  planet: Planet,
+  transitRashi: RashiIndex,
+  natalLagnaRashi: RashiIndex
+): { houseFromLagna: number; effect: string; isFavorable: boolean } {
+  const h = ((transitRashi - natalLagnaRashi + 12) % 12) + 1;
+  const upachaya = [3, 6, 10, 11].includes(h);
+  return { houseFromLagna: h, effect: `${planet} in ${h}th from Lagna`, isFavorable: upachaya };
+}
+
+/* ── #153 Transit over natal planets ── */
+export function getTransitOverNatalPlanets(
+  transitPlanet: Planet,
+  transitRashi: RashiIndex,
+  natalPlanets: Record<Planet, { rashi: RashiIndex }>
+): { planet: Planet; conjunction: boolean; opposition: boolean }[] {
+  const results: { planet: Planet; conjunction: boolean; opposition: boolean }[] = [];
+  const all: Planet[] = ['Sun', 'Moon', 'Mars', 'Mercury', 'Jupiter', 'Venus', 'Saturn', 'Rahu', 'Ketu'];
+  for (const np of all) {
+    if (np === transitPlanet) continue;
+    const nr = natalPlanets[np].rashi;
+    const conjunction = transitRashi === nr;
+    const opposition = ((transitRashi - nr + 12) % 12) === 6;
+    if (conjunction || opposition) results.push({ planet: np, conjunction, opposition });
+  }
+  return results;
+}
+
+/* ── #156 Gochar-Dasha Integration ── */
+export function getGocharDashaCorrelation(
+  transitPlanet: Planet,
+  currentDashaLord: string,
+  transitRashi: RashiIndex,
+  natalMoonRashi: RashiIndex
+): { isCorrelated: boolean; amplification: string } {
+  const isMatch = transitPlanet === currentDashaLord;
+  const hFromMoon = ((transitRashi - natalMoonRashi + 12) % 12) + 1;
+  if (isMatch) {
+    return {
+      isCorrelated: true,
+      amplification: `${transitPlanet} transit amplified — Dasha lord in ${hFromMoon}th from Moon. Events of this planet will manifest strongly.`,
+    };
+  }
+  return { isCorrelated: false, amplification: '' };
+}

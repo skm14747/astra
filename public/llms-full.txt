@@ -1,0 +1,66 @@
+# Astra Destiny — Free Vedic Astrology Calculator
+
+> Site: https://astradestiny.com
+> Type: Free web application (no login required)
+> Technology: All calculations run client-side in the browser. No user data is sent to any server.
+> Precision: NASA JPL DE-series ephemeris, Lahiri (Chitrapaksha) Ayanamsa, BPHS-based rules.
+
+## Overview
+
+Astra is a comprehensive free Vedic astrology (Jyotish) calculator with 200+ tools. It generates accurate birth charts (Kundli), planetary timelines (Dasha), compatibility reports (Kundli Milan), daily almanac (Panchang), and much more — all computed instantly in the user's browser using sidereal astronomy.
+
+## Tools Available
+
+### Core Birth Chart
+- **Kundli (Birth Chart)** — /vedic/kundli — Full Vedic birth chart with 9 planets across 12 houses, dignities, nakshatras, and combustion status.
+- **Divisional Charts** — /vedic/divisional — All 16 Varga charts (D1 to D60) including Navamsa (D9), Dasamsa (D10), and Dwadasamsa (D12).
+- **Navamsa (D9) Chart** — /vedic/navamsa — Dedicated D9 analysis with Vargottama detection and marriage interpretation.
+
+### Predictive Timing
+- **Mahadasha Calculator** — /vedic/dashas — Vimshottari Dasha timeline with Mahadasha, Antardasha, and Pratyantardasha dates. Also Yogini and Ashtottari systems.
+- **Annual Predictions (Varshaphal)** — /vedic/predictions — Solar Return chart with Muntha, Year Lord, and Tajaka Yogas.
+- **Planetary Transits** — /vedic/transits — Real-time transit positions, Sade Sati detection, Kantaka Shani, and Ashtakavarga transit strength.
+
+### Yogas & Doshas
+- **Yoga & Dosha Calculator** — /vedic/yogas — Detects 20+ Yogas (Raja, Gajakesari, Pancha Mahapurusha, Dhana) and 12+ Doshas.
+- **Mangal Dosha Calculator** — /vedic/mangal-dosha — Check Manglik status, house placement, cancellation conditions, and remedies.
+- **Kaal Sarp Dosha Calculator** — /vedic/kaal-sarp-dosha — Detect 12 types of Kaal Sarp Yog, severity, and Jupiter cancellation.
+
+### Compatibility & Nakshatra
+- **Kundli Milan** — /vedic/compatibility — 36-point Ashtakoota matching (Varna, Vashya, Tara, Yoni, Maitri, Gana, Bhakoot, Nadi).
+- **Nakshatra Calculator** — /vedic/nakshatra — Find birth Nakshatra, Pada, deity, Gana, Nadi, and Tara Bala.
+
+### Specialized Analysis
+- **Shadbala** — /vedic/shadbala — Six-fold planetary strength (Sthana, Dig, Kala, Cheshta, Naisargika, Drig Bala).
+- **Ashtakavarga** — /vedic/ashtakavarga — BAV and SAV Bindu tables for all 7 planets.
+- **KP System** — /vedic/kp — Krishnamurti Paddhati sub-lords, significators, and ruling planets.
+- **Jaimini Astrology** — /vedic/jaimini — Chara Karakas, Karakamsha, Rashi Drishti, and Chara Dasha.
+- **Nadi Astrology** — /vedic/nadi — Bhrigu Bindu, Pranapada Lagna, Gulika, Mandi, and Nadi Amsha (D150).
+
+### Life Areas
+- **Career Analysis** — /vedic/career — 10th house, Dasamsa (D10), Amatyakaraka analysis.
+- **Wealth Analysis** — /vedic/wealth — Dhana Yogas, Indu Lagna, 2nd/11th house assessment.
+- **Health & Longevity** — /vedic/health — Ayush tiers, Maraka lords, Badhaka planets, body area mapping.
+
+### Daily & Timing
+- **Today's Panchang** — /vedic/panchang — Daily Hindu almanac with Tithi, Nakshatra, Yoga, Karana, Vara, Rahu Kalam.
+- **Daily Panchang Archive** — /vedic/panchang/[YYYY-MM-DD] — Panchang for any specific date.
+- **Muhurta Finder** — /vedic/muhurta — Find auspicious times for 20+ activity types.
+
+### Other
+- **Vedic Remedies** — /vedic/remedies — Personalized gemstones, mantras, Rudraksha, charity, and fasting.
+- **Full Report** — /vedic/report — Combined analysis of all tools in one view.
+- **Vedic Astrology Blog** — /blog — In-depth guides on Jyotish topics.
+
+## Languages
+- English (default)
+- Hindi (हिन्दी) — full translation of all 460+ UI strings
+
+## Privacy
+All astronomical calculations run entirely in the user's browser using JavaScript. Birth data is stored only in the user's browser (localStorage). No data is transmitted to any server. No account or login is required.
+
+## Technical Details
+- Ephemeris: NASA JPL Development Ephemeris (DE-series) for sub-arc-second planetary positions
+- Ayanamsa: Lahiri (Chitrapaksha), the standard of the Indian Astronomical Ephemeris
+- Classical references: Brihat Parashara Hora Shastra (BPHS), Uttara Kalamrita, Saravali, Jataka Parijata
+- House system: Equal houses (Vedic standard) and Placidus (for KP System)

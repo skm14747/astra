@@ -5,6 +5,9 @@ import { useSettings } from '@/lib/settings/context';
 import { calculatePanchang } from '@/lib/vedic/panchang';
 import { getAllMuhurtas } from '@/lib/vedic/muhurta';
 import SeoIntro from '@/components/seo/SeoIntro';
+import RelatedTools from '@/components/seo/RelatedTools';
+import { VEDIC_SEO } from '../seo';
+import { useT } from '@/lib/i18n';
 
 const DEFAULT_LOCATION = { latitude: 28.6139, longitude: 77.209, label: 'New Delhi' };
 
@@ -29,6 +32,7 @@ function formatDuration(start: Date, end: Date): string {
 export default function PanchangPage() {
   const { activeProfile } = useProfile();
   const { ayanamsaSystem } = useSettings();
+  const t = useT();
 
   const [now, setNow] = useState<Date | null>(null);
   const [geoLocation, setGeoLocation] = useState<{ latitude: number; longitude: number } | null>(null);
@@ -81,8 +85,8 @@ export default function PanchangPage() {
   const locationSource: string = activeProfile
     ? activeProfile.city
     : geoStatus === 'granted'
-      ? 'Your location'
-      : `${DEFAULT_LOCATION.label} (default)`;
+      ? t('panchang.yourLocation')
+      : `${DEFAULT_LOCATION.label} ${t('panchang.default')}`;
 
   const { panchang, muhurtas } = useMemo(() => {
     if (!now) return { panchang: null, muhurtas: [] as ReturnType<typeof getAllMuhurtas> };
@@ -101,8 +105,8 @@ export default function PanchangPage() {
         <div className="zodiac-divider mb-4">
           <span className="text-xs text-violet-400/40">☽ ☉ ✦</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Daily Panchang</h1>
-        <p className="text-zinc-400 mt-2">Loading today&apos;s Panchang…</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('panchang.title')}</h1>
+        <p className="text-zinc-400 mt-2">{t('panchang.loading')}</p>
         <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3" aria-label="Loading panchang data">
           {Array.from({ length: 8 }).map((_, i) => (
             <div key={i} className="glass-card rounded-2xl p-5 h-24 animate-pulse-subtle" />
@@ -132,13 +136,13 @@ export default function PanchangPage() {
         </div>
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div>
-            <h1 id="panchang-heading" className="font-display text-3xl sm:text-4xl font-bold text-white">Daily Panchang</h1>
+            <h1 id="panchang-heading" className="font-display text-3xl sm:text-4xl font-bold text-white">{t('panchang.title')}</h1>
             <p className="text-zinc-400 mt-1">{dateStr}</p>
             <p className="text-xs text-zinc-500 mt-1">
               {locationSource} · {locationLabel}
               {geoStatus === 'denied' && !activeProfile && (
                 <button onClick={requestGeo} className="ml-2 text-violet-400 hover:text-violet-300 hover:underline transition">
-                  Allow location
+                  {t('panchang.allowLocation')}
                 </button>
               )}
             </p>
@@ -157,19 +161,19 @@ export default function PanchangPage() {
             <div className="flex items-center gap-3">
               <span className="text-2xl">🌅</span>
               <div>
-                <div className="text-xs text-zinc-500 uppercase tracking-wider font-medium">Sunrise</div>
+                <div className="text-xs text-zinc-500 uppercase tracking-wider font-medium">{t('panchang.sunrise')}</div>
                 <div className="text-lg text-white font-semibold font-mono">{formatTime(panchang.sunrise)}</div>
               </div>
             </div>
             <div className="text-center">
               <div className="text-xs text-zinc-500 uppercase tracking-wider font-medium">
-                {isDaytime ? 'Day Length' : 'Night'}
+                {isDaytime ? t('panchang.dayLength') : t('panchang.night')}
               </div>
               <div className="text-sm text-zinc-300 font-mono">{dayLength}</div>
             </div>
             <div className="flex items-center gap-3">
               <div className="text-right">
-                <div className="text-xs text-zinc-500 uppercase tracking-wider font-medium">Sunset</div>
+                <div className="text-xs text-zinc-500 uppercase tracking-wider font-medium">{t('panchang.sunset')}</div>
                 <div className="text-lg text-white font-semibold font-mono">{formatTime(panchang.sunset)}</div>
               </div>
               <span className="text-2xl">🌇</span>
@@ -199,8 +203,8 @@ export default function PanchangPage() {
       {/* ── Core Five (Panchangam) ── */}
       <div>
         <div className="flex items-center gap-2 mb-4">
-          <span className="section-title">Panchangam</span>
-          <span className="text-[10px] text-zinc-600">— The five limbs</span>
+          <span className="section-title">{t('panchang.section.panchangam')}</span>
+          <span className="text-[10px] text-zinc-600">{t('panchang.section.panchangam.sub')}</span>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {/* Tithi — hero card */}
@@ -250,7 +254,7 @@ export default function PanchangPage() {
       {/* ── Hindu Calendar ── */}
       <div>
         <div className="flex items-center gap-2 mb-4">
-          <span className="section-title">Hindu Calendar</span>
+          <span className="section-title">{t('panchang.section.calendar')}</span>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {[
@@ -273,8 +277,8 @@ export default function PanchangPage() {
       {muhurtas.length > 0 && (
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <span className="section-title">Muhurta Timings</span>
-            <span className="text-[10px] text-zinc-600">— {muhurtas.filter(m => m.isAuspicious).length} auspicious today</span>
+            <span className="section-title">{t('panchang.section.muhurta')}</span>
+            <span className="text-[10px] text-zinc-600">{t('panchang.section.muhurta.sub', { n: muhurtas.filter(m => m.isAuspicious).length })}</span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {muhurtas.map((m, i) => {
@@ -291,7 +295,7 @@ export default function PanchangPage() {
                     <span className={`font-medium text-sm ${isNow ? 'text-white' : 'text-zinc-300'}`}>{m.name}</span>
                     {isNow && (
                       <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-violet-500/20 text-violet-300 border border-violet-500/30">
-                        NOW
+                        {t('common.now')}
                       </span>
                     )}
                   </div>
@@ -304,7 +308,8 @@ export default function PanchangPage() {
           </div>
         </div>
       )}
-      <SeoIntro heading="Today\'s Hindu Panchang" text="The Panchang is the traditional Hindu almanac based on five elements (Pancha Anga): Tithi, Vara, Nakshatra, Yoga, and Karana. It has been used for millennia to determine auspicious and inauspicious times for ceremonies, travel, and daily activities." />
+      <SeoIntro headingKey="seo.panchang.heading" textKey="seo.panchang.text" />
+      {VEDIC_SEO.panchang.relatedTools && <RelatedTools tools={VEDIC_SEO.panchang.relatedTools} />}
     </article>
   );
 }

@@ -4,60 +4,64 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useProfile } from '@/lib/profile/context';
 import { useSettings, type FontSize } from '@/lib/settings/context';
+import { useT } from '@/lib/i18n';
 import ProfileModal from './ProfileModal';
 
-const NAV_GROUPS = [
+import type { TranslationKey } from '@/lib/i18n';
+
+const NAV_GROUPS: { labelKey: TranslationKey; items: { href: string; labelKey: TranslationKey }[] }[] = [
   {
-    label: 'Birth Chart',
+    labelKey: 'nav.birthChart',
     items: [
-      { href: '/vedic/kundli', label: 'Kundli' },
-      { href: '/vedic/divisional', label: 'Divisional Charts' },
-      { href: '/vedic/yogas', label: 'Yogas & Doshas' },
-      { href: '/vedic/shadbala', label: 'Shadbala' },
-      { href: '/vedic/jaimini', label: 'Jaimini' },
-      { href: '/vedic/nadi', label: 'Nadi' },
+      { href: '/vedic/kundli', labelKey: 'nav.kundli' },
+      { href: '/vedic/report', labelKey: 'nav.fullReport' },
+      { href: '/vedic/divisional', labelKey: 'nav.divisional' },
+      { href: '/vedic/yogas', labelKey: 'nav.yogas' },
+      { href: '/vedic/shadbala', labelKey: 'nav.shadbala' },
+      { href: '/vedic/jaimini', labelKey: 'nav.jaimini' },
+      { href: '/vedic/nadi', labelKey: 'nav.nadi' },
     ],
   },
   {
-    label: 'Predictions',
+    labelKey: 'nav.predictions',
     items: [
-      { href: '/vedic/dashas', label: 'Dasha Timeline' },
-      { href: '/vedic/transits', label: 'Transits' },
-      { href: '/vedic/predictions', label: 'Annual Predictions' },
-      { href: '/vedic/nakshatra', label: 'Nakshatra' },
-      { href: '/vedic/kp', label: 'KP System' },
+      { href: '/vedic/dashas', labelKey: 'nav.dashas' },
+      { href: '/vedic/transits', labelKey: 'nav.transits' },
+      { href: '/vedic/predictions', labelKey: 'nav.annualPredictions' },
+      { href: '/vedic/nakshatra', labelKey: 'nav.nakshatra' },
+      { href: '/vedic/kp', labelKey: 'nav.kp' },
     ],
   },
   {
-    label: 'Life Areas',
+    labelKey: 'nav.lifeAreas',
     items: [
-      { href: '/vedic/career', label: 'Career' },
-      { href: '/vedic/wealth', label: 'Wealth' },
-      { href: '/vedic/health', label: 'Health & Longevity' },
-      { href: '/vedic/remedies', label: 'Remedies' },
+      { href: '/vedic/career', labelKey: 'nav.career' },
+      { href: '/vedic/wealth', labelKey: 'nav.wealth' },
+      { href: '/vedic/health', labelKey: 'nav.health' },
+      { href: '/vedic/remedies', labelKey: 'nav.remedies' },
     ],
   },
   {
-    label: 'Daily',
+    labelKey: 'nav.daily',
     items: [
-      { href: '/vedic/panchang', label: 'Panchang' },
-      { href: '/vedic/muhurta', label: 'Muhurta' },
-      { href: '/vedic/ashtakavarga', label: 'Ashtakavarga' },
+      { href: '/vedic/panchang', labelKey: 'nav.panchang' },
+      { href: '/vedic/muhurta', labelKey: 'nav.muhurta' },
+      { href: '/vedic/ashtakavarga', labelKey: 'nav.ashtakavarga' },
     ],
   },
   {
-    label: 'Matching',
+    labelKey: 'nav.matching',
     items: [
-      { href: '/vedic/compatibility', label: 'Kundli Milan' },
-      { href: '/matrix/compatibility', label: 'Matrix Compatibility' },
+      { href: '/vedic/compatibility', labelKey: 'nav.kundliMilan' },
+      { href: '/matrix/compatibility', labelKey: 'nav.matrixCompat' },
     ],
   },
   {
-    label: 'Matrix',
+    labelKey: 'nav.matrix',
     items: [
-      { href: '/matrix/chart', label: 'Personal Chart' },
-      { href: '/matrix/health', label: 'Health Card' },
-      { href: '/matrix/timeline', label: 'Life Timeline' },
+      { href: '/matrix/chart', labelKey: 'nav.matrixChart' },
+      { href: '/matrix/health', labelKey: 'nav.matrixHealth' },
+      { href: '/matrix/timeline', labelKey: 'nav.matrixTimeline' },
     ],
   },
 ];
@@ -68,13 +72,17 @@ const FONT_LABELS: Record<FontSize, string> = { small: 'S', default: 'M', large:
 export default function Navbar() {
   const pathname = usePathname();
   const { profiles, activeProfile, setActiveProfile } = useProfile();
-  const { fontSize, setFontSize, theme, setTheme } = useSettings();
+  const { fontSize, setFontSize, theme, setTheme, language, setLanguage } = useSettings();
+  const t = useT();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [profileDropdown, setProfileDropdown] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
   const profileRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => { setMounted(true); }, []);
 
   const cycleFontUp = () => {
     const i = FONT_SIZES.indexOf(fontSize);
@@ -121,9 +129,9 @@ export default function Navbar() {
           <nav className="hidden lg:flex items-center gap-1" role="navigation">
             {NAV_GROUPS.map(group => (
               <div
-                key={group.label}
+                key={t(group.labelKey)}
                 className="relative"
-                onMouseEnter={() => handleGroupEnter(group.label)}
+                onMouseEnter={() => handleGroupEnter(t(group.labelKey))}
                 onMouseLeave={handleGroupLeave}
               >
                 <button
@@ -131,10 +139,10 @@ export default function Navbar() {
                     isGroupActive(group) ? 'text-white drop-shadow-[0_0_8px_rgba(124,92,252,0.3)]' : 'text-zinc-400 hover:text-zinc-200'
                   }`}
                 >
-                  {group.label}
+                  {t(group.labelKey)}
                   <svg className="inline-block ml-1 w-3 h-3 opacity-40" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 2.5L9 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
                 </button>
-                {openDropdown === group.label && (
+                {openDropdown === t(group.labelKey) && (
                   <div className="absolute top-full left-0 pt-1 min-w-[200px]">
                     <div className="glass-card rounded-xl p-2 shadow-2xl">
                       {group.items.map(item => (
@@ -147,7 +155,7 @@ export default function Navbar() {
                               : 'text-zinc-400 hover:text-white hover:bg-white/[0.04]'
                           }`}
                         >
-                          {item.label}
+                          {t(item.labelKey)}
                         </Link>
                       ))}
                     </div>
@@ -165,7 +173,7 @@ export default function Navbar() {
                 onClick={() => activeProfile ? setProfileDropdown(!profileDropdown) : setModalOpen(true)}
                 className="flex items-center gap-2 glass-card rounded-full pl-3 pr-2 py-1.5 text-sm hover:border-white/10"
               >
-                {activeProfile ? (
+                {mounted && activeProfile ? (
                   <>
                     <span className="relative w-2 h-2 rounded-full bg-violet-400">
                       <span className="absolute inset-0 rounded-full bg-violet-400 animate-ping opacity-40" />
@@ -174,7 +182,7 @@ export default function Navbar() {
                     <svg className="w-3.5 h-3.5 text-zinc-500" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
                   </>
                 ) : (
-                  <span className="text-zinc-400 pr-1">+ Create Profile</span>
+                  <span className="text-zinc-400 pr-1">+ {t('profile.createCta')}</span>
                 )}
               </button>
 
@@ -230,6 +238,17 @@ export default function Navbar() {
                 aria-label="Increase font size"
               >
                 A+
+              </button>
+              {/* Divider */}
+              <span className="w-px h-4 bg-white/[0.08] mx-0.5" />
+              {/* Language toggle */}
+              <button
+                onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
+                className="w-7 h-7 flex items-center justify-center rounded-full text-[10px] font-bold text-zinc-400 hover:text-white hover:bg-white/[0.08] transition"
+                title={language === 'en' ? 'हिन्दी में बदलें' : 'Switch to English'}
+                aria-label={language === 'en' ? 'Switch to Hindi' : 'Switch to English'}
+              >
+                {language === 'en' ? 'हि' : 'EN'}
               </button>
               {/* Divider */}
               <span className="w-px h-4 bg-white/[0.08] mx-0.5" />
@@ -293,6 +312,13 @@ export default function Navbar() {
                   </div>
                 </div>
                 <button
+                  onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
+                  className="w-8 h-8 rounded-lg bg-white/[0.04] flex items-center justify-center text-[10px] font-bold text-zinc-300 transition"
+                  aria-label={language === 'en' ? 'Switch to Hindi' : 'Switch to English'}
+                >
+                  {language === 'en' ? 'हि' : 'EN'}
+                </button>
+                <button
                   onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                   className="w-8 h-8 rounded-lg bg-white/[0.04] flex items-center justify-center text-zinc-300 transition"
                   aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
@@ -302,8 +328,8 @@ export default function Navbar() {
               </div>
 
               {NAV_GROUPS.map(group => (
-                <div key={group.label}>
-                  <div className="section-title mb-2 px-2">{group.label}</div>
+                <div key={t(group.labelKey)}>
+                  <div className="section-title mb-2 px-2">{t(group.labelKey)}</div>
                   {group.items.map(item => (
                     <Link
                       key={item.href}
@@ -312,7 +338,7 @@ export default function Navbar() {
                         pathname === item.href ? 'bg-white/[0.06] text-white font-medium' : 'text-zinc-400 hover:text-white'
                       }`}
                     >
-                      {item.label}
+                      {t(item.labelKey)}
                     </Link>
                   ))}
                 </div>

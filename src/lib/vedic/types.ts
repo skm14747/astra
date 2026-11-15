@@ -344,6 +344,17 @@ export interface CareerAnalysis {
   amatyakaraka: Planet;
   amatyakarakaCareer: string;
   d10Strength: string;
+  d10Planets: { planet: string; rashi: string; dignity: string }[];
+  tenthHouseSAV: number;
+  tenthHouseAspects: string[];
+  atmakarakaAnalysis: { planet: Planet; mission: string; navamsaSign: string };
+  arudhaLagnaSign: string;
+  arudhaLagnaPlanets: string[];
+  sixthHouseAnalysis: { lord: string; planets: Planet[]; strength: string };
+  seventhHouseAnalysis: { lord: string; planets: Planet[]; strength: string };
+  eleventhHouseAnalysis: { lord: string; planets: Planet[]; incomeStreams: number };
+  activeRajYogas: string[];
+  careerTimingDashaLords: string[];
 }
 
 export interface WealthAnalysis {
@@ -353,6 +364,13 @@ export interface WealthAnalysis {
   dhanaYogas: string[];
   savSecondHouse: number;
   savEleventhHouse: number;
+  horaAnalysis: { leoCount: number; cancerCount: number; selfEarned: boolean };
+  secondHouseDetail: { lord: string; lordHouse: number; planets: Planet[]; bav: number };
+  fifthHouseSpeculation: { lord: string; planets: Planet[]; hasJupiterVenus: boolean; potential: string };
+  ninthHouseFortune: { lord: string; lordDignity: string; strength: string };
+  eleventhHouseGains: { lord: string; planets: Planet[]; incomeStreams: number };
+  ashtakavargaWealth: { jupiterBAVin2: number; venusBAVin2: number; jupiterBAVin11: number };
+  wealthTimingLords: string[];
 }
 
 export interface HealthAnalysis {
@@ -361,6 +379,14 @@ export interface HealthAnalysis {
   badhakaHouse: number;
   ayushTier: 'Alpayu' | 'Madhyayu' | 'Deerghayu';
   vulnerableAreas: string[];
+  sixthHouseDisease: { planets: Planet[]; conditions: string[] };
+  eighthHouseLongevity: { lord: string; lordDignity: string; score: string };
+  twelfthHouseHospitalization: { planets: Planet[]; risk: string };
+  lagnaStrength: { lord: string; shadbalaRatio: number; constitution: string };
+  marakaAnalysis: { marakaLords: string[]; marakaDashaWarning: string };
+  badhakaAnalysis: { house: number; lord: string; effect: string };
+  d30Analysis: { maleficCount: number; vulnerabilities: string[] };
+  ashtakavargaHealth: { sav6th: number; sav8th: number; healthScore: string };
 }
 
 export interface VarshaphalData {

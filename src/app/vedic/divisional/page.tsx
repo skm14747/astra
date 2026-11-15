@@ -6,11 +6,15 @@ import ExportButton from '@/components/shared/ExportButton';
 import SouthIndianChart from '@/components/vedic/SouthIndianChart';
 import { getAllVargas } from '@/lib/vedic/vargas';
 import SeoIntro from '@/components/seo/SeoIntro';
+import RelatedTools from '@/components/seo/RelatedTools';
+import { VEDIC_SEO } from '../seo';
+import { useT } from '@/lib/i18n';
 
 const IMPORTANT_VARGAS = ['d1', 'd9', 'd10'];
 
 export default function DivisionalPage() {
   const { chart } = useProfileChart();
+  const t = useT();
   const [selectedVarga, setSelectedVarga] = useState<string>('d1');
   const chartRef = useRef<HTMLDivElement>(null);
 
@@ -21,8 +25,9 @@ export default function DivisionalPage() {
 
   if (!chart) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-      <EmptyState icon="☉" title="Divisional Charts" description="Create a birth profile to view divisional charts (D1–D60)." />
-      <SeoIntro heading="What are Divisional Charts (Varga)?" text="Divisional charts (Varga Kundli) are sub-divisions of the birth chart described by Maharishi Parashara in BPHS. Each division zooms into a specific area of life: the Navamsa (D9) reveals marriage and dharma, the Dasamsa (D10) shows career and public life, and the Dwadasamsa (D12) indicates ancestral karma." />
+      <EmptyState icon="☉" title={t('divisional.title')} description={t('empty.divisional')} />
+      <SeoIntro headingKey="seo.divisional.heading" textKey="seo.divisional.text" />
+      {VEDIC_SEO.divisional.relatedTools && <RelatedTools tools={VEDIC_SEO.divisional.relatedTools} />}
     </div>
   );
 
@@ -35,11 +40,11 @@ export default function DivisionalPage() {
         <div className="zodiac-divider mb-3">
           <span className="text-xs text-violet-400/40">◎ D1 D9 D10</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Divisional Charts</h1>
-        <p className="text-zinc-400 mt-1">Varga charts from D1 to D60</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('divisional.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('divisional.subtitle')}</p>
       </div>
 
-      <div className="section-title mb-3">Select Varga Chart</div>
+      <div className="section-title mb-3">{t('divisional.selectVarga')}</div>
       <div className="flex gap-3 items-center flex-wrap">
         <select
           value={selectedVarga}

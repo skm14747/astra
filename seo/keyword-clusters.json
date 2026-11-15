@@ -1,0 +1,92 @@
+[
+  {
+    "head": "free kundli online",
+    "keywords": ["free kundli online", "kundli by date of birth and time", "janam kundali free", "vedic birth chart calculator", "free vedic astrology calculator", "kundli maker online", "birth chart vedic astrology", "online kundli generator", "lagna chart calculator", "sidereal birth chart free"],
+    "estimated_volume": "high",
+    "dominant_type": "tool",
+    "target_url": "/vedic/kundli",
+    "existing_page": "/vedic/kundli",
+    "action": "keep — add educational content below tool"
+  },
+  {
+    "head": "kundli matching online free",
+    "keywords": ["kundli matching online free", "kundli milan", "gun milan", "ashtakoota matching", "36 guna milan calculator", "horoscope matching for marriage", "mangal dosha matching", "kundli matching by name and date of birth", "nadi dosha calculator", "marriage compatibility vedic astrology"],
+    "estimated_volume": "high",
+    "dominant_type": "tool",
+    "target_url": "/vedic/compatibility",
+    "existing_page": "/vedic/compatibility",
+    "action": "keep — add koota breakdown table and FAQ schema"
+  },
+  {
+    "head": "vimshottari dasha calculator",
+    "keywords": ["vimshottari dasha calculator", "mahadasha calculator", "dasha calculator free online", "antardasha calculator", "current mahadasha", "mahadasha dates by date of birth", "yogini dasha calculator", "ashtottari dasha calculator", "dasha period calculator"],
+    "estimated_volume": "medium",
+    "dominant_type": "tool",
+    "target_url": "/vedic/dashas",
+    "existing_page": "/vedic/dashas",
+    "action": "keep — update title to include 'Mahadasha Calculator'"
+  },
+  {
+    "head": "panchang today",
+    "keywords": ["panchang today", "aaj ka panchang", "today tithi", "today nakshatra", "rahu kaal today", "shubh muhurat today", "choghadiya today", "hindu calendar 2026"],
+    "estimated_volume": "very high",
+    "dominant_type": "informational",
+    "target_url": "/vedic/panchang/[date]",
+    "existing_page": "/vedic/panchang",
+    "action": "create — programmatic daily pages with date in URL"
+  },
+  {
+    "head": "yoga dosha calculator vedic astrology",
+    "keywords": ["yoga calculator vedic astrology", "mangal dosha calculator", "kaal sarp dosha calculator", "raja yoga calculator", "gaja kesari yoga calculator", "dosha check by date of birth", "neecha bhanga raja yoga calculator", "manglik dosha check free", "pitra dosha calculator"],
+    "estimated_volume": "medium",
+    "dominant_type": "tool",
+    "target_url": "/vedic/yogas",
+    "existing_page": "/vedic/yogas",
+    "action": "keep + create standalone /vedic/mangal-dosha and /vedic/kaal-sarp-dosha pages"
+  },
+  {
+    "head": "shadbala calculator",
+    "keywords": ["shadbala calculator", "ashtakavarga calculator", "planetary strength calculator vedic", "sarvashtakavarga calculator", "bhinna ashtakavarga", "vimsopaka bala calculator", "bhava bala calculator"],
+    "estimated_volume": "low",
+    "dominant_type": "tool",
+    "target_url": "/vedic/shadbala",
+    "existing_page": "/vedic/shadbala",
+    "action": "keep — low competition, add educational content"
+  },
+  {
+    "head": "nakshatra calculator",
+    "keywords": ["nakshatra calculator", "nakshatra finder by date of birth", "birth star calculator", "janma nakshatra calculator", "my nakshatra", "nakshatra pada calculator", "27 nakshatras and their characteristics"],
+    "estimated_volume": "medium",
+    "dominant_type": "tool",
+    "target_url": "/vedic/nakshatra",
+    "existing_page": "/vedic/nakshatra",
+    "action": "keep + create /blog/27-nakshatras reference guide"
+  },
+  {
+    "head": "muhurta calculator",
+    "keywords": ["muhurta calculator", "auspicious time calculator", "rahu kaal calculator", "abhijit muhurta today", "shubh muhurat for marriage 2026", "choghadiya today", "gulika kaal calculator"],
+    "estimated_volume": "low-medium",
+    "dominant_type": "tool",
+    "target_url": "/vedic/muhurta",
+    "existing_page": "/vedic/muhurta",
+    "action": "keep + create seasonal marriage muhurta pages"
+  },
+  {
+    "head": "navamsa chart calculator",
+    "keywords": ["navamsa chart calculator", "D9 chart calculator", "divisional chart calculator", "vargottama check"],
+    "estimated_volume": "medium",
+    "dominant_type": "tool",
+    "target_url": "/vedic/divisional",
+    "existing_page": "/vedic/divisional",
+    "action": "keep — add 'Navamsa' to title tag, consider standalone /vedic/navamsa"
+  },
+  {
+    "head": "sade sati calculator",
+    "keywords": ["sade sati calculator", "sade sati by date of birth", "shani sade sati", "kantaka shani", "saturn transit effects", "dhaiya calculator"],
+    "estimated_volume": "medium",
+    "dominant_type": "tool",
+    "target_url": "/vedic/transits",
+    "existing_page": "/vedic/transits",
+    "action": "keep — create /blog/sade-sati-guide for informational queries"
+  }
+]

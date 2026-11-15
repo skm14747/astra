@@ -4,10 +4,12 @@ import { useProfile } from '@/lib/profile/context';
 import EmptyState from '@/components/shared/EmptyState';
 import { calculateMatrix } from '@/lib/matrix/core';
 import { getArcana } from '@/lib/matrix/arcana';
+import { useT } from '@/lib/i18n';
 
 export default function MatrixHealthPage() {
   const { activeProfile } = useProfile();
 
+  const t = useT();
   const chart = useMemo(() => {
     if (!activeProfile) return null;
     const [y, m, d] = activeProfile.dateOfBirth.split('-').map(Number);
@@ -16,7 +18,7 @@ export default function MatrixHealthPage() {
 
   if (!chart) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-      <EmptyState icon="🧘" title="Health Card" description="Create a birth profile to see your 7-chakra health analysis." />
+      <EmptyState icon="🧘" title={t('matrixHealth.title')} description={t('empty.matrixHealth')} />
     </div>
   );
 
@@ -26,8 +28,8 @@ export default function MatrixHealthPage() {
         <div className="zodiac-divider mb-3">
           <span className="text-xs text-fuchsia-400/40">🧘 ✦ ◇</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Health Card</h1>
-        <p className="text-zinc-400 mt-1">7-chakra health analysis based on Matrix of Destiny</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('matrixHealth.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('matrixHealth.subtitle')}</p>
       </div>
 
       {/* Summary hero */}
@@ -64,7 +66,7 @@ export default function MatrixHealthPage() {
         );
       })()}
 
-      <div className="section-title mb-3">7-Chakra Matrix</div>
+      <div className="section-title mb-3">{t('matrixHealth.chakraMatrix')}</div>
       <div className="glass-card rounded-2xl overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">

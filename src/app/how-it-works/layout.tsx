@@ -1,0 +1,12 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'How It Works — Calculation Methodology',
+  description:
+    'Learn how Astra Destiny calculates Vedic astrology charts using NASA JPL ephemeris, Lahiri Ayanamsa, BPHS rules, and client-side astronomy. 200+ tools explained.',
+  alternates: { canonical: '/how-it-works' },
+};
+
+export default function HowItWorksLayout({ children }: { children: React.ReactNode }) {
+  return children;
+}

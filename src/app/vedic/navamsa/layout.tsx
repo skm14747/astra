@@ -1,0 +1,22 @@
+import type { Metadata } from 'next';
+import { buildVedicMetadata, VEDIC_SEO } from '../seo';
+import { BreadcrumbJsonLd, FAQJsonLd } from '@/components/seo/JsonLd';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
+import PageAdWrapper from '@/components/ads/PageAdWrapper';
+
+export const metadata: Metadata = buildVedicMetadata('navamsa');
+
+const seo = VEDIC_SEO['navamsa'];
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <BreadcrumbJsonLd items={[{ name: 'Home', href: '/' }, { name: 'Vedic Astrology', href: '/vedic/kundli' }, { name: 'Navamsa (D9)', href: '/vedic/navamsa' }]} />
+      {seo.faqs && <FAQJsonLd faqs={seo.faqs} />}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-6">
+        <Breadcrumbs items={[{ label: 'Vedic Astrology', href: '/vedic/kundli' }, { label: 'Navamsa (D9)', href: '/vedic/navamsa' }]} />
+      </div>
+      <PageAdWrapper>{children}</PageAdWrapper>
+    </>
+  );
+}

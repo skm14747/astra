@@ -5,14 +5,19 @@ import { analyzeWealth } from '@/lib/vedic/wealth';
 import { RASHI_NAMES } from '@/lib/vedic/constants';
 import { RASHI_GLYPH } from '@/lib/vedic/glyphs';
 import SeoIntro from '@/components/seo/SeoIntro';
+import RelatedTools from '@/components/seo/RelatedTools';
+import { VEDIC_SEO } from '../seo';
+import { useT } from '@/lib/i18n';
 
 export default function WealthPage() {
   const { chart } = useProfileChart();
 
+  const t = useT();
   if (!chart) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
-      <EmptyState icon="💰" title="Wealth Analysis" description="Create a birth profile to analyze your wealth potential and Dhana Yogas." />
-      <SeoIntro heading="Wealth Analysis in Vedic Astrology" text="Vedic astrology assesses wealth through the 2nd house (accumulated wealth), 11th house (income and gains), and their lords. Dhana Yogas indicate financial prosperity. Indu Lagna reveals the magnitude of wealth." />
+      <EmptyState icon="💰" title={t('wealth.title')} description={t('empty.wealth')} />
+      <SeoIntro headingKey="seo.wealth.heading" textKey="seo.wealth.text" />
+      {VEDIC_SEO.wealth.relatedTools && <RelatedTools tools={VEDIC_SEO.wealth.relatedTools} />}
     </div>
   );
 
@@ -22,8 +27,8 @@ export default function WealthPage() {
     <div className="mx-auto max-w-5xl px-4 sm:px-6 py-8 space-y-8">
       <div>
         <div className="zodiac-divider mb-3"><span className="text-xs text-violet-400/40">💰 Wealth</span></div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Wealth Analysis</h1>
-        <p className="text-zinc-400 mt-1">Dhana Yogas, Indu Lagna, 2nd/11th house strength</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('wealth.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('wealth.subtitle')}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

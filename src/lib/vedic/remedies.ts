@@ -225,3 +225,87 @@ export function generateExpandedRemedies(chart: KundliChart): RemedyRecommendati
 
   return base;
 }
+
+/* ── #269 Yantra Remedies ── */
+const YANTRA_DATA: Record<string, { name: string; geometry: string; installDay: string; mantra: string }> = {
+  Sun: { name: 'Surya Yantra', geometry: '3×3 magic square (total 15 each row)', installDay: 'Sunday at sunrise', mantra: 'Surya Beej Mantra × 7000' },
+  Moon: { name: 'Chandra Yantra', geometry: '3×3 magic square (total 18 each row)', installDay: 'Monday evening', mantra: 'Chandra Beej Mantra × 11000' },
+  Mars: { name: 'Mangal Yantra', geometry: '3×3 magic square (total 21 each row)', installDay: 'Tuesday at sunrise', mantra: 'Mangal Beej Mantra × 10000' },
+  Mercury: { name: 'Budh Yantra', geometry: '3×3 magic square (total 24 each row)', installDay: 'Wednesday at sunrise', mantra: 'Budh Beej Mantra × 9000' },
+  Jupiter: { name: 'Guru Yantra', geometry: '3×3 magic square (total 27 each row)', installDay: 'Thursday at sunrise', mantra: 'Guru Beej Mantra × 19000' },
+  Venus: { name: 'Shukra Yantra', geometry: '3×3 magic square (total 30 each row)', installDay: 'Friday at sunrise', mantra: 'Shukra Beej Mantra × 16000' },
+  Saturn: { name: 'Shani Yantra', geometry: '3×3 magic square (total 33 each row)', installDay: 'Saturday evening', mantra: 'Shani Beej Mantra × 23000' },
+  Rahu: { name: 'Rahu Yantra', geometry: '3×3 magic square (total 36 each row)', installDay: 'Saturday at night', mantra: 'Rahu Beej Mantra × 18000' },
+  Ketu: { name: 'Ketu Yantra', geometry: '3×3 magic square (total 39 each row)', installDay: 'Tuesday at night', mantra: 'Ketu Beej Mantra × 17000' },
+};
+export function getYantraRemedy(planet: string) { return YANTRA_DATA[planet] ?? null; }
+
+/* ── #270 Graha Shanti ── */
+const GRAHA_SHANTI: Record<string, { homa: string; puja: string; offerings: string }> = {
+  Sun: { homa: 'Surya Homa with red lotus, ghee', puja: 'Aditya Hridaya recitation', offerings: 'Wheat, jaggery, red flowers' },
+  Moon: { homa: 'Chandra Homa with white rice, ghee', puja: 'Shiva Puja on Monday', offerings: 'White rice, milk, white flowers' },
+  Mars: { homa: 'Mangal Homa with red sandalwood', puja: 'Hanuman Puja on Tuesday', offerings: 'Red lentils, coral, red cloth' },
+  Mercury: { homa: 'Budh Homa with green moong', puja: 'Vishnu Puja on Wednesday', offerings: 'Green moong, emerald items, green cloth' },
+  Jupiter: { homa: 'Guru Homa with turmeric, ghee', puja: 'Brihaspati Puja on Thursday', offerings: 'Yellow items, turmeric, banana' },
+  Venus: { homa: 'Shukra Homa with white items', puja: 'Lakshmi Puja on Friday', offerings: 'White silk, perfume, sugar' },
+  Saturn: { homa: 'Shani Homa with black sesame', puja: 'Shani Puja on Saturday', offerings: 'Black sesame, iron, mustard oil' },
+  Rahu: { homa: 'Rahu Homa with durva grass', puja: 'Durga Puja', offerings: 'Coconut, blue cloth, blanket' },
+  Ketu: { homa: 'Ketu Homa with kusha grass', puja: 'Ganesha Puja', offerings: 'Sesame, blanket, flag' },
+};
+export function getGrahaShanti(planet: string) { return GRAHA_SHANTI[planet] ?? null; }
+
+/* ── #271 Navagraha Puja ── */
+export function getNavagrahaWorkship(): { description: string; protocol: string[]; bestDay: string } {
+  return {
+    description: 'Complete worship of all 9 planets for overall planetary balance',
+    protocol: [
+      'Begin with Ganesh invocation',
+      'Offer prayers to each Navagraha in order: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu',
+      'Light 9 lamps with specific oils (ghee for Sun/Moon, sesame oil for Saturn)',
+      'Chant each planet\'s beej mantra 108 times',
+      'Offer planet-specific flowers and grains',
+      'Conclude with Navagraha Stotram',
+    ],
+    bestDay: 'Saturday or during Navagraha Shanti period',
+  };
+}
+
+/* ── #274 Temple Rituals ── */
+const TEMPLE_RITUALS: Record<string, { temple: string; deity: string; ritual: string }> = {
+  Sun: { temple: 'Surya Mandir (Konark, Modhera)', deity: 'Lord Surya', ritual: 'Arghya (water offering) at sunrise' },
+  Moon: { temple: 'Somnath Temple', deity: 'Lord Shiva', ritual: 'Monday Shiva Abhishekam with milk' },
+  Mars: { temple: 'Vaitheeswaran Koil', deity: 'Lord Murugan/Hanuman', ritual: 'Tuesday Hanuman Chalisa recitation' },
+  Mercury: { temple: 'Thiruvenkadu Temple', deity: 'Lord Vishnu', ritual: 'Wednesday Vishnu Sahasranama' },
+  Jupiter: { temple: 'Alangudi Temple', deity: 'Lord Dakshinamurthy', ritual: 'Thursday Guru Puja' },
+  Venus: { temple: 'Kanjanur Temple', deity: 'Goddess Lakshmi', ritual: 'Friday Lakshmi Puja with lotus' },
+  Saturn: { temple: 'Thirunallar Temple', deity: 'Lord Shani Dev', ritual: 'Saturday oil lamp and sesame offering' },
+  Rahu: { temple: 'Thirunageswaram Temple', deity: 'Goddess Durga', ritual: 'Rahu Kalam puja on specific days' },
+  Ketu: { temple: 'Keezhaperumpallam Temple', deity: 'Lord Ganesha', ritual: 'Ketu-specific abhishekam' },
+};
+export function getTempleRitual(planet: string) { return TEMPLE_RITUALS[planet] ?? null; }
+
+/* ── #275 Ratna Pariksha (Gemstone Testing) ── */
+export interface GemstoneTest {
+  stone: string;
+  planet: string;
+  minRatti: number;
+  maxRatti: number;
+  metal: string;
+  finger: string;
+  hand: string;
+  purityChecks: string[];
+  conflicts: string[];
+}
+
+const GEMSTONE_SPECS: Record<string, GemstoneTest> = {
+  Sun: { stone: 'Ruby (Manikya)', planet: 'Sun', minRatti: 3, maxRatti: 6, metal: 'Gold', finger: 'Ring finger', hand: 'Right', purityChecks: ['Pigeon-blood red color', 'No visible inclusions', 'Natural unheated'], conflicts: ['Diamond', 'Blue Sapphire'] },
+  Moon: { stone: 'Pearl (Moti)', planet: 'Moon', minRatti: 4, maxRatti: 7, metal: 'Silver', finger: 'Little finger', hand: 'Right', purityChecks: ['Natural sea pearl', 'Smooth surface', 'Good lustre'], conflicts: ['Hessonite', 'Cat\'s Eye'] },
+  Mars: { stone: 'Red Coral (Moonga)', planet: 'Mars', minRatti: 5, maxRatti: 9, metal: 'Gold/Copper', finger: 'Ring finger', hand: 'Right', purityChecks: ['Deep red color', 'Natural coral', 'No dye'], conflicts: ['Diamond', 'Emerald', 'Blue Sapphire'] },
+  Mercury: { stone: 'Emerald (Panna)', planet: 'Mercury', minRatti: 3, maxRatti: 6, metal: 'Gold', finger: 'Little finger', hand: 'Right', purityChecks: ['Rich green', 'Minimal inclusions', 'Natural unheated'], conflicts: ['Red Coral', 'Pearl'] },
+  Jupiter: { stone: 'Yellow Sapphire (Pukhraj)', planet: 'Jupiter', minRatti: 3, maxRatti: 5, metal: 'Gold', finger: 'Index finger', hand: 'Right', purityChecks: ['Lemon to golden yellow', 'Eye-clean', 'Natural unheated'], conflicts: ['Diamond', 'Blue Sapphire'] },
+  Venus: { stone: 'Diamond (Heera)', planet: 'Venus', minRatti: 0.5, maxRatti: 1.5, metal: 'Platinum/White Gold', finger: 'Middle finger', hand: 'Right', purityChecks: ['VS clarity or better', 'D-G color', 'Excellent cut'], conflicts: ['Ruby', 'Red Coral', 'Yellow Sapphire'] },
+  Saturn: { stone: 'Blue Sapphire (Neelam)', planet: 'Saturn', minRatti: 2, maxRatti: 5, metal: 'Gold/Silver/Iron', finger: 'Middle finger', hand: 'Right', purityChecks: ['Cornflower blue', 'No color zoning', 'Trial wear 3 days first'], conflicts: ['Ruby', 'Red Coral', 'Yellow Sapphire'] },
+  Rahu: { stone: 'Hessonite (Gomed)', planet: 'Rahu', minRatti: 4, maxRatti: 8, metal: 'Silver', finger: 'Middle finger', hand: 'Right', purityChecks: ['Honey-colored', 'Transparent', 'No cracks'], conflicts: ['Pearl', 'Red Coral'] },
+  Ketu: { stone: 'Cat\'s Eye (Lehsunia)', planet: 'Ketu', minRatti: 3, maxRatti: 7, metal: 'Silver', finger: 'Little finger', hand: 'Left', purityChecks: ['Sharp chatoyancy band', 'Chrysoberyl variety', 'Trial wear 3 days'], conflicts: ['Pearl', 'Ruby'] },
+};
+export function getGemstoneTest(planet: string): GemstoneTest | null { return GEMSTONE_SPECS[planet] ?? null; }

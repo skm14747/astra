@@ -1,15 +1,26 @@
 'use client';
 
 import { useState } from 'react';
+import { useT } from '@/lib/i18n';
+import type { TranslationKey } from '@/lib/i18n';
 
 export default function SeoIntro({
-  heading,
-  text,
+  headingKey,
+  textKey,
+  fallbackHeading,
+  fallbackText,
 }: {
-  heading: string;
-  text: string;
+  headingKey: TranslationKey;
+  textKey: TranslationKey;
+  fallbackHeading?: string;
+  fallbackText?: string;
 }) {
+  const t = useT();
   const [expanded, setExpanded] = useState(false);
+  const rawText = t(textKey);
+  const rawHeading = t(headingKey);
+  const text = rawText === textKey && fallbackText ? fallbackText : rawText;
+  const heading = rawHeading === headingKey && fallbackHeading ? fallbackHeading : rawHeading;
   const isLong = text.length > 200;
   const display = isLong && !expanded ? text.slice(0, 200) + '…' : text;
 
@@ -28,7 +39,7 @@ export default function SeoIntro({
             onClick={() => setExpanded(true)}
             className="ml-1 text-violet-400 hover:text-violet-300 transition-colors text-sm"
           >
-            Read more
+            {t('seo.readMore')}
           </button>
         )}
       </p>

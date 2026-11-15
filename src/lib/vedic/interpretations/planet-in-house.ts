@@ -1,0 +1,176 @@
+/**
+ * Planet-in-House interpretation templates.
+ * Sources: BPHS Ch.24-26, Phaladeepika Ch.7-18, Brihat Jataka Ch.18-19.
+ * Each entry: [keywords, when_strong, when_weak].
+ */
+import type { Planet } from '../types';
+
+type HouseText = [keywords: string, whenStrong: string, whenWeak: string];
+
+const HOUSE_AREAS = [
+  'self, body, vitality, and overall life direction',
+  'wealth, speech, family values, and food',
+  'siblings, courage, communication, and short journeys',
+  'home, mother, vehicles, property, and inner peace',
+  'children, intelligence, creativity, romance, and past-life merit',
+  'health challenges, enemies, debts, service, and daily routines',
+  'marriage, partnerships, business associates, and foreign travel',
+  'longevity, sudden events, occult knowledge, and inheritance',
+  'fortune, dharma, father, guru, higher learning, and long journeys',
+  'career, profession, public status, authority, and reputation',
+  'income, gains, elder siblings, social networks, and fulfillment of desires',
+  'expenditure, losses, foreign settlement, spirituality, and liberation',
+] as const;
+
+function houseArea(h: number): string { return HOUSE_AREAS[h] || ''; }
+
+const SUN: Record<number, HouseText> = {
+  1: ['Strong vitality, leadership identity, commanding presence.', 'You project confidence, earn respect naturally, and enjoy good health. Authority and independence define your life path. Government connections are likely.', 'Health may fluctuate, ego conflicts arise, or father-related difficulties color early life. Work on humility.'],
+  2: ['Wealth through authority, powerful speech, family pride.', 'Your words carry weight and authority. Earning through government or leadership roles. Family has status and values education.', 'Strained family finances, harsh speech, or eye-related health issues. Father may not support financially.'],
+  3: ['Courageous communication, initiative, younger siblings.', 'You take bold initiatives, express ideas with authority, and enjoy good relations with siblings. Excellent for writing and media.', 'Sibling rivalry, communication dominance, or strained relations with neighbors. Ear-related issues possible.'],
+  4: ['Domestic authority, property, vehicles, mother.', 'Government-linked property, prestigious vehicles, authority in domestic matters. Mother is strong-willed and supportive.', 'Domestic disharmony, difficult relationship with mother, or disrupted education. Heart requires attention.'],
+  5: ['Creative intelligence, authoritative teaching, children.', 'Strong intellect, creativity in leadership, good relations with children. Speculation and investments favor you. Past-life merit is strong.', 'Ego in romance, difficulties with children, or stomach ailments. Creative blocks from over-control.'],
+  6: ['Victory over enemies, health discipline, service.', 'Excellent for government service, law enforcement, medicine. You overcome enemies and competition through authority and discipline.', 'Chronic health issues (especially digestive), conflicts with subordinates, or paternal health concerns.'],
+  7: ['Partnership through authority, business leadership, spouse.', 'Marriage brings status, business partnerships are authoritative. Spouse may have government or leadership connections.', 'Domineering in marriage, partnership conflicts, or delayed marriage. Spouse may be overly independent.'],
+  8: ['Transformation through crisis, inheritance, research.', 'Deep research ability, inheritance from father\'s side, interest in occult or government secrets. Sudden transformation of status.', 'Health crises, conflicts over inheritance, or difficulties with government. Father\'s longevity may be affected.'],
+  9: ['Fortune through authority, dharmic leadership, father.', 'Father is successful and authoritative. Higher education in prestigious institutions. Fortune through government, law, or spiritual leadership.', 'Strained relationship with father, conflicts with gurus, or dogmatic beliefs. Luck comes late.'],
+  10: ['Career authority, government, leadership, public fame.', 'This is Sun\'s dig bala (directional strength) house. Strong career in government, politics, administration, or leadership. Public recognition and fame are indicated.', 'Career pressures, conflicts with authority, or reputation issues. Ambition may override ethics.'],
+  11: ['Gains through authority, powerful networks, elder siblings.', 'Income through government or leadership. Powerful social connections, supportive elder siblings, and fulfillment of ambitions.', 'Strained relations with elder siblings or friends in power. Gains come with ego-related complications.'],
+  12: ['Spiritual authority, foreign government, expenditure.', 'Government work abroad, spiritual leadership, or research in isolation. Expenditure on noble causes. Liberation through self-surrender.', 'Excessive expenditure, father away or estranged, low vitality, or eye problems. Ego must dissolve for spiritual growth.'],
+};
+
+const MOON: Record<number, HouseText> = {
+  1: ['Emotional personality, public appeal, changeable nature.', 'Attractive, empathetic personality with public appeal. Emotional intelligence is high. Good health and a nurturing disposition.', 'Moody, oversensitive, health fluctuations related to water retention or mental health. Identity changes frequently.'],
+  2: ['Family wealth, sweet speech, food appreciation.', 'Comfortable family wealth, beautiful or musical voice, love of good food. Nurturing family environment and good education.', 'Financial fluctuations, emotional eating, or family instability. Speech may be overly emotional.'],
+  3: ['Communicative courage, creative expression, siblings.', 'Emotionally expressive communication, creative writing, and supportive siblings. Short travels are frequent and emotionally enriching.', 'Emotional restlessness, sibling jealousy, or nervous energy. Communication is mood-dependent.'],
+  4: ['Domestic happiness, mother, vehicles, inner peace.', 'This is Moon\'s dig bala house. Deep connection to mother and home. Property, vehicles, and domestic comfort are well-indicated. Inner peace is achievable.', 'Emotional turbulence at home, difficult mother relationship, or frequent residential changes. Chest/lung health needs attention.'],
+  5: ['Emotional intelligence, creativity, children.', 'Creative and artistic abilities, strong emotional connection with children. Good intuition for speculation. Romance is emotionally rich.', 'Emotional drama in romance, anxiety about children, or stomach issues. Overthinking about past-life merit.'],
+  6: ['Service through care, health sensitivity, enemies.', 'Good for nursing, caregiving, social work. Overcomes enemies through emotional intelligence and public support.', 'Health anxiety, digestive sensitivity, or emotional conflicts with colleagues. Tendency to absorb others\' problems.'],
+  7: ['Emotional partnerships, public relations, marriage.', 'Spouse is nurturing and emotionally attentive. Marriage is emotionally fulfilling. Good for public-facing businesses and counseling.', 'Emotional dependency in marriage, partner\'s moodiness, or multiple relationships. Partnership requires emotional maturity.'],
+  8: ['Emotional transformation, intuition, longevity.', 'Strong intuition about hidden matters, potential inheritance from mother\'s side. Emotional resilience through transformation.', 'Emotional crises, fear and anxiety, mother\'s health concerns. Mental health needs conscious attention.'],
+  9: ['Fortune through emotion, spiritual mother, travel.', 'Mother is spiritually inclined and fortunate. Pilgrimages and long journeys are emotionally enriching. Faith is heart-centered.', 'Conflicting feelings about spirituality, mother-father tensions, or emotional disillusionment with gurus.'],
+  10: ['Public career, emotional leadership, caregiving profession.', 'Career in caregiving, hospitality, food, real estate, or public service. Public image is nurturing and approachable. Fame through emotional connection.', 'Career fluctuations, public emotional exposure, or difficulty separating personal and professional life.'],
+  11: ['Gains through networks, elder siblings, desires fulfilled.', 'Income through public, women, or food/hospitality. Strong social networks, supportive elder siblings, and emotional fulfillment of desires.', 'Emotional dependency on friends, fluctuating income, or unfulfilled emotional desires.'],
+  12: ['Spiritual emotion, foreign residence, expenditure.', 'Spiritual inclination, possible foreign residence, expenditure on charitable or spiritual causes. Dreams are vivid and meaningful.', 'Insomnia, mental unrest, emotional isolation, or mother residing abroad. Sleep and mental peace need conscious effort.'],
+};
+
+const MARS: Record<number, HouseText> = {
+  1: ['Physical energy, courage, competitive spirit, strong body.', 'Athletic build, courageous personality, leadership through action. Excellent physical vitality and independent spirit.', 'Aggressive temperament, accident-prone, scars on face/head. Manglik Dosha implications for marriage.'],
+  2: ['Aggressive speech, family conflicts, earned wealth.', 'Wealth through effort, land, or military/police. Powerful speech that commands attention. Family is action-oriented.', 'Harsh speech, family quarrels, dental or eye issues. Wealth comes but spending is impulsive.'],
+  3: ['Courageous communication, adventurous siblings, boldness.', 'Excellent courage, bold communication, athletic siblings. Good for military, sports writing, or adventure-related fields.', 'Sibling conflicts, aggressive communication, or ear/arm injuries. Short temper in daily interactions.'],
+  4: ['Property, vehicles, domestic energy, mother.', 'Property ownership, good vehicles, energetic home life. May own land or work in real estate and construction.', 'Domestic conflicts, strained mother relationship, disrupted education. Chest injuries or blood pressure issues.'],
+  5: ['Active intellect, competitive children, sports.', 'Sharp intellect, competitive in education, strong-willed children. Good for sports coaching, investment, and strategic games.', 'Stomach issues, arguments with children, risky speculation. Romance is passionate but turbulent.'],
+  6: ['Victory over enemies, health through activity, service.', 'Excellent placement — Mars thrives overcoming competition. Victory in legal battles, sports, military, police, surgery, and competitive fields.', 'Blood-related health issues, workplace conflicts, or injury through service. Aggression toward subordinates.'],
+  7: ['Passionate marriage, business partnerships, travel.', 'Passionate spouse, dynamic partnerships, business drive. Travel for work is energizing. Manglik Dosha implications.', 'Marital conflicts, dominant partner, or multiple relationships. Partnership requires anger management.'],
+  8: ['Transformation through crisis, surgery, occult.', 'Interest in surgery, tantra, investigation, or insurance. Longevity may be marked by dramatic survival. Hidden reserves of strength.', 'Accident risk, surgical interventions, piles/fistula issues. Conflicts over inheritance or shared resources.'],
+  9: ['Active dharma, father\'s influence, adventure.', 'Father is action-oriented or in military/sports. Long adventurous journeys, active pursuit of dharma, interest in martial philosophy.', 'Conflicts with father or guru, aggressive religious views, legal issues during travel.'],
+  10: ['Career in action, authority, engineering, military.', 'Excellent career drive — engineering, military, police, surgery, sports, construction, or fire services. Achieves position through bold action.', 'Career conflicts, legal issues at work, confrontations with authority. Workaholic tendencies with health cost.'],
+  11: ['Income through effort, gains from competition, networks.', 'Strong income through action-oriented work. Supportive friends in military/sports. Ambitions are aggressively pursued and often achieved.', 'Conflicts with elder siblings or friends, income through risky ventures, injuries from social activities.'],
+  12: ['Expenditure, foreign lands, hidden energy, losses.', 'Work abroad in engineering/military, expenditure on property or land. Energy directed toward spiritual practices or hidden activities.', 'Excessive expenditure, hospitalization risk, or hidden enemies. Anger management is crucial for spiritual progress.'],
+};
+
+const MERCURY: Record<number, HouseText> = {
+  1: ['Intellectual personality, youthful appearance, communication.', 'Intelligent, witty, youthful-looking. Excellent communicator with diverse skills. Quick learner with business acumen.', 'Nervous energy, indecisiveness, skin-related issues. Difficulty maintaining one identity or direction.'],
+  2: ['Eloquent speech, education, family wealth through intellect.', 'Beautiful speaking ability, good education, earning through intellect, writing, or trade. Family values education highly.', 'Inconsistent speech, scattered finances, or difficulty completing education. Earnings fluctuate with mental state.'],
+  3: ['Brilliant communication, writing, siblings, travel.', 'Excellent for journalism, writing, media, advertising. Good sibling relationships, quick short travels, and manual dexterity.', 'Nervous communication, restless siblings, or information overload. Arms/shoulders need care.'],
+  4: ['Educated, property through intellect, mother\'s intelligence.', 'Strong education, intellectual home environment, property through trade or writing. Mother is intelligent and communicative.', 'Disrupted education, mental restlessness at home, or mother\'s nervous health. Academic pressures.'],
+  5: ['Sharp intellect, creative mind, children\'s education.', 'Excellent intelligence, creative writing, good in speculation through analysis. Children are intellectually gifted.', 'Over-analysis of romance, anxious parenting, or stomach/nervous issues. Creativity blocked by overthinking.'],
+  6: ['Analytical service, health analysis, overcoming enemies.', 'Good in medicine, accounting, legal analysis, or service industries. Overcomes enemies through intelligence and paperwork.', 'Health anxiety, nervous disorders, or skin issues. Overthinking about health and workplace matters.'],
+  7: ['Intellectual partnerships, business, communication in marriage.', 'Spouse is intellectual and communicative. Business partnerships thrive through clear communication. Trade and commerce do well.', 'Communication issues in marriage, over-analysis of partner, or business disputes. Mercury needs emotional grounding in relationships.'],
+  8: ['Research mind, occult study, investigative intellect.', 'Excellent for research, psychology, investigation, or insurance mathematics. Understanding of hidden patterns and coded information.', 'Mental anxiety about death/secrets, nervous disorders, or deceptive hidden activities. Trust issues.'],
+  9: ['Higher education, philosophical intellect, teaching.', 'Advanced education, good in philosophy/literature/languages. Teaching ability, travel for learning, and intellectual dharma.', 'Conflicting educational philosophies, scattered higher learning, or difficulty finishing advanced degrees.'],
+  10: ['Career in communication, intellect-based profession.', 'Career in writing, media, IT, accounting, teaching, trade, or management consulting. Professional reputation through intelligence.', 'Career instability, frequent job changes, or ethical compromises in business. Nervous stress from work.'],
+  11: ['Income through intellect, gains from networks, writing.', 'Strong income through communication, business, or intellectual networks. Friends are intelligent and helpful. Diverse income sources.', 'Scattered financial planning, unreliable friends, or income dependent on mental output. Overthinking about goals.'],
+  12: ['Foreign intellect, research in isolation, expenditure.', 'Work abroad in IT, research, or writing. Expenditure on education. Meditation and spiritual study benefit the intellect.', 'Insomnia from overthinking, nervous issues, or deceptive expenditure. Mental peace requires conscious effort.'],
+};
+
+const JUPITER: Record<number, HouseText> = {
+  1: ['Wisdom, optimism, generous personality, good health.', 'This is Jupiter\'s dig bala house. Wise, generous, respected personality. Good health, spiritual inclination, and natural teaching ability. Life is generally fortunate.', 'Over-optimism, weight gain, or self-righteousness. Tendency to over-promise and under-deliver.'],
+  2: ['Family wealth, eloquent speech, traditional values.', 'Wealthy family, beautiful and wise speech, good food and education. Preservation of family traditions and religious values.', 'Over-spending, excessive food, or dogmatic family values. Weight-related health issues.'],
+  3: ['Wise communication, courageous ethics, spiritual siblings.', 'Courageous in ethical matters, good writing on philosophical topics, supportive younger siblings. Short pilgrimages.', 'Lack of courage masked by philosophy, sibling issues around beliefs, or ear/shoulder issues.'],
+  4: ['Domestic happiness, property, mother, vehicles.', 'Blessed domestic life, multiple properties, good vehicles, devoted mother. Education is strong and home is a place of learning and worship.', 'Over-expansion in property, mother\'s health issues, or disrupted education through overconfidence.'],
+  5: ['Intelligence, children, creativity, past-life merit.', 'Highly intelligent, creative, blessed with good children. Excellent for teaching, counseling, speculation through wisdom. Strong past-life merit activates.', 'Over-indulgence in romance, children\'s issues if afflicted, or liver/stomach concerns.'],
+  6: ['Service, health, enemies, legal matters.', 'Overcomes enemies and legal challenges through wisdom. Good for medical, legal, or advisory professions. Health is generally protected.', 'Debts from over-generosity, health issues from excess, or enemies among religious people.'],
+  7: ['Blessed marriage, wise partnerships, foreign connections.', 'Spouse is wise, generous, and well-educated. Marriage is generally fortunate. Business partnerships expand through wisdom and trust.', 'Spouse may be overweight or over-optimistic, excessive dependency on partnerships, or legal disputes.'],
+  8: ['Longevity, inheritance, occult wisdom, transformation.', 'Good longevity, inheritance, and deep wisdom about life-death mysteries. Interest in research, insurance, or tantric traditions.', 'Conflicts over inheritance, excessive borrowing, or liver issues. Spiritual crisis in mid-life.'],
+  9: ['Fortune, dharma, guru, father, higher education.', 'Highly fortunate placement. Father is wise and supportive. Excellent higher education, strong guru connection, and dharmic life. Pilgrimages and travel are blessed.', 'Dogmatic beliefs, father-figure issues, or spiritual pride. Over-reliance on luck.'],
+  10: ['Prestigious career, authority, government, teaching.', 'Career in education, law, government, banking, or religious institutions. Professional reputation is excellent. Authority comes through wisdom.', 'Over-expansion in career, ethical compromises for status, or weight of professional responsibility.'],
+  11: ['Abundant gains, powerful networks, fulfilled desires.', 'Strong income, wealthy friends, supportive elder siblings, and fulfillment of major life desires. Social networks bring opportunity.', 'Over-reliance on connections, gains through ethically questionable means, or excessive socializing.'],
+  12: ['Spiritual liberation, foreign fortune, charitable expenditure.', 'Expenditure on spiritual and charitable causes, fortune abroad, potential for spiritual liberation. Excellent for monks and meditators.', 'Excessive expenditure, isolation from family, or spiritual bypassing. Liver issues from hidden indulgence.'],
+};
+
+const VENUS: Record<number, HouseText> = {
+  1: ['Attractive personality, charm, artistic nature, comfort.', 'Beautiful or charming appearance, artistic skills, love of comfort and luxury. Magnetic social appeal and a refined personality.', 'Vanity, excessive focus on appearance, or indulgent lifestyle. Relationships define identity too much.'],
+  2: ['Family wealth, beautiful voice, luxury, food.', 'Wealth through beauty/art/luxury, melodious voice, love of fine food and wine. Family is cultured and prosperous.', 'Overspending on luxury, weight gain from rich food, or materialism over values.'],
+  3: ['Creative communication, artistic siblings, short travel.', 'Artistic communication, creative writing, beautiful siblings. Short travels for pleasure and artistic events.', 'Superficial communication, sibling rivalry over resources, or arms/throat issues.'],
+  4: ['Beautiful home, luxury vehicles, mother, comfort.', 'This is Venus\'s dig bala house. Luxury home, fine vehicles, beautiful mother, domestic happiness. Love of gardens and aesthetics in living space.', 'Excessive home decoration spending, over-attachment to comfort, or mother\'s relationship issues.'],
+  5: ['Romance, creativity, children, entertainment.', 'Strong romantic nature, artistic creativity, beautiful children. Excellent for entertainment, cinema, arts, and fashion industries.', 'Love affairs causing complications, over-indulgence in pleasures, or reproductive health issues.'],
+  6: ['Service in beauty/health, overcoming enemies through charm.', 'Overcomes opponents through diplomacy and charm. Good for beauty industry, fashion, healthcare cosmetics, or marital counseling.', 'Relationship conflicts affecting health, venereal issues, or enemies through love affairs.'],
+  7: ['Blessed marriage, beautiful spouse, strong partnerships.', 'Very fortunate for marriage — spouse is attractive, cultured, and loving. Business partnerships in luxury, beauty, or art thrive.', 'Over-dependency on partner, indulgence in partnership, or multiple relationships if afflicted.'],
+  8: ['Hidden beauty, inheritance, tantric inclination.', 'Inheritance of wealth or property, hidden artistic talents, interest in tantric practices. Transformation through relationships.', 'Relationship crises, venereal diseases, or loss through indulgence. Secrets in love life.'],
+  9: ['Fortune through beauty/art, love of travel, dharmic spouse.', 'Fortune through art, luxury goods, or beauty industry. Spouse from a different culture or through higher education. Pilgrimages to beautiful places.', 'Philosophical conflicts in relationships, father\'s relationship issues, or faith disrupted by romance.'],
+  10: ['Career in arts/luxury/beauty, public charm, fashion.', 'Career in fashion, film, music, hospitality, luxury goods, interior design, or diplomacy. Public image is charming and attractive.', 'Career scandals through relationships, over-spending on professional image, or using charm manipulatively.'],
+  11: ['Gains through beauty, social networks, luxury income.', 'Income through beauty/art industries, wealthy and cultured friends, fulfillment of romantic desires. Social life is rich and rewarding.', 'Superficial friendships, gains through questionable means, or friends who exploit beauty/charm.'],
+  12: ['Foreign luxury, bedroom pleasures, spiritual beauty.', 'Luxury abroad, strong bedroom satisfaction, appreciation of spiritual beauty. Expenditure on art, travel, and romantic experiences.', 'Excessive sensual expenditure, secret relationships, or loss through indulgence. Sleep is usually good.'],
+};
+
+const SATURN: Record<number, HouseText> = {
+  1: ['Disciplined personality, serious demeanor, slow start.', 'Strong endurance, disciplined nature, and a serious, authoritative presence that commands respect over time. Longevity is good.', 'Early-life hardship, slow physical development, chronic health issues, or pessimistic outlook. Success comes late.'],
+  2: ['Restricted wealth, disciplined speech, simple food.', 'Wealth through persistent effort, frugal habits, disciplined speech. Family values hard work and simplicity.', 'Financial restrictions, harsh or slow speech, dental issues, or family poverty. Food preferences are simple.'],
+  3: ['Disciplined courage, serious communication, hardworking siblings.', 'Courageous through persistence, serious writing ability, hard-working siblings. Good for research writing and methodical communication.', 'Sibling difficulties, communication blocks, hearing issues, or limited short travels.'],
+  4: ['Property through effort, delayed domestic peace, duty to mother.', 'Eventually owns property through hard work, dutiful toward mother, vehicles come late but are durable. Education is earned through struggle.', 'Delayed domestic happiness, difficult relationship with mother, heart/chest issues, or disrupted early education.'],
+  5: ['Disciplined intellect, delayed children, serious creativity.', 'Deep, structured intellect. Children come late but are dutiful. Creativity manifests through serious disciplines like classical arts or research.', 'Delayed or difficult childbirth, stomach issues, blocked creativity, or pessimism in romance.'],
+  6: ['Victory through persistence, health through discipline, service.', 'Excellent for overcoming enemies through persistence. Good for government service, labor law, chronic disease management, or manual work.', 'Chronic health issues, workplace drudgery, or accumulation of enemies over time. Joints and bones need care.'],
+  7: ['Mature marriage, business discipline, older spouse.', 'Marriage to a mature, responsible, possibly older partner. Business partnerships are stable and long-lasting. Commitment is strong.', 'Delayed marriage, cold or duty-bound marriage, or business partnerships that restrict freedom.'],
+  8: ['Longevity, chronic transformation, hidden endurance.', 'Good longevity through this placement. Interest in archaeology, ancient things, or chronic conditions. Hidden reserves of strength.', 'Chronic hidden illness, fear of death, piles/joint issues, or inheritance delays and disputes.'],
+  9: ['Earned fortune, delayed higher education, disciplined dharma.', 'Fortune comes through hard work and patience. Higher education may start late but is serious. Dharma is practiced through duty and austerity.', 'Difficult relationship with father, delayed fortune, rigid religious views, or guru disappointments.'],
+  10: ['Career authority, government, slow but lasting success.', 'Strong career in government, administration, construction, mining, agriculture, or management. Success comes in the 30s-40s and endures.', 'Career pressure, authoritarian bosses, knee/bone issues from work stress. Success demands sacrifice.'],
+  11: ['Steady gains, reliable networks, older friends.', 'Steady, reliable income that grows over time. Friends are older, loyal, and helpful. Desires are fulfilled through patience.', 'Delayed income growth, limited social circle, or elder sibling difficulties. Gains require sustained effort.'],
+  12: ['Spiritual discipline, foreign hardship, expenditure control.', 'Spiritual growth through austerity, possible foreign residence involving hard work. Expenditure is controlled and purposeful.', 'Chronic sleep issues, leg/foot problems, hospitalization risk, or isolation in foreign lands.'],
+};
+
+const RAHU_H: Record<number, HouseText> = {
+  1: ['Magnetic personality, unconventional identity, foreign influence.', 'Magnetic, unusual personal appeal. Success through unconventional means, foreign connections, or technology. Breaks social norms creatively.', 'Identity confusion, deceptive self-image, chronic mysterious illnesses, or social boundary issues.'],
+  2: ['Unconventional wealth, foreign food, unusual speech.', 'Wealth through foreign or unconventional sources, unique food preferences, and unusual family dynamics. Technology-related earnings.', 'Toxic speech, deceptive finances, eating disorders, or family secrets. Oral health issues.'],
+  3: ['Bold unconventional communication, media, technology.', 'Excellent for media, technology, advertising, or foreign communication. Bold initiative in unconventional fields. Unusual siblings.', 'Deceptive communication, problematic siblings, or nervous disorders from information overload.'],
+  4: ['Unconventional home, foreign property, disrupted comfort.', 'Property in foreign lands, unusual home environment, or modern technological home comforts. Mother may be unconventional.', 'Domestic disturbance, mother relationship issues, disrupted education, or chronic chest conditions.'],
+  5: ['Unconventional intelligence, foreign education, speculative gains.', 'Brilliant but unconventional thinking. Gains through speculation, foreign education, or technology. Children may be unique.', 'Risky speculation, anxiety about children, stomach issues, or unconventional romantic entanglements.'],
+  6: ['Victory through unconventional means, hidden healing.', 'Overcomes enemies and competition through unexpected strategies. Good for alternative medicine, technology in service, or foreign employment.', 'Mysterious illnesses, hidden enemies, or obsessive health concerns. Foreign disease exposure.'],
+  7: ['Foreign or unconventional spouse, international partnerships.', 'Spouse may be from a different culture, caste, or country. Business partnerships in foreign trade or technology. Marriages across social boundaries.', 'Deceptive partnerships, relationship confusion, or marriage instability. Partner may be unreliable.'],
+  8: ['Sudden transformation, occult interest, mysterious events.', 'Sudden inheritance, deep occult knowledge, or transformation through crisis. Interest in tantra, paranormal, or hidden technologies.', 'Sudden health crises, mysterious accidents, or inheritance disputes. Fear of unknown forces.'],
+  9: ['Unconventional beliefs, foreign guru, boundary-breaking philosophy.', 'Foreign or unconventional spiritual path, breakthrough in higher education, or father in foreign lands. Innovative philosophy.', 'Guru deception, spiritual confusion, conflicts with father, or illegal activities abroad.'],
+  10: ['Sudden career rise, unconventional profession, foreign work.', 'Dramatic career success through unconventional means. Foreign or technology-based career. Public prominence through unusual achievement.', 'Career scandals, unethical professional practices, or sudden fall from grace. Career built on illusion.'],
+  11: ['Large gains, powerful unconventional networks, technology.', 'Large income through foreign or unconventional sources. Powerful networks in technology, international trade, or media.', 'Unreliable friends, gains through deceptive means, or elder sibling issues.'],
+  12: ['Foreign expenditure, spiritual confusion, hidden activities.', 'Expenditure on foreign travel, interest in foreign spiritual traditions, or work in foreign lands. Virtual or hidden earnings.', 'Excessive expenditure, insomnia, hospitalization abroad, or involvement in illegal foreign activities.'],
+};
+
+const KETU_H: Record<number, HouseText> = {
+  1: ['Spiritual personality, detached identity, past-life wisdom.', 'Spiritual, introspective personality with past-life wisdom. Intuitive understanding that transcends formal learning. Moksha orientation.', 'Identity confusion, disconnection from body, chronic mysterious conditions, or eccentric behavior.'],
+  2: ['Detachment from wealth, unusual speech, family karma.', 'Past-life wealth mastery — detachment from material accumulation. Unusual or spiritual speech patterns. Family carries karmic significance.', 'Financial losses, speech disorders, family disconnection, or oral health issues.'],
+  3: ['Spiritual courage, past-life communication mastery.', 'Spiritual bravery, intuitive communication, and siblings with karmic significance. Past-life mastery of writing or martial arts.', 'Lack of conventional courage, sibling disconnection, hearing issues, or difficulty with daily communication.'],
+  4: ['Spiritual home, detachment from material comfort.', 'Inner peace through spiritual practice rather than material comfort. Past-life connection to the land. Mother has spiritual significance.', 'Domestic dissatisfaction, disconnection from mother, disrupted education, or chronic chest conditions.'],
+  5: ['Spiritual intelligence, past-life merit, detached creativity.', 'Deep spiritual intelligence, strong past-life merit, and unique creative gifts. Children may be spiritually oriented.', 'Difficulty with conventional education, childlessness or children with special needs, or stomach issues.'],
+  6: ['Spiritual service, past-life healing, enemy dissolution.', 'Past-life healing abilities, enemies dissolve without effort, or chronic conditions resolved through spiritual means.', 'Mysterious chronic illnesses, unnamed fears, or difficulty with structured work environments.'],
+  7: ['Spiritual partnership, past-life spouse karma, detachment.', 'Spouse has deep karmic connection. Partnership has spiritual dimensions. Past-life relationship patterns resolve in this lifetime.', 'Marriage confusion, partner disconnection, or difficulty committing to conventional partnership.'],
+  8: ['Spiritual transformation, moksha inclination, occult insight.', 'Deep spiritual transformation, intuitive occult knowledge, and interest in moksha. Past-life mastery of hidden sciences.', 'Mysterious health events, near-death experiences, or chronic conditions related to past-life karma.'],
+  9: ['Spiritual wisdom, past-life guru connection, inner dharma.', 'Past-life spiritual mastery — intuitive understanding of dharma without formal teaching. Father has karmic significance.', 'Disconnection from organized religion, father issues, or difficulty with formal higher education.'],
+  10: ['Spiritual career, detachment from worldly success.', 'Career has spiritual dimensions, or worldly success feels empty. Past-life achievement makes conventional ambition feel redundant.', 'Career confusion, lack of professional direction, or sudden career abandonment for spiritual pursuits.'],
+  11: ['Spiritual gains, detachment from desires, inner fulfillment.', 'Inner fulfillment transcends material desires. Gains come unexpectedly through spiritual merit. Detachment from social networks.', 'Unfulfilled material desires, disconnection from friends, or elder sibling issues.'],
+  12: ['Moksha, spiritual liberation, past-life completion.', 'Strongest moksha indication. Past-life spiritual journey nearing completion. Expenditure on spiritual pursuits. Dreams are prophetic.', 'Excessive isolation, disconnect from material world, chronic sleep issues, or hospitalization.'],
+};
+
+const ALL: Record<string, Record<number, HouseText>> = {
+  Sun: SUN, Moon: MOON, Mars: MARS, Mercury: MERCURY,
+  Jupiter: JUPITER, Venus: VENUS, Saturn: SATURN, Rahu: RAHU_H, Ketu: KETU_H,
+};
+
+export function getPlanetInHouseText(planet: Planet, house: number): { area: string; keywords: string; whenStrong: string; whenWeak: string } {
+  const table = ALL[planet];
+  const area = houseArea(house - 1);
+  if (!table) return { area, keywords: '', whenStrong: '', whenWeak: '' };
+  const entry = table[house];
+  if (!entry) return { area, keywords: '', whenStrong: '', whenWeak: '' };
+  return { area, keywords: entry[0], whenStrong: entry[1], whenWeak: entry[2] };
+}
+
+export { HOUSE_AREAS };
