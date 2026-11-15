@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     template: '%s | Astra Destiny',
   },
   description:
-    'Free Vedic astrology calculator with 200+ Jyotish tools — Kundli, Dasha, Yogas, Nakshatra & Kundli Milan. Try free now!',
+    'Free Vedic astrology calculator with 294 Jyotish tools — Kundli, Dasha, Yogas, Nakshatra, Kundli Milan & Choghadiya. Try free now!',
   keywords: [
     'vedic astrology', 'kundli', 'birth chart', 'jyotish', 'horoscope',
     'free kundli online', 'janam kundali', 'vedic birth chart calculator',
@@ -49,7 +49,8 @@ export const metadata: Metadata = {
     'panchang today', 'rahu kaal today', 'tithi today',
     'yoga dosha', 'mangal dosha calculator', 'kaal sarp dosha',
     'sade sati calculator', 'saturn transit',
-    'muhurta', 'ashtakavarga', 'shadbala', 'jaimini',
+    'muhurta', 'choghadiya', 'ashtakavarga', 'shadbala', 'jaimini',
+    'horary astrology', 'prashna kundli',
     'navamsa chart calculator', 'career astrology',
     'nadi astrology', 'vedic remedies', 'free astrology calculator',
   ],
@@ -111,18 +112,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           strategy="afterInteractive"
         />
         {/* Google Tag Manager */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtm.js?id=GTM-WPZL23HX"
-          strategy="afterInteractive"
-        />
         <Script id="gtm-init" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());`}
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WPZL23HX');`}
         </Script>
       </head>
       <body className={`${playfair.variable} ${inter.variable} ${notoDevanagari.variable} bg-astra-bg text-zinc-100 min-h-screen`}>
+        {/* GTM noscript fallback */}
+        <noscript>
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WPZL23HX" height="0" width="0" style={{display:'none',visibility:'hidden'}} />
+        </noscript>
         <WebSiteJsonLd />
         <OrganizationJsonLd />
         <WebAppJsonLd />

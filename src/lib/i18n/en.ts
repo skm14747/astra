@@ -484,6 +484,8 @@ export const en = {
   'seo.matrixHealth.heading': 'Matrix of Destiny Health Analysis',
   'seo.matrixTimeline.heading': 'Matrix Life Timeline',
   'seo.matrixCompat.heading': 'Matrix Compatibility Analysis',
+  'seo.sadeSati.heading': 'What is Sade Sati?',
+  'seo.choghadiya.heading': 'What is Choghadiya?',
 
   // ─── SEO Intro Texts ───
   'seo.kundli.text': 'A Kundli (also called Janam Kundli or Vedic birth chart) is a map of the sky at the exact moment of your birth. It shows the positions of the Sun, Moon, and planets across the 12 zodiac signs and houses. In Vedic astrology (Jyotish), the Kundli is the foundation for all predictions — from personality traits to life events, career timing, and relationship compatibility. Our calculator uses NASA JPL DE-series ephemeris for sub-arc-second precision and the Lahiri Ayanamsa for sidereal corrections.',
@@ -510,6 +512,8 @@ export const en = {
   'seo.matrixHealth.text': 'The Matrix Health Card maps your birth number energies to the 7 chakra system, revealing which energy centers are strong and which may need attention.',
   'seo.matrixTimeline.text': 'The Life Timeline tracks how Matrix of Destiny energies unfold across different ages. Each year activates a specific Major Arcana energy, creating distinct growth cycles.',
   'seo.matrixCompat.text': 'Matrix Compatibility overlays two personal octagram charts to reveal energy alignment, identifying areas of natural harmony and complementary strengths.',
+  'seo.sadeSati.text': 'Sade Sati (साढ़े साती) is Saturn\'s 7.5-year transit through the 12th, 1st, and 2nd houses from your natal Moon sign. It occurs approximately every 29.5 years when Saturn returns to the signs surrounding your Moon. The transit is divided into three phases: Rising (12th house), Peak (1st house — maximum intensity), and Setting (2nd house). Kantaka Shani and Dhaiya are related Saturn afflictions also checked here. Our calculator uses real-time NASA ephemeris positions.',
+  'seo.choghadiya.text': 'Choghadiya (चौघड़िया) is a Vedic time-division system that splits each day and night into 8 equal periods, each ruled by a planet. The 7 types — Udveg (Sun), Char (Venus), Labh (Mercury), Amrit (Moon), Kaal (Saturn), Shubh (Jupiter), and Rog (Mars) — cycle in a fixed order starting from the weekday lord. Amrit is the most auspicious, Shubh and Labh are good, while Kaal, Rog, and Udveg are generally inauspicious.',
 
   // ─── FAQ Questions & Answers ───
   'faq.kundli.q1': 'What is a Kundli (Janam Kundli)?',

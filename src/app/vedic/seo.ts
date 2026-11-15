@@ -22,11 +22,11 @@ export type VedicPageSeo = {
 
 export const VEDIC_SEO: Record<string, VedicPageSeo> = {
   kundli: {
-    title: 'Free Kundli — Vedic Birth Chart Calculator Online',
+    title: 'Free Online Kundali (कुंडली) — Janam Kundli Calculator',
     description:
-      'Generate your free Kundli with planetary positions, houses, nakshatras, and dignities. NASA-precision sidereal calculations with Lahiri Ayanamsa.',
+      'Generate your free online Kundali (Janam Kundli) with planetary positions, houses, nakshatras & dignities. NASA-precision Vedic birth chart calculator with Lahiri Ayanamsa.',
     canonical: '/vedic/kundli',
-    keywords: ['free kundli', 'birth chart calculator', 'vedic birth chart', 'lagna chart', 'janam kundli'],
+    keywords: ['free online kundali', 'janam kundli', 'kundli online', 'free kundali', 'vedic birth chart calculator', 'janam kundali', 'kundali by date of birth', 'birth chart astrology', 'lagna chart', 'free birth chart analysis'],
     seoIntro: {
       heading: 'What is a Kundli?',
       text: 'A Kundli (also called Janam Kundli or Vedic birth chart) is a map of the sky at the exact moment of your birth. It shows the positions of the Sun, Moon, and planets across the 12 zodiac signs and houses. In Vedic astrology (Jyotish), the Kundli is the foundation for all predictions — from personality traits to life events, career timing, and relationship compatibility. Our calculator uses NASA JPL DE-series ephemeris for sub-arc-second precision and the Lahiri Ayanamsa for sidereal corrections, matching the standards used by the Indian Astronomical Ephemeris.',
@@ -202,11 +202,11 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   panchang: {
-    title: "Today's Panchang — Tithi, Nakshatra & Muhurta",
+    title: 'Panchang Today — Tithi, Nakshatra, Yoga & Hindu Calendar',
     description:
-      "Get today's Hindu Panchang with Tithi, Nakshatra, Yoga, Karana, and Vara. Includes sunrise/sunset times, Rahu Kalam, Gulika Kalam, and auspicious/inauspicious periods.",
+      "Today's Panchang with Tithi, Nakshatra, Yoga, Karana & Vara. Includes sunrise/sunset, Rahu Kalam, Gulika Kalam, and auspicious periods. Daily Hindu calendar for any location.",
     canonical: '/vedic/panchang',
-    keywords: ['today panchang', 'daily panchang', 'tithi today', 'rahu kalam', 'hindu calendar'],
+    keywords: ['panchang today', 'today panchang', 'today tithi', 'tithi today', 'daily panchang', 'hindu calendar', 'hindu panchang', 'rahu kalam today', 'aaj ka panchang'],
     seoIntro: {
       heading: "Today's Hindu Panchang",
       text: 'The Panchang is the traditional Hindu almanac based on five elements (Pancha Anga): Tithi (lunar day), Vara (weekday), Nakshatra (lunar mansion), Yoga (Sun-Moon angular relationship), and Karana (half-Tithi). It has been used for millennia to determine auspicious and inauspicious times for ceremonies, travel, and daily activities. Our Panchang calculates all five elements plus Rahu Kalam (inauspicious Saturn-ruled period), Gulika Kalam, Yamaganda, and Abhijit Muhurta for any date and location.',
@@ -224,11 +224,11 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   muhurta: {
-    title: 'Muhurta Finder — Auspicious Time Calculator',
+    title: 'Choghadiya Today & Shubh Muhurat — Rahu Kaal Timings',
     description:
-      'Find the best Muhurta for marriage, griha pravesh, travel, and 20+ activities based on Tithi, Nakshatra, Yoga, and transits.',
+      "Today's Choghadiya timings with Shubh Muhurat, Rahu Kaal, Abhijit Muhurta & auspicious windows. Find the best Muhurta for marriage, griha pravesh, travel and 20+ activities.",
     canonical: '/vedic/muhurta',
-    keywords: ['muhurta finder', 'shubh muhurat', 'auspicious time', 'marriage muhurta', 'griha pravesh muhurta'],
+    keywords: ['choghadiya today', 'shubh muhurat today', 'rahu kaal today', 'auspicious time today', 'muhurta today', 'din ka choghadiya', 'muhurta finder', 'marriage muhurta', 'griha pravesh muhurta'],
     seoIntro: {
       heading: 'What is Muhurta?',
       text: 'Muhurta (Electional Astrology) is the science of choosing the most auspicious moment to begin an important activity. Vedic Muhurta considers the Tithi, Nakshatra, Yoga, Karana, Vara, and planetary positions to find windows of maximal cosmic support. Key rules include avoiding Rahu Kalam and Gulika periods, selecting favorable Nakshatras for specific activities, and ensuring strong Lagna and benefic transits. Our Muhurta Finder scans upcoming time windows and rates them for 20+ activity types.',
@@ -336,11 +336,11 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   career: {
-    title: 'Career Astrology — 10th House & D10 Analysis',
+    title: 'Career Astrology — Job Prediction by Date of Birth Free',
     description:
-      'Analyze career potential through 10th house significations, Dasamsa (D10) chart, 10th lord placement, and career-indicating planet combinations.',
+      'Free career astrology prediction by date of birth. Analyze job timing with 10th house, Dasamsa (D10) chart, Amatyakaraka & Dasha periods. When will I get a job?',
     canonical: '/vedic/career',
-    keywords: ['career astrology', '10th house', 'dasamsa chart', 'job prediction', 'profession astrology'],
+    keywords: ['career astrology', 'job prediction astrology', 'career prediction by date of birth', 'career horoscope', 'job kab milegi', '10th house career', 'dasamsa chart', 'profession astrology', 'career change astrology'],
     seoIntro: {
       heading: 'Career Analysis in Vedic Astrology',
       text: 'Career analysis in Vedic astrology examines the 10th house (Karma Bhava), its lord, planets placed there, and the Dasamsa (D10) divisional chart. The 10th house represents public life, profession, authority, and reputation. Key indicators include the 10th lord\'s sign placement, aspects from benefics/malefics, and Dasha timing for career changes. The Amatyakaraka (Jaimini career significator), strong planets in the D10, and Shadbala strength of the 10th lord all contribute to a comprehensive career prediction.',
@@ -387,11 +387,11 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   predictions: {
-    title: 'Varshaphal — Annual Horoscope Predictions',
+    title: 'Horary Astrology (Prashna Kundli) & Varshaphal Calculator',
     description:
-      'Calculate your Varshaphal (annual chart / Solar Return) with Muntha progression, Year Lord, and Tajaka Yogas for detailed yearly predictions.',
+      'Free horary astrology calculator (Prashna Kundli) for instant question answers. Plus Varshaphal annual horoscope with Solar Return, Muntha & Tajaka Yogas.',
     canonical: '/vedic/predictions',
-    keywords: ['varshaphal', 'annual horoscope', 'solar return', 'yearly prediction', 'tajaka yoga'],
+    keywords: ['horary astrology', 'prashna kundli', 'varshaphal', 'annual horoscope', 'solar return', 'yearly prediction', 'tajaka yoga', 'horary chart calculator'],
     seoIntro: {
       heading: 'What is Varshaphal?',
       text: 'Varshaphal (Tajaka annual chart) is a Solar Return chart cast for the exact moment the Sun returns to its natal position each year. Derived from Tajaka Shastra (Indo-Persian tradition), it provides detailed predictions for the year ahead. Key components include the Muntha (a progressed point advancing one sign per year), the Year Lord (Varsha Pati — the planet ruling the year), and Tajaka Yogas (annual combination patterns like Ithasala, Ishrafa, and Kamboola). This system complements Vimshottari Dasha for fine-grained annual predictions.',
@@ -421,11 +421,11 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   report: {
-    title: 'Full Vedic Astrology Report — Complete Analysis',
+    title: 'Free Kundli Report — 294-Algorithm Vedic Analysis',
     description:
-      'Get a comprehensive Vedic astrology report combining Kundli, Yogas, Dashas, Shadbala, transits, career, wealth, health, and remedies in one page.',
+      'Get a free comprehensive Kundli report powered by 294 Vedic astrology algorithms — birth chart, Yogas, Dashas, Shadbala, transits, career, wealth, health & remedies.',
     canonical: '/vedic/report',
-    keywords: ['vedic astrology report', 'full kundli report', 'complete horoscope', 'jyotish report'],
+    keywords: ['free kundli report', 'detailed birth chart analysis', 'vedic astrology report', 'complete kundli analysis', 'kundli pdf download', 'full horoscope report', 'jyotish report'],
     seoIntro: {
       heading: 'Complete Vedic Astrology Report',
       text: 'The Full Report combines all major Vedic astrology analyses into one comprehensive view: birth chart with planetary positions and dignities, Yoga and Dosha detection, Vimshottari Dasha timeline, Shadbala planetary strengths, current transit effects, career and wealth indicators, health assessment, and personalized remedies. It provides a complete picture of your chart without navigating between individual tool pages.',
@@ -526,6 +526,53 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
       { href: '/vedic/compatibility', label: 'Kundli Milan' },
       { href: '/vedic/kundli', label: 'Birth Chart (Kundli)' },
       { href: '/vedic/yogas', label: 'Yogas & Doshas' },
+    ],
+  },
+  'sade-sati': {
+    title: 'Sade Sati Calculator — Is Shani Sade Sati Running? Free Check',
+    description:
+      'Free Sade Sati calculator — check if Saturn\'s 7.5-year Sade Sati is running for your Moon sign. Detect phase (rising/peak/setting), Dhaiya, Kantaka Shani & remedies.',
+    canonical: '/vedic/sade-sati',
+    keywords: ['sade sati calculator', 'shani sade sati', 'sade sati by date of birth', 'is sade sati running', 'saturn transit', 'kantaka shani', 'dhaiya calculator', 'ashtama shani', 'sade sati for moon sign'],
+    seoIntro: {
+      heading: 'What is Sade Sati?',
+      text: 'Sade Sati (साढ़े साती) is Saturn\'s 7.5-year transit through the 12th, 1st, and 2nd houses from your natal Moon sign. It occurs approximately every 29.5 years when Saturn returns to the signs surrounding your Moon. The transit is divided into three phases: Rising (12th house — preparation and inner challenges), Peak (1st house — maximum intensity, transformation), and Setting (2nd house — gradual release and lessons learned). Kantaka Shani (Saturn in 4th/8th/10th from Moon) and Dhaiya (Small Panoti — 2.5-year sub-cycle) are related Saturn afflictions also checked here. Our calculator uses real-time NASA ephemeris positions and the Lahiri Ayanamsa.',
+    },
+    faqs: [
+      { question: 'What is Sade Sati and how long does it last?', answer: 'Sade Sati is Saturn\'s 7.5-year transit through the 12th, 1st, and 2nd houses from your natal Moon sign. Each of the three phases lasts approximately 2.5 years. It brings challenges, transformation, and karmic lessons.' },
+      { question: 'How do I check if Sade Sati is running for me?', answer: 'Enter your birth details or select your Moon sign (Rashi). The calculator checks Saturn\'s current sidereal position against your natal Moon and shows whether you are in Phase 1 (Rising), Phase 2 (Peak), Phase 3 (Setting), or free from Sade Sati.' },
+      { question: 'What is Kantaka Shani?', answer: 'Kantaka Shani occurs when Saturn transits the 4th, 8th, or 10th house from your natal Moon. It creates career obstacles (10th), domestic disturbances (4th), or health concerns (8th). It is checked separately from Sade Sati.' },
+      { question: 'What are the remedies for Sade Sati?', answer: 'Traditional remedies include chanting the Shani Mantra (Om Sham Shanaishcharaya Namah), wearing a Blue Sapphire (Neelam) after consultation, donating black sesame and mustard oil on Saturdays, fasting on Saturdays, and visiting Shani temples.' },
+    ],
+    relatedTools: [
+      { href: '/vedic/transits', label: 'Full Transit Analysis' },
+      { href: '/vedic/remedies', label: 'Vedic Remedies' },
+      { href: '/vedic/dashas', label: 'Dasha Timeline' },
+      { href: '/vedic/ashtakavarga', label: 'Ashtakavarga' },
+      { href: '/vedic/kundli', label: 'Birth Chart (Kundli)' },
+    ],
+  },
+  choghadiya: {
+    title: 'Choghadiya Today — Shubh Muhurat & Auspicious Timings',
+    description:
+      'Today\'s Choghadiya (चौघड़िया) timings with Shubh, Labh, Amrit, Char periods for your location. Day and night Choghadiya table with Rahu Kaal overlay.',
+    canonical: '/vedic/choghadiya',
+    keywords: ['choghadiya', 'choghadiya today', 'today choghadiya', 'din ka choghadiya', 'shubh choghadiya', 'aaj ka choghadiya', 'choghadiya table', 'raat ka choghadiya'],
+    seoIntro: {
+      heading: 'What is Choghadiya?',
+      text: 'Choghadiya (चौघड़िया, also spelled Chogadia or Chaughadia) is a Vedic time-division system that splits each day and night into 8 equal periods, each ruled by a planet. The 7 types — Udveg (Sun), Char (Venus), Labh (Mercury), Amrit (Moon), Kaal (Saturn), Shubh (Jupiter), and Rog (Mars) — cycle in a fixed order starting from the Vara (weekday) lord. Amrit is the most auspicious for all activities, Shubh and Labh are good, Char suits travel, while Kaal, Rog, and Udveg are inauspicious (though Kaal Choghadiya is considered good for wealth). This calculator shows today\'s Choghadiya table for your location based on actual sunrise and sunset times.',
+    },
+    faqs: [
+      { question: 'What is Choghadiya and how is it calculated?', answer: 'Choghadiya divides daytime (sunrise to sunset) and nighttime (sunset to next sunrise) into 8 equal periods each. Each period is assigned one of 7 types (Udveg, Char, Labh, Amrit, Kaal, Shubh, Rog) based on the weekday. The starting type depends on the Vara lord.' },
+      { question: 'Which Choghadiya is best for starting new work?', answer: 'Amrit Choghadiya (ruled by Moon) is the most auspicious for all activities. Shubh (Jupiter) is ideal for marriage, education, and religious work. Labh (Mercury) is best for starting a business or education. Char (Venus) suits travel and cultural activities.' },
+      { question: 'Is Kaal Choghadiya always bad?', answer: 'While Kaal Choghadiya (ruled by Saturn) is generally inauspicious, it is considered favorable for wealth-related activities, debt collection, and dealing with property. Avoid starting new ventures or journeys during this period.' },
+      { question: 'What is the difference between Choghadiya and Muhurta?', answer: 'Choghadiya is a simpler daily timing system based on weekday and sunrise/sunset. Muhurta (Electional Astrology) is more detailed, considering Tithi, Nakshatra, Yoga, Karana, and planetary positions for specific activities like marriage or griha pravesh.' },
+    ],
+    relatedTools: [
+      { href: '/vedic/muhurta', label: 'Muhurta Finder' },
+      { href: '/vedic/panchang', label: 'Daily Panchang' },
+      { href: '/vedic/transits', label: 'Planetary Transits' },
+      { href: '/vedic/nakshatra', label: 'Nakshatra Analysis' },
     ],
   },
 };
