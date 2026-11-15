@@ -18,7 +18,7 @@ export function WebSiteJsonLd() {
         name: 'Astra Destiny',
         url: BASE_URL,
         description: 'Free Vedic astrology calculators with 200+ Jyotish tools — Kundli, Dasha, Yogas, Nakshatra, Kundli Milan & more.',
-        inLanguage: ['en', 'hi', 'ne', 'pt', 'es', 'ja', 'fr'],
+        inLanguage: ['en', 'hi', 'ne', 'pt', 'es', 'ja', 'fr', 'ko'],
         potentialAction: {
           '@type': 'SearchAction',
           target: `${BASE_URL}/vedic/{search_term}`,

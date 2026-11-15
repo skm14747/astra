@@ -554,6 +554,39 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
       { href: '/vedic/kundli', label: 'Birth Chart (Kundli)' },
     ],
   },
+  hora: {
+    title: 'Hora Today — Planetary Hours for Today (Free Calculator)',
+    description:
+      'Check today\'s Hora timings — all 24 planetary hours from sunrise to next sunrise for your location. Know the ruling planet for every hour to plan auspicious activities.',
+    canonical: '/vedic/hora',
+    keywords: ['hora today', 'hora calculator', 'planetary hours today', 'hora timings', 'hora chart today', 'vedic hora', 'today hora', 'aaj ka hora', 'hora table', 'shubh hora'],
+    seoIntro: {
+      heading: 'What is Hora? Planetary Hours in Vedic Astrology',
+      text: 'Hora is the Vedic system of planetary hours where each hour of the day and night is ruled by one of the 7 classical planets. The sequence starts from the weekday lord — Sun on Sunday, Moon on Monday, Mars on Tuesday, Mercury on Wednesday, Jupiter on Thursday, Venus on Friday, Saturn on Saturday — and cycles through Sun, Venus, Mercury, Moon, Saturn, Jupiter, Mars. Each day has 12 day horas (sunrise to sunset) and 12 night horas (sunset to next sunrise), totaling 24 periods. Knowing the current Hora helps choose the right time for important activities: Sun Hora for authority and government work, Jupiter Hora for education and spirituality, Venus Hora for romance and creativity, Mercury Hora for business and communication, Moon Hora for travel and public dealing, Mars Hora for courage and surgery, and Saturn Hora for iron/oil trade and labor.',
+    },
+    faqs: [
+      { question: 'What is Hora in Vedic astrology?', answer: 'Hora is a Vedic system dividing each day into 24 planetary hours (12 day + 12 night), each ruled by one of the 7 classical planets: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn. The sequence depends on the weekday.' },
+      { question: 'Which Hora is best for starting new work?', answer: 'Jupiter Hora is best for education, religious work, and new ventures. Mercury Hora is ideal for business and trade. Sun Hora suits government work. Venus Hora is best for creative pursuits and romantic matters.' },
+      { question: 'How is Hora calculated?', answer: 'Day Horas divide sunrise-to-sunset into 12 equal parts. Night Horas divide sunset-to-next-sunrise into 12 equal parts. The first Hora starts with the weekday lord, then cycles: Sun→Venus→Mercury→Moon→Saturn→Jupiter→Mars.' },
+      { question: 'Is Saturn Hora always bad?', answer: 'No. Saturn Hora is considered good for activities related to iron, oil, agriculture, labor, real estate, and dealing with servants. It is unfavorable for starting new ventures, journeys, or auspicious ceremonies.' },
+    ],
+    howTo: {
+      name: 'How to Check Today\'s Hora',
+      description: 'Find the current planetary hour and plan your activities.',
+      steps: [
+        { name: 'Allow location access', text: 'Grant location access for accurate sunrise/sunset times, or the calculator defaults to New Delhi.' },
+        { name: 'View current Hora', text: 'The current active Hora is highlighted with the ruling planet and time remaining.' },
+        { name: 'Check the full table', text: 'See all 24 Hora periods (12 day + 12 night) with their ruling planets and time ranges.' },
+        { name: 'Plan your activity', text: 'Choose the Hora matching your activity — Jupiter for education, Mercury for business, Venus for romance, Sun for authority.' },
+      ],
+    },
+    relatedTools: [
+      { href: '/vedic/choghadiya', label: 'Choghadiya Today' },
+      { href: '/vedic/muhurta', label: 'Muhurta Finder' },
+      { href: '/vedic/panchang', label: 'Daily Panchang' },
+      { href: '/vedic/transits', label: 'Planetary Transits' },
+    ],
+  },
   choghadiya: {
     title: 'Choghadiya Today — Shubh Muhurat & Auspicious Timings',
     description:
@@ -597,6 +630,7 @@ export function buildVedicMetadata(slug: string): Metadata {
         'es': `/es${seo.canonical}`,
         'ja': `/ja${seo.canonical}`,
         'fr': `/fr${seo.canonical}`,
+        'ko': `/ko${seo.canonical}`,
         'x-default': seo.canonical,
       },
     },

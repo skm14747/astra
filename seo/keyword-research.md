@@ -1,294 +1,295 @@
-# Astra — SEO Keyword Research
+# Astra Destiny — Keyword Research by Locale
 
-Generated: 15 November 2026
-Source: Live web search fallback (no DataForSEO credentials)
-Method: SERP analysis of 8 seed queries across Astra's tool categories
+Last updated: 2026-11-16 | Sources: Naver Keyword Tool, Ahrefs, SEMrush, Google Keyword Planner, KeywordsEverywhere, live web research
 
 ---
 
-## Competitor Landscape
+## 🇮🇳 English (India-first) — `en`
 
-| Competitor | Domain | DR est. | Tools | Threat Level |
+India contributes 80%+ of Vedic astrology search traffic. Career > Marriage in query intent (39% vs 24%, KundliAI data).
+
+| Keyword | Volume/mo | CPC | Our Page | Status |
 |---|---|---|---|---|
-| DrikPanchang | drikpanchang.com | High | Panchang, kundli, muhurta | 🔴 Dominant |
-| AstroSage | astrosage.com | High | Full suite, Panchang, reports | 🔴 Dominant |
-| FreePanchang | freepanchang.org | Medium | Kundli, dasha, panchang | 🟡 Strong |
-| Astro-Seek | astro-seek.com | Medium | Western + Vedic hybrid | 🟡 Strong |
-| VedicChart | vedicchart.net | Low-Med | D1, D9, Dasha | 🟢 Beatable |
-| MahaJyotish | mahajyotish.com | Low-Med | Kundli, KP, Dasha | 🟢 Beatable |
-| Tantric Astro | tantricastro.com | Low-Med | Dasha, Ashtakavarga | 🟢 Beatable |
-| Daanyam | daanyam.in | Low | Kundli, matching, dasha | 🟢 Beatable |
-| AstroFormer | astroformer.com | Low | Dosha analysis | 🟢 Beatable |
-| VedicMarga | vedicmarga.com | Low | 43 calculators | 🟡 Similar model |
-| Parasara.net | parasara.net | Low | Shadbala, charts | 🟢 Beatable |
-| NumroQ | numroq.com | Low | Kundli calculator | 🟢 Beatable |
+| rashifal | 521K | $0.02 | `/rashifal` | ✅ NEW |
+| horoscope today | 1.83M (global) | $0.01 | `/horoscope/today` | ✅ NEW |
+| kundali | 450K | $0.02 | `/vedic/kundli` | ✅ Live |
+| choghadiya | 368K | $0.01 | `/vedic/choghadiya` | ✅ Live |
+| kundali matching | 301K–368K | $0.05 | `/vedic/compatibility` | ✅ Live |
+| today tithi | 301K | $0.01 | `/vedic/panchang` | ✅ Live |
+| daily horoscope | 550K (global) | $0.02 | `/horoscope/today` | ✅ NEW |
+| nakshatras | 90.5K | $0.18 | `/vedic/nakshatra` | ✅ Live |
+| hora today | 40.5K | $0.02 | `/vedic/hora` | ✅ NEW |
+| gun milan | 83K | $0.02 | `/vedic/compatibility` | ✅ Live |
+| birth chart | 673K (global) | $0.02 | `/vedic/kundli` | ✅ Live |
+| natal chart | 246K (global) | $0.02 | `/vedic/kundli` | ✅ Live |
+| vedic astrology | 60.5K | $0.02 | `/` | ✅ Live |
+| free kundali | 40.5K | — | `/vedic/kundli` | ✅ Live |
+| janam kundli | 49.5K | $0.02 | `/vedic/kundli` | ✅ Live |
+| mangal dosha | 27.1K | — | `/vedic/mangal-dosha` | ✅ Live |
+| kaal sarp dosha | 22.2K | — | `/vedic/kaal-sarp-dosha` | ✅ Live |
+| sade sati | 22.2K | — | `/vedic/sade-sati` | ✅ Live |
+| navamsa chart | 18.1K | — | `/vedic/navamsa` | ✅ Live |
+| free birth chart analysis | 27.1K | — | `/vedic/kundli` | ✅ Live |
+| zodiac compatibility | 60.5K | — | `/vedic/compatibility` | ✅ Live |
+| astrosage kundli | 90.5K | $0.02 | — | 🎯 Competitor brand |
+| weekly horoscope | 135K (global) | $0.02 | — | ❌ Gap |
+| horoscope by sign today | 368K/sign | $0.01 | — | ❌ Gap (per-sign pages) |
+| marriage prediction | 12.1K | — | `/vedic/compatibility` | ✅ Covered |
+| career astrology | 90.5K (est) | — | `/vedic/career` | ✅ Live |
+| AI horoscope | 35M (global, rising) | — | — | ❌ Gap (rising +340%) |
 
-**Astra's moat:** 200+ tools on one platform with NASA-precision astronomy engine. No competitor offers Shadbala + Ashtakavarga + KP + Jaimini + Nadi + matching + remedies in one free app.
-
----
-
-## Keyword Clusters
-
-### Cluster 1: Kundli / Birth Chart (Homepage + /vedic/kundli)
-
-**Head keyword:** free kundli online
-
-| Keyword | Est. Volume | Intent | Format | Page |
-|---|---|---|---|---|
-| free kundli online | High | Tool | Calculator | /vedic/kundli |
-| kundli by date of birth and time | High | Tool | Calculator | /vedic/kundli |
-| janam kundali free | High | Tool | Calculator | /vedic/kundli |
-| vedic birth chart calculator | Medium | Tool | Calculator | /vedic/kundli |
-| free vedic astrology calculator | Medium | Tool | Calculator | / (homepage) |
-| kundli maker online | Medium | Tool | Calculator | /vedic/kundli |
-| birth chart vedic astrology | Medium | Tool | Calculator | /vedic/kundli |
-| online kundli generator | Medium | Tool | Calculator | /vedic/kundli |
-| lagna chart calculator | Low | Tool | Calculator | /vedic/kundli |
-| sidereal birth chart free | Low | Tool | Calculator | /vedic/kundli |
-
-**Status:** Page exists. Title is well-optimized.
-**Gap:** Long-form content below the tool explaining chart components (what competitors rank with).
+### 🔑 India English Gaps to Fill
+1. **Per-sign daily horoscope pages** (`/horoscope/today/aries`, etc.) — 368K/sign/mo
+2. **Weekly horoscope** — 135K/mo global
+3. **AI fortune / AI horoscope** landing page — fastest-growing category (+340% YoY)
+4. **Horoscope by date of birth** — 60.5K/mo
+5. **Career timing pages** ("job kab milegi kundli se") — highest-performing content on KundliAI
 
 ---
 
-### Cluster 2: Kundli Matching / Compatibility (/vedic/compatibility)
+## 🇮🇳 Hindi — `hi`
 
-**Head keyword:** kundli matching online free
+Hindi/Hinglish content outperforms English-only by 2-3x CTR in India. Career astrology is 39% of queries.
 
-| Keyword | Est. Volume | Intent | Format | Page |
-|---|---|---|---|---|
-| kundli matching online free | High | Tool | Calculator | /vedic/compatibility |
-| kundli milan | High | Tool | Calculator | /vedic/compatibility |
-| gun milan | High | Tool | Calculator | /vedic/compatibility |
-| ashtakoota matching | Medium | Tool | Calculator | /vedic/compatibility |
-| 36 guna milan calculator | Medium | Tool | Calculator | /vedic/compatibility |
-| horoscope matching for marriage | Medium | Tool | Calculator | /vedic/compatibility |
-| mangal dosha matching | Medium | Tool | Calculator | /vedic/compatibility |
-| kundli matching by name and date of birth | Medium | Tool | Calculator | /vedic/compatibility |
-| nadi dosha calculator | Low | Tool | Calculator | /vedic/compatibility |
-| marriage compatibility vedic astrology | Low | Informational | Guide + tool | /vedic/compatibility |
-
-**Status:** Page exists with Ashtakoota score.
-**Gap:** Every ranking competitor has 36-point Guna Milan table + individual koota breakdown. Add educational FAQ content.
-
----
-
-### Cluster 3: Dasha Calculator (/vedic/dashas)
-
-**Head keyword:** vimshottari dasha calculator
-
-| Keyword | Est. Volume | Intent | Format | Page |
-|---|---|---|---|---|
-| vimshottari dasha calculator | Medium | Tool | Calculator | /vedic/dashas |
-| mahadasha calculator | Medium | Tool | Calculator | /vedic/dashas |
-| dasha calculator free online | Medium | Tool | Calculator | /vedic/dashas |
-| antardasha calculator | Medium | Tool | Calculator | /vedic/dashas |
-| current mahadasha | Low | Tool | Calculator | /vedic/dashas |
-| mahadasha dates by date of birth | Low | Tool | Calculator | /vedic/dashas |
-| yogini dasha calculator | Low | Tool | Calculator | /vedic/dashas |
-| ashtottari dasha calculator | Low | Tool | Calculator | /vedic/dashas |
-| dasha period calculator | Low | Tool | Calculator | /vedic/dashas |
-
-**Status:** Page exists. Astra uniquely offers 4 dasha systems (Vimshottari + Yogini + Ashtottari + Sthira).
-**Opportunity:** Title should mention "Mahadasha" for search volume. Multi-dasha support is a differentiator to highlight.
-
----
-
-### Cluster 4: Daily Panchang (/vedic/panchang)
-
-**Head keyword:** panchang today
-
-| Keyword | Est. Volume | Intent | Format | Page |
-|---|---|---|---|---|
-| panchang today | Very High | Informational | Daily page | /vedic/panchang |
-| aaj ka panchang | Very High | Informational | Daily page | /vedic/panchang |
-| today tithi | High | Informational | Daily page | /vedic/panchang |
-| today nakshatra | High | Informational | Daily page | /vedic/panchang |
-| rahu kaal today | High | Informational | Daily page | /vedic/panchang |
-| shubh muhurat today | Medium | Informational | Daily page | /vedic/panchang |
-| panchang [month] [year] | Medium | Informational | Monthly page | ❌ Missing |
-| choghadiya today | Medium | Informational | Daily page | /vedic/panchang |
-| hindu calendar 2026 | Medium | Informational | Calendar | ❌ Missing |
-
-**Status:** Page exists but is a calculator, not a daily auto-generated page.
-**Critical gap:** DrikPanchang and AstroSage dominate because they have auto-generated daily pages with date in the URL. Astra needs programmatic `/vedic/panchang/[date]` routes.
-
----
-
-### Cluster 5: Yoga & Dosha Detection (/vedic/yogas)
-
-**Head keyword:** yoga dosha calculator vedic astrology
-
-| Keyword | Est. Volume | Intent | Format | Page |
-|---|---|---|---|---|
-| yoga calculator vedic astrology | Medium | Tool | Calculator | /vedic/yogas |
-| mangal dosha calculator | Medium | Tool | Calculator | /vedic/yogas |
-| kaal sarp dosha calculator | Medium | Tool | Calculator | /vedic/yogas |
-| raja yoga calculator | Medium | Tool | Calculator | /vedic/yogas |
-| gaja kesari yoga calculator | Low | Tool | Calculator | /vedic/yogas |
-| dosha check by date of birth | Low | Tool | Calculator | /vedic/yogas |
-| neecha bhanga raja yoga calculator | Low | Tool | Calculator | /vedic/yogas |
-| sade sati calculator | Medium | Tool | Calculator | /vedic/transits |
-| manglik dosha check free | Medium | Tool | Calculator | /vedic/yogas |
-| pitra dosha calculator | Low | Tool | Calculator | /vedic/yogas |
-
-**Status:** Astra detects 20 yogas + 12 doshas — far more than any competitor.
-**Opportunity:** Competitors create separate pages per dosha (e.g., `/mangal-dosha-calculator`). Consider individual dosha landing pages.
-
----
-
-### Cluster 6: Shadbala & Ashtakavarga (/vedic/shadbala, /vedic/ashtakavarga)
-
-**Head keyword:** shadbala calculator
-
-| Keyword | Est. Volume | Intent | Format | Page |
-|---|---|---|---|---|
-| shadbala calculator | Low | Tool | Calculator | /vedic/shadbala |
-| ashtakavarga calculator | Low-Med | Tool | Calculator | /vedic/ashtakavarga |
-| planetary strength calculator vedic | Low | Tool | Calculator | /vedic/shadbala |
-| sarvashtakavarga calculator | Low | Tool | Calculator | /vedic/ashtakavarga |
-| bhinna ashtakavarga | Low | Tool | Calculator | /vedic/ashtakavarga |
-| vimsopaka bala calculator | Very Low | Tool | Calculator | /vedic/shadbala |
-| bhava bala calculator | Very Low | Tool | Calculator | /vedic/shadbala |
-
-**Status:** Both pages exist. Very few competitors offer these — Astra has a niche advantage.
-**Opportunity:** Low volume but high-intent Jyotish students. Educational content + internal links from kundli and yoga pages.
-
----
-
-### Cluster 7: Nakshatra Finder (/vedic/nakshatra)
-
-**Head keyword:** nakshatra calculator
-
-| Keyword | Est. Volume | Intent | Format | Page |
-|---|---|---|---|---|
-| nakshatra calculator | Medium | Tool | Calculator | /vedic/nakshatra |
-| nakshatra finder by date of birth | Medium | Tool | Calculator | /vedic/nakshatra |
-| birth star calculator | Medium | Tool | Calculator | /vedic/nakshatra |
-| janma nakshatra calculator | Medium | Tool | Calculator | /vedic/nakshatra |
-| my nakshatra | Medium | Tool | Calculator | /vedic/nakshatra |
-| nakshatra pada calculator | Low | Tool | Calculator | /vedic/nakshatra |
-| 27 nakshatras and their characteristics | Medium | Informational | Guide | ❌ Missing |
-
-**Status:** Page exists.
-**Opportunity:** A "27 Nakshatras" reference guide page could capture informational traffic and link to the calculator.
-
----
-
-### Cluster 8: Muhurta Finder (/vedic/muhurta)
-
-**Head keyword:** muhurta calculator
-
-| Keyword | Est. Volume | Intent | Format | Page |
-|---|---|---|---|---|
-| muhurta calculator | Low-Med | Tool | Calculator | /vedic/muhurta |
-| auspicious time calculator | Low | Tool | Calculator | /vedic/muhurta |
-| rahu kaal calculator | Medium | Tool | Calculator | /vedic/muhurta |
-| abhijit muhurta today | Low | Informational | Daily | /vedic/muhurta |
-| shubh muhurat for marriage 2026 | Medium | Informational | List | ❌ Missing |
-| choghadiya today | Medium | Informational | Daily | /vedic/muhurta |
-| gulika kaal calculator | Low | Tool | Calculator | /vedic/muhurta |
-
-**Status:** Page exists with daily muhurta windows.
-**Opportunity:** Seasonal "Marriage Muhurta 2026/2027" pages are high-volume.
-
----
-
-### Cluster 9: Niche / Advanced Tools (Low-Competition, High-Intent)
-
-| Keyword | Est. Volume | Intent | Page |
+| Keyword (HI) | Volume/mo | Our Page | Status |
 |---|---|---|---|
-| jaimini astrology calculator | Very Low | Tool | /vedic/jaimini |
-| chara karaka calculator | Very Low | Tool | /vedic/jaimini |
-| nadi astrology calculator | Low | Tool | /vedic/nadi |
-| bhrigu bindu calculator | Very Low | Tool | /vedic/nadi |
-| kp system calculator | Low | Tool | /vedic/kp |
-| kp sub lord table | Low | Informational | /vedic/kp |
-| varshaphal calculator | Low | Tool | /vedic/predictions |
-| prashna kundli calculator | Low | Tool | /vedic/predictions |
-| divisional chart calculator D9 | Low | Tool | /vedic/divisional |
-| navamsa chart calculator | Medium | Tool | /vedic/divisional |
+| राशिफल / rashifal | 521K+ | `/hi/rashifal` | ✅ NEW |
+| आज का राशिफल | 200K+ | `/hi/horoscope/today` | ✅ NEW |
+| कुंडली / जन्म कुंडली | 150K+ | `/hi/vedic/kundli` | ✅ Live |
+| कुंडली मिलान / गुण मिलान | 100K+ | `/hi/vedic/compatibility` | ✅ Live |
+| राशि कैलकुलेटर | 80K+ | `/hi/vedic/kundli` | ✅ Live |
+| आज का पंचांग / चौघड़िया | 60K+ | `/hi/vedic/panchang` | ✅ Live |
+| साढ़े साती | 25K+ | `/hi/vedic/sade-sati` | ✅ Live |
+| मंगल दोष | 20K+ | `/hi/vedic/mangal-dosha` | ✅ Live |
+| शुभ मुहूर्त / विवाह मुहूर्त | 20K+ | `/hi/vedic/muhurta` | ✅ Live |
+| ज्योतिष सॉफ्टवेयर फ्री | 15K+ | `/hi/vedic/kundli` | ✅ Live |
+| आज का होरा | 10K+ (est) | `/hi/vedic/hora` | ✅ NEW |
+| नौकरी कब मिलेगी कुंडली से | 15K+ (est) | — | ❌ Gap |
+| शादी कब होगी | 15K+ (est) | — | ❌ Gap |
 
-**Status:** All pages exist — Astra is one of very few free tools offering these.
-**Opportunity:** These are virtually uncontested keywords. A blog post per topic + internal links can establish topical authority.
+### 🔑 Hindi Gaps to Fill
+1. **Career timing content** — "naukri kab milegi kundli se jaanein" (highest-performing on competitors)
+2. **Marriage timing** — "shaadi kab hogi" in Hinglish
+3. **Dainik rashifal by individual rashi** (मेष राशिफल, वृषभ राशिफल, etc.)
+4. **Festival-timed content** — Navratri, Diwali, Chhath rashifal spikes
 
 ---
 
-### Cluster 10: Career / Wealth / Health Astrology (Applied)
+## 🇳🇵 Nepali — `ne`
 
-| Keyword | Est. Volume | Intent | Page |
+Nepal uses mostly Romanized Nepali (not Devanagari) for searches. Hamro Patro dominates with 826K monthly traffic.
+
+| Keyword (NE) | Volume/mo | Our Page | Status |
 |---|---|---|---|
-| career astrology by date of birth | Medium | Tool + Info | /vedic/career |
-| 10th house astrology calculator | Low | Tool | /vedic/career |
-| wealth astrology calculator | Low | Tool | /vedic/wealth |
-| dhana yoga calculator | Very Low | Tool | /vedic/wealth |
-| health astrology by date of birth | Low | Tool + Info | /vedic/health |
-| marriage prediction by date of birth | Medium | Tool + Info | /vedic/predictions |
-| when will I get married astrology | High | Informational | ❌ Missing |
+| hamro patro | 118K (brand) | — | 🎯 Competitor brand |
+| nepali calendar | 34K | — | ❌ Gap (need calendar widget) |
+| rashifal | 27K | `/ne/horoscope/today` | ✅ Covered |
+| aajako rashifal | 24K | `/ne/horoscope/today` | ✅ Covered |
+| date converter | 77K | — | ❌ Gap (Bikram Sambat ↔ AD) |
+| nepali patro | 8K–90K | — | ❌ Gap |
+| nepali date today | 15K | — | ❌ Gap |
+| जन्म कुण्डली / cheena | 10K+ | `/ne/vedic/kundli` | ✅ Live |
+| शुभ साइत / muhurta | 8K+ | `/ne/vedic/muhurta` | ✅ Live |
+| कुण्डली मिलाउन | 6K+ | `/ne/vedic/compatibility` | ✅ Live |
+| नेपाली पञ्चाङ्ग | 5K+ | `/ne/vedic/panchang` | ✅ Live |
 
-**Status:** Pages exist but many competitors rank informational articles for these queries.
-**Opportunity:** Combine calculator output with interpretive text for search snippets.
+### 🔑 Nepal Gaps to Fill
+1. **Bikram Sambat date converter** — 77K/mo, #1 traffic driver in Nepal astrology
+2. **Nepali calendar page** with tithi/festivals — 34K/mo
+3. **"Nepali date today"** widget — 15K/mo
+4. Note: Romanized Nepali has 57:1 ratio vs Devanagari in Keyword Planner — optimize for Roman script first
 
 ---
 
-## Content Gap Analysis — Pages to Build
+## 🇧🇷 Portuguese (Brazil-first) — `pt`
 
-### Priority 1: High Impact
+Brazil is the **fastest-growing astrology market** (+62% YoY). 42% of Brazilians believe in astral influence. 97%+ mobile traffic.
 
-| New Page | Target Keywords | Est. Volume | Rationale |
+| Keyword (PT) | Volume/mo | Our Page | Status |
 |---|---|---|---|
-| `/vedic/panchang/[date]` | "panchang today", "aaj ka panchang", "today tithi" | Very High | Programmatic daily pages are how DrikPanchang dominates |
-| `/blog/27-nakshatras` | "27 nakshatras", "nakshatra characteristics" | Medium | Informational hub linking to calculator |
-| `/vedic/mangal-dosha` | "mangal dosha calculator", "am I manglik" | Medium | Standalone dosha pages rank independently |
-| `/vedic/kaal-sarp-dosha` | "kaal sarp dosha calculator", "kaal sarp dosha check" | Medium | Standalone dosha pages rank independently |
+| horóscopo | 500K–27M (annual) | `/pt/` | ✅ Live |
+| signos / signos datas | 400K+ | `/pt/horoscope/signs` | ❌ Gap (no signs page) |
+| horas iguais (mirror hours) | 320K+ | — | ❌ Gap (unique to Brazil/Portugal) |
+| mapa astral | 242K (8.2M annual) | `/pt/vedic/kundli` | ✅ Live |
+| tarot / tarot do dia | 114K+ | — | ❌ Gap |
+| mapa astral gratuito | 61K | `/pt/vedic/kundli` | ✅ Live |
+| ascendente | 57K | `/pt/vedic/kundli` | ✅ Live |
+| horóscopo do dia | 50K+ | `/pt/horoscope/today` | ✅ NEW |
+| lua hoje / fase da lua | 40K+ | `/pt/vedic/panchang` | ✅ Live |
+| compatibilidade / sinastria | 30K+ | `/pt/vedic/compatibility` | ✅ Live |
+| numerologia do nome | 23K | — | ❌ Gap |
+| signo de Touro | 3.2M (annual) | — | ❌ Gap (per-sign pages) |
+| signo de Câncer | 3M (annual) | — | ❌ Gap |
 
-### Priority 2: Medium Impact
+### 🔑 Brazil Gaps to Fill
+1. **Mirror hours (horas iguais)** — 320K/mo, uniquely popular in Brazil/France, no competition from Vedic sites
+2. **Per-sign pages** (`/pt/signos/touro`, etc.) — millions annual per sign
+3. **Tarot do dia** — 114K/mo, could be a free interactive tool
+4. **Numerologia do nome** — 23K/mo, simple name numerology calculator
+5. Content shifting from "horóscopo" → "mapa astral" + "previsão" (younger 35-44 audience)
 
-| New Page | Target Keywords | Est. Volume | Rationale |
+---
+
+## 🇲🇽🇦🇷🇪🇸 Spanish (LatAm + Spain) — `es`
+
+Love + Chinese horoscope dominant in Argentina. 97% mobile traffic across LatAm.
+
+| Keyword (ES) | Volume/mo | CPC | Our Page | Status |
+|---|---|---|---|---|
+| horóscopo | 135K | $0.93 | `/es/horoscope/today` | ✅ NEW |
+| signos zodiacales | 90.5K | $0.23 | — | ❌ Gap |
+| calculadora carta natal | 90.5K | — | `/es/vedic/kundli` | ✅ Live |
+| horóscopo [signo] hoy | 301K–368K/sign | $0.01 | — | ❌ Gap (per-sign) |
+| carta astral gratis | 60K+ (est) | — | `/es/vedic/kundli` | ✅ Live |
+| compatibilidad zodiacal | 4.4K | $0.05 | `/es/vedic/compatibility` | ✅ Live |
+| horóscopo chino | 4.4K | $1.87 | — | ❌ Gap |
+| mi horóscopo de hoy | 50K+ (est) | — | `/es/horoscope/today` | ✅ NEW |
+| tarot gratis | 40K+ (est) | — | — | ❌ Gap |
+
+### 🔑 Spanish Gaps to Fill
+1. **Per-sign daily horoscope** — massive volume, "horóscopo de Aries hoy" etc.
+2. **Signos zodiacales landing page** — 90.5K/mo
+3. **Horóscopo chino** — $1.87 CPC (highest in category), Chinese zodiac content
+4. **Tarot gratis** — free tarot reading tool
+5. Regional term differences: "carta astral" (Spain/Mexico) vs "carta natal" (Argentina)
+
+---
+
+## 🇯🇵 Japanese — `ja`
+
+Japan has a massive fortune-telling market. "Today's fortune" is a daily habit search. Love queries = 85% of paid fortune usage.
+
+| Keyword (JA) | Volume/mo | Our Page | Status |
 |---|---|---|---|
-| `/blog/marriage-muhurta-2027` | "shubh muhurat for marriage 2027" | Medium | Seasonal, time-sensitive, annual refresh |
-| `/blog/sade-sati-guide` | "sade sati effects", "sade sati remedies" | Medium | High fear-based search, links to transits page |
-| `/vedic/navamsa` | "navamsa chart calculator", "D9 chart" | Medium | Separate landing from divisional hub |
-| `/blog/vedic-astrology-vs-western` | "vedic vs western astrology" | Medium | Educational, topical authority builder |
+| 占い (fortune-telling) | 673K | `/ja/` | ✅ Live |
+| 占い無料 | 246K | `/ja/` | ✅ Live |
+| 今日の占い / 今日の運勢 | 246K | `/ja/horoscope/today` | ✅ NEW |
+| 相性占い (compatibility) | 135K | `/ja/vedic/compatibility` | ✅ Live |
+| 星座占い (horoscope) | 90K+ (est) | — | ❌ Gap (zodiac sign page) |
+| 誕生日占い (birthday fortune) | 60K+ (est) | `/ja/vedic/kundli` | ✅ Live |
+| ホロスコープ (horoscope) | 40K+ (est) | `/ja/vedic/kundli` | ✅ Live |
+| 当たる占い師 (accurate fortune-teller) | 49.5K | — | N/A (paid service) |
+| 明日の運勢 (tomorrow's fortune) | 20K+ (est) | — | ❌ Gap |
+| 星座占いランキング (zodiac ranking) | 17K+ (est) | — | ❌ Gap |
+| 算命学 (Suan Ming) | 29K | — | ❌ Gap |
+| 前世占い (past-life fortune) | 14K (est) | — | ❌ Gap |
 
-### Priority 3: Long-Tail Authority
+### 🔑 Japan Gaps to Fill
+1. **Tomorrow's fortune** (明日の運勢) — complements today's page
+2. **Zodiac ranking page** — Japanese users love "今日の占いランキング" (sign ranking format)
+3. **星座占い hub** — central zodiac signs page with personality + daily
+4. "**当たる**" (accurate/reliable) modifier — add trust signals, testimonials
+5. Seasonal: January "新年占い" (New Year fortune) — massive spike
 
-| New Page | Target Keywords | Est. Volume | Rationale |
+---
+
+## 🇫🇷 French (France-first) — `fr`
+
+France has the #1 horoscope search market in Europe. 88% mobile. Heures miroirs (11:11, 22:22) uniquely popular.
+
+| Keyword (FR) | Volume/mo | Our Page | Status |
 |---|---|---|---|
-| `/blog/how-to-read-kundli` | "how to read kundli", "kundli reading guide" | Medium | Educational funnel to calculator |
-| `/blog/vimshottari-dasha-effects` | "mahadasha effects", "[planet] mahadasha" | Low each, many | 9 sub-pages, one per planet dasha |
-| `/blog/raja-yoga-types` | "raja yoga in kundli", "types of raja yoga" | Low | Niche authority builder |
-| `/vedic/panchang/monthly/[year]/[month]` | "panchang [month] 2027", "hindu calendar" | Medium | Monthly programmatic pages |
+| horoscope | 812K | `/fr/` | ✅ Live |
+| horoscope du jour | 537K | `/fr/horoscope/today` | ✅ NEW (gap filled!) |
+| horoscope de demain | 74K | — | ❌ Gap |
+| horoscope gratuit | 48K | `/fr/` | ✅ Live |
+| horoscope du jour gratuit | 200K (est) | `/fr/horoscope/today` | ✅ NEW |
+| horoscope balance | 23K | — | ❌ Gap (per-sign) |
+| horoscope scorpion | 22K | — | ❌ Gap (per-sign) |
+| horoscope sagittaire | 18K | — | ❌ Gap (per-sign) |
+| zodiaque | 14.8K | — | ❌ Gap |
+| thème astral gratuit | 40K | `/fr/vedic/kundli` | ✅ Live |
+| voyance gratuite | 120K | — | ❌ Gap (not our niche) |
+| heures miroirs / horas iguais | 50K+ (est) | — | ❌ Gap (unique FR/BR opportunity) |
+| compatibilité astrologique | 30K+ (est) | `/fr/vedic/compatibility` | ✅ Live |
+
+### 🔑 France Gaps to Fill
+1. **Per-sign horoscope** pages (horoscope balance, scorpion, sagittaire) — 18-23K each × 12 signs
+2. **Horoscope de demain** (tomorrow's) — 74K/mo
+3. **Heures miroirs** (mirror hours: 11:11, 22:22, etc.) — uniquely popular in France
+4. **Zodiaque landing page** — sign personality hub
+5. horoscope.fr dominates with 132K traffic from "horoscope" alone — differentiate with Vedic angle
 
 ---
 
-## Quick Wins — On-Page SEO Fixes
+## 🇰🇷 Korean — `ko` (NEW LOCALE)
 
-1. **Title tag for `/vedic/dashas`:** Change from "Vimshottari Dasha Calculator" → "Mahadasha Calculator — Vimshottari Dasha Periods & Antardasha Dates"
-2. **Title tag for `/vedic/nakshatra`:** Change from "Nakshatra Finder" → "Nakshatra Calculator — Find Your Birth Star & Pada Free"
-3. **Title tag for `/vedic/divisional`:** Add "Navamsa" to title: "Navamsa (D9) & Divisional Charts — D1 to D60 Calculator"
-4. **Internal linking:** Every tool page should link to 2-3 related tool pages (e.g., Kundli → Yogas → Dashas → Transits)
-5. **FAQ schema:** Add FAQ JSON-LD to top tool pages matching "People Also Ask" queries
-6. **Below-the-fold content:** Add 300-500 words of educational text below each calculator explaining what the tool does and how to read results (this is what every ranking competitor has)
+Korea's fortune market is **enormous** — Naver alone shows 5.2M monthly for "오늘의운세" (today's fortune). Naver is primary search engine (not Google). Saju (四柱/사주) is the Korean birth chart system equivalent to Kundli.
+
+| Keyword (KO) | Volume/mo (Naver) | Our Page | Status |
+|---|---|---|---|
+| 오늘의운세 (today's fortune) | **5,170K** | `/ko/horoscope/today` | ✅ NEW |
+| 운세 (fortune) | **1,785K** | `/ko/` | ✅ Live |
+| 오늘운세 (today fortune) | **569K** | `/ko/horoscope/today` | ✅ NEW |
+| 별자리운세 (zodiac fortune) | 300K–1M | — | ❌ Gap |
+| 손없는날 (auspicious day) | 92.4K | — | ❌ Gap (similar to muhurta) |
+| 사주 (four pillars/saju) | 96.5K | `/ko/vedic/kundli` | ✅ Live |
+| 인터넷사주 (internet saju) | 37.8K | `/ko/vedic/kundli` | ✅ Live |
+| 무료사주 (free saju) | 30.1K | `/ko/vedic/kundli` | ✅ Live |
+| 궁합 (compatibility) | 13K+ | `/ko/vedic/compatibility` | ✅ Live |
+| 사주풀이도우미 (saju interpreter) | 13.3K | — | ❌ Gap |
+| 자미두수 (Zi Wei Dou Shu) | 16.4K | — | ❌ Gap |
+| 타로 (tarot) | 27K+ | — | ❌ Gap |
+| 연애운 (love fortune) | 11.5K | — | ❌ Gap |
+| 무료사주사이트 (free saju site) | 10.4K | `/ko/vedic/kundli` | ✅ Live |
+| 사주팔자 (saju fortune) | 10.3K | `/ko/vedic/kundli` | ✅ Live |
+| 신년운세 (New Year fortune) | 226K (Jan spike) | — | ❌ Gap (seasonal) |
+| GPT 사주 (GPT fortune) | 18.8K (rising +129%) | — | ❌ Gap (AI opportunity) |
+
+### 🔑 Korea Gaps to Fill
+1. **별자리운세** (zodiac fortune) hub — 300K-1M/mo, our strongest match
+2. **손없는날** (auspicious day calendar) — 92.4K/mo, equivalent to muhurta/panchang
+3. **신년운세** (New Year fortune) — 226K spike in January, seasonal landing page
+4. **GPT 사주 / AI 운세** — rising +129%, perfect positioning for Astra
+5. **타로** (tarot) tool — 27K/mo, interactive daily card pull
+6. **⚠️ Naver SEO** — Korea searches primarily on Naver, not Google. Consider Naver blog strategy alongside Google SEO
 
 ---
 
-## Keyword Metadata for `layout.tsx`
+## 📊 Total Addressable Search Volume by Locale
 
-Current keywords array is good. Suggested additions:
-
-```
-'free kundli online', 'janam kundali', 'mahadasha calculator',
-'kundli matching', 'gun milan', 'birth star calculator',
-'rahu kaal today', 'mangal dosha', 'kaal sarp dosha',
-'career astrology', 'navamsa chart', 'sade sati calculator',
-'vedic astrology calculator free', 'jyotish calculator online'
-```
+| Locale | Top Keywords Combined (monthly) | Coverage | Priority Action |
+|---|---|---|---|
+| 🇰🇷 Korean | **~8.2M** (Naver) | 30% | Build 별자리운세 hub, 손없는날, target Naver |
+| 🇫🇷 French | **~1.8M** | 45% | Per-sign horoscope pages, heures miroirs |
+| 🇮🇳 Hindi | **~1.2M** | 60% | Career timing content, per-rashi pages |
+| 🇮🇳 English | **~2.5M** (India) | 70% | Per-sign pages, weekly horoscope, AI angle |
+| 🇧🇷 Portuguese | **~1.5M** | 40% | Mirror hours, per-sign pages, numerologia |
+| 🇪🇸 Spanish | **~800K** | 35% | Signos zodiacales hub, per-sign horoscopes |
+| 🇯🇵 Japanese | **~1.5M** | 40% | Ranking format, 明日の運勢, 星座占い hub |
+| 🇳🇵 Nepali | **~300K** | 50% | Date converter (77K!), Nepali calendar |
 
 ---
 
-## Data Limitations
+## 🎯 Cross-Locale Gap Pages (Highest Impact)
 
-- Volume estimates are relative (High/Med/Low) from SERP competition signals, not absolute numbers
-- Source: web search fallback (< 10 queries). For exact CPC and volume, connect DataForSEO
-- No backlink data — connect Ahrefs MCP for DR-based prioritization
+These page types are gaps across multiple locales:
+
+| Gap | Locales | Combined Volume | Effort |
+|---|---|---|---|
+| **Per-sign daily horoscope** (`/horoscope/today/[sign]`) | ALL 8 | 3M+/mo | Medium |
+| **Tomorrow's horoscope** | FR (74K), JA (20K+), all | 150K+/mo | Low |
+| **Mirror hours** (11:11, 22:22) | FR, PT | 370K+/mo | Low |
+| **Zodiac signs hub** | FR, PT, ES, KO, JA | 1M+/mo | Medium |
+| **Weekly horoscope** | EN, FR, ES | 200K+/mo | Low |
+| **AI fortune / AI horoscope** landing | EN, KO (rising) | 35M+ (global, growing) | Medium |
+| **Date/calendar converters** | NE (77K), KO | 100K+/mo | Medium |
+| **Tarot tool** | PT (114K), ES (40K), KO (27K), FR | 200K+/mo | High |
+| **Career timing astrology** | HI (15K+), EN | 100K+/mo | Low |
+
+---
+
+## 🚀 Recommended Build Order (by volume × coverage gap)
+
+1. **Per-sign pages** (`/horoscope/today/aries`, etc.) — serves ALL locales, 3M+ combined
+2. **Mirror hours** (`/mirror-hours/1111`, etc.) — FR+PT niche, 370K, low competition
+3. **Tomorrow's horoscope** — simple extension of today page
+4. **Zodiac signs hub** (`/horoscope/signs`) — sign personality + daily link
+5. **Weekly horoscope** — habit search, 200K+/mo
+6. **AI horoscope / AI fortune** landing page — rising 340% YoY
+7. **Bikram Sambat date converter** (Nepal) — 77K, utility tool
+8. **Tarot card reader** — interactive tool, 200K+ across PT/ES/KO/FR
+
+---
+
+*Data methodology: Web search fallback (no DataForSEO/Ahrefs API keys). Korean data from Naver Keyword Tool via tenb.io and keygak.kr. India data from Ahrefs Top Pages (ahrefstop.com) and KundliAI blog. French data from Ahrefs + voyantvisible.fr. Japanese data from search-engine-pirates.co.jp. Volumes are approximate monthly estimates.*

@@ -20,7 +20,7 @@ export default function BottomTabs() {
     <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[#0a0a1a]/85 backdrop-blur-2xl border-t border-violet-500/[0.08]">
       <div className="flex justify-around items-center h-[4.5rem] px-2 max-w-lg mx-auto">
         {TABS.map(tab => {
-          const clean = pathname.replace(/^\/(hi|ne|pt|es|ja|fr)/, '') || '/';
+          const clean = pathname.replace(/^\/(hi|ne|pt|es|ja|fr|ko)/, '') || '/';
           const active = clean === tab.href || (tab.href !== '/' && clean.startsWith(tab.href.split('/').slice(0, 3).join('/')));
           return (
             <LocaleLink

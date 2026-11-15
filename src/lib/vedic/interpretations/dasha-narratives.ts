@@ -487,10 +487,19 @@ export const MAHADASHA_ES: Record<string, MahadashaNarrative> = {
   },
 };
 
+import { MAHADASHA_FR } from './dasha-fr';
+import { MAHADASHA_JA } from './dasha-ja';
+import { MAHADASHA_KO } from './dasha-ko';
+
+export { MAHADASHA_FR, MAHADASHA_JA, MAHADASHA_KO };
+
 export function getLocalizedMahadashaNarrative(planet: string, lang: Lang = 'en'): MahadashaNarrative | undefined {
   if (lang === 'hi') return MAHADASHA_HI[planet] || MAHADASHA_EN[planet];
   if (lang === 'ne') return MAHADASHA_NE[planet] || MAHADASHA_HI[planet] || MAHADASHA_EN[planet];
   if (lang === 'pt') return MAHADASHA_PT[planet] || MAHADASHA_EN[planet];
   if (lang === 'es') return MAHADASHA_ES[planet] || MAHADASHA_EN[planet];
+  if (lang === 'fr') return MAHADASHA_FR[planet] || MAHADASHA_EN[planet];
+  if (lang === 'ja') return MAHADASHA_JA[planet] || MAHADASHA_EN[planet];
+  if (lang === 'ko') return MAHADASHA_KO[planet] || MAHADASHA_EN[planet];
   return MAHADASHA_EN[planet];
 }

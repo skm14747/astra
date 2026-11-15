@@ -83,6 +83,45 @@ export function getCurrentHora(sunrise: Date, currentTime: Date, vara: number): 
   return { planet: HORA_RULERS[horaIdx], horaNumber: Math.floor(hoursFromSunrise) + 1 };
 }
 
+export type HoraPeriod = { planet: string; start: Date; end: Date; horaNumber: number };
+
+/** Returns all 24 hora periods for the day (12 day + 12 night). */
+export function getFullDayHoras(
+  sunrise: Date,
+  sunset: Date,
+  nextSunrise: Date,
+  vara: number,
+): { day: HoraPeriod[]; night: HoraPeriod[] } {
+  const dayStartPlanets = [0, 3, 6, 2, 5, 1, 4];
+  const startIdx = dayStartPlanets[vara];
+  const dayMs = (sunset.getTime() - sunrise.getTime()) / 12;
+  const nightMs = (nextSunrise.getTime() - sunset.getTime()) / 12;
+
+  const day: HoraPeriod[] = [];
+  for (let i = 0; i < 12; i++) {
+    const planetIdx = (startIdx + i) % 7;
+    day.push({
+      planet: HORA_RULERS[planetIdx],
+      start: new Date(sunrise.getTime() + i * dayMs),
+      end: new Date(sunrise.getTime() + (i + 1) * dayMs),
+      horaNumber: i + 1,
+    });
+  }
+
+  const night: HoraPeriod[] = [];
+  for (let i = 0; i < 12; i++) {
+    const planetIdx = (startIdx + 12 + i) % 7;
+    night.push({
+      planet: HORA_RULERS[planetIdx],
+      start: new Date(sunset.getTime() + i * nightMs),
+      end: new Date(sunset.getTime() + (i + 1) * nightMs),
+      horaNumber: i + 13,
+    });
+  }
+
+  return { day, night };
+}
+
 export function calculateVarjyam(
   nakshatraIndex: number,
   nakshatraStart: Date,

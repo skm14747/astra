@@ -6,8 +6,9 @@ import { pt } from './pt';
 import { es } from './es';
 import { ja } from './ja';
 import { fr } from './fr';
+import { ko } from './ko';
 
-const dicts: Record<string, Record<string, string>> = { en, hi, ne, pt, es, ja, fr };
+const dicts: Record<string, Record<string, string>> = { en, hi, ne, pt, es, ja, fr, ko };
 
 /**
  * Returns a translation function `t(key, params?)` that looks up the

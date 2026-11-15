@@ -17,7 +17,7 @@ export function useLocalePath() {
     (path: string): string => {
       if (language === 'en') return path;
       // Avoid double-prefixing
-      const locales = ['hi', 'ne', 'pt', 'es', 'ja', 'fr'];
+      const locales = ['hi', 'ne', 'pt', 'es', 'ja', 'fr', 'ko'];
       const firstSeg = path.split('/')[1];
       if (locales.includes(firstSeg)) return path;
       return `/${language}${path}`;

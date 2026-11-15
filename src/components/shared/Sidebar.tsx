@@ -106,7 +106,7 @@ export default function Sidebar() {
             {!collapsed && expandedSections[sec.heading] && (
               <div className="ml-5 space-y-0.5">
                 {sec.items.map(item => {
-                  const clean = pathname.replace(/^\/(hi|ne|pt|es|ja|fr)/, '') || '/';
+                  const clean = pathname.replace(/^\/(hi|ne|pt|es|ja|fr|ko)/, '') || '/';
                   const active = clean === item.href;
                   return (
                     <LocaleLink

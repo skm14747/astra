@@ -90,6 +90,7 @@ export default function Navbar() {
     { code: 'es', label: 'Español', short: 'ES', family: 'latin' },
     { code: 'fr', label: 'Français', short: 'FR', family: 'latin' },
     { code: 'ja', label: '日本語', short: 'JA', family: 'east-asian' },
+    { code: 'ko', label: '한국어', short: 'KO', family: 'east-asian' },
   ];
 
   const currentFamily = ALL_LANGUAGES.find(l => l.code === language)?.family || 'global';
@@ -101,7 +102,7 @@ export default function Navbar() {
   );
   const handleLanguageChange = (lang: Language) => {
     setLanguage(lang);
-    const cleanPath = pathname.replace(/^\/(hi|ne|pt|es|ja|fr)/, '') || '/';
+    const cleanPath = pathname.replace(/^\/(hi|ne|pt|es|ja|fr|ko)/, '') || '/';
     if (lang === 'en') {
       router.push(cleanPath);
     } else {
@@ -151,7 +152,7 @@ export default function Navbar() {
   };
 
   // Strip locale prefix for active-state matching (pathname may be /hi/vedic/kundli)
-  const cleanPathname = pathname.replace(/^\/(hi|ne|pt|es|ja|fr)/, '') || '/';
+  const cleanPathname = pathname.replace(/^\/(hi|ne|pt|es|ja|fr|ko)/, '') || '/';
   const isGroupActive = (group: typeof NAV_GROUPS[0]) => group.items.some(i => cleanPathname === i.href);
 
   return (

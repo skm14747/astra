@@ -3,7 +3,7 @@ import { BLOG_POSTS } from '@/content/blog';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://astradestiny.com';
 
-const LOCALES = ['en', 'hi', 'ne', 'pt', 'es', 'ja', 'fr'] as const;
+const LOCALES = ['en', 'hi', 'ne', 'pt', 'es', 'ja', 'fr', 'ko'] as const;
 type Locale = (typeof LOCALES)[number];
 
 const VEDIC_ROUTES = [
@@ -14,7 +14,7 @@ const VEDIC_ROUTES = [
   'shadbala', 'jaimini', 'career', 'wealth',
   'health', 'predictions', 'nadi', 'report',
   'mangal-dosha', 'kaal-sarp-dosha', 'navamsa',
-  'sade-sati', 'choghadiya',
+  'sade-sati', 'choghadiya', 'hora',
 ] as const;
 
 const MATRIX_ROUTES = ['chart', 'health', 'timeline', 'compatibility'] as const;
@@ -48,12 +48,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const ogImageUrl = `${BASE_URL}/og-image.png`;
 
-  const STATIC_PATHS: { path: string; changeFrequency: 'weekly' | 'monthly' | 'yearly'; priority: number; hasImage?: boolean }[] = [
+  const STATIC_PATHS: { path: string; changeFrequency: 'daily' | 'weekly' | 'monthly' | 'yearly'; priority: number; hasImage?: boolean }[] = [
     { path: '/', changeFrequency: 'weekly', priority: 1.0, hasImage: true },
     { path: '/tools', changeFrequency: 'weekly', priority: 0.9 },
     { path: '/how-it-works', changeFrequency: 'monthly', priority: 0.6 },
     { path: '/about', changeFrequency: 'monthly', priority: 0.5 },
     { path: '/methodology', changeFrequency: 'monthly', priority: 0.5 },
+    { path: '/horoscope/today', changeFrequency: 'daily', priority: 0.9 },
+    { path: '/rashifal', changeFrequency: 'daily', priority: 0.9 },
     { path: '/settings', changeFrequency: 'monthly', priority: 0.3 },
     { path: '/privacy', changeFrequency: 'yearly', priority: 0.3 },
     { path: '/terms', changeFrequency: 'yearly', priority: 0.3 },

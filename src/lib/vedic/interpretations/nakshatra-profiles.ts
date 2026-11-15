@@ -117,12 +117,13 @@ export const NAKSHATRA_PROFILES_HI: Partial<NakshatraProfile>[] = [
     career: 'परामर्श, पशु कल्याण, तीर्थ यात्रा, ललित कला, अनाथालय एवं आध्यात्मिक सेवा।' },
 ];
 
-export const NAKSHATRA_PROFILES_NE: Partial<NakshatraProfile>[] = NAKSHATRA_PROFILES_HI.map(h => ({
-  personality: h.personality?.replace(/हैं/g, 'हुनुहुन्छ').replace(/होता है/g, 'हुन्छ').replace(/रखते हैं/g, 'राख्नुहुन्छ'),
-  strengths: h.strengths,
-  challenges: h.challenges,
-  career: h.career,
-}));
+import { NAKSHATRA_PROFILES_NE } from './nakshatras-ne';
+import { NAKSHATRA_PROFILES_ES } from './nakshatras-es';
+import { NAKSHATRA_PROFILES_FR } from './nakshatras-fr';
+import { NAKSHATRA_PROFILES_JA } from './nakshatras-ja';
+import { NAKSHATRA_PROFILES_KO } from './nakshatras-ko';
+
+export { NAKSHATRA_PROFILES_NE, NAKSHATRA_PROFILES_ES, NAKSHATRA_PROFILES_FR, NAKSHATRA_PROFILES_JA, NAKSHATRA_PROFILES_KO };
 
 export const NAKSHATRA_PROFILES_PT: Partial<NakshatraProfile>[] = [
   { personality: 'Ágil, enérgico e com vocação inata para a cura. Você é um pioneiro nato — rápido para agir, generoso para acudir e impaciente com demoras.',
@@ -235,13 +236,6 @@ export const NAKSHATRA_PROFILES_PT: Partial<NakshatraProfile>[] = [
     career: 'Proteção animal, psicologia integrativa, apoio humanitário, belas artes e mentoria de vida.' },
 ];
 
-export const NAKSHATRA_PROFILES_ES: Partial<NakshatraProfile>[] = NAKSHATRA_PROFILES_PT.map(pt => ({
-  personality: pt.personality?.replace(/você é/gi, 'eres').replace(/possui/gi, 'posees').replace(/não/gi, 'no'),
-  strengths: pt.strengths,
-  challenges: pt.challenges,
-  career: pt.career,
-}));
-
 export function getLocalizedNakshatraProfile(index: number, lang: Lang = 'en'): NakshatraProfile | undefined {
   const base = PROFILES_EN[index];
   if (!base) return undefined;
@@ -249,5 +243,8 @@ export function getLocalizedNakshatraProfile(index: number, lang: Lang = 'en'): 
   if (lang === 'ne' && NAKSHATRA_PROFILES_NE[index]) return { ...base, ...NAKSHATRA_PROFILES_NE[index] };
   if (lang === 'pt' && NAKSHATRA_PROFILES_PT[index]) return { ...base, ...NAKSHATRA_PROFILES_PT[index] };
   if (lang === 'es' && NAKSHATRA_PROFILES_ES[index]) return { ...base, ...NAKSHATRA_PROFILES_ES[index] };
+  if (lang === 'fr' && NAKSHATRA_PROFILES_FR[index]) return { ...base, ...NAKSHATRA_PROFILES_FR[index] };
+  if (lang === 'ja' && NAKSHATRA_PROFILES_JA[index]) return { ...base, ...NAKSHATRA_PROFILES_JA[index] };
+  if (lang === 'ko' && NAKSHATRA_PROFILES_KO[index]) return { ...base, ...NAKSHATRA_PROFILES_KO[index] };
   return base;
 }

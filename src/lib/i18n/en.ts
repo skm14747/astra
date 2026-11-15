@@ -945,6 +945,38 @@ export const en = {
   'print.personalityNature': 'Personality & Nature',
   'print.lifeAreas': 'Life Areas',
   'print.timelineRemedies': 'Timeline & Remedies',
+
+  // ─── Daily Horoscope (Rashifal) ───
+  'horoscope.title': 'Today\'s Horoscope (Rashifal)',
+  'horoscope.subtitle': 'Daily predictions for all 12 zodiac signs based on Moon transit',
+  'horoscope.todayLabel': 'Today\'s Forecast',
+  'horoscope.selectSign': 'Select your sign',
+  'horoscope.moonTransit': 'Moon Transit',
+  'horoscope.overview': 'Overview',
+  'horoscope.career': 'Career & Finance',
+  'horoscope.love': 'Love & Relationships',
+  'horoscope.health': 'Health & Wellness',
+  'horoscope.luckyNumber': 'Lucky Number',
+  'horoscope.luckyColor': 'Lucky Color',
+  'horoscope.intensity': 'Intensity',
+  'horoscope.allSigns': 'All 12 Signs',
+  'seo.horoscope.heading': 'Daily Rashifal — Free Horoscope for All 12 Signs',
+  'seo.horoscope.text': 'Get your free daily rashifal (राशिफल) based on Vedic Moon sign transits. Our daily horoscope covers all 12 zodiac signs — Aries (Mesha) through Pisces (Meena) — with predictions for career, love, health, and lucky numbers. Updated daily using real-time NASA ephemeris lunar positions and classical Jyotish transit rules.',
+
+  // ─── Hora ───
+  'hora.title': 'Hora Today',
+  'hora.subtitle': 'Planetary hours for today — know the best time for every activity',
+  'hora.currentHora': 'Current Hora',
+  'hora.planet': 'Planet',
+  'hora.from': 'From',
+  'hora.to': 'To',
+  'hora.quality': 'Quality',
+  'hora.suitableFor': 'Suitable For',
+  'hora.dayHoras': 'Day Horas (Sunrise to Sunset)',
+  'hora.nightHoras': 'Night Horas (Sunset to Next Sunrise)',
+  'hora.now': 'NOW',
+  'seo.hora.heading': 'What is Hora? Planetary Hours in Vedic Astrology',
+  'seo.hora.text': 'Hora is the Vedic system of planetary hours where each hour of the day and night is ruled by one of the 7 classical planets. The sequence starts from the weekday lord — Sun on Sunday, Moon on Monday, etc. — and cycles through Sun, Venus, Mercury, Moon, Saturn, Jupiter, Mars. Knowing the current Hora helps choose the right time for important activities: Sun Hora for authority, Jupiter Hora for education, Venus Hora for romance, and Mercury Hora for business.',
 } as const;
 
 export type TranslationKey = keyof typeof en;

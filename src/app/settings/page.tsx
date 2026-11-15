@@ -19,7 +19,7 @@ export default function SettingsPage() {
   const handleLanguageChange = (lang: Language) => {
     setLanguage(lang);
     // Navigate to the locale-prefixed URL so crawlers see the correct version
-    const cleanPath = pathname.replace(/^\/(hi|ne|pt|es|ja|fr)/, '') || '/';
+    const cleanPath = pathname.replace(/^\/(hi|ne|pt|es|ja|fr|ko)/, '') || '/';
     if (lang === 'en') {
       router.push(cleanPath);
     } else {
@@ -112,6 +112,7 @@ export default function SettingsPage() {
             { code: 'es', label: 'Español', family: 'latin' },
             { code: 'ja', label: '日本語', family: 'east-asian' },
             { code: 'fr', label: 'Français', family: 'latin' },
+            { code: 'ko', label: '한국어', family: 'east-asian' },
           ];
           const curFamily = ALL_LANGS.find(l => l.code === language)?.family || 'global';
           const primary = ALL_LANGS.filter(l => l.code === language || l.family === 'global' || l.family === curFamily);
