@@ -1442,5 +1442,71 @@
     "priority": "P2",
     "status": "gap",
     "notes": "Lunar calendar and moon phase content. Maps to our Panchang tithi/paksha data. Brazilian spirituality strongly connects to moon phases."
+  },
+  {
+    "id": "atmakaraka",
+    "head": "atmakaraka calculator",
+    "keywords": ["atmakaraka calculator", "atmakaraka meaning", "soul planet astrology", "chara karaka calculator", "atmakaraka in navamsa"],
+    "volume_range": "est. 8K-15K/mo",
+    "dominant_type": "tool",
+    "target_url": "/vedic/atmakaraka",
+    "priority": "P1",
+    "status": "live",
+    "notes": "Jaimini sub-tool. Low DR competitors (GrahAI DR 13 ranks). Our existing Jaimini engine computes all 7 Chara Karakas."
+  },
+  {
+    "id": "darakaraka",
+    "head": "darakaraka calculator",
+    "keywords": ["darakaraka calculator", "darakaraka spouse", "darakaraka meaning", "spouse planet astrology", "jaimini spouse significator"],
+    "volume_range": "est. 5K-10K/mo",
+    "dominant_type": "tool",
+    "target_url": "/vedic/darakaraka",
+    "priority": "P1",
+    "status": "live",
+    "notes": "Marriage/spouse queries high intent. Complements our compatibility page."
+  },
+  {
+    "id": "upapada-lagna",
+    "head": "upapada lagna calculator",
+    "keywords": ["upapada lagna calculator", "upapada lagna", "UL calculator", "jaimini marriage indicator"],
+    "volume_range": "est. 3K-6K/mo",
+    "dominant_type": "tool",
+    "target_url": "/vedic/upapada",
+    "priority": "P1",
+    "status": "live",
+    "notes": "Marriage indicator. Cross-links with darakaraka and compatibility pages."
+  },
+  {
+    "id": "karakamsha",
+    "head": "karakamsha calculator",
+    "keywords": ["karakamsha calculator", "karakamsha lagna", "atmakaraka navamsa", "ishta devata calculator"],
+    "volume_range": "est. 3K-6K/mo",
+    "dominant_type": "tool",
+    "target_url": "/vedic/karakamsha",
+    "priority": "P1",
+    "status": "live",
+    "notes": "Soul purpose tool. Links to atmakaraka, navamsa, career pages."
+  },
+  {
+    "id": "arudha-pada",
+    "head": "arudha pada calculator",
+    "keywords": ["arudha pada calculator", "arudha lagna calculator", "jaimini arudha", "12 bhava padas"],
+    "volume_range": "est. 3K-5K/mo",
+    "dominant_type": "tool",
+    "target_url": "/vedic/arudha-pada",
+    "priority": "P1",
+    "status": "live",
+    "notes": "Public image calculator. Reuses existing calculateAllArudhaPadas() engine."
+  },
+  {
+    "id": "varshphal",
+    "head": "varshphal calculator",
+    "keywords": ["varshphal calculator", "annual horoscope calculator", "solar return chart vedic", "muntha calculator", "tajaka yoga"],
+    "volume_range": "est. 8K-12K/mo",
+    "dominant_type": "tool",
+    "target_url": "/vedic/varshphal",
+    "priority": "P1",
+    "status": "live",
+    "notes": "Annual prediction tool. Uses existing calculateVarshaphal(), detectTajikaYogas(), calculateSahams() engines."
   }
 ]

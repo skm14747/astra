@@ -1,5 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { BLOG_POSTS } from '@/content/blog';
+import { ALL_SLUGS as PLANET_IN_HOUSE_ROUTES } from '@/lib/astrology/planet-in-house';
+import { ALL_NAKSHATRA_SLUGS } from '@/lib/astrology/nakshatra-articles';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://astradestiny.com';
 
@@ -15,7 +17,12 @@ const VEDIC_ROUTES = [
   'health', 'predictions', 'nadi', 'report',
   'mangal-dosha', 'kaal-sarp-dosha', 'navamsa',
   'sade-sati', 'choghadiya', 'hora',
+  'atmakaraka', 'darakaraka', 'upapada', 'karakamsha', 'arudha-pada', 'varshphal',
 ] as const;
+
+const NUMEROLOGY_ROUTES = ['', 'life-path', 'destiny-number', 'personal-year', 'lo-shu-grid'] as const;
+
+const WESTERN_ROUTES = ['lilith', 'chiron', 'saturn-return', 'north-node', 'synastry'] as const;
 
 const MATRIX_ROUTES = ['chart', 'health', 'timeline', 'compatibility'] as const;
 
@@ -85,6 +92,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: now,
         changeFrequency: 'weekly' as const,
         priority: isDefault ? 0.8 : 0.7,
+        images: isDefault ? [ogImageUrl] : undefined,
+        alternates: alternates(path),
+      };
+    });
+  });
+
+  const numerologyEntries: MetadataRoute.Sitemap = NUMEROLOGY_ROUTES.flatMap(route => {
+    const path = route ? `/tools/numerology/${route}` : '/tools/numerology';
+    return LOCALES.map(locale => {
+      const isDefault = locale === 'en';
+      return {
+        url: formatUrl(locale, path),
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: isDefault ? 0.7 : 0.6,
+        images: isDefault ? [ogImageUrl] : undefined,
+        alternates: alternates(path),
+      };
+    });
+  });
+
+  const westernEntries: MetadataRoute.Sitemap = WESTERN_ROUTES.flatMap(route => {
+    const path = `/tools/western/${route}`;
+    return LOCALES.map(locale => {
+      const isDefault = locale === 'en';
+      return {
+        url: formatUrl(locale, path),
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: isDefault ? 0.7 : 0.6,
         images: isDefault ? [ogImageUrl] : undefined,
         alternates: alternates(path),
       };
@@ -161,5 +198,65 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  return [...staticEntries, ...vedicEntries, ...matrixEntries, ...panchangDates, ...monthlyPanchang, ...blogEntries];
+  const planetInHouseEntries: MetadataRoute.Sitemap = [
+    ...LOCALES.map(locale => ({
+      url: formatUrl(locale, '/astrology'),
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: locale === 'en' ? 0.8 : 0.7,
+      alternates: alternates('/astrology'),
+    })),
+    ...PLANET_IN_HOUSE_ROUTES.flatMap(slug => {
+      const path = `/astrology/${slug}`;
+      return LOCALES.map(locale => {
+        const isDefault = locale === 'en';
+        return {
+          url: formatUrl(locale, path),
+          lastModified: now,
+          changeFrequency: 'monthly' as const,
+          priority: isDefault ? 0.6 : 0.5,
+          alternates: alternates(path),
+        };
+      });
+    }),
+  ];
+
+  const nakshatraEntries: MetadataRoute.Sitemap = [
+    ...LOCALES.map(locale => ({
+      url: formatUrl(locale, '/nakshatras'),
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: locale === 'en' ? 0.8 : 0.7,
+      alternates: alternates('/nakshatras'),
+    })),
+    ...ALL_NAKSHATRA_SLUGS.flatMap(slug => {
+      const path = `/nakshatras/${slug}`;
+      return LOCALES.map(locale => ({
+        url: formatUrl(locale, path),
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: locale === 'en' ? 0.7 : 0.6,
+        alternates: alternates(path),
+      }));
+    }),
+  ];
+
+  const LOVE_ROUTES = [
+    '/horoscope/love',
+    '/astrology/venus-mars-compatibility',
+    '/astrology/darakaraka-spouse',
+    '/astrology/marriage-timing',
+    '/astrology/synastry-aspects',
+  ];
+  const loveEntries: MetadataRoute.Sitemap = LOVE_ROUTES.flatMap(path => {
+    return LOCALES.map(locale => ({
+      url: formatUrl(locale, path),
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: locale === 'en' ? 0.7 : 0.6,
+      alternates: alternates(path),
+    }));
+  });
+
+  return [...staticEntries, ...vedicEntries, ...numerologyEntries, ...westernEntries, ...matrixEntries, ...planetInHouseEntries, ...nakshatraEntries, ...loveEntries, ...panchangDates, ...monthlyPanchang, ...blogEntries];
 }

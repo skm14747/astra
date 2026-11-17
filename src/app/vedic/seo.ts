@@ -22,11 +22,11 @@ export type VedicPageSeo = {
 
 export const VEDIC_SEO: Record<string, VedicPageSeo> = {
   kundli: {
-    title: 'Free Online Kundali (कुंडली) — Janam Kundli Calculator',
+    title: 'Free Birth Chart & Kundali (कुंडली) Calculator Online',
     description:
-      'Generate your free online Kundali (Janam Kundli) with planetary positions, houses, nakshatras & dignities. NASA-precision Vedic birth chart calculator with Lahiri Ayanamsa.',
+      'Free birth chart calculator & online Kundali (Janam Kundli) with planetary positions, houses, nakshatras & dignities. NASA-precision Vedic astrology chart with Lahiri Ayanamsa.',
     canonical: '/vedic/kundli',
-    keywords: ['free online kundali', 'janam kundli', 'kundli online', 'free kundali', 'vedic birth chart calculator', 'janam kundali', 'kundali by date of birth', 'birth chart astrology', 'lagna chart', 'free birth chart analysis'],
+    keywords: ['free birth chart', 'birth chart calculator', 'free online kundali', 'janam kundli', 'kundli online', 'free kundali', 'vedic birth chart calculator', 'janam kundali', 'kundali by date of birth', 'birth chart astrology', 'lagna chart', 'free birth chart analysis', 'free astrology chart'],
     seoIntro: {
       heading: 'What is a Kundli?',
       text: 'A Kundli (also called Janam Kundli or Vedic birth chart) is a map of the sky at the exact moment of your birth. It shows the positions of the Sun, Moon, and planets across the 12 zodiac signs and houses. In Vedic astrology (Jyotish), the Kundli is the foundation for all predictions — from personality traits to life events, career timing, and relationship compatibility. Our calculator uses NASA JPL DE-series ephemeris for sub-arc-second precision and the Lahiri Ayanamsa for sidereal corrections, matching the standards used by the Indian Astronomical Ephemeris.',
@@ -78,7 +78,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     description:
       'Detect all major Yogas (Raja, Dhana, Pancha Mahapurusha, Gajakesari) and Doshas (Manglik, Kaal Sarp, Pitra) in your Vedic birth chart with BPHS-accurate rules.',
     canonical: '/vedic/yogas',
-    keywords: ['yoga calculator', 'raja yoga', 'kaal sarp dosha', 'manglik dosha', 'gajakesari yoga'],
+    keywords: ['yoga calculator', 'free yoga calculator', 'raja yoga', 'kaal sarp dosha', 'manglik dosha', 'gajakesari yoga', 'yoga dosha calculator free'],
     seoIntro: {
       heading: 'What are Yogas and Doshas?',
       text: 'Yogas are specific planetary combinations that produce auspicious or inauspicious results in a birth chart. Raja Yoga (royal combination) can indicate fame and authority, while Dhana Yoga signals wealth accumulation. Doshas are afflictions — Manglik Dosha (Mars in certain houses) affects marriage compatibility, Kaal Sarp Dosha (all planets hemmed between Rahu-Ketu) creates recurring life obstacles, and Pitra Dosha indicates ancestral karma. Our engine checks 60+ Yoga patterns and all major Doshas following BPHS and Uttara Kalamrita rules.',
@@ -102,7 +102,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     description:
       'Personalized Vedic remedies for your chart — gemstones, mantras, Rudraksha, charity, fasting, and Stotra for each planet affliction.',
     canonical: '/vedic/remedies',
-    keywords: ['vedic remedies', 'astrology gemstones', 'mantra for planets', 'rudraksha recommendation'],
+    keywords: ['vedic remedies', 'free vedic remedies', 'astrology gemstones', 'mantra for planets', 'rudraksha recommendation', 'astrology remedies free'],
     seoIntro: {
       heading: 'Vedic Astrological Remedies',
       text: 'Vedic astrology prescribes specific remedies (Upaya) to strengthen weak planets and mitigate afflictions. These include wearing gemstones on the correct finger and metal, chanting Beej Mantras and Stotras a prescribed number of times, wearing the appropriate Mukhi Rudraksha, performing charity on specific days, and observing fasts. Our system analyzes your chart for debilitated, combust, or afflicted planets and generates a complete remedial prescription following traditional Jyotish guidelines.',
@@ -115,11 +115,11 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   dashas: {
-    title: 'Mahadasha Calculator — Vimshottari Dasha & Antardasha Dates Free',
+    title: 'Vimshottari Dasha Calculator — Free Mahadasha & Antardasha',
     description:
-      'Free Mahadasha calculator with Vimshottari Dasha timeline — Mahadasha, Antardasha & Pratyantardasha dates. Also includes Yogini, Ashtottari & Sthira Dasha systems.',
+      'Free Vimshottari Dasha calculator with Mahadasha, Antardasha & Pratyantardasha timeline dates. Also includes Yogini, Ashtottari & Sthira Dasha systems.',
     canonical: '/vedic/dashas',
-    keywords: ['mahadasha calculator', 'vimshottari dasha calculator', 'dasha calculator free', 'antardasha calculator', 'mahadasha dates by date of birth', 'yogini dasha', 'ashtottari dasha', 'current mahadasha'],
+    keywords: ['vimshottari dasha calculator', 'mahadasha calculator', 'dasha calculator free', 'antardasha calculator', 'mahadasha dates by date of birth', 'yogini dasha calculator', 'ashtottari dasha', 'current mahadasha', 'free dasha calculator'],
     seoIntro: {
       heading: 'What is Vimshottari Dasha?',
       text: 'The Vimshottari Dasha system is the most widely used timing technique in Vedic astrology. It divides life into 120 years governed by 9 planetary periods (Mahadasha), each further divided into sub-periods (Antardasha) and sub-sub-periods (Pratyantardasha). The starting planet is determined by your birth Nakshatra. Each Dasha activates the houses and signs ruled by that planet, triggering specific life events. This tool calculates all three levels of Dasha with exact dates, plus Yogini Dasha (36-year cycle) and Ashtottari Dasha (108-year cycle) alternatives.',
@@ -163,11 +163,11 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   nakshatra: {
-    title: 'Nakshatra Calculator — Find Your Birth Star & Pada Free',
+    title: 'Nakshatra Calculator by Date of Birth — Free Birth Star Finder',
     description:
-      'Free Nakshatra calculator — find your Janma Nakshatra (birth star), Pada, ruling deity, Gana, Nadi & Tara Bala. All 27 Nakshatras with detailed interpretations.',
+      'Free Nakshatra calculator by date of birth — find your Janma Nakshatra (birth star), Pada, ruling deity, Gana, Nadi & Tara Bala. All 27 Nakshatras with detailed interpretations.',
     canonical: '/vedic/nakshatra',
-    keywords: ['nakshatra calculator', 'nakshatra finder', 'birth star calculator', 'janma nakshatra', 'nakshatra pada', 'my nakshatra', 'tara bala', '27 nakshatras'],
+    keywords: ['nakshatra calculator', 'nakshatra calculator by date of birth', 'nakshatra finder', 'birth star calculator', 'janma nakshatra', 'nakshatra pada', 'my nakshatra', 'tara bala', '27 nakshatras', 'free nakshatra calculator'],
     seoIntro: {
       heading: 'What is a Nakshatra?',
       text: 'Nakshatras are the 27 lunar mansions of Vedic astrology, each spanning 13°20\' of the zodiac. Your birth Nakshatra (determined by the Moon\'s position) reveals your emotional nature, instinctive reactions, and deep personality traits. Each Nakshatra has a ruling deity, planetary lord, Gana (temperament), Nadi (pulse), and animal symbol used in compatibility matching. Tara Bala (star strength) analysis compares your birth Nakshatra against current transiting Nakshatra to determine daily auspiciousness.',
@@ -248,11 +248,11 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   ashtakavarga: {
-    title: 'Ashtakavarga Calculator — BAV & SAV Bindus',
+    title: 'Free Ashtakavarga Calculator — BAV & SAV Bindu Points',
     description:
-      'Calculate Ashtakavarga with Bhinna (BAV) and Sarva (SAV) Bindu tables for all 7 planets. Identify strong and weak houses for transits.',
+      'Free Ashtakavarga calculator with Bhinna (BAV) and Sarva (SAV) Bindu tables for all 7 planets. Identify strong and weak houses for transit predictions.',
     canonical: '/vedic/ashtakavarga',
-    keywords: ['ashtakavarga calculator', 'BAV SAV', 'bindu points', 'ashtakavarga chart'],
+    keywords: ['ashtakavarga calculator', 'free ashtakavarga calculator', 'BAV SAV calculator', 'bindu points', 'ashtakavarga chart', 'sarvashtakavarga'],
     seoIntro: {
       heading: 'What is Ashtakavarga?',
       text: 'Ashtakavarga is a quantitative scoring system from BPHS that assigns Bindu (benefic points) to each sign from each planet and the Ascendant. The Bhinna Ashtakavarga (BAV) shows individual planet contributions (0-8 points per sign), while the Sarva Ashtakavarga (SAV) sums all contributions (0-56 per sign). Signs with high SAV scores (28+) give strong transit results; low scores (<25) indicate challenging transit periods. Ashtakavarga is essential for predicting the actual impact of planetary transits.',
@@ -270,11 +270,11 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   compatibility: {
-    title: 'Kundli Milan — Free Ashtakoota Matching (36 Points)',
+    title: 'Free Kundli Matching — Ashtakoota Gun Milan (36 Points)',
     description:
-      'Free Kundli Milan with Ashtakoota (8-factor) compatibility matching. Check Nadi, Bhakoot, Gana, Maitri, Yoni, Tara, Vashya & Varna scores out of 36 points.',
+      'Free Kundli matching calculator with Ashtakoota (8-factor) Gun Milan. Check Nadi, Bhakoot, Gana, Maitri, Yoni, Tara, Vashya & Varna scores out of 36 points.',
     canonical: '/vedic/compatibility',
-    keywords: ['kundli matching online free', 'kundli milan', 'gun milan', 'ashtakoota matching', '36 guna milan calculator', 'marriage compatibility', 'horoscope matching for marriage', 'nadi dosha', 'mangal dosha matching'],
+    keywords: ['free kundli matching', 'kundli matching online free', 'kundli milan', 'gun milan', 'ashtakoota matching', '36 guna milan calculator', 'marriage compatibility', 'horoscope matching for marriage', 'nadi dosha', 'mangal dosha matching', 'free kundli matching for marriage'],
     seoIntro: {
       heading: 'What is Kundli Milan?',
       text: 'Kundli Milan (Ashtakoota Guna Matching) is the traditional Vedic method for assessing marriage compatibility between two horoscopes. It evaluates 8 factors (Kootas): Varna (spiritual compatibility, 1 point), Vashya (mutual attraction, 2 points), Tara (birth star harmony, 3 points), Yoni (sexual compatibility, 4 points), Graha Maitri (mental compatibility, 5 points), Gana (temperament, 6 points), Bhakoot (health & wealth, 7 points), and Nadi (health & genes, 8 points). A score of 18+ out of 36 is considered acceptable for marriage.',
@@ -308,7 +308,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     description:
       'Calculate Shadbala (six-fold strength) of each planet — Sthana, Dig, Kala, Cheshta, Naisargika, Drig Bala. Includes Ishta/Kashta Phala.',
     canonical: '/vedic/shadbala',
-    keywords: ['shadbala calculator', 'planetary strength', 'shashtiamsa', 'ishta phala', 'vimsopaka bala'],
+    keywords: ['shadbala calculator', 'free shadbala calculator', 'planetary strength', 'shashtiamsa', 'ishta phala', 'vimsopaka bala'],
     seoIntro: {
       heading: 'What is Shadbala?',
       text: 'Shadbala (six-fold strength) is the most comprehensive planetary strength assessment in Vedic astrology, described in detail in BPHS chapters 27-28. It measures six types of strength: Sthana Bala (positional — exaltation, own sign, Moolatrikona), Dig Bala (directional — angular houses), Kala Bala (temporal — day/night, year lord, hora), Cheshta Bala (motional — speed and retrograde), Naisargika Bala (natural — Sun is strongest, Saturn weakest), and Drig Bala (aspectual — benefic/malefic aspects). Planets must meet minimum strength thresholds in Shashtiamsas (60ths) to deliver their full promise.',
@@ -325,7 +325,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     description:
       'Explore Jaimini Astrology with 7 Chara Karakas (Atmakaraka to Darakaraka), Karakamsha, Rashi Drishti, Chara Dasha, and Arudha Pada analysis.',
     canonical: '/vedic/jaimini',
-    keywords: ['jaimini astrology', 'chara karaka', 'atmakaraka', 'karakamsha', 'chara dasha'],
+    keywords: ['jaimini astrology', 'chara karaka', 'atmakaraka', 'atmakaraka calculator', 'darakaraka', 'darakaraka calculator', 'karakamsha', 'chara dasha', 'upapada lagna', 'arudha pada', 'amatyakaraka'],
     seoIntro: {
       heading: 'What is Jaimini Astrology?',
       text: 'Jaimini Sutras present a parallel system of Vedic astrology attributed to Sage Jaimini (disciple of Vyasa). Unlike Parashari astrology which focuses on planets, Jaimini emphasizes signs (Rashi) and their lords. The 7 Chara Karakas are planets ranked by degree — Atmakaraka (highest degree) represents the soul, Amatyakaraka represents career, and Darakaraka (lowest) represents spouse. Karakamsha (Atmakaraka\'s Navamsa sign in the birth chart) reveals spiritual purpose and career direction. Chara Dasha provides sign-based timing periods unique to this system.',
@@ -342,7 +342,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     description:
       'Free career astrology prediction by date of birth. Analyze job timing with 10th house, Dasamsa (D10) chart, Amatyakaraka & Dasha periods. When will I get a job?',
     canonical: '/vedic/career',
-    keywords: ['career astrology', 'job prediction astrology', 'career prediction by date of birth', 'career horoscope', 'job kab milegi', '10th house career', 'dasamsa chart', 'profession astrology', 'career change astrology'],
+    keywords: ['career astrology', 'free career prediction', 'job prediction astrology', 'career prediction by date of birth free', 'career horoscope', 'job kab milegi', '10th house career', 'dasamsa chart', 'profession astrology', 'career change astrology'],
     seoIntro: {
       heading: 'Career Analysis in Vedic Astrology',
       text: 'Career analysis in Vedic astrology examines the 10th house (Karma Bhava), its lord, planets placed there, and the Dasamsa (D10) divisional chart. The 10th house represents public life, profession, authority, and reputation. Key indicators include the 10th lord\'s sign placement, aspects from benefics/malefics, and Dasha timing for career changes. The Amatyakaraka (Jaimini career significator), strong planets in the D10, and Shadbala strength of the 10th lord all contribute to a comprehensive career prediction.',
@@ -359,7 +359,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     description:
       'Analyze wealth potential with Dhana Yogas, Indu Lagna (wealth ascendant), 2nd/11th house analysis, and financial timing through Dasha periods.',
     canonical: '/vedic/wealth',
-    keywords: ['wealth astrology', 'dhana yoga', 'indu lagna', 'financial astrology', 'money prediction'],
+    keywords: ['wealth astrology', 'free wealth astrology', 'dhana yoga', 'indu lagna', 'financial astrology', 'money prediction'],
     seoIntro: {
       heading: 'Wealth Analysis in Vedic Astrology',
       text: 'Vedic astrology assesses wealth potential through the 2nd house (accumulated wealth), 11th house (income and gains), and their lords. Dhana Yogas are specific combinations between lords of wealth houses (1, 2, 5, 9, 11) that indicate financial prosperity. Indu Lagna (from Uttara Kalamrita) is a special wealth ascendant calculated from the 9th lords of the Ascendant and Moon, revealing the magnitude of wealth. Lakshmi Yoga and other prosperity indicators combine with Dasha timing to predict when wealth will manifest.',
@@ -376,7 +376,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     description:
       'Assess health and longevity with Ayush tiers, Maraka lords, Badhaka planets, and vulnerable body areas mapped from house significations.',
     canonical: '/vedic/health',
-    keywords: ['health astrology', 'longevity prediction', 'maraka lord', 'ayush calculator', 'medical astrology'],
+    keywords: ['health astrology', 'free health astrology', 'longevity prediction', 'maraka lord', 'ayush calculator', 'medical astrology'],
     seoIntro: {
       heading: 'Health & Longevity in Vedic Astrology',
       text: 'Health analysis in Vedic astrology examines the 1st house (constitution), 6th house (diseases), 8th house (longevity), and their lords. Ayush (lifespan) is classified into Balarishta (infant risk), Alpa Ayu (short), Madhya Ayu (medium), and Purna Ayu (full life) based on the 8th house, its lord, and Saturn\'s condition. Maraka lords (2nd and 7th house rulers) are timing indicators for health crises. Badhaka planets create hidden obstructions. Each house maps to specific body parts, allowing identification of vulnerable health areas.',
@@ -410,7 +410,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     description:
       'Calculate Nadi Astrology points — Bhrigu Bindu, Pranapada Lagna, Gulika, Mandi, and Nadi Amsha (D150). Transit triggers for major life events.',
     canonical: '/vedic/nadi',
-    keywords: ['nadi astrology', 'bhrigu bindu', 'pranapada lagna', 'gulika', 'nadi amsha'],
+    keywords: ['nadi astrology', 'free nadi astrology', 'bhrigu bindu calculator', 'pranapada lagna', 'gulika', 'nadi amsha'],
     seoIntro: {
       heading: 'What is Nadi Astrology?',
       text: 'Nadi Astrology encompasses several specialized techniques from the Bhrigu and Dhruva Nadi traditions of South India. The Bhrigu Bindu is the sensitive midpoint of Rahu and Moon — when transiting Jupiter or Saturn crosses this degree, major life events are triggered. Pranapada Lagna (vital breath ascendant) provides additional timing information. Gulika and Mandi are mathematical shadow points derived from Saturn that indicate karmic challenges. The Nadi Amsha (D150) is the finest divisional chart used for extremely detailed delineation.',
@@ -440,7 +440,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   'mangal-dosha': {
-    title: 'Mangal Dosha Calculator — Free Manglik Check by Birth Chart',
+    title: 'Manglik Dosha Calculator — Free Mangal Dosha Check Online',
     description:
       'Check if you are Manglik with our free Mangal Dosha calculator. Detect Mars placement in 1st, 2nd, 4th, 7th, 8th, 12th house and cancellation conditions from your Kundli.',
     canonical: '/vedic/mangal-dosha',
@@ -508,11 +508,11 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   navamsa: {
-    title: 'Navamsa Chart Calculator — Free D9 Chart Analysis',
+    title: 'Free Navamsa Chart Calculator — D9 Marriage & Dharma Analysis',
     description:
       'Free Navamsa (D9) chart calculator with Vargottama status, Navamsa Lagna, planet dignities, and marriage/dharma analysis. Instant D9 chart from birth details.',
     canonical: '/vedic/navamsa',
-    keywords: ['navamsa chart calculator', 'D9 chart calculator', 'navamsa chart free', 'navamsa lagna', 'vargottama planets', 'navamsa chart marriage', 'D9 chart interpretation'],
+    keywords: ['navamsa chart calculator', 'free navamsa chart calculator', 'D9 chart calculator', 'navamsa chart free', 'navamsa lagna', 'vargottama planets', 'navamsa chart marriage', 'D9 chart interpretation', 'free D9 chart'],
     seoIntro: {
       heading: 'What is the Navamsa (D9) Chart?',
       text: 'The Navamsa (D9) is the most important divisional chart in Vedic astrology after the birth chart (D1). It divides each sign into 9 equal parts of 3°20\', creating a 108-part zodiac that reveals the soul\'s deeper nature, marriage quality, and dharmic path. Planets that occupy the same sign in both D1 and D9 are called Vargottama and gain exceptional strength. The Navamsa Lagna indicates the inner self and spouse characteristics, while the 7th house of D9 reveals marriage dynamics. Maharishi Parashara stated that no prediction should be made without consulting the Navamsa chart.',
@@ -531,7 +531,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   'sade-sati': {
-    title: 'Sade Sati Calculator — Is Shani Sade Sati Running? Free Check',
+    title: 'Free Sade Sati Calculator — Is Shani Sade Sati Running?',
     description:
       'Free Sade Sati calculator — check if Saturn\'s 7.5-year Sade Sati is running for your Moon sign. Detect phase (rising/peak/setting), Dhaiya, Kantaka Shani & remedies.',
     canonical: '/vedic/sade-sati',
@@ -608,6 +608,141 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
       { href: '/vedic/panchang', label: 'Daily Panchang' },
       { href: '/vedic/transits', label: 'Planetary Transits' },
       { href: '/vedic/nakshatra', label: 'Nakshatra Analysis' },
+    ],
+  },
+  atmakaraka: {
+    title: 'Atmakaraka Calculator — Free Soul Planet Finder (Jaimini)',
+    description:
+      'Free Atmakaraka calculator — find your soul planet and all 7 Jaimini Chara Karakas ranked by degree. Discover your Atmakaraka meaning, Navamsa placement & spiritual path.',
+    canonical: '/vedic/atmakaraka',
+    keywords: ['atmakaraka calculator', 'atmakaraka meaning', 'soul planet astrology', 'chara karaka calculator', 'jaimini karaka', 'atmakaraka in navamsa', 'free atmakaraka calculator'],
+    seoIntro: {
+      heading: 'What is Atmakaraka?',
+      text: 'The Atmakaraka (AK) is the planet with the highest degree in any sign in your birth chart — it represents your soul\'s deepest desire and the lesson it must master in this lifetime. In Jaimini astrology, the 7 visible planets (Sun through Saturn) are ranked by their degrees within their sign, creating the Chara Karakas: Atmakaraka (soul), Amatyakaraka (career), Bhratrikaraka (siblings), Matrikaraka (mother), Putrakaraka (children), Gnatikaraka (rivals), and Darakaraka (spouse). The Atmakaraka\'s placement in the Navamsa (D9) chart — called the Karakamsha — reveals your soul\'s true purpose, Ishta Devata (personal deity), and spiritual direction.',
+    },
+    faqs: [
+      { question: 'What is the Atmakaraka in Vedic astrology?', answer: 'The Atmakaraka is the planet with the highest degree in any sign in your birth chart. It is the soul significator in Jaimini astrology, revealing your deepest karmic lessons, desires, and the area of life where spiritual growth occurs.' },
+      { question: 'How is Atmakaraka calculated?', answer: 'List the degree (0-30°) of each of the 7 planets (Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn) within their respective signs. The planet with the highest degree becomes the Atmakaraka. Rahu may be included by counting 30° minus its degree.' },
+      { question: 'What does each planet mean as Atmakaraka?', answer: 'Sun AK = learning humility; Moon AK = emotional detachment; Mars AK = controlling aggression; Mercury AK = truthful speech; Jupiter AK = respecting tradition; Venus AK = moderation in desires; Saturn AK = patience and endurance.' },
+      { question: 'What is the Karakamsha and why does it matter?', answer: 'The Karakamsha is the sign your Atmakaraka occupies in the Navamsa (D9) chart. It reveals your soul\'s true calling, career direction, and spiritual path. The 12th house from the Karakamsha indicates your Ishta Devata (personal deity).' },
+    ],
+    relatedTools: [
+      { href: '/vedic/jaimini', label: 'Jaimini Astrology' },
+      { href: '/vedic/darakaraka', label: 'Darakaraka (Spouse)' },
+      { href: '/vedic/karakamsha', label: 'Karakamsha' },
+      { href: '/vedic/navamsa', label: 'Navamsa Chart (D9)' },
+      { href: '/vedic/career', label: 'Career Analysis' },
+    ],
+  },
+  darakaraka: {
+    title: 'Darakaraka Calculator — Free Spouse Planet Finder (Jaimini)',
+    description:
+      'Free Darakaraka calculator — find the Jaimini spouse significator planet in your chart. Discover spouse characteristics, appearance, career & marriage timing from Darakaraka.',
+    canonical: '/vedic/darakaraka',
+    keywords: ['darakaraka calculator', 'darakaraka spouse', 'darakaraka meaning', 'spouse planet astrology', 'jaimini spouse significator', 'darakaraka spouse prediction', 'free darakaraka calculator'],
+    seoIntro: {
+      heading: 'What is Darakaraka?',
+      text: 'The Darakaraka (DK) is the planet with the lowest degree in any sign among the 7 Chara Karakas — it is the Jaimini spouse significator. While the 7th house lord describes the quality of marriage, the Darakaraka specifically describes your spouse: their personality, physical appearance, career, and the nature of the bond you will share. If the Darakaraka is strong (exalted, in own sign, or well-aspected), the spouse will be supportive and accomplished. If afflicted, challenges in partnership are indicated. The Darakaraka\'s Navamsa placement and its connection to the Upapada Lagna provide deeper insights into married life.',
+    },
+    faqs: [
+      { question: 'What is Darakaraka in Jaimini astrology?', answer: 'The Darakaraka is the planet with the lowest degree in any sign among the 7 Chara Karakas (Sun through Saturn). It is the Jaimini significator for spouse and partnership, revealing your partner\'s nature, appearance, and the quality of your marriage.' },
+      { question: 'How does Darakaraka describe my spouse?', answer: 'Each planet as Darakaraka indicates different spouse traits: Sun DK = authoritative, dignified spouse; Moon DK = nurturing, emotional; Mars DK = energetic, courageous; Mercury DK = intellectual, communicative; Jupiter DK = wise, traditional; Venus DK = attractive, artistic; Saturn DK = mature, hardworking.' },
+      { question: 'What is the difference between Darakaraka and 7th lord?', answer: 'The 7th house lord describes the institution of marriage and its quality. The Darakaraka specifically describes the spouse as a person — their personality, appearance, and nature. Both should be analyzed together for complete marriage analysis.' },
+    ],
+    relatedTools: [
+      { href: '/vedic/atmakaraka', label: 'Atmakaraka (Soul)' },
+      { href: '/vedic/compatibility', label: 'Kundli Milan' },
+      { href: '/vedic/upapada', label: 'Upapada Lagna' },
+      { href: '/vedic/jaimini', label: 'Jaimini Astrology' },
+      { href: '/vedic/navamsa', label: 'Navamsa Chart (D9)' },
+    ],
+  },
+  upapada: {
+    title: 'Upapada Lagna Calculator — Free Marriage Indicator (Jaimini)',
+    description:
+      'Free Upapada Lagna (UL) calculator — find the Jaimini marriage indicator from the Arudha of the 12th house. Analyze spouse background, marriage quality & timing.',
+    canonical: '/vedic/upapada',
+    keywords: ['upapada lagna calculator', 'upapada lagna', 'UL calculator', 'jaimini marriage indicator', 'arudha 12th house', 'free upapada calculator'],
+    seoIntro: {
+      heading: 'What is Upapada Lagna?',
+      text: 'Upapada Lagna (UL) is the Arudha Pada of the 12th house — it is one of the most important marriage indicators in Jaimini astrology. While the 7th house shows the nature of partnership and the Darakaraka describes the spouse, the Upapada Lagna reveals the circumstances of marriage: the spouse\'s family background, social status, and the conditions under which marriage occurs. Planets aspecting or conjoining the UL modify these indications. The 2nd house from UL (called Gaunapada) sustains the marriage — malefics here or its lord\'s affliction can indicate separation.',
+    },
+    faqs: [
+      { question: 'How is Upapada Lagna calculated?', answer: 'Upapada Lagna is the Arudha Pada of the 12th house. Find the lord of the 12th house from the Ascendant, then count the same distance from the lord\'s position. If the result falls in the 12th house itself or the 6th from it, special exception rules apply.' },
+      { question: 'What does Upapada Lagna show about marriage?', answer: 'UL reveals the circumstances of marriage — spouse\'s family background, social status, and marriage conditions. Benefics in UL indicate a harmonious union; malefics suggest challenges. The 2nd from UL (Gaunapada) determines if the marriage sustains.' },
+      { question: 'What is the difference between Upapada and 7th house?', answer: 'The 7th house describes partnership as a life area. Upapada Lagna specifically shows how the marriage manifests in the world — the external reality of the union, the spouse\'s social standing, and the sustainability of the bond.' },
+    ],
+    relatedTools: [
+      { href: '/vedic/darakaraka', label: 'Darakaraka (Spouse)' },
+      { href: '/vedic/compatibility', label: 'Kundli Milan' },
+      { href: '/vedic/arudha-pada', label: 'Arudha Padas' },
+      { href: '/vedic/jaimini', label: 'Jaimini Astrology' },
+    ],
+  },
+  karakamsha: {
+    title: 'Karakamsha Calculator — Free Soul Purpose Analysis (Jaimini)',
+    description:
+      'Free Karakamsha calculator — find your Atmakaraka\'s Navamsa sign to reveal spiritual purpose, career direction & Ishta Devata (personal deity) in Jaimini astrology.',
+    canonical: '/vedic/karakamsha',
+    keywords: ['karakamsha calculator', 'karakamsha lagna', 'atmakaraka navamsa', 'ishta devata calculator', 'jaimini career', 'soul purpose astrology', 'free karakamsha calculator'],
+    seoIntro: {
+      heading: 'What is Karakamsha?',
+      text: 'The Karakamsha is the sign occupied by the Atmakaraka (soul planet) in the Navamsa (D9) chart — it is placed in the birth chart (D1) as a reference lagna to read soul-level indications. The houses from the Karakamsha reveal: career direction (10th from KK), spiritual practice (5th from KK), Ishta Devata or personal deity (12th from KK), and the soul\'s accumulated wisdom (1st house itself). Jaimini Sutras provide detailed results for each planet placed in or aspecting the Karakamsha. This is distinct from Swamsha, which reads the Karakamsha within the D9 chart itself.',
+    },
+    faqs: [
+      { question: 'What is the Karakamsha in Jaimini astrology?', answer: 'The Karakamsha is the sign your Atmakaraka (soul planet) occupies in the Navamsa (D9) chart. It serves as a special ascendant revealing your soul\'s purpose, career calling, and spiritual path.' },
+      { question: 'How do I find my Ishta Devata from Karakamsha?', answer: 'The 12th house from the Karakamsha indicates your Ishta Devata (personal deity). The planet in or ruling the 12th from KK determines which deity: Sun = Shiva, Moon = Gouri, Mars = Skanda, Mercury = Vishnu, Jupiter = Samba Shiva, Venus = Lakshmi, Saturn = Vishnu, Rahu = Durga, Ketu = Ganesha.' },
+      { question: 'What is the difference between Karakamsha and Swamsha?', answer: 'Karakamsha is the AK\'s Navamsa sign read in the D1 (birth chart). Swamsha is the same sign read within the D9 (Navamsa) itself. Both provide soul-level insights but from different chart perspectives.' },
+    ],
+    relatedTools: [
+      { href: '/vedic/atmakaraka', label: 'Atmakaraka' },
+      { href: '/vedic/navamsa', label: 'Navamsa Chart (D9)' },
+      { href: '/vedic/jaimini', label: 'Jaimini Astrology' },
+      { href: '/vedic/career', label: 'Career Analysis' },
+    ],
+  },
+  'arudha-pada': {
+    title: 'Arudha Pada Calculator — Free 12 Bhava Padas (Jaimini)',
+    description:
+      'Free Arudha Pada calculator — compute all 12 Arudha Padas (A1 through A12) including Arudha Lagna (AL) and Upapada (UL). Understand your public image in Jaimini astrology.',
+    canonical: '/vedic/arudha-pada',
+    keywords: ['arudha pada calculator', 'arudha lagna calculator', 'arudha pada', 'jaimini arudha', '12 bhava padas', 'AL calculator', 'free arudha pada calculator'],
+    seoIntro: {
+      heading: 'What are Arudha Padas?',
+      text: 'Arudha Padas are special Jaimini reference points that show how each house of the birth chart manifests in the external world — the "public perception" or "maya" of each life area. For each of the 12 houses, the Arudha Pada is calculated by finding the lord of that house and counting the same distance from the lord\'s position. The most important Arudha is the Arudha Lagna (A1 or AL) — it shows your public image, reputation, and how the world perceives you, which may differ significantly from your true Lagna (Ascendant). Other key Arudhas include A7 (Darapada — public perception of partnerships), A10 (Rajapada — career reputation), and A12 (Upapada — marriage manifestation).',
+    },
+    faqs: [
+      { question: 'What is Arudha Pada in Jaimini astrology?', answer: 'Arudha Pada is the external manifestation or "illusion" (Maya) of each house. It shows how the world perceives that area of your life, which may differ from the internal reality shown by the house itself. Each of the 12 houses has its own Arudha Pada.' },
+      { question: 'How is Arudha Pada calculated?', answer: 'For any house: (1) Find the lord of that house. (2) Count how many signs the lord is from the house sign. (3) Count the same number of signs from the lord\'s position. That sign is the Arudha Pada. Exception: if the result falls in the original house or the 7th from it, move 10 signs forward.' },
+      { question: 'What is the difference between Arudha Lagna and regular Lagna?', answer: 'The regular Lagna (Ascendant) shows your true nature, health, and personality. The Arudha Lagna (AL) shows your public image — how others perceive you, your social status, and reputation. A person can have a weak Lagna but strong AL, appearing successful outwardly.' },
+    ],
+    relatedTools: [
+      { href: '/vedic/upapada', label: 'Upapada Lagna (A12)' },
+      { href: '/vedic/atmakaraka', label: 'Atmakaraka' },
+      { href: '/vedic/jaimini', label: 'Jaimini Astrology' },
+      { href: '/vedic/kundli', label: 'Birth Chart (Kundli)' },
+    ],
+  },
+  varshphal: {
+    title: 'Varshphal Calculator — Free Annual Horoscope (Solar Return)',
+    description:
+      'Free Varshphal (Annual Horoscope) calculator — Solar Return chart with Muntha, Year Lord, Tajaka Yogas & Sahams. Vedic annual prediction for your current year.',
+    canonical: '/vedic/varshphal',
+    keywords: ['varshphal calculator', 'annual horoscope calculator', 'solar return chart', 'varshaphal', 'muntha', 'tajaka yoga', 'year lord calculator', 'vedic annual prediction', 'free varshphal calculator'],
+    seoIntro: {
+      heading: 'What is Varshphal?',
+      text: 'Varshphal (also spelled Varshaphal) is the Vedic annual horoscope system based on the Solar Return — the exact moment the Sun returns to its natal position each year. Derived from the Tajaka tradition (Indo-Persian astrology), it provides detailed predictions for the year ahead. Key components include the Muntha (a progressed ascendant advancing one sign per year), the Varsha Pati (Year Lord — the planet with the most influence on that year), and Tajaka Yogas (annual combination patterns like Ithasala, Ishrafa, Kamboola, and Nakta). Sahams are sensitive points for specific life themes. This system complements Vimshottari Dasha by providing year-specific detail.',
+    },
+    faqs: [
+      { question: 'What is Varshphal in Vedic astrology?', answer: 'Varshphal is the Vedic annual prediction system based on the Solar Return chart — cast for the exact moment the Sun returns to its birth position each year. It reveals the themes, opportunities, and challenges of that specific year.' },
+      { question: 'What is Muntha in Varshphal?', answer: 'Muntha is a progressed point that advances one sign per year from the Ascendant. Its sign placement and the planets aspecting it indicate the dominant theme of the year. Muntha in a Kendra or Trikona from the annual Ascendant is favorable.' },
+      { question: 'What are Tajaka Yogas?', answer: 'Tajaka Yogas are annual chart combinations from the Indo-Persian tradition: Ithasala (applying aspect — promises fulfillment), Ishrafa (separating aspect — missed opportunity), Kamboola (Moon transfers light), and Nakta (hidden opportunity). They predict whether specific desires manifest that year.' },
+    ],
+    relatedTools: [
+      { href: '/vedic/predictions', label: 'Predictions & Prashna' },
+      { href: '/vedic/dashas', label: 'Dasha Timeline' },
+      { href: '/vedic/transits', label: 'Planetary Transits' },
+      { href: '/vedic/kundli', label: 'Birth Chart (Kundli)' },
     ],
   },
 };

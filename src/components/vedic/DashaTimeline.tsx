@@ -1,7 +1,7 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
-import type { VimshottariDasha, DashaPeriod } from '@/lib/vedic/types';
+import type { VimshottariDasha } from '@/lib/vedic/types';
 import { useT } from '@/lib/i18n';
 
 interface Props {
@@ -20,8 +20,18 @@ function formatDate(d: Date): string {
 
 export default function DashaTimeline({ dasha, currentDate }: Props) {
   const t = useT();
-  const now = currentDate?.getTime() ?? Date.now();
+  const [clientNow, setClientNow] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (!currentDate) {
+      const timer = setTimeout(() => setClientNow(Date.now()), 0);
+      return () => clearTimeout(timer);
+    }
+  }, [currentDate]);
+
+  const now = currentDate ? currentDate.getTime() : (clientNow ?? 0);
   const [expandedIdx, setExpandedIdx] = useState<number | null>(() => {
+    if (!now) return null;
     const idx = dasha.mahadashas.findIndex(m => now >= m.startDate.getTime() && now < m.endDate.getTime());
     return idx >= 0 ? idx : null;
   });

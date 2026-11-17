@@ -84,7 +84,7 @@ export function detectPanchaMahapurusha(chart: KundliChart): YogaResult[] {
   for (const [name, config] of Object.entries(PANCHA_MAHAPURUSHA)) {
     const h = planetHouse(chart, config.planet);
     const r = planetRashi(chart, config.planet);
-    if (KENDRA_HOUSES.includes(h as 1 | 4 | 7 | 10) && config.signs.includes(r as any)) {
+    if (KENDRA_HOUSES.includes(h as 1 | 4 | 7 | 10) && config.signs.includes(r as (typeof config.signs)[number])) {
       results.push({
         name: `${name} Yoga`,
         type: 'benefic',

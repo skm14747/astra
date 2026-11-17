@@ -60,6 +60,36 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: '11 min',
     category: 'Transits',
   },
+  {
+    slug: 'mercury-retrograde-march-2026',
+    title: 'Mercury Retrograde in Aries — March 2026: Survival Guide & Vedic Remedies',
+    description: 'Mercury retrograde March 2026 in Aries: dates, affected signs, do\'s and don\'ts, shadow periods, and Vedic remedies. Complete guide to surviving Budh Vakri.',
+    date: '2026-02-16',
+    author: 'Astra Destiny',
+    keywords: ['mercury retrograde march 2026', 'mercury retrograde aries', 'budh vakri 2026', 'mercury retrograde dates 2026'],
+    readingTime: '7 min',
+    category: 'Transits',
+  },
+  {
+    slug: 'solar-eclipse-august-2026',
+    title: 'Annular Solar Eclipse August 2026 — Vedic Significance, Sutak & Remedies',
+    description: 'Solar eclipse August 12, 2026 in Cancer (Ashlesha nakshatra): Vedic significance, Grahan Sutak timing, do\'s and don\'ts, mantras, and which signs are most affected.',
+    date: '2026-08-02',
+    author: 'Astra Destiny',
+    keywords: ['solar eclipse august 2026', 'surya grahan 2026', 'annular eclipse 2026', 'eclipse ashlesha'],
+    readingTime: '6 min',
+    category: 'Eclipses',
+  },
+  {
+    slug: 'diwali-2026-lakshmi-puja-muhurat',
+    title: 'Diwali 2026 — Lakshmi Puja Muhurat, Puja Vidhi & Complete Guide',
+    description: 'Diwali 2026 date, Lakshmi Puja muhurat timing, step-by-step puja vidhi, Dhanteras shopping muhurat, mantras, and regional celebrations across India and Nepal.',
+    date: '2026-10-25',
+    author: 'Astra Destiny',
+    keywords: ['diwali 2026', 'lakshmi puja muhurat 2026', 'diwali date 2026', 'दीपावली 2026', 'dhanteras 2026'],
+    readingTime: '8 min',
+    category: 'Festivals',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

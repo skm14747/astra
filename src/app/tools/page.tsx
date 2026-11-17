@@ -69,6 +69,12 @@ const TOOL_CATEGORIES: ToolCategory[] = [
     tools: [
       { href: '/vedic/kp', nameKey: 'kp.title', descKey: 'kp.subtitle', icon: '⊕' },
       { href: '/vedic/jaimini', nameKey: 'jaimini.title', descKey: 'jaimini.subtitle', icon: '♈' },
+      { href: '/vedic/atmakaraka', nameKey: 'atmakaraka.title', descKey: 'atmakaraka.subtitle', icon: '🔱' },
+      { href: '/vedic/darakaraka', nameKey: 'darakaraka.title', descKey: 'darakaraka.subtitle', icon: '💑' },
+      { href: '/vedic/karakamsha', nameKey: 'karakamsha.title', descKey: 'karakamsha.subtitle', icon: '🕉' },
+      { href: '/vedic/upapada', nameKey: 'upapada.title', descKey: 'upapada.subtitle', icon: '💍' },
+      { href: '/vedic/arudha-pada', nameKey: 'arudhaPada.title', descKey: 'arudhaPada.subtitle', icon: '◈' },
+      { href: '/vedic/varshphal', nameKey: 'varshphal.title', descKey: 'varshphal.subtitle', icon: '📅' },
       { href: '/vedic/nadi', nameKey: 'nadi.title', descKey: 'nadi.subtitle', icon: '🌀' },
     ],
   },
@@ -80,6 +86,26 @@ const TOOL_CATEGORIES: ToolCategory[] = [
       { href: '/vedic/health', nameKey: 'health.title', descKey: 'health.subtitle', icon: '❤' },
       { href: '/vedic/remedies', nameKey: 'remedies.title', descKey: 'remedies.subtitle', icon: '💎' },
       { href: '/vedic/report', nameKey: 'report.title', descKey: 'report.subtitle', icon: '📋' },
+    ],
+  },
+  {
+    titleKey: 'nav.western',
+    tools: [
+      { href: '/tools/western/lilith', nameKey: 'western.lilith.title', descKey: 'western.lilith.subtitle', icon: '🌑' },
+      { href: '/tools/western/chiron', nameKey: 'western.chiron.title', descKey: 'western.chiron.subtitle', icon: '🏥' },
+      { href: '/tools/western/saturn-return', nameKey: 'western.saturnReturn.title', descKey: 'western.saturnReturn.subtitle', icon: '🪐' },
+      { href: '/tools/western/north-node', nameKey: 'western.northNode.title', descKey: 'western.northNode.subtitle', icon: '☊' },
+      { href: '/tools/western/synastry', nameKey: 'western.synastry.title', descKey: 'western.synastry.subtitle', icon: '💞' },
+    ],
+  },
+  {
+    titleKey: 'nav.numerology',
+    tools: [
+      { href: '/tools/numerology', nameKey: 'numerology.hub.title', descKey: 'numerology.hub.subtitle', icon: '🔢' },
+      { href: '/tools/numerology/life-path', nameKey: 'numerology.lifePath.title', descKey: 'numerology.lifePath.subtitle', icon: '🛤' },
+      { href: '/tools/numerology/destiny-number', nameKey: 'numerology.destiny.title', descKey: 'numerology.destiny.subtitle', icon: '🎯' },
+      { href: '/tools/numerology/personal-year', nameKey: 'numerology.personalYear.title', descKey: 'numerology.personalYear.subtitle', icon: '📅' },
+      { href: '/tools/numerology/lo-shu-grid', nameKey: 'numerology.loShu.title', descKey: 'numerology.loShu.subtitle', icon: '🐢' },
     ],
   },
   {
@@ -95,7 +121,6 @@ const TOOL_CATEGORIES: ToolCategory[] = [
 
 export default function ToolsDirectoryPage() {
   const t = useT();
-  const totalTools = TOOL_CATEGORIES.reduce((sum, cat) => sum + cat.tools.length, 0);
 
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 space-y-10">
@@ -157,6 +182,35 @@ export default function ToolsDirectoryPage() {
           </div>
         </section>
       ))}
+
+      {/* Nakshatra Guides */}
+      <section>
+        <h2 className="section-title mb-4">27 Nakshatras</h2>
+        <p className="text-sm text-zinc-500 mb-4">Deep-dive guides for every Nakshatra (lunar mansion) — personality, deity, compatibility &amp; career.</p>
+        <LocaleLink
+          href="/nakshatras"
+          className="glass-card rounded-lg px-4 py-3 inline-block text-sm text-violet-400 hover:text-violet-300 hover:border-violet-500/30 transition-all"
+        >
+          ⭐ Explore All 27 Nakshatras →
+        </LocaleLink>
+      </section>
+
+      {/* Planet in House Guides */}
+      <section>
+        <h2 className="section-title mb-4">Planet in House Guides</h2>
+        <p className="text-sm text-zinc-500 mb-4">Explore how each planet influences the 12 houses of your Vedic birth chart — 108 detailed articles.</p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+          {['Sun','Moon','Mars','Mercury','Jupiter','Venus','Saturn','Rahu','Ketu'].map(planet => (
+            <LocaleLink
+              key={planet}
+              href={`/astrology/${planet.toLowerCase()}-in-1st-house`}
+              className="glass-card rounded-lg px-3 py-2 text-sm text-zinc-300 hover:text-white hover:border-violet-500/30 transition-all"
+            >
+              🪐 {planet} in Houses →
+            </LocaleLink>
+          ))}
+        </div>
+      </section>
 
       {/* SEO footer */}
       <section className="mt-12 border-t border-white/[0.04] pt-8">

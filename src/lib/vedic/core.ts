@@ -73,8 +73,8 @@ export function calculateAscendant(date: Date, observer: Observer): number {
   const oblRad = (obliquity * Math.PI) / 180;
   const latRad = (observer.latitude * Math.PI) / 180;
 
-  const y = -Math.cos(ramcRad);
-  const x = Math.sin(oblRad) * Math.tan(latRad) + Math.cos(oblRad) * Math.sin(ramcRad);
+  const y = Math.cos(ramcRad);
+  const x = -(Math.sin(oblRad) * Math.tan(latRad) + Math.cos(oblRad) * Math.sin(ramcRad));
   let ascLon = (Math.atan2(y, x) * 180) / Math.PI;
   ascLon = norm360(ascLon);
   return ascLon;

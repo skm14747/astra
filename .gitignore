@@ -42,3 +42,8 @@ next-env.d.ts
 
 # generated reports
 tools-inventory.csv
+
+# video scripts
+/video-scripts/
+video-scripts/
+

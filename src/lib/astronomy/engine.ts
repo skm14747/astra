@@ -103,7 +103,7 @@ export function getSunset(date: Date, observer: Observer): Date | null {
 export function getGMST(date: Date): number {
   const jd = MakeTime(date).tt + 2451545.0;
   const T = (jd - 2451545.0) / 36525.0;
-  let gmst = 280.46061837 + 360.98564736629 * (jd - 2451545.0)
+  const gmst = 280.46061837 + 360.98564736629 * (jd - 2451545.0)
     + 0.000387933 * T * T - (T * T * T) / 38710000.0;
   return ((gmst % 360) + 360) % 360;
 }
