@@ -52,7 +52,7 @@ function FeatureCard({ href, icon, title, desc, color }: { href: string; icon: s
     <LocaleLink href={href} className="group glass-card gradient-border rounded-2xl p-7 flex flex-col gap-3 relative overflow-hidden">
       <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
       <div className="relative z-10">
-        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-white/[0.06] to-white/[0.02] flex items-center justify-center text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">{icon}</div>
+        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-white/[0.06] to-white/[0.02] flex items-center justify-center text-2xl mb-2 transition-transform duration-300">{icon}</div>
         <h3 className="text-lg font-semibold text-white group-hover:text-white transition">{title}</h3>
         <p className="text-base text-zinc-400 leading-relaxed mt-1.5 group-hover:text-zinc-300 transition">{desc}</p>
       </div>
@@ -106,9 +106,7 @@ export default function Home() {
           ) : (
             <div className="flex flex-col items-center gap-4">
               <div className="glass-card rounded-full px-6 py-3 flex items-center gap-3 vedic-glow">
-                <span className="relative w-3 h-3 rounded-full bg-violet-400">
-                  <span className="absolute inset-0 rounded-full bg-violet-400 animate-ping opacity-40" />
-                </span>
+                <span className="relative w-3 h-3 rounded-full bg-violet-400 shadow-[0_0_8px_rgba(124,92,252,0.5)]" />
                 <span className="text-zinc-100 font-medium">{activeProfile.name}</span>
                 <span className="text-zinc-500 text-sm">· {activeProfile.city}</span>
               </div>
@@ -171,7 +169,7 @@ export default function Home() {
               <LocaleLink
                 key={tool.href}
                 href={tool.href}
-                className="px-5 py-3 rounded-full text-base text-zinc-400 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] hover:border-violet-500/30 transition-all group"
+                className="px-5 py-3 rounded-full text-base text-zinc-400 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] hover:border-violet-500/30 transition-colors group"
               >
                 <span className="mr-2 opacity-50 group-hover:opacity-100 transition">{tool.icon}</span>
                 {t(tool.labelKey)}
@@ -191,7 +189,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-10">
             <div>
-              <h3 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider mb-3">{t('footer.popularTools')}</h3>
+              <h3 className="text-sm font-medium text-zinc-300 mb-3">{t('footer.popularTools')}</h3>
               <ul className="space-y-2.5">
                 {([['/vedic/kundli', 'footer.freeKundli'], ['/vedic/compatibility', 'footer.kundliMilan'], ['/vedic/panchang', 'footer.dailyPanchang'], ['/vedic/dashas', 'footer.dashaTimeline'], ['/vedic/yogas', 'footer.yogasDoshas'], ['/vedic/transits', 'footer.sadeSatiCheck']] as const).map(([href, key]) => (
                   <li key={href}><LocaleLink href={href} className="text-sm text-zinc-500 hover:text-zinc-300 transition">{t(key)}</LocaleLink></li>
@@ -199,7 +197,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider mb-3">{t('footer.moreTools')}</h3>
+              <h3 className="text-sm font-medium text-zinc-300 mb-3">{t('footer.moreTools')}</h3>
               <ul className="space-y-2.5">
                 {([['/vedic/muhurta', 'footer.muhurtaFinder'], ['/vedic/nakshatra', 'footer.nakshatraAnalysis'], ['/vedic/shadbala', 'footer.shadbalaCalc'], ['/vedic/remedies', 'footer.vedicRemedies'], ['/matrix/chart', 'footer.matrixOfDestiny'], ['/vedic/report', 'footer.fullReport']] as const).map(([href, key]) => (
                   <li key={href}><LocaleLink href={href} className="text-sm text-zinc-500 hover:text-zinc-300 transition">{t(key)}</LocaleLink></li>
@@ -207,7 +205,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider mb-3">{t('footer.analysis')}</h3>
+              <h3 className="text-sm font-medium text-zinc-300 mb-3">{t('footer.analysis')}</h3>
               <ul className="space-y-2.5">
                 {([['/vedic/career', 'footer.careerAnalysis'], ['/vedic/wealth', 'footer.wealthAnalysis'], ['/vedic/health', 'footer.healthLongevity'], ['/vedic/predictions', 'footer.annualPredictions'], ['/vedic/nadi', 'footer.nadiAstrology'], ['/vedic/ashtakavarga', 'footer.ashtakavarga']] as const).map(([href, key]) => (
                   <li key={href}><LocaleLink href={href} className="text-sm text-zinc-500 hover:text-zinc-300 transition">{t(key)}</LocaleLink></li>
@@ -215,7 +213,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider mb-3">{t('footer.about')}</h3>
+              <h3 className="text-sm font-medium text-zinc-300 mb-3">{t('footer.about')}</h3>
               <ul className="space-y-2.5">
                 {([['/how-it-works', 'footer.howItWorks'], ['/settings', 'footer.settings']] as const).map(([href, key]) => (
                   <li key={href}><LocaleLink href={href} className="text-sm text-zinc-500 hover:text-zinc-300 transition">{t(key)}</LocaleLink></li>

@@ -55,7 +55,7 @@ export default function NakshatraPage() {
       <div className="glass-card rounded-2xl p-6 vedic-glow relative overflow-hidden">
         <div className="cosmic-orb w-28 h-28 bg-violet-600/8 -top-8 -right-8" />
         <div className="relative z-10">
-          <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">{t('nakshatra.birthNakshatra')}</div>
+          <div className="text-xs text-violet-400/80 font-medium mb-1">{t('nakshatra.birthNakshatra')}</div>
           <div className="text-2xl text-white font-display font-bold">{data.details.name} <span className="text-lg text-zinc-500">#{data.details.index + 1}</span></div>
           <div className="flex items-center gap-3 mt-2 text-sm text-zinc-400">
             <span className="planet-badge">{t('panchang.pada')} {data.details.pada}</span>
@@ -68,7 +68,7 @@ export default function NakshatraPage() {
               <span>13°20&apos;</span>
             </div>
             <div className="h-2 rounded-full bg-white/[0.04] overflow-hidden">
-              <div className="h-full rounded-full bg-gradient-to-r from-violet-600 to-violet-400 transition-all" style={{ width: `${data.details.percentComplete}%` }} />
+              <div className="h-full rounded-full bg-gradient-to-r from-violet-600 to-violet-400 transition-colors" style={{ width: `${data.details.percentComplete}%` }} />
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function NakshatraPage() {
             <div key={item.label} className="glass-card rounded-xl p-4 glow-hover">
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-base">{item.icon}</span>
-                <span className="text-[11px] text-zinc-500 font-medium uppercase tracking-wider">{item.label}</span>
+                <span className="text-[11px] text-zinc-500 font-medium">{item.label}</span>
               </div>
               <div className="text-sm font-semibold text-zinc-100">{item.value}</div>
             </div>
@@ -106,7 +106,7 @@ export default function NakshatraPage() {
             <div key={item.label} className="glass-card rounded-xl p-4 glow-hover">
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-base">{item.icon}</span>
-                <span className="text-[11px] text-zinc-500 font-medium uppercase tracking-wider">{item.label}</span>
+                <span className="text-[11px] text-zinc-500 font-medium">{item.label}</span>
               </div>
               <div className="text-sm font-semibold text-zinc-100">{item.value}</div>
             </div>

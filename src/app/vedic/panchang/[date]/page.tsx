@@ -58,21 +58,21 @@ export async function generateMetadata({ params }: { params: Promise<{ date: str
     title,
     description,
     alternates: {
-      canonical: `/vedic/panchang/${slug}`,
+      canonical: `/vedic/panchang/${slug}/`,
       languages: {
-        'en': `/vedic/panchang/${slug}`,
-        'hi': `/hi/vedic/panchang/${slug}`,
-        'ne': `/ne/vedic/panchang/${slug}`,
-        'pt': `/pt/vedic/panchang/${slug}`,
-        'es': `/es/vedic/panchang/${slug}`,
-        'ja': `/ja/vedic/panchang/${slug}`,
-        'x-default': `/vedic/panchang/${slug}`,
+        'en': `/vedic/panchang/${slug}/`,
+        'hi': `/hi/vedic/panchang/${slug}/`,
+        'ne': `/ne/vedic/panchang/${slug}/`,
+        'pt': `/pt/vedic/panchang/${slug}/`,
+        'es': `/es/vedic/panchang/${slug}/`,
+        'ja': `/ja/vedic/panchang/${slug}/`,
+        'x-default': `/vedic/panchang/${slug}/`,
       },
     },
     openGraph: {
       title,
       description,
-      url: `/vedic/panchang/${slug}`,
+      url: `/vedic/panchang/${slug}/`,
       type: 'article',
       images: [{ url: '/og-image.png', width: 1200, height: 630, alt: title }],
     },
@@ -154,7 +154,7 @@ export default async function DailyPanchangPage({ params }: { params: Promise<{ 
 
       {/* Related links */}
       <nav aria-label="Related tools" className="mt-8 pt-6 border-t border-white/[0.04]">
-        <h2 className="text-sm font-semibold text-zinc-400 tracking-wide uppercase mb-4">Related Tools</h2>
+        <h2 className="text-sm font-medium text-zinc-400 mb-4">Related Tools</h2>
         <div className="flex flex-wrap gap-2">
           {[
             { href: '/vedic/muhurta', label: 'Muhurta Finder' },
@@ -165,7 +165,7 @@ export default async function DailyPanchangPage({ params }: { params: Promise<{ 
             <LocaleLink
               key={tool.href}
               href={tool.href}
-              className="px-4 py-2 rounded-full text-sm text-zinc-400 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.04] hover:border-violet-500/30 transition-all"
+              className="px-4 py-2 rounded-full text-sm text-zinc-400 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.04] hover:border-violet-500/30 transition-colors"
             >
               {tool.label}
             </LocaleLink>

@@ -68,7 +68,7 @@ export default function RemediesPage() {
                         <div className="flex items-start justify-between mb-3">
                           <div className="flex items-center gap-2">
                             <span className="text-xl">{cfg.icon}</span>
-                            <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-medium">{r.type}</span>
+                            <span className="text-[10px] text-zinc-500 tracking-wider font-medium">{r.type}</span>
                           </div>
                           <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-medium ${
                             r.priority === 'high' ? 'bg-red-500/10 text-red-400 border border-red-500/20'

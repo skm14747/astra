@@ -5,15 +5,20 @@ import EmptyState from '@/components/shared/EmptyState';
 import { calculateVarshaphal } from '@/lib/vedic/predictions';
 import { RASHI_NAMES } from '@/lib/vedic/constants';
 import { RASHI_GLYPH } from '@/lib/vedic/glyphs';
+import type { Lang } from '@/lib/vedic/types';
+import { getRashiName, getPlanetName } from '@/lib/vedic/domain-i18n';
 import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
 import { useT } from '@/lib/i18n';
+import { useSettings } from '@/lib/settings/context';
 
 export default function PredictionsPage() {
   const { chart } = useProfileChart();
   const [year, setYear] = useState<number | null>(null);
+  const { language } = useSettings();
   const t = useT();
+  const lang = language as Lang;
 
   useEffect(() => { setYear(new Date().getFullYear()); }, []);
 
@@ -48,16 +53,16 @@ export default function PredictionsPage() {
         </div>
         <div className="glass-card rounded-2xl p-6 text-center">
           <div className="text-xs text-zinc-500 mb-2">{t('predictions.varshaLagna')}</div>
-          <div className="text-violet-400 text-lg">{RASHI_GLYPH[RASHI_NAMES[varshaphal.varshaLagna]]} {RASHI_NAMES[varshaphal.varshaLagna]}</div>
+          <div className="text-violet-400 text-lg">{RASHI_GLYPH[RASHI_NAMES[varshaphal.varshaLagna]]} {getRashiName(varshaphal.varshaLagna, lang)}</div>
         </div>
         <div className="glass-card rounded-2xl p-6 text-center">
           <div className="text-xs text-zinc-500 mb-2">{t('predictions.muntha')}</div>
-          <div className="text-cyan-400 text-lg">{RASHI_GLYPH[RASHI_NAMES[varshaphal.muntha]]} {RASHI_NAMES[varshaphal.muntha]}</div>
-          <div className="text-xs text-zinc-500 mt-1">{t('rpt.lord')}: {varshaphal.munthaLord}</div>
+          <div className="text-cyan-400 text-lg">{RASHI_GLYPH[RASHI_NAMES[varshaphal.muntha]]} {getRashiName(varshaphal.muntha, lang)}</div>
+          <div className="text-xs text-zinc-500 mt-1">{t('rpt.lord')}: {getPlanetName(varshaphal.munthaLord, lang)}</div>
         </div>
         <div className="glass-card rounded-2xl p-6 text-center">
           <div className="text-xs text-zinc-500 mb-2">{t('predictions.yearLord')}</div>
-          <div className="text-amber-400 text-lg">{varshaphal.yearLord}</div>
+          <div className="text-amber-400 text-lg">{getPlanetName(varshaphal.yearLord, lang)}</div>
         </div>
       </div>
     </div>

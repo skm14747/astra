@@ -9,22 +9,22 @@ export const metadata: Metadata = {
   description: 'Learn Vedic astrology with in-depth guides on Kundli reading, Dasha interpretation, Dosha analysis, Nakshatra wisdom, and practical Jyotish techniques.',
   keywords: ['vedic astrology blog', 'jyotish guide', 'astrology tutorial', 'learn vedic astrology', 'kundli reading guide'],
   alternates: {
-    canonical: '/blog',
+    canonical: '/blog/',
     languages: {
-      'en': '/blog',
-      'hi': '/hi/blog',
-      'ne': '/ne/blog',
-      'pt': '/pt/blog',
-      'es': '/es/blog',
-      'ja': '/ja/blog',
-      'fr': '/fr/blog',
-      'x-default': '/blog',
+      'en': '/blog/',
+      'hi': '/hi/blog/',
+      'ne': '/ne/blog/',
+      'pt': '/pt/blog/',
+      'es': '/es/blog/',
+      'ja': '/ja/blog/',
+      'fr': '/fr/blog/',
+      'x-default': '/blog/',
     },
   },
   openGraph: {
     title: 'Vedic Astrology Blog — Jyotish Guides & Tutorials',
     description: 'Learn Vedic astrology with in-depth guides on Kundli reading, Dasha interpretation, Dosha analysis, and practical Jyotish techniques.',
-    url: '/blog',
+    url: '/blog/',
     type: 'website',
   },
 };
@@ -61,7 +61,7 @@ export default function BlogIndexPage() {
           <LocaleLink
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="glass-card rounded-2xl p-6 hover:border-violet-500/30 transition-all group"
+            className="glass-card rounded-2xl p-6 hover:border-violet-500/30 transition-colors group"
           >
             <div className="flex items-center gap-2 mb-3">
               <span className="text-xs px-2 py-0.5 rounded-full bg-violet-500/10 text-violet-400 border border-violet-500/20">

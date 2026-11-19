@@ -1,8 +1,10 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
-import type { VimshottariDasha } from '@/lib/vedic/types';
+import type { VimshottariDasha, Lang } from '@/lib/vedic/types';
+import { getPlanetName } from '@/lib/vedic/domain-i18n';
 import { useT } from '@/lib/i18n';
+import { useSettings } from '@/lib/settings/context';
 
 interface Props {
   dasha: VimshottariDasha;
@@ -19,7 +21,9 @@ function formatDate(d: Date): string {
 }
 
 export default function DashaTimeline({ dasha, currentDate }: Props) {
+  const { language } = useSettings();
   const t = useT();
+  const lang = language as Lang;
   const [clientNow, setClientNow] = useState<number | null>(null);
 
   useEffect(() => {
@@ -44,7 +48,7 @@ export default function DashaTimeline({ dasha, currentDate }: Props) {
   return (
     <div className="space-y-3">
       <div className="text-sm text-zinc-400">
-        {t('nakshatra.birthNakshatra')} {t('common.lord')}: <span className="text-white font-medium">{PLANET_GLYPH[dasha.birthDashaLord] ?? ''} {dasha.birthDashaLord}</span>
+        {t('nakshatra.birthNakshatra')} {t('common.lord')}: <span className="text-white font-medium">{PLANET_GLYPH[dasha.birthDashaLord] ?? ''} {getPlanetName(dasha.birthDashaLord, lang)}</span>
         {' · '}{t('common.balance')}: <span className="text-white font-medium">{dasha.balanceYears.toFixed(2)} {t('common.years')}</span>
       </div>
 
@@ -59,7 +63,7 @@ export default function DashaTimeline({ dasha, currentDate }: Props) {
               <button
                 key={i}
                 onClick={() => setExpandedIdx(isExpanded ? null : i)}
-                className="relative flex items-center justify-center text-[10px] font-bold text-white transition-all hover:brightness-110"
+                className="relative flex items-center justify-center text-[10px] font-bold text-white transition-colors hover:brightness-110"
                 style={{
                   width: `${pct}%`,
                   backgroundColor: COLORS[i % COLORS.length],
@@ -69,7 +73,7 @@ export default function DashaTimeline({ dasha, currentDate }: Props) {
               >
                 {pct > 5 && <span>{md.lord.slice(0, 3)}</span>}
                 {isCurrent && (
-                  <span className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+                  <span className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_6px_2px_rgba(255,255,255,0.6)]" />
                 )}
               </button>
             );
@@ -92,7 +96,7 @@ export default function DashaTimeline({ dasha, currentDate }: Props) {
         return (
           <div className={`p-4 rounded-lg border ${isCurrent ? 'border-violet-600 bg-violet-600/5' : 'border-zinc-800 bg-zinc-900'}`}>
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-semibold text-sm">{PLANET_GLYPH[md.lord] ?? ''} {md.lord} {t('dashas.mahadasha')} ({md.durationYears.toFixed(1)} {t('common.years')})</h3>
+              <h3 className="font-semibold text-sm">{PLANET_GLYPH[md.lord] ?? ''} {getPlanetName(md.lord, lang)} {t('dashas.mahadasha')} ({md.durationYears.toFixed(1)} {t('common.years')})</h3>
               <span className="text-xs text-zinc-500">{formatDate(md.startDate)} — {formatDate(md.endDate)}</span>
             </div>
             {md.subPeriods && md.subPeriods.length > 0 && (
@@ -101,7 +105,7 @@ export default function DashaTimeline({ dasha, currentDate }: Props) {
                   const isAdCurrent = now >= ad.startDate.getTime() && now < ad.endDate.getTime();
                   return (
                     <div key={j} className={`flex justify-between text-xs px-2 py-1 rounded ${isAdCurrent ? 'bg-violet-600/15 text-violet-300 font-medium' : 'text-zinc-500 hover:bg-zinc-800'}`}>
-                      <span>{PLANET_GLYPH[ad.lord] ?? ''} {ad.lord} Antardasha</span>
+                      <span>{PLANET_GLYPH[ad.lord] ?? ''} {getPlanetName(ad.lord, lang)} {t('dashas.antardasha')}</span>
                       <span>{formatDate(ad.startDate)} — {formatDate(ad.endDate)}</span>
                     </div>
                   );

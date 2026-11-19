@@ -74,7 +74,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   yogas: {
-    title: 'Yoga & Dosha Calculator — Raja Yoga, Kaal Sarp Dosha',
+    title: 'Free Yoga & Dosha Calculator (योग दोष) — Raja Yoga Check',
     description:
       'Detect all major Yogas (Raja, Dhana, Pancha Mahapurusha, Gajakesari) and Doshas (Manglik, Kaal Sarp, Pitra) in your Vedic birth chart with BPHS-accurate rules.',
     canonical: '/vedic/yogas',
@@ -115,9 +115,9 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   dashas: {
-    title: 'Vimshottari Dasha Calculator — Free Mahadasha & Antardasha',
+    title: 'Free Dasha Calculator (दशा) — 16 Systems, Mahadasha Dates',
     description:
-      'Free Vimshottari Dasha calculator with Mahadasha, Antardasha & Pratyantardasha timeline dates. Also includes Yogini, Ashtottari & Sthira Dasha systems.',
+      'Free Dasha calculator with 16 systems — Vimshottari, Yogini, Ashtottari, Chara, Kalachakra, Narayana & 10 more. Mahadasha, Antardasha & Pratyantardasha dates by date of birth. No signup, runs in your browser.',
     canonical: '/vedic/dashas',
     keywords: ['vimshottari dasha calculator', 'mahadasha calculator', 'dasha calculator free', 'antardasha calculator', 'mahadasha dates by date of birth', 'yogini dasha calculator', 'ashtottari dasha', 'current mahadasha', 'free dasha calculator'],
     seoIntro: {
@@ -128,7 +128,18 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
       { question: 'How is Vimshottari Dasha calculated?', answer: 'Vimshottari Dasha is calculated from the Moon\'s Nakshatra at birth. The balance of the first Mahadasha is determined by how far the Moon has traversed the birth Nakshatra. Each of the 9 planets rules a Mahadasha of fixed duration totaling 120 years: Sun (6), Moon (10), Mars (7), Rahu (18), Jupiter (16), Saturn (19), Mercury (17), Ketu (7), Venus (20).' },
       { question: 'What is the difference between Mahadasha and Antardasha?', answer: 'Mahadasha is the major planetary period lasting several years. Antardasha (Bhukti) is a sub-period within each Mahadasha. Pratyantardasha is a further sub-division. Events during a Dasha period are colored by both the Mahadasha lord and Antardasha lord together.' },
       { question: 'Which Dasha system is most accurate?', answer: 'Vimshottari Dasha is the most widely used and trusted system, recommended by Maharishi Parashara in BPHS. Yogini Dasha (36-year cycle) is preferred for shorter-term predictions, while Ashtottari Dasha (108-year cycle) is used when Rahu is in a Kendra or Trikona from the Lagna lord.' },
+      { question: 'How do I find my current Mahadasha by date of birth?', answer: 'Enter your date, time, and place of birth. The calculator determines your Moon Nakshatra, computes the starting Dasha balance, and shows your current Mahadasha, Antardasha, and Pratyantardasha with exact start and end dates. The currently active period is highlighted automatically.' },
     ],
+    howTo: {
+      name: 'How to Calculate Your Dasha by Date of Birth',
+      description: 'Generate your complete Vimshottari Dasha timeline with Mahadasha, Antardasha and Pratyantardasha dates.',
+      steps: [
+        { name: 'Enter birth details', text: 'Click "Create Your Birth Chart" and enter your full name, date of birth, exact time of birth, and place of birth.' },
+        { name: 'View your Dasha timeline', text: 'Your Vimshottari Dasha appears instantly with all Mahadasha periods, their start and end dates, and the currently active period highlighted.' },
+        { name: 'Explore sub-periods', text: 'Click any Mahadasha to see its Antardasha and Pratyantardasha sub-periods with exact dates.' },
+        { name: 'Try other Dasha systems', text: 'Switch between 16 Dasha systems including Yogini, Ashtottari, Chara, Kalachakra, and more using the system selector.' },
+      ],
+    },
     relatedTools: [
       { href: '/vedic/kundli', label: 'Birth Chart (Kundli)' },
       { href: '/vedic/transits', label: 'Planetary Transits' },
@@ -163,7 +174,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   nakshatra: {
-    title: 'Nakshatra Calculator by Date of Birth — Free Birth Star Finder',
+    title: 'Free Nakshatra Calculator (नक्षत्र) by Date of Birth',
     description:
       'Free Nakshatra calculator by date of birth — find your Janma Nakshatra (birth star), Pada, ruling deity, Gana, Nadi & Tara Bala. All 27 Nakshatras with detailed interpretations.',
     canonical: '/vedic/nakshatra',
@@ -225,11 +236,11 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   muhurta: {
-    title: 'Choghadiya Today & Shubh Muhurat — Rahu Kaal Timings',
+    title: 'Shubh Muhurat Finder (शुभ मुहूर्त) — Marriage, Griha Pravesh & Travel',
     description:
-      "Today's Choghadiya timings with Shubh Muhurat, Rahu Kaal, Abhijit Muhurta & auspicious windows. Find the best Muhurta for marriage, griha pravesh, travel and 20+ activities.",
+      'Free Shubh Muhurat finder for marriage (vivah muhurat), griha pravesh, naamkaran, travel & 20+ activities. Checks Tithi, Nakshatra, Rahu Kaal, Abhijit Muhurta & planetary positions.',
     canonical: '/vedic/muhurta',
-    keywords: ['choghadiya today', 'shubh muhurat today', 'rahu kaal today', 'auspicious time today', 'muhurta today', 'din ka choghadiya', 'muhurta finder', 'marriage muhurta', 'griha pravesh muhurta'],
+    keywords: ['shubh muhurat today', 'shubh muhurat for marriage', 'vivah muhurat 2027', 'griha pravesh muhurta', 'rahu kaal today', 'auspicious time today', 'muhurta today', 'muhurta finder', 'marriage muhurta', 'naamkaran muhurta', 'abhijit muhurta'],
     seoIntro: {
       heading: 'What is Muhurta?',
       text: 'Muhurta (Electional Astrology) is the science of choosing the most auspicious moment to begin an important activity. Vedic Muhurta considers the Tithi, Nakshatra, Yoga, Karana, Vara, and planetary positions to find windows of maximal cosmic support. Key rules include avoiding Rahu Kalam and Gulika periods, selecting favorable Nakshatras for specific activities, and ensuring strong Lagna and benefic transits. Our Muhurta Finder scans upcoming time windows and rates them for 20+ activity types.',
@@ -347,6 +358,12 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
       heading: 'Career Analysis in Vedic Astrology',
       text: 'Career analysis in Vedic astrology examines the 10th house (Karma Bhava), its lord, planets placed there, and the Dasamsa (D10) divisional chart. The 10th house represents public life, profession, authority, and reputation. Key indicators include the 10th lord\'s sign placement, aspects from benefics/malefics, and Dasha timing for career changes. The Amatyakaraka (Jaimini career significator), strong planets in the D10, and Shadbala strength of the 10th lord all contribute to a comprehensive career prediction.',
     },
+    faqs: [
+      { question: 'Can astrology predict my career?', answer: 'Yes. Vedic astrology analyzes the 10th house (profession), its lord, planets placed there, the Dasamsa (D10) divisional chart, and the Amatyakaraka (Jaimini career significator) to identify career aptitude, ideal professions, and timing of career changes through Dasha periods.' },
+      { question: 'When will I get a job? (Job kab milegi?)', answer: 'Job timing depends on the activation of the 10th house lord through Dasha periods. When the Mahadasha or Antardasha of the 10th lord, or planets connected to the 10th house, become active — and transiting Jupiter or Saturn aspects the 10th house — that period is most likely to bring a job or career change.' },
+      { question: 'Which planet is responsible for career success?', answer: 'Saturn rules career and hard work. Sun gives authority and government positions. Mercury governs business and communication. Jupiter rules education, law, and finance. Mars indicates engineering, military, and surgery. Venus governs arts, luxury, and hospitality. The strongest of these in your 10th house or D10 chart indicates your career direction.' },
+      { question: 'What is the best career according to my birth chart?', answer: 'Your ideal career is determined by the 10th lord\'s sign and Nakshatra, planets in the 10th house, the Dasamsa (D10) chart, and the Amatyakaraka planet. For example, Sun in the 10th suggests government or leadership, Mercury suggests business or writing, and Jupiter suggests teaching, law, or banking.' },
+    ],
     relatedTools: [
       { href: '/vedic/jaimini', label: 'Jaimini Astrology' },
       { href: '/vedic/divisional', label: 'Divisional Charts' },
@@ -588,21 +605,33 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   choghadiya: {
-    title: 'Choghadiya Today — Shubh Muhurat & Auspicious Timings',
+    title: 'Free Choghadiya Today (चौघड़िया) — Shubh Muhurat Timings',
     description:
-      'Today\'s Choghadiya (चौघड़िया) timings with Shubh, Labh, Amrit, Char periods for your location. Day and night Choghadiya table with Rahu Kaal overlay.',
+      'Today\'s Choghadiya (चौघड़िया) with day and night muhurat timings — Amrit, Shubh, Labh, Char, Kaal, Rog, Udveg periods. Rahu Kaal overlay. Free, calculated from your location\'s sunrise and sunset.',
     canonical: '/vedic/choghadiya',
-    keywords: ['choghadiya', 'choghadiya today', 'today choghadiya', 'din ka choghadiya', 'shubh choghadiya', 'aaj ka choghadiya', 'choghadiya table', 'raat ka choghadiya'],
+    keywords: ['choghadiya', 'choghadiya today', 'today choghadiya', 'din ka choghadiya', 'shubh choghadiya', 'aaj ka choghadiya', 'choghadiya table', 'raat ka choghadiya', 'choghadiya mumbai', 'choghadiya delhi'],
     seoIntro: {
       heading: 'What is Choghadiya?',
-      text: 'Choghadiya (चौघड़िया, also spelled Chogadia or Chaughadia) is a Vedic time-division system that splits each day and night into 8 equal periods, each ruled by a planet. The 7 types — Udveg (Sun), Char (Venus), Labh (Mercury), Amrit (Moon), Kaal (Saturn), Shubh (Jupiter), and Rog (Mars) — cycle in a fixed order starting from the Vara (weekday) lord. Amrit is the most auspicious for all activities, Shubh and Labh are good, Char suits travel, while Kaal, Rog, and Udveg are inauspicious (though Kaal Choghadiya is considered good for wealth). This calculator shows today\'s Choghadiya table for your location based on actual sunrise and sunset times.',
+      text: 'Choghadiya (चौघड़िया, also spelled Chogadia or Chaughadia) is a Vedic time-division system that splits each day and night into 8 equal periods, each ruled by a planet. The 7 types — Udveg (Sun), Char (Venus), Labh (Mercury), Amrit (Moon), Kaal (Saturn), Shubh (Jupiter), and Rog (Mars) — cycle in a fixed order starting from the Vara (weekday) lord. Amrit is the most auspicious for all activities, Shubh and Labh are good, Char suits travel, while Kaal, Rog, and Udveg are inauspicious (though Kaal Choghadiya is considered good for wealth). Day Choghadiya (din ka choghadiya) runs from sunrise to sunset and night Choghadiya (raat ka choghadiya) runs from sunset to next sunrise, with each period lasting roughly 90 minutes depending on the day length. This calculator shows today\'s Choghadiya table for your location based on actual sunrise and sunset times.',
     },
     faqs: [
       { question: 'What is Choghadiya and how is it calculated?', answer: 'Choghadiya divides daytime (sunrise to sunset) and nighttime (sunset to next sunrise) into 8 equal periods each. Each period is assigned one of 7 types (Udveg, Char, Labh, Amrit, Kaal, Shubh, Rog) based on the weekday. The starting type depends on the Vara lord.' },
       { question: 'Which Choghadiya is best for starting new work?', answer: 'Amrit Choghadiya (ruled by Moon) is the most auspicious for all activities. Shubh (Jupiter) is ideal for marriage, education, and religious work. Labh (Mercury) is best for starting a business or education. Char (Venus) suits travel and cultural activities.' },
       { question: 'Is Kaal Choghadiya always bad?', answer: 'While Kaal Choghadiya (ruled by Saturn) is generally inauspicious, it is considered favorable for wealth-related activities, debt collection, and dealing with property. Avoid starting new ventures or journeys during this period.' },
       { question: 'What is the difference between Choghadiya and Muhurta?', answer: 'Choghadiya is a simpler daily timing system based on weekday and sunrise/sunset. Muhurta (Electional Astrology) is more detailed, considering Tithi, Nakshatra, Yoga, Karana, and planetary positions for specific activities like marriage or griha pravesh.' },
+      { question: 'What is Din Ka Choghadiya and Raat Ka Choghadiya?', answer: 'Din Ka Choghadiya (day Choghadiya) covers the 8 muhurat periods from sunrise to sunset. Raat Ka Choghadiya (night Choghadiya) covers the 8 periods from sunset to next sunrise. Both follow the same 7-type cycle but start from different lords based on the weekday.' },
+      { question: 'How long does each Choghadiya period last?', answer: 'Each day Choghadiya period lasts one-eighth of the total daytime (sunrise to sunset), and each night period lasts one-eighth of the total nighttime. On average this is about 90 minutes, but the exact duration varies by season and location since day and night lengths change throughout the year.' },
     ],
+    howTo: {
+      name: 'How to Check Today\'s Choghadiya',
+      description: 'Find the current Choghadiya muhurat and plan your activities for the day.',
+      steps: [
+        { name: 'Allow location access', text: 'Grant location access for accurate sunrise and sunset times based on your city, or the calculator defaults to New Delhi.' },
+        { name: 'View current period', text: 'The currently active Choghadiya period is highlighted with its type (Amrit, Shubh, Labh, etc.) and the time remaining.' },
+        { name: 'Check day and night tables', text: 'See all 8 day Choghadiya periods (sunrise to sunset) and 8 night Choghadiya periods (sunset to next sunrise) with their types and time ranges.' },
+        { name: 'Plan your activity', text: 'Choose Amrit for any important work, Shubh for ceremonies, Labh for business, or Char for travel. Avoid Kaal, Rog, and Udveg for new ventures.' },
+      ],
+    },
     relatedTools: [
       { href: '/vedic/muhurta', label: 'Muhurta Finder' },
       { href: '/vedic/panchang', label: 'Daily Panchang' },
@@ -747,39 +776,303 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
   },
 };
 
-export function buildVedicMetadata(slug: string): Metadata {
+/* ──────────────────────────────────────────────────────────────────────────
+ * Locale-specific title & description overrides.
+ * When a visitor arrives via /hi/vedic/dashas the middleware sets x-locale=hi.
+ * buildVedicMetadata reads that header and returns the correct locale copy.
+ * Only pages with locale entries get translated metadata; the rest fall back
+ * to the English defaults in VEDIC_SEO.
+ * ────────────────────────────────────────────────────────────────────────── */
+export const VEDIC_SEO_LOCALES: Record<string, Record<string, { title: string; description: string }>> = {
+  /* ── Hindi (hi) ────────────────────────────────────────────────────────── */
+  hi: {
+    kundli: {
+      title: 'फ्री जन्म कुंडली (कुंडली) कैलकुलेटर — ऑनलाइन जन्मपत्री बनाएं',
+      description: 'मुफ्त ऑनलाइन कुंडली कैलकुलेटर — NASA JPL डेटा और लाहिरी अयनांश से सटीक जन्म कुंडली, ग्रह स्थिति, दशा और योग। तुरंत जन्मपत्री बनाएं।',
+    },
+    dashas: {
+      title: 'फ्री दशा कैलकुलेटर (दशा) — 16 पद्धतियाँ, महादशा तिथियाँ',
+      description: 'मुफ्त दशा कैलकुलेटर — विंशोत्तरी, योगिनी, अष्टोत्तरी सहित 16 दशा पद्धतियाँ। महादशा, अंतर्दशा और प्रत्यंतर्दशा तिथियाँ तुरंत देखें।',
+    },
+    yogas: {
+      title: 'फ्री योग और दोष कैलकुलेटर (योग दोष) — राजयोग जाँच',
+      description: 'मुफ्त योग-दोष कैलकुलेटर — राजयोग, धनयोग, कालसर्प दोष, मांगलिक दोष सहित 60+ शास्त्रीय योगों की जाँच। NASA JPL सटीक गणना।',
+    },
+    nakshatra: {
+      title: 'फ्री नक्षत्र कैलकुलेटर (नक्षत्र) — जन्म नक्षत्र खोजें',
+      description: 'मुफ्त नक्षत्र कैलकुलेटर — जन्म तिथि से 27 नक्षत्रों में आपका जन्म नक्षत्र, चरण, नामाक्षर और स्वामी ग्रह तुरंत जानें।',
+    },
+    compatibility: {
+      title: 'फ्री कुंडली मिलान (गुण मिलान) — अष्टकूट स्कोर',
+      description: 'मुफ्त कुंडली मिलान कैलकुलेटर — 36 में से अष्टकूट गुण मिलान, मांगलिक दोष जाँच और विवाह अनुकूलता रिपोर्ट। सटीक गुण मिलान करें।',
+    },
+    panchang: {
+      title: 'आज का पंचांग — तिथि, नक्षत्र, शुभ मुहूर्त',
+      description: 'आज का पंचांग — तिथि, वार, नक्षत्र, योग, करण और शुभ-अशुभ समय। चौघड़िया, राहुकाल और होरा सहित दैनिक पंचांग।',
+    },
+    choghadiya: {
+      title: 'आज का चौघड़िया (चौघड़िया) — शुभ मुहूर्त समय',
+      description: 'आज का चौघड़िया — दिन और रात का चौघड़िया, शुभ-लाभ-अमृत समय, राहुकाल। मुंबई, दिल्ली, जयपुर सभी शहरों के लिए मुफ्त चौघड़िया।',
+    },
+    'sade-sati': {
+      title: 'फ्री साढ़े साती कैलकुलेटर — शनि साढ़े साती की स्थिति जानें',
+      description: 'मुफ्त साढ़े साती कैलकुलेटर — जन्म कुंडली से शनि साढ़े साती शुरू, मध्य और अंत की तिथियाँ। उपाय और प्रभाव जानें।',
+    },
+    'mangal-dosha': {
+      title: 'फ्री मांगलिक दोष कैलकुलेटर — मंगल दोष जाँच',
+      description: 'मुफ्त मांगलिक दोष कैलकुलेटर — जन्म कुंडली से मंगल दोष है या नहीं, तुरंत जानें। दोष निवारण के उपाय और विवाह पर प्रभाव।',
+    },
+    muhurta: {
+      title: 'शुभ मुहूर्त कैलकुलेटर — विवाह मुहूर्त, गृह प्रवेश',
+      description: 'मुफ्त शुभ मुहूर्त कैलकुलेटर — विवाह, गृह प्रवेश, नामकरण और व्यापार के लिए शास्त्रोक्त शुभ मुहूर्त खोजें।',
+    },
+    hora: {
+      title: 'आज का होरा (होरा) — ग्रह होरा समय सारणी',
+      description: 'आज का होरा — सूर्योदय से सूर्यास्त तक प्रत्येक घंटे का ग्रह स्वामी। शुभ होरा में कार्य करें, मुफ्त होरा कैलकुलेटर।',
+    },
+    navamsa: {
+      title: 'फ्री नवमांश (D9) कैलकुलेटर — विवाह और भाग्य चार्ट',
+      description: 'मुफ्त नवमांश कुंडली (D9 चार्ट) कैलकुलेटर — विवाह, जीवनसाथी और धर्म भाग्य का सटीक विश्लेषण। NASA डेटा आधारित।',
+    },
+    'kaal-sarp-dosha': {
+      title: 'फ्री कालसर्प दोष कैलकुलेटर — राहु-केतु दोष जाँच',
+      description: 'मुफ्त कालसर्प दोष कैलकुलेटर — 12 प्रकार के कालसर्प दोष की जाँच, प्रभाव और निवारण उपाय। जन्म कुंडली से तुरंत जानें।',
+    },
+  },
+
+  /* ── Nepali (ne) ───────────────────────────────────────────────────────── */
+  ne: {
+    kundli: {
+      title: 'नि:शुल्क जन्म कुण्डली क्यालकुलेटर — अनलाइन चिना बनाउनुहोस्',
+      description: 'नि:शुल्क जन्म कुण्डली क्यालकुलेटर — NASA JPL डेटा र लाहिरी अयनांशबाट सटीक जन्म कुण्डली, ग्रह स्थिति र दशा। तुरुन्तै कुण्डली बनाउनुहोस्।',
+    },
+    dashas: {
+      title: 'नि:शुल्क दशा क्यालकुलेटर — १६ पद्धति, महादशा मिति',
+      description: 'नि:शुल्क दशा क्यालकुलेटर — विंशोत्तरी, योगिनी सहित १६ दशा पद्धति। महादशा, अन्तर्दशा र प्रत्यन्तर्दशा मिति तुरुन्तै हेर्नुहोस्।',
+    },
+    nakshatra: {
+      title: 'नि:शुल्क नक्षत्र क्यालकुलेटर — जन्म नक्षत्र पत्ता लगाउनुहोस्',
+      description: 'नि:शुल्क नक्षत्र क्यालकुलेटर — जन्म मितिबाट २७ नक्षत्रमा तपाईंको जन्म नक्षत्र, चरण र नामाक्षर तुरुन्तै पत्ता लगाउनुहोस्।',
+    },
+    compatibility: {
+      title: 'नि:शुल्क कुण्डली मिलान — गुण मिलान र विवाह अनुकूलता',
+      description: 'नि:शुल्क कुण्डली मिलान क्यालकुलेटर — ३६ गुण अष्टकूट मिलान, मांगलिक दोष जाँच र विवाह अनुकूलता रिपोर्ट।',
+    },
+    panchang: {
+      title: 'आजको पञ्चाङ्ग — तिथि, नक्षत्र, शुभ साइत',
+      description: 'आजको नेपाली पञ्चाङ्ग — तिथि, वार, नक्षत्र, योग, करण र शुभ-अशुभ समय। राहुकाल र शुभ साइत सहित।',
+    },
+  },
+
+  /* ── Portuguese (pt) ───────────────────────────────────────────────────── */
+  pt: {
+    kundli: {
+      title: 'Mapa Astral Grátis (Carta Natal) — Calculadora Online',
+      description: 'Calculadora de mapa astral gratuita — ascendente, planetas, casas e aspectos com efemérides NASA JPL. Gere seu mapa astral védico completo online.',
+    },
+    dashas: {
+      title: 'Calculadora de Dasha Grátis — 16 Sistemas, Mahadasha',
+      description: 'Calculadora gratuita de Dasha védico — Vimshottari, Yogini e mais 14 sistemas. Veja períodos de Mahadasha e Antardasha com datas exatas.',
+    },
+    compatibility: {
+      title: 'Compatibilidade Astral Grátis — Sinastria Védica',
+      description: 'Calculadora de compatibilidade astral gratuita — sinastria védica com Ashtakoot, Gun Milan e análise de Mangal Dosha para casais.',
+    },
+    nakshatra: {
+      title: 'Calculadora de Nakshatra Grátis — Estrela de Nascimento',
+      description: 'Calculadora de Nakshatra gratuita — descubra sua estrela de nascimento, pada e símbolo entre os 27 Nakshatras pela data de nascimento.',
+    },
+    yogas: {
+      title: 'Calculadora de Yoga e Dosha Grátis — Raja Yoga',
+      description: 'Calculadora gratuita de Yogas e Doshas — verifique Raja Yoga, Dhana Yoga, Kaal Sarp e Mangal Dosha no seu mapa astral védico.',
+    },
+    panchang: {
+      title: 'Panchang de Hoje — Calendário Lunar Védico',
+      description: 'Panchang diário gratuito — Tithi, Nakshatra, Yoga, Karana e horários auspiciosos para hoje. Calendário lunar hindu.',
+    },
+  },
+
+  /* ── Spanish (es) ──────────────────────────────────────────────────────── */
+  es: {
+    kundli: {
+      title: 'Carta Natal Gratis (Kundli) — Calculadora Online',
+      description: 'Calculadora de carta natal gratuita — ascendente, planetas, casas y aspectos con efemérides NASA JPL. Genera tu carta astral védica completa.',
+    },
+    dashas: {
+      title: 'Calculadora de Dasha Gratis — 16 Sistemas, Mahadasha',
+      description: 'Calculadora gratuita de Dasha védico — Vimshottari, Yogini y 14 sistemas más. Consulta períodos Mahadasha y Antardasha con fechas exactas.',
+    },
+    compatibility: {
+      title: 'Compatibilidad Zodiacal Gratis — Sinastria Védica',
+      description: 'Calculadora de compatibilidad astral gratuita — sinastria védica con Ashtakoot, Gun Milan y análisis de Mangal Dosha para parejas.',
+    },
+    nakshatra: {
+      title: 'Calculadora de Nakshatra Gratis — Estrella de Nacimiento',
+      description: 'Calculadora de Nakshatra gratuita — descubre tu estrella de nacimiento, pada y símbolo entre los 27 Nakshatras por fecha de nacimiento.',
+    },
+    yogas: {
+      title: 'Calculadora de Yoga y Dosha Gratis — Raja Yoga',
+      description: 'Calculadora gratuita de Yogas y Doshas — verifica Raja Yoga, Dhana Yoga, Kaal Sarp y Mangal Dosha en tu carta astral védica.',
+    },
+    panchang: {
+      title: 'Panchang de Hoy — Calendario Lunar Védico',
+      description: 'Panchang diario gratuito — Tithi, Nakshatra, Yoga, Karana y horarios auspiciosos para hoy. Calendario lunar hindú.',
+    },
+  },
+
+  /* ── Japanese (ja) ─────────────────────────────────────────────────────── */
+  ja: {
+    kundli: {
+      title: '無料ホロスコープ計算（クンドリ）— 出生図を作成',
+      description: '無料ホロスコープ計算ツール — NASA JPLデータとラヒリ・アヤナムシャによる精密な出生図、惑星配置、ダシャー。ヴェーディック占星術の本格鑑定。',
+    },
+    dashas: {
+      title: '無料ダシャー計算（दशा）— 16システム対応',
+      description: '無料ダシャー計算ツール — ヴィムショッタリ、ヨーギニーなど16種のダシャー体系。マハダシャーとアンタルダシャーの正確な期間を表示。',
+    },
+    compatibility: {
+      title: '無料相性占い — ヴェーディック・シナストリー',
+      description: '無料ヴェーディック相性占い計算ツール — アシュタクートによる36ポイント評価、マンガル・ドーシャ診断。結婚相性を精密分析。',
+    },
+    nakshatra: {
+      title: '無料ナクシャトラ計算 — 誕生星を調べる',
+      description: '無料ナクシャトラ計算ツール — 生年月日から27ナクシャトラのうちあなたの誕生星、パダ、シンボルを瞬時に判定。',
+    },
+    yogas: {
+      title: '無料ヨーガ・ドーシャ計算 — ラージャ・ヨーガ鑑定',
+      description: '無料ヨーガ・ドーシャ計算ツール — ラージャ・ヨーガ、ダナ・ヨーガ、カール・サルプ、マンガル・ドーシャなど60以上の配置を鑑定。',
+    },
+    panchang: {
+      title: '今日のパンチャーンガ — ヒンドゥー暦・吉時',
+      description: '今日のパンチャーンガ — ティティ、ナクシャトラ、ヨーガ、カラナと吉凶時間帯。毎日更新のヴェーディック暦。',
+    },
+  },
+
+  /* ── French (fr) ───────────────────────────────────────────────────────── */
+  fr: {
+    kundli: {
+      title: 'Thème Astral Gratuit (Kundli) — Calculateur en Ligne',
+      description: 'Calculateur de thème astral gratuit — ascendant, planètes, maisons et aspects avec éphémérides NASA JPL. Carte du ciel védique complète.',
+    },
+    dashas: {
+      title: 'Calculateur Dasha Gratuit — 16 Systèmes, Mahadasha',
+      description: 'Calculateur de Dasha védique gratuit — Vimshottari, Yogini et 14 autres systèmes. Consultez les périodes Mahadasha et Antardasha avec dates.',
+    },
+    compatibility: {
+      title: 'Compatibilité Astrologique Gratuite — Synastrie Védique',
+      description: 'Calculateur de compatibilité astrologique gratuit — synastrie védique avec Ashtakoot, Gun Milan et analyse du Mangal Dosha.',
+    },
+    nakshatra: {
+      title: 'Calculateur Nakshatra Gratuit — Étoile de Naissance',
+      description: 'Calculateur de Nakshatra gratuit — découvrez votre étoile de naissance, pada et symbole parmi les 27 Nakshatras par date de naissance.',
+    },
+    yogas: {
+      title: 'Calculateur Yoga et Dosha Gratuit — Raja Yoga',
+      description: 'Calculateur gratuit de Yogas et Doshas — vérifiez Raja Yoga, Dhana Yoga, Kaal Sarp et Mangal Dosha dans votre thème astral védique.',
+    },
+    panchang: {
+      title: 'Panchang du Jour — Calendrier Lunaire Védique',
+      description: 'Panchang quotidien gratuit — Tithi, Nakshatra, Yoga, Karana et heures propices du jour. Calendrier lunaire hindou.',
+    },
+  },
+
+  /* ── Korean (ko) ───────────────────────────────────────────────────────── */
+  ko: {
+    kundli: {
+      title: '무료 출생 차트 계산기 (쿤들리) — 온라인 호로스코프',
+      description: '무료 출생 차트 계산기 — NASA JPL 데이터와 라히리 아야남샤 기반 정밀 출생도, 행성 배치, 다샤. 베딕 점성술 본격 감정.',
+    },
+    dashas: {
+      title: '무료 다샤 계산기 — 16개 시스템, 마하다샤 날짜',
+      description: '무료 다샤 계산기 — 빔쇼타리, 요기니 등 16가지 다샤 체계. 마하다샤와 안타르다샤의 정확한 기간을 확인하세요.',
+    },
+    compatibility: {
+      title: '무료 궁합 계산기 — 베딕 시나스트리',
+      description: '무료 베딕 궁합 계산기 — 아슈타쿳 36포인트 평가, 망갈 도샤 진단. 결혼 궁합을 정밀 분석합니다.',
+    },
+    nakshatra: {
+      title: '무료 낙샤트라 계산기 — 탄생별 찾기',
+      description: '무료 낙샤트라 계산기 — 생년월일로 27 낙샤트라 중 당신의 탄생별, 파다, 상징을 즉시 확인하세요.',
+    },
+    yogas: {
+      title: '무료 요가·도샤 계산기 — 라자 요가 감정',
+      description: '무료 요가·도샤 계산기 — 라자 요가, 다나 요가, 칼 사르프, 망갈 도샤 등 60가지 이상의 배치를 감정합니다.',
+    },
+    panchang: {
+      title: '오늘의 판창 — 힌두 달력·길일',
+      description: '오늘의 판창 — 티티, 낙샤트라, 요가, 카라나와 길흉 시간대. 매일 업데이트되는 베딕 달력.',
+    },
+  },
+};
+
+const SUPPORTED_LOCALES = ['en', 'hi', 'ne', 'pt', 'es', 'ja', 'fr', 'ko'] as const;
+type SupportedLocale = (typeof SUPPORTED_LOCALES)[number];
+
+const OG_LOCALE_MAP: Record<SupportedLocale, string> = {
+  en: 'en_US', hi: 'hi_IN', ne: 'ne_NP', pt: 'pt_BR',
+  es: 'es_MX', ja: 'ja_JP', fr: 'fr_FR', ko: 'ko_KR',
+};
+
+/** Ensure path has a trailing slash to match next.config.ts `trailingSlash: true`. */
+function withTrailingSlash(path: string): string {
+  return path.endsWith('/') ? path : `${path}/`;
+}
+
+/**
+ * Build locale-aware metadata for a vedic page.
+ * Reads `x-locale` header set by middleware to pick the right title/description.
+ * Falls back to English defaults when no locale override exists.
+ *
+ * NOTE: Using headers() makes metadata dynamic (blocks prerendering).
+ * This is intentional — locale-specific <title> tags are critical for
+ * international SEO and worth the trade-off.
+ */
+export async function buildVedicMetadata(slug: string): Promise<Metadata> {
+  const { headers } = await import('next/headers');
+  const headersList = await headers();
+  const locale = (headersList.get('x-locale') || 'en') as SupportedLocale;
+
   const seo = VEDIC_SEO[slug];
   if (!seo) return {};
-  const ogUrl = `/api/og?tool=${encodeURIComponent(slug)}&title=${encodeURIComponent(seo.title)}`;
+
+  const localeOverride = VEDIC_SEO_LOCALES[locale]?.[slug];
+  const title = localeOverride?.title ?? seo.title;
+  const description = localeOverride?.description ?? seo.description;
+
+  const canonical = withTrailingSlash(seo.canonical);
+  const localeCanonical = locale === 'en' ? canonical : `/${locale}${canonical}`;
+  const ogUrl = `/api/og?tool=${encodeURIComponent(slug)}&title=${encodeURIComponent(title)}`;
+
   return {
-    title: seo.title,
-    description: seo.description,
+    title,
+    description,
     keywords: seo.keywords,
     alternates: {
-      canonical: seo.canonical,
+      canonical: localeCanonical,
       languages: {
-        'en': seo.canonical,
-        'hi': `/hi${seo.canonical}`,
-        'ne': `/ne${seo.canonical}`,
-        'pt': `/pt${seo.canonical}`,
-        'es': `/es${seo.canonical}`,
-        'ja': `/ja${seo.canonical}`,
-        'fr': `/fr${seo.canonical}`,
-        'ko': `/ko${seo.canonical}`,
-        'x-default': seo.canonical,
+        'en': canonical,
+        'hi': `/hi${canonical}`,
+        'ne': `/ne${canonical}`,
+        'pt': `/pt${canonical}`,
+        'es': `/es${canonical}`,
+        'ja': `/ja${canonical}`,
+        'fr': `/fr${canonical}`,
+        'ko': `/ko${canonical}`,
+        'x-default': canonical,
       },
     },
     openGraph: {
-      title: seo.title,
-      description: seo.description,
-      url: seo.canonical,
+      title,
+      description,
+      url: localeCanonical,
       type: 'website',
-      images: [{ url: ogUrl, width: 1200, height: 630, alt: seo.title }],
+      locale: OG_LOCALE_MAP[locale],
+      images: [{ url: ogUrl, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: seo.title,
-      description: seo.description,
+      title,
+      description,
       images: [ogUrl],
     },
   };

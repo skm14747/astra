@@ -8,8 +8,9 @@ import ExportButton from '@/components/shared/ExportButton';
 import EmptyState from '@/components/shared/EmptyState';
 import { getPlanetDignity, isCombust } from '@/lib/vedic/core';
 import { PLANET_GLYPH, RASHI_GLYPH } from '@/lib/vedic/glyphs';
-import type { Planet } from '@/lib/vedic/types';
+import type { Planet, Lang } from '@/lib/vedic/types';
 import { RASHI_NAMES } from '@/lib/vedic/constants';
+import { getPlanetName, getRashiName, getRashiNameByKey, getNakshatraName, getDignityLabel } from '@/lib/vedic/domain-i18n';
 import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
@@ -17,8 +18,9 @@ import { useT } from '@/lib/i18n';
 
 export default function KundliPage() {
   const { chart } = useProfileChart();
-  const { chartStyle } = useSettings();
+  const { chartStyle, language } = useSettings();
   const t = useT();
+  const lang = language as Lang;
   const chartRef = useRef<HTMLDivElement>(null);
 
   if (!chart) return (
@@ -50,7 +52,7 @@ export default function KundliPage() {
           </div>
           <p className="text-zinc-200 ml-10 text-lg">
             <span className="mr-1">{RASHI_GLYPH[RASHI_NAMES[chart.ascendant.rashi]]}</span>
-            {RASHI_NAMES[chart.ascendant.rashi]} · {chart.ascendant.degree}° · {chart.ascendant.nakshatraName} {t('panchang.pada')} {chart.ascendant.pada}
+            {getRashiName(chart.ascendant.rashi, lang)} · {chart.ascendant.degree}° · {getNakshatraName(chart.ascendant.nakshatra, lang)} {t('panchang.pada')} {chart.ascendant.pada}
           </p>
           <p className="text-xs text-zinc-500 ml-10 mt-1">
             {t('kundli.ayanamsa')} ({chart.ayanamsaSystem}): {chart.ayanamsa.toFixed(4)}°
@@ -100,7 +102,7 @@ export default function KundliPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="text-zinc-400 text-[11px] uppercase tracking-wider border-b border-violet-500/[0.06]">
+              <tr className="text-zinc-400 text-[11px] border-b border-violet-500/[0.06]">
                 <th className="text-left py-3 px-6 font-medium">{t('kundli.planet')}</th>
                 <th className="text-left py-3 px-3 font-medium">{t('kundli.sign')}</th>
                 <th className="text-left py-3 px-3 font-medium">{t('kundli.degree')}</th>
@@ -119,13 +121,13 @@ export default function KundliPage() {
                 return (
                   <tr key={p} className={`border-b border-white/[0.02] transition hover:bg-violet-600/[0.03] ${i % 2 === 0 ? 'bg-white/[0.01]' : ''}`}>
                     <td className="py-3.5 px-6 font-medium text-zinc-100">
-                      <span className="mr-2 text-lg drop-shadow-[0_0_4px_rgba(124,92,252,0.3)]">{PLANET_GLYPH[p]}</span>{p}
+                      <span className="mr-2 text-lg drop-shadow-[0_0_4px_rgba(124,92,252,0.3)]">{PLANET_GLYPH[p]}</span>{getPlanetName(p, lang)}
                     </td>
                     <td className="py-3.5 px-3 text-zinc-300">
-                      <span className="mr-1 text-violet-300/60">{RASHI_GLYPH[pos.rashiName]}</span>{pos.rashiName}
+                      <span className="mr-1 text-violet-300/60">{RASHI_GLYPH[pos.rashiName]}</span>{getRashiNameByKey(pos.rashiName, lang)}
                     </td>
-                    <td className="py-3.5 px-3 font-mono text-zinc-400 text-xs">{pos.degree}°{pos.minutes}&apos;{pos.seconds}&quot;</td>
-                    <td className="py-3.5 px-3 text-zinc-300">{pos.nakshatraName}</td>
+                    <td className="py-3.5 px-3 font-mono text-zinc-400 text-xs tabular-nums">{pos.degree}°{pos.minutes}&apos;{pos.seconds}&quot;</td>
+                    <td className="py-3.5 px-3 text-zinc-300">{getNakshatraName(pos.nakshatra, lang)}</td>
                     <td className="py-3.5 px-3 text-zinc-400">{pos.pada}</td>
                     <td className="py-3.5 px-3 text-zinc-400">{pos.house}</td>
                     <td className="py-3.5 px-3">
@@ -134,7 +136,7 @@ export default function KundliPage() {
                         dignity === 'debilitated' ? '!bg-red-500/12 !border-red-500/20 !text-red-400' :
                         dignity === 'own' ? '!bg-blue-500/12 !border-blue-500/20 !text-blue-400' : ''
                       }`}>
-                        {dignity === 'exalted' ? t('kundli.exalted') : dignity === 'debilitated' ? t('kundli.debilitated') : dignity === 'own' ? t('kundli.own') : dignity}{combust ? ' 🔥' : ''}
+                        {getDignityLabel(dignity, lang)}{combust ? ' 🔥' : ''}
                       </span>
                     </td>
                     <td className="py-3.5 px-3">

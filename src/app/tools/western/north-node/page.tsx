@@ -56,12 +56,12 @@ export default function NorthNodePage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="glass-card rounded-2xl p-6 vedic-glow">
-          <div className="text-xs text-indigo-400/80 uppercase tracking-wider font-medium mb-1">North Node (Growth Direction)</div>
+          <div className="text-xs text-indigo-400/80 font-medium mb-1">North Node (Growth Direction)</div>
           <div className="text-3xl text-white font-display font-bold">☊ {data.signName}</div>
           <div className="text-sm text-zinc-400 mt-1">{data.degreeInSign.toFixed(2)}°</div>
         </div>
         <div className="glass-card rounded-2xl p-6">
-          <div className="text-xs text-orange-400/80 uppercase tracking-wider font-medium mb-1">South Node (Comfort Zone)</div>
+          <div className="text-xs text-orange-400/80 font-medium mb-1">South Node (Comfort Zone)</div>
           <div className="text-3xl text-white font-display font-bold">☋ {data.southSign}</div>
           <div className="text-sm text-zinc-400 mt-1">Opposite the North Node</div>
         </div>

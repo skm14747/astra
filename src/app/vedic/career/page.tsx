@@ -3,15 +3,20 @@ import { useProfileChart } from '@/hooks/useProfileChart';
 import EmptyState from '@/components/shared/EmptyState';
 import { analyzeCareer } from '@/lib/vedic/career';
 import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
+import type { Lang } from '@/lib/vedic/types';
+import { getPlanetName, getDignityLabel } from '@/lib/vedic/domain-i18n';
 import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
 import { useT } from '@/lib/i18n';
+import { useSettings } from '@/lib/settings/context';
 
 export default function CareerPage() {
   const { chart } = useProfileChart();
 
+  const { language } = useSettings();
   const t = useT();
+  const lang = language as Lang;
   if (!chart) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
       <EmptyState icon="💼" title={t('career.title')} description={t('empty.career')} />
@@ -34,17 +39,17 @@ export default function CareerPage() {
         <div className="glass-card rounded-2xl p-6">
           <h2 className="font-semibold text-zinc-100 text-lg mb-4">{t('career.tenthHouse')}</h2>
           <div className="space-y-3 text-sm">
-            <div className="flex justify-between"><span className="text-zinc-400">{t('career.tenthLord')}</span><span className="text-zinc-200">{career.tenthLord}</span></div>
+            <div className="flex justify-between"><span className="text-zinc-400">{t('career.tenthLord')}</span><span className="text-zinc-200">{getPlanetName(career.tenthLord, lang)}</span></div>
             <div className="flex justify-between"><span className="text-zinc-400">{t('career.tenthLordHouse')}</span><span className="text-zinc-200">{t('rpt.th.house')} {career.tenthLordHouse}</span></div>
-            <div className="flex justify-between"><span className="text-zinc-400">{t('career.tenthLordDignity')}</span><span className="text-zinc-200 capitalize">{career.tenthLordDignity}</span></div>
-            <div className="flex justify-between"><span className="text-zinc-400">{t('career.planetsInTenth')}</span><span className="text-zinc-200">{career.planetsInTenth.length > 0 ? career.planetsInTenth.map(p => `${PLANET_GLYPH[p]} ${p}`).join(', ') : t('rpt.none')}</span></div>
+            <div className="flex justify-between"><span className="text-zinc-400">{t('career.tenthLordDignity')}</span><span className="text-zinc-200 capitalize">{getDignityLabel(career.tenthLordDignity as any, lang)}</span></div>
+            <div className="flex justify-between"><span className="text-zinc-400">{t('career.planetsInTenth')}</span><span className="text-zinc-200">{career.planetsInTenth.length > 0 ? career.planetsInTenth.map(p => `${PLANET_GLYPH[p]} ${getPlanetName(p, lang)}`).join(', ') : t('rpt.none')}</span></div>
           </div>
         </div>
 
         <div className="glass-card rounded-2xl p-6">
           <h2 className="font-semibold text-zinc-100 text-lg mb-4">{t('career.indicators')}</h2>
           <div className="space-y-3 text-sm">
-            <div className="flex justify-between"><span className="text-zinc-400">{t('career.amatyakaraka')}</span><span className="text-zinc-200">{PLANET_GLYPH[career.amatyakaraka]} {career.amatyakaraka}</span></div>
+            <div className="flex justify-between"><span className="text-zinc-400">{t('career.amatyakaraka')}</span><span className="text-zinc-200">{PLANET_GLYPH[career.amatyakaraka]} {getPlanetName(career.amatyakaraka, lang)}</span></div>
             <div className="flex justify-between"><span className="text-zinc-400">{t('career.domain')}</span><span className="text-cyan-400">{career.amatyakarakaCareer}</span></div>
             <div className="flex justify-between"><span className="text-zinc-400">{t('career.d10Strength')}</span><span className="text-zinc-200">{career.d10Strength}</span></div>
           </div>

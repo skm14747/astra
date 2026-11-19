@@ -41,7 +41,7 @@ export default function PlanetDetailPanel({ planet, position, dignity, isCombust
               </div>
               <div className="p-2 bg-zinc-800 rounded">
                 <div className="text-[10px] text-zinc-500">{t('kundli.degree')}</div>
-                <div className="font-medium font-mono">{position.degree}°{position.minutes}&apos;{position.seconds}&quot;</div>
+                <div className="font-medium font-mono tabular-nums">{position.degree}°{position.minutes}&apos;{position.seconds}&quot;</div>
               </div>
               <div className="p-2 bg-zinc-800 rounded">
                 <div className="text-[10px] text-zinc-500">{t('panchang.nakshatra')}</div>
@@ -89,12 +89,12 @@ export default function PlanetDetailPanel({ planet, position, dignity, isCombust
 
             <div className="pt-2 border-t border-zinc-800">
               <div className="text-[10px] text-zinc-500 mb-1">{t('kundli.speed')}</div>
-              <div className="font-mono text-xs">{position.speed.toFixed(4)}°/day</div>
+              <div className="font-mono tabular-nums text-xs">{position.speed.toFixed(4)}°/day</div>
             </div>
 
             <div className="border-t border-zinc-800 pt-2">
               <div className="text-[10px] text-zinc-500 mb-1">{t('kundli.siderealLongitude')}</div>
-              <div className="font-mono text-xs">{position.siderealLongitude.toFixed(4)}°</div>
+              <div className="font-mono tabular-nums text-xs">{position.siderealLongitude.toFixed(4)}°</div>
             </div>
           </div>
         </motion.div>

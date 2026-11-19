@@ -52,7 +52,7 @@ export default function SiteFooter() {
 
           {/* Popular Tools */}
           <div className="col-span-1">
-            <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">
+            <h3 className="text-sm font-medium text-zinc-400 mb-3">
               {t('footer.popularTools')}
             </h3>
             <nav aria-label="Popular tools" className="flex flex-col gap-2">
@@ -66,7 +66,7 @@ export default function SiteFooter() {
 
           {/* More Tools */}
           <div className="col-span-1">
-            <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">
+            <h3 className="text-sm font-medium text-zinc-400 mb-3">
               {t('footer.moreTools')}
             </h3>
             <nav aria-label="More tools" className="flex flex-col gap-2">
@@ -80,7 +80,7 @@ export default function SiteFooter() {
 
           {/* Resources */}
           <div className="col-span-1">
-            <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">
+            <h3 className="text-sm font-medium text-zinc-400 mb-3">
               {t('footer.about')}
             </h3>
             <nav aria-label="Resources" className="flex flex-col gap-2">

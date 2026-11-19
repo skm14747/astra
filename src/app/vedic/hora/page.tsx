@@ -9,6 +9,8 @@ import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
 import { useT } from '@/lib/i18n';
+import type { Lang } from '@/lib/vedic/types';
+import { getPlanetName } from '@/lib/vedic/domain-i18n';
 
 const DEFAULT_LOCATION = { latitude: 28.6139, longitude: 77.209, label: 'New Delhi' };
 
@@ -26,16 +28,16 @@ function formatTime(d: Date): string {
   return d.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
 }
 
-function HoraRow({ period, isNow, t }: { period: HoraPeriod; isNow: boolean; t: ReturnType<typeof useT> }) {
+function HoraRow({ period, isNow, t, lang }: { period: HoraPeriod; isNow: boolean; t: ReturnType<typeof useT>; lang: Lang }) {
   const info = HORA_QUALITIES[period.planet] ?? HORA_QUALITIES.Sun;
   const glyph = PLANET_GLYPH[period.planet as keyof typeof PLANET_GLYPH] ?? '';
 
   return (
-    <div className={`glass-card rounded-xl p-4 flex items-center gap-4 transition-all ${isNow ? 'vedic-glow border-violet-500/30' : ''}`}>
+    <div className={`glass-card rounded-xl p-4 flex items-center gap-4 transition-colors ${isNow ? 'vedic-glow border-violet-500/30' : ''}`}>
       <span className="text-xl w-8 text-center">{glyph}</span>
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-0.5">
-          <span className={`font-semibold ${info.color}`}>{period.planet}</span>
+          <span className={`font-semibold ${info.color}`}>{getPlanetName(period.planet, lang)}</span>
           <span className={`px-2 py-0.5 rounded-full text-[10px] font-medium border ${info.badge}`}>
             {info.quality}
           </span>
@@ -45,7 +47,7 @@ function HoraRow({ period, isNow, t }: { period: HoraPeriod; isNow: boolean; t: 
             </span>
           )}
         </div>
-        <div className="text-sm text-zinc-500 font-mono">
+        <div className="text-sm text-zinc-500 font-mono tabular-nums">
           {formatTime(period.start)} — {formatTime(period.end)}
         </div>
         <div className="text-xs text-zinc-600 mt-0.5">{info.suitable}</div>
@@ -56,7 +58,7 @@ function HoraRow({ period, isNow, t }: { period: HoraPeriod; isNow: boolean; t: 
 
 export default function HoraPage() {
   const { activeProfile } = useProfile();
-  const { ayanamsaSystem } = useSettings();
+  const { ayanamsaSystem, language } = useSettings();
   const t = useT();
 
   const [now, setNow] = useState<Date | null>(null);
@@ -156,8 +158,8 @@ export default function HoraPage() {
           <div className="flex items-center gap-4">
             <span className="text-4xl">{PLANET_GLYPH[data.current.planet as keyof typeof PLANET_GLYPH]}</span>
             <div>
-              <div className={`text-2xl font-bold ${currentInfo.color}`}>{data.current.planet} {t('hora.now')}</div>
-              <div className="text-sm text-zinc-400 font-mono">
+              <div className={`text-2xl font-bold ${currentInfo.color}`}>{getPlanetName(data.current.planet, (language ?? 'en') as Lang)} {t('hora.now')}</div>
+              <div className="text-sm text-zinc-400 font-mono tabular-nums">
                 {formatTime(data.current.start)} — {formatTime(data.current.end)}
               </div>
               <div className="text-xs text-zinc-500 mt-1">{currentInfo.suitable}</div>
@@ -172,7 +174,7 @@ export default function HoraPage() {
           <div className="section-title mb-4">☀ {t('hora.dayHoras')}</div>
           <div className="space-y-2">
             {data.horas.day.map((h, i) => (
-              <HoraRow key={`day-${i}`} period={h} isNow={isCurrentPeriod(h)} t={t} />
+              <HoraRow key={`day-${i}`} period={h} isNow={isCurrentPeriod(h)} t={t} lang={language as Lang} />
             ))}
           </div>
         </div>
@@ -180,7 +182,7 @@ export default function HoraPage() {
           <div className="section-title mb-4">🌙 {t('hora.nightHoras')}</div>
           <div className="space-y-2">
             {data.horas.night.map((h, i) => (
-              <HoraRow key={`night-${i}`} period={h} isNow={isCurrentPeriod(h)} t={t} />
+              <HoraRow key={`night-${i}`} period={h} isNow={isCurrentPeriod(h)} t={t} lang={language as Lang} />
             ))}
           </div>
         </div>

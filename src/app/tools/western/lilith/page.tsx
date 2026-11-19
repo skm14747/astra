@@ -60,7 +60,7 @@ export default function LilithPage() {
       <div className="glass-card rounded-2xl p-6 vedic-glow relative overflow-hidden">
         <div className="cosmic-orb w-28 h-28 bg-purple-600/8 -top-8 -right-8" />
         <div className="relative z-10">
-          <div className="text-xs text-purple-400/80 uppercase tracking-wider font-medium mb-1">Your Black Moon Lilith</div>
+          <div className="text-xs text-purple-400/80 tracking-wider font-medium mb-1">Your Black Moon Lilith</div>
           <div className="text-3xl text-white font-display font-bold">{data.signName}</div>
           <div className="text-sm text-zinc-400 mt-1">{data.degreeInSign.toFixed(2)}° {data.signName} (tropical longitude {data.longitude.toFixed(2)}°)</div>
         </div>

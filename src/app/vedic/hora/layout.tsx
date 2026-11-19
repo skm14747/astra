@@ -4,7 +4,7 @@ import { BreadcrumbJsonLd, FAQJsonLd, HowToJsonLd } from '@/components/seo/JsonL
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import PageAdWrapper from '@/components/ads/PageAdWrapper';
 
-export const metadata: Metadata = buildVedicMetadata('hora');
+export async function generateMetadata(): Promise<Metadata> { return buildVedicMetadata('hora'); }
 
 const seo = VEDIC_SEO.hora;
 

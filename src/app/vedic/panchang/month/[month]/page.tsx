@@ -48,18 +48,18 @@ export async function generateMetadata({ params }: { params: Promise<{ month: st
     title,
     description,
     alternates: {
-      canonical: `/vedic/panchang/month/${slug}`,
+      canonical: `/vedic/panchang/month/${slug}/`,
       languages: {
-        'en': `/vedic/panchang/month/${slug}`,
-        'hi': `/hi/vedic/panchang/month/${slug}`,
-        'ne': `/ne/vedic/panchang/month/${slug}`,
-        'pt': `/pt/vedic/panchang/month/${slug}`,
-        'es': `/es/vedic/panchang/month/${slug}`,
-        'ja': `/ja/vedic/panchang/month/${slug}`,
-        'x-default': `/vedic/panchang/month/${slug}`,
+        'en': `/vedic/panchang/month/${slug}/`,
+        'hi': `/hi/vedic/panchang/month/${slug}/`,
+        'ne': `/ne/vedic/panchang/month/${slug}/`,
+        'pt': `/pt/vedic/panchang/month/${slug}/`,
+        'es': `/es/vedic/panchang/month/${slug}/`,
+        'ja': `/ja/vedic/panchang/month/${slug}/`,
+        'x-default': `/vedic/panchang/month/${slug}/`,
       },
     },
-    openGraph: { title, description, url: `/vedic/panchang/month/${slug}`, type: 'article' },
+    openGraph: { title, description, url: `/vedic/panchang/month/${slug}/`, type: 'article' },
   };
 }
 
@@ -138,7 +138,7 @@ export default async function MonthlyPanchangPage({ params }: { params: Promise<
             <LocaleLink
               key={tool.href}
               href={tool.href}
-              className="px-4 py-2 rounded-full text-sm text-zinc-400 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.04] hover:border-violet-500/30 transition-all"
+              className="px-4 py-2 rounded-full text-sm text-zinc-400 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.04] hover:border-violet-500/30 transition-colors"
             >
               {tool.label}
             </LocaleLink>

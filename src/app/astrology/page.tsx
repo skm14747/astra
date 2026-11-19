@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Astrology Guides & Planet in House Meanings | Astra Destiny',
   description: 'Explore all 108 planet-in-house interpretations in Vedic astrology, along with comprehensive guides to relationship compatibility, marriage timing, and synastry.',
   keywords: ['astrology guides', 'planet in house', 'vedic astrology interpretations', 'planet in houses meaning', 'astrology articles'],
-  alternates: { canonical: `${BASE_URL}/astrology` },
+  alternates: { canonical: `${BASE_URL}/astrology/` },
 };
 
 const PLANETS = [
@@ -66,7 +66,7 @@ export default function AstrologyHubPage() {
             <LocaleLink
               key={guide.href}
               href={guide.href}
-              className="glass-card rounded-xl p-5 hover:border-violet-500/30 transition-all group"
+              className="glass-card rounded-xl p-5 hover:border-violet-500/30 transition-colors group"
             >
               <div className="flex items-start gap-3">
                 <span className="text-2xl mt-0.5">{guide.icon}</span>
@@ -107,7 +107,7 @@ export default function AstrologyHubPage() {
                     <LocaleLink
                       key={slug}
                       href={`/astrology/${slug}`}
-                      className="bg-white/[0.03] hover:bg-violet-600/10 hover:border-violet-500/30 border border-white/[0.06] rounded-lg p-2.5 text-center transition-all group"
+                      className="bg-white/[0.03] hover:bg-violet-600/10 hover:border-violet-500/30 border border-white/[0.06] rounded-lg p-2.5 text-center transition-colors group"
                     >
                       <div className="text-xs font-semibold text-zinc-300 group-hover:text-violet-300">{ord} House</div>
                       <div className="text-[10px] text-zinc-500 truncate mt-0.5">{HOUSES[i].split(' ')[1]?.replace(/[()]/g, '')}</div>

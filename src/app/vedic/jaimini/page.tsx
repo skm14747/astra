@@ -5,15 +5,20 @@ import EmptyState from '@/components/shared/EmptyState';
 import { calculateJaiminiData, getAmatyakarakaCareer, calculateCharaDasha, calculateBrahmaMaheshwaraRudra } from '@/lib/vedic/jaimini';
 import { PLANET_GLYPH, RASHI_GLYPH } from '@/lib/vedic/glyphs';
 import { RASHI_NAMES } from '@/lib/vedic/constants';
+import type { Lang } from '@/lib/vedic/types';
+import { getPlanetName, getRashiName } from '@/lib/vedic/domain-i18n';
 import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
 import { useT } from '@/lib/i18n';
+import { useSettings } from '@/lib/settings/context';
 
 export default function JaiminiPage() {
   const { chart } = useProfileChart();
   const [now, setNow] = useState<Date | null>(null);
+  const { language } = useSettings();
   const t = useT();
+  const lang = language as Lang;
 
   useEffect(() => { setNow(new Date()); }, []);
 
@@ -51,7 +56,7 @@ export default function JaiminiPage() {
                 <span className="text-zinc-300 text-sm">{k.fullName}</span>
               </div>
               <div className="text-right">
-                <span className="text-zinc-100 font-medium">{PLANET_GLYPH[k.planet]} {k.planet}</span>
+                <span className="text-zinc-100 font-medium">{PLANET_GLYPH[k.planet]} {getPlanetName(k.planet, lang)}</span>
                 <span className="text-zinc-500 text-xs ml-2">{k.degreeInSign.toFixed(2)}°</span>
               </div>
             </div>
@@ -70,7 +75,7 @@ export default function JaiminiPage() {
         </div>
         <div className="glass-card rounded-2xl p-6">
           <h2 className="font-semibold text-zinc-100 text-lg mb-3">{t('jaimini.amkCareer')}</h2>
-          <p className="text-zinc-200">{PLANET_GLYPH[career.planet]} {career.planet}</p>
+          <p className="text-zinc-200">{PLANET_GLYPH[career.planet]} {getPlanetName(career.planet, lang)}</p>
           <p className="text-sm text-cyan-400 mt-1">{career.career}</p>
         </div>
         <div className="glass-card rounded-2xl p-6">

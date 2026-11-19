@@ -233,9 +233,7 @@ export default function Navbar() {
               >
                 {mounted && activeProfile ? (
                   <>
-                    <span className="relative w-2 h-2 rounded-full bg-violet-400">
-                      <span className="absolute inset-0 rounded-full bg-violet-400 animate-ping opacity-40" />
-                    </span>
+                    <span className="relative w-2 h-2 rounded-full bg-violet-400 shadow-[0_0_6px_rgba(124,92,252,0.5)]" />
                     <span className="font-medium text-zinc-200 max-w-[100px] truncate">{activeProfile.name}</span>
                     <svg className="w-3.5 h-3.5 text-zinc-500" viewBox="0 0 12 12" fill="none"><path d="M3 5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
                   </>
@@ -328,7 +326,7 @@ export default function Navbar() {
                     {moreLangs.length > 0 && (
                       <>
                         <div className="my-1 border-t border-white/[0.06] mx-2" />
-                        <div className="px-3 pt-1 pb-0.5 text-[10px] font-medium text-zinc-600 uppercase tracking-wider">More</div>
+                        <div className="px-3 pt-1 pb-0.5 text-[10px] font-medium text-zinc-600">More</div>
                         {moreLangs.map(l => (
                           <button
                             key={l.code}

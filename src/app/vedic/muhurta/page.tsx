@@ -9,6 +9,8 @@ import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
 import { useT } from '@/lib/i18n';
+import type { Lang } from '@/lib/vedic/types';
+import { getPlanetName } from '@/lib/vedic/domain-i18n';
 
 const DEFAULT_LOCATION = { latitude: 28.6139, longitude: 77.209, label: 'New Delhi' };
 
@@ -16,7 +18,7 @@ function fmt(d: Date): string { return d.toLocaleTimeString('en-IN', { hour: '2-
 
 export default function MuhurtaPage() {
   const { activeProfile } = useProfile();
-  const { ayanamsaSystem } = useSettings();
+  const { ayanamsaSystem, language } = useSettings();
   const t = useT();
 
   const [now, setNow] = useState<Date | null>(null);
@@ -132,7 +134,7 @@ export default function MuhurtaPage() {
               )}
             </p>
           </div>
-          <span className="font-mono text-sm text-zinc-400">{timeStr}</span>
+          <span className="font-mono tabular-nums text-sm text-zinc-400">{timeStr}</span>
         </div>
       </section>
 
@@ -143,7 +145,7 @@ export default function MuhurtaPage() {
             <div className="cosmic-orb w-20 h-20 bg-violet-600/8 -top-6 -right-6" />
             <div className="relative z-10">
               <div className="section-title mb-2">{t('muhurta.currentHora')}</div>
-              <p className="text-xl text-white font-display font-bold">{data.hora.planet}</p>
+              <p className="text-xl text-white font-display font-bold">{getPlanetName(data.hora.planet, language as Lang)}</p>
               <p className="text-xs text-zinc-500 mt-1">Hora #{data.hora.horaNumber} {t('common.of')} 24</p>
             </div>
           </div>
@@ -172,7 +174,7 @@ export default function MuhurtaPage() {
             return (
               <div
                 key={i}
-                className={`glass-card rounded-xl px-4 py-3 flex justify-between items-center transition-all ${
+                className={`glass-card rounded-xl px-4 py-3 flex justify-between items-center transition-colors ${
                   isNow ? 'vedic-glow ring-1 ring-violet-500/30' : ''
                 }`}
               >
@@ -185,7 +187,7 @@ export default function MuhurtaPage() {
                     </span>
                   )}
                 </div>
-                <span className={`text-sm font-mono ${isNow ? 'text-zinc-200' : 'text-zinc-500'}`}>
+                <span className={`text-sm font-mono tabular-nums ${isNow ? 'text-zinc-200' : 'text-zinc-500'}`}>
                   {fmt(m.start)} — {fmt(m.end)}
                 </span>
               </div>

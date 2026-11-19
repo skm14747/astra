@@ -33,7 +33,7 @@ function ChoghadiyaRow({ period, isNow, t }: { period: ChoghadiyaPeriod; isNow: 
   const typeLabel = t(typeKey) !== typeKey ? t(typeKey) : period.type;
 
   return (
-    <div className={`glass-card rounded-xl p-4 flex items-center gap-4 transition-all ${isNow ? `vedic-glow ${style.border}` : ''}`}>
+    <div className={`glass-card rounded-xl p-4 flex items-center gap-4 transition-colors ${isNow ? `vedic-glow ${style.border}` : ''}`}>
       <span className="text-xl w-8 text-center">{planetGlyph}</span>
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-0.5">
@@ -47,7 +47,7 @@ function ChoghadiyaRow({ period, isNow, t }: { period: ChoghadiyaPeriod; isNow: 
             </span>
           )}
         </div>
-        <div className="text-sm text-zinc-500 font-mono">
+        <div className="text-sm text-zinc-500 font-mono tabular-nums">
           {formatTime(period.start)} — {formatTime(period.end)}
         </div>
       </div>

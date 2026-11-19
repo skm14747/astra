@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Venus-Mars Compatibility in Vedic Astrology — Romantic Chemistry Guide | Astra Destiny',
   description: 'Venus-Mars compatibility in Vedic astrology: how these two planets of love and desire interact across signs to reveal romantic chemistry, attraction patterns, and relationship dynamics.',
   keywords: ['venus mars compatibility', 'venus mars synastry', 'vedic astrology love compatibility', 'romantic chemistry astrology'],
-  alternates: { canonical: `${BASE_URL}/astrology/venus-mars-compatibility` },
+  alternates: { canonical: `${BASE_URL}/astrology/venus-mars-compatibility/` },
 };
 
 const VENUS_IN_SIGNS = [

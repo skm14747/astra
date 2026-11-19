@@ -96,7 +96,7 @@ export default function Sidebar() {
               <span className="text-sm flex-shrink-0">{sec.icon}</span>
               {!collapsed && (
                 <>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider flex-1 text-left">{sec.heading}</span>
+                  <span className="text-[10px] font-semibold flex-1 text-left">{sec.heading}</span>
                   <svg className={`w-3 h-3 transition-transform ${expandedSections[sec.heading] ? 'rotate-90' : ''}`} viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M4.5 2.5l3.5 3.5-3.5 3.5" strokeLinecap="round" />
                   </svg>

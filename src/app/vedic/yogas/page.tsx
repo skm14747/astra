@@ -8,11 +8,16 @@ import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
 import { useT } from '@/lib/i18n';
+import { useSettings } from '@/lib/settings/context';
+import type { Lang } from '@/lib/vedic/types';
+import { getPlanetName } from '@/lib/vedic/domain-i18n';
 
 export default function YogasPage() {
   const { chart } = useProfileChart();
 
+  const { language } = useSettings();
   const t = useT();
+  const lang = language as Lang;
   const { yogas, doshas } = useMemo(() => {
     if (!chart) return { yogas: [], doshas: [] };
     return { yogas: detectAllYogas(chart), doshas: detectAllDoshas(chart) };
@@ -66,7 +71,7 @@ export default function YogasPage() {
                       <p className="text-sm text-zinc-400 leading-relaxed">{y.description}</p>
                       <div className="mt-3 flex gap-2 flex-wrap">
                         {y.planets.map(p => (
-                          <span key={p} className="px-2 py-0.5 rounded text-[10px] bg-white/[0.04] text-zinc-500">{p}</span>
+                          <span key={p} className="px-2 py-0.5 rounded text-[10px] bg-white/[0.04] text-zinc-500">{getPlanetName(p, lang)}</span>
                         ))}
                         {y.houses.map(h => (
                           <span key={h} className="px-2 py-0.5 rounded text-[10px] bg-white/[0.04] text-zinc-500">H{h}</span>

@@ -126,7 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-WPZL23HX');`}
         </Script>
       </head>
-      <body className={`${playfair.variable} ${inter.variable} ${notoDevanagari.variable} bg-astra-bg text-zinc-200 min-h-screen`}>
+      <body suppressHydrationWarning className={`${playfair.variable} ${inter.variable} ${notoDevanagari.variable} bg-astra-bg text-zinc-200 min-h-screen`}>
         {/* GTM noscript fallback */}
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WPZL23HX" height="0" width="0" style={{display:'none',visibility:'hidden'}} />

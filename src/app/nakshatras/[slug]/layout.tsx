@@ -14,11 +14,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: article.title,
     description: article.description,
     keywords: article.keywords,
-    alternates: { canonical: `${BASE_URL}/nakshatras/${slug}` },
+    alternates: { canonical: `${BASE_URL}/nakshatras/${slug}/` },
     openGraph: {
       title: article.title,
       description: article.description,
-      url: `${BASE_URL}/nakshatras/${slug}`,
+      url: `${BASE_URL}/nakshatras/${slug}/`,
       siteName: 'Astra Destiny',
       type: 'article',
     },

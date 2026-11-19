@@ -5,7 +5,8 @@ import { useSettings } from '@/lib/settings/context';
 import EmptyState from '@/components/shared/EmptyState';
 import { generateKundli } from '@/lib/vedic/core';
 import { calculateFullCompatibility } from '@/lib/vedic/matching';
-import type { CompatibilityResult } from '@/lib/vedic/types';
+import type { CompatibilityResult, Lang } from '@/lib/vedic/types';
+import { getKootaName, getKootaArea, getCompatibilityDescription, getVerdict } from '@/lib/vedic/domain-i18n';
 import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
@@ -13,8 +14,9 @@ import { useT } from '@/lib/i18n';
 
 export default function CompatibilityPage() {
   const { profiles, activeProfileId } = useProfile();
-  const { ayanamsaSystem } = useSettings();
+  const { ayanamsaSystem, language } = useSettings();
   const t = useT();
+  const lang = language as Lang;
   const [profile1Id, setProfile1Id] = useState<string | null>(null);
   const [profile2Id, setProfile2Id] = useState<string | null>(null);
 
@@ -83,7 +85,7 @@ export default function CompatibilityPage() {
             <div className={`text-5xl font-bold font-display ${result.totalScore >= 18 ? 'text-green-400' : 'text-red-400'}`}>
               {result.totalScore}<span className="text-xl text-zinc-600"> / {result.maxScore}</span>
             </div>
-            <p className="text-zinc-400 mt-2">{result.verdict}</p>
+            <p className="text-zinc-400 mt-2">{getVerdict(result.verdict, lang)}</p>
             {(result.mangalDosha.boy || result.mangalDosha.girl) && (
               <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-500/10 text-yellow-400 text-xs">
                 ⚠ {t('compat.mangalDosha')}: {[result.mangalDosha.boy && t('compat.partner1'), result.mangalDosha.girl && t('compat.partner2')].filter(Boolean).join(' & ')}
@@ -99,11 +101,11 @@ export default function CompatibilityPage() {
                 return (
                 <div key={k.name} className={`glass-card rounded-xl px-5 py-3 flex items-center justify-between ${kootaBg}`}>
                   <div>
-                    <span className="font-medium text-zinc-200 text-sm">{k.name}</span>
-                    <span className="text-xs text-zinc-600 ml-2">({k.area})</span>
+                    <span className="font-medium text-zinc-200 text-sm">{getKootaName(k.name, lang)}</span>
+                    <span className="text-xs text-zinc-600 ml-2">({getKootaArea(k.name, lang)})</span>
                   </div>
                   <div className="flex items-center gap-4">
-                    <span className="text-xs text-zinc-500 hidden sm:inline">{k.description}</span>
+                    <span className="text-xs text-zinc-500 hidden sm:inline">{getCompatibilityDescription(k.description, lang)}</span>
                     <span className={`font-bold text-sm min-w-[40px] text-right ${
                       k.score === k.maxScore ? 'text-green-400' : k.score === 0 ? 'text-red-400' : 'text-yellow-400'
                     }`}>

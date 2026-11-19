@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Love Horoscope — Vedic Astrology Romance & Relationship Guide | Astra Destiny',
   description: 'Discover your love potential through Vedic astrology. Venus-Mars compatibility, Darakaraka spouse analysis, marriage timing, synastry aspects, and Kundli matching — all in one place.',
   keywords: ['love horoscope', 'vedic love astrology', 'marriage astrology', 'venus mars compatibility', 'darakaraka spouse', 'kundli matching', 'synastry'],
-  alternates: { canonical: `${BASE_URL}/horoscope/love` },
+  alternates: { canonical: `${BASE_URL}/horoscope/love/` },
 };
 
 const LOVE_TOOLS = [
@@ -57,7 +57,7 @@ export default function LoveHoroscopePage() {
         <h2 className="font-display text-xl font-semibold text-zinc-200 mb-4">Love &amp; Relationship Tools</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {LOVE_TOOLS.map(tool => (
-            <LocaleLink key={tool.href} href={tool.href} className="glass-card rounded-xl p-5 hover:border-violet-500/30 transition-all group">
+            <LocaleLink key={tool.href} href={tool.href} className="glass-card rounded-xl p-5 hover:border-violet-500/30 transition-colors group">
               <div className="flex items-start gap-3">
                 <span className="text-2xl mt-0.5">{tool.icon}</span>
                 <div>

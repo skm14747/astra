@@ -5,16 +5,20 @@ import EmptyState from '@/components/shared/EmptyState';
 import { calculateAshtakavarga, getWeakHouses } from '@/lib/vedic/ashtakavarga';
 import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
 import { RASHI_NAMES } from '@/lib/vedic/constants';
-import type { GrahaPlanet } from '@/lib/vedic/types';
+import type { GrahaPlanet, Lang } from '@/lib/vedic/types';
+import { getPlanetName, getRashiName } from '@/lib/vedic/domain-i18n';
 import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
 import { useT } from '@/lib/i18n';
+import { useSettings } from '@/lib/settings/context';
 
 export default function AshtakavargaPage() {
   const { chart } = useProfileChart();
 
+  const { language } = useSettings();
   const t = useT();
+  const lang = language as Lang;
   const data = useMemo(() => {
     if (!chart) return null;
     const av = calculateAshtakavarga(chart);
@@ -49,8 +53,8 @@ export default function AshtakavargaPage() {
         return (
           <div className="flex gap-3 flex-wrap">
             <span className="planet-badge">{t('ashtakavarga.totalSav', { n: totalSav })}</span>
-            <span className="planet-badge !bg-emerald-500/12 !border-emerald-500/20 !text-emerald-400">{t('ashtakavarga.strongest', { sign: RASHI_NAMES[maxIdx], n: data.av.sav[maxIdx] })}</span>
-            <span className="planet-badge !bg-red-500/12 !border-red-500/20 !text-red-400">{t('ashtakavarga.weakest', { sign: RASHI_NAMES[minIdx], n: data.av.sav[minIdx] })}</span>
+            <span className="planet-badge !bg-emerald-500/12 !border-emerald-500/20 !text-emerald-400">{t('ashtakavarga.strongest', { sign: getRashiName(maxIdx, lang), n: data.av.sav[maxIdx] })}</span>
+            <span className="planet-badge !bg-red-500/12 !border-red-500/20 !text-red-400">{t('ashtakavarga.weakest', { sign: getRashiName(minIdx, lang), n: data.av.sav[minIdx] })}</span>
           </div>
         );
       })()}
@@ -63,25 +67,25 @@ export default function AshtakavargaPage() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-white/[0.06]">
-                <th className="text-left py-3 px-4 text-zinc-400 text-xs font-medium uppercase tracking-wider">{t('kundli.planet')}</th>
-                {RASHI_NAMES.map(r => <th key={r} className="py-3 px-1.5 text-center text-[10px] text-zinc-500 font-medium">{r.slice(0, 3)}</th>)}
+                <th className="text-left py-3 px-4 text-zinc-400 text-xs font-medium">{t('kundli.planet')}</th>
+                {RASHI_NAMES.map((r, ri) => <th key={r} className="py-3 px-1.5 text-center text-[10px] text-zinc-500 font-medium">{getRashiName(ri, lang).slice(0, 3)}</th>)}
               </tr>
             </thead>
             <tbody>
               {planets.map((p, pi) => (
                 <tr key={p} className={`border-b border-white/[0.03] ${pi % 2 === 0 ? 'bg-white/[0.01]' : ''}`}>
                   <td className="py-2.5 px-4 font-medium text-zinc-200">
-                    <span className="mr-1.5">{PLANET_GLYPH[p]}</span>{p}
+                    <span className="mr-1.5">{PLANET_GLYPH[p]}</span>{getPlanetName(p, lang)}
                   </td>
                   {data.av.bav[p].map((v, i) => (
-                    <td key={i} className={`py-2.5 px-1.5 text-center text-xs font-mono ${v >= 4 ? 'text-green-400' : v <= 2 ? 'text-red-400' : 'text-zinc-400'}`}>{v}</td>
+                    <td key={i} className={`py-2.5 px-1.5 text-center text-xs font-mono tabular-nums ${v >= 4 ? 'text-green-400' : v <= 2 ? 'text-red-400' : 'text-zinc-400'}`}>{v}</td>
                   ))}
                 </tr>
               ))}
               <tr className="border-t-2 border-white/[0.08] font-bold bg-white/[0.02]">
                 <td className="py-3 px-4 text-zinc-100">SAV</td>
                 {data.av.sav.map((v, i) => (
-                  <td key={i} className={`py-3 px-1.5 text-center text-xs font-mono ${v < 27 ? 'text-red-400 bg-red-500/[0.06]' : v >= 30 ? 'text-green-400 bg-emerald-500/[0.06]' : 'text-zinc-300'}`}>{v}</td>
+                  <td key={i} className={`py-3 px-1.5 text-center text-xs font-mono tabular-nums ${v < 27 ? 'text-red-400 bg-red-500/[0.06]' : v >= 30 ? 'text-green-400 bg-emerald-500/[0.06]' : 'text-zinc-300'}`}>{v}</td>
                 ))}
               </tr>
             </tbody>

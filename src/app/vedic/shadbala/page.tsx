@@ -3,18 +3,22 @@ import { useProfileChart } from '@/hooks/useProfileChart';
 import EmptyState from '@/components/shared/EmptyState';
 import { calculateShadbala, calculateVimsopakaBala, calculateVaiseshikamsa, calculateBhavaBala } from '@/lib/vedic/shadbala';
 import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
-import type { GrahaPlanet } from '@/lib/vedic/types';
+import type { GrahaPlanet, Lang } from '@/lib/vedic/types';
+import { getPlanetName } from '@/lib/vedic/domain-i18n';
 import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
 import { useT } from '@/lib/i18n';
+import { useSettings } from '@/lib/settings/context';
 
 const GRAHAS: GrahaPlanet[] = ['Sun', 'Moon', 'Mars', 'Mercury', 'Jupiter', 'Venus', 'Saturn'];
 
 export default function ShadbalaPage() {
   const { chart } = useProfileChart();
 
+  const { language } = useSettings();
   const t = useT();
+  const lang = language as Lang;
   if (!chart) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
       <EmptyState icon="⚖" title={t('shadbala.title')} description={t('empty.shadbala')} />
@@ -62,7 +66,7 @@ export default function ShadbalaPage() {
               const ratioColor = s.ratio >= 1 ? 'text-emerald-400' : 'text-amber-400';
               return (
                 <tr key={p} className="border-b border-white/5">
-                  <td className="py-2 pr-3 text-zinc-200">{PLANET_GLYPH[p]} {p}</td>
+                  <td className="py-2 pr-3 text-zinc-200">{PLANET_GLYPH[p]} {getPlanetName(p, lang)}</td>
                   <td className="text-right px-2 text-zinc-300">{Math.round(s.sthanaBala)}</td>
                   <td className="text-right px-2 text-zinc-300">{Math.round(s.digBala)}</td>
                   <td className="text-right px-2 text-zinc-300">{Math.round(s.kalaBala)}</td>
@@ -71,7 +75,7 @@ export default function ShadbalaPage() {
                   <td className="text-right px-2 text-zinc-300">{Math.round(s.drikBala)}</td>
                   <td className="text-right px-2 font-bold text-zinc-100">{Math.round(s.total)}</td>
                   <td className="text-right px-2 text-zinc-500">{s.required}</td>
-                  <td className={`text-right pl-2 font-mono ${ratioColor}`}>{s.ratio.toFixed(2)}</td>
+                  <td className={`text-right pl-2 font-mono tabular-nums ${ratioColor}`}>{s.ratio.toFixed(2)}</td>
                 </tr>
               );
             })}
@@ -86,8 +90,8 @@ export default function ShadbalaPage() {
           <div className="space-y-2">
             {GRAHAS.map(p => (
               <div key={p} className="flex justify-between text-sm">
-                <span className="text-zinc-300">{PLANET_GLYPH[p]} {p}</span>
-                <span className="text-emerald-400 font-mono">{shadbala.ishtaPhala[p].toFixed(1)}</span>
+                <span className="text-zinc-300">{PLANET_GLYPH[p]} {getPlanetName(p, lang)}</span>
+                <span className="text-emerald-400 font-mono tabular-nums">{shadbala.ishtaPhala[p].toFixed(1)}</span>
               </div>
             ))}
           </div>
@@ -97,8 +101,8 @@ export default function ShadbalaPage() {
           <div className="space-y-2">
             {GRAHAS.map(p => (
               <div key={p} className="flex justify-between text-sm">
-                <span className="text-zinc-300">{PLANET_GLYPH[p]} {p}</span>
-                <span className="text-amber-400 font-mono">{shadbala.kashtaPhala[p].toFixed(1)}</span>
+                <span className="text-zinc-300">{PLANET_GLYPH[p]} {getPlanetName(p, lang)}</span>
+                <span className="text-amber-400 font-mono tabular-nums">{shadbala.kashtaPhala[p].toFixed(1)}</span>
               </div>
             ))}
           </div>
@@ -112,8 +116,8 @@ export default function ShadbalaPage() {
           <div className="space-y-2">
             {GRAHAS.map(p => (
               <div key={p} className="flex justify-between text-sm">
-                <span className="text-zinc-300">{PLANET_GLYPH[p]} {p}</span>
-                <span className="text-violet-400 font-mono">{vimsopaka[p].toFixed(1)} / 20</span>
+                <span className="text-zinc-300">{PLANET_GLYPH[p]} {getPlanetName(p, lang)}</span>
+                <span className="text-violet-400 font-mono tabular-nums">{vimsopaka[p].toFixed(1)} / 20</span>
               </div>
             ))}
           </div>
@@ -123,7 +127,7 @@ export default function ShadbalaPage() {
           <div className="space-y-2">
             {GRAHAS.map(p => (
               <div key={p} className="flex justify-between text-sm">
-                <span className="text-zinc-300">{PLANET_GLYPH[p]} {p}</span>
+                <span className="text-zinc-300">{PLANET_GLYPH[p]} {getPlanetName(p, lang)}</span>
                 <span className="text-cyan-400">{vaiseshikamsa[p].classification} ({vaiseshikamsa[p].count})</span>
               </div>
             ))}
@@ -137,7 +141,7 @@ export default function ShadbalaPage() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
           {bhavaBala.houses.map(h => (
             <div key={h.house} className="bg-white/[0.03] rounded-xl p-3 text-center">
-              <div className="text-xs text-zinc-500 mb-1">House {h.house}</div>
+              <div className="text-xs text-zinc-500 mb-1">{t('rpt.th.house')} {h.house}</div>
               <div className="text-lg font-bold text-zinc-100">{Math.round(h.total)}</div>
               <div className="text-xs text-zinc-500 mt-1">
                 Lord: {Math.round(h.bhavadhipatiBala)} · Dig: {h.bhavaDigBala} · Asp: {h.bhavaDrishtiBala}

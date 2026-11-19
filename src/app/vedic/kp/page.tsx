@@ -49,11 +49,11 @@ export default function KPPage() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-white/[0.06]">
-                <th className="text-left py-3 px-5 text-zinc-400 text-xs font-medium uppercase tracking-wider">{t('kp.point')}</th>
-                <th className="text-left py-3 px-4 text-zinc-400 text-xs font-medium uppercase tracking-wider">{t('kp.signLord')}</th>
-                <th className="text-left py-3 px-4 text-zinc-400 text-xs font-medium uppercase tracking-wider">{t('kp.starLord')}</th>
-                <th className="text-left py-3 px-4 text-zinc-400 text-xs font-medium uppercase tracking-wider">{t('kp.subLord')}</th>
-                <th className="text-left py-3 px-4 text-zinc-400 text-xs font-medium uppercase tracking-wider">{t('kp.subSub')}</th>
+                <th className="text-left py-3 px-5 text-zinc-400 text-xs font-medium">{t('kp.point')}</th>
+                <th className="text-left py-3 px-4 text-zinc-400 text-xs font-medium">{t('kp.signLord')}</th>
+                <th className="text-left py-3 px-4 text-zinc-400 text-xs font-medium">{t('kp.starLord')}</th>
+                <th className="text-left py-3 px-4 text-zinc-400 text-xs font-medium">{t('kp.subLord')}</th>
+                <th className="text-left py-3 px-4 text-zinc-400 text-xs font-medium">{t('kp.subSub')}</th>
               </tr>
             </thead>
             <tbody>

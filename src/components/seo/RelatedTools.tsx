@@ -29,7 +29,7 @@ export default function RelatedTools({
   if (!tools.length) return null;
   return (
     <nav aria-label="Related tools" className="mt-12 pt-8 border-t border-white/[0.04]">
-      <h2 className="text-sm font-semibold text-zinc-400 tracking-wide uppercase mb-4">
+      <h2 className="text-sm font-medium text-zinc-400 mb-4">
         {t('related.title')}
       </h2>
       <div className="flex flex-wrap gap-2">
@@ -39,7 +39,7 @@ export default function RelatedTools({
             <LocaleLink
               key={tool.href}
               href={tool.href}
-              className="px-4 py-2 rounded-full text-sm text-zinc-400 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.04] hover:border-violet-500/30 transition-all"
+              className="px-4 py-2 rounded-full text-sm text-zinc-400 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.04] hover:border-violet-500/30 transition-colors"
             >
               {key ? t(key) : tool.label}
             </LocaleLink>

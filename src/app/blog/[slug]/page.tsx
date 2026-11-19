@@ -21,22 +21,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: post.description,
     keywords: post.keywords,
     alternates: {
-      canonical: `/blog/${post.slug}`,
+      canonical: `/blog/${post.slug}/`,
       languages: {
-        'en': `/blog/${post.slug}`,
-        'hi': `/hi/blog/${post.slug}`,
-        'ne': `/ne/blog/${post.slug}`,
-        'pt': `/pt/blog/${post.slug}`,
-        'es': `/es/blog/${post.slug}`,
-        'ja': `/ja/blog/${post.slug}`,
-        'fr': `/fr/blog/${post.slug}`,
-        'x-default': `/blog/${post.slug}`,
+        'en': `/blog/${post.slug}/`,
+        'hi': `/hi/blog/${post.slug}/`,
+        'ne': `/ne/blog/${post.slug}/`,
+        'pt': `/pt/blog/${post.slug}/`,
+        'es': `/es/blog/${post.slug}/`,
+        'ja': `/ja/blog/${post.slug}/`,
+        'fr': `/fr/blog/${post.slug}/`,
+        'x-default': `/blog/${post.slug}/`,
       },
     },
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `/blog/${post.slug}`,
+      url: `/blog/${post.slug}/`,
       type: 'article',
       publishedTime: post.date,
       authors: [post.author],
@@ -147,13 +147,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Related posts */}
       {relatedPosts.length > 0 && (
         <nav className="mt-8 pt-6 border-t border-white/[0.04]">
-          <h2 className="text-sm font-semibold text-zinc-400 tracking-wide uppercase mb-4">More Articles</h2>
+          <h2 className="text-sm font-medium text-zinc-400 mb-4">More Articles</h2>
           <div className="grid gap-3">
             {relatedPosts.map(rp => (
               <LocaleLink
                 key={rp.slug}
                 href={`/blog/${rp.slug}`}
-                className="glass-card rounded-xl p-4 hover:border-violet-500/30 transition-all flex justify-between items-center"
+                className="glass-card rounded-xl p-4 hover:border-violet-500/30 transition-colors flex justify-between items-center"
               >
                 <div>
                   <div className="font-medium text-sm text-zinc-200">{rp.title}</div>

@@ -16,7 +16,7 @@ function RashiCard({ p, isOpen, toggle, t }: { p: DailyPrediction; isOpen: boole
   const hindi = RASHI_HINDI[p.rashi];
 
   return (
-    <div className="glass-card rounded-2xl overflow-hidden transition-all">
+    <div className="glass-card rounded-2xl overflow-hidden transition-colors">
       <button
         onClick={toggle}
         className="w-full p-5 flex items-center gap-4 text-left hover:bg-white/[0.02] transition-colors"
@@ -128,7 +128,7 @@ export default function RashifalPage() {
                 setOpenSign(openSign === p.rashi ? null : p.rashi);
                 document.getElementById(`rashi-${p.rashi}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
               }}
-              className={`px-3 py-2 rounded-xl text-sm font-medium transition-all border ${
+              className={`px-3 py-2 rounded-xl text-sm font-medium transition-colors border ${
                 openSign === p.rashi
                   ? 'bg-violet-500/15 text-violet-400 border-violet-500/30'
                   : 'glass-card text-zinc-400 hover:text-white border-transparent'

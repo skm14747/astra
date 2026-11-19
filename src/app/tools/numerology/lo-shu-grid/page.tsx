@@ -67,7 +67,7 @@ export default function LoShuGridPage() {
                     return (
                       <div
                         key={num}
-                        className={`w-20 h-20 flex flex-col items-center justify-center rounded-xl border-2 transition-all ${
+                        className={`w-20 h-20 flex flex-col items-center justify-center rounded-xl border-2 transition-colors ${
                           count > 0
                             ? 'bg-cyan-600/20 border-cyan-500/40 shadow-lg shadow-cyan-500/10'
                             : 'bg-white/[0.02] border-white/5'
@@ -87,11 +87,11 @@ export default function LoShuGridPage() {
 
             <div className="grid grid-cols-2 gap-3 text-sm">
               <div className="bg-white/[0.03] rounded-xl p-3">
-                <div className="text-xs text-cyan-400 uppercase mb-1">Present Numbers</div>
+                <div className="text-xs text-cyan-400 mb-1">Present Numbers</div>
                 <div className="text-zinc-300">{result.presentNumbers.join(', ') || 'None'}</div>
               </div>
               <div className="bg-white/[0.03] rounded-xl p-3">
-                <div className="text-xs text-amber-400 uppercase mb-1">Missing Numbers</div>
+                <div className="text-xs text-amber-400 mb-1">Missing Numbers</div>
                 <div className="text-zinc-300">{result.missingNumbers.join(', ') || 'None'}</div>
               </div>
             </div>

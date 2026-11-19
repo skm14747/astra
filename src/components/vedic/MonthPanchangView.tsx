@@ -69,12 +69,12 @@ export default function MonthPanchangView({
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-white/[0.06] bg-white/[0.02]">
-                <th className="px-3 py-2.5 text-left text-xs text-zinc-500 uppercase tracking-wider font-medium w-16">{t('panchang.date')}</th>
-                <th className="px-3 py-2.5 text-left text-xs text-zinc-500 uppercase tracking-wider font-medium w-12">{t('panchang.day')}</th>
-                <th className="px-3 py-2.5 text-left text-xs text-zinc-500 uppercase tracking-wider font-medium">{t('panchang.tithi')}</th>
-                <th className="px-3 py-2.5 text-left text-xs text-zinc-500 uppercase tracking-wider font-medium">{t('panchang.nakshatra')}</th>
-                <th className="px-3 py-2.5 text-left text-xs text-zinc-500 uppercase tracking-wider font-medium hidden sm:table-cell">{t('panchang.yoga')}</th>
-                <th className="px-3 py-2.5 text-left text-xs text-zinc-500 uppercase tracking-wider font-medium hidden md:table-cell">{t('panchang.paksha')}</th>
+                <th className="px-3 py-2.5 text-left text-xs text-zinc-500 font-medium w-16">{t('panchang.date')}</th>
+                <th className="px-3 py-2.5 text-left text-xs text-zinc-500 font-medium w-12">{t('panchang.day')}</th>
+                <th className="px-3 py-2.5 text-left text-xs text-zinc-500 font-medium">{t('panchang.tithi')}</th>
+                <th className="px-3 py-2.5 text-left text-xs text-zinc-500 font-medium">{t('panchang.nakshatra')}</th>
+                <th className="px-3 py-2.5 text-left text-xs text-zinc-500 font-medium hidden sm:table-cell">{t('panchang.yoga')}</th>
+                <th className="px-3 py-2.5 text-left text-xs text-zinc-500 font-medium hidden md:table-cell">{t('panchang.paksha')}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/[0.04]">

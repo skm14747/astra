@@ -4,12 +4,13 @@ import { useProfile } from '@/lib/profile/context';
 import EmptyState from '@/components/shared/EmptyState';
 import { calculateMatrix } from '@/lib/matrix/core';
 import { calculateMatrixCompatibility } from '@/lib/matrix/compatibility';
-import { getArcana } from '@/lib/matrix/arcana';
+import { useLocalizedArcana } from '@/lib/matrix/arcana-i18n';
 import { useT } from '@/lib/i18n';
 
 export default function MatrixCompatibilityPage() {
   const { profiles, activeProfileId } = useProfile();
   const t = useT();
+  const arcana = useLocalizedArcana();
   const [p1Id, setP1Id] = useState<string | null>(null);
   const [p2Id, setP2Id] = useState<string | null>(null);
 
@@ -71,7 +72,7 @@ export default function MatrixCompatibilityPage() {
           <div className="glass-card rounded-2xl p-8 text-center matrix-glow">
             <div className="section-title mb-2" style={{ color: '#e84393' }}>{t('matrixCompat.harmonyScore')}</div>
             <div className="text-5xl font-bold font-display text-pink-400">{result.scores.harmony}</div>
-            <p className="text-zinc-400 mt-2">{getArcana(result.scores.harmony).name}</p>
+            <p className="text-zinc-400 mt-2">{arcana(result.scores.harmony).name}</p>
           </div>
 
           <div className="section-title mb-3" style={{ color: '#e84393' }}>{t('matrixCompat.dimensionScores')}</div>
@@ -88,9 +89,9 @@ export default function MatrixCompatibilityPage() {
               const maxVal = Math.max(...dims.map(d => d[1]));
               return dims.map(([label, val]) => (
                 <div key={label} className={`glass-card rounded-xl p-4 text-center glow-hover ${val === maxVal ? 'matrix-glow' : ''}`}>
-                  <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">{label}</div>
+                  <div className="text-[10px] text-zinc-500 tracking-wider mb-1">{label}</div>
                   <div className={`text-2xl font-bold ${val === maxVal ? 'text-pink-400' : 'text-zinc-100'}`}>{val}</div>
-                  <div className="text-[10px] text-zinc-600 mt-0.5">{getArcana(val).name}</div>
+                  <div className="text-[10px] text-zinc-600 mt-0.5">{arcana(val).name}</div>
                 </div>
               ));
             })()}

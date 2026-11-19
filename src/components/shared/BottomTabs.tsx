@@ -26,7 +26,7 @@ export default function BottomTabs() {
             <LocaleLink
               key={tab.href}
               href={tab.href}
-              className={`flex flex-col items-center gap-1 px-3 py-1.5 rounded-xl transition-all ${
+              className={`flex flex-col items-center gap-1 px-3 py-1.5 rounded-xl transition-colors ${
                 active ? 'text-violet-300' : 'text-zinc-500 hover:text-zinc-300'
               }`}
             >

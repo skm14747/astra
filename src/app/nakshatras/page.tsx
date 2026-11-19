@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: '27 Nakshatras — Complete Vedic Astrology Guide | Astra Destiny',
   description: 'Explore all 27 Nakshatras (lunar mansions) in Vedic astrology. Personality traits, deity, symbol, compatibility, and career for each Nakshatra.',
   keywords: ['nakshatras', '27 nakshatras', 'nakshatra list', 'vedic astrology nakshatras', 'lunar mansions'],
-  alternates: { canonical: `${BASE_URL}/nakshatras` },
+  alternates: { canonical: `${BASE_URL}/nakshatras/` },
 };
 
 export default function NakshatrasHubPage() {
@@ -35,7 +35,7 @@ export default function NakshatrasHubPage() {
           <LocaleLink
             key={n.slug}
             href={`/nakshatras/${n.slug}`}
-            className="glass-card rounded-xl p-5 hover:border-violet-500/30 transition-all group"
+            className="glass-card rounded-xl p-5 hover:border-violet-500/30 transition-colors group"
           >
             <div className="flex items-start gap-3">
               <span className="text-lg font-mono text-zinc-500 mt-0.5 w-6 text-right">{i + 1}</span>

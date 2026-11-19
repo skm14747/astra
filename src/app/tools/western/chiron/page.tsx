@@ -46,7 +46,7 @@ export default function ChironPage() {
       </div>
 
       <div className="glass-card rounded-2xl p-6 vedic-glow">
-        <div className="text-xs text-teal-400/80 uppercase tracking-wider font-medium mb-1">Your Chiron</div>
+        <div className="text-xs text-teal-400/80 tracking-wider font-medium mb-1">Your Chiron</div>
         <div className="text-3xl text-white font-display font-bold">{data.signName}</div>
         <div className="text-sm text-zinc-400 mt-1">{data.degreeInSign.toFixed(2)}° {data.signName} (Chiron orbital period ~50.4 years)</div>
       </div>

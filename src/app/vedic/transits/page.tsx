@@ -7,7 +7,8 @@ import EmptyState from '@/components/shared/EmptyState';
 import { generateKundli } from '@/lib/vedic/core';
 import { detectSadeSati, calculateTransitScore, getTransitEffect } from '@/lib/vedic/transits';
 import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
-import type { Planet } from '@/lib/vedic/types';
+import type { Planet, Lang } from '@/lib/vedic/types';
+import { getPlanetName } from '@/lib/vedic/domain-i18n';
 import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
@@ -16,7 +17,8 @@ import { useT } from '@/lib/i18n';
 export default function TransitsPage() {
   const { chart } = useProfileChart();
   const { activeProfile } = useProfile();
-  const { ayanamsaSystem } = useSettings();
+  const { ayanamsaSystem, language } = useSettings();
+  const lang = language as Lang;
   const [clientNow, setClientNow] = useState<Date | null>(null);
 
   const t = useT();
@@ -80,7 +82,7 @@ export default function TransitsPage() {
           <div className="section-title mb-2">{t('transits.transitScore')}</div>
           <div className={`text-4xl font-bold font-display ${scoreColor}`}>{data.score}<span className="text-lg text-zinc-600"> / 95</span></div>
           <div className="w-full bg-white/[0.04] rounded-full h-2 mt-3">
-            <div className={`h-2 rounded-full transition-all ${barColor}`} style={{ width: `${(data.score / 95) * 100}%` }} />
+            <div className={`h-2 rounded-full transition-colors ${barColor}`} style={{ width: `${(data.score / 95) * 100}%` }} />
           </div>
         </div>
       </div>
@@ -93,7 +95,7 @@ export default function TransitsPage() {
               <span className="text-2xl mt-0.5">{PLANET_GLYPH[tr.planet]}</span>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="font-semibold text-zinc-100">{tr.planet}</span>
+                  <span className="font-semibold text-zinc-100">{getPlanetName(tr.planet, lang)}</span>
                   <span className="text-xs text-zinc-500">{t('transits.fromMoon', { n: tr.houseFromMoon })}</span>
                   <span className={`ml-auto w-2 h-2 rounded-full ${tr.isFavorable ? 'bg-green-400' : 'bg-red-400'}`} />
                 </div>

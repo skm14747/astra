@@ -47,17 +47,17 @@ export default function DestinyNumberPage() {
         <>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="glass-card rounded-2xl p-5 vedic-glow text-center">
-              <div className="text-xs text-violet-400/80 uppercase tracking-wider mb-1">Destiny Number</div>
+              <div className="text-xs text-violet-400/80 mb-1">Destiny Number</div>
               <div className="text-4xl text-white font-display font-bold">{result.destiny.number}</div>
               {destinyMeaning && <div className="text-sm text-violet-400 mt-1">{destinyMeaning.title}</div>}
             </div>
             <div className="glass-card rounded-2xl p-5 text-center">
-              <div className="text-xs text-rose-400/80 uppercase tracking-wider mb-1">Soul Urge</div>
+              <div className="text-xs text-rose-400/80 mb-1">Soul Urge</div>
               <div className="text-4xl text-white font-display font-bold">{result.soulUrge.number}</div>
               <div className="text-xs text-zinc-500 mt-1">From vowels</div>
             </div>
             <div className="glass-card rounded-2xl p-5 text-center">
-              <div className="text-xs text-amber-400/80 uppercase tracking-wider mb-1">Personality</div>
+              <div className="text-xs text-amber-400/80 mb-1">Personality</div>
               <div className="text-4xl text-white font-display font-bold">{result.personality.number}</div>
               <div className="text-xs text-zinc-500 mt-1">From consonants</div>
             </div>

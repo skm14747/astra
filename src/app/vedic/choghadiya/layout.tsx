@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import { buildVedicMetadata, VEDIC_SEO } from '../seo';
-import { BreadcrumbJsonLd, FAQJsonLd } from '@/components/seo/JsonLd';
+import { BreadcrumbJsonLd, FAQJsonLd, HowToJsonLd } from '@/components/seo/JsonLd';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import PageAdWrapper from '@/components/ads/PageAdWrapper';
 
-export const metadata: Metadata = buildVedicMetadata('choghadiya');
+export async function generateMetadata(): Promise<Metadata> { return buildVedicMetadata('choghadiya'); }
 
 const seo = VEDIC_SEO.choghadiya;
 
@@ -13,6 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <BreadcrumbJsonLd items={[{ name: 'Home', href: '/' }, { name: 'Vedic Astrology', href: '/vedic/kundli' }, { name: 'Choghadiya Today', href: '/vedic/choghadiya' }]} />
       {seo.faqs && <FAQJsonLd faqs={seo.faqs} />}
+      {seo.howTo && <HowToJsonLd name={seo.howTo.name} description={seo.howTo.description} steps={seo.howTo.steps} />}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-6">
         <Breadcrumbs items={[{ label: 'Vedic Astrology', href: '/vedic/kundli' }, { label: 'Choghadiya', href: '/vedic/choghadiya' }]} />
       </div>

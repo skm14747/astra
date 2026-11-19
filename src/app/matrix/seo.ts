@@ -82,30 +82,37 @@ export const MATRIX_SEO: Record<string, MatrixPageSeo> = {
   },
 };
 
+/** Ensure path has a trailing slash to match next.config.ts `trailingSlash: true`. */
+function withTrailingSlash(path: string): string {
+  return path.endsWith('/') ? path : `${path}/`;
+}
+
 export function buildMatrixMetadata(slug: string): Metadata {
   const seo = MATRIX_SEO[slug];
   if (!seo) return {};
+  const canonical = withTrailingSlash(seo.canonical);
   return {
     title: seo.title,
     description: seo.description,
     keywords: seo.keywords,
     alternates: {
-      canonical: seo.canonical,
+      canonical,
       languages: {
-        'en': seo.canonical,
-        'hi': `/hi${seo.canonical}`,
-        'ne': `/ne${seo.canonical}`,
-        'pt': `/pt${seo.canonical}`,
-        'es': `/es${seo.canonical}`,
-        'ja': `/ja${seo.canonical}`,
-        'fr': `/fr${seo.canonical}`,
-        'x-default': seo.canonical,
+        'en': canonical,
+        'hi': `/hi${canonical}`,
+        'ne': `/ne${canonical}`,
+        'pt': `/pt${canonical}`,
+        'es': `/es${canonical}`,
+        'ja': `/ja${canonical}`,
+        'fr': `/fr${canonical}`,
+        'ko': `/ko${canonical}`,
+        'x-default': canonical,
       },
     },
     openGraph: {
       title: seo.title,
       description: seo.description,
-      url: seo.canonical,
+      url: canonical,
       type: 'website',
       images: [{ url: '/og-image.png', width: 1200, height: 630, alt: seo.title }],
     },

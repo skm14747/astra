@@ -258,7 +258,7 @@ export default function ReportPage() {
         <div className="text-center pb-8" data-print-hide>
           {/* Print-only decorative border */}
           <div className="hidden mx-auto w-24 h-0.5 bg-violet-600 mb-6" data-print-show />
-          <p className="text-violet-400 text-sm tracking-widest uppercase mb-2">{t('report.coverLabel')}</p>
+          <p className="text-violet-400 text-sm tracking-widest mb-2">{t('report.coverLabel')}</p>
           <h1 className="font-display text-4xl sm:text-5xl font-bold text-white mb-3">{r.profileName}&apos;s Report</h1>
           <div className="hidden mx-auto w-16 h-px bg-zinc-400 my-4" data-print-show />
           <p className="text-zinc-400">{fmtDate(bd.date)} · {fmtTime(bd.date)}</p>
@@ -315,21 +315,21 @@ export default function ReportPage() {
           <Card>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <div className="text-center">
-                <p className="text-xs text-zinc-500 uppercase">{t('print.ascendant')}</p>
+                <p className="text-xs text-zinc-500">{t('print.ascendant')}</p>
                 <p className="text-lg font-semibold text-white">{localizeSign(r.chart.ascendant.rashiName)}</p>
                 <p className="text-xs text-zinc-400">{r.chart.ascendant.degree}° {r.chart.ascendant.nakshatraName}</p>
               </div>
               <div className="text-center">
-                <p className="text-xs text-zinc-500 uppercase">{t('print.moonSign')}</p>
+                <p className="text-xs text-zinc-500">{t('print.moonSign')}</p>
                 <p className="text-lg font-semibold text-white">{localizeSign(r.chart.planets.Moon.rashiName)}</p>
                 <p className="text-xs text-zinc-400">{r.chart.planets.Moon.nakshatraName} {t('panchang.pada')} {r.chart.planets.Moon.pada}</p>
               </div>
               <div className="text-center">
-                <p className="text-xs text-zinc-500 uppercase">{t('print.sunSign')}</p>
+                <p className="text-xs text-zinc-500">{t('print.sunSign')}</p>
                 <p className="text-lg font-semibold text-white">{localizeSign(r.chart.planets.Sun.rashiName)}</p>
               </div>
               <div className="text-center">
-                <p className="text-xs text-zinc-500 uppercase">{t('rpt.vargottama')}</p>
+                <p className="text-xs text-zinc-500">{t('rpt.vargottama')}</p>
                 <p className="text-lg font-semibold text-white">{r.vargottamaPlanets.length > 0 ? r.vargottamaPlanets.map(localizePlanet).join(', ') : t('rpt.none')}</p>
               </div>
             </div>
@@ -351,7 +351,7 @@ export default function ReportPage() {
                   <tr key={pe.planet} className="border-b border-white/[0.03]">
                     <td className="py-2 pr-4 font-medium text-zinc-100">{localizePlanet(pe.planet)}</td>
                     <td className="py-2 pr-4 text-zinc-300">{localizeSign(pe.sign)}</td>
-                    <td className="py-2 pr-4 text-zinc-400 font-mono text-xs">{pe.degree}</td>
+                    <td className="py-2 pr-4 text-zinc-400 font-mono tabular-nums text-xs">{pe.degree}</td>
                     <td className="py-2 pr-4 text-zinc-400">{pe.house}</td>
                     <td className="py-2 pr-4 text-zinc-400">{pe.nakshatra} {t('panchang.pada')} {pe.pada}</td>
                     <td className="py-2 pr-4"><DignityBadge dignity={pe.dignity} /></td>
@@ -394,9 +394,9 @@ export default function ReportPage() {
               <p className="text-xs text-zinc-500 mb-3">{r.nakshatraProfile.deity} · {r.nakshatraProfile.symbol} · {r.nakshatraProfile.motivation}</p>
               <Prose text={r.nakshatraProfile.personality} />
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-                <div><p className="text-xs text-zinc-500 uppercase mb-1">{t('rpt.strengths')}</p><p className="text-sm text-zinc-300">{r.nakshatraProfile.strengths}</p></div>
-                <div><p className="text-xs text-zinc-500 uppercase mb-1">{t('rpt.challenges')}</p><p className="text-sm text-zinc-300">{r.nakshatraProfile.challenges}</p></div>
-                <div><p className="text-xs text-zinc-500 uppercase mb-1">{t('rpt.careerFit')}</p><p className="text-sm text-zinc-300">{r.nakshatraProfile.career}</p></div>
+                <div><p className="text-xs text-zinc-500 mb-1">{t('rpt.strengths')}</p><p className="text-sm text-zinc-300">{r.nakshatraProfile.strengths}</p></div>
+                <div><p className="text-xs text-zinc-500 mb-1">{t('rpt.challenges')}</p><p className="text-sm text-zinc-300">{r.nakshatraProfile.challenges}</p></div>
+                <div><p className="text-xs text-zinc-500 mb-1">{t('rpt.careerFit')}</p><p className="text-sm text-zinc-300">{r.nakshatraProfile.career}</p></div>
               </div>
             </Card>
           )}
@@ -417,16 +417,16 @@ export default function ReportPage() {
               <p className="text-xs text-zinc-500 mb-3">{pe.nakshatra} · {t('panchang.pada')} {pe.pada} · {pe.dignityText.label}</p>
               <Prose text={pe.signText.nature} />
               <div className="mt-3 space-y-2">
-                <div><span className="text-xs font-semibold text-emerald-400 uppercase">{t('rpt.strengths')}: </span><span className="text-sm text-zinc-300">{pe.signText.positive}</span></div>
-                <div><span className="text-xs font-semibold text-orange-400 uppercase">{t('rpt.challenges')}: </span><span className="text-sm text-zinc-300">{pe.signText.challenges}</span></div>
+                <div><span className="text-xs font-semibold text-emerald-400">{t('rpt.strengths')}: </span><span className="text-sm text-zinc-300">{pe.signText.positive}</span></div>
+                <div><span className="text-xs font-semibold text-orange-400">{t('rpt.challenges')}: </span><span className="text-sm text-zinc-300">{pe.signText.challenges}</span></div>
               </div>
               <div className="mt-3 pt-3 border-t border-white/[0.04]">
-                <p className="text-xs text-zinc-500 uppercase mb-1">{t('rpt.house')} {pe.house}: {pe.houseText.area}</p>
+                <p className="text-xs text-zinc-500 mb-1">{t('rpt.house')} {pe.house}: {pe.houseText.area}</p>
                 <Prose text={pe.houseText.whenStrong} />
               </div>
               {pe.conjunctions.length > 0 && (
                 <div className="mt-3 pt-3 border-t border-white/[0.04]">
-                  <p className="text-xs text-zinc-500 uppercase mb-1">{t('rpt.conjunctions')}</p>
+                  <p className="text-xs text-zinc-500 mb-1">{t('rpt.conjunctions')}</p>
                   {pe.conjunctions.map(c => (
                     <p key={c.planet} className="text-sm text-zinc-400 mb-1">{t('rpt.with')} {localizePlanet(c.planet)}: {c.text}</p>
                   ))}
@@ -480,9 +480,9 @@ export default function ReportPage() {
                   return (
                     <tr key={p} className="border-b border-white/[0.03]">
                       <td className="py-2 pr-4 font-medium text-zinc-200">{PLANET_GLYPH[p]} {localizePlanet(p)}</td>
-                      <td className="py-2 pr-4 text-zinc-300 font-mono text-xs">{sb.total.toFixed(1)}</td>
-                      <td className="py-2 pr-4 text-zinc-400 font-mono text-xs">{sb.required}</td>
-                      <td className={`py-2 pr-4 font-mono text-xs font-semibold ${isStrong ? 'text-emerald-400' : 'text-orange-400'}`}>{pct}%</td>
+                      <td className="py-2 pr-4 text-zinc-300 font-mono tabular-nums text-xs">{sb.total.toFixed(1)}</td>
+                      <td className="py-2 pr-4 text-zinc-400 font-mono tabular-nums text-xs">{sb.required}</td>
+                      <td className={`py-2 pr-4 font-mono tabular-nums text-xs font-semibold ${isStrong ? 'text-emerald-400' : 'text-orange-400'}`}>{pct}%</td>
                       <td className="py-2 w-24">
                         <div className="w-full rounded-full h-2" style={{ background: 'rgba(255,255,255,0.04)' }}>
                           <div className="h-2 rounded-full" style={{ width: `${Math.min(100, Number(pct))}%`, background: barColor }} />
@@ -513,7 +513,7 @@ export default function ReportPage() {
                     const color = score >= 28 ? '#059669' : score < 25 ? '#dc2626' : '#71717a';
                     const bg = score >= 28 ? '#d1fae5' : score < 25 ? '#fee2e2' : 'transparent';
                     return (
-                      <td key={i} className="font-mono font-bold text-lg py-1" style={{ color, background: bg }}>
+                      <td key={i} className="font-mono tabular-nums font-bold text-lg py-1" style={{ color, background: bg }}>
                         {score}
                       </td>
                     );
@@ -570,7 +570,7 @@ export default function ReportPage() {
             <Prose text={r.career.summary} />
             <div className="mt-4"><Prose text={r.career.tenthHouseAnalysis} /></div>
             <div className="mt-4">
-              <p className="text-xs text-zinc-500 uppercase mb-2">{t('rpt.suitableFields')}</p>
+              <p className="text-xs text-zinc-500 mb-2">{t('rpt.suitableFields')}</p>
               <div className="flex flex-wrap gap-2">
                 {r.career.suitableFields.map(f => (
                   <span key={f} className="px-3 py-1 rounded-full bg-violet-500/10 text-violet-300 text-xs">{f}</span>
@@ -596,7 +596,7 @@ export default function ReportPage() {
             </div>
             {r.wealthRaw.dhanaYogas.length > 0 && (
               <div className="mt-4 pt-4 border-t border-white/[0.04]">
-                <p className="text-xs text-zinc-500 uppercase mb-2">{t('rpt.dhanaYogas')}</p>
+                <p className="text-xs text-zinc-500 mb-2">{t('rpt.dhanaYogas')}</p>
                 {r.wealthRaw.dhanaYogas.map((dy, i) => (
                   <p key={i} className="text-sm text-emerald-300">✦ {dy}</p>
                 ))}
@@ -615,11 +615,11 @@ export default function ReportPage() {
             </div>
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/10">
-                <p className="text-xs text-emerald-400 uppercase mb-1">{t('rpt.marriageStr')}</p>
+                <p className="text-xs text-emerald-400 mb-1">{t('rpt.marriageStr')}</p>
                 <p className="text-sm text-zinc-300">{r.marriage.strengths}</p>
               </div>
               <div className="p-3 rounded-lg bg-orange-500/5 border border-orange-500/10">
-                <p className="text-xs text-orange-400 uppercase mb-1">{t('rpt.marriageChal')}</p>
+                <p className="text-xs text-orange-400 mb-1">{t('rpt.marriageChal')}</p>
                 <p className="text-sm text-zinc-300">{r.marriage.challenges}</p>
               </div>
             </div>
@@ -669,7 +669,7 @@ export default function ReportPage() {
                     {PLANET_GLYPH[d.period.lord]} {localizePlanet(d.period.lord)} {t('print.mahadasha')}
                     {d.isActive && <span className="ml-2 text-xs bg-violet-500/20 text-violet-300 px-2 py-0.5 rounded-full">{t('rpt.current')}</span>}
                   </h3>
-                  <span className="text-xs text-zinc-500 font-mono">
+                  <span className="text-xs text-zinc-500 font-mono tabular-nums">
                     {fmtDate(d.period.startDate)} → {fmtDate(d.period.endDate)}
                   </span>
                 </div>
@@ -790,7 +790,7 @@ export default function ReportPage() {
       {/* Floating Download Button — always visible on all screens */}
       <button
         onClick={handleDownload}
-        className="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold shadow-xl shadow-violet-900/30 transition-all flex items-center gap-2"
+        className="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold shadow-xl shadow-violet-900/30 transition-colors flex items-center gap-2"
         data-print-hide
         aria-label={t('export.downloadPdf')}
       >

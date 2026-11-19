@@ -105,7 +105,7 @@ export default function CommandPalette() {
           <Command.List className="max-h-72 overflow-y-auto p-2">
             <Command.Empty className="px-4 py-6 text-center text-sm text-zinc-500">{t('common.noResults')}</Command.Empty>
 
-            <Command.Group heading={t('cmd.pages')} className="text-[10px] text-zinc-500 uppercase tracking-wider px-2 py-1">
+            <Command.Group heading={t('cmd.pages')} className="text-[10px] text-zinc-500 px-2 py-1">
               {PAGE_ITEMS.map(page => {
                 const title = t(page.nameKey);
                 return (
@@ -122,7 +122,7 @@ export default function CommandPalette() {
             </Command.Group>
 
             {profiles.length > 0 && (
-              <Command.Group heading={t('cmd.switchProfile')} className="text-[10px] text-zinc-500 uppercase tracking-wider px-2 py-1 mt-2">
+              <Command.Group heading={t('cmd.switchProfile')} className="text-[10px] text-zinc-500 px-2 py-1 mt-2">
                 {profiles.map(p => (
                   <Command.Item
                     key={p.id}

@@ -3,7 +3,7 @@ import { useMemo, useState, useEffect } from 'react';
 import { useProfile } from '@/lib/profile/context';
 import EmptyState from '@/components/shared/EmptyState';
 import { calculateMatrix } from '@/lib/matrix/core';
-import { getArcana } from '@/lib/matrix/arcana';
+import { useLocalizedArcana } from '@/lib/matrix/arcana-i18n';
 import { useT } from '@/lib/i18n';
 
 export default function MatrixTimelinePage() {
@@ -11,6 +11,7 @@ export default function MatrixTimelinePage() {
   const [currentYear, setCurrentYear] = useState<number | null>(null);
 
   const t = useT();
+  const localizedArcana = useLocalizedArcana();
   useEffect(() => { setCurrentYear(new Date().getFullYear()); }, []);
 
   const chart = useMemo(() => {
@@ -43,7 +44,7 @@ export default function MatrixTimelinePage() {
       {(() => {
         const currentVertex = chart.ageCycle.vertices.find(v => currentAge >= v.age && currentAge < v.age + 10);
         if (!currentVertex) return null;
-        const arcana = getArcana(currentVertex.energy);
+        const arcana = localizedArcana(currentVertex.energy);
         return (
           <div className="glass-card rounded-2xl p-6 matrix-glow relative overflow-hidden">
             <div className="cosmic-orb w-24 h-24 bg-pink-600/8 -top-6 -right-6" />
@@ -72,7 +73,7 @@ export default function MatrixTimelinePage() {
               }`}>
                 <div className="text-[10px] text-zinc-500 mb-1">{t('common.age')} {v.age}</div>
                 <div className="text-2xl font-bold text-pink-400">{v.energy}</div>
-                <div className="text-[10px] text-zinc-600 mt-0.5">{getArcana(v.energy).name}</div>
+                <div className="text-[10px] text-zinc-600 mt-0.5">{localizedArcana(v.energy).name}</div>
                 {isCurrent && <span className="inline-block w-1.5 h-1.5 rounded-full bg-pink-400 mt-1.5 animate-pulse-subtle" />}
               </div>
             );
@@ -94,7 +95,7 @@ export default function MatrixTimelinePage() {
                     ? 'glass-card border-pink-500/40 matrix-glow'
                     : 'bg-white/[0.02] border border-white/[0.03] hover:bg-white/[0.04]'
                 }`}
-                title={`${t('common.age')} ${age.toFixed(1)}: ${getArcana(n.energy).name}`}
+                title={`${t('common.age')} ${age.toFixed(1)}: ${localizedArcana(n.energy).name}`}
               >
                 <span className="text-zinc-500">{age % 1 === 0 ? age : ''}</span>
                 <span className="font-bold text-zinc-200">{n.energy}</span>

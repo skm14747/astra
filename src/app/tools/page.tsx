@@ -166,7 +166,7 @@ export default function ToolsDirectoryPage() {
               <LocaleLink
                 key={tool.href}
                 href={tool.href}
-                className="glass-card rounded-xl p-5 hover:border-violet-500/30 transition-all group"
+                className="glass-card rounded-xl p-5 hover:border-violet-500/30 transition-colors group"
               >
                 <div className="flex items-start gap-3">
                   <span className="text-2xl mt-0.5">{tool.icon}</span>
@@ -189,7 +189,7 @@ export default function ToolsDirectoryPage() {
         <p className="text-sm text-zinc-500 mb-4">Deep-dive guides for every Nakshatra (lunar mansion) — personality, deity, compatibility &amp; career.</p>
         <LocaleLink
           href="/nakshatras"
-          className="glass-card rounded-lg px-4 py-3 inline-block text-sm text-violet-400 hover:text-violet-300 hover:border-violet-500/30 transition-all"
+          className="glass-card rounded-lg px-4 py-3 inline-block text-sm text-violet-400 hover:text-violet-300 hover:border-violet-500/30 transition-colors"
         >
           ⭐ Explore All 27 Nakshatras →
         </LocaleLink>
@@ -204,7 +204,7 @@ export default function ToolsDirectoryPage() {
             <LocaleLink
               key={planet}
               href={`/astrology/${planet.toLowerCase()}-in-1st-house`}
-              className="glass-card rounded-lg px-3 py-2 text-sm text-zinc-300 hover:text-white hover:border-violet-500/30 transition-all"
+              className="glass-card rounded-lg px-3 py-2 text-sm text-zinc-300 hover:text-white hover:border-violet-500/30 transition-colors"
             >
               🪐 {planet} in Houses →
             </LocaleLink>

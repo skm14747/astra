@@ -53,7 +53,7 @@ export default function LifePathPage() {
       {result && meaning && (
         <>
           <div className="glass-card rounded-2xl p-6 vedic-glow">
-            <div className="text-xs text-emerald-400/80 uppercase tracking-wider font-medium mb-1">Your Life Path Number</div>
+            <div className="text-xs text-emerald-400/80 font-medium mb-1">Your Life Path Number</div>
             <div className="text-4xl text-white font-display font-bold">{result.number}</div>
             <div className="text-lg text-emerald-400 mt-1">{meaning.title}</div>
             <div className="text-xs text-zinc-500 mt-2">

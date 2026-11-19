@@ -52,7 +52,7 @@ export default function EmbedPanchangPage() {
       {/* Top Header */}
       <div className="flex items-center justify-between border-b border-zinc-800/80 pb-3">
         <div>
-          <div className="text-xs uppercase tracking-wider text-violet-400 font-medium">Daily Vedic Panchang</div>
+          <div className="text-xs tracking-wider text-violet-400 font-medium">Daily Vedic Panchang</div>
           <div className="text-sm font-semibold text-white mt-0.5">{dateStr}</div>
         </div>
         <div className="text-2xl">{moonPhase}</div>

@@ -4,7 +4,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import PageAdWrapper from '@/components/ads/PageAdWrapper';
 
-export const metadata: Metadata = buildVedicMetadata('health');
+export async function generateMetadata(): Promise<Metadata> { return buildVedicMetadata('health'); }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

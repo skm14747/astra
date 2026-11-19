@@ -18,17 +18,21 @@ import {
 } from '@/lib/vedic/dashas';
 import { calculateCharaDasha } from '@/lib/vedic/jaimini';
 import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
+import type { DashaPeriod, VimshottariDasha, Lang } from '@/lib/vedic/types';
+import { getPlanetName } from '@/lib/vedic/domain-i18n';
 import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
 import { useT } from '@/lib/i18n';
-import type { DashaPeriod, VimshottariDasha } from '@/lib/vedic/types';
+import { useSettings } from '@/lib/settings/context';
 
 export default function DashasPage() {
   const { chart, birthData } = useProfileChart();
   const [now, setNow] = useState<Date | null>(null);
   const [system, setSystem] = useState<DashaSystem>('vimshottari');
+  const { language } = useSettings();
   const t = useT();
+  const lang = language as Lang;
 
   useEffect(() => { setNow(new Date()); }, []);
 
@@ -132,9 +136,9 @@ export default function DashasPage() {
               <div className="section-title mb-3">{t('dashas.currentPeriod')}</div>
               <p className="text-xl text-zinc-100">
                 <span className="text-2xl mr-2 drop-shadow-[0_0_8px_rgba(124,92,252,0.4)]">{PLANET_GLYPH[current.maha.lord]}</span>
-                <strong>{current.maha.lord}</strong> {t('print.mahadasha')}
-                {current.antar && <> → <span className="mr-1">{PLANET_GLYPH[current.antar.lord]}</span><strong>{current.antar.lord}</strong></>}
-                {current.pratyantar && <> → <strong>{current.pratyantar.lord}</strong></>}
+                <strong>{getPlanetName(current.maha.lord, lang)}</strong> {t('print.mahadasha')}
+                {current.antar && <> → <span className="mr-1">{PLANET_GLYPH[current.antar.lord]}</span><strong>{getPlanetName(current.antar.lord, lang)}</strong></>}
+                {current.pratyantar && <> → <strong>{getPlanetName(current.pratyantar.lord, lang)}</strong></>}
               </p>
               <div className="mt-4">
                 <div className="flex justify-between text-xs text-zinc-500 mb-1.5">
@@ -143,7 +147,7 @@ export default function DashasPage() {
                   <span>{current.maha.endDate.getFullYear()}</span>
                 </div>
                 <div className="h-2 rounded-full bg-white/[0.04] overflow-hidden">
-                  <div className="h-full rounded-full bg-gradient-to-r from-violet-600 to-violet-400 transition-all" style={{ width: `${mahaProgress}%` }} />
+                  <div className="h-full rounded-full bg-gradient-to-r from-violet-600 to-violet-400 transition-colors" style={{ width: `${mahaProgress}%` }} />
                 </div>
               </div>
             </div>
@@ -163,9 +167,9 @@ export default function DashasPage() {
                 {periods.map((p, i) => {
                   const isActive = now.getTime() >= p.startDate.getTime() && now.getTime() < p.endDate.getTime();
                   return (
-                    <div key={i} className={`flex items-center justify-between px-4 py-2.5 rounded-xl transition ${isActive ? 'bg-violet-500/10 ring-1 ring-violet-500/30' : 'bg-white/[0.02]'}`}>
+                    <div key={i} className={`flex items-center justify-between px-4 py-2.5 rounded-xl transition-colors ${isActive ? 'bg-violet-500/10 ring-1 ring-violet-500/30' : 'bg-white/[0.02]'}`}>
                       <div className="flex items-center gap-3">
-                        <span className={`text-sm font-semibold ${isActive ? 'text-violet-300' : 'text-zinc-300'}`}>{p.lord}</span>
+                        <span className={`text-sm font-semibold ${isActive ? 'text-violet-300' : 'text-zinc-300'}`}>{getPlanetName(p.lord, lang)}</span>
                         {isActive && <span className="text-[10px] bg-violet-500/20 text-violet-300 px-2 py-0.5 rounded-full font-medium">{t('common.active')}</span>}
                       </div>
                       <div className="text-right">

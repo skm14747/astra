@@ -8,6 +8,8 @@ import { generateKundli } from '@/lib/vedic/core';
 import { detectSadeSati, isKantakaShani, isAshtamaShani, detectDhaiya } from '@/lib/vedic/transits';
 import { RASHI_NAMES, RASHI_NAMES_SANSKRIT } from '@/lib/vedic/constants';
 import { PLANET_GLYPH } from '@/lib/vedic/glyphs';
+import type { Lang } from '@/lib/vedic/types';
+import { getRashiName } from '@/lib/vedic/domain-i18n';
 import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
@@ -22,9 +24,10 @@ const PHASE_COLORS = {
 export default function SadeSatiPage() {
   const { chart } = useProfileChart();
   const { activeProfile } = useProfile();
-  const { ayanamsaSystem } = useSettings();
+  const { ayanamsaSystem, language } = useSettings();
   const [clientNow, setClientNow] = useState<Date | null>(null);
   const t = useT();
+  const lang = language as Lang;
 
   useEffect(() => { setClientNow(new Date()); }, []);
 
@@ -86,13 +89,13 @@ export default function SadeSatiPage() {
         <div className="glass-card rounded-xl p-5">
           <div className="section-title mb-2">{t('sadeSati.saturnPosition')}</div>
           <div className="text-2xl font-bold font-display text-violet-400">
-            {RASHI_NAMES[saturnRashi]} <span className="text-sm text-zinc-500">({RASHI_NAMES_SANSKRIT[saturnRashi]})</span>
+            {getRashiName(saturnRashi, lang)} <span className="text-sm text-zinc-500">({RASHI_NAMES_SANSKRIT[saturnRashi]})</span>
           </div>
         </div>
         <div className="glass-card rounded-xl p-5">
           <div className="section-title mb-2">{t('sadeSati.moonSign')}</div>
           <div className="text-2xl font-bold font-display text-amber-400">
-            {RASHI_NAMES[moonRashi]} <span className="text-sm text-zinc-500">({RASHI_NAMES_SANSKRIT[moonRashi]})</span>
+            {getRashiName(moonRashi, lang)} <span className="text-sm text-zinc-500">({RASHI_NAMES_SANSKRIT[moonRashi]})</span>
           </div>
         </div>
       </div>

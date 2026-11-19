@@ -90,18 +90,24 @@ export const WESTERN_SEO: Record<string, WesternPageSeo> = {
   },
 };
 
+/** Ensure path has a trailing slash to match next.config.ts `trailingSlash: true`. */
+function withTrailingSlash(path: string): string {
+  return path.endsWith('/') ? path : `${path}/`;
+}
+
 export function buildWesternMetadata(slug: string): Metadata {
   const seo = WESTERN_SEO[slug];
   if (!seo) return {};
+  const canonical = withTrailingSlash(seo.canonical);
   return {
     title: seo.title,
     description: seo.description,
     keywords: seo.keywords,
-    alternates: { canonical: `${BASE_URL}${seo.canonical}` },
+    alternates: { canonical: `${BASE_URL}${canonical}` },
     openGraph: {
       title: seo.title,
       description: seo.description,
-      url: `${BASE_URL}${seo.canonical}`,
+      url: `${BASE_URL}${canonical}`,
       siteName: 'Astra Destiny',
       type: 'website',
     },

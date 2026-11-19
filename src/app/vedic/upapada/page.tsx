@@ -6,13 +6,19 @@ import { calculateAllArudhaPadas } from '@/lib/vedic/lagnas';
 import { calculateCharaKarakas } from '@/lib/vedic/jaimini';
 import { PLANET_GLYPH, RASHI_GLYPH } from '@/lib/vedic/glyphs';
 import { RASHI_NAMES, RASHI_LORDS } from '@/lib/vedic/constants';
+import type { RashiIndex, Lang } from '@/lib/vedic/types';
+import { getPlanetName, getRashiName, getRashiNameByKey } from '@/lib/vedic/domain-i18n';
 import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
-import type { RashiIndex } from '@/lib/vedic/types';
+import { useT } from '@/lib/i18n';
+import { useSettings } from '@/lib/settings/context';
 
 export default function UpapadaPage() {
   const { chart } = useProfileChart();
+  const { language } = useSettings();
+  const t = useT();
+  const lang = language as Lang;
 
   const data = useMemo(() => {
     if (!chart) return null;
@@ -50,53 +56,53 @@ export default function UpapadaPage() {
         <div className="zodiac-divider mb-3">
           <span className="text-xs text-rose-400/40">💍 Jaimini · Upapada</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">Upapada Lagna Calculator</h1>
-        <p className="text-zinc-400 mt-1">Jaimini marriage indicator — Arudha Pada of the 12th house</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-white">{t('upapada.title')}</h1>
+        <p className="text-zinc-400 mt-1">{t('upapada.subtitle')}</p>
       </div>
 
       {/* Hero: Upapada */}
       <div className="glass-card rounded-2xl p-6 vedic-glow relative overflow-hidden">
         <div className="cosmic-orb w-28 h-28 bg-rose-600/8 -top-8 -right-8" />
         <div className="relative z-10">
-          <div className="text-xs text-rose-400/80 uppercase tracking-wider font-medium mb-1">Your Upapada Lagna (UL / A12)</div>
+          <div className="text-xs text-rose-400/80 tracking-wider font-medium mb-1">{t('upapada.ulLabel')}</div>
           <div className="text-3xl text-white font-display font-bold">
-            {RASHI_GLYPH[data.ulSignName]} {data.ulSignName}
+            {RASHI_GLYPH[data.ulSignName]} {getRashiNameByKey(data.ulSignName, lang)}
           </div>
-          <div className="text-sm text-zinc-400 mt-1">Lord: {PLANET_GLYPH[data.ulLord]} {data.ulLord}{data.ul.exceptionApplied ? ' (Parashara exception applied)' : ''}</div>
+          <div className="text-sm text-zinc-400 mt-1">{t('rpt.lord')}: {PLANET_GLYPH[data.ulLord]} {getPlanetName(data.ulLord, lang)}{data.ul.exceptionApplied ? ` (${t('common.exceptionApplied')})` : ''}</div>
         </div>
       </div>
 
       {/* Marriage Analysis Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="glass-card rounded-2xl p-6">
-          <h2 className="font-semibold text-zinc-100 text-lg mb-3">Upapada Sign Analysis</h2>
+          <h2 className="font-semibold text-zinc-100 text-lg mb-3">{t('upapada.signAnalysis')}</h2>
           <div className="space-y-3">
             <div className="flex justify-between text-sm">
-              <span className="text-zinc-400">UL Sign</span>
-              <span className="text-zinc-200">{RASHI_GLYPH[data.ulSignName]} {data.ulSignName}</span>
+              <span className="text-zinc-400">{t('upapada.ulSign')}</span>
+              <span className="text-zinc-200">{RASHI_GLYPH[data.ulSignName]} {getRashiNameByKey(data.ulSignName, lang)}</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-zinc-400">UL Lord</span>
-              <span className="text-zinc-200">{PLANET_GLYPH[data.ulLord]} {data.ulLord}</span>
+              <span className="text-zinc-400">{t('upapada.ulLord')}</span>
+              <span className="text-zinc-200">{PLANET_GLYPH[data.ulLord]} {getPlanetName(data.ulLord, lang)}</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-zinc-400">Planets in UL</span>
-              <span className="text-zinc-200">{data.planetsInUL.length > 0 ? data.planetsInUL.map(p => `${PLANET_GLYPH[p]} ${p}`).join(', ') : 'None'}</span>
+              <span className="text-zinc-400">{t('upapada.planetsInUL')}</span>
+              <span className="text-zinc-200">{data.planetsInUL.length > 0 ? data.planetsInUL.map(p => `${PLANET_GLYPH[p]} ${getPlanetName(p, lang)}`).join(', ') : t('rpt.none')}</span>
             </div>
           </div>
         </div>
 
         <div className="glass-card rounded-2xl p-6">
-          <h2 className="font-semibold text-zinc-100 text-lg mb-3">Gaunapada (2nd from UL)</h2>
-          <p className="text-xs text-zinc-500 mb-3">Sustains the marriage — malefics here or afflicted lord may indicate separation</p>
+          <h2 className="font-semibold text-zinc-100 text-lg mb-3">{t('upapada.gaunapada')}</h2>
+          <p className="text-xs text-zinc-500 mb-3">{t('upapada.gaunapadaDesc')}</p>
           <div className="space-y-3">
             <div className="flex justify-between text-sm">
-              <span className="text-zinc-400">Gaunapada Sign</span>
-              <span className="text-zinc-200">{RASHI_GLYPH[data.gaunapadaName]} {data.gaunapadaName}</span>
+              <span className="text-zinc-400">{t('upapada.gaunapadaSign')}</span>
+              <span className="text-zinc-200">{RASHI_GLYPH[data.gaunapadaName]} {getRashiNameByKey(data.gaunapadaName, lang)}</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-zinc-400">Gaunapada Lord</span>
-              <span className="text-zinc-200">{PLANET_GLYPH[data.gaunapadaLord]} {data.gaunapadaLord}</span>
+              <span className="text-zinc-400">{t('upapada.gaunapadaLord')}</span>
+              <span className="text-zinc-200">{PLANET_GLYPH[data.gaunapadaLord]} {getPlanetName(data.gaunapadaLord, lang)}</span>
             </div>
           </div>
         </div>
@@ -104,15 +110,15 @@ export default function UpapadaPage() {
 
       {/* Cross-reference with DK */}
       <div className="glass-card rounded-2xl p-6">
-        <h2 className="font-semibold text-zinc-100 text-lg mb-3">Darakaraka Connection</h2>
-        <p className="text-sm text-zinc-400 mb-3">The Darakaraka (spouse planet) and Upapada Lagna together give a complete marriage picture.</p>
+        <h2 className="font-semibold text-zinc-100 text-lg mb-3">{t('upapada.dkConnection')}</h2>
+        <p className="text-sm text-zinc-400 mb-3">{t('upapada.dkConnectionDesc')}</p>
         <div className="bg-white/[0.03] rounded-xl p-4 flex items-center justify-between">
           <div>
-            <div className="text-xs text-zinc-500">Your Darakaraka</div>
-            <div className="text-zinc-200 font-medium mt-1">{PLANET_GLYPH[data.dk.planet]} {data.dk.planet} ({data.dk.fullName})</div>
+            <div className="text-xs text-zinc-500">{t('upapada.yourDK')}</div>
+            <div className="text-zinc-200 font-medium mt-1">{PLANET_GLYPH[data.dk.planet]} {getPlanetName(data.dk.planet, lang)} ({data.dk.fullName})</div>
           </div>
           <a href="/vedic/darakaraka" className="text-sm text-violet-400 hover:text-violet-300 transition-colors">
-            View full DK analysis →
+            {t('upapada.viewDKAnalysis')}
           </a>
         </div>
       </div>

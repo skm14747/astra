@@ -85,7 +85,7 @@ export default function NumerologyHubPage() {
               { label: 'Maturity', value: profile.maturityNumber, color: 'blue' },
             ].map(n => (
               <div key={n.label} className="glass-card rounded-2xl p-4 text-center">
-                <div className="text-xs text-zinc-500 uppercase tracking-wider">{n.label}</div>
+                <div className="text-xs text-zinc-500">{n.label}</div>
                 <div className={`text-3xl font-display font-bold mt-1 text-${n.color}-400`}>{n.value}</div>
               </div>
             ))}

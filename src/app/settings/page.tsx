@@ -128,7 +128,7 @@ export default function SettingsPage() {
               </div>
               {more.length > 0 && (
                 <div>
-                  <p className="text-xs text-zinc-600 uppercase tracking-wider mb-2">More languages</p>
+                  <p className="text-xs text-zinc-600 tracking-wider mb-2">More languages</p>
                   <div className="flex gap-3 flex-wrap">
                     {more.map(l => (
                       <button key={l.code} onClick={() => handleLanguageChange(l.code)} className={`${pill(language === l.code)} opacity-70 hover:opacity-100`}>

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Synastry Aspects — Key Relationship Aspects in Astrology | Astra Destiny',
   description: 'Complete guide to synastry aspects: conjunctions, trines, squares, and oppositions between two birth charts. Discover which aspects indicate lasting love, sexual attraction, and karmic bonds.',
   keywords: ['synastry aspects', 'relationship astrology aspects', 'venus conjunct mars synastry', 'moon conjunct venus synastry', 'sun conjunct moon synastry'],
-  alternates: { canonical: `${BASE_URL}/astrology/synastry-aspects` },
+  alternates: { canonical: `${BASE_URL}/astrology/synastry-aspects/` },
 };
 
 const ASPECT_TYPES = [

@@ -92,6 +92,10 @@ export function calculateTalents(points: MatrixPoints): MatrixTalents {
   };
 }
 
+export function calculateYearArcana(day: number, month: number, targetYear: number): number {
+  return reduce(reduce(day) + month + reduce(sumDigits(targetYear)));
+}
+
 export function calculateMatrix(day: number, month: number, year: number): MatrixChart {
   const points = calculateCorePoints(day, month, year);
   const purposes = calculatePurposes(points);

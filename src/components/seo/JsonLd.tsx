@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 export function JsonLd({ data }: { data: Record<string, unknown> }) {
   return (
     <script
@@ -91,11 +93,21 @@ export function WebAppJsonLd() {
   );
 }
 
-export function BreadcrumbJsonLd({
+/** Ensure path has a trailing slash to match next.config.ts `trailingSlash: true`. */
+function withTrailingSlash(path: string): string {
+  return path.endsWith('/') ? path : `${path}/`;
+}
+
+async function BreadcrumbJsonLdInner({
   items,
 }: {
   items: { name: string; href: string }[];
 }) {
+  const { headers } = await import('next/headers');
+  const headersList = await headers();
+  const locale = headersList.get('x-locale') || 'en';
+  const prefix = locale === 'en' ? '' : `/${locale}`;
+
   return (
     <JsonLd
       data={{
@@ -105,10 +117,18 @@ export function BreadcrumbJsonLd({
           '@type': 'ListItem',
           position: i + 1,
           name: item.name,
-          item: `${BASE_URL}${item.href}`,
+          item: `${BASE_URL}${prefix}${withTrailingSlash(item.href)}`,
         })),
       }}
     />
+  );
+}
+
+export function BreadcrumbJsonLd({ items }: { items: { name: string; href: string }[] }) {
+  return (
+    <Suspense fallback={null}>
+      <BreadcrumbJsonLdInner items={items} />
+    </Suspense>
   );
 }
 

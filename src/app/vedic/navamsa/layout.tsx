@@ -4,7 +4,7 @@ import { BreadcrumbJsonLd, FAQJsonLd } from '@/components/seo/JsonLd';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import PageAdWrapper from '@/components/ads/PageAdWrapper';
 
-export const metadata: Metadata = buildVedicMetadata('navamsa');
+export async function generateMetadata(): Promise<Metadata> { return buildVedicMetadata('navamsa'); }
 
 const seo = VEDIC_SEO['navamsa'];
 

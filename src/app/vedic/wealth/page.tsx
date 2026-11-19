@@ -4,15 +4,20 @@ import EmptyState from '@/components/shared/EmptyState';
 import { analyzeWealth } from '@/lib/vedic/wealth';
 import { RASHI_NAMES } from '@/lib/vedic/constants';
 import { RASHI_GLYPH } from '@/lib/vedic/glyphs';
+import type { Lang } from '@/lib/vedic/types';
+import { getRashiName, getPlanetName } from '@/lib/vedic/domain-i18n';
 import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
 import { useT } from '@/lib/i18n';
+import { useSettings } from '@/lib/settings/context';
 
 export default function WealthPage() {
   const { chart } = useProfileChart();
 
+  const { language } = useSettings();
   const t = useT();
+  const lang = language as Lang;
   if (!chart) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
       <EmptyState icon="💰" title={t('wealth.title')} description={t('empty.wealth')} />
@@ -34,18 +39,18 @@ export default function WealthPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="glass-card rounded-2xl p-6 text-center">
           <div className="text-xs text-zinc-500 mb-2">{t('wealth.induLagna')}</div>
-          <div className="text-2xl text-violet-400">{RASHI_GLYPH[RASHI_NAMES[wealth.induLagna]]} {RASHI_NAMES[wealth.induLagna]}</div>
+          <div className="text-2xl text-violet-400">{RASHI_GLYPH[RASHI_NAMES[wealth.induLagna]]} {getRashiName(wealth.induLagna, lang)}</div>
           <div className="text-xs text-zinc-500 mt-1">{t('wealth.subtitle')}</div>
         </div>
         <div className="glass-card rounded-2xl p-6 text-center">
           <div className="text-xs text-zinc-500 mb-2">{t('wealth.secondLord')}</div>
           <div className={`text-2xl font-bold ${wealth.savSecondHouse >= 28 ? 'text-emerald-400' : 'text-amber-400'}`}>{wealth.savSecondHouse} SAV</div>
-          <div className="text-xs text-zinc-500 mt-1">{t('rpt.lord')}: {wealth.secondLord}</div>
+          <div className="text-xs text-zinc-500 mt-1">{t('rpt.lord')}: {getPlanetName(wealth.secondLord, lang)}</div>
         </div>
         <div className="glass-card rounded-2xl p-6 text-center">
           <div className="text-xs text-zinc-500 mb-2">{t('wealth.eleventhLord')}</div>
           <div className={`text-2xl font-bold ${wealth.savEleventhHouse >= 28 ? 'text-emerald-400' : 'text-amber-400'}`}>{wealth.savEleventhHouse} SAV</div>
-          <div className="text-xs text-zinc-500 mt-1">{t('rpt.lord')}: {wealth.eleventhLord}</div>
+          <div className="text-xs text-zinc-500 mt-1">{t('rpt.lord')}: {getPlanetName(wealth.eleventhLord, lang)}</div>
         </div>
       </div>
 

@@ -7,10 +7,11 @@ import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
 import { useT } from '@/lib/i18n';
+import { useSettings } from '@/lib/settings/context';
 
 export default function NadiPage() {
   const { chart } = useProfileChart();
-
+  const { language } = useSettings();
   const t = useT();
   if (!chart) return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 pt-8">
@@ -50,11 +51,11 @@ export default function NadiPage() {
         <h2 className="font-semibold text-zinc-100 text-lg mb-4">{t('nadi.amsha')}</h2>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <div className="text-xs text-zinc-500">Division</div>
+            <div className="text-xs text-zinc-500">{t('nadi.division')}</div>
             <div className="text-xl text-violet-400 font-bold">{moonAmsha.division} / 150</div>
           </div>
           <div>
-            <div className="text-xs text-zinc-500">Deity Group</div>
+            <div className="text-xs text-zinc-500">{t('nadi.deityGroup')}</div>
             <div className="text-xl text-amber-400 font-bold">{moonAmsha.deityGroup}</div>
           </div>
         </div>

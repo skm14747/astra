@@ -8,6 +8,9 @@ import SeoIntro from '@/components/seo/SeoIntro';
 import RelatedTools from '@/components/seo/RelatedTools';
 import { VEDIC_SEO } from '../seo';
 import { useT } from '@/lib/i18n';
+import { useSettings } from '@/lib/settings/context';
+import type { Lang } from '@/lib/vedic/types';
+import { getPlanetName, getRashiNameByKey } from '@/lib/vedic/domain-i18n';
 
 const KAAL_SARP_TYPES_INFO: Record<number, { name: string; meaning: string; area: string }> = {
   1: { name: 'Anant', meaning: 'Infinite serpent (Shesha)', area: 'Personality, health, and overall life path' },
@@ -28,7 +31,9 @@ const seo = VEDIC_SEO['kaal-sarp-dosha'];
 
 export default function KaalSarpDoshaPage() {
   const { chart } = useProfileChart();
+  const { language } = useSettings();
   const t = useT();
+  const lang = language as Lang;
 
   const result = useMemo(() => {
     if (!chart) return null;
@@ -98,8 +103,8 @@ export default function KaalSarpDoshaPage() {
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-lg">☊</div>
                 <div>
-                  <div className="text-sm font-semibold text-zinc-300">Rahu ({t('rpt.th.house')} {chart.planets.Rahu.house})</div>
-                  <div className="text-xs text-zinc-500">{chart.planets.Rahu.rashiName} · {chart.planets.Rahu.degree.toFixed(1)}°</div>
+                  <div className="text-sm font-semibold text-zinc-300">{getPlanetName('Rahu', lang)} ({t('rpt.th.house')} {chart.planets.Rahu.house})</div>
+                  <div className="text-xs text-zinc-500">{getRashiNameByKey(chart.planets.Rahu.rashiName, lang)} · {chart.planets.Rahu.degree.toFixed(1)}°</div>
                 </div>
               </div>
               <div className="text-xs text-zinc-400">
@@ -110,8 +115,8 @@ export default function KaalSarpDoshaPage() {
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-lg">☋</div>
                 <div>
-                  <div className="text-sm font-semibold text-zinc-300">Ketu ({t('rpt.th.house')} {chart.planets.Ketu.house})</div>
-                  <div className="text-xs text-zinc-500">{chart.planets.Ketu.rashiName} · {chart.planets.Ketu.degree.toFixed(1)}°</div>
+                  <div className="text-sm font-semibold text-zinc-300">{getPlanetName('Ketu', lang)} ({t('rpt.th.house')} {chart.planets.Ketu.house})</div>
+                  <div className="text-xs text-zinc-500">{getRashiNameByKey(chart.planets.Ketu.rashiName, lang)} · {chart.planets.Ketu.degree.toFixed(1)}°</div>
                 </div>
               </div>
               <div className="text-xs text-zinc-400">

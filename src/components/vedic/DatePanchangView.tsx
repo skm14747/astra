@@ -75,14 +75,14 @@ export default function DatePanchangView({
             <div className="flex items-center gap-3">
               <span className="text-2xl">🌅</span>
               <div>
-                <div className="text-xs text-zinc-500 uppercase tracking-wider font-medium">{t('panchang.sunrise')}</div>
-                <div className="text-lg text-white font-semibold font-mono">{fmtTime(panchang.sunrise)}</div>
+                <div className="text-xs text-zinc-500 font-medium">{t('panchang.sunrise')}</div>
+                <div className="text-lg text-white font-semibold font-mono tabular-nums">{fmtTime(panchang.sunrise)}</div>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <div className="text-right">
-                <div className="text-xs text-zinc-500 uppercase tracking-wider font-medium">{t('panchang.sunset')}</div>
-                <div className="text-lg text-white font-semibold font-mono">{fmtTime(panchang.sunset)}</div>
+                <div className="text-xs text-zinc-500 font-medium">{t('panchang.sunset')}</div>
+                <div className="text-lg text-white font-semibold font-mono tabular-nums">{fmtTime(panchang.sunset)}</div>
               </div>
               <span className="text-2xl">🌇</span>
             </div>
@@ -99,7 +99,7 @@ export default function DatePanchangView({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <div className="glass-card rounded-2xl p-5 sm:col-span-2 lg:col-span-1 vedic-glow relative overflow-hidden">
             <div className="absolute top-4 right-4 text-4xl opacity-30">{moonPhase}</div>
-            <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">{t('panchang.tithi')}</div>
+            <div className="text-xs text-violet-400/80 font-medium mb-1">{t('panchang.tithi')}</div>
             <div className="text-xl text-white font-display font-bold">{panchang.tithi.name}</div>
             <div className="flex items-center gap-2 mt-2 text-sm text-zinc-400">
               <span className="planet-badge">{panchang.tithi.paksha}</span>
@@ -108,7 +108,7 @@ export default function DatePanchangView({
           </div>
 
           <div className="glass-card rounded-2xl p-5">
-            <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">{t('panchang.nakshatra')}</div>
+            <div className="text-xs text-violet-400/80 font-medium mb-1">{t('panchang.nakshatra')}</div>
             <div className="text-lg text-white font-display font-bold">{panchang.nakshatra.name}</div>
             <div className="flex items-center gap-2 mt-2 text-sm text-zinc-400">
               <span className="planet-badge">{t('panchang.pada')} {panchang.nakshatra.pada}</span>
@@ -117,19 +117,19 @@ export default function DatePanchangView({
           </div>
 
           <div className="glass-card rounded-2xl p-5">
-            <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">{t('panchang.yoga')}</div>
+            <div className="text-xs text-violet-400/80 font-medium mb-1">{t('panchang.yoga')}</div>
             <div className="text-lg text-white font-display font-bold">{panchang.yoga.name}</div>
             <div className="text-xs text-zinc-500 mt-2">{t('panchang.yoga')} #{panchang.yoga.index + 1} {t('common.of')} 27</div>
           </div>
 
           <div className="glass-card rounded-2xl p-5">
-            <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">{t('panchang.karana')}</div>
+            <div className="text-xs text-violet-400/80 font-medium mb-1">{t('panchang.karana')}</div>
             <div className="text-lg text-white font-display font-bold">{panchang.karana.name}</div>
             <div className="text-xs text-zinc-500 mt-2">{t('panchang.karana')} #{panchang.karana.index + 1} {t('common.of')} 60</div>
           </div>
 
           <div className="glass-card rounded-2xl p-5">
-            <div className="text-xs text-violet-400/80 uppercase tracking-wider font-medium mb-1">{t('panchang.vara')}</div>
+            <div className="text-xs text-violet-400/80 font-medium mb-1">{t('panchang.vara')}</div>
             <div className="text-lg text-white font-display font-bold">{panchang.vara.name}</div>
             <div className="text-xs text-zinc-500 mt-2">{t('panchang.vara')} #{panchang.vara.index + 1}</div>
           </div>
@@ -150,7 +150,7 @@ export default function DatePanchangView({
             { label: t('panchang.ritu'), value: panchang.ritu },
           ].map(item => (
             <div key={item.label} className="glass-card rounded-xl p-4">
-              <div className="text-[10px] text-zinc-500 uppercase tracking-wider font-medium mb-1">{item.label}</div>
+              <div className="text-[10px] text-zinc-500 font-medium mb-1">{item.label}</div>
               <div className="text-sm font-semibold text-zinc-100">{item.value}</div>
               {item.sub && <div className="text-[10px] text-zinc-500 mt-1">{item.sub}</div>}
             </div>
@@ -172,7 +172,7 @@ export default function DatePanchangView({
                   <span className={`w-2 h-2 rounded-full ${m.isAuspicious ? 'bg-emerald-400' : 'bg-red-400/80'}`} />
                   <span className="font-medium text-sm text-zinc-300">{m.name}</span>
                 </div>
-                <span className="text-sm font-mono text-zinc-500">
+                <span className="text-sm font-mono tabular-nums text-zinc-500">
                   {fmtTime(m.start)} — {fmtTime(m.end)}
                 </span>
               </div>

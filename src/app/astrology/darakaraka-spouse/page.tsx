@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Darakaraka — Your Ideal Spouse in Vedic Astrology | Astra Destiny',
   description: 'Darakaraka is the Jaimini indicator of your ideal spouse. Discover your spouse\'s appearance, personality, and career based on which planet holds the lowest degree in your birth chart.',
   keywords: ['darakaraka', 'darakaraka spouse', 'jaimini darakaraka', 'ideal spouse astrology', 'darakaraka calculator'],
-  alternates: { canonical: `${BASE_URL}/astrology/darakaraka-spouse` },
+  alternates: { canonical: `${BASE_URL}/astrology/darakaraka-spouse/` },
 };
 
 const DK_PROFILES = [

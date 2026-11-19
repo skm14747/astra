@@ -35,6 +35,7 @@ export interface MatrixTalents {
 }
 
 export interface ChakraRow {
+  key: string;
   name: string;
   physics: number;
   energy: number;

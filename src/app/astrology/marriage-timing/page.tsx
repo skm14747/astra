@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Marriage Timing in Vedic Astrology — When Will You Get Married? | Astra Destiny',
   description: 'Vedic astrology marriage timing guide: Dasha periods, transits of Jupiter and Saturn, Navamsa indicators, and classical rules for predicting when marriage is most likely.',
   keywords: ['marriage timing astrology', 'when will i get married', 'marriage prediction vedic astrology', 'vivah muhurat', 'marriage dasha'],
-  alternates: { canonical: `${BASE_URL}/astrology/marriage-timing` },
+  alternates: { canonical: `${BASE_URL}/astrology/marriage-timing/` },
 };
 
 const TIMING_FACTORS = [
