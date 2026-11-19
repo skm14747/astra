@@ -236,7 +236,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   muhurta: {
-    title: 'Shubh Muhurat Finder (शुभ मुहूर्त) — Marriage, Griha Pravesh & Travel',
+    title: 'Shubh Muhurat Finder (शुभ मुहूर्त) — Marriage & Griha Pravesh',
     description:
       'Free Shubh Muhurat finder for marriage (vivah muhurat), griha pravesh, naamkaran, travel & 20+ activities. Checks Tithi, Nakshatra, Rahu Kaal, Abhijit Muhurta & planetary positions.',
     canonical: '/vedic/muhurta',
