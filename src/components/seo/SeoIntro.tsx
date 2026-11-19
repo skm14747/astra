@@ -4,6 +4,14 @@ import { useState } from 'react';
 import { useT } from '@/lib/i18n';
 import type { TranslationKey } from '@/lib/i18n';
 
+/**
+ * SeoIntro renders an educational content block below the tool UI.
+ *
+ * SSR strategy: the FULL text is always present in the DOM so crawlers
+ * index it. Visual truncation uses CSS `line-clamp` on the container —
+ * no text is sliced out of the HTML. The "Read more" button toggles the
+ * clamp for human visitors.
+ */
 export default function SeoIntro({
   headingKey,
   textKey,
@@ -22,7 +30,6 @@ export default function SeoIntro({
   const text = rawText === textKey && fallbackText ? fallbackText : rawText;
   const heading = rawHeading === headingKey && fallbackHeading ? fallbackHeading : rawHeading;
   const isLong = text.length > 200;
-  const display = isLong && !expanded ? text.slice(0, 200) + '…' : text;
 
   return (
     <section
@@ -32,17 +39,23 @@ export default function SeoIntro({
       <h2 className="font-display text-lg font-semibold text-zinc-300 mb-3">
         {heading}
       </h2>
-      <p className="text-sm text-zinc-500 leading-relaxed max-w-3xl">
-        {display}
+      <div className="relative max-w-3xl">
+        <p
+          className={`text-sm text-zinc-500 leading-relaxed ${
+            isLong && !expanded ? 'line-clamp-4' : ''
+          }`}
+        >
+          {text}
+        </p>
         {isLong && !expanded && (
           <button
             onClick={() => setExpanded(true)}
-            className="ml-1 text-violet-400 hover:text-violet-300 transition-colors text-sm"
+            className="mt-1 text-violet-400 hover:text-violet-300 transition-colors text-sm"
           >
             {t('seo.readMore')}
           </button>
         )}
-      </p>
+      </div>
     </section>
   );
 }

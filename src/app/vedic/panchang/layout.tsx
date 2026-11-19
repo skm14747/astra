@@ -3,6 +3,7 @@ import { buildVedicMetadata, VEDIC_SEO } from '../seo';
 import { BreadcrumbJsonLd, FAQJsonLd } from '@/components/seo/JsonLd';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import PageAdWrapper from '@/components/ads/PageAdWrapper';
+import PanchangSsrContent from '@/components/seo/PanchangSsrContent';
 
 export async function generateMetadata(): Promise<Metadata> { return buildVedicMetadata('panchang'); }
 
@@ -17,6 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Breadcrumbs items={[{ label: 'Vedic Astrology', href: '/vedic/kundli' }, { label: 'Panchang', href: '/vedic/panchang' }]} />
       </div>
       <PageAdWrapper>{children}</PageAdWrapper>
+      <PanchangSsrContent />
     </>
   );
 }
