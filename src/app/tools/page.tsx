@@ -1,7 +1,6 @@
 'use client';
 
 import LocaleLink from '@/components/shared/LocaleLink';
-import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import { useT, type TranslationKey } from '@/lib/i18n';
 
 interface ToolItem {
@@ -124,7 +123,6 @@ export default function ToolsDirectoryPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 space-y-10">
-      <BreadcrumbJsonLd items={[{ name: 'Home', href: '/' }, { name: 'Tools', href: '/tools' }]} />
 
       <header>
         <div className="zodiac-divider mb-4">
