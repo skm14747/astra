@@ -144,7 +144,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   const panchangDates: MetadataRoute.Sitemap = [];
-  for (let i = -7; i <= 30; i++) {
+  for (let i = 0; i <= 30; i++) {
     const d = new Date(now);
     d.setDate(d.getDate() + i);
     const dateStr = d.toISOString().slice(0, 10);
@@ -169,20 +169,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: locale === 'en' ? 0.7 : 0.6,
       alternates: alternates('/blog'),
     })),
-    ...BLOG_POSTS.flatMap(post => {
-      const path = `/blog/${post.slug}`;
-      return LOCALES.map(locale => ({
-        url: formatUrl(locale, path),
-        lastModified: new Date(post.date),
-        changeFrequency: 'monthly' as const,
-        priority: locale === 'en' ? 0.6 : 0.5,
-        alternates: alternates(path),
-      }));
-    }),
+    ...BLOG_POSTS.map(post => ({
+      url: formatUrl('en', `/blog/${post.slug}`),
+      lastModified: new Date(post.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
   ];
 
   const monthlyPanchang: MetadataRoute.Sitemap = [];
-  for (let offset = -1; offset <= 6; offset++) {
+  for (let offset = 0; offset <= 6; offset++) {
     const d = new Date(now.getFullYear(), now.getMonth() + offset, 1);
     const slug = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
     const path = `/vedic/panchang/month/${slug}`;
@@ -206,19 +202,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: locale === 'en' ? 0.8 : 0.7,
       alternates: alternates('/astrology'),
     })),
-    ...PLANET_IN_HOUSE_ROUTES.flatMap(slug => {
-      const path = `/astrology/${slug}`;
-      return LOCALES.map(locale => {
-        const isDefault = locale === 'en';
-        return {
-          url: formatUrl(locale, path),
-          lastModified: now,
-          changeFrequency: 'monthly' as const,
-          priority: isDefault ? 0.6 : 0.5,
-          alternates: alternates(path),
-        };
-      });
-    }),
+    ...PLANET_IN_HOUSE_ROUTES.map(slug => ({
+      url: formatUrl('en', `/astrology/${slug}`),
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
   ];
 
   const nakshatraEntries: MetadataRoute.Sitemap = [
@@ -229,16 +218,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: locale === 'en' ? 0.8 : 0.7,
       alternates: alternates('/nakshatras'),
     })),
-    ...ALL_NAKSHATRA_SLUGS.flatMap(slug => {
-      const path = `/nakshatras/${slug}`;
-      return LOCALES.map(locale => ({
-        url: formatUrl(locale, path),
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: locale === 'en' ? 0.7 : 0.6,
-        alternates: alternates(path),
-      }));
-    }),
+    ...ALL_NAKSHATRA_SLUGS.map(slug => ({
+      url: formatUrl('en', `/nakshatras/${slug}`),
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
   ];
 
   const LOVE_ROUTES = [
@@ -248,15 +233,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/astrology/marriage-timing',
     '/astrology/synastry-aspects',
   ];
-  const loveEntries: MetadataRoute.Sitemap = LOVE_ROUTES.flatMap(path => {
-    return LOCALES.map(locale => ({
-      url: formatUrl(locale, path),
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: locale === 'en' ? 0.7 : 0.6,
-      alternates: alternates(path),
-    }));
-  });
+  const loveEntries: MetadataRoute.Sitemap = LOVE_ROUTES.map(path => ({
+    url: formatUrl('en', path),
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
 
   return [...staticEntries, ...vedicEntries, ...numerologyEntries, ...westernEntries, ...matrixEntries, ...planetInHouseEntries, ...nakshatraEntries, ...loveEntries, ...panchangDates, ...monthlyPanchang, ...blogEntries];
 }
