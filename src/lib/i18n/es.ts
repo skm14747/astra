@@ -159,6 +159,7 @@ export const es: Record<TranslationKey, string> = {
   'home.hero.viewKundli': 'Ver Carta Natal',
   'home.hero.dashaTimeline': 'Línea de Tiempo Dasha',
   'home.hero.matrixChart': 'Carta de la Matriz',
+  'home.hero.kundliMilan': 'Compatibilidad',
   'home.vedic.label': 'Tradición del Jyotish',
   'home.vedic.title': 'Sabiduría Ancestral, ',
   'home.vedic.titleAccent': 'Rigor Científico de la NASA',

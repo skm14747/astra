@@ -159,6 +159,7 @@ export const ko: Record<TranslationKey, string> = {
   'home.hero.viewKundli': '사주 보기',
   'home.hero.dashaTimeline': '다샤 타임라인',
   'home.hero.matrixChart': '매트릭스 차트',
+  'home.hero.kundliMilan': '궁합 보기',
   'home.vedic.label': '베딕 점성술',
   'home.vedic.title': '고대의 지혜, ',
   'home.vedic.titleAccent': '우주의 정밀함',

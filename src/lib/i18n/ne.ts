@@ -159,6 +159,7 @@ export const ne: Record<TranslationKey, string> = {
   'home.hero.viewKundli': 'कुण्डली हेर्नुहोस्',
   'home.hero.dashaTimeline': 'दशा चक्र हेर्नुहोस्',
   'home.hero.matrixChart': 'भाग्य चक्र हेर्नुहोस्',
+  'home.hero.kundliMilan': 'कुण्डली मिलान',
   'home.vedic.label': 'वैदिक ज्योतिष',
   'home.vedic.title': 'ऋषि-मुनिको प्राचीन ज्ञान, ',
   'home.vedic.titleAccent': 'NASA जस्तै सटीक गणना',

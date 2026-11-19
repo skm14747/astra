@@ -86,14 +86,14 @@ export const metadata: Metadata = {
     siteName: 'Astra Destiny',
     title: 'Astra Destiny — Free Vedic Astrology Calculator & Kundli Generator',
     description:
-      'Free Vedic astrology calculator with 200+ Jyotish tools — Kundli, Dasha, Yogas, Kundli Milan & more. BPHS-based, NASA-precision.',
+      'Free Vedic astrology calculator with 294 Jyotish tools — Kundli, Dasha, Yogas, Nakshatra, Kundli Milan & Choghadiya. BPHS-based, NASA-precision.',
     url: BASE_URL,
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Astra Vedic Astrology' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Astra Destiny — Free Vedic Astrology Calculator',
-    description: 'Free Vedic astrology with 200+ Jyotish tools — Kundli, Dasha, Yogas & more.',
+    description: 'Free Vedic astrology with 294 Jyotish tools — Kundli, Dasha, Yogas, Nakshatra & more.',
     images: ['/og-image.png'],
   },
   icons: {

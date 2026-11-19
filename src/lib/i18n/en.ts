@@ -149,14 +149,15 @@ export const en = {
   'a11y.text': 'Text',
 
   // ─── Homepage ───
-  'home.hero.title1': 'Discover Your',
-  'home.hero.title2': 'Cosmic Blueprint',
-  'home.hero.subtitle': 'Vedic astrology charts, Dasha timelines, compatibility matching, and Matrix of Destiny — all calculated locally in your browser.',
+  'home.hero.title1': 'Free Vedic Astrology',
+  'home.hero.title2': 'Calculator & Kundli',
+  'home.hero.subtitle': '294 Jyotish tools — Kundli, Vimshottari Dasha, Nakshatra, Kundli Milan, Yogas, Panchang & Choghadiya. NASA-precision calculations, 100% free, runs in your browser.',
   'home.hero.cta': '✦ Create Your Birth Chart',
   'home.hero.panchang': "View Today's Panchang",
   'home.hero.viewKundli': 'View Kundli',
   'home.hero.dashaTimeline': 'Dasha Timeline',
   'home.hero.matrixChart': 'Matrix Chart',
+  'home.hero.kundliMilan': 'Kundli Milan',
   'home.vedic.label': 'Vedic Astrology',
   'home.vedic.title': 'Ancient wisdom, ',
   'home.vedic.titleAccent': 'cosmic precision',

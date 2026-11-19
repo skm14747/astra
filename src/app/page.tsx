@@ -113,7 +113,7 @@ export default function Home() {
               <div className="flex flex-wrap justify-center gap-3">
                 <LocaleLink href="/vedic/kundli" className="cosmic-btn px-6 py-2.5 text-sm">{t('home.hero.viewKundli')}</LocaleLink>
                 <LocaleLink href="/vedic/dashas" className="glass-card px-6 py-2.5 rounded-full text-zinc-300 text-sm font-medium hover:text-white transition">{t('home.hero.dashaTimeline')}</LocaleLink>
-                <LocaleLink href="/matrix/chart" className="glass-card px-6 py-2.5 rounded-full text-zinc-300 text-sm font-medium hover:text-white transition">{t('home.hero.matrixChart')}</LocaleLink>
+                <LocaleLink href="/vedic/compatibility" className="glass-card px-6 py-2.5 rounded-full text-zinc-300 text-sm font-medium hover:text-white transition">{t('home.hero.kundliMilan')}</LocaleLink>
               </div>
             </div>
           )}
@@ -142,24 +142,7 @@ export default function Home() {
         <AdSlot format="horizontal" />
       </div>
 
-      {/* Matrix of Destiny Section */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 mb-20">
-        <div className="mb-10">
-          <div className="zodiac-divider mb-4">
-            <span className="text-xs tracking-widest text-pink-400/60">✦ ◇ ❋ ✧</span>
-          </div>
-          <span className="section-title" style={{ color: '#e84393' }}>{t('home.matrix.label')}</span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold mt-2 text-white">
-            {t('home.matrix.title')}<span className="gradient-text-static">{t('home.matrix.titleAccent')}</span>
-          </h2>
-          <p className="text-zinc-400 mt-3 max-w-lg text-lg leading-relaxed">{t('home.matrix.desc')}</p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {MATRIX_FEATURES.map(f => <TranslatedFeatureCard key={f.href} {...f} />)}
-        </div>
-      </section>
-
-      {/* More Tools */}
+      {/* More Vedic Tools */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 mb-20">
         <div className="glass-card rounded-3xl p-8 sm:p-10 relative overflow-hidden">
           <div className="cosmic-orb w-40 h-40 bg-violet-600/8 -top-10 -right-10" />
@@ -176,6 +159,20 @@ export default function Home() {
               </LocaleLink>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Matrix of Destiny — secondary content pillar */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 mb-20">
+        <div className="mb-8">
+          <span className="section-title" style={{ color: '#e84393' }}>{t('home.matrix.label')}</span>
+          <h3 className="font-display text-2xl sm:text-3xl font-bold mt-2 text-white">
+            {t('home.matrix.title')}<span className="gradient-text-static">{t('home.matrix.titleAccent')}</span>
+          </h3>
+          <p className="text-zinc-400 mt-2 max-w-lg text-base leading-relaxed">{t('home.matrix.desc')}</p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {MATRIX_FEATURES.map(f => <TranslatedFeatureCard key={f.href} {...f} />)}
         </div>
       </section>
 
