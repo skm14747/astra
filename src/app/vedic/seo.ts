@@ -78,7 +78,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     description:
       'Detect all major Yogas (Raja, Dhana, Pancha Mahapurusha, Gajakesari) and Doshas (Manglik, Kaal Sarp, Pitra) in your Vedic birth chart with BPHS-accurate rules.',
     canonical: '/vedic/yogas',
-    keywords: ['yoga calculator', 'free yoga calculator', 'raja yoga', 'kaal sarp dosha', 'manglik dosha', 'gajakesari yoga', 'yoga dosha calculator free'],
+    keywords: ['yoga calculator astrology', 'raj yoga calculator', 'dhan yoga calculator', 'yoga calculator', 'free yoga calculator', 'raja yoga', 'dhana yoga', 'kaal sarp dosha', 'manglik dosha', 'gajakesari yoga', 'yoga dosha calculator free'],
     seoIntro: {
       heading: 'What are Yogas and Doshas?',
       text: 'Yogas are specific planetary combinations that produce auspicious or inauspicious results in a birth chart. Raja Yoga (royal combination) can indicate fame and authority, while Dhana Yoga signals wealth accumulation. Doshas are afflictions — Manglik Dosha (Mars in certain houses) affects marriage compatibility, Kaal Sarp Dosha (all planets hemmed between Rahu-Ketu) creates recurring life obstacles, and Pitra Dosha indicates ancestral karma. Our engine checks 60+ Yoga patterns and all major Doshas following BPHS and Uttara Kalamrita rules.',
@@ -178,7 +178,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     description:
       'Free Nakshatra calculator by date of birth — find your Janma Nakshatra (birth star), Pada, ruling deity, Gana, Nadi & Tara Bala. All 27 Nakshatras with detailed interpretations.',
     canonical: '/vedic/nakshatra',
-    keywords: ['nakshatra calculator', 'nakshatra calculator by date of birth', 'nakshatra finder', 'birth star calculator', 'janma nakshatra', 'nakshatra pada', 'my nakshatra', 'tara bala', '27 nakshatras', 'free nakshatra calculator'],
+    keywords: ['nakshatra calculator', 'birth nakshatra calculator', 'nakshatra by date of birth', 'nakshatra calculator by date of birth', 'nakshatra finder', 'birth star calculator', 'janma nakshatra', 'nakshatra pada', 'my nakshatra', 'tara bala', '27 nakshatras', 'free nakshatra calculator'],
     seoIntro: {
       heading: 'What is a Nakshatra?',
       text: 'Nakshatras are the 27 lunar mansions of Vedic astrology, each spanning 13°20\' of the zodiac. Your birth Nakshatra (determined by the Moon\'s position) reveals your emotional nature, instinctive reactions, and deep personality traits. Each Nakshatra has a ruling deity, planetary lord, Gana (temperament), Nadi (pulse), and animal symbol used in compatibility matching. Tara Bala (star strength) analysis compares your birth Nakshatra against current transiting Nakshatra to determine daily auspiciousness.',
@@ -197,11 +197,11 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   kp: {
-    title: 'KP System — Krishnamurti Paddhati Sub-Lord Calculator',
+    title: 'Free KP Astrology Calculator — Sub-Lord & Significator Chart',
     description:
-      'Calculate KP System sub-lords, significators, and ruling planets. Krishnamurti Paddhati analysis with house cusps using Placidus system and KP Ayanamsa.',
+      'Free KP astrology calculator — Krishnamurti Paddhati sub-lord table, significators, ruling planets & house cusps. Placidus system with KP Ayanamsa. No signup required.',
     canonical: '/vedic/kp',
-    keywords: ['kp system', 'sub lord calculator', 'krishnamurti paddhati', 'kp astrology', 'ruling planets'],
+    keywords: ['kp astrology calculator', 'kp chart calculator', 'kp significator calculator', 'kp system', 'sub lord calculator', 'krishnamurti paddhati', 'kp astrology', 'ruling planets', 'kp horary chart'],
     seoIntro: {
       heading: 'What is the KP System?',
       text: 'The Krishnamurti Paddhati (KP System) is a modern refinement of Vedic astrology developed by Prof. K.S. Krishnamurti. It divides each Nakshatra into 9 sub-divisions governed by Vimshottari Dasha lords, creating a finer 249-level zodiac segmentation. The Sub-Lord of a house cusp determines whether that house\'s significations will manifest. KP System uses Placidus house cusps (unlike Vedic equal houses) and its own Ayanamsa. It\'s especially prized for precise event timing and horary (Prashna) astrology.',
@@ -548,11 +548,11 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
     ],
   },
   'sade-sati': {
-    title: 'Free Sade Sati Calculator — Is Shani Sade Sati Running?',
+    title: 'Free Sade Sati Calculator (साढ़े साती) — Saturn Transit Check',
     description:
-      'Free Sade Sati calculator — check if Saturn\'s 7.5-year Sade Sati is running for your Moon sign. Detect phase (rising/peak/setting), Dhaiya, Kantaka Shani & remedies.',
+      'Free Sade Sati calculator by date of birth — check if Shani Sade Sati is running, current phase (rising/peak/setting), Dhaiya, Kantaka Shani & Saturn transit remedies.',
     canonical: '/vedic/sade-sati',
-    keywords: ['sade sati calculator', 'shani sade sati', 'sade sati by date of birth', 'is sade sati running', 'saturn transit', 'kantaka shani', 'dhaiya calculator', 'ashtama shani', 'sade sati for moon sign'],
+    keywords: ['sade sati calculator', 'current sade sati', 'saturn transit calculator', 'shani sade sati', 'sade sati by date of birth', 'is sade sati running', 'saturn transit', 'kantaka shani', 'dhaiya calculator', 'ashtama shani', 'sade sati for moon sign'],
     seoIntro: {
       heading: 'What is Sade Sati?',
       text: 'Sade Sati (साढ़े साती) is Saturn\'s 7.5-year transit through the 12th, 1st, and 2nd houses from your natal Moon sign. It occurs approximately every 29.5 years when Saturn returns to the signs surrounding your Moon. The transit is divided into three phases: Rising (12th house — preparation and inner challenges), Peak (1st house — maximum intensity, transformation), and Setting (2nd house — gradual release and lessons learned). Kantaka Shani (Saturn in 4th/8th/10th from Moon) and Dhaiya (Small Panoti — 2.5-year sub-cycle) are related Saturn afflictions also checked here. Our calculator uses real-time NASA ephemeris positions and the Lahiri Ayanamsa.',
