@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { buildVedicMetadata, VEDIC_SEO } from '../seo';
-import { BreadcrumbJsonLd, FAQJsonLd, HowToJsonLd } from '@/components/seo/JsonLd';
+import { BreadcrumbJsonLd, FAQJsonLd, HowToJsonLd, WebApplicationJsonLd } from '@/components/seo/JsonLd';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import PageAdWrapper from '@/components/ads/PageAdWrapper';
 
@@ -12,6 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: 'Home', href: '/' }, { name: 'Vedic Astrology', href: '/vedic/kundli' }, { name: 'Choghadiya Today', href: '/vedic/choghadiya' }]} />
+      <WebApplicationJsonLd slug="choghadiya" name={seo.title} description={seo.description} url={seo.canonical} />
       {seo.faqs && <FAQJsonLd faqs={seo.faqs} />}
       {seo.howTo && <HowToJsonLd name={seo.howTo.name} description={seo.howTo.description} steps={seo.howTo.steps} />}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-6">

@@ -117,7 +117,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
   dashas: {
     title: 'Free Dasha Calculator (दशा) — 16 Systems, Mahadasha Dates',
     description:
-      'Free Dasha calculator with 16 systems — Vimshottari, Yogini, Ashtottari, Chara, Kalachakra, Narayana & 10 more. Mahadasha, Antardasha & Pratyantardasha dates by date of birth. No signup, runs in your browser.',
+      'Free Dasha calculator — Vimshottari, Yogini, Ashtottari & 13 more systems. Mahadasha, Antardasha & Pratyantardasha dates by date of birth. No signup required.',
     canonical: '/vedic/dashas',
     keywords: ['vimshottari dasha calculator', 'mahadasha calculator', 'dasha calculator free', 'antardasha calculator', 'mahadasha dates by date of birth', 'yogini dasha calculator', 'ashtottari dasha', 'current mahadasha', 'free dasha calculator'],
     seoIntro: {
@@ -238,7 +238,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
   muhurta: {
     title: 'Shubh Muhurat Finder (शुभ मुहूर्त) — Marriage & Griha Pravesh',
     description:
-      'Free Shubh Muhurat finder for marriage (vivah muhurat), griha pravesh, naamkaran, travel & 20+ activities. Checks Tithi, Nakshatra, Rahu Kaal, Abhijit Muhurta & planetary positions.',
+      'Free Shubh Muhurat finder for marriage, griha pravesh, naamkaran & 20+ activities. Checks Tithi, Nakshatra, Rahu Kaal & Abhijit Muhurta.',
     canonical: '/vedic/muhurta',
     keywords: ['shubh muhurat today', 'shubh muhurat for marriage', 'vivah muhurat 2027', 'griha pravesh muhurta', 'rahu kaal today', 'auspicious time today', 'muhurta today', 'muhurta finder', 'marriage muhurta', 'naamkaran muhurta', 'abhijit muhurta'],
     seoIntro: {
@@ -607,7 +607,7 @@ export const VEDIC_SEO: Record<string, VedicPageSeo> = {
   choghadiya: {
     title: 'Free Choghadiya Today (चौघड़िया) — Shubh Muhurat Timings',
     description:
-      'Today\'s Choghadiya (चौघड़िया) with day and night muhurat timings — Amrit, Shubh, Labh, Char, Kaal, Rog, Udveg periods. Rahu Kaal overlay. Free, calculated from your location\'s sunrise and sunset.',
+      'Today\'s Choghadiya (चौघड़िया) — day & night muhurat timings with Amrit, Shubh, Labh, Char, Kaal, Rog & Udveg. Rahu Kaal overlay. Free for any location.',
     canonical: '/vedic/choghadiya',
     keywords: ['choghadiya', 'choghadiya today', 'today choghadiya', 'din ka choghadiya', 'shubh choghadiya', 'aaj ka choghadiya', 'choghadiya table', 'raat ka choghadiya', 'choghadiya mumbai', 'choghadiya delhi'],
     seoIntro: {

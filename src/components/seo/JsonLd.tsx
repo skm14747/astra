@@ -23,8 +23,11 @@ export function WebSiteJsonLd() {
         inLanguage: ['en', 'hi', 'ne', 'pt', 'es', 'ja', 'fr', 'ko'],
         potentialAction: {
           '@type': 'SearchAction',
-          target: `${BASE_URL}/vedic/{search_term}`,
-          'query-input': 'required name=search_term',
+          target: {
+            '@type': 'EntryPoint',
+            urlTemplate: `${BASE_URL}/tools/?q={search_term_string}`,
+          },
+          'query-input': 'required name=search_term_string',
         },
       }}
     />
@@ -150,6 +153,44 @@ export function FAQJsonLd({
             text: faq.answer,
           },
         })),
+      }}
+    />
+  );
+}
+
+export function WebApplicationJsonLd({
+  slug,
+  name,
+  description,
+  url,
+}: {
+  slug: string;
+  name: string;
+  description: string;
+  url: string;
+}) {
+  return (
+    <JsonLd
+      data={{
+        '@context': 'https://schema.org',
+        '@type': 'WebApplication',
+        name,
+        description,
+        url: `${BASE_URL}${withTrailingSlash(url)}`,
+        applicationCategory: 'LifestyleApplication',
+        operatingSystem: 'Web',
+        browserRequirements: 'Requires JavaScript',
+        isAccessibleForFree: true,
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'USD',
+        },
+        provider: {
+          '@type': 'Organization',
+          name: 'Astra Destiny',
+          url: BASE_URL,
+        },
       }}
     />
   );
