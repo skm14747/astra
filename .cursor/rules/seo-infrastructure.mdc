@@ -1,0 +1,88 @@
+---
+description: SEO infrastructure patterns for Astra Destiny — structured data, i18n, content architecture, and what makes this site rank.
+globs: src/app/**/*.tsx, src/app/vedic/seo.ts, src/app/sitemap.ts, src/app/layout.tsx, src/components/seo/**, src/lib/vedic/interpretations/**, src/content/blog/**
+alwaysApply: false
+---
+
+# SEO infrastructure
+
+## Why this site gets organic traction
+
+Astra is a **content engine that happens to have tools**. Its traction comes from:
+1. **916 sitemap URLs** across 8 locales with reciprocal hreflang
+2. **180+ programmatic pages** (108 planet-in-house, 27 nakshatras, 38 panchang dates, 7 month pages)
+3. **Daily-refreshed content** (panchang, choghadiya, hora, rashifal) with date-specific titles
+4. **102KB VEDIC_SEO config** with per-tool educational intros, FAQs, HowTo, and long-tail keywords
+5. **Interpretation libraries** that turn calculator results into unique text content
+6. **Hub-and-spoke linking**: home → /tools → tools → RelatedTools → /astrology hub → nakshatras
+
+Preserve these strengths when making changes. Never thin out content to "simplify".
+
+## Structured data stack
+
+Root layout (`src/app/layout.tsx`):
+- **WebSite** with `SearchAction`
+- **Organization** with logo
+- **SoftwareApplication** with `aggregateRating` (4.8/150) and `featureList`
+
+Homepage (`src/app/page.tsx`):
+- **ItemList** JSON-LD listing all tools from VEDIC_FEATURES, MATRIX_FEATURES, MORE_TOOLS
+
+Per-tool layouts (`src/app/vedic/*/layout.tsx`):
+- **BreadcrumbList**, **FAQPage**, **HowTo** from VEDIC_SEO config
+- **WebApplication** with `isAccessibleForFree: true`
+
+## Content components
+
+| Component | Purpose | Path |
+|-----------|---------|------|
+| `SeoIntro` | Server-rendered educational paragraphs per tool (line-clamped for humans, full text for crawlers) | `src/components/seo/SeoIntro.tsx` |
+| `PanchangSsrContent` | Server-rendered daily panchang content below interactive UI | `src/components/seo/PanchangSsrContent.tsx` |
+| `RelatedTools` | Cross-links from VEDIC_SEO.relatedTools | `src/components/seo/RelatedTools.tsx` |
+| `JsonLd` family | BreadcrumbJsonLd, FAQJsonLd, HowToJsonLd | `src/components/seo/JsonLd.tsx` |
+
+## i18n (8 locales)
+
+- Locales: `en`, `hi`, `ne`, `pt`, `es`, `ja`, `fr`, `ko`
+- English is canonical (no `/en/` prefix; 301 from `/en/*`)
+- Middleware (`src/middleware.ts`) handles locale detection + rewriting
+- `VEDIC_SEO_LOCALES` in `src/app/vedic/seo.ts` has translated titles/descriptions
+- Interpretation packs per locale in `src/lib/vedic/interpretations/`
+- Full UI dictionaries in `src/lib/i18n/*.ts`
+
+## Programmatic SEO pages
+
+| Type | Count | Source |
+|------|-------|--------|
+| Planet-in-house | 108 (9×12) | `src/lib/astrology/planet-in-house.ts` → `/astrology/[slug]` |
+| Nakshatras | 27 | `src/lib/astrology/nakshatra-articles.ts` → `/nakshatras/[slug]` |
+| Panchang dates | ~38 | `/vedic/panchang/[date]` with `generateMetadata` from astronomical data |
+| Panchang months | 7 | `/vedic/panchang/month/[month]` |
+| Blog | 8 | `src/content/blog/index.ts` |
+
+## Consent & privacy
+
+- `ConsentBanner` component in root layout (`src/components/shared/ConsentBanner.tsx`)
+- localStorage key: `astra.analytics-consent`
+- AdSense + GTM scripts loaded in layout
+- `poweredByHeader: false` in next.config.ts
+
+## Custom 404
+
+- Branded not-found page at `src/app/not-found.tsx` with violet accent and home/Kundli CTAs
+
+## Homepage ItemList JSON-LD
+
+`src/app/page.tsx` renders an **ItemList** JSON-LD listing all tools from VEDIC_FEATURES, MATRIX_FEATURES, and MORE_TOOLS. When adding new tools, ensure they appear in one of these arrays so they are included in the ItemList.
+
+## Checklist for new Vedic tool pages
+
+1. Add `VEDIC_SEO` entry in `src/app/vedic/seo.ts` (title, description, keywords, seoIntro, faqs, relatedTools)
+2. Create `layout.tsx` with `buildVedicMetadata()`, BreadcrumbJsonLd, FAQJsonLd
+3. Create `page.tsx` as client component with SeoIntro + RelatedTools
+4. Add route to sitemap in `src/app/sitemap.ts`
+5. Add to `/tools` directory and navigation
+6. Add i18n keys in `en.ts` and `hi.ts` at minimum
+7. Add cross-links in related pages' `relatedTools`
+8. Add footer link in `SiteFooter.tsx`
+9. Ensure the tool appears in VEDIC_FEATURES, MATRIX_FEATURES, or MORE_TOOLS for ItemList JSON-LD
