@@ -47,6 +47,28 @@ const MORE_TOOLS: { href: string; labelKey: TranslationKey; icon: string }[] = [
 
 const ZODIAC_STRIP = '♈ ♉ ♊ ♋ ♌ ♍ ♎ ♏ ♐ ♑ ♒ ♓';
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://astradestiny.com';
+
+const ALL_TOOLS = [
+  ...VEDIC_FEATURES.map(f => ({ name: f.titleKey, href: f.href })),
+  ...MATRIX_FEATURES.map(f => ({ name: f.titleKey, href: f.href })),
+  ...MORE_TOOLS.map(t => ({ name: t.labelKey, href: t.href })),
+];
+
+const itemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Vedic astrology tools",
+  description: "Free Vedic astrology calculators — Kundli, Dasha, Yogas, Panchang, Compatibility & more.",
+  numberOfItems: ALL_TOOLS.length,
+  itemListElement: ALL_TOOLS.map((tool, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: tool.name,
+    url: `${BASE_URL}${tool.href}/`,
+  })),
+};
+
 function FeatureCard({ href, icon, title, desc, color }: { href: string; icon: string; title: string; desc: string; color: string }) {
   return (
     <LocaleLink href={href} className="group glass-card gradient-border rounded-2xl p-7 flex flex-col gap-3 relative overflow-hidden">
@@ -72,6 +94,7 @@ export default function Home() {
 
   return (
     <div className="relative">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       {/* Hero Section */}
       <section className="hero-glow relative overflow-hidden">
         {/* Decorative orbs */}

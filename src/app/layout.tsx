@@ -9,6 +9,7 @@ import { LazyCosmicBackground, LazyCommandPalette } from "@/components/shared/La
 import { ProfileProvider } from "@/lib/profile/context";
 import { SettingsProvider } from "@/lib/settings/context";
 import SiteFooter from "@/components/shared/SiteFooter";
+import { ConsentBanner } from "@/components/shared/ConsentBanner";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -147,6 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <SiteFooter />
             <BottomTabs />
             <LazyCommandPalette />
+            <ConsentBanner />
           </SettingsProvider>
         </ProfileProvider>
       </body>
